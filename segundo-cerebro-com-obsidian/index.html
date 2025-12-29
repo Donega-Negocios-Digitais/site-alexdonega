@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone seu Cerebro, Domine o Obsidian | Alex Donega</title>
+    <meta name="description" content="Aprenda a construir seu Segundo Cerebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueca nada importante.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Clone seu Cerebro, Domine o Obsidian">
+    <meta property="og:description" content="Aprenda a construir seu Segundo Cerebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueca nada importante.">
+    <meta property="og:url" content="https://alexdonega.com.br/segundo-cerebro-com-obsidian">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clone seu Cerebro, Domine o Obsidian">
+    <meta name="twitter:description" content="Aprenda a construir seu Segundo Cerebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueca nada importante.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fonte DePixel Klein */
+        @font-face {
+            font-family: "DePixel Klein";
+            src: url("https://framerusercontent.com/assets/AxpKr4lNhgmNX1Qyo1xQntsit8.woff2") format("woff2");
+            font-display: swap;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-main: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --bg-card-hover: #222222;
+            --text-white: #ffffff;
+            --text-light: #e5e5e5;
+            --text-gray: #a3a3a3;
+            --text-muted: #737373;
+            --accent: #d87757;
+            --accent-hover: #e8866a;
+            --accent-light: rgba(216, 119, 87, 0.1);
+            --border: #2a2a2a;
+            --gradient-start: #1a1a1a;
+            --gradient-end: #0a0a0a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            padding: 40px 24px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .header-line {
+            flex: 1;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .logo {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-white);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 24px 60px;
+            text-align: center;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            margin: 22px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse at 70% 30%, rgba(216, 119, 87, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-light);
+            border: 1px solid rgba(216, 119, 87, 0.3);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 500;
+            line-height: 1.1;
+            color: var(--text-white);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent);
+            font-family: "DePixel Klein", monospace;
+            font-size: 1.05em;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        /* Video Container */
+        .video-container {
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            background: var(--bg-card);
+            aspect-ratio: 16/9;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        .hero-video-text {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(20px, 3vw, 28px);
+            color: var(--text-white);
+            max-width: 800px;
+            margin: 40px auto 0;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--bg-main);
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--text-white);
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--text-muted);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-dark {
+            background: var(--bg-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .section-eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(32px, 4vw, 40px);
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--accent);
+            margin: 0 24px;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 32px;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .benefit-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .feature-item {
+            padding: 48px 32px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .feature-item:last-child {
+            border-right: none;
+        }
+
+        .feature-number {
+            font-family: "DePixel Klein", monospace;
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Apps Icons Grid */
+        .apps-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.5;
+            transition: all 0.3s;
+        }
+
+        .app-icon:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .app-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--text-muted);
+        }
+
+        .app-icon.obsidian {
+            opacity: 1;
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .app-icon.obsidian svg {
+            fill: var(--accent);
+        }
+
+        /* Video Feature Row (horizontal layout) */
+        .video-feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto 64px;
+        }
+
+        .video-feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .video-feature-row.reverse {
+            direction: rtl;
+        }
+
+        .video-feature-row.reverse > * {
+            direction: ltr;
+        }
+
+        .video-feature-media {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-feature-media video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-feature-text h3 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 16px;
+        }
+
+        .video-feature-text p {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .video-feature-row {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .video-feature-row.reverse {
+                direction: ltr;
+            }
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 26, 26, 0.8) 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+        }
+
+        .step-number {
+            font-family: "DePixel Klein", monospace;
+            font-size: 64px;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: 16px;
+            right: 24px;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .step-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Target Audience */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .audience-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .audience-card:hover {
+            border-color: rgba(216, 119, 87, 0.5);
+        }
+
+        .audience-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .audience-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .audience-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+
+        .audience-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 64px;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(180deg, #c9956c 0%, #8b5a3c 50%, #5a3825 100%);
+            aspect-ratio: 4/5;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h3 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-content blockquote {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--accent);
+            padding-left: 24px;
+            border-left: 3px solid var(--accent);
+            margin: 32px 0;
+        }
+
+        /* What You Get */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .module-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .module-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-main);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .module-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .module-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .module-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .module-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .module-list .check {
+            color: var(--accent);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Bonuses */
+        .bonus-section {
+            background: linear-gradient(135deg, rgba(216, 119, 87, 0.05) 0%, transparent 50%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .bonus-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus-card::before {
+            content: 'BONUS';
+            position: absolute;
+            top: 16px;
+            right: -24px;
+            background: var(--accent);
+            color: var(--bg-main);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 32px;
+            transform: rotate(45deg);
+        }
+
+        .bonus-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .bonus-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .bonus-value {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .bonus-value span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            text-align: center;
+        }
+
+        /* Timer Bar */
+        .timer-bar {
+            background: #dc2626;
+            padding: 10px 16px;
+            border-radius: 12px 12px 0 0;
+            margin: -48px -48px 24px -48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .timer-bar svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .timer-text {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .timer-countdown {
+            display: flex;
+            gap: 6px;
+        }
+
+        .timer-unit {
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+
+        .timer-unit .number {
+            font-family: "DePixel Klein", monospace;
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .timer-unit .label {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .timer-separator {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .social-proof-stars {
+            display: flex;
+            gap: 4px;
+        }
+
+        .social-proof-stars svg {
+            width: 24px;
+            height: 24px;
+            fill: #fbbf24;
+        }
+
+        .social-proof-text {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .social-proof-text strong {
+            color: var(--text-white);
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 26, 26, 0.8) 100%);
+            border: 2px solid var(--accent);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 550px;
+            margin: 0 auto 48px;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+
+        .pricing-original {
+            font-size: 22px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: 8px;
+        }
+
+        .pricing-main {
+            margin-bottom: 24px;
+        }
+
+        .pricing-installment {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .pricing-installment strong {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 72px;
+            font-weight: 500;
+            color: var(--text-white);
+        }
+
+        .pricing-installment .currency {
+            font-size: 28px;
+            color: var(--accent);
+            vertical-align: super;
+        }
+
+        .pricing-cash {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .pricing-cash span {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .pricing-features .check {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .btn-buy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #22c55e;
+            color: #ffffff;
+            padding: 22px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-buy:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-buy svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Guarantee Box */
+        .guarantee-box {
+            background: var(--accent-light);
+            border: 1px solid rgba(216, 119, 87, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            text-align: left;
+        }
+
+        .guarantee-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .guarantee-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--bg-main);
+        }
+
+        .guarantee-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 4px;
+        }
+
+        .guarantee-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* Testimonial Inner (inside pricing card) */
+        .testimonial-card-inner {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            text-align: left;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-stars svg {
+            width: 16px;
+            height: 16px;
+            fill: #fbbf24;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .testimonial-info h5 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Payment Methods Inner (inside pricing card) */
+        .payment-methods-inner {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .payment-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .payment-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .payment-icon {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+            height: 40px;
+        }
+
+        .payment-icon svg {
+            height: 18px;
+            width: auto;
+            fill: var(--text-muted);
+        }
+
+        .payment-icon img {
+            height: 18px;
+            width: auto;
+            opacity: 0.7;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0;
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 64px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+        }
+
+        .footer-brand h4 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer-brand .signature {
+            font-style: italic;
+            color: var(--accent);
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .footer-column h5 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 48px auto 0;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 120px 24px;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-main) 100%);
+        }
+
+        .cta-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-row {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-item {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .feature-item:last-child {
+                border-bottom: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="header-line"></div>
+    <a href="https://alexdonega.com.br" class="logo">Alex <span>Donega</span></a>
+    <div class="header-line"></div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span>Curso Online</span>
+            <span>|</span>
+            <span>Acesso Imediato</span>
+        </div>
+
+        <h1>
+            Clone seu Cérebro,<br>
+            Domine o <span class="highlight">Obsidian</span>
+        </h1>
+
+        <p class="subtitle">
+            Aprenda a construir seu Segundo Cérebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueça nada importante.
+        </p>
+
+        <a href="#investimento" class="btn-primary">
+            Quero Começar Agora
+            <svg width="20" height="16" viewBox="0 0 23 16" fill="none">
+                <path d="M1.5 7C0.947715 7 0.5 7.44772 0.5 8C0.5 8.55228 0.947715 9 1.5 9V8V7ZM22.2071 8.70711C22.5976 8.31658 22.5976 7.68342 22.2071 7.29289L15.8431 0.928932C15.4526 0.538408 14.8195 0.538408 14.4289 0.928932C14.0384 1.31946 14.0384 1.95262 14.4289 2.34315L20.0858 8L14.4289 13.6569C14.0384 14.0474 14.0384 14.6805 14.4289 15.0711C14.8195 15.4616 15.4526 15.4616 15.8431 15.0711L22.2071 8.70711ZM1.5 8V9H21.5V8V7H1.5V8Z" fill="currentColor"/>
+            </svg>
+        </a>
+
+        <div class="video-container">
+            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                <source src="https://go.academialendaria.ai/wp-content/uploads/2025/11/canvas-hero-1-1.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <p class="hero-video-text">
+            Dobre sua produtividade usando um Segundo Cérebro com I.A que organiza suas informações, conecta suas ideias e cria projetos para você
+        </p>
+
+        <a href="#investimento" class="btn-primary" style="margin-top: 24px;">
+            Comece agora
+            <svg width="20" height="16" viewBox="0 0 23 16" fill="none">
+                <path d="M1.5 7C0.947715 7 0.5 7.44772 0.5 8C0.5 8.55228 0.947715 9 1.5 9V8V7ZM22.2071 8.70711C22.5976 8.31658 22.5976 7.68342 22.2071 7.29289L15.8431 0.928932C15.4526 0.538408 14.8195 0.538408 14.4289 0.928932C14.0384 1.31946 14.0384 1.95262 14.4289 2.34315L20.0858 8L14.4289 13.6569C14.0384 14.0474 14.0384 14.6805 14.4289 15.0711C14.8195 15.4616 15.4526 15.4616 15.8431 15.0711L22.2071 8.70711ZM1.5 8V9H21.5V8V7H1.5V8Z" fill="currentColor"/>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Section 01: Por que ter um Segundo Cérebro -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">01 - Clone seu Cérebro</div>
+            <h2 class="section-title">Por que ter um Segundo Cérebro no Obsidian?</h2>
+            <p class="section-subtitle">
+                Seu cérebro foi feito para ter ideias, não para armazená-las. Liberte sua mente delegando a memória para um sistema confiável.
+            </p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 .29.71l3 3a1 1 0 0 0 1.42-1.42L13 11.59V7a1 1 0 0 0-1-1z"/></svg>
+                </div>
+                <h3>Nunca mais esqueça nada</h3>
+                <p>Capture ideias, insights e informações importantes em segundos. Tudo fica salvo e organizado automaticamente.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-10.14l2.83 2.83m4.48 4.48l2.83 2.83"/></svg>
+                </div>
+                <h3>Conecte suas ideias</h3>
+                <p>Crie links entre suas notas e descubra conexões que você nunca imaginaria. Seu conhecimento vira uma rede viva.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+                </div>
+                <h3>Produza mais rápido</h3>
+                <p>Com suas ideias organizadas, criar conteúdo, tomar decisões e resolver problemas se torna muito mais fácil.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#investimento" class="btn-primary">Quero organizar minhas ideias</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 02: Você no Controle -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">02 - Você no Controle</div>
+            <h2 class="section-title">Tudo em um só lugar</h2>
+            <p class="section-subtitle">
+                Chega de ter informações espalhadas em 10 apps diferentes. No Obsidian, você centraliza tudo e tem controle total dos seus dados.
+            </p>
+        </div>
+
+        <div class="apps-grid">
+            <!-- Notion -->
+            <div class="app-icon" title="Notion">
+                <svg viewBox="0 0 24 24"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.98-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.886l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.62c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.886.747-.933zM2.877 1.076l13.681-.93c1.682-.14 2.101.093 2.801.606l3.876 2.707c.513.374.653.466.653 1.027v15.374c0 .98-.373 1.54-1.682 1.634l-15.504.933c-.98.047-1.448-.093-1.961-.746L1.87 18.664c-.56-.7-.793-1.213-.793-1.867V2.709c0-.84.373-1.54 1.4-1.634z"/></svg>
+            </div>
+            <!-- Evernote -->
+            <div class="app-icon" title="Evernote">
+                <svg viewBox="0 0 24 24"><path d="M8.667 4.583v2.209c0 .276-.119.535-.327.741a1.09 1.09 0 01-.756.305H5.21a.303.303 0 01-.212-.505l3.25-3.17c.14-.135.382-.024.419.166v.254zm5.837 16.665c-1.26 0-2.283-1.019-2.283-2.275s1.023-2.275 2.283-2.275c1.261 0 2.284 1.019 2.284 2.275 0 1.256-1.023 2.275-2.284 2.275zm4.17-10.238c-.198-.091-.42-.137-.645-.137h-.96c-.364 0-.658.294-.658.656v3.138c0 .363.294.657.658.657h1.055c.364 0 .658-.294.658-.657v-2.974a.726.726 0 00-.108-.683zm3.17 2.143c-.1-1.14-.447-2.074-.877-2.762-.458-.731-1.088-1.343-1.838-1.757a6.76 6.76 0 00-.663-.35 3.97 3.97 0 01-.267-.103c-.114-.05-.225-.1-.338-.155-.355-.17-.643-.37-.87-.572a2.33 2.33 0 01-.396-.468.657.657 0 00-.59-.288h-.125l-.001.001a.657.657 0 00-.59.288 2.33 2.33 0 01-.396.468c-.227.202-.515.402-.87.572-.113.055-.224.105-.338.155-.088.035-.177.068-.267.103a6.76 6.76 0 00-.663.35c-.75.414-1.38 1.026-1.838 1.757-.43.688-.777 1.622-.877 2.762-.04.459-.073.921-.073 1.382v3.723c0 .363.294.657.658.657h.395c.364 0 .658-.294.658-.657V14.12c0-.363.294-.657.658-.657h1.055c.364 0 .658.294.658.657v3.188c0 .363.294.657.658.657h.395c.364 0 .658-.294.658-.657v-3.723c0-.461-.033-.923-.073-1.382z"/></svg>
+            </div>
+            <!-- Gmail -->
+            <div class="app-icon" title="Gmail">
+                <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+            </div>
+            <!-- Trello -->
+            <div class="app-icon" title="Trello">
+                <svg viewBox="0 0 24 24"><path d="M21 0H3C1.343 0 0 1.343 0 3v18c0 1.656 1.343 3 3 3h18c1.656 0 3-1.344 3-3V3c0-1.657-1.344-3-3-3zM10.44 18.18c0 .795-.645 1.44-1.44 1.44H4.56c-.795 0-1.44-.645-1.44-1.44V4.56c0-.795.645-1.44 1.44-1.44H9c.795 0 1.44.645 1.44 1.44v13.62zm10.44-6c0 .794-.645 1.44-1.44 1.44H15c-.795 0-1.44-.646-1.44-1.44V4.56c0-.795.645-1.44 1.44-1.44h4.44c.795 0 1.44.645 1.44 1.44v7.62z"/></svg>
+            </div>
+            <!-- Google Docs / Notepad -->
+            <div class="app-icon" title="Google Docs">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 4h7v5h5v11H6V4zm2 7v2h8v-2H8zm0 4v2h8v-2H8z"/></svg>
+            </div>
+            <!-- Apple Notes -->
+            <div class="app-icon" title="Apple Notes">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            </div>
+            <!-- Physical Notebook -->
+            <div class="app-icon" title="Caderno">
+                <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+            </div>
+            <!-- Obsidian (highlighted) -->
+            <div class="app-icon obsidian" title="Obsidian">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 02.5: Veja o Obsidian em Ação -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Veja na Prática</div>
+            <h2 class="section-title">O Obsidian em ação</h2>
+        </div>
+
+        <div class="video-feature-row">
+            <div class="video-feature-media">
+                <video autoplay loop muted playsinline>
+                    <source src="https://go.academialendaria.ai/wp-content/uploads/2025/11/canvas-hero-1-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-feature-text">
+                <h3>Visualize suas ideias</h3>
+                <p>Espaço infinito para pesquisar, fazer brainstorm, diagramar e organizar suas ideias. O Canvas do Obsidian é como uma lousa infinita onde você pode conectar tudo visualmente.</p>
+            </div>
+        </div>
+
+        <div class="video-feature-row reverse">
+            <div class="video-feature-media">
+                <video autoplay loop muted playsinline>
+                    <source src="https://go.academialendaria.ai/wp-content/uploads/2025/11/Graficos-Obsidian-1-1-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-feature-text">
+                <h3>Conecte seus pensamentos</h3>
+                <p>Crie conexões entre suas ideias, pessoas, lugares, livros e tudo mais que desejar. O grafo de conhecimento mostra como tudo se relaciona de forma visual e intuitiva.</p>
+            </div>
+        </div>
+
+        <div class="video-feature-row">
+            <div class="video-feature-media">
+                <video autoplay loop muted playsinline>
+                    <source src="https://go.academialendaria.ai/wp-content/uploads/2025/11/Kit-Starter-1-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-feature-text">
+                <h3>Tudo isso em 30 segundos</h3>
+                <p>Ou menos, porque eu criei uma forma de você começar com tudo configurado em menos de 30 segundos. Basta baixar o Kit Starter, deszipar e abrir no Obsidian — todos plugins, todas pastas, todos templates, todos os meus prompts, tudo pronto.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#investimento" class="btn-primary">Quero isso para mim</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 03: Como Funciona -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">03 - O Obsidian na Prática</div>
+            <h2 class="section-title">Como funciona o curso</h2>
+            <p class="section-subtitle">
+                Um método passo a passo para você sair do zero e ter seu Segundo Cérebro funcionando.
+            </p>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Fundamentos</h3>
+                <p>Entenda a filosofia por trás do Segundo Cérebro e por que o Obsidian é a melhor ferramenta para isso.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Setup Completo</h3>
+                <p>Instale e configure o Obsidian do jeito certo, com os plugins essenciais e templates prontos.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Sistema de Captura</h3>
+                <p>Aprenda a capturar ideias de qualquer lugar - livros, vídeos, conversas, pensamentos.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Organização</h3>
+                <p>Crie uma estrutura de pastas e tags que faz sentido para o seu estilo de trabalho.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h3>Conexões</h3>
+                <p>Domine os links bidirecionais e veja seu conhecimento se transformar em uma rede poderosa.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <h3>Produção</h3>
+                <p>Use seu Segundo Cérebro para criar conteúdo, tomar decisões e resolver problemas reais.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Section 04: Para Quem É -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">04 - Para Quem É o Curso</div>
+            <h2 class="section-title">Este curso é para você se...</h2>
+        </div>
+
+        <div class="audience-grid">
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/><path d="M8 11h8"/></svg>
+                </div>
+                <h3>Estudantes</h3>
+                <p>Quer organizar seus estudos e reter mais conhecimento</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                </div>
+                <h3>Criadores de Conteúdo</h3>
+                <p>Precisa de um sistema para nunca ficar sem ideias</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h3>Profissionais</h3>
+                <p>Quer aumentar a produtividade e organizar projetos</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                </div>
+                <h3>Empreendedores</h3>
+                <p>Precisa tomar decisões melhores com base em dados</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                </div>
+                <h3>Pesquisadores</h3>
+                <p>Quer conectar referências e descobrir insights</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                </div>
+                <h3>Curiosos</h3>
+                <p>Gosta de aprender e quer um lugar para guardar tudo</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#investimento" class="btn-primary">Esse curso é para mim</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 05: Sobre o Professor -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">05 - Conheça seu Professor</div>
+            <h2 class="section-title">Quem vai te ensinar</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="../assets/img/alex-donega.jpg" alt="Alex Donega">
+            </div>
+            <div class="about-content">
+                <h3>Alex Donega</h3>
+                <p>
+                    Uso o Obsidian todos os dias há mais de 3 anos. Ele é o centro do meu sistema de trabalho - de onde saem todos os meus conteúdos, projetos e decisões.
+                </p>
+                <p>
+                    Sou Diretor de Relacionamento na Carmona Ventures, trabalho com +21 startups no ecossistema Autobots, e ensino empreendedores a dominar IA de verdade usando Context Engineering.
+                </p>
+                <p>
+                    Já quebrei duas empresas antes de descobrir que o problema era falta de sistema. Hoje, com meu Segundo Cérebro no Obsidian, nada se perde. Cada ideia, cada aprendizado, cada conexão fica registrada e acessível.
+                </p>
+                <blockquote>
+                    "O Obsidian não é só um app de notas. É uma extensão do seu cérebro."
+                </blockquote>
+
+                <div style="margin-top: 32px;">
+                    <a href="#investimento" class="btn-primary">Quero aprender com o Alex</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 06: O Que Você Vai Receber -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">06 - O Que Você Vai Receber</div>
+            <h2 class="section-title">Conteúdo completo do curso</h2>
+        </div>
+
+        <div class="modules-grid">
+            <div class="module-card">
+                <span class="module-badge">Módulo 1</span>
+                <h3>Fundamentos do Segundo Cérebro</h3>
+                <p>Entenda a filosofia e os princípios que fazem o sistema funcionar.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> O que é um Segundo Cérebro</li>
+                    <li><span class="check">&#10003;</span> Por que o Obsidian</li>
+                    <li><span class="check">&#10003;</span> Mindset de organização</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 2</span>
+                <h3>Setup e Configuração</h3>
+                <p>Instale e configure o Obsidian do jeito certo desde o início.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> Instalação passo a passo</li>
+                    <li><span class="check">&#10003;</span> Plugins essenciais</li>
+                    <li><span class="check">&#10003;</span> Temas e aparência</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 3</span>
+                <h3>Sistema de Notas</h3>
+                <p>Crie uma estrutura que funciona para você.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> Estrutura de pastas</li>
+                    <li><span class="check">&#10003;</span> Tags e metadados</li>
+                    <li><span class="check">&#10003;</span> Templates prontos</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 4</span>
+                <h3>Captura e Processamento</h3>
+                <p>Aprenda a capturar ideias de qualquer fonte.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> Captura rápida</li>
+                    <li><span class="check">&#10003;</span> Processamento de notas</li>
+                    <li><span class="check">&#10003;</span> Inbox Zero</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 5</span>
+                <h3>Links e Conexões</h3>
+                <p>Transforme notas isoladas em uma rede de conhecimento.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> Links bidirecionais</li>
+                    <li><span class="check">&#10003;</span> Grafo de conhecimento</li>
+                    <li><span class="check">&#10003;</span> MOCs e índices</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 6</span>
+                <h3>Workflows Avançados</h3>
+                <p>Use o Obsidian para produzir e criar.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> Daily Notes</li>
+                    <li><span class="check">&#10003;</span> Projetos e tarefas</li>
+                    <li><span class="check">&#10003;</span> Integração com IA</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 07: Bônus -->
+<section class="section bonus-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">07 - Bônus Exclusivos</div>
+            <h2 class="section-title">Bônus por tempo limitado</h2>
+            <p class="section-subtitle">
+                Além do curso completo, você ainda recebe esses bônus especiais.
+            </p>
+        </div>
+
+        <div class="bonus-grid">
+            <div class="bonus-card">
+                <h3>Vault Starter Kit</h3>
+                <p>Um vault pré-configurado com estrutura de pastas, templates e plugins prontos para usar.</p>
+                <div class="bonus-value">Valor: <span>R$197</span></div>
+            </div>
+
+            <div class="bonus-card">
+                <h3>30 Templates Prontos</h3>
+                <p>Templates para daily notes, reuniões, projetos, livros, artigos e muito mais.</p>
+                <div class="bonus-value">Valor: <span>R$97</span></div>
+            </div>
+
+            <div class="bonus-card">
+                <h3>Comunidade Exclusiva</h3>
+                <p>Acesso ao grupo de alunos para tirar dúvidas, trocar ideias e fazer networking.</p>
+                <div class="bonus-value">Valor: <span>R$297</span></div>
+            </div>
+
+            <div class="bonus-card">
+                <h3>Atualizações Vitalícias</h3>
+                <p>Todas as atualizações futuras do curso incluídas, sem pagar nada a mais.</p>
+                <div class="bonus-value">Valor: <span>Inestimável</span></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#investimento" class="btn-primary">Garantir minha vaga + bônus</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 08: Investimento -->
+<section class="section pricing-section" id="investimento">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">08 - Investimento</div>
+            <h2 class="section-title">Comece sua jornada hoje</h2>
+        </div>
+
+        <div class="pricing-card">
+            <!-- Timer -->
+            <div class="timer-bar">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></svg>
+                <span class="timer-text">Oferta termina em: <span id="hours">23</span>h <span id="minutes">59</span>m <span id="seconds">59</span>s</span>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="social-proof">
+                <div class="social-proof-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <span class="social-proof-text">Mais de <strong>500 alunos</strong> já transformaram sua produtividade</span>
+            </div>
+
+            <span class="pricing-badge">Oferta de Lançamento</span>
+            <div class="pricing-original">De R$497</div>
+
+            <div class="pricing-main">
+                <p class="pricing-installment">12x de <span class="currency">R$</span><strong>33</strong>,80</p>
+                <p class="pricing-cash">ou <span>R$297</span> à vista</p>
+            </div>
+
+            <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Acesso imediato ao curso completo</li>
+                <li><span class="check">&#10003;</span> 6 módulos com +30 aulas</li>
+                <li><span class="check">&#10003;</span> Vault Starter Kit (R$197)</li>
+                <li><span class="check">&#10003;</span> 30 Templates Prontos (R$97)</li>
+                <li><span class="check">&#10003;</span> Comunidade Exclusiva (R$297)</li>
+                <li><span class="check">&#10003;</span> Atualizações vitalícias</li>
+                <li><span class="check">&#10003;</span> Certificado de conclusão</li>
+            </ul>
+
+            <a href="#" class="btn-buy">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                Quero Meu Segundo Cérebro
+            </a>
+
+            <div class="guarantee-box">
+                <div class="guarantee-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                </div>
+                <div class="guarantee-content">
+                    <h4>Garantia incondicional de 7 dias</h4>
+                    <p>Se por qualquer motivo você não gostar do curso, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="testimonial-card-inner">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">"Depois de anos usando Notion e Evernote, finalmente encontrei um sistema que funciona de verdade. O curso do Alex me mostrou como organizar minhas ideias de um jeito que faz sentido. Minha produtividade dobrou em menos de um mês."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">RC</div>
+                    <div class="testimonial-info">
+                        <h5>Ricardo Costa</h5>
+                        <span>Desenvolvedor de Software</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods-inner">
+                <p class="payment-label">Formas de pagamento</p>
+                <div class="payment-icons">
+                    <div class="payment-icon" title="Cartão de Crédito">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                    </div>
+                    <div class="payment-icon" title="Pix">
+                        <svg viewBox="0 0 24 24"><path d="M15.45 16.52l-3.01-3.01c-.11-.11-.24-.13-.31-.13s-.2.02-.31.13L8.8 16.53c-.34.34-.87.34-1.21 0l-1.12-1.12c-.16-.16-.25-.38-.25-.61 0-.23.09-.45.25-.61l3.02-3.02c.08-.08.13-.19.13-.31s-.05-.23-.13-.31l-3.02-3.02c-.34-.34-.34-.87 0-1.21l1.12-1.12c.34-.34.87-.34 1.21 0l3.02 3.02c.08.08.19.13.31.13s.23-.05.31-.13l3.02-3.02c.34-.34.87-.34 1.21 0l1.12 1.12c.16.16.25.38.25.61 0 .23-.09.45-.25.61l-3.02 3.02c-.08.08-.13.19-.13.31s.05.23.13.31l3.02 3.02c.34.34.34.87 0 1.21l-1.12 1.12c-.17.17-.39.25-.61.25s-.44-.08-.61-.25z"/></svg>
+                    </div>
+                    <div class="payment-icon" title="Boleto">
+                        <svg viewBox="0 0 24 24"><path d="M2 4h2v16H2V4zm4 0h1v16H6V4zm2 0h2v16H8V4zm3 0h2v16h-2V4zm3 0h2v16h-2V4zm3 0h1v16h-1V4zm2 0h2v16h-2V4z"/></svg>
+                    </div>
+                    <div class="payment-icon" title="PayPal">
+                        <svg viewBox="0 0 24 24"><path d="M9.93 12.99h1.07c3.41 0 5.7-1.39 5.7-4.44 0-2.07-1.37-3.34-3.72-3.34h-3.8c-.38 0-.62.26-.69.63l-1.37 8.74c-.05.27.11.51.38.56.04 0 .07.01.11.01h1.59l.73-4.7v2.54z"/><path d="M18.72 7.71c.21 1.02.21 2.12-.05 3.19-.77 3.15-3.18 4.22-6.31 4.22h-.21l-.53 3.49c-.02.16-.16.27-.32.27H9.13c-.19 0-.33-.17-.3-.36l.03-.19.44-2.78.03-.14c.02-.16.16-.27.32-.27h.21c2.61 0 4.66-1.06 5.26-4.13.25-1.28.12-2.35-.39-3.1.16.05.32.1.47.16.51.19.96.44 1.32.74.4.32.71.73.92 1.21.06.13.11.26.15.39l.13-.7z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">09 - Dúvidas Frequentes</div>
+            <h2 class="section-title">Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">Preciso saber programar?</div>
+                <p class="faq-answer">Não! O Obsidian é uma ferramenta visual e intuitiva. Você não precisa de nenhum conhecimento técnico para usar.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">O Obsidian é gratuito?</div>
+                <p class="faq-answer">Sim, o Obsidian é 100% gratuito para uso pessoal. Você só paga se quiser recursos extras como sincronização ou publicação.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Funciona no celular?</div>
+                <p class="faq-answer">Sim! O Obsidian tem apps para iOS e Android. Você pode acessar suas notas de qualquer lugar.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Por quanto tempo tenho acesso?</div>
+                <p class="faq-answer">Acesso vitalício. Uma vez que você compra, o curso é seu para sempre, incluindo todas as atualizações futuras.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">E se eu já uso outro app de notas?</div>
+                <p class="faq-answer">O Obsidian permite importar notas de outros apps como Notion, Evernote e Roam. Você não perde nada do que já tem.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Como funciona a garantia?</div>
+                <p class="faq-answer">Você tem 7 dias para testar o curso. Se não gostar por qualquer motivo, basta pedir o reembolso e devolvemos 100% do valor.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-section">
+    <h2 class="cta-title">Pronto para clonar seu cérebro?</h2>
+    <p class="cta-subtitle">
+        Junte-se a centenas de alunos que já transformaram sua forma de pensar e produzir com o Obsidian.
+    </p>
+    <div class="cta-buttons">
+        <a href="#investimento" class="btn-primary">
+            Começar Agora
+            <svg width="20" height="16" viewBox="0 0 23 16" fill="none">
+                <path d="M1.5 7C0.947715 7 0.5 7.44772 0.5 8C0.5 8.55228 0.947715 9 1.5 9V8V7ZM22.2071 8.70711C22.5976 8.31658 22.5976 7.68342 22.2071 7.29289L15.8431 0.928932C15.4526 0.538408 14.8195 0.538408 14.4289 0.928932C14.0384 1.31946 14.0384 1.95262 14.4289 2.34315L20.0858 8L14.4289 13.6569C14.0384 14.0474 14.0384 14.6805 14.4289 15.0711C14.8195 15.4616 15.4526 15.4616 15.8431 15.0711L22.2071 8.70711ZM1.5 8V9H21.5V8V7H1.5V8Z" fill="currentColor"/>
+            </svg>
+        </a>
+        <a href="https://wa.me/5545999506444?text=Tenho%20uma%20d%C3%BAvida%20sobre%20o%20curso%20Clone%20seu%20C%C3%A9rebro%2C%20Domine%20o%20Obsidian" target="_blank" class="btn-secondary">Tenho uma dúvida</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h4>Alex Donega</h4>
+            <p>Engenheiro de Contexto. Diretor de Relacionamento na Carmona Ventures. Ajudando empreendedores a dominar IA de verdade.</p>
+            <p class="signature">"O que eu falo, eu entrego."</p>
+        </div>
+
+        <div class="footer-column">
+            <h5>Navegação</h5>
+            <a href="https://alexdonega.com.br">Home</a>
+            <a href="https://alexdonega.com.br#cursos">Cursos</a>
+            <a href="https://alexdonega.com.br#sobre">Sobre</a>
+            <a href="https://wa.me/5545999506444" target="_blank">Contato</a>
+        </div>
+
+        <div class="footer-column">
+            <h5>Redes Sociais</h5>
+            <a href="https://instagram.com/donegaalex" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://youtube.com/@alexdonega" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://linkedin.com/in/alexdonega" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>&copy; 2025 Alex Donega. Todos os direitos reservados.</span>
+        <span>Toledo-PR, Brasil</span>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Countdown Timer
+    function startCountdown() {
+        // Set end time to 24 hours from now (or use a fixed date)
+        const endTime = new Date();
+        endTime.setHours(endTime.getHours() + 24);
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = endTime - now;
+
+            if (diff <= 0) {
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    }
+
+    startCountdown();
+</script>
+
+</body>
+</html>
