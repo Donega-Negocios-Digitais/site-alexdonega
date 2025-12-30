@@ -52,6 +52,12 @@
             --border: #2a2a2a;
             --gradient-start: #1a1a1a;
             --gradient-end: #0a0a0a;
+            /* Obsidian Purple */
+            --obsidian: #9b51e0;
+            --obsidian-hover: #8a45cc;
+            --obsidian-btn: #6D2CD3;
+            --obsidian-btn-hover: #5C27AC;
+            --obsidian-light: rgba(155, 81, 224, 0.1);
         }
 
         html {
@@ -118,7 +124,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: radial-gradient(ellipse at 70% 30%, rgba(216, 119, 87, 0.08) 0%, transparent 60%);
+            background: radial-gradient(ellipse at 70% 30%, rgba(155, 81, 224, 0.12) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -202,8 +208,8 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--accent);
-            color: var(--bg-main);
+            background: var(--obsidian-btn);
+            color: var(--text-white);
             padding: 16px 32px;
             border-radius: 10px;
             font-size: 16px;
@@ -213,7 +219,7 @@
         }
 
         .btn-primary:hover {
-            background: var(--accent-hover);
+            background: var(--obsidian-btn-hover);
             transform: translateY(-2px);
         }
 
@@ -665,10 +671,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 20px 60px rgba(216, 119, 87, 0.4), 0 0 80px rgba(216, 119, 87, 0.2);
+            box-shadow: 0 20px 60px rgba(155, 81, 224, 0.5), 0 0 80px rgba(155, 81, 224, 0.3);
             position: relative;
             z-index: 100;
-            animation: pulse-glow 3s ease-in-out infinite;
         }
 
         .obsidian-central img {
@@ -679,7 +684,7 @@
 
         @keyframes pulse-glow {
             0%, 100% {
-                box-shadow: 0 20px 60px rgba(216, 119, 87, 0.4), 0 0 80px rgba(216, 119, 87, 0.2);
+                box-shadow: 0 20px 60px rgba(155, 81, 224, 0.5), 0 0 80px rgba(155, 81, 224, 0.3);
                 transform: scale(1);
             }
             50% {
@@ -784,7 +789,7 @@
         .step-number {
             font-family: "DePixel Klein", monospace;
             font-size: 64px;
-            color: var(--accent);
+            color: var(--obsidian);
             opacity: 0.3;
             position: absolute;
             top: 16px;
@@ -1558,41 +1563,57 @@
                 align-items: center;
             }
         }
+
+        /* ==================== KNOWLEDGE GRAPH SECTION ==================== */
+        .graph-section {
+            padding: 80px 24px;
+            background: var(--bg-main);
+            overflow: hidden;
+        }
+
+        .graph-container {
+            position: relative;
+            max-width: 899px;
+            height: 550px;
+            margin: 0 auto;
+        }
+
+        .graph-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .graph-svg text {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .graph-container {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .graph-container {
+                height: 320px;
+            }
+        }
     </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="header">
-    <div class="header-line"></div>
-    <a href="https://alexdonega.com.br" class="logo">Alex <span>Donega</span></a>
-    <div class="header-line"></div>
-</header>
-
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-badge">
-            <span>Curso Online</span>
-            <span>|</span>
-            <span>Acesso Imediato</span>
-        </div>
-
         <h1>
             Clone seu Cérebro,<br>
-            Domine o <span class="highlight">Obsidian</span>
+            Domine o <span class="highlight" style="color: var(--obsidian);">Obsidian</span>
         </h1>
 
         <p class="subtitle">
             Aprenda a construir seu Segundo Cérebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueça nada importante.
         </p>
-
-        <a href="#investimento" class="btn-primary">
-            Quero Começar Agora
-            <svg width="20" height="16" viewBox="0 0 23 16" fill="none">
-                <path d="M1.5 7C0.947715 7 0.5 7.44772 0.5 8C0.5 8.55228 0.947715 9 1.5 9V8V7ZM22.2071 8.70711C22.5976 8.31658 22.5976 7.68342 22.2071 7.29289L15.8431 0.928932C15.4526 0.538408 14.8195 0.538408 14.4289 0.928932C14.0384 1.31946 14.0384 1.95262 14.4289 2.34315L20.0858 8L14.4289 13.6569C14.0384 14.0474 14.0384 14.6805 14.4289 15.0711C14.8195 15.4616 15.4526 15.4616 15.8431 15.0711L22.2071 8.70711ZM1.5 8V9H21.5V8V7H1.5V8Z" fill="currentColor"/>
-            </svg>
-        </a>
 
         <div class="video-container">
             <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
@@ -1620,7 +1641,7 @@
     <div class="container">
         <div class="section-header">
             <div class="section-eyebrow">01 - Clone seu Cérebro</div>
-            <h2 class="section-title">Por que ter um Segundo Cérebro no Obsidian?</h2>
+            <h2 class="section-title">Por que ter um Segundo Cérebro no <span style="color: var(--obsidian);">Obsidian</span>?</h2>
             <p class="section-subtitle">
                 Seu cérebro foi feito para ter ideias, não para armazená-las. Liberte sua mente delegando a memória para um sistema confiável.
             </p>
@@ -1658,6 +1679,418 @@
     </div>
 </section>
 
+<!-- Section: Knowledge Graph Animation -->
+<section class="graph-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Grafo de Conhecimento</div>
+            <h2 class="section-title">Suas ideias conectadas como nunca antes</h2>
+            <p class="section-subtitle">
+                No Obsidian, cada nota pode se conectar a outras. Com o tempo, seu conhecimento forma uma rede viva — exatamente como seu cérebro funciona.
+            </p>
+        </div>
+
+        <div class="graph-container">
+            <svg id="knowledge-graph" class="graph-svg" viewBox="0 0 899 550" preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Connection Lines -->
+                <g class="links">
+                    <!-- Center to Categories -->
+                    <line stroke="#2a2a2a" stroke-width="1" x1="449.5" y1="275" x2="640" y2="180" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="449.5" y1="275" x2="510" y2="480" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="449.5" y1="275" x2="252" y2="400" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="449.5" y1="275" x2="299" y2="150" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="449.5" y1="275" x2="700" y2="400" opacity="0.6"/>
+
+                    <!-- Atlas connections -->
+                    <line stroke="#2a2a2a" stroke-width="1" x1="640" y1="180" x2="755" y2="150" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="640" y1="180" x2="714" y2="260" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="640" y1="180" x2="630" y2="280" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="640" y1="180" x2="630" y2="80" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="640" y1="180" x2="728" y2="100" opacity="0.6"/>
+
+                    <!-- Calendar connections -->
+                    <line stroke="#2a2a2a" stroke-width="1" x1="510" y1="480" x2="622" y2="460" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="510" y1="480" x2="566" y2="530" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="510" y1="480" x2="435" y2="530" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="510" y1="480" x2="436" y2="420" opacity="0.6"/>
+
+                    <!-- Efforts connections -->
+                    <line stroke="#2a2a2a" stroke-width="1" x1="252" y1="400" x2="329" y2="460" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="252" y1="400" x2="230" y2="490" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="252" y1="400" x2="148" y2="440" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="252" y1="400" x2="161" y2="340" opacity="0.6"/>
+
+                    <!-- Design connections -->
+                    <line stroke="#2a2a2a" stroke-width="1" x1="299" y1="150" x2="375" y2="80" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="299" y1="150" x2="254" y2="220" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="299" y1="150" x2="185" y2="180" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="299" y1="150" x2="201" y2="90" opacity="0.6"/>
+
+                    <!-- Ideas connections -->
+                    <line stroke="#2a2a2a" stroke-width="1" x1="700" y1="400" x2="780" y2="340" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="700" y1="400" x2="800" y2="420" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="700" y1="400" x2="750" y2="480" opacity="0.6"/>
+                    <line stroke="#2a2a2a" stroke-width="1" x1="700" y1="400" x2="640" y2="460" opacity="0.6"/>
+                </g>
+
+                <!-- Central Obsidian Logo -->
+                <g class="center-logo">
+                    <circle r="55" cx="449.5" cy="275" fill="#1a1a1a" opacity="1"/>
+                    <clipPath id="centerClip">
+                        <circle r="45" cx="449.5" cy="275"/>
+                    </clipPath>
+                    <image xlink:href="../assets/img/icons/icone-obsidian.svg" href="../assets/img/icons/icone-obsidian.svg" x="404.5" y="230" width="90" height="90" clip-path="url(#centerClip)"/>
+                </g>
+
+                <!-- Categories (larger circles) -->
+                <g class="categories">
+                    <!-- Atlas -->
+                    <circle r="32" cx="640" cy="180" fill="#1a1a1a" opacity="0.9" id="cat-atlas"/>
+                    <text font-weight="600" text-anchor="middle" x="640" y="185" fill="#ffffff" font-size="12">Atlas</text>
+
+                    <!-- Calendário -->
+                    <circle r="32" cx="510" cy="480" fill="#1a1a1a" opacity="0.9" id="cat-calendar"/>
+                    <text font-weight="600" text-anchor="middle" x="510" y="485" fill="#ffffff" font-size="12">Calendário</text>
+
+                    <!-- Esforços -->
+                    <circle r="32" cx="252" cy="400" fill="#1a1a1a" opacity="0.9" id="cat-efforts"/>
+                    <text font-weight="600" text-anchor="middle" x="252" y="405" fill="#ffffff" font-size="12">Esforços</text>
+
+                    <!-- Notas -->
+                    <circle r="32" cx="299" cy="150" fill="#1a1a1a" opacity="0.9" id="cat-notas"/>
+                    <text font-weight="600" text-anchor="middle" x="299" y="155" fill="#ffffff" font-size="12">Notas</text>
+
+                    <!-- Ideias -->
+                    <circle r="32" cx="700" cy="400" fill="#1a1a1a" opacity="0.9" id="cat-ideias"/>
+                    <text font-weight="600" text-anchor="middle" x="700" y="405" fill="#ffffff" font-size="12">Ideias</text>
+                </g>
+
+                <!-- Item nodes (smaller circles) -->
+                <g class="nodes">
+                    <!-- Atlas items -->
+                    <circle r="20" cx="755" cy="150" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="1"/>
+                    <text text-anchor="middle" x="755" y="154" fill="#a3a3a3" font-size="11">Livros</text>
+
+                    <circle r="20" cx="714" cy="260" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="1"/>
+                    <text text-anchor="middle" x="714" y="264" fill="#a3a3a3" font-size="11">Artigos</text>
+
+                    <circle r="20" cx="630" cy="280" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="1"/>
+                    <text text-anchor="middle" x="630" y="284" fill="#a3a3a3" font-size="11">Cursos</text>
+
+                    <circle r="20" cx="630" cy="80" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="1"/>
+                    <text text-anchor="middle" x="630" y="84" fill="#a3a3a3" font-size="11">Vídeos</text>
+
+                    <circle r="20" cx="728" cy="100" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="1"/>
+                    <text text-anchor="middle" x="728" y="104" fill="#a3a3a3" font-size="11">Podcasts</text>
+
+                    <!-- Calendar items -->
+                    <circle r="20" cx="622" cy="460" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="2"/>
+                    <text text-anchor="middle" x="622" y="464" fill="#a3a3a3" font-size="11">Daily Notes</text>
+
+                    <circle r="20" cx="566" cy="530" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="2"/>
+                    <text text-anchor="middle" x="566" y="534" fill="#a3a3a3" font-size="11">Reuniões</text>
+
+                    <circle r="20" cx="435" cy="530" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="2"/>
+                    <text text-anchor="middle" x="435" y="534" fill="#a3a3a3" font-size="11">Reflexões</text>
+
+                    <circle r="20" cx="436" cy="420" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="2"/>
+                    <text text-anchor="middle" x="436" y="424" fill="#a3a3a3" font-size="11">Logs</text>
+
+                    <!-- Efforts items -->
+                    <circle r="20" cx="329" cy="460" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="3"/>
+                    <text text-anchor="middle" x="329" y="464" fill="#a3a3a3" font-size="11">Projetos</text>
+
+                    <circle r="20" cx="230" cy="490" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="3"/>
+                    <text text-anchor="middle" x="230" y="494" fill="#a3a3a3" font-size="11">Metas</text>
+
+                    <circle r="20" cx="148" cy="440" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="3"/>
+                    <text text-anchor="middle" x="148" y="444" fill="#a3a3a3" font-size="11">Tarefas</text>
+
+                    <circle r="20" cx="161" cy="340" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="3"/>
+                    <text text-anchor="middle" x="161" y="344" fill="#a3a3a3" font-size="11">Hábitos</text>
+
+                    <!-- Notas items -->
+                    <circle r="20" cx="375" cy="80" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="4"/>
+                    <text text-anchor="middle" x="375" y="84" fill="#a3a3a3" font-size="11">Fleeting</text>
+
+                    <circle r="20" cx="254" cy="220" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="4"/>
+                    <text text-anchor="middle" x="254" y="224" fill="#a3a3a3" font-size="11">Literature</text>
+
+                    <circle r="20" cx="185" cy="180" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="4"/>
+                    <text text-anchor="middle" x="185" y="184" fill="#a3a3a3" font-size="11">Permanent</text>
+
+                    <circle r="20" cx="201" cy="90" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="4"/>
+                    <text text-anchor="middle" x="201" y="94" fill="#a3a3a3" font-size="11">MOCs</text>
+
+                    <!-- Ideias items -->
+                    <circle r="20" cx="780" cy="340" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="5"/>
+                    <text text-anchor="middle" x="780" y="344" fill="#a3a3a3" font-size="11">Insights</text>
+
+                    <circle r="20" cx="800" cy="420" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="5"/>
+                    <text text-anchor="middle" x="800" y="424" fill="#a3a3a3" font-size="11">Conceitos</text>
+
+                    <circle r="20" cx="750" cy="480" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="5"/>
+                    <text text-anchor="middle" x="750" y="484" fill="#a3a3a3" font-size="11">Perguntas</text>
+
+                    <circle r="20" cx="640" cy="460" fill="#1a1a1a" stroke-width="0" opacity="0.8" class="node" data-group="5"/>
+                    <text text-anchor="middle" x="640" y="464" fill="#a3a3a3" font-size="11">Citações</text>
+                </g>
+            </svg>
+        </div>
+
+        <script>
+        // Knowledge Graph Animation with Expand + Float effect
+        (function() {
+            const svg = document.getElementById('knowledge-graph');
+            if (!svg) return;
+
+            const centerX = 449.5;
+            const centerY = 275;
+
+            const nodes = svg.querySelectorAll('.node');
+            const categories = svg.querySelectorAll('.categories circle');
+            const allCircles = [...nodes, ...categories];
+
+            // Store original (final) positions
+            const finalPositions = [];
+            allCircles.forEach((el, i) => {
+                finalPositions[i] = {
+                    cx: parseFloat(el.getAttribute('cx')),
+                    cy: parseFloat(el.getAttribute('cy'))
+                };
+                // Start all elements at center
+                el.setAttribute('cx', centerX);
+                el.setAttribute('cy', centerY);
+                el.style.opacity = '0';
+
+                // Also hide and center associated text
+                const text = el.nextElementSibling;
+                if (text && text.tagName === 'text') {
+                    text.setAttribute('x', centerX);
+                    text.setAttribute('y', centerY);
+                    text.style.opacity = '0';
+                }
+            });
+
+            // Hide lines initially
+            const lines = svg.querySelectorAll('.links line');
+            lines.forEach(line => {
+                line.style.opacity = '0';
+            });
+
+            // Floating animation parameters
+            const floatParams = allCircles.map(() => ({
+                speedX: 0.3 + Math.random() * 0.4,
+                speedY: 0.3 + Math.random() * 0.4,
+                ampX: 2 + Math.random() * 4,
+                ampY: 2 + Math.random() * 4,
+                phaseX: Math.random() * Math.PI * 2,
+                phaseY: Math.random() * Math.PI * 2
+            }));
+
+            let hasExpanded = false;
+            let expandStartTime = null;
+            const expandDuration = 1200; // ms
+
+            // Easing function for smooth animation
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+
+            function expandAndFloat(timestamp) {
+                if (!expandStartTime) expandStartTime = timestamp;
+                const elapsed = timestamp - expandStartTime;
+                const progress = Math.min(elapsed / expandDuration, 1);
+                const easedProgress = easeOutCubic(progress);
+
+                allCircles.forEach((el, i) => {
+                    const final = finalPositions[i];
+                    const p = floatParams[i];
+
+                    // Calculate current position during expansion
+                    let currentX = centerX + (final.cx - centerX) * easedProgress;
+                    let currentY = centerY + (final.cy - centerY) * easedProgress;
+
+                    // Add floating effect after expansion starts
+                    if (progress > 0.3) {
+                        const floatElapsed = (elapsed - expandDuration * 0.3) / 1000;
+                        const floatStrength = Math.min((progress - 0.3) / 0.7, 1);
+                        currentX += Math.sin(floatElapsed * p.speedX + p.phaseX) * p.ampX * floatStrength;
+                        currentY += Math.sin(floatElapsed * p.speedY + p.phaseY) * p.ampY * floatStrength;
+                    }
+
+                    el.setAttribute('cx', currentX);
+                    el.setAttribute('cy', currentY);
+                    el.style.opacity = Math.min(easedProgress * 1.5, 0.9);
+
+                    // Move associated text
+                    const text = el.nextElementSibling;
+                    if (text && text.tagName === 'text') {
+                        text.setAttribute('x', currentX);
+                        text.setAttribute('y', currentY + 4);
+                        text.style.opacity = Math.min(easedProgress * 1.5, 1);
+                    }
+                });
+
+                // Fade in lines
+                lines.forEach(line => {
+                    line.style.opacity = Math.min(easedProgress * 0.8, 0.6);
+                });
+
+                // Continue animation
+                if (progress < 1) {
+                    requestAnimationFrame(expandAndFloat);
+                } else {
+                    // Switch to pure floating animation
+                    requestAnimationFrame(floatOnly);
+                }
+            }
+
+            let floatStartTime = null;
+            function floatOnly(timestamp) {
+                if (!floatStartTime) floatStartTime = timestamp;
+                const elapsed = (timestamp - floatStartTime) / 1000;
+
+                allCircles.forEach((el, i) => {
+                    const final = finalPositions[i];
+                    const p = floatParams[i];
+
+                    const offsetX = Math.sin(elapsed * p.speedX + p.phaseX) * p.ampX;
+                    const offsetY = Math.sin(elapsed * p.speedY + p.phaseY) * p.ampY;
+
+                    el.setAttribute('cx', final.cx + offsetX);
+                    el.setAttribute('cy', final.cy + offsetY);
+
+                    const text = el.nextElementSibling;
+                    if (text && text.tagName === 'text') {
+                        text.setAttribute('x', final.cx + offsetX);
+                        text.setAttribute('y', final.cy + offsetY + 4);
+                    }
+                });
+
+                requestAnimationFrame(floatOnly);
+            }
+
+            // Intersection Observer to trigger animation when section is visible
+            const graphSection = document.querySelector('.graph-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasExpanded) {
+                        hasExpanded = true;
+                        requestAnimationFrame(expandAndFloat);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            if (graphSection) {
+                observer.observe(graphSection);
+            }
+        })();
+        </script>
+
+        <div style="text-align: center; margin-top: 32px;">
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                Este é o Graph View do Obsidian — a visualização que mostra como suas notas se conectam.
+            </p>
+            <a href="#investimento" class="btn-secondary">Quero criar meu grafo de conhecimento</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Obsidian na Era da IA -->
+<section class="section" style="background: linear-gradient(180deg, var(--bg-main) 0%, rgba(155, 81, 224, 0.03) 50%, var(--bg-main) 100%);">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow" style="color: var(--obsidian);">A Nova Fronteira</div>
+            <h2 class="section-title">O <span style="color: var(--obsidian);">Obsidian</span> nunca foi tão poderoso</h2>
+            <p class="section-subtitle">
+                Estamos vivendo uma revolução. A IA está mudando tudo — menos uma coisa: <strong>quem tem contexto, vence.</strong>
+            </p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card" style="border-color: rgba(155, 81, 224, 0.2);">
+                <div class="benefit-icon" style="background: var(--obsidian-light);">
+                    <svg viewBox="0 0 24 24" style="stroke: var(--obsidian);"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <h3>Contexto é o novo ouro</h3>
+                <p>A IA não lê mentes. Ela lê contexto. Quanto mais rico e organizado for o seu segundo cérebro, mais poderosa a IA se torna nas suas mãos.</p>
+            </div>
+
+            <div class="benefit-card" style="border-color: rgba(155, 81, 224, 0.2);">
+                <div class="benefit-icon" style="background: var(--obsidian-light);">
+                    <svg viewBox="0 0 24 24" style="stroke: var(--obsidian);"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                </div>
+                <h3>Engenharia de Contexto</h3>
+                <p>Prompts são commodities. O que diferencia quem extrai 10x mais da IA é a qualidade do contexto que você alimenta. Seu Obsidian vira uma mina de ouro.</p>
+            </div>
+
+            <div class="benefit-card" style="border-color: rgba(155, 81, 224, 0.2);">
+                <div class="benefit-icon" style="background: var(--obsidian-light);">
+                    <svg viewBox="0 0 24 24" style="stroke: var(--obsidian);"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+                </div>
+                <h3>Base de conhecimento viva</h3>
+                <p>Cada nota, cada conexão, cada insight que você captura no Obsidian se transforma em combustível para a IA trabalhar POR você, não contra você.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px; padding: 32px; background: rgba(155, 81, 224, 0.05); border-radius: 16px; border: 1px solid rgba(155, 81, 224, 0.1);">
+            <p style="font-family: 'Source Serif 4', Georgia, serif; font-size: clamp(20px, 2.5vw, 26px); color: var(--text-white); margin-bottom: 16px;">
+                "Quem domina o Obsidian hoje, domina a IA amanhã."
+            </p>
+            <p style="color: var(--text-gray); font-size: 16px;">
+                Enquanto outros ficam perdidos em prompts mágicos, você constrói uma base sólida de contexto engenheirado.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Claude Code - O Multiplicador -->
+<section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow" style="color: var(--obsidian);">O Próximo Nível</div>
+            <h2 class="section-title">E quando você conecta com o <span style="color: var(--obsidian);">Claude Code</span>?</h2>
+            <p class="section-subtitle">
+                Seu segundo cérebro ganha superpoderes. Literalmente.
+            </p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card" style="border-color: rgba(155, 81, 224, 0.2);">
+                <div class="benefit-icon" style="background: var(--obsidian-light);">
+                    <svg viewBox="0 0 24 24" style="stroke: var(--obsidian);"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+                </div>
+                <h3>Escale qualquer ideia</h3>
+                <p>Aquela nota solta que você fez há 6 meses? O Claude Code encontra, conecta e transforma em projeto executável em minutos.</p>
+            </div>
+
+            <div class="benefit-card" style="border-color: rgba(155, 81, 224, 0.2);">
+                <div class="benefit-icon" style="background: var(--obsidian-light);">
+                    <svg viewBox="0 0 24 24" style="stroke: var(--obsidian);"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-10.14l2.83 2.83m4.48 4.48l2.83 2.83"/></svg>
+                </div>
+                <h3>IA que entende VOCÊ</h3>
+                <p>Esqueça respostas genéricas. Com seu contexto organizado, a IA responde como se conhecesse sua história, seus projetos, seus objetivos.</p>
+            </div>
+
+            <div class="benefit-card" style="border-color: rgba(155, 81, 224, 0.2);">
+                <div class="benefit-icon" style="background: var(--obsidian-light);">
+                    <svg viewBox="0 0 24 24" style="stroke: var(--obsidian);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <h3>Produtividade brutal</h3>
+                <p>Artigos, emails, apresentações, código, análises — tudo sai em fração do tempo. Porque o contexto já está lá, pronto para ser usado.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 64px;">
+            <p style="font-size: 18px; color: var(--text-light); max-width: 700px; margin: 0 auto 24px;">
+                <strong style="color: var(--obsidian);">Obsidian + Claude Code</strong> = o stack mais poderoso para quem quer dominar a era da IA sem depender de ferramentas que vão e vêm.
+            </p>
+            <a href="#investimento" class="btn-primary">Quero esse poder</a>
+        </div>
+    </div>
+</section>
+
 <!-- Section 01.5: Metodologia ACE -->
 <section class="section section-dark">
     <div class="container">
@@ -1681,14 +2114,14 @@
 
             <div class="ace-card">
                 <div class="ace-letter">C</div>
-                <div class="ace-word">Calendar</div>
+                <div class="ace-word">Calendário</div>
                 <p class="ace-description">Seu registro no tempo. Daily notes, reuniões, reflexões e logs. Tudo que acontece na sua vida, organizado cronologicamente.</p>
             </div>
 
             <div class="ace-card">
                 <div class="ace-letter">E</div>
-                <div class="ace-word">Efforts</div>
-                <p class="ace-description">Suas ações e projetos. Diferente de "tarefas", Efforts são esforços que você puxa quando tem energia - não listas que te cobram.</p>
+                <div class="ace-word">Esforços</div>
+                <p class="ace-description">Suas ações e projetos. Diferente de "tarefas", Esforços são esforços que você puxa quando tem energia - não listas que te cobram.</p>
             </div>
         </div>
 
@@ -1707,8 +2140,8 @@
 <section class="section section-dark">
     <div class="container floating-icons-container">
         <!-- Floating App Icons -->
-        <div class="floating-icon" title="Roam Research"><img src="../assets/img/icons/icone-roam-research.png" alt="Icone Roam Research app de notas"></div>
-        <div class="floating-icon" title="Evernote"><img src="../assets/img/icons/icone-evernote.png" alt="Icone Evernote app de notas"></div>
+        <div class="floating-icon" title="Google Drive"><img src="../assets/img/icons/icone-google-drive.png" alt="Icone Google Drive"></div>
+        <div class="floating-icon" title="Google Docs"><img src="../assets/img/icons/icone-google-docs.png" alt="Icone Google Docs"></div>
         <div class="floating-icon" title="Notion"><img src="../assets/img/icons/icone-notion.jpg" alt="Icone Notion app de produtividade"></div>
         <div class="floating-icon" title="Google Keep"><img src="../assets/img/icons/icone-google-keep.png" alt="Icone Google Keep app de notas"></div>
         <div class="floating-icon" title="Bloco de Notas"><img src="../assets/img/icons/icone-bloco-notas.png" alt="Icone Bloco de Notas Windows"></div>
@@ -1726,10 +2159,10 @@
         <div class="central-logo-area">
             <div style="display: flex; flex-direction: column; align-items: center;">
                 <div class="obsidian-central">
-                    <img src="../assets/img/icons/icone-obsidian.png" alt="Logo Obsidian - Seu Segundo Cerebro">
+                    <img src="../assets/img/icons/icone-obsidian.svg" alt="Logo Obsidian - Seu Segundo Cerebro">
                 </div>
                 <div class="obsidian-label">
-                    <h3>Obsidian</h3>
+                    <h3 style="color: var(--obsidian);">Obsidian</h3>
                     <p>Seu Segundo Cérebro</p>
                 </div>
             </div>
@@ -1742,7 +2175,7 @@
     <div class="container">
         <div class="section-header">
             <div class="section-eyebrow">Veja na Prática</div>
-            <h2 class="section-title">O Obsidian em ação</h2>
+            <h2 class="section-title">O <span style="color: var(--obsidian);">Obsidian</span> em ação</h2>
         </div>
 
         <div class="video-feature-row">
@@ -1791,7 +2224,7 @@
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <div class="section-eyebrow">03 - O Obsidian na Prática</div>
+            <div class="section-eyebrow">03 - O <span style="color: var(--obsidian);">Obsidian</span> na Prática</div>
             <h2 class="section-title">Como funciona o curso</h2>
             <p class="section-subtitle">
                 Um método passo a passo para você sair do zero e ter seu Segundo Cérebro funcionando.

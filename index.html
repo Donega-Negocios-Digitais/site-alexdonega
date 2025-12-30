@@ -60,13 +60,9 @@
 
         /* ==================== HEADER/NAV ==================== */
         .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            position: relative;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(20px);
+            background: var(--bg-main);
             border-bottom: 1px solid var(--border);
         }
 
@@ -126,7 +122,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 24px 80px;
+            padding: 80px 24px;
             position: relative;
             overflow: hidden;
         }
@@ -979,10 +975,6 @@
             outline: none;
         }
 
-        /* Header scrolled state */
-        .header--scrolled {
-            background: rgba(10, 10, 10, 0.98);
-        }
     </style>
 </head>
 <body>
@@ -994,7 +986,6 @@
 <header class="header">
     <nav class="nav">
         <a href="#" class="nav-logo">Alex Donega</a>
-        <a href="#cursos" class="nav-cta">Ver Cursos</a>
         <button class="mobile-menu-btn">&#9776;</button>
     </nav>
 </header>
@@ -1139,7 +1130,7 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                 </div>
                 <h3>Carmona Ventures</h3>
-                <p>Diretor de Relacionamento no ecossistema Autobots. Conectando founders a capital estratégico, mentoria ativa e uma rede de +21 startups.</p>
+                <p>Analiso as startups do portfólio Autobots para reduzir churn, otimizar UX e escalar com funis e growth hacking. +21 startups, +R$150M em valuation.</p>
             </div>
 
             <div class="service-card">
@@ -1147,7 +1138,7 @@
                     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
                 </div>
                 <h3>MicroSaaS</h3>
-                <p>Fundador do Novo Envio (+1.300 clientes) e FalaZapp. Produtos enxutos que resolvem problemas reais e geram receita recorrente.</p>
+                <p>Validei essa metodologia criando o Novo Envio (+1.300 clientes) e FalaZapp — produtos enxutos com UX simples que retêm usuários.</p>
             </div>
         </div>
     </div>
@@ -1497,28 +1488,6 @@
             }
         }
     });
-
-    // Header scroll effect with requestAnimationFrame (throttled)
-    let lastScrollY = 0;
-    let ticking = false;
-    const header = document.querySelector('.header');
-
-    function updateHeader() {
-        if (lastScrollY > 50) {
-            header.classList.add('header--scrolled');
-        } else {
-            header.classList.remove('header--scrolled');
-        }
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', function() {
-        lastScrollY = window.scrollY;
-        if (!ticking) {
-            window.requestAnimationFrame(updateHeader);
-            ticking = true;
-        }
-    }, { passive: true });
 
     // Newsletter Modal
     function openNewsletterModal() {
