@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ==================== MOBILE-FIRST CSS ==================== */
         * {
             margin: 0;
             padding: 0;
@@ -50,17 +51,19 @@
             font-size: 16px;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 16px;
         }
 
-        /* ==================== HEADER/NAV ==================== */
+        /* ==================== HEADER/NAV (Mobile-First) ==================== */
         .header {
-            position: relative;
+            position: sticky;
+            top: 0;
             z-index: 1000;
             background: var(--bg-main);
             border-bottom: 1px solid var(--border);
@@ -70,22 +73,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 24px;
+            padding: 16px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .nav-logo {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 500;
             color: var(--text-white);
             text-decoration: none;
         }
 
         .nav-links {
-            display: flex;
-            gap: 32px;
+            display: none;
             list-style: none;
         }
 
@@ -95,6 +97,7 @@
             font-size: 14px;
             font-weight: 500;
             transition: color 0.2s;
+            padding: 8px 0;
         }
 
         .nav-links a:hover {
@@ -102,27 +105,91 @@
         }
 
         .nav-cta {
-            background: var(--accent);
-            color: var(--bg-main);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
+            display: none;
         }
 
-        .nav-cta:hover {
-            background: var(--accent-hover);
-            transform: translateY(-1px);
-        }
-
-        /* ==================== HERO ==================== */
-        .hero {
-            min-height: 100vh;
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
             display: flex;
             align-items: center;
-            padding: 80px 24px;
+            justify-content: center;
+            background: none;
+            border: none;
+            color: var(--text-white);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-main);
+            z-index: 999;
+            padding: 80px 24px 24px;
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--text-white);
+            font-size: 32px;
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-menu-links a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 16px 0;
+            display: block;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-menu-cta {
+            margin-top: auto;
+            background: var(--accent);
+            color: var(--bg-main);
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        /* ==================== HERO (Mobile-First) ==================== */
+        .hero {
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            padding: 40px 16px 60px;
             position: relative;
             overflow: hidden;
         }
@@ -132,24 +199,25 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 60%;
+            width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 70% 30%, rgba(216, 119, 87, 0.08) 0%, transparent 60%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(216, 119, 87, 0.08) 0%, transparent 60%);
             pointer-events: none;
         }
 
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
             align-items: center;
         }
 
         .hero-text {
             position: relative;
             z-index: 1;
+            text-align: center;
         }
 
         .hero-badge {
@@ -158,21 +226,21 @@
             gap: 8px;
             background: var(--accent-light);
             border: 1px solid rgba(216, 119, 87, 0.3);
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 100px;
-            font-size: 13px;
+            font-size: 12px;
             color: var(--accent);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .hero-title {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 56px;
+            font-size: 32px;
             font-weight: 500;
-            line-height: 1.1;
+            line-height: 1.15;
             color: var(--text-white);
-            margin-bottom: 24px;
-            letter-spacing: -1px;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
 
         .hero-title .highlight {
@@ -181,80 +249,87 @@
         }
 
         .hero-subtitle {
-            font-size: 20px;
+            font-size: 17px;
             color: var(--text-gray);
             line-height: 1.7;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .hero-description {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-muted);
             line-height: 1.7;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .hero-stats {
-            display: flex;
-            gap: 48px;
-            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+            width: 100%;
         }
 
         .hero-stat {
-            text-align: left;
+            text-align: center;
         }
 
         .hero-stat-number {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 40px;
+            font-size: 28px;
             font-weight: 500;
             color: var(--text-white);
             line-height: 1;
         }
 
         .hero-stat-label {
-            font-size: 14px;
+            font-size: 11px;
             color: var(--text-muted);
             margin-top: 4px;
         }
 
         .hero-cta-group {
             display: flex;
-            gap: 16px;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             background: var(--accent);
             color: var(--bg-main);
-            padding: 16px 28px;
+            padding: 16px 24px;
             border-radius: 10px;
             font-size: 15px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s;
+            min-height: 52px;
         }
 
         .btn-primary:hover {
             background: var(--accent-hover);
-            transform: translateY(-2px);
         }
 
         .btn-secondary {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             background: transparent;
             color: var(--text-white);
-            padding: 16px 28px;
+            padding: 16px 24px;
             border-radius: 10px;
             font-size: 15px;
             font-weight: 600;
             text-decoration: none;
             border: 1px solid var(--border);
             transition: all 0.2s;
+            min-height: 52px;
         }
 
         .btn-secondary:hover {
@@ -264,11 +339,14 @@
 
         .hero-image {
             position: relative;
+            width: 100%;
+            max-width: 280px;
+            order: -1;
         }
 
         .hero-image-container {
             position: relative;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
             background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
             aspect-ratio: 4/5;
@@ -286,14 +364,14 @@
         .hero-image-placeholder::after {
             content: 'ALEX';
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 48px;
+            font-size: 36px;
             color: rgba(255,255,255,0.2);
             font-weight: 500;
         }
 
-        /* ==================== SECTION STYLES ==================== */
+        /* ==================== SECTION STYLES (Mobile-First) ==================== */
         .section {
-            padding: 100px 24px;
+            padding: 60px 16px;
         }
 
         .section-dark {
@@ -307,38 +385,38 @@
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 64px;
+            margin: 0 auto 40px;
         }
 
         .section-eyebrow {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .section-title {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 40px;
+            font-size: 28px;
             font-weight: 500;
             color: var(--text-white);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             line-height: 1.2;
         }
 
         .section-subtitle {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--text-gray);
             line-height: 1.7;
         }
 
-        /* ==================== STORY SECTION ==================== */
+        /* ==================== STORY SECTION (Mobile-First) ==================== */
         .story-content {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
             align-items: start;
             max-width: 1200px;
             margin: 0 auto;
@@ -346,47 +424,47 @@
 
         .story-intro h3 {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 32px;
+            font-size: 26px;
             font-weight: 500;
             color: var(--text-white);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .story-intro p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-gray);
             line-height: 1.8;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .story-intro blockquote {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 20px;
+            font-size: 18px;
             font-style: italic;
             color: var(--accent);
-            padding-left: 24px;
+            padding-left: 20px;
             border-left: 3px solid var(--accent);
-            margin: 32px 0;
+            margin: 28px 0;
         }
 
         .story-intro cite {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
             font-style: normal;
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
         /* Timeline */
         .timeline {
             position: relative;
-            padding-left: 32px;
+            padding-left: 28px;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 7px;
+            left: 6px;
             top: 0;
             bottom: 0;
             width: 2px;
@@ -395,7 +473,7 @@
 
         .timeline-item {
             position: relative;
-            padding-bottom: 40px;
+            padding-bottom: 32px;
         }
 
         .timeline-item:last-child {
@@ -405,10 +483,10 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -32px;
-            top: 6px;
-            width: 16px;
-            height: 16px;
+            left: -28px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: var(--bg-main);
             border: 3px solid var(--accent);
@@ -419,30 +497,30 @@
         }
 
         .timeline-year {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .timeline-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-white);
             margin-bottom: 6px;
         }
 
+        .timeline-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 4px;
+        }
+
         .timeline-desc {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
             line-height: 1.6;
         }
 
-        /* ==================== SERVICES ==================== */
+        /* ==================== SERVICES (Mobile-First) ==================== */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            grid-template-columns: 1fr;
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -451,48 +529,47 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 40px 32px;
+            padding: 28px 24px;
             transition: all 0.3s;
         }
 
         .service-card:hover {
             border-color: var(--accent);
-            transform: translateY(-4px);
         }
 
         .service-icon {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             background: var(--accent-light);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .service-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             stroke: var(--accent);
             fill: none;
             stroke-width: 2;
         }
 
         .service-card h3 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--text-white);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .service-card p {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-gray);
             line-height: 1.7;
         }
 
-        /* ==================== COURSES (DESTAQUE) ==================== */
+        /* ==================== COURSES (Mobile-First) ==================== */
         .courses-section {
             background: linear-gradient(135deg, rgba(216, 119, 87, 0.05) 0%, transparent 50%);
             border-top: 1px solid var(--border);
@@ -501,8 +578,8 @@
 
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            grid-template-columns: 1fr;
+            gap: 24px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -510,62 +587,60 @@
         .course-card {
             background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 26, 26, 0.8) 100%);
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             transition: all 0.3s;
         }
 
         .course-card:hover {
             border-color: var(--accent);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(216, 119, 87, 0.15);
         }
 
         .course-badge {
             display: inline-block;
             background: var(--accent);
             color: var(--bg-main);
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 4px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .course-content {
-            padding: 40px;
+            padding: 28px 24px;
         }
 
         .course-card h3 {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 500;
             color: var(--text-white);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             line-height: 1.3;
         }
 
         .course-card p {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-gray);
             line-height: 1.7;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .course-features {
             list-style: none;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .course-features li {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            font-size: 14px;
+            gap: 10px;
+            font-size: 13px;
             color: var(--text-gray);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .course-features .check {
@@ -577,29 +652,29 @@
         .course-cta {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding-top: 24px;
+            justify-content: center;
+            padding-top: 20px;
             border-top: 1px solid var(--border);
         }
 
         .course-price {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 500;
             color: var(--text-white);
         }
 
         .course-price span {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
             font-family: 'Inter', sans-serif;
         }
 
-        /* ==================== PORTFOLIO ==================== */
+        /* ==================== PORTFOLIO (Mobile-First) ==================== */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            grid-template-columns: 1fr;
+            gap: 16px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -607,8 +682,8 @@
         .portfolio-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
+            border-radius: 14px;
+            padding: 24px 20px;
             transition: all 0.3s;
         }
 
@@ -618,13 +693,13 @@
 
         .portfolio-status {
             display: inline-block;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 4px 10px;
+            padding: 4px 8px;
             border-radius: 4px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .portfolio-status.active {
@@ -643,64 +718,66 @@
         }
 
         .portfolio-card h3 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--text-white);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .portfolio-card p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-gray);
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .portfolio-link {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--accent);
             text-decoration: none;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            padding: 8px 0;
+            min-height: 44px;
         }
 
         .portfolio-link:hover {
             text-decoration: underline;
         }
 
-        /* ==================== PHILOSOPHY ==================== */
+        /* ==================== PHILOSOPHY (Mobile-First) ==================== */
         .philosophy-box {
             max-width: 900px;
             margin: 0 auto;
             background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 26, 26, 0.5) 100%);
             border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 64px;
+            border-radius: 20px;
+            padding: 32px 24px;
             text-align: center;
         }
 
         .philosophy-quote {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 28px;
+            font-size: 20px;
             font-weight: 400;
             color: var(--text-white);
             line-height: 1.5;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
 
         .philosophy-author {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
         }
 
         .philosophy-metrics {
-            display: flex;
-            justify-content: center;
-            gap: 64px;
-            margin-top: 48px;
-            padding-top: 48px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-top: 32px;
+            padding-top: 32px;
             border-top: 1px solid var(--border);
         }
 
@@ -710,81 +787,45 @@
 
         .philosophy-metric-number {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 48px;
+            font-size: 36px;
             font-weight: 500;
             color: var(--text-white);
         }
 
         .philosophy-metric-label {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
-        /* ==================== SOCIAL/CONTENT ==================== */
-        .social-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .social-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-        }
-
-        .social-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--text-white);
-            margin-bottom: 12px;
-        }
-
-        .social-card p {
-            font-size: 15px;
-            color: var(--text-gray);
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-
-        .social-handle {
-            font-size: 14px;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        /* ==================== CTA SECTION ==================== */
+        /* ==================== CTA SECTION (Mobile-First) ==================== */
         .cta-section {
             text-align: center;
-            padding: 120px 24px;
+            padding: 60px 16px;
             background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-main) 100%);
         }
 
         .cta-title {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 48px;
+            font-size: 32px;
             font-weight: 500;
             color: var(--text-white);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             line-height: 1.2;
         }
 
         .cta-subtitle {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--text-gray);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* ==================== FOOTER ==================== */
+        /* ==================== FOOTER (Mobile-First) ==================== */
         .footer {
-            padding: 64px 24px;
+            padding: 48px 16px;
             border-top: 1px solid var(--border);
         }
 
@@ -792,39 +833,38 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
+            grid-template-columns: 1fr;
+            gap: 32px;
         }
 
         .footer-brand h4 {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 500;
             color: var(--text-white);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .footer-brand p {
             font-size: 14px;
             color: var(--text-muted);
             line-height: 1.7;
-            max-width: 320px;
         }
 
         .footer-brand .signature {
             font-style: italic;
             color: var(--accent);
-            margin-top: 16px;
+            margin-top: 12px;
             font-size: 13px;
         }
 
         .footer-column h5 {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--text-gray);
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .footer-column a {
@@ -832,7 +872,8 @@
             font-size: 14px;
             color: var(--text-muted);
             text-decoration: none;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
+            padding: 4px 0;
             transition: color 0.2s;
         }
 
@@ -842,13 +883,14 @@
 
         .footer-bottom {
             max-width: 1200px;
-            margin: 48px auto 0;
-            padding-top: 32px;
+            margin: 32px auto 0;
+            padding-top: 24px;
             border-top: 1px solid var(--border);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
+            flex-direction: column;
+            gap: 12px;
+            text-align: center;
+            font-size: 12px;
             color: var(--text-muted);
         }
 
@@ -859,99 +901,6 @@
 
         .footer-bottom a:hover {
             color: var(--text-white);
-        }
-
-        /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .hero-image {
-                order: -1;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .hero-title {
-                font-size: 44px;
-            }
-
-            .story-content {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .services-grid,
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: 36px;
-            }
-
-            .hero-stats {
-                flex-wrap: wrap;
-                gap: 32px;
-            }
-
-            .hero-cta-group {
-                flex-direction: column;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .services-grid,
-            .portfolio-grid,
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .philosophy-metrics {
-                flex-wrap: wrap;
-                gap: 32px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-        }
-
-        /* ==================== MOBILE MENU ==================== */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-white);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
         }
 
         /* ==================== ACCESSIBILITY ==================== */
@@ -975,6 +924,396 @@
             outline: none;
         }
 
+        /* ==================== TABLET (min-width: 768px) ==================== */
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .nav {
+                padding: 20px 24px;
+            }
+
+            .nav-logo {
+                font-size: 20px;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 24px;
+            }
+
+            .nav-cta {
+                display: inline-flex;
+                background: var(--accent);
+                color: var(--bg-main);
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.2s;
+            }
+
+            .nav-cta:hover {
+                background: var(--accent-hover);
+                transform: translateY(-1px);
+            }
+
+            .hero {
+                padding: 60px 24px 80px;
+            }
+
+            .hero-content {
+                gap: 48px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                gap: 32px;
+            }
+
+            .hero-stat-number {
+                font-size: 36px;
+            }
+
+            .hero-stat-label {
+                font-size: 13px;
+            }
+
+            .hero-cta-group {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .hero-image {
+                max-width: 320px;
+            }
+
+            .section {
+                padding: 80px 24px;
+            }
+
+            .section-header {
+                margin-bottom: 48px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .section-subtitle {
+                font-size: 17px;
+            }
+
+            .story-intro h3 {
+                font-size: 30px;
+            }
+
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 28px;
+            }
+
+            .course-content {
+                padding: 32px;
+            }
+
+            .course-card h3 {
+                font-size: 24px;
+            }
+
+            .philosophy-box {
+                padding: 48px 40px;
+            }
+
+            .philosophy-quote {
+                font-size: 24px;
+            }
+
+            .philosophy-metrics {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+
+            .philosophy-metric-number {
+                font-size: 42px;
+            }
+
+            .cta-section {
+                padding: 80px 24px;
+            }
+
+            .cta-title {
+                font-size: 40px;
+            }
+
+            .footer {
+                padding: 56px 24px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        /* ==================== DESKTOP (min-width: 1024px) ==================== */
+        @media (min-width: 1024px) {
+            .nav-links {
+                gap: 32px;
+            }
+
+            .hero {
+                min-height: 100vh;
+                padding: 80px 24px;
+            }
+
+            .hero::before {
+                width: 60%;
+                background: radial-gradient(ellipse at 70% 30%, rgba(216, 119, 87, 0.08) 0%, transparent 60%);
+            }
+
+            .hero-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 80px;
+            }
+
+            .hero-text {
+                text-align: left;
+            }
+
+            .hero-title {
+                font-size: 56px;
+                letter-spacing: -1px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .hero-stats {
+                justify-content: flex-start;
+                gap: 48px;
+            }
+
+            .hero-stat {
+                text-align: left;
+            }
+
+            .hero-stat-number {
+                font-size: 40px;
+            }
+
+            .hero-stat-label {
+                font-size: 14px;
+            }
+
+            .hero-cta-group {
+                justify-content: flex-start;
+            }
+
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                transform: translateY(-2px);
+            }
+
+            .hero-image {
+                order: 0;
+                max-width: none;
+            }
+
+            .hero-image-container {
+                border-radius: 24px;
+            }
+
+            .hero-image-placeholder::after {
+                font-size: 48px;
+            }
+
+            .section {
+                padding: 100px 24px;
+            }
+
+            .section-header {
+                margin-bottom: 64px;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .section-subtitle {
+                font-size: 18px;
+            }
+
+            .story-content {
+                display: grid;
+                grid-template-columns: 1fr 1.2fr;
+                gap: 80px;
+            }
+
+            .story-intro h3 {
+                font-size: 32px;
+            }
+
+            .story-intro p {
+                font-size: 16px;
+            }
+
+            .story-intro blockquote {
+                font-size: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+
+            .service-card {
+                padding: 40px 32px;
+            }
+
+            .service-card:hover {
+                transform: translateY(-4px);
+            }
+
+            .service-icon {
+                width: 56px;
+                height: 56px;
+            }
+
+            .service-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .service-card h3 {
+                font-size: 20px;
+            }
+
+            .service-card p {
+                font-size: 15px;
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+
+            .course-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 60px rgba(216, 119, 87, 0.15);
+            }
+
+            .course-content {
+                padding: 40px;
+            }
+
+            .course-card h3 {
+                font-size: 26px;
+            }
+
+            .course-price {
+                font-size: 32px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+
+            .portfolio-card {
+                padding: 32px;
+            }
+
+            .portfolio-card h3 {
+                font-size: 20px;
+            }
+
+            .portfolio-card p {
+                font-size: 14px;
+            }
+
+            .philosophy-box {
+                padding: 64px;
+                border-radius: 24px;
+            }
+
+            .philosophy-quote {
+                font-size: 28px;
+            }
+
+            .philosophy-metrics {
+                gap: 64px;
+                margin-top: 48px;
+                padding-top: 48px;
+            }
+
+            .philosophy-metric-number {
+                font-size: 48px;
+            }
+
+            .cta-section {
+                padding: 120px 24px;
+            }
+
+            .cta-title {
+                font-size: 48px;
+            }
+
+            .cta-subtitle {
+                font-size: 18px;
+            }
+
+            .footer {
+                padding: 64px 24px;
+            }
+
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 48px;
+            }
+
+            .footer-brand h4 {
+                font-size: 24px;
+            }
+
+            .footer-bottom {
+                margin-top: 48px;
+                padding-top: 32px;
+                font-size: 13px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -985,10 +1324,31 @@
 <!-- Header -->
 <header class="header">
     <nav class="nav">
-        <a href="#" class="nav-logo">Alex Donega</a>
-        <button class="mobile-menu-btn">&#9776;</button>
+        <a href="/" class="nav-logo">Alex Donega</a>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#conteudo">Conteúdo</a></li>
+        </ul>
+        <a href="https://wa.me/5545999506444" target="_blank" class="nav-cta">Falar Comigo</a>
+        <button class="mobile-menu-btn" onclick="openMobileMenu()" aria-label="Abrir menu">&#9776;</button>
     </nav>
 </header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Fechar menu">&times;</button>
+    <ul class="mobile-menu-links">
+        <li><a href="#sobre" onclick="closeMobileMenu()">Sobre</a></li>
+        <li><a href="#servicos" onclick="closeMobileMenu()">Serviços</a></li>
+        <li><a href="#portfolio" onclick="closeMobileMenu()">Portfólio</a></li>
+        <li><a href="#cursos" onclick="closeMobileMenu()">Cursos</a></li>
+        <li><a href="#conteudo" onclick="closeMobileMenu()">Conteúdo</a></li>
+    </ul>
+    <a href="https://wa.me/5545999506444" target="_blank" class="mobile-menu-cta" onclick="closeMobileMenu()">Falar Comigo</a>
+</div>
 
 <!-- Hero -->
 <section class="hero" id="main-content">
@@ -1144,87 +1504,6 @@
     </div>
 </section>
 
-<!-- Courses Section (DESTAQUE) -->
-<section class="section courses-section" id="cursos">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-eyebrow">Aprenda Comigo</div>
-            <h2 class="section-title">Cursos para dominar IA de verdade</h2>
-            <p class="section-subtitle">
-                Já que gosto de estudar e me atualizar, posso ser seu Guia.
-            </p>
-        </div>
-
-        <div class="courses-grid">
-            <!-- Course 1: Engenharia de Contexto aplicado ao Marketing Digital -->
-            <div class="course-card">
-                <div class="course-content">
-                    <span class="course-badge">Novo</span>
-                    <h3>Engenharia de Contexto aplicado ao Marketing Digital</h3>
-                    <p>
-                        Aprenda a aplicar Context Engineering para criar campanhas, copies e estratégias de marketing que realmente convertem usando IA.
-                    </p>
-                    <ul class="course-features">
-                        <li><span class="check">&#10003;</span> Context Engineering para copywriting</li>
-                        <li><span class="check">&#10003;</span> Criação de campanhas com IA</li>
-                        <li><span class="check">&#10003;</span> Automação de conteúdo para redes sociais</li>
-                        <li><span class="check">&#10003;</span> Templates e frameworks prontos</li>
-                        <li><span class="check">&#10003;</span> Estratégias de marketing digital com IA</li>
-                    </ul>
-                    <div class="course-cta">
-                        <div class="course-price">R$497 <span>ou 12x R$49</span></div>
-                        <a href="https://alexdonega.com.br/engenharia-de-contexto-aplicado-ao-marketing-digital/" class="btn-primary">Ver Detalhes &rarr;</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 2: Claude Code em 1 dia -->
-            <div class="course-card">
-                <div class="course-content">
-                    <span class="course-badge">Em 1 Dia</span>
-                    <h3>Claude Code em 1 dia</h3>
-                    <p>
-                        Domine o Claude Code — a CLI oficial da Anthropic — em apenas um dia. Workshop intensivo e prático para transformar sua produtividade com IA.
-                    </p>
-                    <ul class="course-features">
-                        <li><span class="check">&#10003;</span> Setup completo do Claude Code</li>
-                        <li><span class="check">&#10003;</span> Integração com Obsidian e workflows</li>
-                        <li><span class="check">&#10003;</span> Skills, agents e automações práticas</li>
-                        <li><span class="check">&#10003;</span> Templates prontos para copiar</li>
-                        <li><span class="check">&#10003;</span> Acompanhamento ao vivo</li>
-                    </ul>
-                    <div class="course-cta">
-                        <div class="course-price">R$497 <span>ou 12x R$49</span></div>
-                        <a href="https://alexdonega.com.br/claude-code-em-1-dia/" class="btn-primary">Ver Detalhes &rarr;</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course 3: Segundo Cérebro com Obsidian -->
-            <div class="course-card">
-                <div class="course-content">
-                    <span class="course-badge">Curso Online</span>
-                    <h3>Clone seu Cérebro, Domine o Obsidian</h3>
-                    <p>
-                        Aprenda a construir seu Segundo Cérebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueça nada importante.
-                    </p>
-                    <ul class="course-features">
-                        <li><span class="check">&#10003;</span> Setup completo do Obsidian</li>
-                        <li><span class="check">&#10003;</span> Sistema de captura e organização</li>
-                        <li><span class="check">&#10003;</span> Links bidirecionais e grafos</li>
-                        <li><span class="check">&#10003;</span> Templates e Vault Starter Kit</li>
-                        <li><span class="check">&#10003;</span> Acesso vitalício + comunidade</li>
-                    </ul>
-                    <div class="course-cta">
-                        <div class="course-price">R$297 <span>ou 12x R$29</span></div>
-                        <a href="https://alexdonega.com.br/segundo-cerebro-com-obsidian/" class="btn-primary">Ver Detalhes &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Philosophy Section -->
 <section class="section section-gradient">
     <div class="container">
@@ -1235,10 +1514,6 @@
             <p class="philosophy-author">— Diego Carmona, sobre eu ser acelerado</p>
 
             <div class="philosophy-metrics">
-                <div class="philosophy-metric">
-                    <div class="philosophy-metric-number">17</div>
-                    <div class="philosophy-metric-label">Países visitados como mochileiro</div>
-                </div>
                 <div class="philosophy-metric">
                     <div class="philosophy-metric-number">43+</div>
                     <div class="philosophy-metric-label">Artigos de Context Engineering estudados</div>
@@ -1354,6 +1629,69 @@
 
             <div class="portfolio-card">
                 <span class="portfolio-status active">Mentor</span>
+                <h3>Z-MCP</h3>
+                <p>WhatsApp + IA em minutos. Transcrição de áudios, análise de imagens e automações inteligentes via API REST e protocolo MCP.</p>
+                <a href="https://z-mcp.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
+                <h3>Arpa Solar</h3>
+                <p>Plataforma de simulação e propostas de energia solar fotovoltaica. Simulação de economia, visualização de telhado com heatmap de irradiação solar.</p>
+                <a href="https://arpaenergia.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
+                <h3>Impact</h3>
+                <p>Soluções financeiras para organizações de impacto. Conta digital, câmbio, gestão de projetos sociais e ambientais. +R$100M destinados para impacto.</p>
+                <a href="https://www.impact-br.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
+                <h3>Evolutto</h3>
+                <p>Plataforma que revolucionou o mercado de consultoria no Brasil. Gestão, rastreabilidade e atendimento para consultorias digitais. +4.000 empresas atendidas.</p>
+                <a href="https://evolutto.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
+                <h3>Leadlovers</h3>
+                <p>Plataforma completa de automação de marketing digital. Email marketing, WhatsApp, landing pages, chatbots, CRM e EAD. Mais vendas. Menos esforço.</p>
+                <a href="https://leadlovers.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
+                <h3>PixelX</h3>
+                <p>Otimização de campanhas e rastreamento avançado. Multiplique resultados e reduza custos em até 40% com Conversion API e advanced matching.</p>
+                <a href="https://pixelx.app" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
+                <h3>Changelogfy</h3>
+                <p>Plataforma all-in-one para feedback de usuários, roadmaps e changelogs. Construa produtos impactantes a partir do feedback dos clientes.</p>
+                <a href="https://changelogfy.com/pt" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
+                <h3>InsightZap</h3>
+                <p>Dashboards e resumos com IA para moderar, analisar e crescer seus grupos no WhatsApp com segurança. Aumente o engajamento da sua comunidade.</p>
+                <a href="https://insightzap.setupautomatizado.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
+                <h3>AutoHub</h3>
+                <p>Hub para criar e gerenciar múltiplos terminais de Claude Code. Orquestre agentes de IA em paralelo para máxima produtividade.</p>
+                <span class="portfolio-link" style="color: var(--text-muted);">Em breve</span>
+            </div>
+
+            <div class="portfolio-card">
+                <span class="portfolio-status active">Mentor</span>
                 <h3>Savings.Club</h3>
                 <p>Consórcio digital. Poupança coletiva para carros acessíveis e financiamento imobiliário.</p>
                 <a href="https://savings.club" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
@@ -1371,6 +1709,84 @@
                 <h3>Health Money</h3>
                 <p>Gestão e assessoria financeira empresarial. Ajudando empresários a organizarem finanças e aumentarem lucros.</p>
                 <a href="https://healthmoneygf.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section (DESTAQUE) -->
+<section class="section courses-section" id="cursos">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Aprenda Comigo</div>
+            <h2 class="section-title">Cursos para dominar IA de verdade</h2>
+            <p class="section-subtitle">
+                Já que gosto de estudar e me atualizar, posso ser seu Guia.
+            </p>
+        </div>
+
+        <div class="courses-grid">
+            <!-- Course 1: Engenharia de Contexto aplicado ao Marketing Digital -->
+            <div class="course-card">
+                <div class="course-content">
+                    <span class="course-badge">Novo</span>
+                    <h3>Engenharia de Contexto aplicado ao Marketing Digital</h3>
+                    <p>
+                        Aprenda a aplicar Context Engineering para criar campanhas, copies e estratégias de marketing que realmente convertem usando IA.
+                    </p>
+                    <ul class="course-features">
+                        <li><span class="check">&#10003;</span> Context Engineering para copywriting</li>
+                        <li><span class="check">&#10003;</span> Criação de campanhas com IA</li>
+                        <li><span class="check">&#10003;</span> Automação de conteúdo para redes sociais</li>
+                        <li><span class="check">&#10003;</span> Templates e frameworks prontos</li>
+                        <li><span class="check">&#10003;</span> Estratégias de marketing digital com IA</li>
+                    </ul>
+                    <div class="course-cta">
+                        <a href="https://alexdonega.com.br/engenharia-de-contexto-aplicado-ao-marketing-digital/" class="btn-primary">Ver Detalhes &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2: Claude Code em 1 dia -->
+            <div class="course-card">
+                <div class="course-content">
+                    <span class="course-badge">Em 1 Dia</span>
+                    <h3>Claude Code em 1 dia</h3>
+                    <p>
+                        Domine o Claude Code — a CLI oficial da Anthropic — em apenas um dia. Workshop intensivo e prático para transformar sua produtividade com IA.
+                    </p>
+                    <ul class="course-features">
+                        <li><span class="check">&#10003;</span> Setup completo do Claude Code</li>
+                        <li><span class="check">&#10003;</span> Integração com Obsidian e workflows</li>
+                        <li><span class="check">&#10003;</span> Skills, agents e automações práticas</li>
+                        <li><span class="check">&#10003;</span> Templates prontos para copiar</li>
+                        <li><span class="check">&#10003;</span> Acompanhamento ao vivo</li>
+                    </ul>
+                    <div class="course-cta">
+                        <a href="https://alexdonega.com.br/claude-code-em-1-dia/" class="btn-primary">Ver Detalhes &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3: Segundo Cérebro com Obsidian -->
+            <div class="course-card">
+                <div class="course-content">
+                    <span class="course-badge">Curso Online</span>
+                    <h3>Clone seu Cérebro, Domine o Obsidian</h3>
+                    <p>
+                        Aprenda a construir seu Segundo Cérebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueça nada importante.
+                    </p>
+                    <ul class="course-features">
+                        <li><span class="check">&#10003;</span> Setup completo do Obsidian</li>
+                        <li><span class="check">&#10003;</span> Sistema de captura e organização</li>
+                        <li><span class="check">&#10003;</span> Links bidirecionais e grafos</li>
+                        <li><span class="check">&#10003;</span> Templates e Vault Starter Kit</li>
+                        <li><span class="check">&#10003;</span> Acesso vitalício + comunidade</li>
+                    </ul>
+                    <div class="course-cta">
+                        <a href="https://alexdonega.com.br/segundo-cerebro-com-obsidian/" class="btn-primary">Ver Detalhes &rarr;</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1473,6 +1889,17 @@
 </footer>
 
 <script>
+    // Mobile Menu Functions
+    function openMobileMenu() {
+        document.getElementById('mobile-menu').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        document.getElementById('mobile-menu').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
     // Smooth scroll for navigation links (event delegation)
     document.addEventListener('click', function(e) {
         const anchor = e.target.closest('a[href^="#"]');
@@ -1507,10 +1934,11 @@
         }
     });
 
-    // Close modal on ESC key
+    // Close modals on ESC key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeNewsletterModal();
+            closeMobileMenu();
         }
     });
 </script>
