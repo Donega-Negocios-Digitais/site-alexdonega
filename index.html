@@ -747,6 +747,30 @@
             text-decoration: underline;
         }
 
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .portfolio-logo {
+            height: 24px;
+            width: auto;
+            max-width: 80px;
+            object-fit: contain;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-card:hover .portfolio-logo {
+            opacity: 0.8;
+        }
+
+        .portfolio-status {
+            margin-bottom: 0;
+        }
+
         /* ==================== PHILOSOPHY (Mobile-First) ==================== */
         .philosophy-box {
             max-width: 900px;
@@ -1385,7 +1409,7 @@
 
         <div class="hero-image">
             <div class="hero-image-container">
-                <img src="assets/img/alex-donega.jpg" alt="Alex Donega" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="assets/img/alex-donega.webp" alt="Alex Donega, especialista em IA e produtividade para startups" width="400" height="400" fetchpriority="high" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </div>
@@ -1544,7 +1568,10 @@
 
         <div class="portfolio-grid">
             <div class="portfolio-card">
-                <span class="portfolio-status active">Sócio Founder</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Sócio Founder</span>
+                    <img src="assets/img/logos/logo-novo-envio.svg" alt="Logo Novo Envio" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Novo Envio</h3>
                 <p>Sistema de gestão de WhatsApp com 52 funcionalidades. +1.300 empreendedores usando. Sócio: Diego Carmona.</p>
                 <a href="https://novoenvio.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
@@ -1565,112 +1592,160 @@
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Solo Founder</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Solo Founder</span>
+                    <img src="assets/img/logos/logo-doface-branca-cortada.webp" alt="Logo Doface" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Doface</h3>
                 <p>Agência de marketing digital. Estratégias de tráfego, funis e conteúdo para negócios digitais.</p>
                 <a href="https://doface.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status exit">Diretor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status exit">Diretor</span>
+                    <img src="assets/img/logos/logo-autobots-ventures.svg" alt="Logo Autobots Ventures" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Autobots Ventures</h3>
                 <p>Diretor de Relacionamento (Marketing & Relationship Division). Venture builder com +21 startups investidas. +R$150M em valuation.</p>
                 <a href="https://autobotsventures.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Ver portfolio &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-postz-in.svg" alt="Logo Postz.in" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Postz.in</h3>
                 <p>IA para criar conteúdos eficazes e atualizados para redes sociais. Transforme posts em clientes.</p>
                 <a href="https://postz.in" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-gophin.svg" alt="Logo GoPhin" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>GoPhin</h3>
                 <p>Plataforma de análise de performance para natação competitiva. Analytics preditivos para otimizar treinamentos.</p>
                 <a href="https://www.gophin.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-tintim.svg" alt="Logo TinTim" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>TinTim</h3>
                 <p>Ferramenta de rastreamento para alavancar vendas pelo WhatsApp. Insights para otimizar campanhas.</p>
                 <a href="https://tintim.app" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-pipeback.webp" alt="Logo Pipeback" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Pipeback</h3>
                 <p>Plataforma nativa em IA para suporte, sucesso do cliente, vendas e marketing. Tudo-em-um para startups.</p>
                 <a href="https://pipeback.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-neotriad.webp" alt="Logo Neotriad" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Neotriad</h3>
                 <p>Software de produtividade pessoal e gestão de equipes. Planejamento de projetos e otimização de processos.</p>
                 <a href="https://neotriad.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-zap-responder.webp" alt="Logo Zap.Responder" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Zap.Responder</h3>
                 <p>Fluxos sem código, Agente IA Humanizado, Integrações Multicanal e Clonagem de Voz.</p>
                 <a href="https://zapresponder.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-iuli.webp" alt="Logo Iuli" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Iuli</h3>
                 <p>Sistema de Gestão Financeira (ERP) para empresas.</p>
                 <a href="https://iuli.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-z-mcp.ico" alt="Logo Z-MCP" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Z-MCP</h3>
                 <p>WhatsApp + IA em minutos. Transcrição de áudios, análise de imagens e automações inteligentes via API REST e protocolo MCP.</p>
                 <a href="https://z-mcp.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-arpa-solar.svg" alt="Logo Arpa Solar" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Arpa Solar</h3>
                 <p>Plataforma de simulação e propostas de energia solar fotovoltaica. Simulação de economia, visualização de telhado com heatmap de irradiação solar.</p>
                 <a href="https://arpaenergia.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-impact.webp" alt="Logo Impact" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Impact</h3>
                 <p>Soluções financeiras para organizações de impacto. Conta digital, câmbio, gestão de projetos sociais e ambientais. +R$100M destinados para impacto.</p>
                 <a href="https://www.impact-br.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-evolutto.webp" alt="Logo Evolutto" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Evolutto</h3>
                 <p>Plataforma que revolucionou o mercado de consultoria no Brasil. Gestão, rastreabilidade e atendimento para consultorias digitais. +4.000 empresas atendidas.</p>
                 <a href="https://evolutto.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-leadlovers.webp" alt="Logo Leadlovers" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Leadlovers</h3>
                 <p>Plataforma completa de automação de marketing digital. Email marketing, WhatsApp, landing pages, chatbots, CRM e EAD. Mais vendas. Menos esforço.</p>
                 <a href="https://leadlovers.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-pixelx.webp" alt="Logo PixelX" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>PixelX</h3>
                 <p>Otimização de campanhas e rastreamento avançado. Multiplique resultados e reduza custos em até 40% com Conversion API e advanced matching.</p>
                 <a href="https://pixelx.app" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-changelogfy.svg" alt="Logo Changelogfy" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Changelogfy</h3>
                 <p>Plataforma all-in-one para feedback de usuários, roadmaps e changelogs. Construa produtos impactantes a partir do feedback dos clientes.</p>
                 <a href="https://changelogfy.com/pt" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
@@ -1691,21 +1766,30 @@
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-savings-club.svg" alt="Logo Savings.Club" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Savings.Club</h3>
                 <p>Consórcio digital. Poupança coletiva para carros acessíveis e financiamento imobiliário.</p>
                 <a href="https://savings.club" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-tec-mais.webp" alt="Logo Tec Mais" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>SGE / Tec Mais</h3>
                 <p>Sistema de Gestão Escolar para cursos técnicos e profissionalizantes. 12 unidades, +4.000 alunos.</p>
                 <a href="https://www.tecmais.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Mentor</span>
+                    <img src="assets/img/logos/logo-health-money.webp" alt="Logo Health Money" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
                 <h3>Health Money</h3>
                 <p>Gestão e assessoria financeira empresarial. Ajudando empresários a organizarem finanças e aumentarem lucros.</p>
                 <a href="https://healthmoneygf.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
