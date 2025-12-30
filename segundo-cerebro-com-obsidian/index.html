@@ -421,6 +421,290 @@
             fill: var(--accent);
         }
 
+        /* Floating Icons */
+        .floating-icons-container {
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .floating-icon {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .floating-icon:hover {
+            opacity: 1;
+            transform: scale(1.15);
+        }
+
+        .floating-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .floating-icon:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation: float1 6s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(2) {
+            top: 20%;
+            right: 8%;
+            animation: float2 7s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(3) {
+            top: 50%;
+            left: 3%;
+            animation: float3 5s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(4) {
+            top: 60%;
+            right: 5%;
+            animation: float1 6.5s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(5) {
+            bottom: 15%;
+            left: 8%;
+            animation: float2 5.5s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(6) {
+            bottom: 20%;
+            right: 10%;
+            animation: float3 7s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(-5deg); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+
+        @media (max-width: 768px) {
+            .floating-icon {
+                width: 36px;
+                height: 36px;
+                opacity: 0.4;
+            }
+
+            .floating-icon:nth-child(1) { left: 2%; }
+            .floating-icon:nth-child(2) { right: 2%; }
+            .floating-icon:nth-child(3) { left: 1%; }
+            .floating-icon:nth-child(4) { right: 2%; }
+            .floating-icon:nth-child(5) { left: 3%; }
+            .floating-icon:nth-child(6) { right: 3%; }
+        }
+
+        /* ACE Framework Section */
+        .ace-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .ace-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .ace-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(216, 119, 87, 0.15);
+        }
+
+        .ace-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .ace-card:hover::before {
+            opacity: 1;
+        }
+
+        .ace-letter {
+            font-family: "DePixel Klein", monospace;
+            font-size: 72px;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .ace-word {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 16px;
+        }
+
+        .ace-description {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .ace-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(216, 119, 87, 0.15);
+            border: 1px solid rgba(216, 119, 87, 0.4);
+            padding: 12px 24px;
+            border-radius: 100px;
+            margin-bottom: 32px;
+        }
+
+        .ace-badge-text {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .ace-badge svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--accent);
+        }
+
+        .methodology-quote {
+            max-width: 700px;
+            margin: 48px auto 0;
+            text-align: center;
+            padding: 32px;
+            background: var(--accent-light);
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .methodology-quote p {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .methodology-quote cite {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        .methodology-quote cite strong {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .ace-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .ace-letter {
+                font-size: 56px;
+            }
+
+            .ace-word {
+                font-size: 24px;
+            }
+        }
+
+        /* Central Obsidian Logo */
+        .central-logo-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 280px;
+            margin: 40px auto;
+            position: relative;
+            width: 100%;
+        }
+
+        .obsidian-central {
+            width: 140px;
+            height: 140px;
+            background: transparent;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(216, 119, 87, 0.4), 0 0 80px rgba(216, 119, 87, 0.2);
+            position: relative;
+            z-index: 100;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .obsidian-central img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 20px 60px rgba(216, 119, 87, 0.4), 0 0 80px rgba(216, 119, 87, 0.2);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 25px 80px rgba(216, 119, 87, 0.5), 0 0 100px rgba(216, 119, 87, 0.3);
+                transform: scale(1.05);
+            }
+        }
+
+        .obsidian-label {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .obsidian-label h3 {
+            font-family: "DePixel Klein", monospace;
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .obsidian-label p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
         /* Video Feature Row (horizontal layout) */
         .video-feature-row {
             display: grid;
@@ -1374,9 +1658,62 @@
     </div>
 </section>
 
-<!-- Section 02: Você no Controle -->
+<!-- Section 01.5: Metodologia ACE -->
 <section class="section section-dark">
     <div class="container">
+        <div class="section-header">
+            <div class="ace-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span class="ace-badge-text">Metodologia Comprovada</span>
+            </div>
+            <h2 class="section-title">Nada de teoria vaga. Isso aqui tem estrutura.</h2>
+            <p class="section-subtitle">
+                Usamos a metodologia ACE, criada por Nick Milo do Linking Your Thinking - o maior especialista mundial em Obsidian. Uma estrutura simples que organiza tudo na sua vida.
+            </p>
+        </div>
+
+        <div class="ace-grid">
+            <div class="ace-card">
+                <div class="ace-letter">A</div>
+                <div class="ace-word">Atlas</div>
+                <p class="ace-description">Seu mapa do conhecimento. Todas as suas notas, ideias, referências e aprendizados ficam aqui - conectados e acessíveis para sempre.</p>
+            </div>
+
+            <div class="ace-card">
+                <div class="ace-letter">C</div>
+                <div class="ace-word">Calendar</div>
+                <p class="ace-description">Seu registro no tempo. Daily notes, reuniões, reflexões e logs. Tudo que acontece na sua vida, organizado cronologicamente.</p>
+            </div>
+
+            <div class="ace-card">
+                <div class="ace-letter">E</div>
+                <div class="ace-word">Efforts</div>
+                <p class="ace-description">Suas ações e projetos. Diferente de "tarefas", Efforts são esforços que você puxa quando tem energia - não listas que te cobram.</p>
+            </div>
+        </div>
+
+        <div class="methodology-quote">
+            <p>"O ACE não é mais uma metodologia complicada. É a forma mais simples de organizar conhecimento, tempo e ação em um só lugar."</p>
+            <cite>Baseado no framework de <strong>Nick Milo</strong> - Linking Your Thinking</cite>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#investimento" class="btn-primary">Quero aprender essa metodologia</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 02: Você no Controle -->
+<section class="section section-dark">
+    <div class="container floating-icons-container">
+        <!-- Floating App Icons -->
+        <div class="floating-icon" title="Roam Research"><img src="../assets/img/icons/icone-roam-research.png" alt="Icone Roam Research app de notas"></div>
+        <div class="floating-icon" title="Evernote"><img src="../assets/img/icons/icone-evernote.png" alt="Icone Evernote app de notas"></div>
+        <div class="floating-icon" title="Notion"><img src="../assets/img/icons/icone-notion.jpg" alt="Icone Notion app de produtividade"></div>
+        <div class="floating-icon" title="Google Keep"><img src="../assets/img/icons/icone-google-keep.png" alt="Icone Google Keep app de notas"></div>
+        <div class="floating-icon" title="Bloco de Notas"><img src="../assets/img/icons/icone-bloco-notas.png" alt="Icone Bloco de Notas Windows"></div>
+        <div class="floating-icon" title="Apple Notes"><img src="../assets/img/icons/icone-apple-notes.png" alt="Icone Apple Notes app de notas"></div>
+
         <div class="section-header">
             <div class="section-eyebrow">02 - Você no Controle</div>
             <h2 class="section-title">Tudo em um só lugar</h2>
@@ -1385,38 +1722,16 @@
             </p>
         </div>
 
-        <div class="apps-grid">
-            <!-- Notion -->
-            <div class="app-icon" title="Notion">
-                <svg viewBox="0 0 24 24"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.98-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.886l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.62c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.886.747-.933zM2.877 1.076l13.681-.93c1.682-.14 2.101.093 2.801.606l3.876 2.707c.513.374.653.466.653 1.027v15.374c0 .98-.373 1.54-1.682 1.634l-15.504.933c-.98.047-1.448-.093-1.961-.746L1.87 18.664c-.56-.7-.793-1.213-.793-1.867V2.709c0-.84.373-1.54 1.4-1.634z"/></svg>
-            </div>
-            <!-- Evernote -->
-            <div class="app-icon" title="Evernote">
-                <svg viewBox="0 0 24 24"><path d="M8.667 4.583v2.209c0 .276-.119.535-.327.741a1.09 1.09 0 01-.756.305H5.21a.303.303 0 01-.212-.505l3.25-3.17c.14-.135.382-.024.419.166v.254zm5.837 16.665c-1.26 0-2.283-1.019-2.283-2.275s1.023-2.275 2.283-2.275c1.261 0 2.284 1.019 2.284 2.275 0 1.256-1.023 2.275-2.284 2.275zm4.17-10.238c-.198-.091-.42-.137-.645-.137h-.96c-.364 0-.658.294-.658.656v3.138c0 .363.294.657.658.657h1.055c.364 0 .658-.294.658-.657v-2.974a.726.726 0 00-.108-.683zm3.17 2.143c-.1-1.14-.447-2.074-.877-2.762-.458-.731-1.088-1.343-1.838-1.757a6.76 6.76 0 00-.663-.35 3.97 3.97 0 01-.267-.103c-.114-.05-.225-.1-.338-.155-.355-.17-.643-.37-.87-.572a2.33 2.33 0 01-.396-.468.657.657 0 00-.59-.288h-.125l-.001.001a.657.657 0 00-.59.288 2.33 2.33 0 01-.396.468c-.227.202-.515.402-.87.572-.113.055-.224.105-.338.155-.088.035-.177.068-.267.103a6.76 6.76 0 00-.663.35c-.75.414-1.38 1.026-1.838 1.757-.43.688-.777 1.622-.877 2.762-.04.459-.073.921-.073 1.382v3.723c0 .363.294.657.658.657h.395c.364 0 .658-.294.658-.657V14.12c0-.363.294-.657.658-.657h1.055c.364 0 .658.294.658.657v3.188c0 .363.294.657.658.657h.395c.364 0 .658-.294.658-.657v-3.723c0-.461-.033-.923-.073-1.382z"/></svg>
-            </div>
-            <!-- Gmail -->
-            <div class="app-icon" title="Gmail">
-                <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-            </div>
-            <!-- Trello -->
-            <div class="app-icon" title="Trello">
-                <svg viewBox="0 0 24 24"><path d="M21 0H3C1.343 0 0 1.343 0 3v18c0 1.656 1.343 3 3 3h18c1.656 0 3-1.344 3-3V3c0-1.657-1.344-3-3-3zM10.44 18.18c0 .795-.645 1.44-1.44 1.44H4.56c-.795 0-1.44-.645-1.44-1.44V4.56c0-.795.645-1.44 1.44-1.44H9c.795 0 1.44.645 1.44 1.44v13.62zm10.44-6c0 .794-.645 1.44-1.44 1.44H15c-.795 0-1.44-.646-1.44-1.44V4.56c0-.795.645-1.44 1.44-1.44h4.44c.795 0 1.44.645 1.44 1.44v7.62z"/></svg>
-            </div>
-            <!-- Google Docs / Notepad -->
-            <div class="app-icon" title="Google Docs">
-                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 4h7v5h5v11H6V4zm2 7v2h8v-2H8zm0 4v2h8v-2H8z"/></svg>
-            </div>
-            <!-- Apple Notes -->
-            <div class="app-icon" title="Apple Notes">
-                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-            </div>
-            <!-- Physical Notebook -->
-            <div class="app-icon" title="Caderno">
-                <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
-            </div>
-            <!-- Obsidian (highlighted) -->
-            <div class="app-icon obsidian" title="Obsidian">
-                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <!-- Central Obsidian Logo -->
+        <div class="central-logo-area">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="obsidian-central">
+                    <img src="../assets/img/icons/icone-obsidian.png" alt="Logo Obsidian - Seu Segundo Cerebro">
+                </div>
+                <div class="obsidian-label">
+                    <h3>Obsidian</h3>
+                    <p>Seu Segundo Cérebro</p>
+                </div>
             </div>
         </div>
     </div>
@@ -1895,36 +2210,6 @@
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-brand">
-            <h4>Alex Donega</h4>
-            <p>Engenheiro de Contexto. Diretor de Relacionamento na Carmona Ventures. Ajudando empreendedores a dominar IA de verdade.</p>
-            <p class="signature">"O que eu falo, eu entrego."</p>
-        </div>
-
-        <div class="footer-column">
-            <h5>Navegação</h5>
-            <a href="https://alexdonega.com.br">Home</a>
-            <a href="https://alexdonega.com.br#cursos">Cursos</a>
-            <a href="https://alexdonega.com.br#sobre">Sobre</a>
-            <a href="https://wa.me/5545999506444" target="_blank">Contato</a>
-        </div>
-
-        <div class="footer-column">
-            <h5>Redes Sociais</h5>
-            <a href="https://instagram.com/donegaalex" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://youtube.com/@alexdonega" target="_blank" rel="noopener noreferrer">YouTube</a>
-            <a href="https://linkedin.com/in/alexdonega" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <span>&copy; 2025 Alex Donega. Todos os direitos reservados.</span>
-        <span>Toledo-PR, Brasil</span>
-    </div>
-</footer>
 
 <script>
     // Smooth scroll for anchor links
