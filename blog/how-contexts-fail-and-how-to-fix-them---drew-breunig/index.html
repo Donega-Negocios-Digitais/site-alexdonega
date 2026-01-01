@@ -1,0 +1,428 @@
+<!DOCTYPE html><html lang="pt-BR" data-astro-cid-4dqtj3le> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Como Contextos Falham e Como Corrigi-los - Drew Breunig | Alex Donega</title><!-- Favicons --><link rel="icon" type="image/x-icon" href="/favicon.ico"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.Cuko2mV_.css"></head> <body data-astro-cid-4dqtj3le> <header class="header" data-astro-cid-4dqtj3le> <nav class="nav" data-astro-cid-4dqtj3le> <a href="/" class="nav-logo" data-astro-cid-4dqtj3le>Alex Donega</a> <div class="nav-links" data-astro-cid-4dqtj3le> <a href="/" data-astro-cid-4dqtj3le>Início</a> <a href="/blog" data-astro-cid-4dqtj3le>Blog</a> </div> </nav> </header> <main class="container" data-astro-cid-4dqtj3le> <!-- Botão Voltar --> <a href="/blog" class="back-button" data-astro-cid-4dqtj3le>
+← Voltar
+</a> <div class="post-layout" data-astro-cid-4dqtj3le> <article class="blog-post" data-astro-cid-4dqtj3le> <header class="post-header" data-astro-cid-4dqtj3le> <div class="post-category" data-astro-cid-4dqtj3le>artigo</div> <h1 class="post-title" data-astro-cid-4dqtj3le>Como Contextos Falham e Como Corrigi-los - Drew Breunig</h1> <div class="post-meta" data-astro-cid-4dqtj3le> <img src="/images/alex-donega-autor-blog.webp" alt="Drew Breunig" class="author-avatar-img" data-astro-cid-4dqtj3le> <div class="author-details" data-astro-cid-4dqtj3le> <span class="author-name" data-astro-cid-4dqtj3le>Drew Breunig</span> <div class="post-meta-info" data-astro-cid-4dqtj3le> <time datetime="2025-06-22T00:00:00.000Z" data-astro-cid-4dqtj3le>21 de junho de 2025</time> <span class="meta-separator" data-astro-cid-4dqtj3le>•</span> <span id="reading-time" data-astro-cid-4dqtj3le>Calculando...</span> </div> </div> </div> </header> <div class="post-content" id="post-content" data-astro-cid-4dqtj3le>  <h1 id="how-contexts-fail-and-how-to-fix-them---drew-breunig"><a href="/blog/how-contexts-fail-and-how-to-fix-them---drew-breunig">How Contexts Fail and How to Fix Them - Drew Breunig</a></h1>
+<blockquote>
+<p>[!compass] <strong><a href="/blog/moc---projeto-mymess">MyMess</a></strong> » <a href="/blog/dashboard---estudos-mymess">Estudos</a> » Engenharia de Contexto</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>[!info]+ Detalhes do Artigo
+<strong>Ler:</strong> <a href="https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html">How Long Contexts Fail</a>
+<strong>Fonte:</strong> <a href="/blog/drew-breunig-blog">Drew Breunig Blog</a> (Blog Técnico)
+<strong>Autores:</strong> Drew Breunig
+<strong>Publicado:</strong> 22 de Junho de 2025 (Atualizado: 15 Set 2025)</p>
+</blockquote>
+<blockquote>
+<p>[!abstract]+ Materiais Complementares</p>
+<p><strong>4 Tipos de Falhas de Contexto</strong></p>
+<ol>
+<li>Context Poisoning (Envenenamento)</li>
+<li>Context Distraction (Distração)</li>
+<li>Context Confusion (Confusão)</li>
+<li>Context Clash (Conflito)</li>
+</ol>
+<p><strong>Casos Documentados</strong></p>
+<ul>
+<li>Gemini jogando Pokémon (poisoning)</li>
+<li>Berkeley Function-Calling Leaderboard (confusion)</li>
+<li>Microsoft/Salesforce research (clash)</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>[!tip]- Léxico</p>
+<p><strong>Conteúdo e Criação</strong></p>
+<ul>
+<li><strong>Context Poisoning</strong>: Alucinações/erros que se integram ao contexto e são referenciados repetidamente</li>
+<li><strong>Context Distraction</strong>: Contextos grandes (100K tokens) fazem modelo favorecer ações repetidas</li>
+<li><strong>Context Confusion</strong>: Conteúdo supérfluo gera respostas de baixa qualidade</li>
+</ul>
+<p><strong>Tecnologia e IA</strong></p>
+<ul>
+<li>
+<p><strong>Context Clash</strong>: Informações acumuladas conflitam entre si
+[!question]- Pontos para Aprofundar (Sugestão da IA)</p>
+</li>
+<li>
+<p><strong>Como detectar context poisoning em tempo real?</strong></p>
+<ul>
+<li>Desenvolver sistema de monitoramento de alucinações</li>
+</ul>
+</li>
+<li>
+<p><strong>Qual o limite seguro de tokens por modelo?</strong></p>
+<ul>
+<li>Testar thresholds de distração (32K para modelos menores)</li>
+</ul>
+</li>
+<li>
+<p><strong>Como implementar quarentena de contexto?</strong></p>
+<ul>
+<li>Explorar técnicas do artigo complementar</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>[!robot]- Sugestões Complementares</p>
+<ul>
+<li><strong>Leituras Recomendadas:</strong>
+<ul>
+<li>“How to Fix Your Context” (artigo complementar)</li>
+<li>Berkeley Function-Calling Leaderboard</li>
+</ul>
+</li>
+<li><strong>Ferramentas Úteis:</strong>
+<ul>
+<li><strong>Carregamento dinâmico de ferramentas</strong> - Evita confusion</li>
+<li><strong>Quarentena de contexto</strong> - Isola erros</li>
+</ul>
+</li>
+<li><strong>Exercícios Práticos:</strong>
+<ul>
+<li>Identificar falhas em agentes próprios</li>
+<li>Implementar limites de tokens por tipo de tarefa</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="resumo">Resumo</h2>
+<p>Artigo técnico de <strong>Drew Breunig</strong> catalogando <strong>4 tipos de falhas de contexto</strong> em LLMs e agentes. Define que “se você coloca algo no contexto, o modelo precisa prestar atenção nele” - grandes janelas de contexto não garantem melhores respostas. Demonstra através de casos documentados (Gemini/Pokémon, Berkeley Leaderboard, Microsoft/Salesforce) que agentes são particularmente vulneráveis por operarem em cenários onde contextos crescem exponencialmente.</p>
+<p><strong>Insight central:</strong> “Grandes janelas de contexto não garantem melhores respostas - agentes são particularmente vulneráveis pois operam em cenários onde contextos crescem exponencialmente.”</p>
+<hr>
+<h2 id="principais-conceitos">Principais Conceitos</h2>
+<h3 id="os-4-tipos-de-falhas-de-contexto">Os 4 Tipos de Falhas de Contexto</h3>
+<p>A tabela abaixo resume as informações principais.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Tipo</th><th align="left">Nome</th><th align="left">Descrição</th><th align="left">Threshold</th></tr></thead><tbody><tr><td align="left">1</td><td align="left"><strong>Context Poisoning</strong></td><td align="left">Alucinações se integram ao contexto e são referenciadas repetidamente</td><td align="left">Qualquer momento</td></tr><tr><td align="left">2</td><td align="left"><strong>Context Distraction</strong></td><td align="left">Modelo favorece ações repetidas do histórico ao invés de novos planos</td><td align="left">>100K tokens (32K para modelos menores)</td></tr><tr><td align="left">3</td><td align="left"><strong>Context Confusion</strong></td><td align="left">Conteúdo supérfluo gera respostas de baixa qualidade</td><td align="left">Múltiplas ferramentas</td></tr><tr><td align="left">4</td><td align="left"><strong>Context Clash</strong></td><td align="left">Informações acumuladas conflitam entre si</td><td align="left">Prompts fragmentados</td></tr></tbody></table>
+<h3 id="casos-documentados">Casos Documentados</h3>
+<p>A tabela a seguir detalha os campos e seus valores.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Falha</th><th align="left">Caso</th><th align="left">Impacto</th></tr></thead><tbody><tr><td align="left"><strong>Poisoning</strong></td><td align="left">Gemini jogando Pokémon</td><td align="left">”Estratégias sem sentido” após contaminação</td></tr><tr><td align="left"><strong>Confusion</strong></td><td align="left">Berkeley Function-Calling</td><td align="left">”Todo modelo tem desempenho pior com mais de uma ferramenta”</td></tr><tr><td align="left"><strong>Clash</strong></td><td align="left">Microsoft/Salesforce</td><td align="left">”Queda média de 39%” em prompts fragmentados</td></tr></tbody></table>
+<hr>
+<h2 id="detalhamento">Detalhamento</h2>
+<h3 id="1-context-poisoning-envenenamento">1. Context Poisoning (Envenenamento)</h3>
+<p>Ocorre quando alucinações ou erros se integram ao contexto e são referenciados repetidamente pelo modelo.</p>
+<blockquote>
+<p>[!warning] Caso Documentado
+O agente Gemini ao jogar Pokémon desenvolveu <strong>“estratégias sem sentido”</strong> após seu contexto ser contaminado com informações incorretas que ele mesmo gerou.</p>
+</blockquote>
+<p><strong>Causa raiz:</strong> O modelo trata suas próprias alucinações como fatos verdadeiros em iterações subsequentes.</p>
+<h3 id="2-context-distraction-distração">2. Context Distraction (Distração)</h3>
+<blockquote>
+<p>[!quote] Observação
+“Quando o contexto cresce significativamente além de 100k tokens, o agente mostrou tendência de favorecer ações repetidas de seu histórico vasto ao invés de sintetizar novos planos.”</p>
+</blockquote>
+<p><strong>Thresholds por tipo de modelo:</strong></p>
+<ul>
+<li>Modelos grandes: ~100K tokens</li>
+<li>Modelos menores: ~32K tokens</li>
+</ul>
+<h3 id="3-context-confusion-confusão">3. Context Confusion (Confusão)</h3>
+<p>O Berkeley Function-Calling Leaderboard demonstra que “todo modelo tem desempenho pior quando fornecido com mais de uma ferramenta”.</p>
+<p><strong>Implicação prática:</strong> Carregar apenas as ferramentas necessárias para cada tarefa, não todas disponíveis.</p>
+<h3 id="4-context-clash-conflito">4. Context Clash (Conflito)</h3>
+<p>Pesquisa Microsoft/Salesforce mostrou <strong>“queda média de 39%”</strong> quando prompts foram fragmentados em múltiplas rodadas ao invés de fornecidos de uma vez.</p>
+<p><strong>Causa:</strong> Informações acumuladas ao longo de interações podem contradizer umas às outras.</p>
+<h3 id="soluções-propostas">Soluções Propostas</h3>
+<p>Breunig anuncia técnicas em artigo complementar “How to Fix Your Context”:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Técnica</th><th align="left">Propósito</th></tr></thead><tbody><tr><td align="left"><strong>Carregamento dinâmico de ferramentas</strong></td><td align="left">Evita confusion</td></tr><tr><td align="left"><strong>Quarentena de contexto</strong></td><td align="left">Isola erros antes que contaminem</td></tr><tr><td align="left"><strong>Limites de tokens</strong></td><td align="left">Previne distraction</td></tr></tbody></table>
+<hr>
+<h2 id="mapa-de-conceitos">Mapa de Conceitos</h2>
+<p>O diagrama abaixo ilustra o fluxo do processo, mostrando as etapas e suas conexões.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TD</span></span>
+<span class="line"><span style="color:#E1E4E8">    A[Context Failures] --> B[Poisoning]</span></span>
+<span class="line"><span style="color:#E1E4E8">    A --> C[Distraction]</span></span>
+<span class="line"><span style="color:#E1E4E8">    A --> D[Confusion]</span></span>
+<span class="line"><span style="color:#E1E4E8">    A --> E[Clash]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    B --> B1[Alucinações se integram]</span></span>
+<span class="line"><span style="color:#E1E4E8">    B --> B2[Caso: Gemini Pokémon]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    C --> C1[>100K tokens]</span></span>
+<span class="line"><span style="color:#E1E4E8">    C --> C2[Favorece ações repetidas]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    D --> D1[Ferramentas supérfluas]</span></span>
+<span class="line"><span style="color:#E1E4E8">    D --> D2[Berkeley Leaderboard]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    E --> E1[Prompts fragmentados]</span></span>
+<span class="line"><span style="color:#E1E4E8">    E --> E2[-39% performance]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    F[Soluções] --> F1[Carregamento dinâmico]</span></span>
+<span class="line"><span style="color:#E1E4E8">    F --> F2[Quarentena de contexto]</span></span>
+<span class="line"><span style="color:#E1E4E8">    F --> F3[Limites de tokens]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    style A fill:#e1f5fe</span></span>
+<span class="line"><span style="color:#E1E4E8">    style B fill:#ffcdd2</span></span>
+<span class="line"><span style="color:#E1E4E8">    style C fill:#ffcdd2</span></span>
+<span class="line"><span style="color:#E1E4E8">    style D fill:#ffcdd2</span></span>
+<span class="line"><span style="color:#E1E4E8">    style E fill:#ffcdd2</span></span>
+<span class="line"><span style="color:#E1E4E8">    style F fill:#c8e6c9</span></span></code></pre>
+<hr>
+<h2 id="insights--aprendizados">Insights &#x26; Aprendizados</h2>
+<p><strong>O que funcionou bem:</strong></p>
+<ul>
+<li>Taxonomia clara de 4 tipos de falhas</li>
+<li>Casos documentados com evidências</li>
+<li>Thresholds quantitativos (100K, 32K, 39%)</li>
+<li>Conexão direta entre causa e efeito</li>
+</ul>
+<p><strong>O que posso adaptar para o MyMess:</strong></p>
+<ul>
+<li><strong>Taxonomia de falhas</strong>: Usar como checklist de diagnóstico para agentes</li>
+<li><strong>Thresholds de tokens</strong>: Implementar limites em agentes de marketing</li>
+<li><strong>Carregamento dinâmico</strong>: Não carregar todas ferramentas de uma vez</li>
+<li><strong>Monitoramento de poisoning</strong>: Detectar quando agente repete erros</li>
+</ul>
+<p><strong>Ideias para aplicar:</strong></p>
+<ul>
+<li>Criar sistema de “health check” de contexto para agentes</li>
+<li>Implementar limite de 32K tokens para tarefas simples</li>
+<li>Desenvolver técnica de “context reset” para evitar distraction</li>
+<li>Carregar ferramentas sob demanda, não todas de uma vez</li>
+</ul>
+<hr>
+<h2 id="recursos-adicionais">Recursos Adicionais</h2>
+<ul>
+<li><a href="https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html">Drew Breunig - How Contexts Fail</a></li>
+<li><a href="https://www.dbreunig.com/">Drew Breunig Blog</a></li>
+<li><a href="https://gorilla.cs.berkeley.edu/leaderboard.html">Berkeley Function-Calling Leaderboard</a></li>
+</ul>
+<hr>
+<h2 id="propriedades-da-nota">Propriedades da nota</h2>
+<blockquote>
+<p>[!note]- Propriedades Gerais do Obsidian</p>
+<blockquote>
+<p><strong>Identificação</strong></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Campo</th><th align="left">Valor</th></tr></thead><tbody><tr><td align="left"><strong>Título</strong></td><td align="left"><code>INPUT[text:titulo]</code></td></tr></tbody></table>
+<blockquote>
+<p><strong>Conexões</strong></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Campo</th><th align="left">Valor</th></tr></thead><tbody><tr><td align="left"><strong>Pai</strong></td><td align="left"><code>INPUT[suggester(optionQuery("")):pai]</code></td></tr><tr><td align="left"><strong>Coleção</strong></td><td align="left"><code>INPUT[inlineSelect(option(financeiro, Financeiro), option(growth, Growth), option(ia, IA), option(lideranca, Liderança), option(marketing, Marketing), option(negocios, Negócios), option(produtividade, Produtividade), option(pkm, PKM), option(saas, SaaS), option(tecnologia, Tecnologia), option(vendas, Vendas)):colecao]</code></td></tr><tr><td align="left"><strong>Área</strong></td><td align="left"><code>INPUT[suggester(optionQuery("Esforços/Áreas")):area]</code></td></tr><tr><td align="left"><strong>Projeto</strong></td><td align="left"><code>INPUT[suggester(optionQuery("#projeto")):projeto]</code></td></tr><tr><td align="left"><strong>Autor</strong></td><td align="left"><code>INPUT[suggester(optionQuery("Atlas/Pessoas")):pessoa]</code></td></tr><tr><td align="left"><strong>Relacionado</strong></td><td align="left"><code>INPUT[inlineListSuggester(optionQuery(""), useLinks(true)):relacionado]</code></td></tr></tbody></table>
+<blockquote>
+<p><strong>Classificação</strong></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Campo</th><th align="left">Valor</th></tr></thead><tbody><tr><td align="left"><strong>Tipo</strong></td><td align="left"><code>INPUT[inlineSelect(option(atomica, Atômica), option(aula, Aula), option(artigo, Artigo), option(checklist, Checklist), option(curso, Curso), option(dashboard, Dashboard), option(framework, Framework), option(livro, Livro), option(moc, MOC), option(newsletter, Newsletter), option(pessoa, Pessoa), option(prompt, Prompt), option(template, Template Obsidian), option(tutorial, Tutorial), option(video_youtube, Vídeo Youtube)):tipo_nota]</code></td></tr><tr><td align="left"><strong>Tags</strong></td><td align="left"><code>INPUT[inlineList:tags]</code></td></tr><tr><td align="left"><strong>Status</strong></td><td align="left"><code>INPUT[inlineSelect(option(nao_iniciado, ⬜ Não Iniciado), option(em_andamento, 🔄 Em Andamento), option(concluido, ✅ Concluído), option(pausado, ⏸️ Pausado), option(cancelado, ❌ Cancelado)):status]</code></td></tr></tbody></table>
+<blockquote>
+<p><strong>Temporal</strong></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Campo</th><th align="left">Valor</th></tr></thead><tbody><tr><td align="left"><strong>Criado</strong></td><td align="left"><code>INPUT[date:data_criado]</code></td></tr><tr><td align="left"><strong>Atualizado</strong></td><td align="left"><code>INPUT[date:data_atualizado]</code></td></tr></tbody></table>
+</blockquote>
+<blockquote>
+<p>[!note]- Propriedades SaaS</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Campo</th><th align="left">Valor</th></tr></thead><tbody><tr><td align="left"><strong>Mostrar Bloco</strong></td><td align="left"><code>INPUT[toggle(onValue(true), offValue(false)):mostrar_bloco_saas]</code></td></tr><tr><td align="left"><strong>Status SaaS</strong></td><td align="left"><code>INPUT[toggle(onValue(true), offValue(false)):status_saas]</code></td></tr></tbody></table>
+</blockquote>
+<blockquote>
+<p>[!note]- Propriedades do Artigo</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Campo</th><th align="left">Valor</th></tr></thead><tbody><tr><td align="left"><strong>URL</strong></td><td align="left"><code>INPUT[text(placeholder(https://...)):url_artigo]</code></td></tr><tr><td align="left"><strong>Fonte</strong></td><td align="left"><code>INPUT[text:fonte]</code></td></tr><tr><td align="left"><strong>Autor</strong></td><td align="left"><code>INPUT[text:autor]</code></td></tr><tr><td align="left"><strong>Data Publicação</strong></td><td align="left"><code>INPUT[date:data_publicacao]</code></td></tr><tr><td align="left"><strong>Tipo Conteúdo</strong></td><td align="left"><code>INPUT[inlineSelect(option(educacional, Educacional), option(curadoria, Curadoria), option(historia, História Pessoal), option(listicle, Lista), option(contrarian, Opinião Contrária), option(tutorial, Tutorial), option(entrevista, Entrevista), option(analise, Análise), option(estudo_de_caso, Estudo de Caso), option(lancamento, Lançamento), option(opiniao, Opinião), option(outro, Outro)):tipo_conteudo]</code></td></tr></tbody></table>
+</blockquote>  </div> </article> <!-- Sidebar --> <aside class="post-sidebar" data-astro-cid-4dqtj3le> <!-- Acesso Rápido (Table of Contents) --> <div class="sidebar-section toc-section" data-astro-cid-4dqtj3le> <h3 data-astro-cid-4dqtj3le>Acesso Rápido</h3> <nav id="table-of-contents" class="table-of-contents" data-astro-cid-4dqtj3le> <p class="toc-empty" data-astro-cid-4dqtj3le>Gerando sumário...</p> </nav> </div> <div class="sidebar-section" data-astro-cid-4dqtj3le> <h3 data-astro-cid-4dqtj3le>Compartilhe</h3> <div class="share-buttons" data-astro-cid-4dqtj3le> <button class="share-btn" data-share="whatsapp" title="WhatsApp" data-astro-cid-4dqtj3le> <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" data-astro-cid-4dqtj3le> <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" data-astro-cid-4dqtj3le></path> </svg> </button> <button class="share-btn" data-share="linkedin" title="LinkedIn" data-astro-cid-4dqtj3le> <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" data-astro-cid-4dqtj3le> <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" data-astro-cid-4dqtj3le></path> </svg> </button> <button class="share-btn" data-share="twitter" title="Twitter/X" data-astro-cid-4dqtj3le> <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" data-astro-cid-4dqtj3le> <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" data-astro-cid-4dqtj3le></path> </svg> </button> </div> </div> <div class="sidebar-section" data-astro-cid-4dqtj3le> <h3 data-astro-cid-4dqtj3le>Sobre o autor</h3> <div class="sidebar-author" data-astro-cid-4dqtj3le> <img src="/images/alex-donega-autor-blog.webp" alt="Drew Breunig" class="author-avatar-large" data-astro-cid-4dqtj3le> <p class="author-name" data-astro-cid-4dqtj3le>Drew Breunig</p> <p class="author-bio" data-astro-cid-4dqtj3le>Engenheiro de Contexto especializado em IA e automação</p> </div> </div> <div class="sidebar-section" data-astro-cid-4dqtj3le> <h3 data-astro-cid-4dqtj3le>Tags</h3> <div class="sidebar-tags" data-astro-cid-4dqtj3le> <a href="/blog?tag=artigo" class="sidebar-tag" data-astro-cid-4dqtj3le>#artigo</a><a href="/blog?tag=engenharia-de-contexto" class="sidebar-tag" data-astro-cid-4dqtj3le>#engenharia-de-contexto</a><a href="/blog?tag=ia" class="sidebar-tag" data-astro-cid-4dqtj3le>#ia</a><a href="/blog?tag=context-failures" class="sidebar-tag" data-astro-cid-4dqtj3le>#context-failures</a><a href="/blog?tag=quatro-tipos" class="sidebar-tag" data-astro-cid-4dqtj3le>#quatro-tipos</a><a href="/blog?tag=poisoning" class="sidebar-tag" data-astro-cid-4dqtj3le>#poisoning</a><a href="/blog?tag=distraction" class="sidebar-tag" data-astro-cid-4dqtj3le>#distraction</a><a href="/blog?tag=confusion" class="sidebar-tag" data-astro-cid-4dqtj3le>#confusion</a><a href="/blog?tag=clash" class="sidebar-tag" data-astro-cid-4dqtj3le>#clash</a><a href="/blog?tag=agentes" class="sidebar-tag" data-astro-cid-4dqtj3le>#agentes</a> </div> </div> </aside> </div> </main>  <script type="module">function l(){const c=document.getElementById("post-content");if(!c)return;const n=(c.textContent||"").trim().split(/\s+/).length,a=Math.ceil(n/200),t=document.getElementById("reading-time");t&&(t.textContent=`${a} min de leitura`)}function d(){const c=document.getElementById("post-content"),e=document.getElementById("table-of-contents");if(!c||!e)return;const n=c.querySelectorAll("h2, h3");if(n.length===0){e.innerHTML='<p class="toc-empty">Nenhum índice disponível</p>';return}n.forEach((t,r)=>{if(!t.id){const o=(t.textContent||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");t.id=o||`heading-${r}`}});const i=Array.from(n).map(t=>{const r=t.tagName.toLowerCase(),s=t.textContent||"";return`<a href="#${t.id}" class="toc-link level-${r.replace("h","")}">${s}</a>`}).join("");e.innerHTML=i,e.querySelectorAll("a").forEach(t=>{t.addEventListener("click",r=>{r.preventDefault();const s=t.getAttribute("href")?.substring(1),o=document.getElementById(s||"");o&&(o.scrollIntoView({behavior:"smooth",block:"start"}),history.pushState(null,"",`#${s}`))})});const a=new IntersectionObserver(t=>{t.forEach(r=>{if(r.isIntersecting){const s=r.target.id;e.querySelectorAll("a").forEach(o=>{o.classList.remove("active"),o.getAttribute("href")===`#${s}`&&o.classList.add("active")})}})},{rootMargin:"-100px 0px -80% 0px"});n.forEach(t=>a.observe(t))}function u(){const c=document.querySelectorAll(".share-btn"),e=window.location.href,n=document.querySelector(".post-title")?.textContent||"";c.forEach(i=>{i.addEventListener("click",()=>{const a=i.getAttribute("data-share");let t="";switch(a){case"whatsapp":t=`https://wa.me/?text=${encodeURIComponent(n+" - "+e)}`;break;case"linkedin":t=`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(e)}`;break;case"twitter":t=`https://twitter.com/intent/tweet?text=${encodeURIComponent(n)}&url=${encodeURIComponent(e)}`;break}t&&window.open(t,"_blank","width=600,height=400")})})}document.addEventListener("DOMContentLoaded",()=>{l(),d(),u()});</script> </body> </html>
