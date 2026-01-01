@@ -1,6 +1,6 @@
 ---
 title: "Passo a Passo para Títulos Vencedores para Thumbnails"
-pubDate: "2026-01-01T19:47:32.727Z"
+pubDate: "2026-01-01T20:01:00.562Z"
 tags: []
 draft: false
 author: "Alex Donega"

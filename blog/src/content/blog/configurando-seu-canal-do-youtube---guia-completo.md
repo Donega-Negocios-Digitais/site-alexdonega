@@ -1,6 +1,6 @@
 ---
 title: "Configurando seu Canal do YouTube - Guia Completo"
-pubDate: "2026-01-01T19:47:32.757Z"
+pubDate: "2026-01-01T20:01:00.614Z"
 tags: []
 draft: false
 author: "Alex Donega"

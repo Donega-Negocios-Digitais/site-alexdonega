@@ -1,6 +1,6 @@
 ---
 title: "Founder Branding AI - Como CEOs estão Alavancando as suas Empresas criando o seu Branding PESSOAL com IA"
-pubDate: "2026-01-01T19:47:32.742Z"
+pubDate: "2026-01-01T20:01:00.584Z"
 tags: []
 draft: false
 author: "Alex Donega"

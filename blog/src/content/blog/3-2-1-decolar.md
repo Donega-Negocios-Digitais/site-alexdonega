@@ -1,6 +1,6 @@
 ---
 title: "3, 2, 1, Decolar"
-pubDate: "2026-01-01T19:47:32.771Z"
+pubDate: "2026-01-01T20:01:00.635Z"
 tags: []
 draft: false
 author: "Alex Donega"

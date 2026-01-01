@@ -1,6 +1,6 @@
 ---
 title: "Content Machine 3.0 - BrandsDecoded 1"
-pubDate: "2026-01-01T19:47:32.755Z"
+pubDate: "2026-01-01T20:01:00.607Z"
 tags: []
 draft: false
 author: "Alex Donega"

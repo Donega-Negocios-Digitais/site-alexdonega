@@ -1,6 +1,6 @@
 ---
 title: "Script + Roteiro de Webinar 2.0"
-pubDate: "2026-01-01T19:47:32.721Z"
+pubDate: "2026-01-01T20:01:00.551Z"
 tags: []
 draft: false
 author: "Alex Donega"

@@ -1,6 +1,6 @@
 ---
 title: "template-artigo"
-pubDate: "2026-01-01T19:47:32.271Z"
+pubDate: "2026-01-01T20:00:59.355Z"
 tags:
   - "artigo"
 draft: false

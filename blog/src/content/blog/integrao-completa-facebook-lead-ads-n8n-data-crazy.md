@@ -1,6 +1,6 @@
 ---
 title: "Integração Completa Facebook Lead Ads → n8n → Data Crazy"
-pubDate: "2026-01-01T19:47:32.736Z"
+pubDate: "2026-01-01T20:01:00.575Z"
 tags: []
 draft: false
 author: "Alex Donega"

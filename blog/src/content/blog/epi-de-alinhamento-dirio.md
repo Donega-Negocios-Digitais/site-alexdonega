@@ -1,6 +1,6 @@
 ---
 title: "EPI de Alinhamento Diário"
-pubDate: "2026-01-01T19:47:32.744Z"
+pubDate: "2026-01-01T20:01:00.588Z"
 tags: []
 draft: false
 author: "Alex Donega"

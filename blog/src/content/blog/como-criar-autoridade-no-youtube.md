@@ -1,6 +1,6 @@
 ---
 title: "Como criar autoridade no YouTube"
-pubDate: "2026-01-01T19:47:32.761Z"
+pubDate: "2026-01-01T20:01:00.620Z"
 tags: []
 draft: false
 author: "Alex Donega"

@@ -1,6 +1,6 @@
 ---
 title: "2025-06-07-RE-CONSTRUÇÃO - Voltando ao Customer Discovery"
-pubDate: "2026-01-01T19:47:32.773Z"
+pubDate: "2026-01-01T20:01:00.637Z"
 tags:
   - "Metodologia"
   - "Steve_Blank"

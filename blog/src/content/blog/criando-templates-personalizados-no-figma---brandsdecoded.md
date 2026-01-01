@@ -1,6 +1,6 @@
 ---
 title: "Criando Templates Personalizados no Figma - BrandsDecoded"
-pubDate: "2026-01-01T19:47:32.753Z"
+pubDate: "2026-01-01T20:01:00.603Z"
 tags: []
 draft: false
 author: "Alex Donega"

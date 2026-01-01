@@ -1,6 +1,6 @@
 ---
 title: "A Metáfora do Segundo Andar"
-pubDate: "2026-01-01T19:47:32.770Z"
+pubDate: "2026-01-01T20:01:00.633Z"
 tags: []
 draft: false
 author: "Alex Donega"

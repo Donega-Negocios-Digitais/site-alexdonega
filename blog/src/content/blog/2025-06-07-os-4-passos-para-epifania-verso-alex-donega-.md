@@ -1,6 +1,6 @@
 ---
 title: "2025-06-07-Os 4 Passos para Epifania (versão Alex Donega 😅)"
-pubDate: "2026-01-01T19:47:32.773Z"
+pubDate: "2026-01-01T20:01:00.638Z"
 tags:
   - "Metodologia"
   - "Steve_Blank"

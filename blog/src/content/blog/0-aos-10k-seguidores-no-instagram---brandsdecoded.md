@@ -1,6 +1,6 @@
 ---
 title: "0 aos 10k seguidores no Instagram - BrandsDecoded"
-pubDate: "2026-01-01T19:47:32.775Z"
+pubDate: "2026-01-01T20:01:00.640Z"
 tags: []
 draft: false
 author: "Alex Donega"

@@ -1,6 +1,6 @@
 ---
 title: "Posicionamento de Palavras Chaves no Youtube"
-pubDate: "2026-01-01T19:47:32.724Z"
+pubDate: "2026-01-01T20:01:00.556Z"
 tags: []
 draft: false
 author: "Alex Donega"

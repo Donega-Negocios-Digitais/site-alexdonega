@@ -1,6 +1,6 @@
 ---
 title: "O que é um Processo de postagem"
-pubDate: "2026-01-01T19:47:32.730Z"
+pubDate: "2026-01-01T20:01:00.565Z"
 tags: []
 draft: false
 author: "Alex Donega"

@@ -1,6 +1,6 @@
 ---
 title: "Pergunta e Resposta do Webinar Pro"
-pubDate: "2026-01-01T19:47:32.726Z"
+pubDate: "2026-01-01T20:01:00.559Z"
 tags: []
 draft: false
 author: "Alex Donega"

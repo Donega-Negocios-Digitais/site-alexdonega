@@ -1,6 +1,6 @@
 ---
 title: "Persona 2.0"
-pubDate: "2026-01-01T19:47:32.725Z"
+pubDate: "2026-01-01T20:01:00.557Z"
 tags: []
 draft: false
 author: "Alex Donega"

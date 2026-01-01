@@ -1,6 +1,6 @@
 ---
 title: "Build in Public Mastery"
-pubDate: "2026-01-01T19:47:32.763Z"
+pubDate: "2026-01-01T20:01:00.624Z"
 tags: []
 draft: false
 author: "Alex Donega"

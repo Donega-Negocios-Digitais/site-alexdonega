@@ -1,6 +1,6 @@
 ---
 title: "Construindo sua apresentação"
-pubDate: "2026-01-01T19:47:32.756Z"
+pubDate: "2026-01-01T20:01:00.611Z"
 tags: []
 draft: false
 author: "Alex Donega"

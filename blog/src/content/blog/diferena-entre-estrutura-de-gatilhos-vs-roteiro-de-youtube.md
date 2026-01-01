@@ -1,6 +1,6 @@
 ---
 title: "Diferença entre Estrutura de Gatilhos vs Roteiro de YouTube"
-pubDate: "2026-01-01T19:47:32.750Z"
+pubDate: "2026-01-01T20:01:00.598Z"
 tags: []
 draft: false
 author: "Alex Donega"

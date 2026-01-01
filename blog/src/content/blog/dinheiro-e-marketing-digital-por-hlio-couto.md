@@ -1,6 +1,6 @@
 ---
 title: "Dinheiro e Marketing Digital por Hélio Couto"
-pubDate: "2026-01-01T19:47:32.749Z"
+pubDate: "2026-01-01T20:01:00.597Z"
 tags: []
 draft: false
 author: "Alex Donega"

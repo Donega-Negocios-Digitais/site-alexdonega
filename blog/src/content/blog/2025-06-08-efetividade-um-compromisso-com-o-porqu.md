@@ -1,6 +1,6 @@
 ---
 title: "2025-06-08-Efetividade é um Compromisso com o Porquê"
-pubDate: "2026-01-01T19:47:32.772Z"
+pubDate: "2026-01-01T20:01:00.636Z"
 tags:
   - "Porquê"
   - "Golden_Circle"

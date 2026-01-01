@@ -1,6 +1,6 @@
 ---
 title: "Processo de criação de vídeo no YouTube"
-pubDate: "2026-01-01T19:47:32.723Z"
+pubDate: "2026-01-01T20:01:00.555Z"
 tags: []
 draft: false
 author: "Alex Donega"

@@ -1,6 +1,6 @@
 ---
 title: "template-aula"
-pubDate: "2026-01-01T19:47:32.269Z"
+pubDate: "2026-01-01T20:00:59.352Z"
 tags: []
 draft: false
 author: "Alex Donega"

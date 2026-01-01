@@ -1,6 +1,6 @@
 ---
 title: "SEO dos Arquivos"
-pubDate: "2026-01-01T19:47:32.720Z"
+pubDate: "2026-01-01T20:01:00.550Z"
 tags: []
 draft: false
 author: "Alex Donega"

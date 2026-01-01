@@ -1,6 +1,6 @@
 ---
 title: "Como funciona o algoritmo do Youtube"
-pubDate: "2026-01-01T19:47:32.760Z"
+pubDate: "2026-01-01T20:01:00.619Z"
 tags: []
 draft: false
 author: "Alex Donega"

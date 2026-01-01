@@ -1,6 +1,6 @@
 ---
 title: "Integridade - Os Seis Componentes da Sua Palavra"
-pubDate: "2026-01-01T19:47:32.736Z"
+pubDate: "2026-01-01T20:01:00.573Z"
 tags: []
 draft: false
 author: "Alex Donega"

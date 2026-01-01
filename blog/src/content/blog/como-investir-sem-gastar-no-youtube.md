@@ -1,6 +1,6 @@
 ---
 title: "Como investir sem gastar no Youtube"
-pubDate: "2026-01-01T19:47:32.759Z"
+pubDate: "2026-01-01T20:01:00.618Z"
 tags: []
 draft: false
 author: "Alex Donega"

@@ -1,6 +1,6 @@
 ---
 title: "template-artigo-alex"
-pubDate: "2026-01-01T19:47:32.263Z"
+pubDate: "2026-01-01T20:00:59.341Z"
 tags: []
 draft: false
 author: "Alex Donega"

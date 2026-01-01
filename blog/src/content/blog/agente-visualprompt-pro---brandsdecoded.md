@@ -1,6 +1,6 @@
 ---
 title: "Agente VisualPrompt Pro - BrandsDecoded"
-pubDate: "2026-01-01T19:47:32.768Z"
+pubDate: "2026-01-01T20:01:00.630Z"
 tags: []
 draft: false
 author: "Alex Donega"
