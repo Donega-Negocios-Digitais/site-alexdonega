@@ -1,14 +1,52 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync, copyFileSync } from 'fs';
 import { join, dirname, basename } from 'path';
 import { globSync } from 'glob';
 import matter from 'gray-matter';
 
 const OBSIDIAN_VAULT = 'C:/dev/obsidian-alexdonega';
+const OBSIDIAN_ATTACHMENTS = 'C:/dev/obsidian-alexdonega/Sistema/Anexos/Anexos - Notas';
 const CONTENT_DIR = './src/content/blog';
+const IMAGES_DIR = './public/images';
 
-// Criar diretório de conteúdo se não existir
+// Criar diretórios se não existirem
 if (!existsSync(CONTENT_DIR)) {
   mkdirSync(CONTENT_DIR, { recursive: true });
+}
+if (!existsSync(IMAGES_DIR)) {
+  mkdirSync(IMAGES_DIR, { recursive: true });
+}
+
+// Função para processar e copiar imagem do Obsidian para o blog
+function processImage(imagePath) {
+  if (!imagePath) return undefined;
+
+  // Se já é um caminho /images/, retorna como está
+  if (imagePath.startsWith('/images/')) {
+    return imagePath;
+  }
+
+  // Pega só o nome do arquivo
+  const imageFilename = basename(imagePath);
+
+  // Procura a imagem na pasta de anexos do Obsidian
+  const sourcePath = join(OBSIDIAN_ATTACHMENTS, imageFilename);
+  const destPath = join(IMAGES_DIR, imageFilename);
+
+  if (existsSync(sourcePath)) {
+    copyFileSync(sourcePath, destPath);
+    console.log(`🖼️  Copiada: ${imageFilename}`);
+    return `/images/${imageFilename}`;
+  }
+
+  // Se não encontrou na pasta de anexos, tenta caminho absoluto
+  if (existsSync(imagePath)) {
+    copyFileSync(imagePath, destPath);
+    console.log(`🖼️  Copiada: ${imageFilename}`);
+    return `/images/${imageFilename}`;
+  }
+
+  console.warn(`⚠️  Imagem não encontrada: ${imagePath}`);
+  return undefined;
 }
 
 // Limpar posts antigos antes de sincronizar
@@ -96,7 +134,7 @@ notes.forEach(notePath => {
       tags: Array.isArray(frontmatter.tags) ? frontmatter.tags.map(String) : [],
       draft: frontmatter.status === 'rascunho' || frontmatter.pular === true,
       author: toString(frontmatter.autor || frontmatter.pessoa) || 'Alex Donega',
-      image: frontmatter.image || undefined,
+      image: processImage(frontmatter.image),
       // Metadados adicionais do Obsidian (filtrar valores null/undefined e converter arrays)
       tipo_nota: toString(frontmatter.tipo_nota),
       area: toString(frontmatter.area),
