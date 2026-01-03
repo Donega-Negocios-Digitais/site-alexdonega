@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync } from 'fs';
 import { join, dirname, basename } from 'path';
 import { globSync } from 'glob';
 import matter from 'gray-matter';
@@ -10,6 +10,11 @@ const CONTENT_DIR = './src/content/blog';
 if (!existsSync(CONTENT_DIR)) {
   mkdirSync(CONTENT_DIR, { recursive: true });
 }
+
+// Limpar posts antigos antes de sincronizar
+const existingPosts = globSync(`${CONTENT_DIR}/*.md`);
+existingPosts.forEach(file => unlinkSync(file));
+console.log(`🧹 Removidos ${existingPosts.length} posts antigos`);
 
 // Função para converter wikilinks [[Link]] para markdown [Link](link)
 function convertWikilinks(content) {
@@ -63,11 +68,9 @@ notes.forEach(notePath => {
     const { data: frontmatter, content: markdown } = matter(content);
 
     // Filtrar apenas notas que queremos publicar
-    // Você pode ajustar essa lógica conforme necessário
+    // Regra: somente notas com blog_post contendo 'alexdonega'
     const shouldPublish =
-      frontmatter.tipo_nota === 'artigo' ||
-      frontmatter.tipo_nota === 'aula' ||
-      frontmatter.tags?.includes('publicar');
+      Array.isArray(frontmatter.blog_post) && frontmatter.blog_post.includes('alexdonega');
 
     if (!shouldPublish) {
       skippedCount++;
