@@ -123,7 +123,7 @@ const formatDate = (date: Date) => {
           {sortedPosts.map(post => (
             <article class="post-card" data-tags={post.data.tags.join(',')} data-title={post.data.title.toLowerCase()} data-description={(post.data.description || '').toLowerCase()}>
               <a href={`/blog/${post.slug}`} class="post-card-link">
-                <div class="post-card-image">
+                <div class="post-card-image" style={post.data.image ? `background-image: url(${post.data.image}); background-size: cover; background-position: center;` : ''}>
                   <div class="post-card-category">
                     {post.data.tags[0] || 'Artigo'}
                   </div>

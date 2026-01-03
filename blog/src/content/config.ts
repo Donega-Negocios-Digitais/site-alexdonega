@@ -9,6 +9,7 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     author: z.string().default('Alex Donega'),
+    image: z.string().optional(),
     // Metadados do Obsidian
     tipo_nota: z.string().nullable().optional(),
     area: z.string().nullable().optional(),

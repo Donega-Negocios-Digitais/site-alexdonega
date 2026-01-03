@@ -96,6 +96,7 @@ notes.forEach(notePath => {
       tags: Array.isArray(frontmatter.tags) ? frontmatter.tags.map(String) : [],
       draft: frontmatter.status === 'rascunho' || frontmatter.pular === true,
       author: toString(frontmatter.autor || frontmatter.pessoa) || 'Alex Donega',
+      image: frontmatter.image || undefined,
       // Metadados adicionais do Obsidian (filtrar valores null/undefined e converter arrays)
       tipo_nota: toString(frontmatter.tipo_nota),
       area: toString(frontmatter.area),

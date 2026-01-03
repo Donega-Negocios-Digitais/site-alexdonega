@@ -11,6 +11,7 @@ tags:
   - "marketing-digital"
 draft: false
 author: "Alex Donega"
+image: "/images/whatsapp-vendas.png"
 tipo_nota: "artigo"
 area: "Marketing Digital"
 projeto: "Novo Envio"

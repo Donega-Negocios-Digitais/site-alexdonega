@@ -6,9 +6,10 @@ interface Props {
   tags?: string[];
   author?: string;
   content?: string;
+  image?: string;
 }
 
-const { title, description, pubDate, tags = [], author = 'Alex Donega' } = Astro.props;
+const { title, description, pubDate, tags = [], author = 'Alex Donega', image } = Astro.props;
 
 const formattedDate = new Intl.DateTimeFormat('pt-BR', {
   day: '2-digit',
@@ -84,6 +85,12 @@ const calculateReadingTime = (content: string) => {
             </div>
           </div>
         </header>
+
+        {image && (
+          <div class="post-cover-image">
+            <img src={image} alt={title} />
+          </div>
+        )}
 
         <div class="post-content" id="post-content">
           <slot />
@@ -518,6 +525,18 @@ const calculateReadingTime = (content: string) => {
 
     .sidebar-tag:hover {
       background: rgba(216, 119, 87, 0.2);
+    }
+
+    .post-cover-image {
+      margin: 32px 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .post-cover-image img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .post-content {
