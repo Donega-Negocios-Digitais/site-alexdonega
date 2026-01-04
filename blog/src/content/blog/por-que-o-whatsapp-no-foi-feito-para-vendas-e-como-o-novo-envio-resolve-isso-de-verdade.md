@@ -21,8 +21,6 @@ projeto: "Novo Envio"
 # Por que o WhatsApp Não Foi Feito para Vendas (e Como o Novo Envio Resolve Isso de Verdade)
 
 
-![WhatsApp Vendas - Novo Envio](/images/whatsapp-vendas.png)
-
 ## Por Que o WhatsApp Não Foi Feito para Vender?
 
 O WhatsApp é um dos aplicativos mais usados no Brasil. É rápido, popular e fácil de usar. Mas quando o assunto é vender com consistência e profissionalismo, o WhatsApp apresenta limitações sérias:
@@ -69,6 +67,10 @@ Permite delegar conversas entre membros da equipe com total contexto — sem per
 
 #### 📅 7. Integração com Google Calendário e Lembretes
 Agende tarefas, compromissos e automatize lembretes diretamente no WhatsApp.
+
+
+![WhatsApp Vendas - Novo Envio](/images/whatsapp-vendas.png)
+
 
 ---
 
