@@ -9,12 +9,26 @@ export async function getStaticPaths() {
 
   return blogEntries.map(entry => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { entry, allPosts: blogEntries },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, allPosts } = Astro.props;
 const { Content } = await entry.render();
+
+// Buscar posts relacionados (mesmas tags)
+const currentTags = entry.data.tags || [];
+const relatedPosts = allPosts
+  .filter(post => post.slug !== entry.slug) // Excluir post atual
+  .map(post => {
+    const postTags = post.data.tags || [];
+    const sharedTags = currentTags.filter(tag => postTags.includes(tag));
+    return { post, score: sharedTags.length };
+  })
+  .filter(item => item.score > 0) // Apenas posts com tags em comum
+  .sort((a, b) => b.score - a.score) // Ordenar por relevância
+  .slice(0, 3) // Máximo 3 posts
+  .map(item => item.post);
 ---
 
 <BlogLayout
@@ -24,6 +38,7 @@ const { Content } = await entry.render();
   tags={entry.data.tags}
   author={entry.data.author}
   image={entry.data.image}
+  relatedPosts={relatedPosts}
 >
   <Content />
 </BlogLayout>
