@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Donega | Engenheiro de Contexto</title>
-    <meta name="description" content="Ajudo empreendedores a dominar IA de verdade usando Context Engineering. Gestor de Projetos na Autobots Ventures. +25 software, +R$150M em valuation.">
+    <title>Alex Donega | Explorando IA na Prática</title>
+    <meta name="description" content="Ajudo empreendedores a dominar IA de verdade usando Context Engineering. Fundador de SaaS e guia na jornada de IA. Vem comigo descobrir.">
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -670,12 +670,12 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* ==================== PORTFOLIO (Mobile-First) ==================== */
+        /* ==================== PORTFOLIO (Mobile-First) - LAYOUT VERTICAL ==================== */
         .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
@@ -769,6 +769,169 @@
 
         .portfolio-status {
             margin-bottom: 0;
+        }
+
+        /* ==================== ACERVO CINEMATOGRÁFICO (Mobile-First) ==================== */
+        .acervo-filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 100;
+        }
+
+        .filter-tag {
+            padding: 10px 20px;
+            border: 1px solid var(--accent);
+            border-radius: 25px;
+            background: transparent;
+            color: var(--text-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            z-index: 101;
+            pointer-events: auto;
+        }
+
+        .filter-tag:hover {
+            background: var(--accent);
+            color: var(--bg-main);
+        }
+
+        .filter-tag.active {
+            background: #FF6B35;
+            color: white;
+            border-color: #FF6B35;
+            font-weight: 600;
+        }
+
+        .acervo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .curso-card {
+            aspect-ratio: 2/3;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: var(--bg-card);
+        }
+
+        .curso-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.4);
+            z-index: 10;
+        }
+
+        .curso-card.dimmed {
+            opacity: 0.2;
+            transform: scale(0.95);
+            filter: grayscale(50%);
+        }
+
+        .curso-card.highlighted {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            z-index: 10;
+        }
+
+        .curso-poster {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .curso-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #FF6B35;
+            color: white;
+            padding: 4px 10px;
+            font-size: 9px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .curso-play {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .curso-card:hover .curso-play {
+            opacity: 1;
+            background: rgba(255, 107, 53, 0.4);
+            transform: scale(1.1);
+        }
+
+        .curso-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 50px 14px 14px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+        }
+
+        .curso-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .curso-tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+
+        .curso-tag {
+            font-size: 9px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .curso-tag.copy { background: #FF6B35; color: white; }
+        .curso-tag.trafego { background: #3A86FF; color: white; }
+        .curso-tag.ia { background: #8338EC; color: white; }
+        .curso-tag.mentorias { background: #38B000; color: white; }
+
+        .curso-year {
+            font-size: 11px;
+            color: var(--text-muted);
         }
 
         /* ==================== PHILOSOPHY (Mobile-First) ==================== */
@@ -1049,10 +1212,27 @@
                 font-size: 30px;
             }
 
-            .services-grid,
-            .portfolio-grid {
+            .services-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 24px;
+            }
+
+            .portfolio-grid {
+                max-width: 700px;
+            }
+
+            .acervo-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 14px;
+            }
+
+            .curso-title {
+                font-size: 12px;
+            }
+
+            .curso-tag {
+                font-size: 8px;
+                padding: 2px 6px;
             }
 
             .courses-grid {
@@ -1271,8 +1451,8 @@
             }
 
             .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 24px;
+                max-width: 700px;
+                gap: 28px;
             }
 
             .portfolio-card {
@@ -1284,7 +1464,36 @@
             }
 
             .portfolio-card p {
+                font-size: 15px;
+            }
+
+            .acervo-grid {
+                grid-template-columns: repeat(8, 1fr);
+                gap: 16px;
+            }
+
+            .curso-title {
+                font-size: 11px;
+            }
+
+            .curso-tag {
+                font-size: 7px;
+                padding: 2px 5px;
+            }
+
+            .curso-badge {
+                font-size: 7px;
+                padding: 3px 6px;
+            }
+
+            .curso-play {
+                width: 35px;
+                height: 35px;
                 font-size: 14px;
+            }
+
+            .curso-info {
+                padding: 30px 10px 10px;
             }
 
             .philosophy-box {
@@ -1345,34 +1554,6 @@
 <!-- Skip to content (Accessibility) -->
 <a href="#main-content" class="skip-to-content">Pular para o conteúdo</a>
 
-<!-- Header -->
-<header class="header">
-    <nav class="nav">
-        <a href="/" class="nav-logo">Alex Donega</a>
-        <ul class="nav-links">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#cursos">Cursos</a></li>
-            <li><a href="#conteudo">Conteúdo</a></li>
-        </ul>
-        <a href="https://wa.me/5545999506444" target="_blank" class="nav-cta">Falar Comigo</a>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir menu">&#9776;</button>
-    </nav>
-</header>
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="mobile-menu">
-    <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Fechar menu">&times;</button>
-    <ul class="mobile-menu-links">
-        <li><a href="#sobre" onclick="closeMobileMenu()">Sobre</a></li>
-        <li><a href="#servicos" onclick="closeMobileMenu()">Serviços</a></li>
-        <li><a href="#portfolio" onclick="closeMobileMenu()">Portfólio</a></li>
-        <li><a href="#cursos" onclick="closeMobileMenu()">Cursos</a></li>
-        <li><a href="#conteudo" onclick="closeMobileMenu()">Conteúdo</a></li>
-    </ul>
-    <a href="https://wa.me/5545999506444" target="_blank" class="mobile-menu-cta" onclick="closeMobileMenu()">Falar Comigo</a>
-</div>
 
 <!-- Hero -->
 <section class="hero" id="main-content">
@@ -1387,23 +1568,9 @@
             </p>
 
             <p class="hero-description">
-                De uma agência de marketing para founder de SaaS. Hoje sou parte do ecossistema Autobots Ventures e ajudo founders a transformar visão em movimento e dinheiro.
+                De uma agência de marketing para founder de SaaS. Em 2026 vou me dedicar ao máximo nessa jornada de IA e Context Engineering — e te convido a caminhar comigo. Sou um cara que está descobrindo e disposto a compartilhar cada descoberta.
             </p>
 
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-number">R$150M+</div>
-                    <div class="hero-stat-label">Valuation gerados pela Autobots Ventures</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">25+</div>
-                    <div class="hero-stat-label">Software no portfólio</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">3</div>
-                    <div class="hero-stat-label">SaaS (Founder)</div>
-                </div>
-            </div>
 
         </div>
 
@@ -1416,73 +1583,47 @@
 </section>
 
 <!-- Story Section -->
-<section class="section section-dark" id="sobre">
+<section class="section section-dark" id="sobre" style="padding: 80px 0;">
     <div class="container">
-        <div class="story-content">
-            <div class="story-intro">
-                <h3>De servidor público a co-criador de startups</h3>
-
-                <p>
-                    Sou servidor público, o ano é 2015. Vida estável, tudo certinho. Aí chega uma carta: ganhei a bolsa ERASMUS para fazer mestrado em Economia na Romênia — sim, terra do Drácula! Largo tudo.
-                </p>
-
-                <p>
-                    Lá conheço jovens criando startups, fazendo coisas incríveis com tecnologia... e penso: <em>"MEU PIA, é isso que eu quero!"</em>
-                </p>
-
-                <p>
-                    Retorno ao Brasil e decido transformar minha agência de marketing em SaaS. Erro muito, aprendo mais ainda.
-                </p>
-
-                <p>
-                    Busco palavras que definam o que quero construir. Surgem quatro: Simple, Escalável, Divertido, Enxuto. Nasce a <strong>Metodologia SEDE</strong>.
-                </p>
-
-                <p>
-                    Estamos no início de 2025, tenho 40 anos. Faço algo contraintuitivo — tipo o Robert De Niro no filme "O Estagiário": viro estagiário do Diego Carmona — ele que fez exit ultra-milionário e abriu IPO na Nasdaq. Me coloco como aprendiz, aprendo a ser íntegro, e hoje sou sócio dele.
-                </p>
-
-                <blockquote>
-                    "Não tenho a pretensão de ser perfeito — só a responsabilidade de ser honesto e íntegro."
-                    <cite>— Filosofia de vida que adotei do Diego Carmona</cite>
-                </blockquote>
+        <div style="max-width: 750px; margin: 0 auto;">
+            <div style="margin-bottom: 60px;">
+                <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 3rem; font-weight: 500; margin-bottom: 16px; color: #ffffff; line-height: 1.2;">A Jornada: Do Servo ao Orquestrador</h2>
+                <div style="width: 60px; height: 3px; background: #d87757; margin-bottom: 24px;"></div>
+                <p style="font-size: 1.1rem; color: #a3a3a3; line-height: 1.8;">Como saí da zona de conforto para descobrir a verdadeira inovação em IA</p>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item highlight">
-                    <div class="timeline-year">2015</div>
-                    <div class="timeline-title">Mestrado na Romênia</div>
-                    <div class="timeline-desc">Larguei o serviço público e descobri o mundo das startups</div>
+            <div style="display: grid; gap: 50px;">
+                <!-- Phase 1 -->
+                <div>
+                    <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 1.8rem; font-weight: 500; color: #d87757; margin-bottom: 16px;">O Chamado</h3>
+                    <p style="color: #e5e5e5; line-height: 1.8; margin-bottom: 16px;">
+                        Sou servidor público. Vida estável, tudo certinho. Aí chega uma carta: ganhei a bolsa ERASMUS para fazer mestrado em Economia na Romênia — sim, terra do Drácula! Largo tudo.
+                    </p>
+                    <p style="color: #e5e5e5; line-height: 1.8;">
+                        Lá conheço jovens criando startups, fazendo coisas incríveis com tecnologia... e penso: <em>"MEU PIA, é isso que eu quero!"</em>
+                    </p>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2019</div>
-                    <div class="timeline-title">Marketing Digital</div>
-                    <div class="timeline-desc">Me especializo e faço uma baita grana com Funil de Webinar para a Doface, porém desenvolvo alto nível de depressão.</div>
+                <!-- Phase 2 -->
+                <div>
+                    <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 1.8rem; font-weight: 500; color: #d87757; margin-bottom: 16px;">Construindo a Máquina</h3>
+                    <p style="color: #e5e5e5; line-height: 1.8; margin-bottom: 16px;">
+                        Retorno ao Brasil e decido transformar minha agência de marketing em SaaS. Erro muito, aprendo mais ainda. E o mais importante? Gerei dinheiro.
+                    </p>
+                    <p style="color: #e5e5e5; line-height: 1.8;">
+                        Decido replicar e criar outros negócios. Busco palavras que definam o que quero construir: Simples, Enxuto, Escalável, Divertido. Nasce o <strong>Framework SEED</strong> — meu sistema para criar negócios que funcionam.
+                    </p>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-title">MicroSaaS funcionando</div>
-                    <div class="timeline-desc">Fundei Novo Envio e FalaZapp.</div>
-                </div>
-
-                <div class="timeline-item highlight">
-                    <div class="timeline-year">Início 2025</div>
-                    <div class="timeline-title">Estagiário aos 40 anos</div>
-                    <div class="timeline-desc">Decidi ser irreconhecível. Virei aprendiz do Diego Carmona. Em meses sou promovido a Diretor Autobots Ventures — Marketing & Relationship Division. Envolvido com +25 software no ecossistema Autobots Ventures.</div>
-                </div>
-
-                <div class="timeline-item highlight">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-title">Context Engineering</div>
-                    <div class="timeline-desc">Sempre soube que prompt não era o principal — era ter uma boa base. Quando descubro o nome técnico: boom! Consigo resultados reais com IA.</div>
-                </div>
-
-                <div class="timeline-item highlight">
-                    <div class="timeline-year">Agora</div>
-                    <div class="timeline-title">Gerenciando Agentes, não Pessoas</div>
-                    <div class="timeline-desc">A IA vai criar inúmeros "funcionários". Não gerenciamos mais pessoas — gerenciamos agentes. Eles são mais rápidos, eficientes e baratos.</div>
+                <!-- Phase 3 -->
+                <div>
+                    <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 1.8rem; font-weight: 500; color: #d87757; margin-bottom: 16px;">A Era do Diretor de Contexto</h3>
+                    <p style="color: #e5e5e5; line-height: 1.8; margin-bottom: 16px;">
+                        A verdadeira inovação não está em mais tecnologia, mas em como estruturamos contexto para colaborar melhor com IA. <strong>A Era do Operador Acabou.</strong> Quem foca apenas em decorar prompts é o novo "operário digital" — facilmente substituível.
+                    </p>
+                    <p style="color: #e5e5e5; line-height: 1.8;">
+                        O que estou criando é diferente: estou formando o <strong>Diretor de Contexto</strong>. Aquele que domina engenharia de contexto para orquestrar múltiplos agentes de IA — agentes que pensam, que decidem, que escalam negócios. Você deixa de ser um usuário e se torna um orquestrador de inteligência.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1496,7 +1637,7 @@
             <div class="section-eyebrow">O que eu faço</div>
             <h2 class="section-title">Como tenho ajudado empresas</h2>
             <p class="section-subtitle">
-                +25 software no portfólio, +R$150M em valuation gerados pela Autobots Ventures. De MicroSaaS a Venture Capital — ajudo founders a transformar visão em resultado.
+                De MicroSaaS a educação em IA — compartilho o que estou aprendendo enquanto construo. Sem guru, sem promessas vazias. Só descobertas reais.
             </p>
         </div>
 
@@ -1511,10 +1652,12 @@
 
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
                 </div>
-                <h3>Autobots Ventures</h3>
-                <p>Analiso as startups do portfólio Autobots Ventures para reduzir churn, otimizar UX e escalar com funis e growth hacking. +25 software, +R$150M em valuation.</p>
+                <h3>Context Engineering</h3>
+                <p>Ensino a estruturar contexto para que IAs entreguem resultados excepcionais. Framework DNA System, Claude Code na prática, e tudo que estou descobrindo.</p>
             </div>
 
             <div class="service-card">
@@ -1522,38 +1665,12 @@
                     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
                 </div>
                 <h3>MicroSaaS</h3>
-                <p>Validei essa metodologia criando o Novo Envio (+1.300 clientes) e FalaZapp — produtos enxutos com UX simples que retêm usuários.</p>
+                <p>Validei essa metodologia criando o Novo Envio e FalaZapp — produtos enxutos com UX simples que retêm usuários.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Philosophy Section -->
-<section class="section section-gradient">
-    <div class="container">
-        <div class="philosophy-box">
-            <p class="philosophy-quote">
-                "É mais fácil segurar um louco do que empurrar um morto."
-            </p>
-            <p class="philosophy-author">— Diego Carmona, sobre eu ser acelerado</p>
-
-            <div class="philosophy-metrics">
-                <div class="philosophy-metric">
-                    <div class="philosophy-metric-number">43+</div>
-                    <div class="philosophy-metric-label">Artigos de Context Engineering estudados</div>
-                </div>
-                <div class="philosophy-metric">
-                    <div class="philosophy-metric-number">10+</div>
-                    <div class="philosophy-metric-label">Anos empreendendo</div>
-                </div>
-                <div class="philosophy-metric">
-                    <div class="philosophy-metric-number">4</div>
-                    <div class="philosophy-metric-label">Anos de Landmark Education</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Portfolio Section -->
 <section class="section section-dark" id="portfolio">
@@ -1573,7 +1690,7 @@
                     <img src="assets/img/logos/logo-novo-envio.svg" alt="Logo Novo Envio" class="portfolio-logo" width="120" height="40" loading="lazy">
                 </div>
                 <h3>Novo Envio</h3>
-                <p>Sistema de gestão de WhatsApp com 52 funcionalidades. +1.300 empreendedores usando. Sócio: Diego Carmona.</p>
+                <p>Sistema de gestão de WhatsApp com 52 funcionalidades para empreendedores.</p>
                 <a href="https://novoenvio.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
@@ -1602,207 +1719,517 @@
             </div>
 
             <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status exit">Diretor</span>
-                    <img src="assets/img/logos/logo-autobots-ventures.svg" alt="Logo Autobots Ventures" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Autobots Ventures</h3>
-                <p>Gestor de Projetos (Marketing & Relationship Division). Venture builder com +21 startups investidas. +R$150M em valuation.</p>
-                <a href="https://autobotsventures.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Ver portfólio &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-postz-in.svg" alt="Logo Postz.in" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Postz.in</h3>
-                <p>IA para criar conteúdos eficazes e atualizados para redes sociais. Transforme posts em clientes.</p>
-                <a href="https://postz.in" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-gophin.svg" alt="Logo GoPhin" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>GoPhin</h3>
-                <p>Plataforma de análise de performance para natação competitiva. Analytics preditivos para otimizar treinamentos.</p>
-                <a href="https://www.gophin.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-tintim.svg" alt="Logo TinTim" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>TinTim</h3>
-                <p>Ferramenta de rastreamento para alavancar vendas pelo WhatsApp. Insights para otimizar campanhas.</p>
-                <a href="https://tintim.app" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-pipeback.webp" alt="Logo Pipeback" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Pipeback</h3>
-                <p>Plataforma nativa em IA para suporte, sucesso do cliente, vendas e marketing. Tudo-em-um para startups.</p>
-                <a href="https://pipeback.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-neotriad.webp" alt="Logo Neotriad" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Neotriad</h3>
-                <p>Software de produtividade pessoal e gestão de equipes. Planejamento de projetos e otimização de processos.</p>
-                <a href="https://neotriad.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-zap-responder.webp" alt="Logo Zap.Responder" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Zap.Responder</h3>
-                <p>Fluxos sem código, Agente IA Humanizado, Integrações Multicanal e Clonagem de Voz.</p>
-                <a href="https://zapresponder.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-iuli.webp" alt="Logo Iuli" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Iuli</h3>
-                <p>Sistema de Gestão Financeira (ERP) para empresas.</p>
-                <a href="https://iuli.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-z-mcp.ico" alt="Logo Z-MCP" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Z-MCP</h3>
-                <p>WhatsApp + IA em minutos. Transcrição de áudios, análise de imagens e automações inteligentes via API REST e protocolo MCP.</p>
-                <a href="https://z-mcp.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-arpa-solar.svg" alt="Logo Arpa Solar" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Arpa Solar</h3>
-                <p>Plataforma de simulação e propostas de energia solar fotovoltaica. Simulação de economia, visualização de telhado com heatmap de irradiação solar.</p>
-                <a href="https://arpaenergia.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-impact.webp" alt="Logo Impact" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Impact</h3>
-                <p>Soluções financeiras para organizações de impacto. Conta digital, câmbio, gestão de projetos sociais e ambientais. +R$100M destinados para impacto.</p>
-                <a href="https://www.impact-br.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-evolutto.webp" alt="Logo Evolutto" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Evolutto</h3>
-                <p>Plataforma que revolucionou o mercado de consultoria no Brasil. Gestão, rastreabilidade e atendimento para consultorias digitais. +4.000 empresas atendidas.</p>
-                <a href="https://evolutto.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-leadlovers.webp" alt="Logo Leadlovers" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Leadlovers</h3>
-                <p>Plataforma completa de automação de marketing digital. Email marketing, WhatsApp, landing pages, chatbots, CRM e EAD. Mais vendas. Menos esforço.</p>
-                <a href="https://leadlovers.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-pixelx.webp" alt="Logo PixelX" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>PixelX</h3>
-                <p>Otimização de campanhas e rastreamento avançado. Multiplique resultados e reduza custos em até 40% com Conversion API e advanced matching.</p>
-                <a href="https://pixelx.app" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-changelogfy.svg" alt="Logo Changelogfy" class="portfolio-logo" width="120" height="40" loading="lazy">
-                </div>
-                <h3>Changelogfy</h3>
-                <p>Plataforma all-in-one para feedback de usuários, roadmaps e changelogs. Construa produtos impactantes a partir do feedback dos clientes.</p>
-                <a href="https://changelogfy.com/pt" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <span class="portfolio-status building">Solo Founder</span>
+                <h3>Obsidian Note Reviewer</h3>
+                <p>Interface visual para revisar notas geradas por AI agents. Renderiza markdown, integra com Claude Code e salva no Obsidian sem fricção.</p>
+                <span class="portfolio-link" style="color: var(--text-muted);">Em breve</span>
             </div>
 
             <div class="portfolio-card">
                 <span class="portfolio-status active">Mentor</span>
                 <h3>InsightZap</h3>
-                <p>Dashboards e resumos com IA para moderar, analisar e crescer seus grupos no WhatsApp com segurança. Aumente o engajamento da sua comunidade.</p>
+                <p>Dashboards e resumos com IA para moderar, analisar e crescer seus grupos no WhatsApp com segurança.</p>
                 <a href="https://insightzap.setupautomatizado.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
             </div>
 
             <div class="portfolio-card">
-                <span class="portfolio-status active">Mentor</span>
-                <h3>AutoHub</h3>
-                <p>Hub para criar e gerenciar múltiplos terminais de Claude Code. Orquestre agentes de IA em paralelo para máxima produtividade.</p>
-                <span class="portfolio-link" style="color: var(--text-muted);">Em breve</span>
+                <div class="portfolio-header">
+                    <span class="portfolio-status active">Sócio Founder</span>
+                    <img src="assets/img/logos/logo-operacao-de-vendas.webp" alt="Logo Operação de Vendas" class="portfolio-logo" width="120" height="40" loading="lazy">
+                </div>
+                <h3>Operação de Vendas</h3>
+                <p>Marketing e vendas 360° para autoescolas e clínicas de estética. Método Lançamento Meteórico: pico de vendas em 2 dias via grupo VIP WhatsApp.</p>
+                <span class="portfolio-link" style="color: var(--text-muted);">Em operação</span>
             </div>
 
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-savings-club.svg" alt="Logo Savings.Club" class="portfolio-logo" width="120" height="40" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- Acervo Cinematográfico de Conhecimento -->
+<section class="section" id="acervo">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">Formação Contínua</div>
+            <h2 class="section-title">A Curadoria Que Poupa<br>Seu Tempo e Dinheiro</h2>
+            <p class="section-subtitle">
+                Já fiz os cursos, cometi os erros e separei o que funciona de verdade.
+            </p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="acervo-filters">
+            <button class="filter-tag active" data-filter="todos">Todos</button>
+            <button class="filter-tag" data-filter="copy">Copy</button>
+            <button class="filter-tag" data-filter="trafego">Tráfego</button>
+            <button class="filter-tag" data-filter="ia">IA</button>
+            <button class="filter-tag" data-filter="mentorias">Mentorias</button>
+        </div>
+
+        <!-- Grid de Cursos -->
+        <div class="acervo-grid">
+            <!-- Curso 1 -->
+            <div class="curso-card" data-tags="ia,copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #FF6B35);">
+                    <div class="curso-play">▶</div>
                 </div>
-                <h3>Savings.Club</h3>
-                <p>Consórcio digital. Poupança coletiva para carros acessíveis e financiamento imobiliário.</p>
-                <a href="https://savings.club" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <div class="curso-info">
+                    <h4 class="curso-title">Engenharia de Contexto Aplicada</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
             </div>
 
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-tec-mais.webp" alt="Logo Tec Mais" class="portfolio-logo" width="120" height="40" loading="lazy">
+            <!-- Curso 2 -->
+            <div class="curso-card" data-tags="ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #3A86FF);">
+                    <div class="curso-play">▶</div>
                 </div>
-                <h3>SGE / Tec Mais</h3>
-                <p>Sistema de Gestão Escolar para cursos técnicos e profissionalizantes. 12 unidades, +4.000 alunos.</p>
-                <a href="https://www.tecmais.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <div class="curso-info">
+                    <h4 class="curso-title">Claude Code em 1 Dia</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
             </div>
 
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-health-money.webp" alt="Logo Health Money" class="portfolio-logo" width="120" height="40" loading="lazy">
+            <!-- Curso 3 -->
+            <div class="curso-card" data-tags="ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #38B000);">
+                    <div class="curso-play">▶</div>
                 </div>
-                <h3>Health Money</h3>
-                <p>Gestão e assessoria financeira empresarial. Ajudando empresários a organizarem finanças e aumentarem lucros.</p>
-                <a href="https://healthmoneygf.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <div class="curso-info">
+                    <h4 class="curso-title">Segundo Cérebro no Obsidian</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
             </div>
 
-            <div class="portfolio-card">
-                <div class="portfolio-header">
-                    <span class="portfolio-status active">Mentor</span>
-                    <img src="assets/img/logos/logo-jurisoft.svg" alt="Logo Jurisoft" class="portfolio-logo" width="120" height="40" loading="lazy">
+            <!-- Curso 4 -->
+            <div class="curso-card" data-tags="copy,ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #FF6B35, #8338EC);">
+                    <div class="curso-play">▶</div>
                 </div>
-                <h3>Jurisoft</h3>
-                <p>Plataforma líder em marketing jurídico. +5 mil advogados clientes em todo Brasil. Posts, sites e anúncios para advocacia.</p>
-                <a href="https://jurisoft.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <div class="curso-info">
+                    <h4 class="curso-title">Copywriting com IA</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag copy">Copy</span>
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 5 -->
+            <div class="curso-card" data-tags="trafego,ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #3A86FF, #8338EC);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Tráfego Pago Inteligente</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag trafego">Tráfego</span>
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 6 -->
+            <div class="curso-card" data-tags="mentorias">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #38B000, #3A86FF);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Mentoria SaaS Enxuto</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag mentorias">Mentorias</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 7 -->
+            <div class="curso-card" data-tags="copy,trafego">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #FF6B35, #3A86FF);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Estratégias de Marketing Digital</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag copy">Copy</span>
+                        <span class="curso-tag trafego">Tráfego</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 8 -->
+            <div class="curso-card" data-tags="mentorias,ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #38B000, #8338EC);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Automação com N8N</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag mentorias">Mentorias</span>
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 9 -->
+            <div class="curso-card" data-tags="trafego">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #3A86FF, #1a1a2e);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Facebook Ads Avançado</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag trafego">Tráfego</span>
+                    </div>
+                    <span class="curso-year">2023</span>
+                </div>
+            </div>
+
+            <!-- Curso 10 -->
+            <div class="curso-card" data-tags="copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #FF6B35, #e63946);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Headlines que Vendem</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2023</span>
+                </div>
+            </div>
+
+            <!-- Curso 11 -->
+            <div class="curso-card" data-tags="ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #480ca8);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">ChatGPT para Negócios</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2023</span>
+                </div>
+            </div>
+
+            <!-- Curso 12 -->
+            <div class="curso-card" data-tags="mentorias">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #38B000, #006400);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Gestão de Produtos</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag mentorias">Mentorias</span>
+                    </div>
+                    <span class="curso-year">2023</span>
+                </div>
+            </div>
+
+            <!-- Curso 13 -->
+            <div class="curso-card" data-tags="trafego,copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #3A86FF, #FF6B35);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Funis de Webinar</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag trafego">Tráfego</span>
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2023</span>
+                </div>
+            </div>
+
+            <!-- Curso 14 -->
+            <div class="curso-card" data-tags="ia,mentorias">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #38B000);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Prompt Engineering</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                        <span class="curso-tag mentorias">Mentorias</span>
+                    </div>
+                    <span class="curso-year">2023</span>
+                </div>
+            </div>
+
+            <!-- Curso 15 -->
+            <div class="curso-card" data-tags="copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #FF6B35, #ff9f1c);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Storytelling para Vendas</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2022</span>
+                </div>
+            </div>
+
+            <!-- Curso 16 -->
+            <div class="curso-card" data-tags="trafego">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #3A86FF, #023e8a);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Google Ads Masterclass</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag trafego">Tráfego</span>
+                    </div>
+                    <span class="curso-year">2022</span>
+                </div>
+            </div>
+
+            <!-- Curso 17 -->
+            <div class="curso-card" data-tags="mentorias,copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #38B000, #FF6B35);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Lançamentos Digitais</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag mentorias">Mentorias</span>
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2022</span>
+                </div>
+            </div>
+
+            <!-- Curso 18 -->
+            <div class="curso-card" data-tags="ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #b5179e);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Midjourney Criativo</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2023</span>
+                </div>
+            </div>
+
+            <!-- Curso 19 -->
+            <div class="curso-card" data-tags="trafego,ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #3A86FF, #8338EC);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Anúncios com IA</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag trafego">Tráfego</span>
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 20 -->
+            <div class="curso-card" data-tags="copy,ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #FF6B35, #8338EC);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Copy com Claude</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag copy">Copy</span>
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 21 -->
+            <div class="curso-card" data-tags="mentorias">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #38B000, #2d6a4f);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Scale de MicroSaaS</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag mentorias">Mentorias</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 22 -->
+            <div class="curso-card" data-tags="copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #FF6B35, #dc2f02);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Emails que Convertem</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2022</span>
+                </div>
+            </div>
+
+            <!-- Curso 23 -->
+            <div class="curso-card" data-tags="trafego">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #3A86FF, #4361ee);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">YouTube Ads</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag trafego">Tráfego</span>
+                    </div>
+                    <span class="curso-year">2022</span>
+                </div>
+            </div>
+
+            <!-- Curso 24 -->
+            <div class="curso-card" data-tags="ia,copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #FF6B35);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Conteúdo com IA</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 25 -->
+            <div class="curso-card" data-tags="mentorias,trafego">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #38B000, #3A86FF);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Growth Hacking</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag mentorias">Mentorias</span>
+                        <span class="curso-tag trafego">Tráfego</span>
+                    </div>
+                    <span class="curso-year">2023</span>
+                </div>
+            </div>
+
+            <!-- Curso 26 -->
+            <div class="curso-card" data-tags="copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #FF6B35, #f77f00);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">VSL Completo</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2021</span>
+                </div>
+            </div>
+
+            <!-- Curso 27 -->
+            <div class="curso-card" data-tags="ia">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #7209b7);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Agentes de IA</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 28 -->
+            <div class="curso-card" data-tags="trafego,copy">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #3A86FF, #FF6B35);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Remarketing Pro</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag trafego">Tráfego</span>
+                        <span class="curso-tag copy">Copy</span>
+                    </div>
+                    <span class="curso-year">2022</span>
+                </div>
+            </div>
+
+            <!-- Curso 29 -->
+            <div class="curso-card" data-tags="mentorias">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #38B000, #52b788);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Validação de Ideias</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag mentorias">Mentorias</span>
+                    </div>
+                    <span class="curso-year">2021</span>
+                </div>
+            </div>
+
+            <!-- Curso 30 -->
+            <div class="curso-card" data-tags="ia,trafego">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #3A86FF);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">IA para Tráfego</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                        <span class="curso-tag trafego">Tráfego</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
+            </div>
+
+            <!-- Curso 31 -->
+            <div class="curso-card" data-tags="copy,mentorias">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #FF6B35, #38B000);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">Cartas de Vendas</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag copy">Copy</span>
+                        <span class="curso-tag mentorias">Mentorias</span>
+                    </div>
+                    <span class="curso-year">2020</span>
+                </div>
+            </div>
+
+            <!-- Curso 32 -->
+            <div class="curso-card" data-tags="ia,mentorias">
+                <div class="curso-poster" style="background: linear-gradient(135deg, #8338EC, #38B000);">
+                    <div class="curso-play">▶</div>
+                </div>
+                <div class="curso-info">
+                    <h4 class="curso-title">RAG Avançado</h4>
+                    <div class="curso-tags">
+                        <span class="curso-tag ia">IA</span>
+                        <span class="curso-tag mentorias">Mentorias</span>
+                    </div>
+                    <span class="curso-year">2024</span>
+                </div>
             </div>
         </div>
     </div>
@@ -1933,7 +2360,7 @@
     <div class="container">
         <h2 class="cta-title">Bora dominar IA de verdade?</h2>
         <p class="cta-subtitle">
-            O que eu falo, eu entrego. Se você quer aprender Context Engineering com quem já errou muito e acertou algumas, vem comigo.
+            Aprendendo em público, compartilhando de verdade. Se você quer explorar Context Engineering com quem tá na trincheira, vem comigo.
         </p>
         <div class="hero-cta-group" style="justify-content: center;">
             <a href="#cursos" class="btn-primary">Ver Cursos &rarr;</a>
@@ -1947,8 +2374,8 @@
     <div class="footer-content">
         <div class="footer-brand">
             <h4>Alex Donega</h4>
-            <p>Engenheiro de Contexto. Gestor de Projetos na Autobots Ventures. Ajudando empreendedores a dominar IA de verdade.</p>
-            <p class="signature">"O que eu falo, eu entrego."</p>
+            <p>Fundador de SaaS. Explorando IA na prática e compartilhando a jornada sem filtro.</p>
+            <p class="signature">"Testando, errando e compartilhando."</p>
         </div>
 
         <div class="footer-column">
@@ -2034,11 +2461,14 @@
     }
 
     // Close modal on outside click
-    document.getElementById('newsletter-modal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeNewsletterModal();
-        }
-    });
+    const newsletterModal = document.getElementById('newsletter-modal');
+    if (newsletterModal) {
+        newsletterModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeNewsletterModal();
+            }
+        });
+    }
 
     // Close modals on ESC key
     document.addEventListener('keydown', function(e) {
@@ -2047,6 +2477,57 @@
             closeMobileMenu();
         }
     });
+
+    // Acervo Cinematográfico - Filtros
+    function initAcervoFilters() {
+        const filters = document.querySelectorAll('.filter-tag');
+        const cards = document.querySelectorAll('.curso-card');
+
+        filters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                const tag = filter.dataset.filter;
+
+                if (tag === 'todos') {
+                    // Reset all filters - show all cards normal
+                    filters.forEach(f => f.classList.remove('active'));
+                    filter.classList.add('active');
+                    cards.forEach(card => {
+                        card.classList.remove('dimmed', 'highlighted');
+                    });
+                } else {
+                    // Toggle this filter
+                    document.querySelector('[data-filter="todos"]').classList.remove('active');
+                    filter.classList.toggle('active');
+
+                    // Get all active tags
+                    const activeTags = [...document.querySelectorAll('.filter-tag.active')]
+                        .map(f => f.dataset.filter)
+                        .filter(t => t !== 'todos');
+
+                    if (activeTags.length === 0) {
+                        // No filters active, show all normal
+                        document.querySelector('[data-filter="todos"]').classList.add('active');
+                        cards.forEach(card => card.classList.remove('dimmed', 'highlighted'));
+                    } else {
+                        // Apply filter - dim non-matching, highlight matching
+                        cards.forEach(card => {
+                            const cardTags = card.dataset.tags.split(',');
+                            const hasMatch = activeTags.some(t => cardTags.includes(t));
+                            card.classList.toggle('dimmed', !hasMatch);
+                            card.classList.toggle('highlighted', hasMatch);
+                        });
+                    }
+                }
+            });
+        });
+    }
+
+    // Initialize Acervo filters on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAcervoFilters);
+    } else {
+        initAcervoFilters();
+    }
 </script>
 
 <!-- Newsletter Modal -->
