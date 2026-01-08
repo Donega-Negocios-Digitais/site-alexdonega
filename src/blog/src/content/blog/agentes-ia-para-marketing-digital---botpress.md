@@ -45,15 +45,15 @@ url_original: "https://botpress.com/pt/blog/ai-agent-for-digital-marketing"
 > [!tip]- Léxico
 >
 > **Tecnologia e IA**
-> - **Marketing Conversacional**: Engajamento em tempo real via chatbots, respostas instantâneas, guiando prospects pelo funil
-> - **Segmentação de Audiência**: Identificação de nichos em tempo real para entrega de anúncios direcionados
-> - **Personalização Dinâmica**: Criação de emails, landing pages e recomendações customizadas baseadas em necessidades individuais
+> - [Marketing Conversacional](/blog/marketing-conversacional): Engajamento em tempo real via chatbots, respostas instantâneas, guiando prospects pelo funil
+> - [Segmentação de Audiência](/blog/segmentao-de-audincia): Identificação de nichos em tempo real para entrega de anúncios direcionados
+> - [Personalização Dinâmica](/blog/personalizao-dinmica): Criação de emails, landing pages e recomendações customizadas baseadas em necessidades individuais
 >
 > **Técnicas e Estratégias**
-> - **Agentes de IA para Marketing**: Sistemas inteligentes que analisam dados e otimizam estratégias de marketing, entendendo comportamento do cliente e entregando experiências personalizadas com mínimo esforço manual
+> - [Agentes de IA para Marketing](/blog/agentes-de-ia-para-marketing): Sistemas inteligentes que analisam dados e otimizam estratégias de marketing, entendendo comportamento do cliente e entregando experiências personalizadas com mínimo esforço manual
 >
 > **Conteúdo e Criação**
-> - **Adaptação em Tempo Real**: Monitoramento de performance com ajuste instantâneo de conteúdo, targeting ou alocação de budget
+> - [Adaptação em Tempo Real](/blog/adaptao-em-tempo-real): Monitoramento de performance com ajuste instantâneo de conteúdo, targeting ou alocação de budget
 > [!question]- Pontos para Aprofundar (Sugestão da IA)
 >
 > - **Como construir agentes de IA para marketing com Botpress?**

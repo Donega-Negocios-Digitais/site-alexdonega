@@ -45,15 +45,15 @@ url_original: "https://clickup.com/pt-BR/blog/481028/agentes-de-ia-para-marketin
 > [!tip]- Léxico
 >
 > **Tecnologia e IA**
-> - **Pontuação Preditiva de Leads**: Uso de IA para classificar leads por probabilidade de conversão
-> - **Automação de Sequências**: Disparo automático de e-mails e ações baseado em comportamento do usuário
-> - **Otimização Autônoma**: Capacidade da IA de ajustar campanhas sem intervenção manual
+> - [Pontuação Preditiva de Leads](/blog/pontuao-preditiva-de-leads): Uso de IA para classificar leads por probabilidade de conversão
+> - [Automação de Sequências](/blog/automao-de-sequncias): Disparo automático de e-mails e ações baseado em comportamento do usuário
+> - [Otimização Autônoma](/blog/otimizao-autnoma): Capacidade da IA de ajustar campanhas sem intervenção manual
 >
 > **Ferramentas e Recursos**
-> - **Agentes de IA para Marketing**: Sistemas autônomos que executam tarefas de marketing (análise, automação, personalização) com mínima intervenção humana
+> - [Agentes de IA para Marketing](/blog/agentes-de-ia-para-marketing): Sistemas autônomos que executam tarefas de marketing (análise, automação, personalização) com mínima intervenção humana
 >
 > **Técnicas e Estratégias**
-> - **Marketing Conversacional**: Estratégia de engajamento em tempo real via chatbots e mensagens personalizadas
+> - [Marketing Conversacional](/blog/marketing-conversacional): Estratégia de engajamento em tempo real via chatbots e mensagens personalizadas
 > [!question]- Pontos para Aprofundar (Sugestão da IA)
 >
 > - **Como integrar múltiplos agentes de IA em um fluxo de trabalho unificado?**

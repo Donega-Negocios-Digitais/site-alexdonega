@@ -1,0 +1,59 @@
+commit 9e7ff7c548b02430afa83fa60416949caafaf788
+Author: alexdonega <alexdonega@gmail.com>
+Date:   Mon Jan 5 12:35:02 2026 -0300
+
+    Update story section with new journey narrative and clean layout
+    
+    - Revise narrative: "A Jornada: Do Servo ao Orquestrador"
+    - Add compelling 2026 positioning on context engineering and director of context
+    - Implement clean, minimal design with coral headings matching site design system
+    - Improve readability with proper spacing and typography hierarchy
+    
+    🤖 Generated with Claude Code
+    
+    Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
+
+ index.html | 1071 +++++++++++++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 776 insertions(+), 295 deletions(-)
+
+commit b18bf6cba4f369505dee7c345fade3debb6dbc6d
+Author: alexdonega <alexdonega@gmail.com>
+Date:   Sat Jan 3 21:30:09 2026 -0300
+
+    fix: move progress bar to bottom of sticky header
+    
+    Progress bar now appears at the bottom edge of the header instead of
+    at the very top of the viewport. Since header is sticky, the progress
+    bar remains visible while scrolling.
+    
+    🤖 Generated with [Claude Code](https://claude.com/claude-code)
+    
+    Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+
+ ...ndas-e-como-o-novo-envio-resolve-isso-de-verdade.md |  6 ++++--
+ blog/src/layouts/BlogLayout.astro                      | 18 +++++-------------
+ 2 files changed, 9 insertions(+), 15 deletions(-)
+
+commit 62acd1b1297bc346edd00574e459da953c756992
+Author: alexdonega <alexdonega@gmail.com>
+Date:   Sat Jan 3 21:25:37 2026 -0300
+
+    feat: add reading progress bar to blog posts
+    
+    Adds a horizontal progress bar at the top of the viewport that expands
+    from left to right as the user scrolls down the page. Uses the blog's
+    accent color (#d87757) for visual consistency.
+    
+    Features:
+    - Fixed position at viewport top (z-index 9999)
+    - Smooth 60fps animation using requestAnimationFrame
+    - Responsive heights: 4px mobile, 5px tablet, 6px desktop
+    - Gradient effect with glow shadow
+    - Passive scroll listener for performance
+    
+    🤖 Generated with [Claude Code](https://claude.com/claude-code)
+    
+    Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+
+ blog/src/layouts/BlogLayout.astro | 70 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 70 insertions(+)

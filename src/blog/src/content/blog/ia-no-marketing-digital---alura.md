@@ -57,14 +57,14 @@ url_original: "https://www.alura.com.br/artigos/inteligencia-artificial-no-marke
 > [!tip]- Léxico
 >
 > **Marketing e Vendas**
-> - **Assistente 24h**: Chatbots que qualificam leads automaticamente
-> - **Data-driven marketing**: Decisões baseadas em análise de dados em tempo real
+> - [Assistente 24h](/blog/assistente-24h): Chatbots que qualificam leads automaticamente
+> - [Data-driven marketing](/blog/data-driven-marketing): Decisões baseadas em análise de dados em tempo real
 >
 > **Técnicas e Estratégias**
-> - **IA no Marketing Digital**: Aplicação de inteligência artificial para otimizar estratégias e resultados
+> - [IA no Marketing Digital](/blog/ia-no-marketing-digital): Aplicação de inteligência artificial para otimizar estratégias e resultados
 >
 > **Tecnologia e IA**
-> - **LGPD**: Conformidade de privacidade necessária para IA em marketing
+> - [LGPD](/blog/lgpd): Conformidade de privacidade necessária para IA em marketing
 > [!question]- Pontos para Aprofundar (Sugestão da IA)
 >
 > - **Qual ferramenta priorizar para cada caso de uso?**

@@ -43,14 +43,14 @@ url_original: "https://www.datacamp.com/blog/context-engineering"
 > [!tip]- Léxico
 >
 > **Ferramentas e Recursos**
-> - **Context Engineering**: Construir sistemas que gerenciam fluxo de informação ao longo do tempo, não apenas prompts individuais
-> - **Context Window**: Janela que comporta histórico de conversa, dados do usuário, documentos externos e ferramentas
+> - [Context Engineering](/blog/context-engineering): Construir sistemas que gerenciam fluxo de informação ao longo do tempo, não apenas prompts individuais
+> - [Context Window](/blog/context-window): Janela que comporta histórico de conversa, dados do usuário, documentos externos e ferramentas
 >
 > **Tecnologia e IA**
-> - **Context Pruning**: Remoção de informações desatualizadas ou conflitantes conforme novos dados chegam
+> - [Context Pruning](/blog/context-pruning): Remoção de informações desatualizadas ou conflitantes conforme novos dados chegam
 >
 > **Conteúdo e Criação**
-> - **Context Offloading**: Dar ao modelo espaço separado para processar informação sem poluir contexto principal
+> - [Context Offloading](/blog/context-offloading): Dar ao modelo espaço separado para processar informação sem poluir contexto principal
 > [!question]- Pontos para Aprofundar (Sugestão da IA)
 >
 > - **Como implementar context pruning na prática?**

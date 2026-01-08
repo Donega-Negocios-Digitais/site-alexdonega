@@ -47,8 +47,8 @@ url_original: "https://www.singular.net/pt/blog/generative-ai-tools-for-marketin
 > - **Como integrar múltiplas ferramentas de IA no workflow de marketing?**
 >
 > **Conceitos Fundamentais**
-> - **IA Generativa**: Definição a preencher
-> - **Marketing Digital**: Definição a preencher
+> - [IA Generativa](/blog/ia-generativa): Definição a preencher
+> - [Marketing Digital](/blog/marketing-digital): Definição a preencher
 >
 > **Técnicas e Estratégias**
 > - Explorar estratégias de integração

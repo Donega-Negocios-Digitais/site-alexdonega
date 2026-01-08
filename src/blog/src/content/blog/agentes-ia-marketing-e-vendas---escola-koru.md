@@ -38,14 +38,14 @@ url_original: "https://escolakoru.com.br/blog/post/agentes-inteligencia-artifici
 > [!tip]- Léxico
 >
 > **Tecnologia e IA**
-> - **Projeto-Piloto**: Implementação inicial com escopo delimitado para testar e validar antes de escalar
-> - **Qualificação Automática de Leads**: Uso de IA para classificar e priorizar leads por probabilidade de conversão
+> - [Projeto-Piloto](/blog/projeto-piloto): Implementação inicial com escopo delimitado para testar e validar antes de escalar
+> - [Qualificação Automática de Leads](/blog/qualificao-automtica-de-leads): Uso de IA para classificar e priorizar leads por probabilidade de conversão
 >
 > **Ferramentas e Recursos**
-> - **Agente de IA**: Sistema capaz de "receber um objetivo, executar uma sequência de ações e aprender com o resultado" - funciona como colaborador virtual especializado e escalável
+> - [Agente de IA](/blog/agente-de-ia): Sistema capaz de "receber um objetivo, executar uma sequência de ações e aprender com o resultado" - funciona como colaborador virtual especializado e escalável
 >
 > **Conteúdo e Criação**
-> - **Follow-ups Inteligentes**: Acompanhamentos automatizados baseados em comportamento e contexto do prospect
+> - [Follow-ups Inteligentes](/blog/follow-ups-inteligentes): Acompanhamentos automatizados baseados em comportamento e contexto do prospect
 > [!question]- Pontos para Aprofundar (Sugestão da IA)
 >
 > - **Por que apenas 4,5% das empresas brasileiras usam agentes de IA de forma avançada?**

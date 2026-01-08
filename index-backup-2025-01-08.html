@@ -5,25 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Donega | Explorando IA na Prática</title>
     <meta name="description" content="Ajudo empreendedores a dominar IA de verdade usando Context Engineering. Fundador de SaaS e guia na jornada de IA. Vem comigo descobrir.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://alexdonega.com.br/">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Alex Donega | Explorando IA na Prática">
-    <meta property="og:description" content="Ajudo empreendedores a dominar IA de verdade usando Context Engineering. Fundador de SaaS e guia na jornada de IA.">
-    <meta property="og:image" content="https://alexdonega.com.br/assets/img/og-image.jpg">
-    <meta property="og:url" content="https://alexdonega.com.br/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Alex Donega">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@alexdonega">
-    <meta name="twitter:creator" content="@alexdonega">
-    <meta name="twitter:title" content="Alex Donega | Explorando IA na Prática">
-    <meta name="twitter:description" content="Ajudo empreendedores a dominar IA de verdade usando Context Engineering.">
-    <meta name="twitter:image" content="https://alexdonega.com.br/assets/img/og-image.jpg">
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -49,34 +30,18 @@
             --bg-card-hover: #222222;
             --text-white: #ffffff;
             --text-light: #e5e5e5;
-            --text-gray: #d1d5db;  /* Melhorado: era #a3a3a3 - agora WCAG AA compliant */
-            --text-muted: #9ca3af; /* Melhorado: era #737373 - agora WCAG AA compliant */
+            --text-gray: #a3a3a3;
+            --text-muted: #737373;
             --accent: #d87757;
             --accent-hover: #e8866a;
             --accent-light: rgba(216, 119, 87, 0.1);
             --border: #2a2a2a;
             --gradient-start: #1a1a1a;
             --gradient-end: #0a0a0a;
-
-            /* Status badges - cores acessíveis */
-            --status-active: #059669;      /* Verde acessível (era neon) */
-            --status-active-bg: rgba(5, 150, 105, 0.15);
-            --status-building: #d97706;    /* Amarelo/âmbar acessível */
-            --status-building-bg: rgba(217, 119, 6, 0.15);
-
-            /* Espaçamento padronizado */
-            --card-padding: 32px;
-            --section-gap: 96px;
-            --card-radius: 16px;
         }
 
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Scroll offset for sticky header */
-        section[id] {
-            scroll-margin-top: 80px;
         }
 
         body {
@@ -330,7 +295,6 @@
             width: 100%;
         }
 
-        /* Hierarquia de botões: Primary > Secondary > Tertiary (links) */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -345,13 +309,10 @@
             text-decoration: none;
             transition: all 0.2s;
             min-height: 52px;
-            box-shadow: 0 4px 12px rgba(216, 119, 87, 0.25);
         }
 
         .btn-primary:hover {
             background: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(216, 119, 87, 0.35);
         }
 
         .btn-secondary {
@@ -373,8 +334,7 @@
 
         .btn-secondary:hover {
             background: var(--bg-card);
-            border-color: var(--accent);
-            transform: translateY(-2px);
+            border-color: var(--text-muted);
         }
 
         .hero-image {
@@ -411,7 +371,7 @@
 
         /* ==================== SECTION STYLES (Mobile-First) ==================== */
         .section {
-            padding: 80px 16px; /* Aumentado de 60px para 80px */
+            padding: 60px 16px;
         }
 
         .section-dark {
@@ -422,15 +382,10 @@
             background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-secondary) 100%);
         }
 
-        /* Separador visual sutil entre seções */
-        .section + .section {
-            border-top: 1px solid var(--border);
-        }
-
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 48px; /* Aumentado de 40px */
+            margin: 0 auto 40px;
         }
 
         .section-eyebrow {
@@ -500,76 +455,6 @@
             margin-top: 10px;
         }
 
-        /* Story Section - Journey */
-        .journey-wrapper {
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        .journey-header {
-            margin-bottom: 60px;
-        }
-
-        .journey-title {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 2rem;
-            font-weight: 500;
-            margin-bottom: 16px;
-            color: var(--text-white);
-            line-height: 1.2;
-        }
-
-        .journey-divider {
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
-            margin-bottom: 24px;
-        }
-
-        .journey-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            line-height: 1.8;
-        }
-
-        .journey-phases {
-            display: grid;
-            gap: 50px;
-        }
-
-        .journey-phase h3 {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 16px;
-        }
-
-        .journey-phase p {
-            color: var(--text-light);
-            line-height: 1.6; /* Reduzido de 1.8 para melhor leitura */
-            margin-bottom: 16px;
-        }
-
-        .journey-phase p:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (min-width: 768px) {
-            .journey-title {
-                font-size: 2.5rem;
-            }
-            .journey-phase h3 {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .journey-title {
-                font-size: 3rem;
-            }
-        }
-
         /* Timeline */
         .timeline {
             position: relative;
@@ -635,7 +520,7 @@
         .services-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 24px;
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -643,14 +528,13 @@
         .service-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            padding: var(--card-padding); /* Padronizado: 32px */
+            border-radius: 16px;
+            padding: 28px 24px;
             transition: all 0.3s;
         }
 
         .service-card:hover {
             border-color: var(--accent);
-            transform: translateY(-2px);
         }
 
         .service-icon {
@@ -676,7 +560,7 @@
             font-size: 18px;
             font-weight: 600;
             color: var(--text-white);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .service-card p {
@@ -688,6 +572,8 @@
         /* ==================== COURSES (Mobile-First) ==================== */
         .courses-section {
             background: linear-gradient(135deg, rgba(216, 119, 87, 0.05) 0%, transparent 50%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
         .courses-grid {
@@ -701,36 +587,30 @@
         .course-card {
             background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 26, 26, 0.8) 100%);
             border: 1px solid var(--border);
-            border-radius: var(--card-radius);
+            border-radius: 16px;
             overflow: hidden;
             transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
         }
 
         .course-card:hover {
             border-color: var(--accent);
-            transform: translateY(-4px);
         }
 
         .course-badge {
             display: inline-block;
             background: var(--accent);
             color: var(--bg-main);
-            font-size: 9px; /* Reduzido */
-            font-weight: 600;
+            font-size: 10px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 4px 10px;
+            letter-spacing: 1px;
+            padding: 5px 10px;
             border-radius: 4px;
             margin-bottom: 14px;
         }
 
         .course-content {
-            padding: var(--card-padding); /* Padronizado: 32px */
-            display: flex;
-            flex-direction: column;
-            flex: 1;
+            padding: 28px 24px;
         }
 
         .course-card h3 {
@@ -794,7 +674,7 @@
         .portfolio-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
             max-width: 700px;
             margin: 0 auto;
         }
@@ -802,43 +682,34 @@
         .portfolio-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            padding: var(--card-padding); /* Padronizado: 32px */
+            border-radius: 14px;
+            padding: 24px 20px;
             transition: all 0.3s;
         }
 
         .portfolio-card:hover {
             border-color: rgba(216, 119, 87, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .portfolio-card h3 {
-            font-size: 20px;
-            font-weight: 600; /* Aumentado peso do título */
-            color: var(--text-white);
-            margin-bottom: 8px;
         }
 
         .portfolio-status {
             display: inline-block;
-            font-size: 9px; /* Reduzido de 10px */
-            font-weight: 600;
+            font-size: 10px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 3px 8px;
+            letter-spacing: 1px;
+            padding: 4px 8px;
             border-radius: 4px;
             margin-bottom: 12px;
-            opacity: 0.9; /* Mais discreto */
         }
 
         .portfolio-status.active {
-            background: var(--status-active-bg);
-            color: var(--status-active); /* Verde acessível */
+            background: rgba(40, 200, 64, 0.15);
+            color: #28c840;
         }
 
         .portfolio-status.building {
-            background: var(--status-building-bg);
-            color: var(--status-building); /* Âmbar acessível */
+            background: rgba(254, 188, 46, 0.15);
+            color: #febc2e;
         }
 
         .portfolio-status.exit {
@@ -860,22 +731,20 @@
             margin-bottom: 16px;
         }
 
-        /* Links terciários - mais discretos que CTAs */
         .portfolio-link {
             font-size: 13px;
-            color: var(--text-muted);
+            color: var(--accent);
             text-decoration: none;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             padding: 8px 0;
             min-height: 44px;
-            transition: color 0.2s;
         }
 
         .portfolio-link:hover {
-            color: var(--accent);
+            text-decoration: underline;
         }
 
         .portfolio-header {
@@ -1100,33 +969,26 @@
         /* ==================== CTA SECTION (Mobile-First) ==================== */
         .cta-section {
             text-align: center;
-            padding: 80px 16px;
+            padding: 60px 16px;
             background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-main) 100%);
         }
 
         .cta-title {
             font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 36px; /* Aumentado para mais impacto */
+            font-size: 32px;
             font-weight: 500;
             color: var(--text-white);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             line-height: 1.2;
         }
 
         .cta-subtitle {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--text-gray);
-            margin-bottom: 36px;
+            margin-bottom: 32px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
-        }
-
-        /* Hierarquia clara de CTAs */
-        .cta-section .btn-primary {
-            font-size: 16px;
-            padding: 18px 32px; /* Botão maior */
         }
 
         /* ==================== FOOTER (Mobile-First) ==================== */
@@ -1312,11 +1174,11 @@
             }
 
             .section {
-                padding: var(--section-gap) 24px; /* 96px */
+                padding: 80px 24px;
             }
 
             .section-header {
-                margin-bottom: 56px;
+                margin-bottom: 48px;
             }
 
             .section-title {
@@ -1325,10 +1187,6 @@
 
             .section-subtitle {
                 font-size: 17px;
-            }
-
-            .cta-title {
-                font-size: 42px;
             }
 
             .story-intro h3 {
@@ -1487,7 +1345,7 @@
             }
 
             .section {
-                padding: 112px 24px; /* Aumentado para mais respiro */
+                padding: 100px 24px;
             }
 
             .section-header {
@@ -1495,19 +1353,11 @@
             }
 
             .section-title {
-                font-size: 42px;
+                font-size: 40px;
             }
 
             .section-subtitle {
                 font-size: 18px;
-            }
-
-            .cta-section {
-                padding: 100px 24px;
-            }
-
-            .cta-title {
-                font-size: 48px;
             }
 
             .story-content {
@@ -1679,40 +1529,6 @@
 <!-- Skip to content (Accessibility) -->
 <a href="#main-content" class="skip-to-content">Pular para o conteúdo</a>
 
-<!-- Header/Nav -->
-<header class="header">
-    <nav class="nav">
-        <a href="/" class="nav-logo">Alex Donega</a>
-        <ul class="nav-links">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#acervo">Acervo</a></li>
-            <li><a href="#cursos">Cursos</a></li>
-        </ul>
-        <a href="#cursos" class="nav-cta">Ver Cursos</a>
-        <button class="mobile-menu-btn" onclick="openMobileMenu()" aria-label="Abrir menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
-    </nav>
-</header>
-
-<!-- Mobile Menu Overlay -->
-<div class="mobile-menu" id="mobile-menu">
-    <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Fechar menu">&times;</button>
-    <ul class="mobile-menu-links">
-        <li><a href="#sobre" onclick="closeMobileMenu()">Sobre</a></li>
-        <li><a href="#servicos" onclick="closeMobileMenu()">Serviços</a></li>
-        <li><a href="#portfolio" onclick="closeMobileMenu()">Portfólio</a></li>
-        <li><a href="#acervo" onclick="closeMobileMenu()">Acervo</a></li>
-        <li><a href="#cursos" onclick="closeMobileMenu()">Cursos</a></li>
-    </ul>
-    <a href="#cursos" class="mobile-menu-cta" onclick="closeMobileMenu()">Ver Cursos</a>
-</div>
 
 <!-- Hero -->
 <section class="hero" id="main-content">
@@ -1723,32 +1539,13 @@
             </h1>
 
             <p class="hero-subtitle">
-                Ensino empreendedores a dominar IA de verdade usando <strong>Context Engineering</strong> — a arte de estruturar contexto para resultados extraordinários.
+                Ensino empreendedores a dominar IA de verdade usando <strong>Engenharia de Contexto</strong> — a arte de estruturar contexto para resultados extraordinários.
             </p>
 
             <p class="hero-description">
-                De uma agência de marketing para founder de SaaS. Em 2026 vou me dedicar ao máximo nessa jornada de IA e Context Engineering — e te convido a caminhar comigo.
+                De uma agência de marketing para founder de SaaS. Em 2026 vou me dedicar ao máximo nessa jornada de IA e Context Engineering — e te convido a caminhar comigo. Sou um cara que está descobrindo e disposto a compartilhar cada descoberta.
             </p>
 
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="hero-stat-number">15+</span>
-                    <span class="hero-stat-label">Anos de experiência</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">7</span>
-                    <span class="hero-stat-label">Empresas criadas</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">500+</span>
-                    <span class="hero-stat-label">Alunos</span>
-                </div>
-            </div>
-
-            <div class="hero-cta-group">
-                <a href="#cursos" class="btn-primary">Ver Meus Cursos →</a>
-                <a href="https://wa.me/5545999506444" target="_blank" rel="noopener noreferrer" class="btn-secondary">Falar no WhatsApp</a>
-            </div>
 
         </div>
 
@@ -1761,35 +1558,47 @@
 </section>
 
 <!-- Story Section -->
-<section class="section section-dark" id="sobre">
+<section class="section section-dark" id="sobre" style="padding: 80px 0;">
     <div class="container">
-        <div class="journey-wrapper">
-            <div class="journey-header">
-                <h2 class="journey-title">A Jornada: Do Servo ao Orquestrador</h2>
-                <div class="journey-divider"></div>
-                <p class="journey-subtitle">Como saí da zona de conforto para descobrir a verdadeira inovação em IA</p>
+        <div style="max-width: 750px; margin: 0 auto;">
+            <div style="margin-bottom: 60px;">
+                <h2 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 3rem; font-weight: 500; margin-bottom: 16px; color: #ffffff; line-height: 1.2;">A Jornada: Do Servo ao Orquestrador</h2>
+                <div style="width: 60px; height: 3px; background: #d87757; margin-bottom: 24px;"></div>
+                <p style="font-size: 1.1rem; color: #a3a3a3; line-height: 1.8;">Como saí da zona de conforto para descobrir a verdadeira inovação em IA</p>
             </div>
 
-            <div class="journey-phases">
+            <div style="display: grid; gap: 50px;">
                 <!-- Phase 1 -->
-                <div class="journey-phase">
-                    <h3>O Chamado</h3>
-                    <p>Sou servidor público. Vida estável, tudo certinho. Aí chega uma carta: ganhei a bolsa ERASMUS para fazer mestrado em Economia na Romênia — sim, terra do Drácula! Largo tudo.</p>
-                    <p>Lá conheço jovens criando startups, fazendo coisas incríveis com tecnologia... e penso: <em>"MEU PIA, é isso que eu quero!"</em></p>
+                <div>
+                    <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 1.8rem; font-weight: 500; color: #d87757; margin-bottom: 16px;">O Chamado</h3>
+                    <p style="color: #e5e5e5; line-height: 1.8; margin-bottom: 16px;">
+                        Sou servidor público. Vida estável, tudo certinho. Aí chega uma carta: ganhei a bolsa ERASMUS para fazer mestrado em Economia na Romênia — sim, terra do Drácula! Largo tudo.
+                    </p>
+                    <p style="color: #e5e5e5; line-height: 1.8;">
+                        Lá conheço jovens criando startups, fazendo coisas incríveis com tecnologia... e penso: <em>"MEU PIA, é isso que eu quero!"</em>
+                    </p>
                 </div>
 
                 <!-- Phase 2 -->
-                <div class="journey-phase">
-                    <h3>Construindo a Máquina</h3>
-                    <p>Retorno ao Brasil e decido transformar minha agência de marketing em SaaS. Erro muito, aprendo mais ainda. E o mais importante? Gerei dinheiro.</p>
-                    <p>Decido replicar e criar outros negócios. Busco palavras que definam o que quero construir: Simples, Enxuto, Escalável, Divertido. Nasce o <strong>Framework SEED</strong> — meu sistema para criar negócios que funcionam.</p>
+                <div>
+                    <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 1.8rem; font-weight: 500; color: #d87757; margin-bottom: 16px;">Construindo a Máquina</h3>
+                    <p style="color: #e5e5e5; line-height: 1.8; margin-bottom: 16px;">
+                        Retorno ao Brasil e decido transformar minha agência de marketing em SaaS. Erro muito, aprendo mais ainda. E o mais importante? Gerei dinheiro.
+                    </p>
+                    <p style="color: #e5e5e5; line-height: 1.8;">
+                        Decido replicar e criar outros negócios. Busco palavras que definam o que quero construir: Simples, Enxuto, Escalável, Divertido. Nasce o <strong>Framework SEED</strong> — meu sistema para criar negócios que funcionam.
+                    </p>
                 </div>
 
                 <!-- Phase 3 -->
-                <div class="journey-phase">
-                    <h3>A Era do Diretor de Contexto</h3>
-                    <p>A verdadeira inovação não está em mais tecnologia, mas em como estruturamos contexto para colaborar melhor com IA. <strong>A Era do Operador Acabou.</strong> Quem foca apenas em decorar prompts é o novo "operário digital" — facilmente substituível.</p>
-                    <p>O que estou criando é diferente: estou formando o <strong>Diretor de Contexto</strong>. Aquele que domina Context Engineering para orquestrar múltiplos agentes de IA — agentes que pensam, que decidem, que escalam negócios. Você deixa de ser um usuário e se torna um orquestrador de inteligência.</p>
+                <div>
+                    <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 1.8rem; font-weight: 500; color: #d87757; margin-bottom: 16px;">A Era do Diretor de Contexto</h3>
+                    <p style="color: #e5e5e5; line-height: 1.8; margin-bottom: 16px;">
+                        A verdadeira inovação não está em mais tecnologia, mas em como estruturamos contexto para colaborar melhor com IA. <strong>A Era do Operador Acabou.</strong> Quem foca apenas em decorar prompts é o novo "operário digital" — facilmente substituível.
+                    </p>
+                    <p style="color: #e5e5e5; line-height: 1.8;">
+                        O que estou criando é diferente: estou formando o <strong>Diretor de Contexto</strong>. Aquele que domina engenharia de contexto para orquestrar múltiplos agentes de IA — agentes que pensam, que decidem, que escalam negócios. Você deixa de ser um usuário e se torna um orquestrador de inteligência.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1810,29 +1619,25 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                </div>
+                <h3>Engenharia de Contexto</h3>
+                <p>Descobri como extrair 10x mais das IAs estruturando contexto. Hoje ensino founders a fazer o mesmo — sem depender de prompts mágicos.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                     </svg>
                 </div>
                 <h3>Context Engineering</h3>
-                <p>Descobri como extrair 10x mais das IAs estruturando contexto. Ensino founders a fazer o mesmo com frameworks práticos — sem depender de prompts mágicos.</p>
+                <p>Ensino a estruturar contexto para que IAs entreguem resultados excepcionais. Framework DNA System, Claude Code na prática, e tudo que estou descobrindo.</p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                    </svg>
-                </div>
-                <h3>Cursos & Workshops</h3>
-                <p>Cursos práticos de Claude Code, Obsidian e automação com IA. Aulas hands-on onde você sai com resultado no mesmo dia.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
                 </div>
                 <h3>MicroSaaS</h3>
                 <p>Validei essa metodologia criando o Novo Envio e FalaZapp — produtos enxutos com UX simples que retêm usuários.</p>
@@ -3515,4 +3320,4 @@
 
 </body>
 </html>
-<!-- v5 - UX/UI polish: contraste WCAG AA, hierarquia CTAs, padding cards, badges, espaçamento seções, tipografia -->
+<!-- v3 - acentos corrigidos -->
