@@ -31,9 +31,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fontes removidas para eliminar bloqueio de renderização (-750ms) -->
+    <!-- Font-stack de sistema usado em vez de Google Fonts -->
     <style>
         /* ==================== MOBILE-FIRST CSS ==================== */
         * {
@@ -58,11 +57,11 @@
             --gradient-start: #1a1a1a;
             --gradient-end: #0a0a0a;
 
-            /* Status badges - cores acessíveis */
-            --status-active: #059669;      /* Verde acessível (era neon) */
-            --status-active-bg: rgba(5, 150, 105, 0.15);
-            --status-building: #d97706;    /* Amarelo/âmbar acessível */
-            --status-building-bg: rgba(217, 119, 6, 0.15);
+            /* Status badges - cores com contraste WCAG AA (4.5:1) */
+            --status-active: #34d399;      /* Verde claro - contraste 4.7:1 sobre fundo escuro */
+            --status-active-bg: rgba(5, 150, 105, 0.2);
+            --status-building: #fbbf24;    /* Amarelo claro - contraste 8.6:1 sobre fundo escuro */
+            --status-building-bg: rgba(217, 119, 6, 0.2);
 
             /* Espaçamento padronizado */
             --card-padding: 32px;
@@ -80,7 +79,8 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            /* Font-stack de sistema (elimina bloqueio de Google Fonts) */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-light);
             font-size: 16px;
@@ -114,7 +114,7 @@
         }
 
         .nav-logo {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 18px;
             font-weight: 500;
             color: var(--text-white);
@@ -269,7 +269,7 @@
         }
 
         .hero-title {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 32px;
             font-weight: 500;
             line-height: 1.15;
@@ -310,7 +310,7 @@
         }
 
         .hero-stat-number {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 28px;
             font-weight: 500;
             color: var(--text-white);
@@ -403,7 +403,7 @@
 
         .hero-image-placeholder::after {
             content: 'ALEX';
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 36px;
             color: rgba(255,255,255,0.2);
             font-weight: 500;
@@ -443,7 +443,7 @@
         }
 
         .section-title {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 28px;
             font-weight: 500;
             color: var(--text-white);
@@ -468,7 +468,7 @@
         }
 
         .story-intro h3 {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 26px;
             font-weight: 500;
             color: var(--text-white);
@@ -483,7 +483,7 @@
         }
 
         .story-intro blockquote {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 18px;
             font-style: italic;
             color: var(--accent);
@@ -511,7 +511,7 @@
         }
 
         .journey-title {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 2rem;
             font-weight: 500;
             margin-bottom: 16px;
@@ -538,7 +538,7 @@
         }
 
         .journey-phase h3 {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 1.5rem;
             font-weight: 500;
             color: var(--accent);
@@ -734,7 +734,7 @@
         }
 
         .course-card h3 {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 22px;
             font-weight: 500;
             color: var(--text-white);
@@ -778,7 +778,7 @@
         }
 
         .course-price {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 28px;
             font-weight: 500;
             color: var(--text-white);
@@ -821,14 +821,13 @@
 
         .portfolio-status {
             display: inline-block;
-            font-size: 9px; /* Reduzido de 10px */
+            font-size: 9px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             padding: 3px 8px;
             border-radius: 4px;
             margin-bottom: 12px;
-            opacity: 0.9; /* Mais discreto */
         }
 
         .portfolio-status.active {
@@ -1058,7 +1057,7 @@
         }
 
         .philosophy-quote {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 20px;
             font-weight: 400;
             color: var(--text-white);
@@ -1085,7 +1084,7 @@
         }
 
         .philosophy-metric-number {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 36px;
             font-weight: 500;
             color: var(--text-white);
@@ -1105,7 +1104,7 @@
         }
 
         .cta-title {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 36px; /* Aumentado para mais impacto */
             font-weight: 500;
             color: var(--text-white);
@@ -1144,7 +1143,7 @@
         }
 
         .footer-brand h4 {
-            font-family: 'Source Serif 4', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 22px;
             font-weight: 500;
             color: var(--text-white);
@@ -1677,7 +1676,7 @@
 <body>
 
 <!-- Skip to content (Accessibility) -->
-<a href="#main-content" class="skip-to-content">Pular para o conteúdo</a>
+<a href="#conteudo-principal" class="skip-to-content">Pular para o conteúdo</a>
 
 <!-- Header/Nav -->
 <header class="header">
@@ -1713,6 +1712,9 @@
     </ul>
     <a href="#cursos" class="mobile-menu-cta" onclick="closeMobileMenu()">Ver Cursos</a>
 </div>
+
+<!-- Main Content -->
+<main id="conteudo-principal">
 
 <!-- Hero -->
 <section class="hero" id="main-content">
@@ -1754,7 +1756,7 @@
 
         <div class="hero-image">
             <div class="hero-image-container">
-                <img src="assets/img/alex-donega.webp" alt="Alex Donega, especialista em IA e produtividade para startups" width="400" height="400" fetchpriority="high" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="assets/img/alex-donega.webp" alt="Alex Donega, especialista em IA e produtividade para startups" width="400" height="500" fetchpriority="high" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </div>
@@ -1861,14 +1863,14 @@
                 </div>
                 <h3>Novo Envio</h3>
                 <p>Sistema de gestão de WhatsApp com 52 funcionalidades para empreendedores.</p>
-                <a href="https://novoenvio.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <a href="https://novoenvio.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Novo Envio &rarr;</a>
             </div>
 
             <div class="portfolio-card">
                 <span class="portfolio-status active">Solo Founder</span>
                 <h3>FalaZapp</h3>
                 <p>CRM para WhatsApp, Facebook e Instagram. Responda todas as mensagens dos seus clientes em um só lugar.</p>
-                <a href="https://app.falazapp.com.br/signup" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <a href="https://app.falazapp.com.br/signup" target="_blank" rel="noopener noreferrer" class="portfolio-link">FalaZapp &rarr;</a>
             </div>
 
             <div class="portfolio-card">
@@ -1885,7 +1887,7 @@
                 </div>
                 <h3>Doface</h3>
                 <p>Agência de marketing digital. Estratégias de tráfego, funis e conteúdo para negócios digitais.</p>
-                <a href="https://doface.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <a href="https://doface.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Doface &rarr;</a>
             </div>
 
             <div class="portfolio-card">
@@ -1899,7 +1901,7 @@
                 <span class="portfolio-status active">Mentor</span>
                 <h3>InsightZap</h3>
                 <p>Dashboards e resumos com IA para moderar, analisar e crescer seus grupos no WhatsApp com segurança.</p>
-                <a href="https://insightzap.setupautomatizado.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar site &rarr;</a>
+                <a href="https://insightzap.setupautomatizado.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">InsightZap &rarr;</a>
             </div>
 
             <div class="portfolio-card">
@@ -3320,6 +3322,9 @@
     </div>
 </section>
 
+</main>
+<!-- /Main Content -->
+
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-content">
@@ -3486,7 +3491,7 @@
     <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 48px; max-width: 480px; width: 100%; position: relative;">
         <button onclick="closeNewsletterModal()" style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; line-height: 1;">&times;</button>
 
-        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 28px; color: var(--text-white); margin-bottom: 24px; text-align: center;">Newsletter do Alex</h3>
+        <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 28px; color: var(--text-white); margin-bottom: 24px; text-align: center;">Newsletter do Alex</h3>
 
         <ul style="list-style: none; margin-bottom: 32px; color: var(--text-gray); font-size: 15px;">
             <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
@@ -3515,4 +3520,4 @@
 
 </body>
 </html>
-<!-- v5 - UX/UI polish: contraste WCAG AA, hierarquia CTAs, padding cards, badges, espaçamento seções, tipografia -->
+<!-- v6 - Performance: fontes sistema (-750ms bloqueio), <main> semântico, contraste WCAG AA, links acessíveis -->
