@@ -1,0 +1,1640 @@
+---
+// segundo-cerebro-obsidian.astro - Página do curso Segundo Cérebro com Obsidian (Design v2)
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Segundo Cérebro com Obsidian - Clone seu Cérebro"
+  description="Aprenda a construir seu Segundo Cérebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueça nada importante."
+>
+
+<!-- Hero Section com Animação -->
+<section class="hero-section">
+  <!-- Background animado com linhas SVG -->
+  <div class="hero-background">
+    <svg
+      class="animated-lines"
+      viewBox="0 0 1200 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,1)" />
+          <stop offset="30%" stop-color="rgba(155,81,224,1)" />
+          <stop offset="70%" stop-color="rgba(155,81,224,0.8)" />
+          <stop offset="100%" stop-color="rgba(155,81,224,0)" />
+        </radialGradient>
+        <radialGradient id="neonPulse2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+          <stop offset="25%" stop-color="rgba(155,81,224,0.9)" />
+          <stop offset="60%" stop-color="rgba(128,60,200,0.7)" />
+          <stop offset="100%" stop-color="rgba(128,60,200,0)" />
+        </radialGradient>
+        <radialGradient id="heroTextBg" cx="30%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="rgba(155,81,224,0.15)" />
+          <stop offset="40%" stop-color="rgba(155,81,224,0.08)" />
+          <stop offset="80%" stop-color="rgba(128,60,200,0.05)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+        </radialGradient>
+        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <linearGradient id="threadFade1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(0,0,0,1)" />
+          <stop offset="15%" stop-color="rgba(155,81,224,0.8)" />
+          <stop offset="85%" stop-color="rgba(155,81,224,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,1)" />
+        </linearGradient>
+      </defs>
+
+      <g>
+        <ellipse cx="300" cy="350" rx="400" ry="200" fill="url(#heroTextBg)" opacity="0.6" />
+
+        <!-- Threads animados -->
+        <path id="thread1" d="M50 720 Q200 590 350 540 Q500 490 650 520 Q800 550 950 460 Q1100 370 1200 340" stroke="url(#threadFade1)" stroke-width="0.8" fill="none" opacity="0.8" />
+        <circle r="2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#thread1" /></animateMotion>
+        </circle>
+
+        <path id="thread2" d="M80 730 Q250 620 400 570 Q550 520 700 550 Q850 580 1000 490 Q1150 400 1300 370" stroke="url(#threadFade1)" stroke-width="1.5" fill="none" opacity="0.7" />
+        <circle r="3" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#thread2" /></animateMotion>
+        </circle>
+
+        <path id="thread3" d="M20 710 Q180 580 320 530 Q460 480 600 510 Q740 540 880 450 Q1020 360 1200 330" stroke="url(#threadFade1)" stroke-width="1.2" fill="none" opacity="0.8" />
+        <circle r="2.5" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#thread3" /></animateMotion>
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Conteudo Principal -->
+  <div class="hero-content">
+    <div class="hero-text-center">
+      <!-- Badge -->
+      <div class="hero-badge">
+        <span class="badge">
+          <span class="badge-dot obsidian"></span>
+          Curso Completo
+        </span>
+      </div>
+
+      <!-- Titulo Principal -->
+      <h1 class="hero-title">
+        Clone seu Cérebro,<br>
+        Domine o <span class="text-obsidian">Obsidian</span>
+      </h1>
+
+      <!-- Subtitulo -->
+      <p class="hero-subtitle">
+        Aprenda a construir seu Segundo Cérebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueça nada importante.
+      </p>
+
+      <!-- Video Container -->
+      <div class="hero-video">
+        <video autoplay loop muted playsinline>
+          <source src="https://go.academialendaria.ai/wp-content/uploads/2025/11/canvas-hero-1-1.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Descrição -->
+      <p class="hero-description">
+        Dobre sua produtividade usando um Segundo Cérebro com I.A que organiza suas informações, conecta suas ideias e cria projetos para você
+      </p>
+
+      <!-- CTA -->
+      <div class="hero-cta">
+        <a href="#investimento" class="btn-primary obsidian">
+          Comece agora
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção 01: Por que ter um Segundo Cérebro -->
+<section class="section" id="porque">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">01 - Clone seu Cérebro</span>
+      <h2 class="section-title">Por que ter um Segundo Cérebro no <span class="text-obsidian">Obsidian</span>?</h2>
+      <p class="section-subtitle">
+        Seu cérebro foi feito para ter ideias, não para armazená-las. Liberte sua mente delegando a memória para um sistema confiável.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card obsidian">
+        <div class="benefit-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+            <path d="M12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 .29.71l3 3a1 1 0 0 0 1.42-1.42L13 11.59V7a1 1 0 0 0-1-1z"/>
+          </svg>
+        </div>
+        <h3>Nunca mais esqueça nada</h3>
+        <p>Capture ideias, insights e informações importantes em segundos. Tudo fica salvo e organizado automaticamente.</p>
+      </div>
+
+      <div class="benefit-card obsidian">
+        <div class="benefit-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-10.14l2.83 2.83m4.48 4.48l2.83 2.83"/>
+          </svg>
+        </div>
+        <h3>Conecte suas ideias</h3>
+        <p>Crie links entre suas notas e descubra conexões que você nunca imaginaria. Seu conhecimento vira uma rede viva.</p>
+      </div>
+
+      <div class="benefit-card obsidian">
+        <div class="benefit-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+          </svg>
+        </div>
+        <h3>Produza mais rápido</h3>
+        <p>Com suas ideias organizadas, criar conteúdo, tomar decisões e resolver problemas se torna muito mais fácil.</p>
+      </div>
+    </div>
+
+    <div class="section-cta">
+      <a href="#investimento" class="btn-primary obsidian">Quero organizar minhas ideias</a>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Obsidian na Era da IA -->
+<section class="section-dark obsidian-bg" id="ia">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">A Nova Fronteira</span>
+      <h2 class="section-title">O <span class="text-obsidian">Obsidian</span> nunca foi tão poderoso</h2>
+      <p class="section-subtitle">
+        Estamos vivendo uma revolução. A IA está mudando tudo — menos uma coisa: <strong class="text-white">quem tem contexto, vence.</strong>
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card obsidian">
+        <div class="benefit-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+        </div>
+        <h3>Contexto e o novo ouro</h3>
+        <p>A IA não lê mentes. Ela lê contexto. Quanto mais rico e organizado for o seu segundo cérebro, mais poderosa a IA se torna nas suas mãos.</p>
+      </div>
+
+      <div class="benefit-card obsidian">
+        <div class="benefit-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+        </div>
+        <h3>Engenharia de Contexto</h3>
+        <p>Prompts são commodities. O que diferencia quem extrai 10x mais da IA e a qualidade do contexto que você alimenta. Seu Obsidian vira uma mina de ouro.</p>
+      </div>
+
+      <div class="benefit-card obsidian">
+        <div class="benefit-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M2 12h20"/>
+            <circle cx="12" cy="12" r="4"/>
+          </svg>
+        </div>
+        <h3>Base de conhecimento viva</h3>
+        <p>Cada nota, cada conexão, cada insight que você captura no Obsidian se transforma em combustível para a IA trabalhar POR você, não contra você.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box obsidian">
+      <p class="highlight-quote">"Quem domina o Obsidian hoje, domina a IA amanhã."</p>
+      <p class="highlight-text">Enquanto outros ficam perdidos em prompts mágicos, você constrói uma base sólida de contexto engenheizado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Metodologia ACE -->
+<section class="section" id="metodologia">
+  <div class="container">
+    <div class="section-header">
+      <div class="method-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span>Metodologia Comprovada</span>
+      </div>
+      <h2 class="section-title">Nada de teoria vaga. Isso aqui tem estrutura.</h2>
+      <p class="section-subtitle">
+        Usamos a metodologia ACE, criada por Nick Milo do Linking Your Thinking - o maior especialista mundial em Obsidian. Uma estrutura simples que organiza tudo na sua vida.
+      </p>
+    </div>
+
+    <div class="ace-grid">
+      <div class="ace-card">
+        <span class="ace-letter">A</span>
+        <h3 class="ace-word">Atlas</h3>
+        <p>Seu mapa do conhecimento. Todas as suas notas, ideias, referencias e aprendizados ficam aqui - conectados e acessiveis para sempre.</p>
+      </div>
+
+      <div class="ace-card">
+        <span class="ace-letter">C</span>
+        <h3 class="ace-word">Calendário</h3>
+        <p>Seu registro no tempo. Daily notes, reuniões, reflexões e logs. Tudo que acontece na sua vida, organizado cronologicamente.</p>
+      </div>
+
+      <div class="ace-card">
+        <span class="ace-letter">E</span>
+        <h3 class="ace-word">Esforços</h3>
+        <p>Suas ações e projetos. Diferente de "tarefas", Esforços são esforços que você puxa quando tem energia - não listas que te cobram.</p>
+      </div>
+    </div>
+
+    <div class="methodology-quote">
+      <p>"O ACE não é mais uma metodologia complicada. É a forma mais simples de organizar conhecimento, tempo e ação em um só lugar."</p>
+      <cite>Baseado no framework de <strong>Nick Milo</strong> - Linking Your Thinking</cite>
+    </div>
+
+    <div class="section-cta">
+      <a href="#investimento" class="btn-primary obsidian">Quero aprender essa metodologia</a>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Como Funciona -->
+<section class="section-dark" id="como-funciona">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">O Obsidian na Prática</span>
+      <h2 class="section-title">Como funciona o curso</h2>
+      <p class="section-subtitle">
+        Um método passo a passo para você sair do zero e ter seu Segundo Cérebro funcionando.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-number obsidian">1</span>
+        <h3>Fundamentos</h3>
+        <p>Entenda a filosofia por trás do Segundo Cérebro e por que o Obsidian é a melhor ferramenta para isso.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number obsidian">2</span>
+        <h3>Setup Completo</h3>
+        <p>Instale e configure o Obsidian do jeito certo, com os plugins essenciais e templates prontos.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number obsidian">3</span>
+        <h3>Sistema de Captura</h3>
+        <p>Aprenda a capturar ideias de qualquer lugar - livros, vídeos, conversas, pensamentos.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number obsidian">4</span>
+        <h3>Organização</h3>
+        <p>Crie uma estrutura de pastas e tags que faz sentido para o seu estilo de trabalho.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number obsidian">5</span>
+        <h3>Conexoes</h3>
+        <p>Domine os links bidirecionais e veja seu conhecimento se transformar em uma rede poderosa.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number obsidian">6</span>
+        <h3>Produção</h3>
+        <p>Use seu Segundo Cérebro para criar conteúdo, tomar decisões e resolver problemas reais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Para Quem E -->
+<section class="section" id="publico">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">Para Quem É o Curso</span>
+      <h2 class="section-title">Este curso é para você se...</h2>
+    </div>
+
+    <div class="audience-grid">
+      <div class="audience-card obsidian">
+        <div class="audience-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+            <path d="M8 7h6"/>
+            <path d="M8 11h8"/>
+          </svg>
+        </div>
+        <h3>Estudantes</h3>
+        <p>Quer organizar seus estudos e reter mais conhecimento</p>
+      </div>
+
+      <div class="audience-card obsidian">
+        <div class="audience-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+            <circle cx="11" cy="11" r="2"/>
+          </svg>
+        </div>
+        <h3>Criadores de Conteúdo</h3>
+        <p>Precisa de um sistema para nunca ficar sem ideias</p>
+      </div>
+
+      <div class="audience-card obsidian">
+        <div class="audience-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <h3>Profissionais</h3>
+        <p>Quer aumentar a produtividade e organizar projetos</p>
+      </div>
+
+      <div class="audience-card obsidian">
+        <div class="audience-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+          </svg>
+        </div>
+        <h3>Empreendedores</h3>
+        <p>Precisa tomar decisões melhores com base em dados</p>
+      </div>
+
+      <div class="audience-card obsidian">
+        <div class="audience-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+            <path d="M11 8v6"/>
+            <path d="M8 11h6"/>
+          </svg>
+        </div>
+        <h3>Pesquisadores</h3>
+        <p>Quer conectar referências e descobrir insights</p>
+      </div>
+
+      <div class="audience-card obsidian">
+        <div class="audience-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <h3>Curiosos</h3>
+        <p>Gosta de aprender e quer um lugar para guardar tudo</p>
+      </div>
+    </div>
+
+    <div class="section-cta">
+      <a href="#investimento" class="btn-primary obsidian">Esse curso é para mim</a>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Sobre o Professor -->
+<section class="section-dark" id="professor">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">Conheça seu Professor</span>
+      <h2 class="section-title">Quem vai te ensinar</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/img/alex-donega.webp" alt="Alex Donega" loading="lazy" />
+      </div>
+      <div class="about-content">
+        <h3>Alex Donega</h3>
+        <p>Uso o Obsidian todos os dias há mais de 3 anos. Ele é o centro do meu sistema de trabalho - de onde saem todos os meus conteúdos, projetos e decisões.</p>
+        <p>Sou Gestor de Projetos na Autobots Ventures, trabalho com +25 software no ecossistema Autobots Ventures, e ensino empreendedores a dominar IA de verdade usando Context Engineering.</p>
+        <p>Já quebrei duas empresas antes de descobrir que o problema era falta de sistema. Hoje, com meu Segundo Cérebro no Obsidian, nada se perde. Cada ideia, cada aprendizado, cada conexão fica registrada e acessível.</p>
+
+        <blockquote class="about-quote obsidian">
+          "O Obsidian não é só um app de notas. É uma extensão do seu cérebro."
+        </blockquote>
+
+        <a href="#investimento" class="btn-primary obsidian">Quero aprender com o Alex</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Modulos -->
+<section class="section" id="conteudo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">O Que Você Vai Receber</span>
+      <h2 class="section-title">Conteúdo completo do curso</h2>
+    </div>
+
+    <div class="modules-grid">
+      <div class="module-card">
+        <span class="module-badge obsidian">Modulo 1</span>
+        <h3>Fundamentos do Segundo Cérebro</h3>
+        <p>Entenda a filosofia e os princípios que fazem o sistema funcionar.</p>
+        <ul class="module-list">
+          <li><span class="check obsidian">✓</span> O que é um Segundo Cérebro</li>
+          <li><span class="check obsidian">✓</span> Por que o Obsidian</li>
+          <li><span class="check obsidian">✓</span> Mindset de organizacao</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-badge obsidian">Módulo 2</span>
+        <h3>Setup e Configuração</h3>
+        <p>Instale e configure o Obsidian do jeito certo desde o início.</p>
+        <ul class="module-list">
+          <li><span class="check obsidian">✓</span> Instalação passo a passo</li>
+          <li><span class="check obsidian">✓</span> Plugins essenciais</li>
+          <li><span class="check obsidian">✓</span> Temas e aparencia</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-badge obsidian">Módulo 3</span>
+        <h3>Sistema de Notas</h3>
+        <p>Crie uma estrutura que funciona para você.</p>
+        <ul class="module-list">
+          <li><span class="check obsidian">✓</span> Estrutura de pastas</li>
+          <li><span class="check obsidian">✓</span> Tags e metadados</li>
+          <li><span class="check obsidian">✓</span> Templates prontos</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-badge obsidian">Módulo 4</span>
+        <h3>Captura e Processamento</h3>
+        <p>Aprenda a capturar ideias de qualquer fonte.</p>
+        <ul class="module-list">
+          <li><span class="check obsidian">✓</span> Captura rápida</li>
+          <li><span class="check obsidian">✓</span> Processamento de notas</li>
+          <li><span class="check obsidian">✓</span> Inbox Zero</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-badge obsidian">Módulo 5</span>
+        <h3>Links e Conexões</h3>
+        <p>Transforme notas isoladas em uma rede de conhecimento.</p>
+        <ul class="module-list">
+          <li><span class="check obsidian">✓</span> Links bidirecionais</li>
+          <li><span class="check obsidian">✓</span> Grafo de conhecimento</li>
+          <li><span class="check obsidian">✓</span> MOCs e índices</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-badge obsidian">Módulo 6</span>
+        <h3>Workflows Avançados</h3>
+        <p>Use o Obsidian para produzir e criar.</p>
+        <ul class="module-list">
+          <li><span class="check obsidian">✓</span> Daily Notes</li>
+          <li><span class="check obsidian">✓</span> Projetos e tarefas</li>
+          <li><span class="check obsidian">✓</span> Integração com IA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção: Bônus -->
+<section class="section bonus-section obsidian-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">Bônus Exclusivos</span>
+      <h2 class="section-title">Bônus por tempo limitado</h2>
+      <p class="section-subtitle">
+        Além do curso completo, você ainda recebe esses bônus especiais.
+      </p>
+    </div>
+
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-ribbon obsidian">BÔNUS</div>
+        <h3>Vault Starter Kit</h3>
+        <p>Um vault pré-configurado com estrutura de pastas, templates e plugins prontos para usar.</p>
+        <span class="bonus-value">Valor: <strong>R$ 197</strong></span>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-ribbon obsidian">BÔNUS</div>
+        <h3>30 Templates Prontos</h3>
+        <p>Templates para daily notes, reuniões, projetos, livros, artigos e muito mais.</p>
+        <span class="bonus-value">Valor: <strong>R$ 97</strong></span>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-ribbon obsidian">BÔNUS</div>
+        <h3>Comunidade Exclusiva</h3>
+        <p>Acesso ao grupo de alunos para tirar dúvidas, trocar ideias e fazer networking.</p>
+        <span class="bonus-value">Valor: <strong>R$ 297</strong></span>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-ribbon obsidian">BÔNUS</div>
+        <h3>Atualizações Vitalícias</h3>
+        <p>Todas as atualizações futuras do curso incluídas, sem pagar nada a mais.</p>
+        <span class="bonus-value">Valor: <strong>Inestimavel</strong></span>
+      </div>
+    </div>
+
+    <div class="section-cta">
+      <a href="#investimento" class="btn-primary obsidian">Garantir minha vaga + bônus</a>
+    </div>
+  </div>
+</section>
+
+<!-- Seção: Investimento -->
+<section class="section-dark" id="investimento">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">Investimento</span>
+      <h2 class="section-title">Comece sua jornada hoje</h2>
+    </div>
+
+    <!-- Social Proof -->
+    <div class="social-proof">
+      <div class="stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p><strong>200+ alunos</strong> já construíram seu Segundo Cérebro</p>
+    </div>
+
+    <div class="pricing-card obsidian">
+      <span class="pricing-badge obsidian">Oferta de Lançamento</span>
+      <p class="pricing-original">De R$ 497</p>
+      <div class="pricing-main">
+        <p class="pricing-installment">12x de <span class="currency obsidian">R$</span><strong>24</strong>,70</p>
+        <p class="pricing-cash">ou <span class="obsidian">R$ 247</span> a vista</p>
+      </div>
+
+      <ul class="pricing-features">
+        <li><span class="check obsidian">✓</span> Acesso imediato ao curso completo</li>
+        <li><span class="check obsidian">✓</span> 6 módulos + aulas bônus</li>
+        <li><span class="check obsidian">✓</span> Vault Starter Kit</li>
+        <li><span class="check obsidian">✓</span> 30 Templates prontos</li>
+        <li><span class="check obsidian">✓</span> Comunidade exclusiva</li>
+        <li><span class="check obsidian">✓</span> Atualizações vitalícias</li>
+        <li><span class="check obsidian">✓</span> Garantia de 7 dias</li>
+      </ul>
+
+      <a href="https://pay.hotmart.com/exemplo" target="_blank" rel="noopener" class="btn-buy obsidian">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Quero Minha Vaga Agora
+      </a>
+
+      <!-- Garantia -->
+      <div class="guarantee-box obsidian">
+        <div class="guarantee-icon obsidian">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="guarantee-content">
+          <h4>Garantia de 7 dias</h4>
+          <p>Se não gostar do curso, devolvo 100% do seu dinheiro. Sem perguntas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow obsidian">Dúvidas</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>Preciso saber programar?</h4>
+        <p>Não! O Obsidian é feito para qualquer pessoa. Você não precisa de nenhum conhecimento técnico.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Funciona para qualquer área?</h4>
+        <p>Sim. O Segundo Cérebro é universal e pode ser adaptado para qualquer área de atuação ou interesse.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Quanto tempo tenho acesso?</h4>
+        <p>Acesso vitalício. Comprou uma vez, seu para sempre.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>E se eu não gostar?</h4>
+        <p>Garantia de 7 dias. Devolvo 100% do seu dinheiro sem perguntas.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>O Obsidian é gratuito?</h4>
+        <p>Sim! O Obsidian é 100% gratuito para uso pessoal. Você só paga pelo curso, não pelo app.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-section obsidian-bg">
+  <div class="container">
+    <h2 class="cta-title">Pronto para construir seu Segundo Cérebro?</h2>
+    <p class="cta-subtitle">
+      Comece hoje e nunca mais perca uma ideia, um insight ou uma conexão importante.
+    </p>
+    <div class="cta-buttons">
+      <a href="#investimento" class="btn-primary obsidian">
+        Quero Minha Vaga
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+      <a href="https://wa.me/5545999506444" target="_blank" rel="noopener" class="btn-secondary">
+        <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Falar Comigo
+      </a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  /* ==================== VARIAVEIS OBSIDIAN ==================== */
+  :root {
+    --obsidian: #9b51e0;
+    --obsidian-light: rgba(155, 81, 224, 0.1);
+    --obsidian-hover: #8040c8;
+  }
+
+  /* ==================== HERO SECTION ==================== */
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .animated-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .hero-text-center {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(155, 81, 224, 0.3);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--obsidian);
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+
+  .badge-dot.obsidian {
+    background: var(--obsidian);
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-obsidian {
+    color: var(--obsidian);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-video {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(155, 81, 224, 0.2);
+  }
+
+  .hero-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-description {
+    font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    margin-bottom: 2rem;
+  }
+
+  /* ==================== BUTTONS ==================== */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+    transition: all 0.3s;
+  }
+
+  .btn-primary.obsidian {
+    background: linear-gradient(to right, var(--obsidian), var(--obsidian-hover));
+    border-color: rgba(155, 81, 224, 0.3);
+    box-shadow: 0 4px 15px rgba(155, 81, 224, 0.25);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+  }
+
+  .btn-primary.obsidian:hover {
+    box-shadow: 0 8px 25px rgba(155, 81, 224, 0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .btn-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #22c55e;
+    color: white;
+    padding: 1.25rem 2rem;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    width: 100%;
+  }
+
+  .btn-buy.obsidian {
+    background: var(--obsidian);
+  }
+
+  .btn-buy:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+  }
+
+  .btn-buy.obsidian:hover {
+    background: var(--obsidian-hover);
+    box-shadow: 0 10px 30px rgba(155, 81, 224, 0.4);
+  }
+
+  /* ==================== SECTIONS ==================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+    background: #0a0a0a;
+  }
+
+  .section-dark {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+  }
+
+  .obsidian-bg {
+    background: linear-gradient(180deg, #0a0a0a 0%, rgba(155, 81, 224, 0.03) 50%, #0a0a0a 100%);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(251, 146, 60);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .section-eyebrow.obsidian {
+    color: var(--obsidian);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  /* ==================== BENEFITS GRID ==================== */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .benefit-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .benefit-card.obsidian:hover {
+    border-color: rgba(155, 81, 224, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .benefit-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .benefit-icon.obsidian {
+    background: var(--obsidian-light);
+  }
+
+  .benefit-icon svg {
+    width: 24px;
+    height: 24px;
+    color: rgb(249, 115, 22);
+  }
+
+  .benefit-icon.obsidian svg {
+    color: var(--obsidian);
+  }
+
+  .benefit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  /* ==================== HIGHLIGHT BOX ==================== */
+  .highlight-box {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(249, 115, 22, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(249, 115, 22, 0.1);
+  }
+
+  .highlight-box.obsidian {
+    background: rgba(155, 81, 224, 0.05);
+    border-color: rgba(155, 81, 224, 0.1);
+  }
+
+  .highlight-quote {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    color: white;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .highlight-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* ==================== ACE METHODOLOGY ==================== */
+  .method-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(155, 81, 224, 0.1);
+    border: 1px solid rgba(155, 81, 224, 0.2);
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--obsidian);
+    margin-bottom: 1.5rem;
+  }
+
+  .ace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .ace-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(155, 81, 224, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .ace-card:hover {
+    border-color: var(--obsidian);
+    transform: translateY(-4px);
+  }
+
+  .ace-letter {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--obsidian);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .ace-word {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .ace-card p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  .methodology-quote {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(155, 81, 224, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(155, 81, 224, 0.1);
+  }
+
+  .methodology-quote p {
+    font-size: 1.125rem;
+    color: white;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+  }
+
+  .methodology-quote cite {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ==================== STEPS GRID ==================== */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .step-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .step-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(249, 115, 22);
+    opacity: 0.3;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  .step-number.obsidian {
+    color: var(--obsidian);
+  }
+
+  .step-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-card p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  /* ==================== AUDIENCE GRID ==================== */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .audience-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .audience-card.obsidian:hover {
+    border-color: rgba(155, 81, 224, 0.3);
+  }
+
+  .audience-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  .audience-icon.obsidian {
+    background: var(--obsidian-light);
+  }
+
+  .audience-icon svg {
+    width: 28px;
+    height: 28px;
+    color: rgb(249, 115, 22);
+  }
+
+  .audience-icon.obsidian svg {
+    color: var(--obsidian);
+  }
+
+  .audience-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .audience-card p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ==================== ABOUT GRID ==================== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+    }
+  }
+
+  .about-image {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-quote {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: rgb(249, 115, 22);
+    padding-left: 1.5rem;
+    border-left: 3px solid rgb(249, 115, 22);
+    margin: 2rem 0;
+  }
+
+  .about-quote.obsidian {
+    color: var(--obsidian);
+    border-left-color: var(--obsidian);
+  }
+
+  /* ==================== MODULES GRID ==================== */
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .module-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .module-badge {
+    display: inline-block;
+    background: rgb(249, 115, 22);
+    color: #0a0a0a;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .module-badge.obsidian {
+    background: var(--obsidian);
+  }
+
+  .module-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .module-card > p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+  }
+
+  .module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .module-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.625rem;
+  }
+
+  .check {
+    font-weight: bold;
+  }
+
+  .check.obsidian {
+    color: var(--obsidian);
+  }
+
+  /* ==================== BONUS SECTION ==================== */
+  .bonus-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .bonus-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bonus-ribbon {
+    position: absolute;
+    top: 16px;
+    right: -24px;
+    background: rgb(249, 115, 22);
+    color: #0a0a0a;
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 0.25rem 2rem;
+    transform: rotate(45deg);
+  }
+
+  .bonus-ribbon.obsidian {
+    background: var(--obsidian);
+  }
+
+  .bonus-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .bonus-card p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  .bonus-value {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .bonus-value strong {
+    color: var(--obsidian);
+  }
+
+  /* ==================== PRICING ==================== */
+  .social-proof {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stars svg {
+    width: 24px;
+    height: 24px;
+    fill: #fbbf24;
+  }
+
+  .social-proof p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .social-proof strong {
+    color: white;
+  }
+
+  .pricing-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 2px solid rgb(249, 115, 22);
+    border-radius: 24px;
+    padding: 3rem;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pricing-card.obsidian {
+    border-color: var(--obsidian);
+  }
+
+  .pricing-badge {
+    display: inline-block;
+    color: rgb(249, 115, 22);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgb(249, 115, 22);
+    padding-bottom: 0.5rem;
+  }
+
+  .pricing-badge.obsidian {
+    color: var(--obsidian);
+    border-bottom-color: var(--obsidian);
+  }
+
+  .pricing-original {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: line-through;
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-main {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-installment {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-installment strong {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .currency {
+    font-size: 1.5rem;
+    color: rgb(249, 115, 22);
+    vertical-align: super;
+  }
+
+  .currency.obsidian {
+    color: var(--obsidian);
+  }
+
+  .pricing-cash {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-cash span {
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  .pricing-cash span.obsidian {
+    color: var(--obsidian);
+  }
+
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    text-align: left;
+  }
+
+  .pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ==================== GUARANTEE ==================== */
+  .guarantee-box {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .guarantee-box.obsidian {
+    background: var(--obsidian-light);
+    border-color: rgba(155, 81, 224, 0.3);
+  }
+
+  .guarantee-icon {
+    width: 48px;
+    height: 48px;
+    background: rgb(249, 115, 22);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .guarantee-icon.obsidian {
+    background: var(--obsidian);
+  }
+
+  .guarantee-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #0a0a0a;
+  }
+
+  .guarantee-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .guarantee-content p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+  }
+
+  /* ==================== FAQ ==================== */
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem 0;
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .faq-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  /* ==================== CTA SECTION ==================== */
+  .cta-section {
+    text-align: center;
+    padding: 8rem 1.5rem;
+    background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
