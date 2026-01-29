@@ -1,0 +1,1597 @@
+---
+// engenharia-de-contexto.astro - Página do curso de Engenharia de Contexto (Design v2)
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Engenharia de Contexto Aplicada ao Marketing Digital"
+  description="Aprenda a transformar IA genérica em resultados extraordinários. Domine Context Engineering para criar conteúdo que realmente converte."
+>
+
+<!-- Hero Section com Animação -->
+<section class="hero-section">
+  <!-- Background animado com linhas SVG -->
+  <div class="hero-background">
+    <svg
+      class="animated-lines"
+      viewBox="0 0 1200 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,1)" />
+          <stop offset="30%" stop-color="rgba(251,146,60,1)" />
+          <stop offset="70%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="100%" stop-color="rgba(249,115,22,0)" />
+        </radialGradient>
+        <radialGradient id="neonPulse2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+          <stop offset="25%" stop-color="rgba(251,146,60,0.9)" />
+          <stop offset="60%" stop-color="rgba(234,88,12,0.7)" />
+          <stop offset="100%" stop-color="rgba(234,88,12,0)" />
+        </radialGradient>
+        <radialGradient id="heroTextBg" cx="30%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="rgba(249,115,22,0.15)" />
+          <stop offset="40%" stop-color="rgba(251,146,60,0.08)" />
+          <stop offset="80%" stop-color="rgba(234,88,12,0.05)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+        </radialGradient>
+        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <linearGradient id="threadFade1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(0,0,0,1)" />
+          <stop offset="15%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="85%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,1)" />
+        </linearGradient>
+      </defs>
+
+      <g>
+        <ellipse cx="300" cy="350" rx="400" ry="200" fill="url(#heroTextBg)" opacity="0.6" />
+
+        <!-- Threads animados -->
+        <path id="thread1" d="M50 720 Q200 590 350 540 Q500 490 650 520 Q800 550 950 460 Q1100 370 1200 340" stroke="url(#threadFade1)" stroke-width="0.8" fill="none" opacity="0.8" />
+        <circle r="2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#thread1" /></animateMotion>
+        </circle>
+
+        <path id="thread2" d="M80 730 Q250 620 400 570 Q550 520 700 550 Q850 580 1000 490 Q1150 400 1300 370" stroke="url(#threadFade1)" stroke-width="1.5" fill="none" opacity="0.7" />
+        <circle r="3" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#thread2" /></animateMotion>
+        </circle>
+
+        <path id="thread3" d="M20 710 Q180 580 320 530 Q460 480 600 510 Q740 540 880 450 Q1020 360 1200 330" stroke="url(#threadFade1)" stroke-width="1.2" fill="none" opacity="0.8" />
+        <circle r="2.5" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#thread3" /></animateMotion>
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Conteudo Principal -->
+  <div class="hero-content">
+    <div class="hero-text-center">
+      <!-- Badge -->
+      <div class="hero-badge">
+        <span class="badge">
+          <span class="badge-dot"></span>
+          Novo Curso
+        </span>
+      </div>
+
+      <!-- Titulo Principal -->
+      <h1 class="hero-title">
+        De IA Generica para<br>
+        <span class="text-gradient">Resultados Extraordinarios</span>
+      </h1>
+
+      <!-- Subtitulo -->
+      <p class="hero-subtitle">
+        A diferenca entre quem usa IA de forma mediocre e quem usa de forma extraordinaria nao e inteligencia, nao e tecnica, nao e prompt magico. E <strong class="text-white">CONTEXTO ESTRUTURADO</strong>.
+      </p>
+
+      <!-- CTA -->
+      <div class="hero-cta">
+        <a href="#investimento" class="btn-primary">
+          Quero Dominar Context Engineering
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Hook Quote -->
+      <p class="hero-quote">
+        "Voce nao tem um problema de IA. Voce tem um problema de CONTEXTO."
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 01: O Problema -->
+<section class="section" id="problema">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">01 - O Problema Real</span>
+      <h2 class="section-title">Por que sua IA entrega resultados genericos?</h2>
+      <p class="section-subtitle">
+        Imagine dar uma tarefa para um funcionario novo sem explicar nada sobre sua empresa, seus clientes, seu tom de voz... Ele vai entregar algo generico. A IA e igual.
+      </p>
+    </div>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <h3>"Uso ChatGPT mas os resultados sao genericos"</h3>
+        <p>Voce gasta mais tempo corrigindo a IA do que escrevendo voce mesmo. Os outputs nao tem a sua voz, nao conhecem seu publico.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+            <path d="M16 16h5v5"/>
+          </svg>
+        </div>
+        <h3>"Sinto que estou usando 10% do potencial"</h3>
+        <p>Voce sabe que a IA pode fazer mais, mas nao sabe como estruturar pedidos complexos. Fica na superficialidade.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3>"Nao sei estruturar prompts complexos"</h3>
+        <p>Tenta diferentes abordagens, mas os resultados sao inconsistentes. Cada vez que pede algo, parece uma loteria.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-10.14l2.83 2.83m4.48 4.48l2.83 2.83"/>
+          </svg>
+        </div>
+        <h3>"Quero automacao mas nao sei dar contexto certo"</h3>
+        <p>Ja tentou criar workflows automatizados, mas a IA nao entende o suficiente do seu negocio para funcionar sozinha.</p>
+      </div>
+    </div>
+
+    <div class="problem-conclusion">
+      <p class="conclusion-text">Se voce se identificou com algum desses problemas...</p>
+      <p class="conclusion-highlight">A solucao nao e mais prompts. E <span class="text-accent">Context Engineering</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 02: A Solucao -->
+<section class="section-dark" id="solucao">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">02 - A Solucao</span>
+      <h2 class="section-title">O que e Engenharia de Contexto?</h2>
+      <p class="section-subtitle">
+        Context Engineering e a arte de estruturar informacoes para que IAs entreguem resultados personalizados e consistentes - toda vez.
+      </p>
+    </div>
+
+    <!-- Framework Visual -->
+    <div class="framework-visual">
+      <h3 class="framework-title">O Fluxo da Engenharia de Contexto</h3>
+      <div class="framework-flow">
+        <div class="framework-step">
+          <span class="step-number">1</span>
+          <span class="step-label">Material Bruto</span>
+        </div>
+        <span class="framework-arrow">→</span>
+        <div class="framework-step highlight">
+          <span class="step-number">2</span>
+          <span class="step-label">Sanitizacao</span>
+        </div>
+        <span class="framework-arrow">→</span>
+        <div class="framework-step highlight">
+          <span class="step-number">3</span>
+          <span class="step-label">DNA Loading</span>
+        </div>
+        <span class="framework-arrow">→</span>
+        <div class="framework-step">
+          <span class="step-number">4</span>
+          <span class="step-label">Output Unico</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparacao Antes/Depois -->
+    <div class="comparison-grid">
+      <div class="comparison-box before">
+        <span class="comparison-badge">Antes</span>
+        <ul class="comparison-list">
+          <li><span class="icon">✕</span> Prompts avulsos e genericos</li>
+          <li><span class="icon">✕</span> Resultados inconsistentes</li>
+          <li><span class="icon">✕</span> IA nao conhece seu negocio</li>
+          <li><span class="icon">✕</span> Tempo corrigindo outputs</li>
+          <li><span class="icon">✕</span> Conteudo sem personalidade</li>
+          <li><span class="icon">✕</span> Frustracao com ferramentas</li>
+        </ul>
+      </div>
+
+      <div class="comparison-box after">
+        <span class="comparison-badge">Depois</span>
+        <ul class="comparison-list">
+          <li><span class="icon">✓</span> Sistema estruturado de contexto</li>
+          <li><span class="icon">✓</span> Resultados consistentes sempre</li>
+          <li><span class="icon">✓</span> IA conhece seu DNA completo</li>
+          <li><span class="icon">✓</span> Outputs prontos para usar</li>
+          <li><span class="icon">✓</span> Sua voz, sua identidade</li>
+          <li><span class="icon">✓</span> Produtividade multiplicada</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 03: O Metodo -->
+<section class="section" id="metodo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">03 - O Metodo</span>
+      <h2 class="section-title">O que voce vai dominar</h2>
+      <p class="section-subtitle">
+        Frameworks praticos que estudei em 43+ artigos e papers (Anthropic, arXiv, contextengineering.ai) pra voce nao precisar. Te passo o atalho.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>DNA System</h3>
+        <p>Framework de contexto para sua marca e negocio. Personalidade, Publico, Tom de Voz - tudo documentado para a IA usar.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <h3>Conteudo Mestre</h3>
+        <p>Sistema de criacao escalavel. 3 fases: Sanitizacao, Duo-Drafting, Refinamento. Produz conteudo na SUA voz.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>Automacao Inteligente</h3>
+        <p>Como estruturar contexto para workflows automatizados. IA que trabalha sozinha porque entende seu negocio.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </div>
+        <h3>Personas + IA Generativa</h3>
+        <p>A fusao que funciona: personas estruturadas alimentando ChatGPT/Claude para estrategias de marketing perfeitas.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+          </svg>
+        </div>
+        <h3>Aplicacao em Marketing</h3>
+        <p>Cases reais de Context Engineering em campanhas, copy, conteudo para redes sociais, emails e muito mais.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3>Templates Prontos</h3>
+        <p>Nao comeca do zero. Recebe templates de DNA, prompts estruturados e workflows prontos para adaptar ao seu negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 04: Para Quem E -->
+<section class="section-dark" id="publico">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">04 - Para Quem E</span>
+      <h2 class="section-title">Este curso e para voce se...</h2>
+    </div>
+
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+            <circle cx="11" cy="11" r="2"/>
+          </svg>
+        </div>
+        <h3>Criadores de Conteudo</h3>
+        <p>Quer escalar producao sem perder autenticidade</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Marketers Digitais</h3>
+        <p>Precisa de resultados consistentes com IA</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+          </svg>
+        </div>
+        <h3>Empreendedores</h3>
+        <p>Quer automatizar marketing sem perder qualidade</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <h3>Agencias</h3>
+        <p>Precisa escalar entrega para multiplos clientes</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+        </div>
+        <h3>Copywriters</h3>
+        <p>Quer usar IA sem perder o toque humano</p>
+      </div>
+
+      <div class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18"/>
+            <path d="m19 9-5 5-4-4-3 3"/>
+          </svg>
+        </div>
+        <h3>Gestores de Trafego</h3>
+        <p>Precisa criar copys que convertem em escala</p>
+      </div>
+    </div>
+
+    <div class="audience-cta">
+      <a href="#investimento" class="btn-primary">Esse curso e para mim</a>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 05: Sobre o Professor -->
+<section class="section" id="professor">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">05 - Quem Vai Te Ensinar</span>
+      <h2 class="section-title">Uma nota do Alex</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/img/alex-donega.webp" alt="Alex Donega" loading="lazy" />
+      </div>
+      <div class="about-content">
+        <h3>Alex Donega</h3>
+        <p>Cara, eu estudei 43+ artigos e papers sobre Context Engineering - Anthropic, arXiv, contextengineering.ai - pra voce nao precisar. Te passo o atalho.</p>
+        <p>Nao sou programador. Fiz mestrado em ECONOMIA na ROMENIA (sim, terra do Dracula!). Se eu consegui dominar Context Engineering, voce consegue. E sobre saber PEDIR pra IA, nao sobre saber programar.</p>
+        <p>Uso esses frameworks diariamente nos meus 3 MicroSaaS: Novo Envio, FalaZapp e MyMess. Nao e teoria - e o que funciona na pratica.</p>
+
+        <blockquote class="about-quote">
+          "A diferenca entre IA ok e IA impressionante esta no contexto. Aprendi isso na marra - e agora vou te ensinar."
+        </blockquote>
+
+        <ul class="credentials-list">
+          <li><span class="check">✓</span> Gestor de Projetos na Autobots Ventures</li>
+          <li><span class="check">✓</span> Membro do time Autobots Ventures (+25 software)</li>
+          <li><span class="check">✓</span> Fundador de 3 MicroSaaS em operacao</li>
+          <li><span class="check">✓</span> 43+ artigos estudados sobre Context Engineering</li>
+          <li><span class="check">✓</span> Criador dos frameworks DNA System e Conteudo Mestre</li>
+        </ul>
+
+        <a href="#investimento" class="btn-primary">Quero aprender com o Alex</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 06: Modulos -->
+<section class="section-dark" id="conteudo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">06 - Conteudo Completo</span>
+      <h2 class="section-title">O que voce vai receber</h2>
+    </div>
+
+    <div class="modules-grid">
+      <div class="module-card">
+        <span class="module-badge">Modulo 1</span>
+        <h3>Fundamentos de Context Engineering</h3>
+        <p>Entenda a filosofia e por que contexto > prompts.</p>
+        <ul class="module-list">
+          <li><span class="check">✓</span> O que e Context Engineering</li>
+          <li><span class="check">✓</span> Por que prompts sozinhos nao funcionam</li>
+          <li><span class="check">✓</span> O modelo mental correto para IA</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-badge">Modulo 2</span>
+        <h3>DNA System</h3>
+        <p>Crie o DNA completo da sua marca/negocio.</p>
+        <ul class="module-list">
+          <li><span class="check">✓</span> DNA de Personalidade</li>
+          <li><span class="check">✓</span> DNA de Publico</li>
+          <li><span class="check">✓</span> DNA de Tom de Voz</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-badge">Modulo 3</span>
+        <h3>Conteudo Mestre</h3>
+        <p>Sistema de criacao escalavel de conteudo.</p>
+        <ul class="module-list">
+          <li><span class="check">✓</span> Fase de Sanitizacao</li>
+          <li><span class="check">✓</span> Duo-Drafting com IA</li>
+          <li><span class="check">✓</span> Refinamento e publicacao</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-badge">Modulo 4</span>
+        <h3>Automacao com Contexto</h3>
+        <p>Workflows que funcionam sozinhos.</p>
+        <ul class="module-list">
+          <li><span class="check">✓</span> Estrutura de contexto para automacao</li>
+          <li><span class="check">✓</span> Integracao com ferramentas</li>
+          <li><span class="check">✓</span> Cases de automacao real</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 07: Bonus -->
+<section class="section bonus-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Bonus Exclusivos</span>
+      <h2 class="section-title">Mais valor para voce</h2>
+    </div>
+
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-ribbon">BONUS</div>
+        <h3>Vault de Templates</h3>
+        <p>Templates prontos de DNA, prompts e workflows para adaptar ao seu negocio.</p>
+        <span class="bonus-value">Valor: <strong>R$ 297</strong></span>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-ribbon">BONUS</div>
+        <h3>Comunidade Exclusiva</h3>
+        <p>Acesso ao grupo de alunos para tirar duvidas e trocar experiencias.</p>
+        <span class="bonus-value">Valor: <strong>R$ 197</strong></span>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-ribbon">BONUS</div>
+        <h3>Atualizacoes Gratuitas</h3>
+        <p>Acesso vitalicio a todas as atualizacoes futuras do curso.</p>
+        <span class="bonus-value">Valor: <strong>Inestimavel</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 08: Investimento -->
+<section class="section-dark" id="investimento">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Investimento</span>
+      <h2 class="section-title">Garanta sua vaga agora</h2>
+    </div>
+
+    <!-- Social Proof -->
+    <div class="social-proof">
+      <div class="stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p><strong>500+ alunos</strong> ja transformaram seus resultados com IA</p>
+    </div>
+
+    <div class="pricing-card">
+      <span class="pricing-badge">Oferta de Lancamento</span>
+      <p class="pricing-original">De R$ 997</p>
+      <div class="pricing-main">
+        <p class="pricing-installment">12x de <span class="currency">R$</span><strong>49</strong>,70</p>
+        <p class="pricing-cash">ou <span>R$ 497</span> a vista</p>
+      </div>
+
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> Acesso imediato ao curso completo</li>
+        <li><span class="check">✓</span> 4 modulos + aulas bonus</li>
+        <li><span class="check">✓</span> Vault de templates prontos</li>
+        <li><span class="check">✓</span> Comunidade exclusiva</li>
+        <li><span class="check">✓</span> Atualizacoes vitaliciamente</li>
+        <li><span class="check">✓</span> Garantia de 7 dias</li>
+      </ul>
+
+      <a href="https://pay.hotmart.com/exemplo" target="_blank" rel="noopener" class="btn-buy">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Quero Minha Vaga Agora
+      </a>
+
+      <!-- Garantia -->
+      <div class="guarantee-box">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="guarantee-content">
+          <h4>Garantia de 7 dias</h4>
+          <p>Se nao gostar do curso, devolvo 100% do seu dinheiro. Sem perguntas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 09: FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Duvidas</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>Preciso saber programar?</h4>
+        <p>Nao! O curso foi feito para nao-programadores. Se voce sabe usar o ChatGPT, consegue aplicar tudo.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Funciona para qualquer nicho?</h4>
+        <p>Sim. Os frameworks sao universais e podem ser adaptados para qualquer mercado ou tipo de negocio.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Quanto tempo tenho acesso?</h4>
+        <p>Acesso vitalicio. Comprou uma vez, seu para sempre.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>E se eu nao gostar?</h4>
+        <p>Garantia de 7 dias. Devolvo 100% do seu dinheiro sem perguntas.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Quando comeca?</h4>
+        <p>Acesso imediato apos a confirmacao do pagamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-title">Bora dominar IA de verdade?</h2>
+    <p class="cta-subtitle">
+      A diferenca entre usar IA de forma mediocre e extraordinaria e o contexto. Venha aprender como estruturar isso.
+    </p>
+    <div class="cta-buttons">
+      <a href="#investimento" class="btn-primary">
+        Quero Minha Vaga
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+      <a href="https://wa.me/5545999506444" target="_blank" rel="noopener" class="btn-secondary">
+        <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Falar Comigo
+      </a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  /* ==================== HERO SECTION ==================== */
+  .hero-section {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .animated-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .hero-text-center {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: rgb(251, 146, 60);
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #f97316;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  .hero-cta {
+    margin-bottom: 2rem;
+  }
+
+  .hero-quote {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    color: white;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  /* ==================== BUTTONS ==================== */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, rgb(234, 88, 12), rgb(194, 65, 12));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .btn-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #22c55e;
+    color: white;
+    padding: 1.25rem 2rem;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    width: 100%;
+  }
+
+  .btn-buy:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+  }
+
+  /* ==================== SECTIONS ==================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+    background: #0a0a0a;
+  }
+
+  .section-dark {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(251, 146, 60);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ==================== PROBLEMS GRID ==================== */
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .problem-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .problem-card:hover {
+    border-color: rgba(220, 38, 38, 0.5);
+    transform: translateY(-4px);
+  }
+
+  .problem-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(220, 38, 38, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #dc2626;
+  }
+
+  .problem-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .problem-card p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  .problem-conclusion {
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .conclusion-text {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.75rem;
+  }
+
+  .conclusion-highlight {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .text-accent {
+    color: rgb(249, 115, 22);
+  }
+
+  /* ==================== FRAMEWORK VISUAL ==================== */
+  .framework-visual {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+  }
+
+  .framework-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 2.5rem;
+  }
+
+  .framework-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .framework-step {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    min-width: 140px;
+  }
+
+  .framework-step.highlight {
+    border-color: rgb(249, 115, 22);
+    background: rgba(249, 115, 22, 0.1);
+  }
+
+  .step-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(249, 115, 22);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .framework-arrow {
+    font-size: 1.5rem;
+    color: rgb(249, 115, 22);
+  }
+
+  /* ==================== COMPARISON GRID ==================== */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .comparison-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .comparison-box.before {
+    border-color: rgba(220, 38, 38, 0.3);
+  }
+
+  .comparison-box.after {
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+
+  .comparison-badge {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .comparison-box.before .comparison-badge {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+  }
+
+  .comparison-box.after .comparison-badge {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+  }
+
+  .comparison-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comparison-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .comparison-box.before .icon {
+    color: #dc2626;
+    font-weight: bold;
+  }
+
+  .comparison-box.after .icon {
+    color: #22c55e;
+    font-weight: bold;
+  }
+
+  /* ==================== BENEFITS GRID ==================== */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .benefit-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .benefit-card:hover {
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .benefit-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .benefit-icon svg {
+    width: 24px;
+    height: 24px;
+    color: rgb(249, 115, 22);
+  }
+
+  .benefit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  /* ==================== AUDIENCE GRID ==================== */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .audience-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .audience-card:hover {
+    border-color: rgba(249, 115, 22, 0.3);
+  }
+
+  .audience-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  .audience-icon svg {
+    width: 28px;
+    height: 28px;
+    color: rgb(249, 115, 22);
+  }
+
+  .audience-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .audience-card p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .audience-cta {
+    text-align: center;
+  }
+
+  /* ==================== ABOUT GRID ==================== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+    }
+  }
+
+  .about-image {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-quote {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: rgb(249, 115, 22);
+    padding-left: 1.5rem;
+    border-left: 3px solid rgb(249, 115, 22);
+    margin: 2rem 0;
+  }
+
+  .credentials-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .credentials-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.75rem;
+  }
+
+  .credentials-list .check {
+    color: rgb(249, 115, 22);
+    font-weight: bold;
+  }
+
+  /* ==================== MODULES GRID ==================== */
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .module-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .module-badge {
+    display: inline-block;
+    background: rgb(249, 115, 22);
+    color: #0a0a0a;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .module-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .module-card > p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+  }
+
+  .module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .module-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.625rem;
+  }
+
+  .module-list .check {
+    color: rgb(249, 115, 22);
+    font-weight: bold;
+  }
+
+  /* ==================== BONUS SECTION ==================== */
+  .bonus-section {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .bonus-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bonus-ribbon {
+    position: absolute;
+    top: 16px;
+    right: -24px;
+    background: rgb(249, 115, 22);
+    color: #0a0a0a;
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 0.25rem 2rem;
+    transform: rotate(45deg);
+  }
+
+  .bonus-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .bonus-card p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  .bonus-value {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .bonus-value strong {
+    color: rgb(249, 115, 22);
+  }
+
+  /* ==================== PRICING ==================== */
+  .social-proof {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stars svg {
+    width: 24px;
+    height: 24px;
+    fill: #fbbf24;
+  }
+
+  .social-proof p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .social-proof strong {
+    color: white;
+  }
+
+  .pricing-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 2px solid rgb(249, 115, 22);
+    border-radius: 24px;
+    padding: 3rem;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pricing-badge {
+    display: inline-block;
+    color: rgb(249, 115, 22);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgb(249, 115, 22);
+    padding-bottom: 0.5rem;
+  }
+
+  .pricing-original {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: line-through;
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-main {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-installment {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-installment strong {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .pricing-installment .currency {
+    font-size: 1.5rem;
+    color: rgb(249, 115, 22);
+    vertical-align: super;
+  }
+
+  .pricing-cash {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-cash span {
+    color: rgb(249, 115, 22);
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    text-align: left;
+  }
+
+  .pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-features .check {
+    color: rgb(249, 115, 22);
+    font-weight: bold;
+  }
+
+  /* ==================== GUARANTEE ==================== */
+  .guarantee-box {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .guarantee-icon {
+    width: 48px;
+    height: 48px;
+    background: rgb(249, 115, 22);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .guarantee-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #0a0a0a;
+  }
+
+  .guarantee-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .guarantee-content p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+  }
+
+  /* ==================== FAQ ==================== */
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem 0;
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .faq-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  /* ==================== CTA SECTION ==================== */
+  .cta-section {
+    text-align: center;
+    padding: 8rem 1.5rem;
+    background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

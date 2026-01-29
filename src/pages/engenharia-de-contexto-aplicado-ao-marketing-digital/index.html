@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia de Contexto Aplicada ao Marketing Digital | Alex Donega</title>
+    <meta name="description" content="Aprenda a transformar IA genérica em resultados extraordinários. Domine Context Engineering para criar conteúdo que realmente converte.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Engenharia de Contexto Aplicada ao Marketing Digital">
+    <meta property="og:description" content="A diferença entre IA medíocre e IA extraordinária? CONTEXTO ESTRUTURADO. Aprenda o método que estudei em 43+ artigos.">
+    <meta property="og:url" content="https://alexdonega.com.br/engenharia-de-contexto-aplicado-ao-marketing-digital">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Engenharia de Contexto Aplicada ao Marketing Digital">
+    <meta name="twitter:description" content="A diferença entre IA medíocre e IA extraordinária? CONTEXTO ESTRUTURADO.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fonte DePixel Klein */
+        @font-face {
+            font-family: "DePixel Klein";
+            src: url("https://framerusercontent.com/assets/AxpKr4lNhgmNX1Qyo1xQntsit8.woff2") format("woff2");
+            font-display: swap;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-main: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --bg-card-hover: #222222;
+            --text-white: #ffffff;
+            --text-light: #e5e5e5;
+            --text-gray: #a3a3a3;
+            --text-muted: #737373;
+            --accent: #d87757;
+            --accent-hover: #e8866a;
+            --accent-light: rgba(216, 119, 87, 0.1);
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #22c55e;
+            --border: #2a2a2a;
+            --gradient-start: #1a1a1a;
+            --gradient-end: #0a0a0a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            padding: 40px 24px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .header-line {
+            flex: 1;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .logo {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-white);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 24px 60px;
+            text-align: center;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            margin: 22px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse at 70% 30%, rgba(216, 119, 87, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-light);
+            border: 1px solid rgba(216, 119, 87, 0.3);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 500;
+            line-height: 1.1;
+            color: var(--text-white);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent);
+            font-family: "DePixel Klein", monospace;
+            font-size: 1.05em;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: var(--text-gray);
+            max-width: 750px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        .hero .hook-text {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(20px, 3vw, 26px);
+            color: var(--text-white);
+            max-width: 800px;
+            margin: 40px auto 0;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--bg-main);
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--text-white);
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--text-muted);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-dark {
+            background: var(--bg-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .section-eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(32px, 4vw, 40px);
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--accent);
+            margin: 0 24px;
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .problem-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover {
+            border-color: rgba(220, 38, 38, 0.5);
+        }
+
+        .problem-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(220, 38, 38, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .problem-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #dc2626;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .problem-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Solution Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 32px;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .benefit-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Comparison Section */
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .comparison-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .comparison-box.before {
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .comparison-box.after {
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .comparison-badge {
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .comparison-box.before .comparison-badge {
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+        }
+
+        .comparison-box.after .comparison-badge {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        .comparison-list .icon {
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .comparison-box.before .icon {
+            color: #dc2626;
+        }
+
+        .comparison-box.after .icon {
+            color: #22c55e;
+        }
+
+        /* Framework Visual */
+        .framework-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .framework-title {
+            text-align: center;
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 28px;
+            color: var(--text-white);
+            margin-bottom: 40px;
+        }
+
+        .framework-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .framework-step {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .framework-step.highlight {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .framework-step-number {
+            font-family: "DePixel Klein", monospace;
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .framework-step-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .framework-arrow {
+            font-size: 24px;
+            color: var(--accent);
+        }
+
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 26, 26, 0.8) 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+        }
+
+        .step-number {
+            font-family: "DePixel Klein", monospace;
+            font-size: 64px;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: 16px;
+            right: 24px;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .step-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Audience Cards */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .audience-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .audience-card:hover {
+            border-color: rgba(216, 119, 87, 0.5);
+        }
+
+        .audience-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .audience-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .audience-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+
+        .audience-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 64px;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(180deg, #c9956c 0%, #8b5a3c 50%, #5a3825 100%);
+            aspect-ratio: 4/5;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h3 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-content blockquote {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--accent);
+            padding-left: 24px;
+            border-left: 3px solid var(--accent);
+            margin: 32px 0;
+        }
+
+        .credentials-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .credentials-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .credentials-list .check {
+            color: var(--accent);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Modules Section */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .module-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .module-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-main);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .module-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .module-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .module-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .module-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .module-list .check {
+            color: var(--accent);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Bonus Section */
+        .bonus-section {
+            background: linear-gradient(135deg, rgba(216, 119, 87, 0.05) 0%, transparent 50%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .bonus-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus-card::before {
+            content: 'BONUS';
+            position: absolute;
+            top: 16px;
+            right: -24px;
+            background: var(--accent);
+            color: var(--bg-main);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 32px;
+            transform: rotate(45deg);
+        }
+
+        .bonus-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .bonus-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .bonus-value {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .bonus-value span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            text-align: center;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .social-proof-stars {
+            display: flex;
+            gap: 4px;
+        }
+
+        .social-proof-stars svg {
+            width: 24px;
+            height: 24px;
+            fill: #fbbf24;
+        }
+
+        .social-proof-text {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .social-proof-text strong {
+            color: var(--text-white);
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(26, 26, 26, 0.8) 100%);
+            border: 2px solid var(--accent);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 550px;
+            margin: 0 auto 48px;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+
+        .pricing-original {
+            font-size: 22px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: 8px;
+        }
+
+        .pricing-main {
+            margin-bottom: 24px;
+        }
+
+        .pricing-installment {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .pricing-installment strong {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 72px;
+            font-weight: 500;
+            color: var(--text-white);
+        }
+
+        .pricing-installment .currency {
+            font-size: 28px;
+            color: var(--accent);
+            vertical-align: super;
+        }
+
+        .pricing-cash {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .pricing-cash span {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .pricing-features .check {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .btn-buy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #22c55e;
+            color: #ffffff;
+            padding: 22px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-buy:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-buy svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Guarantee Box */
+        .guarantee-box {
+            background: var(--accent-light);
+            border: 1px solid rgba(216, 119, 87, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            text-align: left;
+        }
+
+        .guarantee-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .guarantee-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--bg-main);
+        }
+
+        .guarantee-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 4px;
+        }
+
+        .guarantee-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0;
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 120px 24px;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-main) 100%);
+        }
+
+        .cta-title {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 64px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        .footer-brand h4 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer-brand .signature {
+            font-style: italic;
+            color: var(--accent);
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .footer-column h5 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 48px auto 0;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span>Novo Curso</span>
+            <span>|</span>
+            <span>Acesso Imediato</span>
+        </div>
+
+        <h1>
+            De IA Genérica para<br>
+            <span class="highlight">Resultados Extraordinários</span>
+        </h1>
+
+        <p class="subtitle">
+            A diferença entre quem usa IA de forma medíocre e quem usa de forma extraordinária não é inteligência, não é técnica, não é prompt mágico. É <strong>CONTEXTO ESTRUTURADO</strong>.
+        </p>
+
+        <a href="#investimento" class="btn-primary">
+            Quero Dominar Context Engineering
+            <svg width="20" height="16" viewBox="0 0 23 16" fill="none">
+                <path d="M1.5 7C0.947715 7 0.5 7.44772 0.5 8C0.5 8.55228 0.947715 9 1.5 9V8V7ZM22.2071 8.70711C22.5976 8.31658 22.5976 7.68342 22.2071 7.29289L15.8431 0.928932C15.4526 0.538408 14.8195 0.538408 14.4289 0.928932C14.0384 1.31946 14.0384 1.95262 14.4289 2.34315L20.0858 8L14.4289 13.6569C14.0384 14.0474 14.0384 14.6805 14.4289 15.0711C14.8195 15.4616 15.4526 15.4616 15.8431 15.0711L22.2071 8.70711ZM1.5 8V9H21.5V8V7H1.5V8Z" fill="currentColor"/>
+            </svg>
+        </a>
+
+        <p class="hook-text">
+            "Você não tem um problema de IA. Você tem um problema de CONTEXTO."
+        </p>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Section 01: O Problema -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">01 - O Problema Real</div>
+            <h2 class="section-title">Por que sua IA entrega resultados genéricos?</h2>
+            <p class="section-subtitle">
+                Imagine dar uma tarefa para um funcionário novo sem explicar nada sobre sua empresa, seus clientes, seu tom de voz... Ele vai entregar algo genérico. A IA é igual.
+            </p>
+        </div>
+
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <h3>"Uso ChatGPT mas os resultados são genéricos"</h3>
+                <p>Você gasta mais tempo corrigindo a IA do que escrevendo você mesmo. Os outputs não têm a sua voz, não conhecem seu público.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
+                </div>
+                <h3>"Sinto que estou usando 10% do potencial"</h3>
+                <p>Você sabe que a IA pode fazer mais, mas não sabe como estruturar pedidos complexos. Fica na superficialidade.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3>"Não sei estruturar prompts complexos"</h3>
+                <p>Tenta diferentes abordagens, mas os resultados são inconsistentes. Cada vez que pede algo, parece uma loteria.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-10.14l2.83 2.83m4.48 4.48l2.83 2.83"/></svg>
+                </div>
+                <h3>"Quero automação mas não sei dar contexto certo"</h3>
+                <p>Já tentou criar workflows automatizados, mas a IA não entende o suficiente do seu negócio para funcionar sozinha.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <p style="font-size: 18px; color: var(--text-gray);">Se você se identificou com algum desses problemas...</p>
+            <p style="font-size: 24px; color: var(--text-white); margin-top: 12px; font-weight: 600;">A solução não é mais prompts. É <span style="color: var(--accent);">Context Engineering</span>.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 02: O Que E Context Engineering -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">02 - A Solução</div>
+            <h2 class="section-title">O que é Engenharia de Contexto?</h2>
+            <p class="section-subtitle">
+                Context Engineering é a arte de estruturar informações para que IAs entreguem resultados personalizados e consistentes - toda vez.
+            </p>
+        </div>
+
+        <div class="framework-visual">
+            <h3 class="framework-title">O Fluxo da Engenharia de Contexto</h3>
+            <div class="framework-flow">
+                <div class="framework-step">
+                    <div class="framework-step-number">1</div>
+                    <div class="framework-step-label">Material Bruto</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step highlight">
+                    <div class="framework-step-number">2</div>
+                    <div class="framework-step-label">Sanitização</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step highlight">
+                    <div class="framework-step-number">3</div>
+                    <div class="framework-step-label">DNA Loading</div>
+                </div>
+                <div class="framework-arrow">→</div>
+                <div class="framework-step">
+                    <div class="framework-step-number">4</div>
+                    <div class="framework-step-label">Output Único</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison-container" style="margin-top: 64px;">
+            <div class="comparison-box before">
+                <div class="comparison-header">
+                    <span class="comparison-badge">Antes</span>
+                </div>
+                <ul class="comparison-list">
+                    <li><span class="icon">X</span> Prompts avulsos e genéricos</li>
+                    <li><span class="icon">X</span> Resultados inconsistentes</li>
+                    <li><span class="icon">X</span> IA não conhece seu negócio</li>
+                    <li><span class="icon">X</span> Tempo corrigindo outputs</li>
+                    <li><span class="icon">X</span> Conteúdo sem personalidade</li>
+                    <li><span class="icon">X</span> Frustração com ferramentas</li>
+                </ul>
+            </div>
+
+            <div class="comparison-box after">
+                <div class="comparison-header">
+                    <span class="comparison-badge">Depois</span>
+                </div>
+                <ul class="comparison-list">
+                    <li><span class="icon">&#10003;</span> Sistema estruturado de contexto</li>
+                    <li><span class="icon">&#10003;</span> Resultados consistentes sempre</li>
+                    <li><span class="icon">&#10003;</span> IA conhece seu DNA completo</li>
+                    <li><span class="icon">&#10003;</span> Outputs prontos para usar</li>
+                    <li><span class="icon">&#10003;</span> Sua voz, sua identidade</li>
+                    <li><span class="icon">&#10003;</span> Produtividade multiplicada</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 03: O Que Voce Vai Aprender -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">03 - O Método</div>
+            <h2 class="section-title">O que você vai dominar</h2>
+            <p class="section-subtitle">
+                Frameworks práticos que estudei em 43+ artigos e papers (Anthropic, arXiv, contextengineering.ai) pra você não precisar. Te passo o atalho.
+            </p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>DNA System</h3>
+                <p>Framework de contexto para sua marca e negócio. Personalidade, Público, Tom de Voz - tudo documentado para a IA usar.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <h3>Conteúdo Mestre</h3>
+                <p>Sistema de criação escalável. 3 fases: Sanitização, Duo-Drafting, Refinamento. Produz conteúdo na SUA voz.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <h3>Automação Inteligente</h3>
+                <p>Como estruturar contexto para workflows automatizados. IA que trabalha sozinha porque entende seu negócio.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+                <h3>Personas + IA Generativa</h3>
+                <p>A fusão que funciona: personas estruturadas alimentando ChatGPT/Claude para estratégias de marketing perfeitas.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                </div>
+                <h3>Aplicação em Marketing</h3>
+                <p>Cases reais de Context Engineering em campanhas, copy, conteúdo para redes sociais, emails e muito mais.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h3>Templates Prontos</h3>
+                <p>Não começa do zero. Recebe templates de DNA, prompts estruturados e workflows prontos para adaptar ao seu negócio.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 04: Para Quem E -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">04 - Para Quem É</div>
+            <h2 class="section-title">Este curso é para você se...</h2>
+        </div>
+
+        <div class="audience-grid">
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                </div>
+                <h3>Criadores de Conteúdo</h3>
+                <p>Quer escalar produção sem perder autenticidade</p>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Marketers Digitais</h3>
+                <p>Precisa de resultados consistentes com IA</p>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+                </div>
+                <h3>Empreendedores</h3>
+                <p>Quer automatizar marketing sem perder qualidade</p>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <h3>Agências</h3>
+                <p>Precisa escalar entrega para múltiplos clientes</p>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </div>
+                <h3>Copywriters</h3>
+                <p>Quer usar IA sem perder o toque humano</p>
+            </div>
+
+            <div class="audience-card">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                </div>
+                <h3>Gestores de Tráfego</h3>
+                <p>Precisa criar copys que convertem em escala</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#investimento" class="btn-primary">Esse curso e para mim</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 05: Sobre o Professor -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">05 - Quem Vai Te Ensinar</div>
+            <h2 class="section-title">Uma nota do Alex</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="../assets/img/alex-donega.webp" alt="Alex Donega, especialista em IA e produtividade para startups" width="400" height="400" fetchpriority="high">
+            </div>
+            <div class="about-content">
+                <h3>Alex Donega</h3>
+                <p>
+                    Cara, eu estudei 43+ artigos e papers sobre Context Engineering - Anthropic, arXiv, contextengineering.ai - pra você não precisar. Te passo o atalho.
+                </p>
+                <p>
+                    Não sou programador. Fiz mestrado em ECONOMIA na ROMÊNIA (sim, terra do Drácula!). Se eu consegui dominar Context Engineering, você consegue. É sobre saber PEDIR pra IA, não sobre saber programar.
+                </p>
+                <p>
+                    Uso esses frameworks diariamente nos meus 3 MicroSaaS: Novo Envio, FalaZapp e MyMess. Não é teoria - é o que funciona na prática.
+                </p>
+
+                <blockquote>
+                    "A diferença entre IA ok e IA impressionante está no contexto. Aprendi isso na marra - e agora vou te ensinar."
+                </blockquote>
+
+                <ul class="credentials-list">
+                    <li><span class="check">&#10003;</span> Gestor de Projetos na Autobots Ventures</li>
+                    <li><span class="check">&#10003;</span> Membro do time Autobots Ventures (+25 software)</li>
+                    <li><span class="check">&#10003;</span> Fundador de 3 MicroSaaS em operação</li>
+                    <li><span class="check">&#10003;</span> 43+ artigos estudados sobre Context Engineering</li>
+                    <li><span class="check">&#10003;</span> Criador dos frameworks DNA System e Conteúdo Mestre</li>
+                </ul>
+
+                <div style="margin-top: 32px;">
+                    <a href="#investimento" class="btn-primary">Quero aprender com o Alex</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 06: O Que Voce Recebe -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">06 - Conteúdo Completo</div>
+            <h2 class="section-title">O que você vai receber</h2>
+        </div>
+
+        <div class="modules-grid">
+            <div class="module-card">
+                <span class="module-badge">Módulo 1</span>
+                <h3>Fundamentos de Context Engineering</h3>
+                <p>Entenda a filosofia e por que contexto > prompts.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> O que é Context Engineering</li>
+                    <li><span class="check">&#10003;</span> Por que prompts sozinhos não funcionam</li>
+                    <li><span class="check">&#10003;</span> O modelo mental correto para IA</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 2</span>
+                <h3>DNA System</h3>
+                <p>Crie o DNA completo da sua marca/negócio.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> DNA de Personalidade (voz, tom, credenciais)</li>
+                    <li><span class="check">&#10003;</span> DNA de Público (ICP, dores, desejos)</li>
+                    <li><span class="check">&#10003;</span> DNA de Oferta (proposta de valor)</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 3</span>
+                <h3>Sanitização de Conteúdo</h3>
+                <p>Transforme qualquer material em insights puros.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> O processo de sanitização</li>
+                    <li><span class="check">&#10003;</span> Extrair essência, descartar forma</li>
+                    <li><span class="check">&#10003;</span> Esqueleto de Insights</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 4</span>
+                <h3>Conteúdo Mestre</h3>
+                <p>Sistema de criação escalável com IA.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> Os 3 Métodos (V1, V2, V3)</li>
+                    <li><span class="check">&#10003;</span> Duo-Drafting e Ritmo Pendular</li>
+                    <li><span class="check">&#10003;</span> Atomização para múltiplos formatos</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 5</span>
+                <h3>Aplicação em Marketing</h3>
+                <p>Context Engineering na prática do marketing.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> Copys que convertem</li>
+                    <li><span class="check">&#10003;</span> Conteúdo para redes sociais</li>
+                    <li><span class="check">&#10003;</span> Emails e sequências automatizadas</li>
+                </ul>
+            </div>
+
+            <div class="module-card">
+                <span class="module-badge">Módulo 6</span>
+                <h3>Automação Avançada</h3>
+                <p>Workflows que funcionam sozinhos.</p>
+                <ul class="module-list">
+                    <li><span class="check">&#10003;</span> Estruturando contexto para automação</li>
+                    <li><span class="check">&#10003;</span> Integração com ferramentas</li>
+                    <li><span class="check">&#10003;</span> Casos práticos de uso</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 07: Bonus -->
+<section class="section bonus-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">07 - Bônus Exclusivos</div>
+            <h2 class="section-title">Bônus por tempo limitado</h2>
+            <p class="section-subtitle">
+                Além do curso completo, você ainda recebe esses bônus especiais.
+            </p>
+        </div>
+
+        <div class="bonus-grid">
+            <div class="bonus-card">
+                <h3>Pack de Templates DNA</h3>
+                <p>Templates completos de DNA de Personalidade, Público e Oferta prontos para adaptar ao seu negócio.</p>
+                <div class="bonus-value">Valor: <span>R$297</span></div>
+            </div>
+
+            <div class="bonus-card">
+                <h3>Biblioteca de Prompts</h3>
+                <p>+50 prompts estruturados com context engineering para diferentes situações de marketing.</p>
+                <div class="bonus-value">Valor: <span>R$197</span></div>
+            </div>
+
+            <div class="bonus-card">
+                <h3>Comunidade Exclusiva</h3>
+                <p>Acesso ao grupo de alunos para tirar dúvidas, trocar ideias e compartilhar resultados.</p>
+                <div class="bonus-value">Valor: <span>R$297</span></div>
+            </div>
+
+            <div class="bonus-card">
+                <h3>Atualizações Vitalícias</h3>
+                <p>Context Engineering evolui rápido. Todas as atualizações futuras inclusas sem pagar nada a mais.</p>
+                <div class="bonus-value">Valor: <span>Inestimável</span></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#investimento" class="btn-primary">Garantir minha vaga + bônus</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section 08: Investimento -->
+<section class="section pricing-section" id="investimento">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">08 - Investimento</div>
+            <h2 class="section-title">Comece sua transformação hoje</h2>
+        </div>
+
+        <div class="pricing-card">
+            <!-- Social Proof -->
+            <div class="social-proof">
+                <div class="social-proof-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <span class="social-proof-text">Baseado em <strong>43+ artigos</strong> e aplicação prática em <strong>3 MicroSaaS</strong></span>
+            </div>
+
+            <span class="pricing-badge">Oferta de Lançamento</span>
+            <div class="pricing-original">De R$997</div>
+
+            <div class="pricing-main">
+                <p class="pricing-installment">12x de <span class="currency">R$</span><strong>49</strong>,70</p>
+                <p class="pricing-cash">ou <span>R$497</span> a vista</p>
+            </div>
+
+            <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Acesso imediato ao curso completo</li>
+                <li><span class="check">&#10003;</span> 6 módulos com +40 aulas</li>
+                <li><span class="check">&#10003;</span> Pack de Templates DNA (R$297)</li>
+                <li><span class="check">&#10003;</span> Biblioteca de 50+ Prompts (R$197)</li>
+                <li><span class="check">&#10003;</span> Comunidade Exclusiva (R$297)</li>
+                <li><span class="check">&#10003;</span> Atualizações vitalícias</li>
+                <li><span class="check">&#10003;</span> Certificado de conclusão</li>
+            </ul>
+
+            <a href="#" class="btn-buy">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                Quero Dominar Context Engineering
+            </a>
+
+            <div class="guarantee-box">
+                <div class="guarantee-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                </div>
+                <div class="guarantee-content">
+                    <h4>Garantia incondicional de 7 dias</h4>
+                    <p>Se por qualquer motivo você não gostar do curso, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. O que eu falo, eu entrego.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">09 - Dúvidas Frequentes</div>
+            <h2 class="section-title">Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">Preciso saber programar?</div>
+                <p class="faq-answer">Não! Eu fiz mestrado em Economia na Romênia, não sou programador. Context Engineering é sobre saber PEDIR pra IA, não sobre código. Se você sabe usar ChatGPT, consegue aplicar tudo.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Funciona pra qualquer tipo de negócio?</div>
+                <p class="faq-answer">Sim. Os princípios de Context Engineering são universais. Se você usa IA para criar conteúdo, copys, emails ou qualquer comunicação, vai se beneficiar. Já apliquei em SaaS, agências e criadores de conteúdo.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Qual a diferença pra prompt engineering?</div>
+                <p class="faq-answer">Prompt engineering foca em como escrever o pedido. Context Engineering foca em todo o CONTEXTO que você fornece - quem você é, pra quem fala, seu tom de voz. É uma camada acima, mais estratégica.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Funciona com ChatGPT, Claude, ou qual IA?</div>
+                <p class="faq-answer">Funciona com qualquer IA generativa. Os princípios são universais. Ensino com exemplos no ChatGPT e Claude, mas você aplica onde preferir.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Por quanto tempo tenho acesso?</div>
+                <p class="faq-answer">Acesso vitalício. Uma vez que você compra, o curso é seu para sempre, incluindo todas as atualizações futuras. Context Engineering evolui rápido e você acompanha.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Como funciona a garantia?</div>
+                <p class="faq-answer">Você tem 7 dias para testar o curso. Se não gostar por qualquer motivo, basta pedir o reembolso e devolvemos 100% do valor. Sem perguntas. O que eu falo, eu entrego.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-section">
+    <h2 class="cta-title">Pronto pra transformar sua IA?</h2>
+    <p class="cta-subtitle">
+        A diferença entre IA genérica e IA extraordinária é CONTEXTO. Você vai continuar corrigindo outputs ou vai dominar o método?
+    </p>
+    <div class="cta-buttons">
+        <a href="#investimento" class="btn-primary">
+            Quero Dominar Context Engineering
+            <svg width="20" height="16" viewBox="0 0 23 16" fill="none">
+                <path d="M1.5 7C0.947715 7 0.5 7.44772 0.5 8C0.5 8.55228 0.947715 9 1.5 9V8V7ZM22.2071 8.70711C22.5976 8.31658 22.5976 7.68342 22.2071 7.29289L15.8431 0.928932C15.4526 0.538408 14.8195 0.538408 14.4289 0.928932C14.0384 1.31946 14.0384 1.95262 14.4289 2.34315L20.0858 8L14.4289 13.6569C14.0384 14.0474 14.0384 14.6805 14.4289 15.0711C14.8195 15.4616 15.4526 15.4616 15.8431 15.0711L22.2071 8.70711ZM1.5 8V9H21.5V8V7H1.5V8Z" fill="currentColor"/>
+            </svg>
+        </a>
+        <a href="https://wa.me/5545999506444?text=Tenho%20uma%20d%C3%BAvida%20sobre%20o%20curso%20de%20Engenharia%20de%20Contexto" target="_blank" class="btn-secondary">Tenho uma dúvida</a>
+    </div>
+</section>
+
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

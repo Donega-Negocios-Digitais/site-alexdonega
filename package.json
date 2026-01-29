@@ -1,24 +1,41 @@
 {
   "name": "site-alexdonega",
   "version": "1.0.0",
-  "description": "",
+  "description": "Site pessoal de Alex Donega - Blog com Astro",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexdonega/site-alexdonega.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "astro",
+    "blog",
+    "site-pessoal"
+  ],
+  "author": "Alex Donega",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/alexdonega/site-alexdonega/issues"
   },
   "homepage": "https://github.com/alexdonega/site-alexdonega#readme",
   "devDependencies": {
+    "@types/node": "^25.1.0",
+    "astro": "^4.0.0",
     "sharp": "^0.34.5"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^3.4.19",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

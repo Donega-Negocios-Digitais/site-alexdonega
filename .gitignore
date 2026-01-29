@@ -2,3 +2,18 @@ node_modules/
 
 # Auto Claude data directory
 .auto-claude/
+
+# Build output
+dist/
+
+# Astro
+.astro/
+
+# Backups
+.backups/
+
+# Context files (local)
+.context/
+
+# Temp files
+nul

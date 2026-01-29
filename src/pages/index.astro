@@ -1,0 +1,2818 @@
+---
+// v2.astro - Nova página com design melhorado
+// Combina animação de 36 linhas (idêntica ao original) com copy e foto
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+import Badge from '../components/ui/Badge.astro';
+---
+
+<Layout title="Alex Donega | Context Engineering">
+
+<!-- Hero Section com Animação -->
+<section class="hero-section">
+  <!-- Background animado com 36 linhas - IDÊNTICO AO ORIGINAL -->
+  <div class="hero-background">
+    <svg
+      class="animated-lines"
+      viewBox="0 0 1200 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,1)" />
+          <stop offset="30%" stop-color="rgba(251,146,60,1)" />
+          <stop offset="70%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="100%" stop-color="rgba(249,115,22,0)" />
+        </radialGradient>
+        <radialGradient id="neonPulse2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+          <stop offset="25%" stop-color="rgba(251,146,60,0.9)" />
+          <stop offset="60%" stop-color="rgba(234,88,12,0.7)" />
+          <stop offset="100%" stop-color="rgba(234,88,12,0)" />
+        </radialGradient>
+        <radialGradient id="neonPulse3" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,1)" />
+          <stop offset="35%" stop-color="rgba(251,146,60,1)" />
+          <stop offset="75%" stop-color="rgba(234,88,12,0.6)" />
+          <stop offset="100%" stop-color="rgba(234,88,12,0)" />
+        </radialGradient>
+        <radialGradient id="heroTextBg" cx="30%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="rgba(249,115,22,0.15)" />
+          <stop offset="40%" stop-color="rgba(251,146,60,0.08)" />
+          <stop offset="80%" stop-color="rgba(234,88,12,0.05)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+        </radialGradient>
+        <filter id="heroTextBlur" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="12" result="blur" />
+          <feTurbulence baseFrequency="0.7" numOctaves="4" result="noise" />
+          <feColorMatrix in="noise" type="saturate" values="0" result="monoNoise" />
+          <feComponentTransfer in="monoNoise" result="alphaAdjustedNoise">
+            <feFuncA type="discrete" tableValues="0.03 0.06 0.09 0.12" />
+          </feComponentTransfer>
+          <feComposite in="blur" in2="alphaAdjustedNoise" operator="multiply" result="noisyBlur" />
+          <feMerge>
+            <feMergeNode in="noisyBlur" />
+          </feMerge>
+        </filter>
+        <linearGradient id="threadFade1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(0,0,0,1)" />
+          <stop offset="15%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="85%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,1)" />
+        </linearGradient>
+        <linearGradient id="threadFade2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(0,0,0,1)" />
+          <stop offset="12%" stop-color="rgba(251,146,60,0.7)" />
+          <stop offset="88%" stop-color="rgba(251,146,60,0.7)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,1)" />
+        </linearGradient>
+        <linearGradient id="threadFade3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(0,0,0,1)" />
+          <stop offset="18%" stop-color="rgba(234,88,12,0.8)" />
+          <stop offset="82%" stop-color="rgba(234,88,12,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,1)" />
+        </linearGradient>
+        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g>
+        <!-- Background ellipses para criar brilho -->
+        <ellipse cx="300" cy="350" rx="400" ry="200" fill="url(#heroTextBg)" filter="url(#heroTextBlur)" opacity="0.6" />
+        <ellipse cx="350" cy="320" rx="500" ry="250" fill="url(#heroTextBg)" filter="url(#heroTextBlur)" opacity="0.4" />
+        <ellipse cx="400" cy="300" rx="600" ry="300" fill="url(#heroTextBg)" filter="url(#heroTextBlur)" opacity="0.2" />
+
+        <!-- Thread 1 -->
+        <path id="thread1" d="M50 720 Q200 590 350 540 Q500 490 650 520 Q800 550 950 460 Q1100 370 1200 340" stroke="url(#threadFade1)" stroke-width="0.8" fill="none" opacity="0.8" />
+        <circle r="2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#thread1" /></animateMotion>
+        </circle>
+
+        <!-- Thread 2 -->
+        <path id="thread2" d="M80 730 Q250 620 400 570 Q550 520 700 550 Q850 580 1000 490 Q1150 400 1300 370" stroke="url(#threadFade2)" stroke-width="1.5" fill="none" opacity="0.7" />
+        <circle r="3" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#thread2" /></animateMotion>
+        </circle>
+
+        <!-- Thread 3 -->
+        <path id="thread3" d="M20 710 Q180 580 320 530 Q460 480 600 510 Q740 540 880 450 Q1020 360 1200 330" stroke="url(#threadFade3)" stroke-width="1.2" fill="none" opacity="0.8" />
+        <circle r="2.5" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#thread3" /></animateMotion>
+        </circle>
+
+        <!-- Thread 4 -->
+        <path id="thread4" d="M120 740 Q280 640 450 590 Q620 540 770 570 Q920 600 1070 510 Q1220 420 1350 390" stroke="url(#threadFade1)" stroke-width="0.6" fill="none" opacity="0.6" />
+        <circle r="1.5" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.5s" repeatCount="indefinite"><mpath href="#thread4" /></animateMotion>
+        </circle>
+
+        <!-- Thread 5 -->
+        <path id="thread5" d="M60 725 Q220 600 380 550 Q540 500 680 530 Q820 560 960 470 Q1100 380 1280 350" stroke="url(#threadFade2)" stroke-width="1.0" fill="none" opacity="0.7" />
+        <circle r="2.2" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.2s" repeatCount="indefinite"><mpath href="#thread5" /></animateMotion>
+        </circle>
+
+        <!-- Thread 6 -->
+        <path id="thread6" d="M150 735 Q300 660 480 610 Q660 560 800 590 Q940 620 1080 530 Q1220 440 1400 410" stroke="url(#threadFade3)" stroke-width="1.3" fill="none" opacity="0.6" />
+        <circle r="2.8" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.2s" repeatCount="indefinite"><mpath href="#thread6" /></animateMotion>
+        </circle>
+
+        <!-- Thread 7 -->
+        <path id="thread7" d="M40 715 Q190 585 340 535 Q490 485 630 515 Q770 545 910 455 Q1050 365 1250 335" stroke="url(#threadFade1)" stroke-width="0.9" fill="none" opacity="0.8" />
+        <circle r="2" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.8s" repeatCount="indefinite"><mpath href="#thread7" /></animateMotion>
+        </circle>
+
+        <!-- Thread 8 -->
+        <path id="thread8" d="M100 728 Q260 630 420 580 Q580 530 720 560 Q860 590 1000 500 Q1140 410 1320 380" stroke="url(#threadFade2)" stroke-width="1.4" fill="none" opacity="0.7" />
+        <circle r="3" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.8s" repeatCount="indefinite"><mpath href="#thread8" /></animateMotion>
+        </circle>
+
+        <!-- Thread 9 -->
+        <path id="thread9" d="M30 722 Q170 595 310 545 Q450 495 590 525 Q730 555 870 465 Q1010 375 1180 345" stroke="url(#threadFade3)" stroke-width="0.5" fill="none" opacity="0.6" />
+        <circle r="1.2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="6s" repeatCount="indefinite"><mpath href="#thread9" /></animateMotion>
+        </circle>
+
+        <!-- Thread 10 -->
+        <path id="thread10" d="M90 732 Q240 625 390 575 Q540 525 680 555 Q820 585 960 495 Q1100 405 1300 375" stroke="url(#threadFade1)" stroke-width="1.1" fill="none" opacity="0.8" />
+        <circle r="2.5" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.3s" repeatCount="indefinite"><mpath href="#thread10" /></animateMotion>
+        </circle>
+
+        <!-- Thread 11 -->
+        <path id="thread11" d="M70 727 Q210 605 360 555 Q510 505 650 535 Q790 565 930 475 Q1070 385 1260 355" stroke="url(#threadFade2)" stroke-width="0.4" fill="none" opacity="0.5" />
+        <circle r="1" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.7s" repeatCount="indefinite"><mpath href="#thread11" /></animateMotion>
+        </circle>
+
+        <!-- Thread 12 -->
+        <path id="thread12" d="M110 738 Q270 645 430 595 Q590 545 730 575 Q870 605 1010 515 Q1150 425 1380 395" stroke="url(#threadFade3)" stroke-width="1.5" fill="none" opacity="0.7" />
+        <circle r="3.2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.7s" repeatCount="indefinite"><mpath href="#thread12" /></animateMotion>
+        </circle>
+
+        <!-- Thread 13 -->
+        <path id="thread13" d="M45 718 Q185 588 325 538 Q465 488 605 518 Q745 548 885 458 Q1025 368 1220 338" stroke="url(#threadFade1)" stroke-width="0.7" fill="none" opacity="0.6" />
+        <circle r="1.8" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.3s" repeatCount="indefinite"><mpath href="#thread13" /></animateMotion>
+        </circle>
+
+        <!-- Thread 14 -->
+        <path id="thread14" d="M130 721 Q290 630 460 580 Q630 530 770 560 Q910 590 1050 500 Q1190 410 1350 380" stroke="url(#threadFade2)" stroke-width="1.0" fill="none" opacity="0.8" />
+        <circle r="2.3" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.9s" repeatCount="indefinite"><mpath href="#thread14" /></animateMotion>
+        </circle>
+
+        <!-- Thread 15 -->
+        <path id="thread15" d="M25 713 Q165 583 305 533 Q445 483 585 513 Q725 543 865 453 Q1005 363 1200 333" stroke="url(#threadFade3)" stroke-width="0.3" fill="none" opacity="0.4" />
+        <circle r="0.8" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#thread15" /></animateMotion>
+        </circle>
+
+        <!-- Thread 16 -->
+        <path id="thread16" d="M85 719 Q235 605 385 555 Q535 505 675 535 Q815 565 955 475 Q1095 385 1320 355" stroke="url(#threadFade1)" stroke-width="1.5" fill="none" opacity="0.9" />
+        <circle r="3.2" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.1s" repeatCount="indefinite"><mpath href="#thread16" /></animateMotion>
+        </circle>
+
+        <!-- Thread 17 -->
+        <path id="thread17" d="M50 720 Q180 660 320 620 Q460 580 600 600 Q740 620 880 560 Q1020 500 1200 340" stroke="url(#threadFade2)" stroke-width="0.6" fill="none" opacity="0.5" />
+        <circle r="1.5" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.1s" repeatCount="indefinite"><mpath href="#thread17" /></animateMotion>
+        </circle>
+
+        <!-- Thread 18 -->
+        <path id="thread18" d="M50 720 Q200 680 350 640 Q500 600 650 620 Q800 640 950 580 Q1100 520 1200 340" stroke="url(#threadFade3)" stroke-width="1.2" fill="none" opacity="0.7" />
+        <circle r="2.8" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#thread18" /></animateMotion>
+        </circle>
+
+        <!-- Thread 19 -->
+        <path id="thread19" d="M50 720 Q160 670 280 630 Q400 590 540 610 Q680 630 820 570 Q960 510 1200 340" stroke="url(#threadFade1)" stroke-width="0.8" fill="none" opacity="0.6" />
+        <circle r="2" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.4s" repeatCount="indefinite"><mpath href="#thread19" /></animateMotion>
+        </circle>
+
+        <!-- Thread 20 -->
+        <path id="thread20" d="M50 720 Q220 690 380 650 Q540 610 680 630 Q820 650 960 590 Q1100 530 1200 340" stroke="url(#threadFade2)" stroke-width="1.4" fill="none" opacity="0.8" />
+        <circle r="3" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.4s" repeatCount="indefinite"><mpath href="#thread20" /></animateMotion>
+        </circle>
+
+        <!-- Thread 21 -->
+        <path id="thread21" d="M50 720 Q170 675 300 635 Q430 595 570 615 Q710 635 850 575 Q990 515 1200 340" stroke="url(#threadFade3)" stroke-width="0.5" fill="none" opacity="0.4" />
+        <circle r="1.2" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.9s" repeatCount="indefinite"><mpath href="#thread21" /></animateMotion>
+        </circle>
+
+        <!-- Thread 22 -->
+        <path id="thread22" d="M50 720 Q190 745 340 705 Q490 665 630 685 Q770 705 910 645 Q1050 585 1200 340" stroke="url(#threadFade1)" stroke-width="1.1" fill="none" opacity="0.7" />
+        <circle r="2.5" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.8s" repeatCount="indefinite"><mpath href="#thread22" /></animateMotion>
+        </circle>
+
+        <!-- Thread 23 -->
+        <path id="thread23" d="M50 720 Q150 725 270 685 Q390 645 530 665 Q670 685 810 625 Q950 565 1200 340" stroke="url(#threadFade2)" stroke-width="0.9" fill="none" opacity="0.6" />
+        <circle r="2.2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.2s" repeatCount="indefinite"><mpath href="#thread23" /></animateMotion>
+        </circle>
+
+        <!-- Thread 24 -->
+        <path id="thread24" d="M50 720 Q210 755 370 715 Q530 675 670 695 Q810 715 950 655 Q1090 595 1200 340" stroke="url(#threadFade3)" stroke-width="1.3" fill="none" opacity="0.8" />
+        <circle r="2.9" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.2s" repeatCount="indefinite"><mpath href="#thread24" /></animateMotion>
+        </circle>
+
+        <!-- Thread 25 -->
+        <path id="thread25" d="M50 720 Q165 730 290 690 Q415 650 555 670 Q695 690 835 630 Q975 570 1200 340" stroke="url(#threadFade1)" stroke-width="0.7" fill="none" opacity="0.5" />
+        <circle r="1.8" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.6s" repeatCount="indefinite"><mpath href="#thread25" /></animateMotion>
+        </circle>
+
+        <!-- Thread 26 -->
+        <path id="thread26" d="M50 720 Q230 760 390 720 Q550 680 690 700 Q830 720 970 660 Q1110 600 1200 340" stroke="url(#threadFade2)" stroke-width="1.0" fill="none" opacity="0.7" />
+        <circle r="2.4" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.7s" repeatCount="indefinite"><mpath href="#thread26" /></animateMotion>
+        </circle>
+
+        <!-- Thread 27 -->
+        <path id="thread27" d="M50 720 Q175 740 310 700 Q445 660 585 680 Q725 700 865 640 Q1005 580 1200 340" stroke="url(#threadFade3)" stroke-width="0.4" fill="none" opacity="0.4" />
+        <circle r="1" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="6.1s" repeatCount="indefinite"><mpath href="#thread27" /></animateMotion>
+        </circle>
+
+        <!-- Thread 28 -->
+        <path id="thread28" d="M50 720 Q195 750 350 710 Q505 670 645 690 Q785 710 925 650 Q1065 590 1200 340" stroke="url(#threadFade1)" stroke-width="1.5" fill="none" opacity="0.9" />
+        <circle r="3.1" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.3s" repeatCount="indefinite"><mpath href="#thread28" /></animateMotion>
+        </circle>
+
+        <!-- Thread 29 -->
+        <path id="thread29" d="M50 720 Q155 735 285 695 Q415 655 555 675 Q695 695 835 635 Q975 575 1200 340" stroke="url(#threadFade2)" stroke-width="0.8" fill="none" opacity="0.6" />
+        <circle r="2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.3s" repeatCount="indefinite"><mpath href="#thread29" /></animateMotion>
+        </circle>
+
+        <!-- Thread 30 -->
+        <path id="thread30" d="M50 720 Q215 765 375 725 Q535 685 675 705 Q815 725 955 665 Q1095 605 1200 340" stroke="url(#threadFade3)" stroke-width="1.2" fill="none" opacity="0.8" />
+        <circle r="2.7" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#thread30" /></animateMotion>
+        </circle>
+
+        <!-- Thread 31 -->
+        <path id="thread31" d="M50 720 Q185 745 325 705 Q465 665 605 685 Q745 705 885 645 Q1025 585 1200 340" stroke="url(#threadFade1)" stroke-width="0.6" fill="none" opacity="0.5" />
+        <circle r="1.5" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.8s" repeatCount="indefinite"><mpath href="#thread31" /></animateMotion>
+        </circle>
+
+        <!-- Thread 32 -->
+        <path id="thread32" d="M50 720 Q205 755 365 715 Q525 675 665 695 Q805 715 945 655 Q1085 595 1200 340" stroke="url(#threadFade2)" stroke-width="1.4" fill="none" opacity="0.8" />
+        <circle r="3" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.1s" repeatCount="indefinite"><mpath href="#thread32" /></animateMotion>
+        </circle>
+
+        <!-- Thread 33 -->
+        <path id="thread33" d="M50 720 Q160 730 295 690 Q430 650 570 670 Q710 690 850 630 Q990 570 1200 340" stroke="url(#threadFade3)" stroke-width="0.9" fill="none" opacity="0.6" />
+        <circle r="2.1" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5.1s" repeatCount="indefinite"><mpath href="#thread33" /></animateMotion>
+        </circle>
+
+        <!-- Thread 34 -->
+        <path id="thread34" d="M50 720 Q225 770 385 730 Q545 690 685 710 Q825 730 965 670 Q1105 610 1200 340" stroke="url(#threadFade1)" stroke-width="1.1" fill="none" opacity="0.7" />
+        <circle r="2.6" fill="url(#neonPulse3)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.9s" repeatCount="indefinite"><mpath href="#thread34" /></animateMotion>
+        </circle>
+
+        <!-- Thread 35 -->
+        <path id="thread35" d="M50 720 Q170 740 305 700 Q440 660 580 680 Q720 700 860 640 Q1000 580 1200 340" stroke="url(#threadFade2)" stroke-width="0.3" fill="none" opacity="0.4" />
+        <circle r="0.8" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="6.3s" repeatCount="indefinite"><mpath href="#thread35" /></animateMotion>
+        </circle>
+
+        <!-- Thread 36 -->
+        <path id="thread36" d="M50 720 Q240 715 400 675 Q560 635 700 655 Q840 675 980 615 Q1120 555 1200 340" stroke="url(#threadFade3)" stroke-width="1.5" fill="none" opacity="0.9" />
+        <circle r="3.2" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.0s" repeatCount="indefinite"><mpath href="#thread36" /></animateMotion>
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div class="hero-content">
+    <div class="hero-grid">
+      <!-- Coluna de Texto -->
+      <div class="hero-text">
+        <!-- Badge -->
+        <div class="hero-badge">
+          <span class="badge">
+            <span class="badge-dot"></span>
+            Context Engineering
+          </span>
+        </div>
+
+        <!-- Título Principal -->
+        <h1 class="hero-title">
+          Você não tem um problema de <span class="text-gradient">IA.</span>
+          <br />
+          Você tem um problema de <span class="text-styled" data-text="Contexto.">Contexto.</span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="hero-subtitle">
+          Ensino empreendedores a dominar IA de verdade usando <strong class="text-white">Context Engineering</strong> — a arte de estruturar contexto para resultados extraordinários.
+        </p>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Anos de experiência</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">7</span>
+            <span class="stat-label">Empresas criadas</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Alunos</span>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="hero-cta">
+          <a href="#cursos" class="btn-primary">
+            Ver Meus Cursos
+            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+          <a href="https://wa.me/5545999506444" target="_blank" rel="noopener" class="btn-secondary">
+            <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna do Vídeo Vertical -->
+      <div class="hero-video">
+        <div class="video-wrapper">
+          <div class="video-glow"></div>
+          <div class="video-container">
+            <video
+              id="hero-video"
+              poster="/img/alex-donega.webp"
+              playsinline
+              muted
+              loop
+              preload="metadata"
+            >
+              <source src="/videos/alex-intro.mp4" type="video/mp4" />
+              <!-- Fallback para imagem se vídeo não carregar -->
+              <img src="/img/alex-donega.webp" alt="Alex Donega" />
+            </video>
+            <!-- Botão de play overlay -->
+            <button class="video-play-btn" aria-label="Reproduzir vídeo">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="video-decoration video-decoration-1"></div>
+          <div class="video-decoration video-decoration-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Role para descobrir</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEÇÃO SOBRE (JORNADA) ==================== -->
+<section class="section-dark" id="sobre">
+  <div class="container">
+    <div class="journey-wrapper">
+      <div class="journey-header">
+        <h2 class="journey-title">A Jornada: Do Servo ao Orquestrador</h2>
+        <div class="journey-divider"></div>
+        <p class="journey-subtitle">Como saí da zona de conforto para descobrir a verdadeira inovação em IA</p>
+      </div>
+
+      <div class="journey-phases">
+        <div class="journey-phase">
+          <div class="phase-number">01</div>
+          <h3>O Chamado</h3>
+          <p>Sou servidor público. Vida estável, tudo certinho. Aí chega uma carta: ganhei a bolsa ERASMUS para fazer mestrado em Economia na Romênia — sim, terra do Drácula! Largo tudo.</p>
+          <p>Lá conheço jovens criando startups, fazendo coisas incríveis com tecnologia... e penso: <em>"MEU PIA, é isso que eu quero!"</em></p>
+        </div>
+
+        <div class="journey-phase">
+          <div class="phase-number">02</div>
+          <h3>Construindo a Máquina</h3>
+          <p>Retorno ao Brasil e decido transformar minha agência de marketing em SaaS. Erro muito, aprendo mais ainda. E o mais importante? Gerei dinheiro.</p>
+          <p>Decido replicar e criar outros negócios. Busco palavras que definam o que quero construir: Simples, Enxuto, Escalável, Divertido. Nasce o <strong>Framework SEED</strong> — meu sistema para criar negócios que funcionam.</p>
+        </div>
+
+        <div class="journey-phase">
+          <div class="phase-number">03</div>
+          <h3>A Era do Diretor de Contexto</h3>
+          <p>A verdadeira inovação não está em mais tecnologia, mas em como estruturamos contexto para colaborar melhor com IA. <strong>A Era do Operador Acabou.</strong></p>
+          <p>O que estou criando é diferente: estou formando o <strong>Diretor de Contexto</strong>. Aquele que domina Context Engineering para orquestrar múltiplos agentes de IA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEÇÃO SERVIÇOS ==================== -->
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">O que eu faço</span>
+      <h2 class="section-title">Como tenho ajudado empresas</h2>
+      <p class="section-subtitle">
+        De MicroSaaS a educação em IA — compartilho o que estou aprendendo enquanto construo. Sem guru, sem promessas vazias. Só descobertas reais.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Context Engineering</h3>
+        <p>Descobri como extrair 10x mais das IAs estruturando contexto. Ensino founders a fazer o mesmo com frameworks práticos — sem depender de prompts mágicos.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <h3>Cursos & Workshops</h3>
+        <p>Cursos práticos de Claude Code, Obsidian e automação com IA. Aulas hands-on onde você sai com resultado no mesmo dia.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+        </div>
+        <h3>MicroSaaS</h3>
+        <p>Validei essa metodologia criando o Novo Envio e FalaZapp — produtos enxutos com UX simples que retêm usuários.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEÇÃO PORTFÓLIO ==================== -->
+<section class="section-dark" id="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Portfólio</span>
+      <h2 class="section-title">Empresas que ajudo a construir</h2>
+      <p class="section-subtitle">
+        15 anos construindo negócios me ensinaram o que funciona de verdade. Cada empresa nasceu para resolver um problema real.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-header">
+          <span class="portfolio-status active">Sócio Founder</span>
+        </div>
+        <h3>Novo Envio</h3>
+        <p>Sistema de gestão de WhatsApp com 52 funcionalidades para empreendedores.</p>
+        <a href="https://novoenvio.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Novo Envio →</a>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-header">
+          <span class="portfolio-status active">Solo Founder</span>
+        </div>
+        <h3>FalaZapp</h3>
+        <p>CRM para WhatsApp, Facebook e Instagram. Responda todas as mensagens dos seus clientes em um só lugar.</p>
+        <a href="https://app.falazapp.com.br/signup" target="_blank" rel="noopener noreferrer" class="portfolio-link">FalaZapp →</a>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-header">
+          <span class="portfolio-status building">Em Desenvolvimento</span>
+        </div>
+        <h3>MyMess</h3>
+        <p>Estou desenvolvendo um "novo Lovable" que usa meu próprio Context Engineering. Em fase de MVP.</p>
+        <span class="portfolio-link muted">Em breve</span>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-header">
+          <span class="portfolio-status active">Solo Founder</span>
+        </div>
+        <h3>Doface</h3>
+        <p>Agência de marketing digital. Estratégias de tráfego, funis e conteúdo para negócios digitais.</p>
+        <a href="https://doface.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">Doface →</a>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-header">
+          <span class="portfolio-status active">Mentor</span>
+        </div>
+        <h3>InsightZap</h3>
+        <p>Gestão inteligente de grupos e comunidades do WhatsApp. Agentes de IA trabalham 24/7.</p>
+        <a href="https://insightzap.setupautomatizado.com.br" target="_blank" rel="noopener noreferrer" class="portfolio-link">InsightZap →</a>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-header">
+          <span class="portfolio-status active">Sócio Founder</span>
+        </div>
+        <h3>Operação de Vendas</h3>
+        <p>Marketing e vendas 360° para autoescolas e clínicas de estética. Método Lançamento Meteórico.</p>
+        <span class="portfolio-link muted">Em operação</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEÇÃO CURSOS (DESTAQUE) ==================== -->
+<section class="section" id="cursos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Stop Learning, Start Doing AI</span>
+      <h2 class="section-title">Aqui você executa e sai com resultado</h2>
+      <p class="section-subtitle">
+        Chega de consumir conteúdo infinito. Cada aula tem um entregável prático que você usa no mesmo dia.
+      </p>
+    </div>
+
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-badge">Novo</div>
+        <h3>Engenharia de Contexto aplicado ao Marketing Digital</h3>
+        <p>Aprenda a aplicar Context Engineering para criar campanhas, copies e estratégias de marketing que realmente convertem usando IA.</p>
+        <ul class="course-features">
+          <li>✓ Context Engineering para copywriting</li>
+          <li>✓ Criação de campanhas com IA</li>
+          <li>✓ Automação de conteúdo para redes sociais</li>
+          <li>✓ Templates e frameworks prontos</li>
+        </ul>
+        <a href="/engenharia-de-contexto-aplicado-ao-marketing-digital/" class="btn-primary">Ver Detalhes →</a>
+      </div>
+
+      <div class="course-card">
+        <div class="course-badge">Em 1 Dia</div>
+        <h3>Claude Code em 1 dia</h3>
+        <p>Domine o Claude Code — a CLI oficial da Anthropic — em apenas um dia. Workshop intensivo e prático.</p>
+        <ul class="course-features">
+          <li>✓ Setup completo do Claude Code</li>
+          <li>✓ Integração com Obsidian e workflows</li>
+          <li>✓ Skills, agents e automações práticas</li>
+          <li>✓ Templates prontos para copiar</li>
+        </ul>
+        <a href="/claude-code-em-1-dia/" class="btn-primary">Ver Detalhes →</a>
+      </div>
+
+      <div class="course-card">
+        <div class="course-badge">Curso Online</div>
+        <h3>Clone seu Cérebro, Domine o Obsidian</h3>
+        <p>Aprenda a construir seu Segundo Cérebro no Obsidian. Organize ideias, conecte pensamentos e nunca mais esqueça nada.</p>
+        <ul class="course-features">
+          <li>✓ Setup completo do Obsidian</li>
+          <li>✓ Sistema de captura e organização</li>
+          <li>✓ Links bidirecionais e grafos</li>
+          <li>✓ Vault Starter Kit + comunidade</li>
+        </ul>
+        <a href="/segundo-cerebro-com-obsidian/" class="btn-primary">Ver Detalhes →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEÇÃO CURADORIA (PINTEREST STYLE) ==================== -->
+<section class="section-dark" id="curadoria">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Formação Contínua</span>
+      <h2 class="section-title">A Curadoria Que Poupa<br/>Seu Tempo e Dinheiro</h2>
+      <p class="section-subtitle">
+        Já fiz os cursos, cometi os erros e separei o que funciona de verdade. Se você está comigo, tem acesso a tudo isso.
+      </p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="curadoria-filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="copy">Copy</button>
+      <button class="filter-btn" data-filter="trafego">Tráfego</button>
+      <button class="filter-btn" data-filter="ia">IA</button>
+      <button class="filter-btn" data-filter="mentoria">Mentorias</button>
+    </div>
+
+    <!-- Grid Pinterest Style -->
+    <div class="pinterest-grid">
+      <!-- COPY -->
+      <div class="course-poster" data-category="copy">
+        <div class="poster-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <span class="poster-icon">✍️</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category copy">Copy</span>
+          <h3>Copywriting do Zero ao Avançado</h3>
+          <p class="poster-author">Conrado Adolpho</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster tall" data-category="trafego">
+        <div class="poster-image" style="background: linear-gradient(135deg, #1877f2 0%, #0d47a1 100%);">
+          <span class="poster-icon">📱</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category trafego">Tráfego</span>
+          <h3>Facebook Ads Descomplicado</h3>
+          <p class="poster-author">Pedro Sobral</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="ia">
+        <div class="poster-image" style="background: linear-gradient(135deg, #00d4aa 0%, #00a67e 100%);">
+          <span class="poster-icon">🤖</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category ia">IA</span>
+          <h3>Prompt Engineering</h3>
+          <p class="poster-author">DeepLearning.AI</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="copy">
+        <div class="poster-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+          <span class="poster-icon">📝</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category copy">Copy</span>
+          <h3>Headlines que Vendem</h3>
+          <p class="poster-author">Gustavo Ferreira</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster tall" data-category="mentoria">
+        <div class="poster-image" style="background: linear-gradient(135deg, #f9a825 0%, #ff6f00 100%);">
+          <span class="poster-icon">🚀</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category mentoria">Mentoria</span>
+          <h3>MicroSaaS Brasil</h3>
+          <p class="poster-author">Bruno Okamoto</p>
+        </div>
+        <div class="poster-badge">Membro Ativo</div>
+      </div>
+
+      <div class="course-poster" data-category="trafego">
+        <div class="poster-image" style="background: linear-gradient(135deg, #ea4335 0%, #fbbc04 100%);">
+          <span class="poster-icon">🎯</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category trafego">Tráfego</span>
+          <h3>Google Ads na Prática</h3>
+          <p class="poster-author">Adriano Gianini</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="copy">
+        <div class="poster-image" style="background: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%);">
+          <span class="poster-icon">📄</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category copy">Copy</span>
+          <h3>Cartas de Vendas & VSL</h3>
+          <p class="poster-author">Paulo Maccedo</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster tall" data-category="ia">
+        <div class="poster-image" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+          <span class="poster-icon">🎨</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category ia">IA</span>
+          <h3>Midjourney Masterclass</h3>
+          <p class="poster-author">Filipe Deschamps</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="trafego">
+        <div class="poster-image" style="background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);">
+          <span class="poster-icon">▶️</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category trafego">Tráfego</span>
+          <h3>YouTube Ads Estratégico</h3>
+          <p class="poster-author">Tiago Tessmann</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="mentoria">
+        <div class="poster-image" style="background: linear-gradient(135deg, #1877f2 0%, #42a5f5 100%);">
+          <span class="poster-icon">👥</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category mentoria">Mentoria</span>
+          <h3>Comunidade Subido</h3>
+          <p class="poster-author">Pedro Sobral</p>
+        </div>
+        <div class="poster-badge">Membro Ativo</div>
+      </div>
+
+      <div class="course-poster" data-category="ia">
+        <div class="poster-image" style="background: linear-gradient(135deg, #00a67e 0%, #1a1a1a 100%);">
+          <span class="poster-icon">💬</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category ia">IA</span>
+          <h3>ChatGPT para Negócios</h3>
+          <p class="poster-author">Sandeco</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster tall" data-category="copy">
+        <div class="poster-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">
+          <span class="poster-icon">📧</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category copy">Copy</span>
+          <h3>Email Marketing que Vende</h3>
+          <p class="poster-author">Natanael Oliveira</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="trafego">
+        <div class="poster-image" style="background: linear-gradient(135deg, #e1306c 0%, #c13584 100%);">
+          <span class="poster-icon">📸</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category trafego">Tráfego</span>
+          <h3>Instagram Ads Expert</h3>
+          <p class="poster-author">Hyros Academy</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="mentoria">
+        <div class="poster-image" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
+          <span class="poster-icon">📈</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category mentoria">Mentoria</span>
+          <h3>Scale Your SaaS</h3>
+          <p class="poster-author">Escola de Startups</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="ia">
+        <div class="poster-image" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+          <span class="poster-icon">🧠</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category ia">IA</span>
+          <h3>Agentes de IA na Prática</h3>
+          <p class="poster-author">Crew AI</p>
+        </div>
+        <div class="poster-badge">Em andamento</div>
+      </div>
+
+      <div class="course-poster tall" data-category="trafego">
+        <div class="poster-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);">
+          <span class="poster-icon">🔥</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category trafego">Tráfego</span>
+          <h3>Funis de Webinar</h3>
+          <p class="poster-author">Russell Brunson</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="copy">
+        <div class="poster-image" style="background: linear-gradient(135deg, #654ea3 0%, #eaafc8 100%);">
+          <span class="poster-icon">🎭</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category copy">Copy</span>
+          <h3>Storytelling para Vendas</h3>
+          <p class="poster-author">Gary Halbert (Estudos)</p>
+        </div>
+        <div class="poster-badge">Concluído ✓</div>
+      </div>
+
+      <div class="course-poster" data-category="ia">
+        <div class="poster-image" style="background: linear-gradient(135deg, #cc8b65 0%, #d4a574 100%);">
+          <span class="poster-icon">📚</span>
+        </div>
+        <div class="poster-overlay">
+          <span class="poster-category ia">IA</span>
+          <h3>RAG Avançado</h3>
+          <p class="poster-author">LangChain Academy</p>
+        </div>
+        <div class="poster-badge">Em andamento</div>
+      </div>
+    </div>
+
+    <!-- Contador -->
+    <div class="curadoria-footer">
+      <div class="curso-counter">
+        <span class="counter-number">+180</span>
+        <span class="counter-text">cursos concluídos</span>
+      </div>
+      <div class="curso-counter">
+        <span class="counter-number">+R$600k</span>
+        <span class="counter-text">investidos em formação</span>
+      </div>
+      <div class="curso-counter">
+        <span class="counter-number">15</span>
+        <span class="counter-text">anos estudando</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEÇÃO CONTEÚDO/SOCIAL (BUILD IN PUBLIC) ==================== -->
+<section class="section" id="conteudo">
+  <div class="container">
+    <div class="build-in-public">
+      <!-- Foto trabalhando -->
+      <div class="bip-photo">
+        <div class="bip-photo-wrapper">
+          <div class="bip-photo-glow"></div>
+          <div class="bip-photo-container">
+            <img
+              src="/img/alex-donega.webp"
+              alt="Alex Donega"
+              loading="lazy"
+            />
+            <!-- Fallback placeholder se imagem não existir -->
+            <div class="bip-photo-placeholder">
+              <span class="placeholder-icon">👨‍💻</span>
+              <span class="placeholder-text">Construindo em público</span>
+            </div>
+          </div>
+          <!-- Decorações -->
+          <div class="bip-decoration bip-decoration-1">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <div class="bip-decoration bip-decoration-2">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+              <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdo e canais -->
+      <div class="bip-content">
+        <span class="section-eyebrow">Build in Public</span>
+        <h2 class="bip-title">Me acompanhe<br/>na jornada</h2>
+        <p class="bip-subtitle">
+          Construo em público. Compartilho os bastidores, os erros e os acertos. Se você quer aprender junto, vem comigo.
+        </p>
+
+        <!-- Canais -->
+        <div class="bip-channels">
+          <a href="#" class="bip-channel" data-open-modal="newsletter-modal">
+            <div class="channel-icon newsletter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-name">Newsletter</span>
+              <span class="channel-handle">Insights semanais</span>
+            </div>
+            <svg class="channel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+
+          <a href="https://youtube.com/@alexdonega" target="_blank" rel="noopener noreferrer" class="bip-channel">
+            <div class="channel-icon youtube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#000"/>
+              </svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-name">YouTube</span>
+              <span class="channel-handle">@alexdonega</span>
+            </div>
+            <svg class="channel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+
+          <a href="https://instagram.com/donegaalex" target="_blank" rel="noopener noreferrer" class="bip-channel">
+            <div class="channel-icon instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-name">Instagram</span>
+              <span class="channel-handle">@donegaalex</span>
+            </div>
+            <svg class="channel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEÇÃO CTA FINAL ==================== -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-title">Bora dominar IA de verdade?</h2>
+    <p class="cta-subtitle">
+      Aprendendo em público, compartilhando de verdade. Se você quer explorar Context Engineering com quem tá na trincheira, vem comigo.
+    </p>
+    <div class="cta-buttons">
+      <a href="#cursos" class="btn-primary">
+        Ver Cursos
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+      <a href="https://wa.me/5545999506444" target="_blank" rel="noopener" class="btn-secondary">
+        <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Falar Comigo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODAL NEWSLETTER (ALTA CONVERSÃO) ==================== -->
+<div class="modal-overlay" id="newsletter-modal">
+  <div class="modal-container">
+    <!-- Botão fechar -->
+    <button class="modal-close" aria-label="Fechar modal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Lado esquerdo - Imagem -->
+    <div class="modal-image">
+      <img src="/img/alex-donega.webp" alt="Alex Donega" />
+      <div class="modal-image-overlay">
+        <div class="modal-social-proof">
+          <span class="proof-number">+2.500</span>
+          <span class="proof-text">empreendedores já recebem</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lado direito - Conteúdo -->
+    <div class="modal-content">
+      <!-- Brand -->
+      <div class="modal-brand">
+        <span class="brand-name">Alex Donega</span>
+      </div>
+
+      <!-- Headline focada no benefício -->
+      <h2 class="modal-title">Receba insights exclusivos de IA toda semana</h2>
+
+      <!-- Subheadline -->
+      <p class="modal-subtitle">
+        O que estou aprendendo sobre Context Engineering, direto no seu email.
+      </p>
+
+      <!-- Benefícios -->
+      <ul class="modal-benefits">
+        <li>
+          <span class="benefit-check">✓</span>
+          Frameworks práticos de Context Engineering
+        </li>
+        <li>
+          <span class="benefit-check">✓</span>
+          Bastidores dos meus projetos e startups
+        </li>
+        <li>
+          <span class="benefit-check">✓</span>
+          Dicas que aplico no dia a dia com IA
+        </li>
+      </ul>
+
+      <!-- Formulário -->
+      <form class="modal-form" id="newsletter-form">
+        <div class="form-group">
+          <input
+            type="text"
+            name="name"
+            placeholder="Seu primeiro nome"
+            required
+            class="form-input"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="Seu melhor e-mail"
+            required
+            class="form-input"
+          />
+        </div>
+        <button type="submit" class="form-submit">
+          QUERO RECEBER OS INSIGHTS
+        </button>
+      </form>
+
+      <!-- Disclaimer -->
+      <p class="modal-disclaimer">
+        Sem spam. Cancele quando quiser.
+      </p>
+
+      <!-- Opção de fechar -->
+      <button class="modal-close-text" type="button">
+        Não, obrigado
+      </button>
+    </div>
+  </div>
+</div>
+
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+  }
+
+  /* Background animado */
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .animated-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Conteúdo */
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 2rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+    }
+
+    .hero-content {
+      padding: 2rem 3rem;
+    }
+  }
+
+  /* Texto */
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: rgb(251, 146, 60);
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #f97316;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-styled {
+    position: relative;
+    font-style: italic;
+    font-weight: 300;
+    display: inline-flex;
+  }
+
+  .text-styled::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0.04em;
+    top: 0.04em;
+    background: linear-gradient(
+      45deg,
+      transparent 45%,
+      white 45%,
+      white 55%,
+      transparent 0
+    );
+    z-index: -1;
+    background-size: 0.06em 0.06em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: line-shadow 15s linear infinite;
+  }
+
+  @keyframes line-shadow {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% -100%; }
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    max-width: 540px;
+  }
+
+  .hero-subtitle strong {
+    color: white;
+  }
+
+  /* Stats */
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 640px) {
+    .stat-divider {
+      display: none;
+    }
+    .hero-stats {
+      gap: 1rem;
+    }
+    .stat {
+      flex: 1;
+      min-width: 80px;
+    }
+  }
+
+  /* CTAs */
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, rgb(234, 88, 12), rgb(194, 65, 12));
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+  }
+
+  @keyframes shimmer {
+    100% { left: 100%; }
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  /* Vídeo Vertical */
+  .hero-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .video-glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+  }
+
+  .video-container {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    aspect-ratio: 9 / 16;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(249, 115, 22, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.4);
+  }
+
+  .video-play-btn svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+    margin-left: 4px;
+  }
+
+  .video-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgb(234, 88, 12);
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.5);
+  }
+
+  .video-play-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Decorações do vídeo */
+  .video-decoration {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .video-decoration-1 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    top: -20px;
+    right: -20px;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .video-decoration-2 {
+    width: 60px;
+    height: 60px;
+    background: rgba(249, 115, 22, 0.1);
+    bottom: 40px;
+    left: -30px;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  /* Fallback para imagem (manter compatibilidade) */
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .image-glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  .image-container {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%);
+    transition: filter 0.5s ease;
+  }
+
+  .image-wrapper:hover .image-container img {
+    filter: grayscale(0%);
+  }
+
+  /* Decorações */
+  .image-decoration {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .image-decoration-1 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    top: -20px;
+    right: -20px;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .image-decoration-2 {
+    width: 60px;
+    height: 60px;
+    background: rgba(249, 115, 22, 0.1);
+    bottom: 40px;
+    left: -30px;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+  }
+
+  .scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    animation: scroll-wheel 2s infinite;
+  }
+
+  @keyframes scroll-wheel {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(8px); opacity: 0.3; }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+  @media (max-width: 1024px) {
+    .scroll-indicator {
+      display: none;
+    }
+  }
+
+  /* ==================== SEÇÕES GERAIS ==================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+    background: #0a0a0a;
+  }
+
+  .section-dark {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(251, 146, 60);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ==================== JORNADA ==================== */
+  .journey-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .journey-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .journey-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, rgb(249, 115, 22), rgb(251, 146, 60));
+    margin: 0 auto 1.5rem;
+    border-radius: 2px;
+  }
+
+  .journey-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .journey-phases {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .journey-phase {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .journey-phase:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .phase-number {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .journey-phase h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .journey-phase p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .journey-phase p:last-child {
+    margin-bottom: 0;
+  }
+
+  .journey-phase strong {
+    color: rgb(251, 146, 60);
+  }
+
+  .journey-phase em {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* ==================== SERVIÇOS ==================== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .service-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-icon svg {
+    width: 24px;
+    height: 24px;
+    color: rgb(249, 115, 22);
+  }
+
+  .service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  /* ==================== PORTFÓLIO ==================== */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .portfolio-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .portfolio-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .portfolio-header {
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-status {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .portfolio-status.active {
+    background: rgba(52, 211, 153, 0.15);
+    color: rgb(52, 211, 153);
+  }
+
+  .portfolio-status.building {
+    background: rgba(251, 191, 36, 0.15);
+    color: rgb(251, 191, 36);
+  }
+
+  .portfolio-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-card p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-link {
+    color: rgb(249, 115, 22);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .portfolio-link:hover {
+    color: rgb(251, 146, 60);
+  }
+
+  .portfolio-link.muted {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* ==================== CURSOS ==================== */
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .course-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .course-card:hover {
+    border-color: rgba(249, 115, 22, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
+  }
+
+  .course-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .course-card h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .course-card > p {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .course-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+
+  .course-features li {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .course-features li:last-child {
+    border-bottom: none;
+  }
+
+  /* ==================== CURADORIA (PINTEREST STYLE) ==================== */
+  .curadoria-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.625rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+  }
+
+  .filter-btn:hover {
+    border-color: rgba(249, 115, 22, 0.5);
+    color: white;
+  }
+
+  .filter-btn.active {
+    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+    border-color: transparent;
+    color: white;
+  }
+
+  /* Pinterest Masonry Grid */
+  .pinterest-grid {
+    columns: 5;
+    column-gap: 16px;
+  }
+
+  @media (max-width: 1400px) {
+    .pinterest-grid { columns: 4; }
+  }
+
+  @media (max-width: 1100px) {
+    .pinterest-grid { columns: 3; }
+  }
+
+  @media (max-width: 768px) {
+    .pinterest-grid { columns: 2; }
+  }
+
+  @media (max-width: 480px) {
+    .pinterest-grid { columns: 2; column-gap: 10px; }
+  }
+
+  /* Course Poster Card */
+  .course-poster {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .course-poster:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .course-poster.hidden {
+    display: none;
+  }
+
+  /* Poster Image/Background */
+  .poster-image {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .course-poster.tall .poster-image {
+    height: 280px;
+  }
+
+  .poster-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  }
+
+  /* Overlay com informações */
+  .poster-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, transparent 100%);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .course-poster:hover .poster-overlay {
+    transform: translateY(0);
+  }
+
+  .poster-category {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .poster-category.copy {
+    background: rgba(168, 85, 247, 0.3);
+    color: rgb(192, 132, 252);
+  }
+
+  .poster-category.trafego {
+    background: rgba(59, 130, 246, 0.3);
+    color: rgb(96, 165, 250);
+  }
+
+  .poster-category.ia {
+    background: rgba(52, 211, 153, 0.3);
+    color: rgb(110, 231, 183);
+  }
+
+  .poster-category.mentoria {
+    background: rgba(251, 191, 36, 0.3);
+    color: rgb(253, 224, 71);
+  }
+
+  .poster-overlay h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
+
+  .poster-author {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  /* Badge de conclusão */
+  .poster-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    color: rgb(52, 211, 153);
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+  }
+
+  /* Footer com contadores */
+  .curadoria-footer {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+  }
+
+  .curso-counter {
+    text-align: center;
+  }
+
+  .counter-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(249, 115, 22);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .counter-text {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 640px) {
+    .curadoria-footer {
+      gap: 2rem;
+    }
+    .counter-number {
+      font-size: 2rem;
+    }
+  }
+
+  /* ==================== BUILD IN PUBLIC ==================== */
+  .build-in-public {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .build-in-public {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  /* Foto */
+  .bip-photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bip-photo-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .bip-photo-glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.25) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: -1;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  .bip-photo-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+    aspect-ratio: 3 / 4;
+  }
+
+  .bip-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Placeholder quando não tem imagem */
+  .bip-photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(0,0,0,0.8) 100%);
+  }
+
+  .bip-photo-container img + .bip-photo-placeholder {
+    display: none;
+  }
+
+  .bip-photo-container img[src=""] ~ .bip-photo-placeholder,
+  .bip-photo-container img:not([src]) ~ .bip-photo-placeholder {
+    display: flex;
+  }
+
+  .placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .placeholder-text {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Decorações */
+  .bip-decoration {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .bip-decoration svg {
+    color: rgb(249, 115, 22);
+  }
+
+  .bip-decoration-1 {
+    width: 48px;
+    height: 48px;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    top: -15px;
+    right: -15px;
+  }
+
+  .bip-decoration-2 {
+    width: 36px;
+    height: 36px;
+    background: rgba(52, 211, 153, 0.15);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    bottom: 60px;
+    left: -18px;
+    animation-delay: -3s;
+  }
+
+  .bip-decoration-2 svg {
+    color: rgb(52, 211, 153);
+  }
+
+  /* Conteúdo */
+  .bip-content {
+    padding: 1rem 0;
+  }
+
+  .bip-content .section-eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(251, 146, 60);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .bip-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .bip-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 480px;
+  }
+
+  /* Canais */
+  .bip-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .bip-channel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .bip-channel:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateX(4px);
+  }
+
+  .channel-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .channel-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .channel-icon.youtube {
+    background: rgba(255, 0, 0, 0.15);
+  }
+  .channel-icon.youtube svg {
+    color: #ff0000;
+  }
+
+  .channel-icon.instagram {
+    background: linear-gradient(135deg, rgba(131, 58, 180, 0.2), rgba(253, 29, 29, 0.2), rgba(252, 176, 69, 0.2));
+  }
+  .channel-icon.instagram svg {
+    color: #e1306c;
+  }
+
+  .channel-icon.newsletter {
+    background: rgba(249, 115, 22, 0.15);
+  }
+  .channel-icon.newsletter svg {
+    color: rgb(249, 115, 22);
+  }
+
+  .channel-icon.twitter {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .channel-icon.twitter svg {
+    color: white;
+  }
+
+  .channel-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .channel-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .channel-handle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .channel-arrow {
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s;
+  }
+
+  .bip-channel:hover .channel-arrow {
+    color: rgb(249, 115, 22);
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 900px) {
+    .bip-photo {
+      order: -1;
+    }
+    .bip-content {
+      text-align: center;
+    }
+    .bip-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /* ==================== CTA SECTION ==================== */
+  .cta-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(234, 88, 12, 0.1) 100%);
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* ==================== MODAL NEWSLETTER (ALTA CONVERSÃO) ==================== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    max-width: 720px;
+    width: 100%;
+    background: #0a0a0a;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .modal-overlay.active .modal-container {
+    transform: scale(1) translateY(0);
+  }
+
+  /* Botão Fechar */
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .modal-close svg {
+    width: 18px;
+    height: 18px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .modal-close:hover svg {
+    color: white;
+  }
+
+  /* Lado da Imagem */
+  .modal-image {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    overflow: hidden;
+  }
+
+  .modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 450px;
+  }
+
+  .modal-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+  }
+
+  .modal-social-proof {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .proof-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgb(249, 115, 22);
+    line-height: 1;
+  }
+
+  .proof-text {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.25rem;
+  }
+
+  /* Lado do Conteúdo */
+  .modal-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-brand {
+    margin-bottom: 1.25rem;
+  }
+
+  .brand-name {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .modal-title {
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.3;
+    margin: 0 0 0.75rem;
+  }
+
+  .modal-subtitle {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin: 0 0 1.5rem;
+  }
+
+  .modal-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+
+  .modal-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    padding: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .benefit-check {
+    color: rgb(52, 211, 153);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* Formulário */
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: white;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+
+  .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: rgb(249, 115, 22);
+    background: rgba(249, 115, 22, 0.05);
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: #111111;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.25rem;
+  }
+
+  .form-submit:hover {
+    background: #1a1a1a;
+  }
+
+  .modal-disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 1rem 0 0;
+  }
+
+  .modal-close-text {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8125rem;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    transition: color 0.2s;
+    align-self: center;
+  }
+
+  .modal-close-text:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Responsivo */
+  @media (max-width: 700px) {
+    .modal-container {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+
+    .modal-image {
+      display: none;
+    }
+
+    .modal-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .modal-title {
+      font-size: 1.375rem;
+    }
+  }
+</style>
+
+<script>
+  // Controle do vídeo com botão de play
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('hero-video') as HTMLVideoElement;
+    const playBtn = document.querySelector('.video-play-btn') as HTMLButtonElement;
+
+    if (video && playBtn) {
+      // Ao clicar no botão de play
+      playBtn.addEventListener('click', () => {
+        if (video.paused) {
+          video.muted = false; // Ativa o som ao clicar
+          video.play();
+          playBtn.classList.add('hidden');
+        }
+      });
+
+      // Ao clicar no vídeo para pausar/play
+      video.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          playBtn.classList.add('hidden');
+        } else {
+          video.pause();
+          playBtn.classList.remove('hidden');
+        }
+      });
+
+      // Quando o vídeo terminar
+      video.addEventListener('ended', () => {
+        playBtn.classList.remove('hidden');
+      });
+
+      // Autoplay muted ao entrar na viewport (opcional)
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {
+              // Autoplay blocked, show play button
+              playBtn.classList.remove('hidden');
+            });
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(video);
+    }
+
+    // Filtros da Curadoria (Pinterest Grid)
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const coursePosters = document.querySelectorAll('.course-poster');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active de todos
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Adiciona active no clicado
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        coursePosters.forEach(poster => {
+          const posterEl = poster as HTMLElement;
+          if (filter === 'all') {
+            posterEl.classList.remove('hidden');
+          } else {
+            const category = posterEl.getAttribute('data-category');
+            if (category === filter) {
+              posterEl.classList.remove('hidden');
+            } else {
+              posterEl.classList.add('hidden');
+            }
+          }
+        });
+      });
+    });
+
+    // Modal Newsletter
+    const modal = document.getElementById('newsletter-modal');
+    const modalTriggers = document.querySelectorAll('[data-open-modal="newsletter-modal"]');
+    const modalCloseBtn = modal?.querySelector('.modal-close');
+    const modalCloseText = modal?.querySelector('.modal-close-text');
+    const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement;
+
+    // Função para fechar modal
+    const closeModal = () => {
+      modal?.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    // Abrir modal
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Fechar modal - botão X
+    modalCloseBtn?.addEventListener('click', closeModal);
+
+    // Fechar modal - botão "Não, obrigado"
+    modalCloseText?.addEventListener('click', closeModal);
+
+    // Fechar modal - clicando fora
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Fechar modal - tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // Submit do formulário
+    newsletterForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(newsletterForm);
+      const name = formData.get('name');
+      const email = formData.get('email');
+
+      // Aqui você pode integrar com sua ferramenta de email marketing
+      // Ex: Mailchimp, ConvertKit, etc.
+      console.log('Newsletter signup:', { name, email });
+
+      // Feedback visual
+      const submitBtn = newsletterForm.querySelector('.form-submit') as HTMLButtonElement;
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'INSCRITO! ✓';
+      submitBtn.style.background = 'rgb(52, 211, 153)';
+
+      setTimeout(() => {
+        closeModal();
+        // Reset form
+        newsletterForm.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
+      }, 2000);
+    });
+  });
+</script>

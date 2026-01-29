@@ -1,0 +1,230 @@
+---
+// Header.astro - Componente reutilizável de cabeçalho/navegação
+// Props opcionais para personalizar links e comportamento
+interface Props {
+    currentPage?: string;
+}
+
+const { currentPage = "/" } = Astro.props;
+---
+
+<header class="header" id="header">
+    <nav class="nav">
+        <a href="/" class="nav-logo">AD</a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#servicos" class="nav-link">Serviços</a>
+            <a href="#portfolio" class="nav-link">Portfólio</a>
+            <a href="#conteudo" class="nav-link">Conteúdo</a>
+            <a href="https://wa.me/5545999506444" class="nav-cta" target="_blank">Contato</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#servicos" class="nav-link">Serviços</a>
+            <a href="#portfolio" class="nav-link">Portfólio</a>
+            <a href="#conteudo" class="nav-link">Conteúdo</a>
+            <a href="https://wa.me/5545999506444" class="nav-cta" target="_blank">Contato</a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = mobileMenu.classList.contains('active');
+            if (isActive) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Close menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    }
+</script>
+
+<style>
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-logo {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--accent);
+        text-decoration: none;
+        letter-spacing: 2px;
+    }
+
+    /* Mobile menu button */
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .mobile-menu-btn span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-light);
+        transition: all 0.3s;
+        display: block;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg-main);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 99;
+        border-top: 1px solid var(--border);
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    .mobile-menu .nav-link {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 16px;
+        padding: 12px 0;
+        transition: color 0.2s;
+    }
+
+    .mobile-menu .nav-link:hover {
+        color: var(--accent);
+    }
+
+    /* Desktop nav links */
+    .nav-links {
+        display: none;
+        gap: 32px;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+        color: var(--accent);
+    }
+
+    .nav-cta {
+        position: relative;
+        background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+        color: white;
+        padding: 10px 24px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s;
+        display: inline-block;
+        border: 1px solid rgba(251, 146, 60, 0.3);
+        box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+        overflow: hidden;
+    }
+
+    .nav-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        animation: shimmer 3s infinite;
+    }
+
+    .nav-cta:hover {
+        background: linear-gradient(to right, rgb(234, 88, 12), rgb(194, 65, 12));
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+    }
+
+    @keyframes shimmer {
+        100% {
+            left: 100%;
+        }
+    }
+
+    /* Tablet and Desktop */
+    @media (min-width: 768px) {
+        .nav {
+            padding: 20px 24px;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+    }
+</style>
