@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(netstat:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "Bash(_ \")",
+      "Bash(powershell.exe -Command \"cd C:\\\\dev\\\\sites\\\\site-alexdonega2; npm run dev\")",
+      "Bash(stdbuf -oL -eL npm run build:*)",
+      "Bash(powershell.exe -Command \"cd C:\\\\dev\\\\sites\\\\site-alexdonega2; npx astro check src/pages/brand.astro 2>&1 | Select-Object -First 30\")",
+      "Bash(powershell.exe -Command \"cd C:\\\\dev\\\\sites\\\\site-alexdonega2; npm run dev 2>&1\")",
+      "Bash(powershell.exe -Command \"Get-Process -Name ''node'' -ErrorAction SilentlyContinue | Stop-Process -Force\")",
+      "Bash(xxd:*)",
+      "Bash(start cmd /c \"npm run dev\")"
+    ]
+  }
+}
