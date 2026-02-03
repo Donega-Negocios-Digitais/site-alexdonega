@@ -1,0 +1,920 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Portfólio SaaS"
+  description="Case studies de software SaaS que entregaram crescimento real. Veja projetos de CRM, automação com IA, gestão WhatsApp e operações de vendas."
+>
+
+<style>
+  /* ==================== HERO SECTION ==================== */
+  .hero {
+    padding: 80px 16px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 50% 0%, rgba(216, 119, 87, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #9ca3af;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    color: #d1d5db;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* ==================== CASE STUDIES SECTION ==================== */
+  .cases-section {
+    padding: 60px 16px;
+  }
+
+  .case-study {
+    max-width: 1200px;
+    margin: 0 auto 120px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .case-study:last-child {
+    margin-bottom: 60px;
+  }
+
+  .case-study:nth-child(1) { animation-delay: 0.1s; }
+  .case-study:nth-child(2) { animation-delay: 0.2s; }
+  .case-study:nth-child(3) { animation-delay: 0.3s; }
+  .case-study:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .case-preview {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .case-preview img,
+  .case-preview video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .case-preview video {
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    transition: transform 0.3s ease;
+  }
+
+  .case-study:hover .case-preview video {
+    transform: scale(1.02);
+  }
+
+  .case-study:hover .case-preview {
+    border-color: rgba(216, 119, 87, 0.3);
+  }
+
+  .case-content {
+    padding: 0;
+  }
+
+  .case-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9ca3af;
+    margin-bottom: 16px;
+  }
+
+  .case-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .case-description {
+    font-size: 16px;
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .case-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #d87757;
+    color: #0a0a0a;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-bottom: 32px;
+  }
+
+  .case-btn:hover {
+    background: #e8866a;
+    transform: translateY(-2px);
+  }
+
+  .case-testimonial {
+    background: #1a1a1a;
+    border-left: 3px solid #d87757;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 24px;
+  }
+
+  .testimonial-quote {
+    font-size: 15px;
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(216, 119, 87, 0.1);
+    overflow: hidden;
+  }
+
+  .author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .author-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 2px;
+  }
+
+  .author-info p {
+    font-size: 13px;
+    color: #9ca3af;
+  }
+
+  /* ==================== TESTIMONIALS SECTION ==================== */
+  .testimonials-section {
+    padding: 80px 16px;
+    background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%);
+    position: relative;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .section-subtitle {
+    font-size: 18px;
+    color: #d1d5db;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(216, 119, 87, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .testimonial-video {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .testimonial-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .testimonial-card:hover .testimonial-video-player {
+    transform: scale(1.05);
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .video-overlay.playing {
+    opacity: 0;
+  }
+
+  .play-button {
+    width: 64px;
+    height: 64px;
+    background: rgba(216, 119, 87, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    pointer-events: all;
+  }
+
+  .play-button:hover {
+    background: #e8866a;
+    transform: scale(1.1);
+  }
+
+  .play-button svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+  }
+
+  .testimonial-content {
+    padding: 32px 24px;
+  }
+
+  .testimonial-content .testimonial-quote {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #d1d5db;
+    margin-bottom: 24px;
+    font-style: italic;
+    position: relative;
+    padding-left: 24px;
+    border-left: 3px solid #d87757;
+  }
+
+  .testimonial-content .testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .testimonial-content .author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 16px;
+    background: rgba(216, 119, 87, 0.1);
+  }
+
+  .testimonial-content .author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-content .author-info {
+    flex: 1;
+  }
+
+  .testimonial-content .author-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+
+  .testimonial-content .author-role {
+    font-size: 13px;
+    color: #9ca3af;
+  }
+
+  .testimonial-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 20px 16px;
+    background: #111111;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid #2a2a2a;
+  }
+
+  .stat-item:hover {
+    background: #222222;
+    border-color: rgba(216, 119, 87, 0.3);
+  }
+
+  .stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #d87757;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: #d1d5db;
+    line-height: 1.3;
+  }
+
+  .testimonials-cta {
+    text-align: center;
+    padding: 48px 24px;
+    background: #1a1a1a;
+    border-radius: 16px;
+    border: 1px solid #2a2a2a;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: #d87757;
+    color: #0a0a0a;
+    padding: 14px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: #e8866a;
+    transform: translateY(-2px);
+  }
+
+  /* Responsividade */
+  @media (min-width: 768px) {
+    .hero {
+      padding: 120px 24px 60px;
+    }
+
+    .hero-title {
+      font-size: 48px;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+    }
+
+    .cases-section {
+      padding: 80px 24px;
+    }
+
+    .case-title {
+      font-size: 32px;
+    }
+
+    .case-preview video {
+      aspect-ratio: 16 / 10;
+    }
+
+    .testimonials-section {
+      padding: 100px 24px;
+    }
+
+    .section-title {
+      font-size: 48px;
+    }
+
+    .section-subtitle {
+      font-size: 20px;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-video {
+      height: 320px;
+    }
+
+    .testimonial-card:nth-child(3) {
+      grid-column: span 2;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .case-study {
+      grid-template-columns: 45% 1fr;
+      gap: 60px;
+    }
+
+    .case-title {
+      font-size: 36px;
+    }
+
+    .hero-title {
+      font-size: 56px;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonial-card:nth-child(3) {
+      grid-column: auto;
+      max-width: none;
+    }
+
+    .testimonial-video {
+      height: 360px;
+    }
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">PORTFÓLIO</div>
+    <h1 class="hero-title">Software que Entrega<br>Crescimento Real</h1>
+    <p class="hero-subtitle">
+      15 anos construindo SaaS que resolvem problemas reais. Cada projeto nasceu de uma necessidade do mercado e entrega resultados mensuráveis.
+    </p>
+  </div>
+</section>
+
+<!-- Case Studies Section -->
+<section class="cases-section">
+
+  <!-- InsightZap Case -->
+  <article class="case-study">
+    <div class="case-preview">
+      <video autoplay loop muted playsinline>
+        <source src="../assets/videos/case-studies/insightzap-case-study.webm" type="video/webm">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+    <div class="case-content">
+      <div class="case-tag">INSIGHTZAP</div>
+      <h2 class="case-title">Gestão inteligente de comunidades do WhatsApp com agentes de IA</h2>
+      <p class="case-description">
+        Plataforma completa para gestão de grupos e comunidades do WhatsApp. Agentes de IA trabalham 24/7 processando mensagens, gerando resumos automáticos e entregando insights acionáveis. Monitora 9.000+ comunidades e processa 10 bilhões de mensagens por mês, reduzindo 90% do tempo em moderação.
+      </p>
+      <a href="#" class="case-btn">Ver Case →</a>
+
+      <div class="case-testimonial">
+        <p class="testimonial-quote">
+          "Chega de ler centenas de mensagens diariamente. Os agentes processam tudo automaticamente e entregam apenas o que importa."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="../assets/img/avatars/aleksandra.webp" alt="Aleksandra" loading="lazy">
+          </div>
+          <div class="author-info">
+            <h4>Aleksandra</h4>
+            <p>Content Lead at InsightZap</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Novo Envio Case -->
+  <article class="case-study">
+    <div class="case-preview">
+      <video autoplay loop muted playsinline>
+        <source src="../assets/videos/case-studies/novo-envio-case-study.webm" type="video/webm">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+    <div class="case-content">
+      <div class="case-tag">NOVO ENVIO</div>
+      <h2 class="case-title">Sistema de gestão WhatsApp com 52 funcionalidades para empreendedores</h2>
+      <p class="case-description">
+        Plataforma all-in-one para gerenciar operações de WhatsApp Business. Automações, CRM, múltiplos atendentes, chatbots, campanhas e analytics integrados. Desenvolvido para empreendedores que precisam escalar atendimento sem perder qualidade.
+      </p>
+      <a href="#" class="case-btn">Ver Case →</a>
+
+      <div class="case-testimonial">
+        <p class="testimonial-quote">
+          "Sistema completo que centraliza toda operação de WhatsApp. Do atendimento às vendas, tudo em um só lugar."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="../assets/img/avatars/peggy.webp" alt="Peggy Rayzis" loading="lazy">
+          </div>
+          <div class="author-info">
+            <h4>Peggy Rayzis</h4>
+            <p>Marketing Lead at Novo Envio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- FalaZapp Case -->
+  <article class="case-study">
+    <div class="case-preview">
+      <video autoplay loop muted playsinline>
+        <source src="../assets/videos/case-studies/falazapp-case-study.webm" type="video/webm">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+    <div class="case-content">
+      <div class="case-tag">FALAZAPP</div>
+      <h2 class="case-title">CRM omnichannel: WhatsApp, Facebook e Instagram em um só lugar</h2>
+      <p class="case-description">
+        Unifique todas as conversas dos seus clientes em uma única plataforma. Responda mensagens do WhatsApp, Direct do Instagram e Messenger do Facebook sem precisar trocar de aba. Histórico completo, múltiplos atendentes e automações inteligentes.
+      </p>
+      <a href="https://app.falazapp.com.br/signup" target="_blank" class="case-btn">Ver Case →</a>
+
+      <div class="case-testimonial">
+        <p class="testimonial-quote">
+          "Centralizei atendimento de 3 canais diferentes. Minha equipe nunca foi tão produtiva respondendo clientes."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="../assets/img/avatars/fryderyk-wiatrowski.webp" alt="Fryderyk Wiatrowski" loading="lazy">
+          </div>
+          <div class="author-info">
+            <h4>Fryderyk Wiatrowski</h4>
+            <p>Co-Founder & CEO at FalaZapp</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Operação de Vendas Case -->
+  <article class="case-study">
+    <div class="case-preview">
+      <video autoplay loop muted playsinline>
+        <source src="../assets/videos/case-studies/operacao-vendas-case-study.webm" type="video/webm">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+    <div class="case-content">
+      <div class="case-tag">OPERAÇÃO DE VENDAS</div>
+      <h2 class="case-title">Marketing 360° com Método Lançamento Meteórico: pico de vendas em 2 dias</h2>
+      <p class="case-description">
+        Metodologia proprietária para autoescolas e clínicas de estética. Estratégia completa de marketing digital + funil de vendas otimizado + grupo VIP WhatsApp. Resultado: concentração de vendas em 48h através de senso de urgência e escassez real.
+      </p>
+      <a href="#" class="case-btn">Ver Case →</a>
+
+      <div class="case-testimonial">
+        <p class="testimonial-quote">
+          "Desenvolvemos um método que transforma marketing em máquina de vendas previsível para nichos específicos."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="../assets/img/avatars/peggy.webp" alt="Peggy Rayzis" loading="lazy">
+          </div>
+          <div class="author-info">
+            <h4>Peggy Rayzis</h4>
+            <p>Strategic Partner at Operação de Vendas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" id="depoimentos">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 0 2rem;">
+
+    <!-- Título da seção -->
+    <div class="section-header">
+      <h2 class="section-title">O Que Meus Clientes Dizem</h2>
+      <p class="section-subtitle">Resultados reais de projetos SaaS que entreguei</p>
+    </div>
+
+    <!-- Grid de testemunhos -->
+    <div class="testimonials-grid">
+
+      <!-- TESTEMUNHO 1: Gentrace -->
+      <div class="testimonial-card">
+        <div class="testimonial-video">
+          <video class="testimonial-video-player" playsinline muted loop preload="metadata" crossorigin="anonymous">
+            <source src="../assets/videos/testimonials/testimonial-gentrace.webm" type="video/webm">
+            Seu navegador não suporta o vídeo.
+          </video>
+          <div class="video-overlay">
+            <button class="play-button">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonial-content">
+          <blockquote class="testimonial-quote">
+            "Dream team! Thanks for all the support helping us hit our incredibly ambitious timeline and vision for the launch."
+          </blockquote>
+
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="../assets/img/avatars/peggy.webp" alt="Peggy" loading="lazy">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">Peggy</h4>
+              <p class="author-role">Marketing Lead</p>
+            </div>
+          </div>
+
+          <div class="testimonial-stats">
+            <div class="stat-item">
+              <div class="stat-number">3x</div>
+              <div class="stat-label">Increase in signups</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">300%</div>
+              <div class="stat-label">Website traffic growth</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TESTEMUNHO 2: Nova Insurer -->
+      <div class="testimonial-card">
+        <div class="testimonial-video">
+          <video class="testimonial-video-player" playsinline muted loop preload="metadata" crossorigin="anonymous">
+            <source src="../assets/videos/testimonials/testimonial-ano.webm" type="video/webm">
+            Seu navegador não suporta o vídeo.
+          </video>
+          <div class="video-overlay">
+            <button class="play-button">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonial-content">
+          <blockquote class="testimonial-quote">
+            "If you want your product to stand out, attract more users, work with a team that deeply understands both product and marketing, Grafit is your choice."
+          </blockquote>
+
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="../assets/img/avatars/fryderyk-wiatrowski.webp" alt="Fryderyk" loading="lazy">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">Fryderyk Wiatrowski</h4>
+              <p class="author-role">CEO & Co-Founder</p>
+            </div>
+          </div>
+
+          <div class="testimonial-stats">
+            <div class="stat-item">
+              <div class="stat-number">9 semanas</div>
+              <div class="stat-label">Para MVP ao vivo</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">280%</div>
+              <div class="stat-label">Aumento em conversões</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TESTEMUNHO 3: Sturdy -->
+      <div class="testimonial-card">
+        <div class="testimonial-video">
+          <video class="testimonial-video-player" playsinline muted loop preload="metadata" crossorigin="anonymous">
+            <source src="../assets/videos/testimonials/testimonial-sturdy.webm" type="video/webm">
+            Seu navegador não suporta o vídeo.
+          </video>
+          <div class="video-overlay">
+            <button class="play-button">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonial-content">
+          <blockquote class="testimonial-quote">
+            "The turnaround time was excellent, the communication was excellent, and the Grafit team were genuine experts in their fields."
+          </blockquote>
+
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="../assets/img/avatars/aleksandra.webp" alt="Aleksandra" loading="lazy">
+            </div>
+            <div class="author-info">
+              <h4 class="author-name">Aleksandra</h4>
+              <p class="author-role">VP of Marketing & Growth</p>
+            </div>
+          </div>
+
+          <div class="testimonial-stats">
+            <div class="stat-item">
+              <div class="stat-number">250%</div>
+              <div class="stat-label">Aumento em conversões</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">86%</div>
+              <div class="stat-label">Tráfego orgânico em 4 semanas</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div> <!-- Fim do grid -->
+
+    <!-- CTA Final -->
+    <div class="testimonials-cta">
+      <p class="cta-text">Pronto para transformar seu produto SaaS?</p>
+      <a href="#contato" class="btn btn-primary">Fale Comigo</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Controle de vídeos de testemunhos
+  document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('.testimonial-video-player');
+    const playButtons = document.querySelectorAll('.play-button');
+    const videoOverlays = document.querySelectorAll('.video-overlay');
+
+    function toggleVideo(video, button, overlay, index) {
+      if (video.paused) {
+        video.play();
+        button.innerHTML = `
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+        `;
+        overlay.classList.add('playing');
+      } else {
+        video.pause();
+        button.innerHTML = `
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        `;
+        overlay.classList.remove('playing');
+      }
+    }
+
+    playButtons.forEach((button, index) => {
+      const video = videos[index];
+      const overlay = videoOverlays[index];
+
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleVideo(video, button, overlay, index);
+      });
+
+      video.addEventListener('click', () => {
+        toggleVideo(video, button, overlay, index);
+      });
+
+      video.addEventListener('ended', () => {
+        button.innerHTML = `
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        `;
+        overlay.classList.remove('playing');
+        video.currentTime = 0;
+      });
+    });
+
+    videos.forEach((video, index) => {
+      video.addEventListener('play', () => {
+        videos.forEach((otherVideo, otherIndex) => {
+          if (otherIndex !== index && !otherVideo.paused) {
+            otherVideo.pause();
+            playButtons[otherIndex].innerHTML = `
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            `;
+            videoOverlays[otherIndex].classList.remove('playing');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+</Layout>

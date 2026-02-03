@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #e5e5e5;
+    --card: #1a1a1a;
+    --card-hover: #222222;
+    --accent: #d87757;
+    --accent-hover: #e8866a;
+    --border: #2a2a2a;
+    --muted: #9ca3af;
+    --muted-foreground: #d1d5db;
+    --radius: 16px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Classe utilitária para o efeito shimmer */
+  .shimmer-button {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer-button::before {
+    content: '';
+    @apply absolute top-0 -left-full w-full h-full;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Container padrão */
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  /* Scroll margin para navegação com âncoras */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+}

@@ -1,0 +1,27 @@
+node_modules/
+
+# Auto Claude data directory
+.auto-claude/
+
+# Build output
+dist/
+
+# Astro
+.astro/
+
+# Backups
+.backups/
+
+# Context files (local)
+.context/
+
+# Temp files
+nul
+tmpclaude-*
+
+# Claude local settings
+.claude/settings.local.json
+.claude_settings.json
+
+# Logs
+git_log.txt

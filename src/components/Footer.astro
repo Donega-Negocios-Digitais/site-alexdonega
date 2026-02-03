@@ -1,0 +1,149 @@
+---
+// Footer.astro - Componente reutilizável de rodapé
+// Use em qualquer página Astro: import Footer from '../components/Footer.astro'
+---
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h4>Alex Donega</h4>
+            <p>Fundador de SaaS. Explorando IA na prática e compartilhando a jornada sem filtro.</p>
+            <p class="signature">"Testando, errando e compartilhando."</p>
+        </div>
+
+        <div class="footer-column">
+            <h5>Navegação</h5>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#conteudo">Conteúdo</a>
+            <a href="/politicas/">Políticas</a>
+        </div>
+
+        <div class="footer-column">
+            <h5>Cursos</h5>
+            <a href="/engenharia-de-contexto-aplicado-ao-marketing-digital/">Context Engineering</a>
+            <a href="/claude-code-em-1-dia/">Claude Code em 1 Dia</a>
+            <a href="/segundo-cerebro-com-obsidian/">Segundo Cérebro</a>
+        </div>
+
+        <div class="footer-column">
+            <h5>Contato</h5>
+            <a href="https://wa.me/5545999506444" target="_blank">WhatsApp</a>
+            <a href="https://instagram.com/donegaalex" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://youtube.com/@alexdonega" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://linkedin.com/in/alexdonega" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>&copy; 2025 Alex Donega. Todos os direitos reservados.</span>
+        <span>Toledo-PR, Brasil</span>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        padding: 48px 16px;
+        border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-brand h4 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--text-white);
+        margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .footer-brand .signature {
+        font-style: italic;
+        color: var(--accent);
+        margin-top: 12px;
+        font-size: 13px;
+    }
+
+    .footer-column h5 {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--text-gray);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 16px;
+    }
+
+    .footer-column a {
+        display: block;
+        font-size: 14px;
+        color: var(--text-muted);
+        text-decoration: none;
+        margin-bottom: 12px;
+        padding: 4px 0;
+        transition: color 0.2s;
+    }
+
+    .footer-column a:hover {
+        color: var(--text-white);
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 32px auto 0;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        font-size: 12px;
+        color: var(--text-muted);
+    }
+
+    .footer-bottom a {
+        color: var(--text-muted);
+        text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+        color: var(--text-white);
+    }
+
+    /* Tablet (min-width: 768px) */
+    @media (min-width: 768px) {
+        .footer {
+            padding: 56px 24px;
+        }
+
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .footer-bottom {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    /* Desktop (min-width: 1024px) */
+    @media (min-width: 1024px) {
+        .footer-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+</style>

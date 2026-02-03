@@ -1,0 +1,394 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts
+    .filter(post => !post.data.draft)
+    .map(post => ({
+      params: { slug: post.slug },
+      props: { post }
+    }));
+}
+
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// Get related posts (same tags)
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+  .filter(p =>
+    !p.data.draft &&
+    p.slug !== post.slug &&
+    p.data.tags.some(tag => post.data.tags.includes(tag))
+  )
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description || `Artigo de ${post.data.author}`}
+>
+
+<style>
+  .article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 24px 60px;
+  }
+
+  .article-header {
+    margin-bottom: 48px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 32px;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .article-tag {
+    display: inline-block;
+    background: rgba(251, 146, 60, 0.1);
+    color: #fb923c;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+
+  .article-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+  }
+
+  .article-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .article-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 60px;
+  }
+
+  /* Markdown content styling */
+  .article-content :global(h2) {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin: 48px 0 24px 0;
+    line-height: 1.3;
+  }
+
+  .article-content :global(h3) {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+    margin: 32px 0 16px 0;
+    line-height: 1.3;
+  }
+
+  .article-content :global(p) {
+    margin-bottom: 24px;
+    text-align: justify;
+  }
+
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    margin: 24px 0 24px 24px;
+  }
+
+  .article-content :global(li) {
+    margin-bottom: 12px;
+  }
+
+  .article-content :global(a) {
+    color: #fb923c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .article-content :global(a:hover) {
+    color: #fb923c;
+    text-decoration: underline;
+  }
+
+  .article-content :global(blockquote) {
+    border-left: 4px solid #fb923c;
+    padding-left: 24px;
+    margin: 32px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+  }
+
+  .article-content :global(code) {
+    background: #1a1a1a;
+    color: #fb923c;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+
+  .article-content :global(pre) {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    margin: 24px 0;
+  }
+
+  .article-content :global(pre code) {
+    background: none;
+    color: #e5e5e5;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .article-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 32px 0;
+    display: block;
+  }
+
+  .article-footer {
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 32px 0;
+    margin: 60px 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .article-author {
+    flex: 1;
+  }
+
+  .author-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .cta-section {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 48px 32px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .cta-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #fb923c;
+    color: #0a0a0a;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #f97316;
+    transform: translateY(-2px);
+  }
+
+  .related-section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid #2a2a2a;
+  }
+
+  .related-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 32px;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .related-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  .related-card:hover {
+    border-color: #fb923c;
+    transform: translateY(-2px);
+  }
+
+  .related-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .related-card:hover .related-card-title {
+    color: #fb923c;
+  }
+
+  .related-card-meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fb923c;
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: gap 0.2s ease;
+  }
+
+  .back-link:hover {
+    gap: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .article-title {
+      font-size: 3rem;
+    }
+
+    .related-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+
+<div class="article-container">
+  <a href="/blog" class="back-link">← Voltar para o blog</a>
+
+  <header class="article-header">
+    <div class="article-meta">
+      <div class="meta-item">
+        📅 {post.data.pubDate.toLocaleDateString('pt-BR', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </div>
+      <div class="meta-item">✍️ {post.data.author}</div>
+    </div>
+
+    {post.data.tags.length > 0 && (
+      <div class="article-tags">
+        {post.data.tags.map((tag: string) => (
+          <span class="article-tag">{tag}</span>
+        ))}
+      </div>
+    )}
+
+    <h1 class="article-title">{post.data.title}</h1>
+
+    {post.data.description && (
+      <p class="article-description">{post.data.description}</p>
+    )}
+  </header>
+
+  <article class="article-content">
+    <Content />
+  </article>
+
+  <div class="article-footer">
+    <div class="article-author">
+      <div class="author-label">Escrito por</div>
+      <div class="author-name">{post.data.author}</div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <p class="cta-text">Gostou deste artigo?</p>
+    <a href="https://wa.me/5545999506444" target="_blank" class="cta-button">
+      Fale Comigo no WhatsApp
+    </a>
+  </div>
+
+  {relatedPosts.length > 0 && (
+    <section class="related-section">
+      <h2 class="related-title">Artigos Relacionados</h2>
+      <div class="related-grid">
+        {relatedPosts.map((relatedPost) => (
+          <a href={`/blog/${relatedPost.slug}`} class="related-card">
+            <h3 class="related-card-title">{relatedPost.data.title}</h3>
+            <div class="related-card-meta">
+              {relatedPost.data.pubDate.toLocaleDateString('pt-BR', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })}
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+</div>
+
+</Layout>

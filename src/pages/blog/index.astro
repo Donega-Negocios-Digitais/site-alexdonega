@@ -1,0 +1,227 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts
+const allPosts = await getCollection('blog');
+
+// Filter out drafts and sort by date
+const posts = allPosts
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Layout
+  title="Blog"
+  description="Artigos, reflexões e insights sobre IA, marketing digital, empreendedorismo e desenvolvimento de produtos."
+>
+
+<style>
+  .blog-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 24px 60px;
+  }
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .blog-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .blog-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+
+  .blog-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .blog-card:hover {
+    border-color: #fb923c;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(251, 146, 60, 0.1);
+  }
+
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .blog-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .blog-tag {
+    display: inline-block;
+    background: rgba(251, 146, 60, 0.1);
+    color: #fb923c;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+
+  .blog-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin: 8px 0 0 0;
+    transition: color 0.2s ease;
+  }
+
+  .blog-card:hover .blog-card-title {
+    color: #fb923c;
+  }
+
+  .blog-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 8px 0 0 0;
+  }
+
+  .blog-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #2a2a2a;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 24px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .empty-state-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .blog-title {
+      font-size: 3.5rem;
+    }
+
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-card {
+      padding: 28px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog-title {
+      font-size: 4rem;
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .blog-card {
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+      padding: 32px;
+    }
+  }
+</style>
+
+<div class="blog-container">
+  <div class="blog-header">
+    <h1 class="blog-title">Blog</h1>
+    <p class="blog-subtitle">
+      Artigos, reflexões e insights sobre IA, marketing digital, empreendedorismo e desenvolvimento de produtos.
+    </p>
+  </div>
+
+  {posts.length > 0 ? (
+    <div class="blog-grid">
+      {posts.map((post) => (
+        <a href={`/blog/${post.slug}`} class="blog-card">
+          <div>
+            <div class="blog-meta">
+              <div class="blog-date">
+                📅 {post.data.pubDate.toLocaleDateString('pt-BR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </div>
+            </div>
+
+            {post.data.tags.length > 0 && (
+              <div class="blog-tags">
+                {post.data.tags.map((tag: string) => (
+                  <span class="blog-tag">{tag}</span>
+                ))}
+              </div>
+            )}
+
+            <h2 class="blog-card-title">{post.data.title}</h2>
+
+            {post.data.description && (
+              <p class="blog-description">{post.data.description}</p>
+            )}
+          </div>
+
+          <div class="blog-author">
+            ✍️ {post.data.author}
+          </div>
+        </a>
+      ))}
+    </div>
+  ) : (
+    <div class="empty-state">
+      <h2 class="empty-state-title">Nenhum artigo publicado</h2>
+      <p>Volte em breve para novas histórias e insights!</p>
+    </div>
+  )}
+</div>
+
+</Layout>

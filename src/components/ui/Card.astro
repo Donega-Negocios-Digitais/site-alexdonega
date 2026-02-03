@@ -1,0 +1,17 @@
+---
+// Card.astro - Componente de card estilo shadcn/ui
+
+interface Props {
+  class?: string;
+  hover?: boolean;
+}
+
+const { class: className = '', hover = false } = Astro.props;
+
+const baseClasses = 'rounded-lg border border-border bg-card text-foreground shadow-sm';
+const hoverClasses = hover ? 'transition-all hover:bg-card-hover hover:shadow-md hover:-translate-y-1' : '';
+---
+
+<div class={`${baseClasses} ${hoverClasses} ${className}`}>
+  <slot />
+</div>

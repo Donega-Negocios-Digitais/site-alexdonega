@@ -1,0 +1,84 @@
+---
+// Button.astro - Componente de botão estilo shadcn/ui
+// Variantes: default, secondary, outline, ghost, link, destructive
+// Tamanhos: default, sm, lg, icon
+
+interface Props {
+  variant?: 'default' | 'secondary' | 'outline' | 'ghost' | 'link' | 'destructive';
+  size?: 'default' | 'sm' | 'lg' | 'icon';
+  href?: string;
+  class?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  shimmer?: boolean;
+}
+
+const {
+  variant = 'default',
+  size = 'default',
+  href,
+  class: className = '',
+  type = 'button',
+  disabled = false,
+  shimmer = false,
+} = Astro.props;
+
+// Classes base
+const baseClasses = 'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden';
+
+// Variantes
+const variants = {
+  default: 'bg-gradient-to-r from-orange-500 to-orange-600 text-white border border-orange-400/30 shadow-lg shadow-orange-500/25 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-0.5 hover:scale-105',
+  secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+  outline: 'border border-border bg-transparent hover:bg-card hover:text-foreground',
+  ghost: 'hover:bg-card hover:text-foreground',
+  link: 'text-accent underline-offset-4 hover:underline',
+  destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+};
+
+// Tamanhos
+const sizes = {
+  default: 'h-10 px-6 py-2 text-sm',
+  sm: 'h-8 px-4 text-xs',
+  lg: 'h-12 px-8 py-3 text-base',
+  icon: 'h-10 w-10',
+};
+
+const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
+const Element = href ? 'a' : 'button';
+---
+
+{href ? (
+  <a href={href} class={classes} class:list={[{ 'shimmer-btn': shimmer }]}>
+    {shimmer && <span class="shimmer-effect"></span>}
+    <slot />
+  </a>
+) : (
+  <button type={type} disabled={disabled} class={classes} class:list={[{ 'shimmer-btn': shimmer }]}>
+    {shimmer && <span class="shimmer-effect"></span>}
+    <slot />
+  </button>
+)}
+
+<style>
+  .shimmer-btn .shimmer-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      left: 100%;
+    }
+  }
+</style>

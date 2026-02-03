@@ -1,0 +1,1175 @@
+---
+// claude-code-em-1-dia.astro - Página do workshop Claude Code (Design v2)
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Claude Code para Iniciantes - Aprenda em Um Dia"
+  description="Aprenda Claude Code em um dia. Saia com um projeto publicado. Workshop ao vivo com Alex Donega."
+>
+
+<!-- Hero Section com Animação -->
+<section class="hero-section">
+  <!-- Background animado com linhas SVG -->
+  <div class="hero-background">
+    <svg
+      class="animated-lines"
+      viewBox="0 0 1200 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <defs>
+        <radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,1)" />
+          <stop offset="30%" stop-color="rgba(251,146,60,1)" />
+          <stop offset="70%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="100%" stop-color="rgba(249,115,22,0)" />
+        </radialGradient>
+        <radialGradient id="neonPulse2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+          <stop offset="25%" stop-color="rgba(251,146,60,0.9)" />
+          <stop offset="60%" stop-color="rgba(234,88,12,0.7)" />
+          <stop offset="100%" stop-color="rgba(234,88,12,0)" />
+        </radialGradient>
+        <radialGradient id="heroTextBg" cx="30%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="rgba(249,115,22,0.15)" />
+          <stop offset="40%" stop-color="rgba(251,146,60,0.08)" />
+          <stop offset="80%" stop-color="rgba(234,88,12,0.05)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+        </radialGradient>
+        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <linearGradient id="threadFade1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgba(0,0,0,1)" />
+          <stop offset="15%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="85%" stop-color="rgba(249,115,22,0.8)" />
+          <stop offset="100%" stop-color="rgba(0,0,0,1)" />
+        </linearGradient>
+      </defs>
+
+      <g>
+        <ellipse cx="300" cy="350" rx="400" ry="200" fill="url(#heroTextBg)" opacity="0.6" />
+
+        <!-- Threads animados -->
+        <path id="thread1" d="M50 720 Q200 590 350 540 Q500 490 650 520 Q800 550 950 460 Q1100 370 1200 340" stroke="url(#threadFade1)" stroke-width="0.8" fill="none" opacity="0.8" />
+        <circle r="2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#thread1" /></animateMotion>
+        </circle>
+
+        <path id="thread2" d="M80 730 Q250 620 400 570 Q550 520 700 550 Q850 580 1000 490 Q1150 400 1300 370" stroke="url(#threadFade1)" stroke-width="1.5" fill="none" opacity="0.7" />
+        <circle r="3" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#thread2" /></animateMotion>
+        </circle>
+
+        <path id="thread3" d="M20 710 Q180 580 320 530 Q460 480 600 510 Q740 540 880 450 Q1020 360 1200 330" stroke="url(#threadFade1)" stroke-width="1.2" fill="none" opacity="0.8" />
+        <circle r="2.5" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+          <animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#thread3" /></animateMotion>
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Conteudo Principal -->
+  <div class="hero-content">
+    <div class="hero-text-center">
+      <!-- Badge -->
+      <div class="hero-badge">
+        <span class="badge">
+          <span class="badge-dot"></span>
+          Workshop Ao Vivo
+        </span>
+      </div>
+
+      <!-- Titulo Principal -->
+      <h1 class="hero-title">
+        Aprenda <span class="text-gradient">Claude Code</span><br>
+        em Um Dia
+      </h1>
+
+      <!-- Subtitulo -->
+      <p class="hero-subtitle">
+        Um workshop ao vivo e amigavel para iniciantes com <strong class="text-white">Alex Donega</strong> — saia com um projeto funcionando e a confianca para usar Claude Code no seu dia a dia.
+      </p>
+
+      <!-- Descricao -->
+      <p class="hero-description">
+        Sessoes guiadas ao vivo, grupos de discussao entre participantes e suporte pratico — usando as mesmas ferramentas que eu uso — para te dar um fluxo de trabalho repetivel que voce pode aplicar no seu emprego, na sua vida e no seu proximo projeto.
+      </p>
+
+      <!-- CTA -->
+      <div class="hero-cta">
+        <a href="#detalhes-preco" class="btn-primary">
+          Inscreva-se no Claude Code para Iniciantes
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Screenshot -->
+      <div class="hero-screenshot">
+        <img src="https://framerusercontent.com/assets/img/HpzuWCWdx2FCMAEvTlTOmXHRk.png" alt="Claude Code em acao" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Para Quem E -->
+<section class="section" id="publico">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Para quem e este curso?</h2>
+    </div>
+
+    <div class="audience-cards">
+      <div class="audience-card-full">
+        <div class="card-image" style="background-image: url('https://framerusercontent.com/assets/img/XBCrRyMhztXlJGqGET3Vxxpm9qY.png')"></div>
+        <div class="card-content">
+          <p><strong>Pessoas curiosas</strong> sobre Claude Code mas intimidadas pelo terminal</p>
+        </div>
+      </div>
+
+      <div class="audience-card-full">
+        <div class="card-image" style="background-image: url('https://framerusercontent.com/assets/img/ddTHngczFesjMEtm7wlikksLAw.png')"></div>
+        <div class="card-content">
+          <p><strong>Desenvolvedores e nao-desenvolvedores</strong> novos no Claude Code buscando um lugar amigavel para aprender</p>
+        </div>
+      </div>
+
+      <div class="audience-card-full">
+        <div class="card-image" style="background-image: url('https://framerusercontent.com/assets/img/agA6QBkWMxUXhCnkgyugRdCgYSs.png')"></div>
+        <div class="card-content">
+          <p><strong>Construtores de diversas areas</strong> — engenharia, marketing, pesquisa, produto, conteudo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: O Que Voce Vai Aprender -->
+<section class="section-dark" id="conteudo">
+  <div class="container">
+    <div class="features-container">
+      <!-- Coluna Esquerda -->
+      <div class="feature-box gradient">
+        <h3>O que voce vai aprender (e fazer)</h3>
+        <ul class="feature-list">
+          <li>
+            <div class="feature-icon">
+              <svg viewBox="0 0 64 64" fill="currentColor">
+                <path d="M 12.478 42.678 L 24.994 35.655 L 25.205 35.045 L 24.994 34.706 L 24.384 34.706 L 22.293 34.577 L 15.141 34.384 L 8.939 34.126 L 2.929 33.804 L 1.417 33.482 L 0 31.613 L 0.146 30.681 L 1.417 29.826 L 3.239 29.985 L 7.263 30.26 L 13.303 30.677 L 17.684 30.935 L 24.174 31.609 L 25.205 31.609 L 25.351 31.192 L 24.999 30.935 L 24.724 30.677 L 18.474 26.442 L 11.709 21.966 L 8.165 19.389 L 6.25 18.083 L 5.283 16.859 L 4.867 14.187 L 6.606 12.271 L 8.943 12.43 L 9.54 12.589 L 11.907 14.411 L 16.962 18.324 L 23.564 23.186 L 24.53 23.989 L 24.917 23.714 L 24.964 23.521 L 24.53 22.795 L 20.94 16.305 L 17.108 9.703 L 15.403 6.967 L 14.952 5.326 C 14.793 4.652 14.677 4.085 14.677 3.393 L 16.657 0.704 L 17.752 0.352 L 20.394 0.704 L 21.507 1.671 L 23.147 5.425 L 25.806 11.335 L 29.93 19.372 L 31.137 21.756 L 31.781 23.963 L 32.021 24.638 L 32.438 24.638 L 32.438 24.251 L 32.777 19.724 L 33.405 14.166 L 34.014 7.014 L 34.225 5 L 35.221 2.586 L 37.202 1.28 L 38.748 2.019 L 40.019 3.84 L 39.843 5.017 L 39.087 9.931 L 37.605 17.628 L 36.639 22.782 L 37.202 22.782 L 37.846 22.138 L 40.453 18.676 L 44.834 13.199 L 46.767 11.026 L 49.022 8.625 L 50.47 7.482 L 53.206 7.482 L 55.22 10.476 L 54.318 13.569 L 51.501 17.142 L 49.164 20.171 L 45.814 24.681 L 43.722 28.289 L 43.915 28.576 L 44.413 28.529 L 51.982 26.918 L 56.071 26.18 L 60.95 25.342 L 63.158 26.373 L 63.399 27.421 L 62.531 29.564 L 57.312 30.853 L 51.191 32.077 L 42.077 34.233 L 41.965 34.315 L 42.094 34.474 L 46.2 34.86 L 47.957 34.955 L 52.257 34.955 L 60.263 35.552 L 62.355 36.935 L 63.609 38.627 L 63.399 39.916 L 60.177 41.557 L 55.83 40.526 L 45.685 38.112 L 42.206 37.244 L 41.725 37.244 L 41.725 37.532 L 44.624 40.367 L 49.937 45.165 L 56.591 51.35 L 56.93 52.879 L 56.075 54.086 L 55.173 53.957 L 49.327 49.559 L 47.072 47.579 L 41.965 43.279 L 41.626 43.279 L 41.626 43.73 L 42.803 45.453 L 49.018 54.795 L 49.34 57.66 L 48.889 58.592 L 47.278 59.155 L 45.509 58.833 L 41.871 53.725 L 38.117 47.974 L 35.088 42.82 L 34.719 43.03 L 32.932 62.277 L 32.094 63.261 L 30.162 64 L 28.551 62.776 L 27.696 60.795 L 28.551 56.882 L 29.582 51.775 L 30.419 47.716 L 31.175 42.674 L 31.626 40.998 L 31.596 40.887 L 31.227 40.934 L 27.426 46.153 L 21.644 53.966 L 17.07 58.863 L 15.974 59.296 L 14.076 58.313 L 14.252 56.556 L 15.313 54.993 L 21.644 46.939 L 25.463 41.948 L 27.928 39.066 L 27.911 38.649 L 27.765 38.649 L 10.949 49.568 L 7.955 49.954 L 6.666 48.747 L 6.825 46.767 L 7.435 46.123 L 12.491 42.644 L 12.474 42.661 Z"/>
+              </svg>
+            </div>
+            <div>
+              <p>Instalar o Claude Code na sua maquina e deixa-lo funcionando</p>
+            </div>
+          </li>
+          <li>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                <rect x="9" y="3" width="6" height="4" rx="1"/>
+                <path d="M9 12h6"/>
+                <path d="M9 16h6"/>
+              </svg>
+            </div>
+            <div>
+              <p>Dar tarefas, monitorar o trabalho e avaliar resultados</p>
+            </div>
+          </li>
+          <li>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+              </svg>
+            </div>
+            <div>
+              <p>Construir e publicar um app do inicio ao fim</p>
+            </div>
+          </li>
+          <li>
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                <path d="M16 16h5v5"/>
+              </svg>
+            </div>
+            <div>
+              <p>Aplicar o fluxo de trabalho em outros projetos como sites, pesquisas e mais</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna Direita -->
+      <div class="feature-box solid">
+        <h3>Como funciona o dia</h3>
+        <ul class="feature-list">
+          <li>
+            <span class="step-number">1</span>
+            <div>
+              <p>Instrucao ao vivo com Alex, incluindo tutoriais passo a passo</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">2</span>
+            <div>
+              <p>Grupos de discussao com outros participantes para colaboracao e resolucao de problemas</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">3</span>
+            <div>
+              <p>Tempo de construcao independente para progredir com ajuda sob demanda</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">4</span>
+            <div>
+              <p>Feedback para destravar e publicar ate o final do dia</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="outcomes-section">
+      <h3>Resultados que voce pode esperar</h3>
+      <div class="outcomes-grid">
+        <div class="outcome-item">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8"/>
+              <path d="M12 17v4"/>
+            </svg>
+          </div>
+          <h4>Claude Code instalado e funcionando no seu computador</h4>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h4>Confianca para dar tarefas, monitorar e avaliar resultados</h4>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h4>Um projeto ao vivo que voce pode compartilhar e expandir</h4>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 3v18h18"/>
+              <path d="m19 9-5 5-4-4-3 3"/>
+            </svg>
+          </div>
+          <h4>Um caminho claro para usar apps agenticos em todo o seu trabalho</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: O Que Voce Recebe -->
+<section class="section" id="beneficios">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">O que voce recebe</h2>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <path d="M16 2v4"/>
+            <path d="M8 2v4"/>
+            <path d="M3 10h18"/>
+          </svg>
+        </div>
+        <p>Workshop ao vivo de um dia com Alex Donega (10h - 17h, horario de Brasilia)</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <p>Instalacao pratica e configuracao do Claude Code na sua maquina</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <p>Uma construcao guiada onde voce vai atribuir tarefas, acompanhar progresso, revisar resultados e publicar</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <p>Ajuda em tempo real durante grupos de discussao e tempo de construcao independente</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+          </svg>
+        </div>
+        <p>Um projeto publicado ate o final do dia e um fluxo de trabalho repetivel que voce pode reutilizar</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+          </svg>
+        </div>
+        <p>Materiais de referencia pos-workshop e proximos passos para continuar construindo</p>
+      </div>
+    </div>
+
+    <!-- Bonus Box -->
+    <div class="membership-box">
+      <div class="membership-header">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294l4.278-3.428a.5.5 0 0 1 .797.512l-1.684 5.38a1 1 0 0 0 .155.873l3.24 4.32a.5.5 0 0 1-.423.764H17.5a1 1 0 0 0-.98.804l-.75 3.747a.5.5 0 0 1-.91.205L12 17.5l-2.86 3.869a.5.5 0 0 1-.91-.205l-.75-3.747a1 1 0 0 0-.98-.804H.731a.5.5 0 0 1-.422-.764l3.24-4.32a1 1 0 0 0 .154-.873L2.02 6.248a.5.5 0 0 1 .797-.512l4.277 3.428a1 1 0 0 0 1.516-.294l2.953-5.604z"/>
+        </svg>
+        <h4>Alem disso: Acesso a conteudos exclusivos incluido na sua compra para aprendizado continuo:</h4>
+      </div>
+      <ul class="membership-list">
+        <li>Analises praticas de novos modelos de IA</li>
+        <li>Ensaios aprofundados sobre como a IA esta transformando o trabalho</li>
+        <li>Acesso antecipado a ferramentas de IA</li>
+        <li>Workshops sobre Claude Code e outras ferramentas</li>
+        <li>Arquivo completo com centenas de artigos</li>
+      </ul>
+    </div>
+
+    <div class="section-cta">
+      <a href="#detalhes-preco" class="btn-primary">
+        Inscreva-se
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Preco -->
+<section class="section-dark" id="detalhes-preco">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Detalhes</h2>
+    </div>
+
+    <div class="details-row">
+      <div class="detail-item">
+        <p class="detail-label">19 de Novembro</p>
+      </div>
+      <div class="detail-item">
+        <p class="detail-label">10h - 17h (Brasilia)</p>
+      </div>
+      <div class="detail-item">
+        <p class="detail-label">Ao vivo no Zoom</p>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <p class="price">R$ 497</p>
+      <p class="price-subtitle">por pessoa</p>
+      <p class="price-note">Inclui acesso ao workshop completo + materiais de apoio</p>
+
+      <a href="https://alexdonega.com.br/checkout/claude-code-101" target="_blank" rel="noopener" class="btn-buy">
+        Garanta sua vaga agora
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Sobre o Alex -->
+<section class="section" id="professor">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/img/alex-donega.webp" alt="Alex Donega" loading="lazy" />
+      </div>
+      <div class="about-content">
+        <h3>Uma nota do Alex</h3>
+        <p>O Claude Code transformou completamente a forma como eu trabalho, e quero te ensinar a usa-lo.</p>
+        <p>E a ferramenta de IA mais poderosa — tanto para desenvolvedores quanto para nao-desenvolvedores — que surgiu no ultimo ano, porque e a primeira que pode trabalhar por horas sem sua supervisao. Nao importa qual seja seu trabalho, voce pode usar o Claude Code para fazer muito mais.</p>
+        <p>A maioria das pessoas acha que isso e so para programadores, mas nao e. Se eu te guiar passo a passo na primeira vez, voce vai conseguir fazer sozinho depois. Em um dia, vou te ajudar a instalar o Claude Code, dar tarefas reais para ele e publicar algo ao vivo. Voce vai sair com um projeto funcionando e um fluxo de trabalho que pode reutilizar no seu proprio trabalho — apps, sites, pesquisas e mais.</p>
+        <p>As pessoas que aprenderem a colaborar com ferramentas agenticas agora vao se mover mais rapido que todo mundo depois. Eu quero que voce seja uma dessas pessoas. Junte-se a mim para aprender como no dia 19 de Novembro.</p>
+        <div class="signature">
+          <p>— Alex Donega</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: FAQ -->
+<section class="section-dark" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>Isso e realmente amigavel para iniciantes?</h4>
+        <p>Sim. Nos projetamos para pessoas que nunca usaram Claude Code ou o terminal. Vamos te guiar em tudo passo a passo.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Preciso ser programador?</h4>
+        <p>Nao. Tanto desenvolvedores quanto nao-desenvolvedores tem sucesso neste formato. Se voce consegue seguir instrucoes e tem curiosidade, voce consegue publicar.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Com o que vou sair?</h4>
+        <p>Claude Code funcionando na sua maquina e um projeto publicado ao vivo — alem do fluxo de trabalho para aplicar no seu proprio trabalho.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Quao interativo e?</h4>
+        <p>Muito. Voce tera instrucao ao vivo, grupos de discussao com outros alunos, tempo de trabalho independente e ajuda em tempo real para resolver problemas.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Reembolso sem perguntas</h4>
+        <p>Nos preocupamos muito com sua experiencia neste curso. Se por qualquer motivo voce nao estiver satisfeito com sua experiencia, nos avise nas primeiras duas semanas do curso e devolveremos seu dinheiro — sem perguntas.</p>
+        <p class="faq-secondary">Tambem temos bolsas disponiveis. Se voce quer fazer este curso mas nao pode pagar, envie uma mensagem via <a href="https://wa.me/5545999506444" target="_blank" rel="noopener">WhatsApp</a> com um pouco sobre seu historico e por que voce quer fazer a aula. Entraremos em contato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-title">Pronto para dominar Claude Code?</h2>
+    <p class="cta-subtitle">
+      Junte-se a nos no dia 19 de Novembro e saia com um projeto publicado e a confianca para usar Claude Code no seu dia a dia.
+    </p>
+    <div class="cta-buttons">
+      <a href="#detalhes-preco" class="btn-primary">
+        Garanta Minha Vaga
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+      <a href="https://wa.me/5545999506444" target="_blank" rel="noopener" class="btn-secondary">
+        <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Falar Comigo
+      </a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  /* ==================== HERO SECTION ==================== */
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .animated-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .hero-text-center {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: rgb(251, 146, 60);
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #f97316;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  .hero-description {
+    font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-screenshot {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ==================== BUTTONS ==================== */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, rgb(234, 88, 12), rgb(194, 65, 12));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .btn-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    padding: 1.25rem 2rem;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    width: 100%;
+  }
+
+  .btn-buy:hover {
+    background: linear-gradient(to right, rgb(234, 88, 12), rgb(194, 65, 12));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+  }
+
+  /* ==================== SECTIONS ==================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+    background: #0a0a0a;
+  }
+
+  .section-dark {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  /* ==================== AUDIENCE CARDS ==================== */
+  .audience-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .audience-card-full {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .audience-card-full:hover {
+    transform: translateY(-4px);
+    border-color: rgba(249, 115, 22, 0.3);
+  }
+
+  .card-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-color: #1a1a1a;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .card-content p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  .card-content strong {
+    color: white;
+  }
+
+  /* ==================== FEATURES ==================== */
+  .features-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .features-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .feature-box {
+    padding: 2rem;
+  }
+
+  .feature-box.gradient {
+    background: linear-gradient(110deg, #383838 8%, #2b2b2b 84%);
+    border-radius: 16px 16px 0 0;
+  }
+
+  @media (min-width: 768px) {
+    .feature-box.gradient {
+      border-radius: 16px 0 0 0;
+    }
+  }
+
+  .feature-box.solid {
+    background: #2b2b2b;
+    border-top: 2px solid #000;
+    border-radius: 0 0 16px 16px;
+  }
+
+  @media (min-width: 768px) {
+    .feature-box.solid {
+      border-top: none;
+      border-left: 2px solid #000;
+      border-radius: 0 16px 0 0;
+    }
+  }
+
+  .feature-box h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-list li p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(249, 115, 22);
+  }
+
+  .feature-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .step-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(249, 115, 22);
+    line-height: 1;
+    min-width: 48px;
+  }
+
+  /* ==================== OUTCOMES ==================== */
+  .outcomes-section {
+    background: #2b2b2b;
+    border-radius: 0 0 16px 16px;
+    padding: 2.5rem;
+    border-top: 2px solid #000;
+  }
+
+  .outcomes-section h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .outcomes-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .outcome-item {
+    padding: 1rem;
+  }
+
+  .outcome-icon {
+    margin-bottom: 1rem;
+  }
+
+  .outcome-icon svg {
+    width: 48px;
+    height: 48px;
+    color: rgb(249, 115, 22);
+  }
+
+  .outcome-item h4 {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: white;
+    line-height: 1.4;
+  }
+
+  /* ==================== BENEFITS GRID ==================== */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .benefits-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .benefits-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .benefit-item {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .benefit-icon {
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-icon svg {
+    width: 32px;
+    height: 32px;
+    color: rgb(249, 115, 22);
+  }
+
+  .benefit-item p {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+  }
+
+  /* ==================== MEMBERSHIP BOX ==================== */
+  .membership-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .membership-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .membership-header svg {
+    flex-shrink: 0;
+    color: rgb(249, 115, 22);
+  }
+
+  .membership-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.4;
+  }
+
+  .membership-list {
+    margin-left: 2.25rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .membership-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* ==================== PRICING ==================== */
+  .details-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .details-row {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+  }
+
+  .detail-item {
+    text-align: center;
+  }
+
+  .detail-label {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  .pricing-card {
+    background: linear-gradient(110deg, #383838 8%, #2b2b2b 84%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .price-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-note {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2rem;
+  }
+
+  /* ==================== ABOUT GRID ==================== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3rem;
+    }
+  }
+
+  .about-image {
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .about-image {
+      max-width: none;
+      margin: 0;
+    }
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-content p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .signature {
+    margin-top: 1.5rem;
+  }
+
+  .signature p {
+    font-style: italic;
+    color: rgb(249, 115, 22);
+  }
+
+  /* ==================== FAQ ==================== */
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem 0;
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .faq-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  .faq-secondary {
+    margin-top: 1rem;
+  }
+
+  .faq-item a {
+    color: rgb(249, 115, 22);
+    text-decoration: none;
+  }
+
+  .faq-item a:hover {
+    text-decoration: underline;
+  }
+
+  /* ==================== CTA SECTION ==================== */
+  .cta-section {
+    text-align: center;
+    padding: 8rem 1.5rem;
+    background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
