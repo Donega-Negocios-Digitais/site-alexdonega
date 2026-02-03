@@ -39,4 +39,18 @@ CloudFlare
 .gitignore
 
 
+
+
+---
+name: yt
+description: Processa automaticamente batches de transcrições do YouTube sem pedir confirmação. Use quando o usuário executar /yt ou solicitar processar transcrições de vídeos do YouTube, extrair transcrições em batch, ou atualizar o progresso das extrações do projeto yt-scripts.
+---
+
+
+
+
+
+
+
+
 criar um readme
