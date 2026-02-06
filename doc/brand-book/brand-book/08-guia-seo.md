@@ -738,17 +738,4 @@ IA: [Usa guia-estratégia-índices]
 [O que evitar]
 ```
 
-## Checklist de Revisão Final
-
-- [ ] Estrutura de URLs documentada e consistente?
-- [ ] Meta tags implementadas (title, description, OG)?
-- [ ] Sitemap.xml configurado e atualizado?
-- [ ] Robots.txt configurado corretamente?
-- [ ] Canonical tags implementadas onde necessário?
-- [ ] Schema markup adicionado para conteúdo principal?
-- [ ] Open Graph images otimizadas (1200x630px)?
-- [ ] Google Search Console configurado?
-- [ ] Core Web Vitals monitorados?
-- [ ] Site mobile-friendly validado?
-- [ ] Seção de anti-padrões incluída?
-- [ ] Documentação pode ser usada por time de marketing?
+---

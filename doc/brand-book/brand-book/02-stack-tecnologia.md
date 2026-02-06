@@ -33,6 +33,86 @@ Documentação completa da stack tecnologica utilizada no projeto: [Astro](https
 - Time com familiaridade em HTML/CSS
 - Deploy simples em qualquer host estático ou CDN
 
+## Astro Indie - Para Desenvolvedores Independentes
+
+### O que é Indie Developer
+
+Indie developers sao desenvolvedores independentes que trabalham em projetos proprios, criam produtos SaaS, ou prestam servicos freelancers. Para este publico, Astro oferece vantagens especificas:
+
+### Beneficios do Astro para Indies
+
+| Vantagem | Descrição |
+|----------|-----------|
+| **Hospedagem gratuita** | Vercel, Netlify e Cloudflare Pages hospedam sites Astro gratuitamente |
+| **Comunidade ativa** | Discord, Reddit e forums com resposta rapida |
+| **Tutoriais extensivos** | Documentacao e tutoriais em video abundantes |
+| **Templates prontos** | Comece projetos em minutos ao inves de dias |
+| **Baixo custo** | Sem servidor pago necessario, apenas CDN gratuita |
+| **Escalabilidade** | Cresca de 0 a milhoes de visitas sem mudar stack |
+
+### Recursos para Indies
+
+- **Discord oficial:** [astro.build/chat](https://astro.build/chat)
+- **Showcase:** Veja o que a comunidade criou em [astro.build/showcase](https://astro.build/showcase)
+- **Aprenda:** [astro.build/tutorials](https://astro.build/tutorials) - tutoriais passo a passo
+
+## Templates do Astro - Free vs Pago
+
+### Templates Gratuitos (Free)
+
+**Onde encontrar:** https://astro.build/themes/
+
+**Caracteristicas:**
+- Mantidos pela comunidade
+- Codigo aberto e customizavel
+- Boa opcao para projetos pessoais e aprendizado
+- Suporte limitado (via GitHub issues)
+
+**Exemplos populares:**
+- Starlight (para documentacao)
+- AstroNinja (para portfolios)
+- AstroPaper (para blogs)
+
+### Templates Pagos (Premium)
+
+**All-Access Pass - $137/ano**
+
+O All-Access Pass da Astro oferece:
+- **38+ templates premium** incluindo todos os futuros
+- **Uso vitalicio** - pague uma vez, use para sempre
+- **Suporte prioritario** da equipe Themefisher
+- **Atualizacoes regulares** com novas versoes
+
+**Themefisher e outros:**
+
+Templates profissionais de alta qualidade com:
+- Design refinado e moderno
+- Suporte tecnico dedicado
+- Recursos exclusivos como componentes premium
+- Preco variavel por template
+
+**Quando vale a pena pagar?**
+
+- **Projeto comercial** - Site para cliente com deadline apertado
+- **Agencia** - Multiplos projetos com necessidade de consistencia
+- **Suporte necessario** - Voce precisa de ajuda tecnica
+
+Quando optar por free:
+
+- **Projeto pessoal** - Seu proprio site ou blog
+- **Aprendizado** - Quer entender como Astro funciona por baixo dos panos
+- **Sem pressa** - Tempo para customizar e ajustar
+
+### Diferencas Principais
+
+| Caracteristica | Free | Pago |
+|----------------|-------|-------|
+| **Custo** | Grátis | $137 (All-Access) ou variavel |
+| **Suporte** | Comunidade | Prioritario + dedicado |
+| **Customizacao** | Total (codigo aberto) | Total (codigo aberto) |
+| **Atualizacoes** | Esporadicas | Regulares |
+| **Exclusividade** | Não (muita gente usa) | Relativa (menos gente) |
+
 ## Arquitetura do Astro
 
 ### Como funciona
@@ -153,7 +233,7 @@ export function cn(...inputs) {
 
 ## Estrutura de Pastas e Arquitetura
 
-Para a documentação completa sobre estrutura de pastas, contratos, componentização e organização de arquivos do projeto, consulte o [`03-planejar-arquitetura-repo.md`](./03-planejar-arquitetura-repo.md).
+Para a documentação completa sobre estrutura de pastas, contratos, componentização e organização de arquivos do projeto, consulte o [`04-arquitetura-projeto-astro.md`](./04-arquitetura-projeto-astro.md).
 
 **Resumo rápido:**
 - `src/pages/` - Rotas (file-based routing)
@@ -373,19 +453,8 @@ import Counter from '../components/Counter.jsx';
 - ❌ NAO misture camadas (ex: lógica de negócio em componentes de apresentação)
 - ❌ NAO use `client:*` por padrão - prefira HTML estático
 
-## Checklist de Revisão Final
-
-- [ ] Todas dependências listadas com versões e sites?
-- [ ] Scripts documentados com casos de uso claros?
-- [ ] Arquivos de config referenciados corretamente?
-- [ ] Limites de camada claramente definidos?
-- [ ] Diagrama de arquitetura Astro incluído?
-- [ ] Seção "Não fazer" presente e específica?
-- [ ] Links oficiais funcionando?
-- [ ] Islands Architecture explicada?
-- [ ] Content Collections documentado?
-- [ ] Matriz de decisão (pode vs. requer alinhamento) clara?
-
 ---
 
-**Próximo Passo:** Após definir a stack tecnologica, use [`02-decidir-renderizacao-web.md`](./02-decidir-renderizacao-web.md) para definir a estrategia de renderizacao (SSG, SSR, Hibrida) para cada rota do projeto.
+**Próximo Passo:** Após definir a stack tecnologica, use [`03-estrategia-renderizacao.md`](./03-estrategia-renderizacao.md) para definir a estrategia de renderizacao (SSG, SSR, Hibrida) para cada rota do projeto.
+
+

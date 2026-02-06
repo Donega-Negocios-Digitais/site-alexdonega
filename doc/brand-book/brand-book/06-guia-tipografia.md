@@ -445,17 +445,6 @@ body {
 
 ---
 
-## Checklist de Revisão
+**Relacionado:** Para definir as cores do projeto, consulte [`05-guia-cores.md`](./05-guia-cores.md). Para padronizar ícones, consulte [`07-guia-icones.md`](./07-guia-icones.md).
 
-- [ ] Fonte Geist carregada corretamente?
-- [ ] Fallback chain definida?
-- [ ] Hierarquia de tamanhos seguida?
-- [ ] Pesos usados consistentemente?
-- [ ] Line-height adequado (1.6 corpo)?
-- [ ] Responsivo mobile-first?
-- [ ] Tamanho mínimo acessível?
-- [ ] Hierarquia semântica (H1→H2→H3)?
 
----
-
-**Relacionado:** Para definir as cores do projeto, consulte [`04-governar-sistema-cores.md`](./04-governar-sistema-cores.md). Para padronizar ícones, consulte [`06-governar-icones.md`](./06-governar-icones.md).

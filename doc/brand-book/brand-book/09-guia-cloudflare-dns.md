@@ -18,26 +18,6 @@ Criar documentação técnica confiável para configuração DNS, configuração
 - Ao planejar migrações de site
 - Ao criar runbooks de deployment
 
-## Workflow de Documentação
-
-Copie este checklist e acompanhe o progresso:
-
-```
-Progresso da Documentação:
-- [ ] 1. Identificar fonte da verdade (arquivos de config)
-- [ ] 2. Documentar informações de domínio
-- [ ] 3. Mapear fluxo de publicação
-- [ ] 4. Configurar registros DNS
-- [ ] 5. Configurar SSL/TLS
-- [ ] 6. Definir estratégia de domínio canônico
-- [ ] 7. Estabelecer estratégia de cache/CDN
-- [ ] 8. Criar checklist de go-live
-- [ ] 9. Documentar comandos de validação
-- [ ] 10. Criar guia de solução de problemas
-- [ ] 11. Definir procedimento de rollback
-- [ ] 12. Criar seção de anti-padrões
-```
-
 ## Passo 1: Identificação de Fonte da Verdade
 
 Documente as fontes de configuração reais:
@@ -610,15 +590,3 @@ IA: [Usa guia-dns-deployment]
 [O que evitar]
 ```
 
-## Checklist de Revisão Final
-
-- [ ] Todos registros DNS verificados com plataforma host?
-- [ ] Modo SSL/TLS apropriado para produção?
-- [ ] Domínio canônico definido e aplicado?
-- [ ] Estratégia de cache documentada?
-- [ ] Checklist go-live completo e validado?
-- [ ] Guia de solução de problemas cobre problemas comuns?
-- [ ] Procedimento de rollback documentado?
-- [ ] Comandos de validação testados?
-- [ ] Seção de anti-padrões incluída?
-- [ ] Documentação pode ser usada para handoff DevOps/SRE?

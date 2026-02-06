@@ -102,6 +102,71 @@ colors: {
 
 ---
 
+## Como Criar Paleta de Cores?
+
+Se voce precisa de novas cores para o projeto, siga este processo simples.
+
+### Ferramentas Online para Criar Paletas
+
+Existem varias ferramentas gratuitas que ajudam a criar paletas harmoniosas:
+
+**Coolors** - https://coolors.co
+- Clique em "Generate" para criar paletas aleatorias
+- Pressione a barra de espaco para gerar novas combinacoes
+- Clique em qualquer cor para fixa-la
+- Exporta em CSS, Tailwind ou formato de texto
+
+**Adobe Color** - https://color.adobe.com
+- Ferramenta profissional da Adobe
+- Permite criar harmonias de cores automaticamente
+- Visualizacao em tempo real das combinacoes
+- Exportacao para diferentes formatos
+
+**Tailwind Color** - https://tailwindcolor.com
+- Focado em combinacoes com Tailwind CSS
+- Mostra variacoes de tons automaticamente
+- Codigo pronto para copiar
+
+### Passo a Passo para Criar Paleta
+
+1. **Defina a cor principal**
+   - Pense na emocao que quer transmitir (energia, calma, confianca, criatividade)
+   - Escolha uma cor base (este projeto usa laranja para energia/criatividade)
+   - Use ferramentas para gerar variacoes automaticamente
+
+2. **Crie as cores secundarias**
+   - 2-3 cores que complementam a principal
+   - Usadas para textos, fundos, destaques
+   - Garanta contraste adequado para acessibilidade
+
+3. **Valide acessibilidade**
+   - Use o WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/
+   - Texto sobre fundo precisa ter contraste minimo de 4.5:1
+   - Titulos precisam de contraste minimo de 3:1
+   - Ferramentas ajudam a verificar isso automaticamente
+
+4. **Adicione ao projeto**
+   - Atualize o `:root` em `src/styles/globals.css`
+   - Configure Tailwind em `tailwind.config.mjs`
+   - Atualize este documento com as novas cores
+
+### Dicas para Escolher Cores Harmoniosas
+
+- **Complementares**: Cores opostas no circulo cromatico (criam contraste)
+- **Analogas**: Cores vizinhas no circulo cromatico (criam harmonia)
+- **Triade**: Tres cores igualmente espacadas (equilibrado)
+- **Monocromaticas**: Variacoes de luz e sombra de uma cor (sofisticado)
+
+### Exemplo de Cores que Funcionam Juntas
+
+```
+Laranja (principal)  +  Cinza escuro (fundo)  =  High contrast, energetico
+Azul (secundaria)   +  Branco (texto)      =  Confianca, profissional
+Verde (destaque)     +  Cinza claro (fundo) =  Calma, natureza
+```
+
+---
+
 ## Paleta de Cores Extendida
 
 ### Cores Principais
@@ -430,16 +495,6 @@ colors: {
 
 ---
 
-## Checklist de Revisão
+**Relacionado:** Para definir a tipografia do projeto, consulte [`06-guia-tipografia.md`](./06-guia-tipografia.md). Para padronizar ícones, consulte [`07-guia-icones.md`](./07-guia-icones.md).
 
-- [ ] Todas cores usam tokens CSS?
-- [ ] Nenhuma cor está hardcoded no código?
-- [ ] Contraste WCAG validado?
-- [ ] Accent usado consistentemente?
-- [ ] Tabela de referência atualizada?
-- [ ] Nova cor documentada antes de usar?
-- [ ] `tailwind.config.mjs` mapeado corretamente?
 
----
-
-**Relacionado:** Para definir a tipografia do projeto, consulte [`05-governar-tipografia.md`](./05-governar-tipografia.md). Para padronizar ícones, consulte [`06-governar-icones.md`](./06-governar-icones.md).

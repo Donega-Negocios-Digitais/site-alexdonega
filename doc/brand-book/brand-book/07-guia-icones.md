@@ -27,6 +27,96 @@ Estabelecer padrões claros para criação e uso de ícones, garantindo consist�
 
 ---
 
+## Como Criar Ícones Próprios?
+
+Criar ícones pode parecer complicado, mas seguindo um processo simples você consegue resultados profissionais consistentes.
+
+### Processo de Criação SVG
+
+**Passo 1: Esboço no papel ou Figma**
+- Desenhe o ícone em um papel ou no Figma
+- Use um grid de 24x24 pixels para alinhar
+- Mantenha as formas simples e limpas
+- Evite detalhes muito finos (<1px)
+
+**Passo 2: Vetorização no Illustrator ou Inkscape**
+- Importe o esboço para o Illustrator (pago) ou Inkscape (gratuito)
+- Trace as formas para criar vetores limpos
+- Simplifique detalhes desnecessários
+- Exporte como SVG
+
+**Passo 3: Padronização no editor de código**
+- Abra o SVG no VS Code
+- Ajuste `viewBox` para `"0 0 24 24"`
+- Defina `stroke-width` para `"2"`
+- Remova cores e fills desnecessários
+- Salve no local correto (`public/img/icons/`)
+
+### Ferramentas Recomendadas
+
+**Figma** (gratuito para uso pessoal)
+- Interface amigavel e intuitiva
+- Grid 24x24 embutido
+- Colaboracao online em tempo real
+- Exportacao direta para SVG
+- Site: https://figma.com
+
+**Adobe Illustrator** (pago - assinatura Creative Cloud)
+- Profissional e poderoso
+- Excelente para trabalhar com vetores
+- Controles precisos de bezier
+- Compatibilidade total com o ecossistema Adobe
+- Site: https://www.adobe.com/products/illustrator
+
+**Inkscape** (gratuito - open source)
+- Alternativa solidissima ao Illustrator
+- Funciona offline no seu computador
+- Compatibilidade com arquivos do Illustrator
+- Curva de aprendizado mais íngreme
+- Site: https://inkscape.org
+
+### Grid 24x24 Detalhado
+
+O grid e fundamental para consistência. Pense como um tabuleiro de xadrez:
+
+```
+┌────────────────────────────────────────┐
+│  0,0                                  24 │ ← Coordenadas do viewBox
+│  ┌────────────────────────────────────┐  │
+│  │                                   │  │
+│  │   O ícone é desenhado aqui       │  │ ← Área útil (20x20)
+│  │   com margem de segurança       │  │
+│  │                                   │  │
+│  └────────────────────────────────────┘  │
+│  0                                  24  │
+└────────────────────────────────────────┘
+       24x24 total
+```
+
+**Regras do grid:**
+- Deixe 1-2px de margem nas bordas
+- Desenhe dentro da area 20x20 central
+- Alinhe elementos ao pixel quando possivel (evite meios-pixels)
+- Mantenha simetria quando apropriado
+
+### Exemplo Prático: Criar um Ícone de Lupa
+
+```svg
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="11" cy="11" r="8" />
+  <path d="m21 21-4.35-4.35" />
+</svg>
+```
+
+**Este ícone tem:**
+- Um circulo (a lente)
+- Uma linha (o cabo)
+- Stroke de 2px
+- `currentColor` (herda a cor do texto)
+- `viewBox` correto
+
+---
+
 ## Padrão Visual
 
 ### Grid e Alinhamento
@@ -136,7 +226,39 @@ Estabelecer padrões claros para criação e uso de ícones, garantindo consist�
 | **Phosphor** | [phosphoricons.com](https://phosphoricons.com) | Multi-estilo | Flexibilidade | MIT |
 | **Iconoir** | [iconoir.com](https://iconoir.com) | Libre, consistente | Sem attribution | MIT |
 
-### Sites para Download Individual
+### Onde Pegar Ícones Prontos
+
+**Lucide Icons** - https://lucide.dev
+- Mais de 1000 ícones
+- Estilo limpo e moderno
+- Licença MIT (uso livre)
+- Download em SVG ou React/Vue components
+
+**Heroicons** - https://heroicons.com
+- Criados pelo time do Tailwind CSS
+- Estilo clean e profissional
+- Licença MIT (uso livre)
+- Disponíveis em SVG e JSX
+
+**Tabler Icons** - https://tabler-icons.io
+- Mais de 4000 ícones
+- Estilo consistente e uniforme
+- Licença ISC (similar a MIT)
+- Fácil de copiar como SVG
+
+**Phosphor Icons** - https://phosphoricons.com
+- Varios estilos (thin, regular, bold, duotone)
+- Mais de 7000 ícones
+- Licença MIT (uso livre)
+- Ótimo para encontrar variações
+
+**Iconify** - https://iconify.design
+- Agregador de varios kits de ícones
+- Busca por nome ou tag
+- Copia como SVG em um clique
+- Integra com frameworks populares
+
+---
 
 | Site | Uso | Destaque |
 |------|-----|----------|
@@ -505,19 +627,6 @@ import * as Icons from 'lucide-react';
 
 ---
 
-## Checklist de Revisão
-
-- [ ] Ícone segue grid 24x24?
-- [ ] Stroke width consistente com outros ícones?
-- [ ] Alinhamento pixel-perfect?
-- [ ] Acessibilidade implementada (aria-label ou texto)?
-- [ ] Contraste adequado com cores do projeto?
-- [ ] Testado em múltiplos tamanhos?
-- [ ] Nome segue convenção kebab-case?
-- [ ] Formato correto (inline vs arquivo)?
-
----
-
 ## Ferramentas Úteis
 
 | Ferramenta | Uso |
@@ -529,4 +638,6 @@ import * as Icons from 'lucide-react';
 
 ---
 
-**Relacionado:** Para definir as cores do projeto, consulte [`04-governar-sistema-cores.md`](./04-governar-sistema-cores.md). Para definir a tipografia, consulte [`05-governar-tipografia.md`](./05-governar-tipografia.md).
+**Relacionado:** Para definir as cores do projeto, consulte [`05-guia-cores.md`](./05-guia-cores.md). Para definir a tipografia, consulte [`06-guia-tipografia.md`](./06-guia-tipografia.md).
+
+

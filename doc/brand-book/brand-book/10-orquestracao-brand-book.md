@@ -27,27 +27,14 @@ Ao final, a IA deve entregar:
 ## Guias Especializados e Quando Acionar
 | Contexto | Guia a acionar | Arquivo |
 |---|---|---|
-| Definir stack | escolher-stack-web | `01-escolher-stack-web.md` |
-| Escolher modelo de renderizacao | decidir-renderizacao-web | `02-decidir-renderizacao-web.md` |
-| Estruturar repositorio | planejar-arquitetura-repo | `03-planejar-arquitetura-repo.md` |
-| Definir tokens e paleta | governar-sistema-cores | `04-governar-sistema-cores.md` |
-| Definir hierarquia de fonte | governar-tipografia | `05-governar-tipografia.md` |
-| Padronizar iconografia | governar-icones | `06-governar-icones.md` |
-| SEO tecnico e indexacao | estrategia-seo-indices | `07-estrategia-seo-indices.md` |
-| DNS/SSL/cache/deploy | operar-cloudflare-dns | `08-operar-cloudflare-dns.md` |
-
-## Workflow Mestre (copiar e acompanhar)
-```text
-Progresso da Orquestracao:
-- [ ] 1. Classificar objetivo, escopo e criticidade
-- [ ] 2. Identificar dependências e restrições
-- [ ] 3. Selecionar guias especializados necessarios
-- [ ] 4. Produzir plano técnico em etapas pequenas
-- [ ] 5. Executar com checkpoints de validação
-- [ ] 6. Validar qualidade funcional e não-funcional
-- [ ] 7. Atualizar documentação e registrar decisões
-- [ ] 8. Entregar resumo final com riscos residuais
-```
+| Stack tecnológica | stack-tecnologia | `02-stack-tecnologia.md` |
+| Escolher modelo de renderizacao | decidir-renderizacao-web | `03-estrategia-renderizacao.md` |
+| Estruturar repositorio | planejar-arquitetura-repo | `04-arquitetura-projeto-astro.md` |
+| Definir tokens e paleta | governar-sistema-cores | `05-guia-cores.md` |
+| Definir hierarquia de fonte | governar-tipografia | `06-guia-tipografia.md` |
+| Padronizar iconografia | governar-icones | `07-guia-icones.md` |
+| SEO tecnico e indexacao | estrategia-seo-indices | `08-guia-seo.md` |
+| DNS/SSL/cache/deploy | operar-cloudflare-dns | `09-guia-cloudflare-dns.md` |
 
 ## Passo 1: Classificar o Pedido
 Classificar o pedido em uma categoria primaria e secundaria:
@@ -148,18 +135,12 @@ Toda mudanca de risco medio/alto deve incluir:
 Pedido: "Quero melhorar performance do blog sem perder SEO"
 
 Acao:
-1) Acionar 02-decidir-renderizacao-web (confirmar SSG-first)
-2) Acionar 07-estrategia-seo-indices (canonical/sitemap/metadata)
-3) Ajustar assets/cache com 08-operar-cloudflare-dns (se produção)
+1) Acionar 03-estrategia-renderizacao (confirmar SSG-first)
+2) Acionar 08-guia-seo (canonical/sitemap/metadata)
+3) Ajustar assets/cache com 09-guia-cloudflare-dns (se produção)
 4) Validar build + indexacao + rotas
 5) Documentar trade-offs e prox passos
 ```
 
-## Checklist Final
-- [ ] Objetivo e risco classificados
-- [ ] Guias corretos acionados
-- [ ] Plano quebrado em etapas pequenas
-- [ ] Validacoes executadas
-- [ ] Rollback definido quando necessario
-- [ ] Documentacao atualizada
-- [ ] Entrega final clara e auditavel
+
+

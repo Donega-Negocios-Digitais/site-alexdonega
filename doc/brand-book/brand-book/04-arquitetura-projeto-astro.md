@@ -96,7 +96,125 @@ package.json                        # Dependências e scripts
 tsconfig.json                       # Configuração TypeScript
 ```
 
----
+## Onde Fica Cada Coisa? Explicado Simples
+
+Imagine seu projeto como uma casa. Cada pasta tem um proposito especifico, assim como cada comodo em uma casa tem uma funcao.
+
+```
+src/ (A CASA TODA)
+│
+├── pages/ (OS QUARTOS - onde as pessoas entram)
+│   │
+│   │   O que e: Cada arquivo aqui e uma pagina do site
+│   │   Onde fica: src/pages/
+│   │   Exemplos: index.astro (home), blog/index.astro, sobre.astro
+│   │
+│   │   Como funciona: O nome do arquivo vira a URL
+│   │   - index.astro → /
+│   │   - sobre.astro → /sobre
+│   │   - blog/index.astro → /blog
+│   │
+│
+├── layouts/ (A ESTRUTURA DA CASA - paredes, teto, janelas)
+│   │
+│   │   O que e: Define a estrutura base que as paginas compartilham
+│   │   Onde fica: src/layouts/
+│   │   Exemplos: Layout.astro, BlogLayout.astro
+│   │
+│   │   Como funciona: Toda pagina importa um layout
+│   │   - Layout.astro tem: <head>, <header>, <footer>
+│   │   - O conteudo da pagina entra no meio, entre header e footer
+│   │
+│
+├── components/ (OS MOVEIS - sofá, mesa, cadeira)
+│   │
+│   │   O que e: Blocos de interface reutilizaveis
+│   │   Onde fica: src/components/
+│   │   Exemplos: Header.astro, Footer.astro, Button.astro
+│   │
+│   │   Subpasta ui/ (as pecas menores)
+│   │   - Button.astro - botao que pode ser primario, secundario
+│   │   - Card.astro - container para conteudo
+│   │   - Badge.astro - etiqueta pequena
+│   │
+│   │   Como funciona: Voce pode usar em qualquer lugar
+│   │   - Importa <Header /> em varias paginas
+│   │   - Se mudar o Header, muda em todos os lugares
+│   │
+│
+├── content/ (A BIBLIOTECA - livros e documentos organizados)
+│   │
+│   │   O que e: Arquivos markdown (blog, documentacao)
+│   │   Onde fica: src/content/
+│   │   Exemplos: blog/meu-post.md, docs/tutorial.md
+│   │
+│   │   config.ts - Define o que cada arquivo markdown pode ter
+│   │   - Titulo obrigatorio
+│   │   - Data de publicacao
+│   │   - Tags
+│   │
+│   │   Como funciona: Astro valida os dados antes de usar
+│   │   - Se faltar titulo, da erro no build
+│   │   - Type-safe: TypeScript sabe o que existe
+│   │
+│
+├── styles/ (AS TINTAS E ACABAMENTOS - aparencia da casa)
+│   │
+│   │   O que e: CSS global, configuracao de cores e fontes
+│   │   Onde fica: src/styles/
+│   │   Exemplos: globals.css
+│   │
+│   │   Como funciona:
+│   │   - :root define as cores principais
+│   │   - @layer base carrega o Tailwind
+│   │   - Classes globais usadas em todo o site
+│   │
+│
+└── lib/ (A CAIXA DE FERRAMENTAS - coisas que ajudam a casa a funcionar)
+    │
+    │   O que e: Funcoes uteis que voce pode usar em qualquer lugar
+    │   Onde fica: src/lib/
+    │   Exemplos: utils.ts
+    │
+    │   Como funciona:
+    │   - cn() - junta classes de CSS sem conflito
+    │   - formatDate() - formata datas para portugues
+    │   - Funcoes puras, sem depender de nada externo
+    │
+
+public/ (A AREA EXTERNA - jardim, garagem, coisas que ficam a vista)
+│
+├── img/ (FOTOS E QUADROS NA PAREDE)
+│   │
+│   │   O que e: Imagens estaticas que o site usa
+│   │   Onde fica: public/img/
+│   │   Exemplos: logos, icones, fotos de pessoas
+│   │
+│   │   Como usar: Caminho começa com /
+│   │   - <img src="/img/logo.png" />
+│   │
+│
+└── fonts/ (OBRAS DE ARTE - fontes customizadas)
+    │
+    │   O que e: Arquivos de fonte customizados
+    │   Onde fica: public/fonts/
+    │
+    │   Como usar: Importa no CSS global
+    │   - @font-face { font-family: 'MinhaFont'; src: url('/fonts/fonte.woff2'); }
+    │
+```
+
+### Comparacao Rapida
+
+| Pasta | Metafora | O que faz |
+|-------|----------|-----------|
+| **pages/** | Quartos | Cada arquivo e uma pagina do site |
+| **layouts/** | Estrutura | Parede, teto, janelas que todas as paginas compartilham |
+| **components/** | Moveis | Coisas que pode usar em qualquer lugar |
+| **content/** | Biblioteca | Documentos e artigos em markdown |
+| **styles/** | Tintas | Cores, fontes e aparencia |
+| **lib/** | Ferramentas | Funcoes uteis |
+| **public/** | Area externa | Imagens, fontes e arquivos estaticos |
 
 ## Contratos por Pasta
 
@@ -580,19 +698,16 @@ const { Content } = await post.render();
 
 ## Workflow de Documentação
 
-Ao estruturar um novo projeto ou reorganizar um existente:
+Ao estruturar um novo projeto ou reorganizar um existente, siga este passo a passo:
 
-```
-Progresso da Documentação:
-- [ ] 1. Analisar estrutura de pastas do projeto
-- [ ] 2. Definir responsabilidade de cada diretório
-- [ ] 3. Documentar contratos (deve/pode/não-deve)
-- [ ] 4. Mapear fluxos principais (renderização, conteúdo, features)
-- [ ] 5. Estabelecer convenções de nomenclatura
-- [ ] 6. Identificar pontos de decisão arquitetural
-- [ ] 7. Criar diagramas de estrutura e fluxos
-- [ ] 8. Revisar com equipe e validar
-```
+1. Analise a estrutura de pastas do projeto
+2. Defina a responsabilidade de cada diretorio
+3. Documente os contratos (o que deve, pode e nao deve)
+4. Mapeie os fluxos principais (renderizacao, conteudo, features)
+5. Estabeleca as convencoes de nomenclatura
+6. Identifique os pontos de decisao arquitetural
+7. Crie diagramas de estrutura e fluxos
+8. Revise com a equipe e valide
 
 ---
 
@@ -611,17 +726,6 @@ IA: [Usa guia-arquitetura-projeto]
 
 ---
 
-## Checklist de Revisão
+**Relacionado:** Após estruturar o projeto, consulte [`03-estrategia-renderizacao.md`](./03-estrategia-renderizacao.md) para definir a estratégia de renderizacao (SSG, SSR, Hibrida) para cada rota.
 
-- [ ] Cada pasta tem responsabilidade clara definida?
-- [ ] Seções deve/pode/não-deve completas?
-- [ ] Fluxos principais documentados com diagramas?
-- [ ] Convenções de nomenclatura estabelecidas?
-- [ ] Anti-padrões identificados?
-- [ ] Visão geral de arquitetura corresponde à implementação real?
-- [ ] Padrões de componentização claros?
-- [ ] Exemplos de código funcionando?
 
----
-
-**Relacionado:** Após estruturar o projeto, consulte [`02-decidir-renderizacao-web.md`](./02-decidir-renderizacao-web.md) para definir a estratégia de renderização (SSG, SSR, Hibrida) para cada rota.
