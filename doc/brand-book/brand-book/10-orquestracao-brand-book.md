@@ -1,14 +1,14 @@
 ---
 name: orquestrar-brand-book
-description: Orquestra e combina as skills do brand book para transformar pedidos em planos executaveis com validação técnica, controle de risco, rollback e atualizacao documental. Use quando o escopo envolver multiplas frentes (stack, arquitetura, UI, SEO e deploy).
+description: Orquestra e combina os guias do brand book para transformar pedidos em planos executaveis com validacao tecnica, controle de risco, rollback e atualizacao documental. Use quando o escopo envolver multiplas frentes (stack, arquitetura, UI, SEO e deploy).
 ---
 
 # Guia Mestre de Orquestracao do Brand Book
 
 ## Objetivo
-Padronizar como uma IA deve conduzir tarefas complexas de ponta a ponta, usando as skills especializadas da pasta para reduzir ambiguidade, evitar regressao e garantir entrega com qualidade técnica.
+Padronizar como uma IA deve conduzir tarefas complexas de ponta a ponta, usando os guias especializados da pasta para reduzir ambiguidade, evitar regressao e garantir entrega com qualidade tecnica.
 
-## Quando Usar Esta Skill
+## Quando Usar Este Guia
 - Pedido envolve mais de uma disciplina técnica ao mesmo tempo
 - Mudanca tem impacto em varias camadas (rota, layout, estilos, deploy)
 - Requisito chega incompleto e precisa virar plano claro
@@ -24,24 +24,24 @@ Ao final, a IA deve entregar:
 - riscos, mitigacoes e rollback
 - atualizacao de documentação associada
 
-## Skills Especializadas e Quando Acionar
-| Contexto | Skill a acionar | Arquivo |
+## Guias Especializados e Quando Acionar
+| Contexto | Guia a acionar | Arquivo |
 |---|---|---|
-| Definir stack | escolher-stack-web | `skill-escolher-stack-web.md` |
-| Estruturar repositorio | planejar-arquitetura-repo | `skill-planejar-arquitetura-repo.md` |
-| Escolher modelo de renderizacao | decidir-renderizacao-web | `skill-decidir-renderizacao-web.md` |
-| Definir tokens e paleta | governar-sistema-cores | `skill-governar-sistema-cores.md` |
-| Definir hierarquia de fonte | governar-tipografia | `skill-governar-tipografia.md` |
-| Padronizar iconografia | governar-ícones | `skill-governar-icones.md` |
-| SEO técnico e indexação | estratégia-seo-índices | `skill-estrategia-seo-indices.md` |
-| DNS/SSL/cache/deploy | operar-cloudflare-dns | `skill-operar-cloudflare-dns.md` |
+| Definir stack | escolher-stack-web | `01-escolher-stack-web.md` |
+| Escolher modelo de renderizacao | decidir-renderizacao-web | `02-decidir-renderizacao-web.md` |
+| Estruturar repositorio | planejar-arquitetura-repo | `03-planejar-arquitetura-repo.md` |
+| Definir tokens e paleta | governar-sistema-cores | `04-governar-sistema-cores.md` |
+| Definir hierarquia de fonte | governar-tipografia | `05-governar-tipografia.md` |
+| Padronizar iconografia | governar-icones | `06-governar-icones.md` |
+| SEO tecnico e indexacao | estrategia-seo-indices | `07-estrategia-seo-indices.md` |
+| DNS/SSL/cache/deploy | operar-cloudflare-dns | `08-operar-cloudflare-dns.md` |
 
 ## Workflow Mestre (copiar e acompanhar)
 ```text
 Progresso da Orquestracao:
 - [ ] 1. Classificar objetivo, escopo e criticidade
 - [ ] 2. Identificar dependências e restrições
-- [ ] 3. Selecionar skills especializadas necessarias
+- [ ] 3. Selecionar guias especializados necessarios
 - [ ] 4. Produzir plano técnico em etapas pequenas
 - [ ] 5. Executar com checkpoints de validação
 - [ ] 6. Validar qualidade funcional e não-funcional
@@ -148,16 +148,16 @@ Toda mudanca de risco medio/alto deve incluir:
 Pedido: "Quero melhorar performance do blog sem perder SEO"
 
 Acao:
-1) Acionar decidir-renderizacao-web (confirmar SSG-first)
-2) Acionar estratégia-seo-índices (canonical/sitemap/metadata)
-3) Ajustar assets/cache com operar-cloudflare-dns (se produção)
-4) Validar build + indexação + rotas
+1) Acionar 02-decidir-renderizacao-web (confirmar SSG-first)
+2) Acionar 07-estrategia-seo-indices (canonical/sitemap/metadata)
+3) Ajustar assets/cache com 08-operar-cloudflare-dns (se produção)
+4) Validar build + indexacao + rotas
 5) Documentar trade-offs e prox passos
 ```
 
 ## Checklist Final
 - [ ] Objetivo e risco classificados
-- [ ] Skills corretas acionadas
+- [ ] Guias corretos acionados
 - [ ] Plano quebrado em etapas pequenas
 - [ ] Validacoes executadas
 - [ ] Rollback definido quando necessario

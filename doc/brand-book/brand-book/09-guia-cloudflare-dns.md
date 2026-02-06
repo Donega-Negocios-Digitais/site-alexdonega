@@ -1,6 +1,6 @@
 ---
-name: guia-dns-deployment
-description: Cria documentação técnica abrangente de configuração DNS, configuração SSL/TLS, estratégias de cache/CDN, validação de deployment e procedimentos de rollback para projetos web. Use ao configurar novos domínios, configurar Cloudflare, documentar infraestrutura de deployment, solucionar problemas de DNS/SSL ou criar runbooks de deployment.
+name: operar-cloudflare-dns
+description: Documenta e opera DNS/deployment com Cloudflare incluindo SSL/TLS, cache/CDN, validação de go-live, troubleshooting e rollback. Use ao configurar dominio, publicar projeto, migrar host ou resolver incidentes de DNS/SSL.
 ---
 
 # Guia de Documentação de DNS e Deployment
@@ -9,7 +9,7 @@ description: Cria documentação técnica abrangente de configuração DNS, conf
 
 Criar documentação técnica confiável para configuração DNS, configuração SSL/TLS, estratégias de cache/CDN, validação de go-live e procedimentos de rollback para deployment de domínio web.
 
-## Quando Usar Esta Skill
+## Quando Usar Este Guia
 
 - Ao configurar novo DNS de domínio
 - Ao configurar Cloudflare para projetos
@@ -56,15 +56,29 @@ Documente as fontes de configuração reais:
 ### 2.1. Dados Principais
 
 **Domínio Principal:**
-- **Nome do domínio**: `exemplo.com`
-- **Canônico**: `exemplo.com` ou `www.exemplo.com` (escolha um)
-- **Origem/plataforma host**: Vercel/Netlify/Cloudflare Pages
-- **Registrador**: Namecheap/GoDaddy/Cloudflare Registrar
+- **Nome do domínio**: `alexdonega.com.br`
+- **Canônico**: `alexdonega.com.br` (apex sem www)
+- **Origem/plataforma host**: Cloudflare Pages (ou outro)
+- **Registrador**: [Documentar registrador usado]
 
-### 2.2. Premissas Críticas
+### 2.2. Configuração Atual do Projeto
+
+```js
+// astro.config.mjs
+export default defineConfig({
+  site: 'https://alexdonega.com.br/',
+  base: '/',
+  build: {
+    format: 'directory',
+    assets: '_astro',
+  },
+});
+```
+
+### 2.3. Premissas Críticas
 
 1. Domínio está registrado em [registrador]
-2. DNS/nameservers apontam para [provedor DNS]
+2. DNS/nameservers apontam para Cloudflare
 3. Plataforma host requer [registros A/CNAME específicos]
 4. **NUNCA invente IP/CNAME sem dados verificados do host**
 
@@ -145,6 +159,20 @@ Antes de criar registros:
 - Não expirado
 - Chain de certificação completa
 
+### 5.4. Configurações Adicionais de Segurança (2025)
+
+| Configuração | Valor Recomendado | Descrição |
+|-------------|-------------------|------------|
+| **Minimum TLS Version** | 1.2 ou 1.3 | Versão mínima de TLS |
+| **Opportunistic Encryption** | On | Habilita criptografia quando possível |
+| **TLS 1.3** | On | Versão mais recente e rápida |
+| **Onion Routing** | Off | Para sites .onion (desabilitar) |
+| **Automatic HTTPS Rewrites** | On | Corrige links HTTP automaticamente |
+| **Always Use HTTPS** | On | Redireciona HTTP para HTTPS |
+| **HSTS** | Off inicial, On após validação | HTTP Strict Transport Security |
+
+**Nota sobre HSTS:** Só habilite após validar que HTTPS está funcionando perfeitamente, pois HSTS impede que usuários acessem o site se houver problemas com o certificado.
+
 ## Passo 6: Estratégia de Domínio Canônico
 
 ### 6.1. Escolha UM Domínio Canônico
@@ -197,6 +225,7 @@ export default defineConfig({
 | `/_astro` | 1 mês - 1 ano | Build hash muda com conteúdo |
 | `/videos` | 1 mês - 1 ano | Vídeos versionados |
 | Fontes | 1 ano | Versionadas em URL |
+| `/assets/favicons` | 1 ano | Favicons são estáveis |
 
 ### 7.3. HTML (Cache Conservativo)
 
@@ -214,6 +243,35 @@ export default defineConfig({
   "exclude": ["/api/*", "/buscar"]
 }
 ```
+
+### 7.5. Configurações de Otimização de Conteúdo
+
+| Configuração | Recomendação | Descrição |
+|-------------|--------------|------------|
+| **Auto Minify** | CSS, JS, HTML | Remove whitespace e comentários |
+| **Brotli** | On | Compressão mais eficiente que gzip |
+| **Rocket Loader** | Off inicial | JavaScript adiado (pode quebrar) |
+| **HTTP/2** | On | Multiplexação de requisições |
+| **HTTP/3 (QUIC)** | On | Nova versão do HTTP (mais rápido) |
+
+### 7.6. HTTP/3 (QUIC) - 2025
+
+**O que é HTTP/3:**
+- Nova versão do protocolo HTTP
+- Usa QUIC em vez de TCP
+- Melhor performance em redes instáveis
+- Migrações de rede mais suaves
+
+**Como habilitar:**
+```
+Cloudflare Dashboard > Network > HTTP/3 (with QUIC) > On
+```
+
+**Compatibilidade:**
+- Chrome: ✅ Total
+- Firefox: ✅ Total
+- Safari: ✅ Total (macOS 14+, iOS 16+)
+- Edge: ✅ Total
 
 ## Passo 8: Checklist de Go-Live
 
@@ -304,7 +362,62 @@ curl -vI https://exemplo.com 2>&1 | grep -i ssl
 - Headers de segurança apropriados
 - Redirecionamentos funcionando (HTTP→HTTPS)
 
-## Passo 10: Guia de Solução de Problemas
+## Passo 10: Page Rules vs Redirect Rules
+
+### 10.1. Page Rules (Legado)
+
+**Quando usar:**
+- Configurações de cache específicas por URL
+- Redirecionamentos 301 simples
+- Override de configurações de segurança
+
+**Exemplo:**
+```
+*alexdonega.com.br/blog/*
+- Cache Level: Cache Everything
+- Edge Cache TTL: 1 month
+```
+
+### 10.2. Redirect Rules (Novo - Recomendado)
+
+**Quando usar:**
+- Redirecionamentos complexos
+- Redirecionamentos em massa
+- Maior flexibilidade e performance
+
+**Exemplo de configuração:**
+```
+If incoming request matches:
+- URI path: /blog/old-post/*
+Then:
+- Static Redirect: 301
+- Destination URL: https://alexdonega.com.br/blog/new-post/$1
+```
+
+**Vantagens do Redirect Rules:**
+- Processamento mais rápido
+- Suporte a expressões regulares
+- Melhor UX para configuração
+- Prioridade clara (número)
+
+### 10.3. DNSSEC (Segurança Adicional)
+
+**O que é DNSSEC:**
+- Extensão de segurança do DNS
+- Assinatura digital de registros DNS
+- Previne ataques de envenenamento de cache DNS
+
+**Quando habilitar:**
+- Sites com requisitos de segurança altos
+- Aplicações críticas
+- Quando a origem suporta DNSSEC
+
+**Como habilitar:**
+```
+Cloudflare Dashboard > DNS > DNSSEC > Enable
+```
+
+## Passo 11: Guia de Solução de Problemas
 
 | Sintoma | Causa Provável | Ação Imediata |
 |---------|----------------|---------------|
@@ -317,9 +430,37 @@ curl -vI https://exemplo.com 2>&1 | grep -i ssl
 | **Cache servindo conteúdo obsoleto** | Cache agressivo sem purge | Purge cache manualmente, ajuste regras |
 | **Certificado expirado** | Renovação falhou | Renove certificado, verifique automação |
 
-## Passo 11: Procedimento de Rollback
+## Passo 12: WAF e Segurança Básica
 
-### 11.1. Fluxo de Rollback
+### 12.1. Security Level (Nível de Segurança)
+
+| Nível | Descrição | Quando Usar |
+|-------|-----------|-------------|
+| **Off** | Sem proteção | Nunca em produção |
+| **Essentially Off** | Desafios mínimos | Testes |
+| **Low** | Proteção básica | Sites com pouco tráfego |
+| **Medium** | Equilíbrio | **Recomendado para maioria** |
+| **High** | Proteção forte | Sites sob ataque |
+| **I'm Under Attack** | Modo de ataque | Durante ataque ativo |
+
+### 12.2. Bot Fight Mode
+
+**O que faz:**
+- Analisa comportamento de bots
+- Desafia bots suspeitos
+- Permite bons bots (Google, Bing)
+
+**Recomendação:** Habilitar para redução de bots maliciosos
+
+### 12.3. Challenge Passage
+
+**Configuração:**
+- **Challenge TTL**: 30 minutos (padrão)
+- **Browser Integrity Check**: On
+
+## Passo 13: Procedimento de Rollback
+
+### 13.1. Fluxo de Rollback
 
 ```
 [Deploy causou indisponibilidade]
@@ -337,7 +478,7 @@ curl -vI https://exemplo.com 2>&1 | grep -i ssl
 [Diagnostique logs e corrija antes de re-deployar]
 ```
 
-### 11.2. Ações Chave de Rollback
+### 13.2. Ações Chave de Rollback
 
 - **Page Rules/Redirect Rules**: Desabilite novas regras
 - **DNS**: Restaure registros anteriores (documente primeiro!)
@@ -345,7 +486,7 @@ curl -vI https://exemplo.com 2>&1 | grep -i ssl
 - **Cache**: Purge cache completo se servindo obsoleto
 - **Deploy**: Reverta para deploy anterior na plataforma
 
-### 11.3. Documentação Pré-Rollback
+### 13.3. Documentação Pré-Rollback
 
 Antes de qualquer mudança crítica:
 - Tire screenshot de configurações
@@ -353,9 +494,9 @@ Antes de qualquer mudança crítica:
 - Documente estado atual
 - Tenha plano de rollback pronto
 
-## Passo 12: Configuração de Framework
+## Passo 14: Configuração de Framework
 
-### 12.1. Exemplo Astro
+### 14.1. Exemplo Astro
 
 ```js
 // astro.config.mjs
@@ -369,7 +510,7 @@ export default defineConfig({
 });
 ```
 
-### 12.2. Configurações Chave
+### 14.2. Configurações Chave
 
 | Config | Valor | Impacto |
 |--------|-------|---------|
