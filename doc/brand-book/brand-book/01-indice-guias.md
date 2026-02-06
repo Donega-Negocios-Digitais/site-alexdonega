@@ -1,6 +1,6 @@
 ---
 name: indice-guias-brand-book-codex
-description: Organiza os 9 guias tecnicos do brand book em trilha de uso, mapeia qual documento usar por contexto e define fluxo de aplicacao ponta a ponta. Cada guia segue formato padrao com frontmatter, workflow operacional e checklist de validacao.
+description: Organiza os 10 guias tecnicos do brand book em trilha de uso, mapeia qual documento usar por contexto e define fluxo de aplicacao ponta a ponta. Cada guia segue formato padrao com frontmatter e secoes operacionais.
 ---
 
 # Codex de Guias Técnicos - Brand Book
@@ -9,7 +9,7 @@ Colecao de guias operacionais para orientar decisoes e implementacoes tecnicas e
 
 ## Sobre
 
-Este codex contem 9 guias interconectados que cobrem o ciclo completo de desenvolvimento web: desde a escolha da stack tecnologica ate o deployment. Cada guia segue um formato padrao com frontmatter YAML, workflow passo a passo, exemplos praticos e checklist de validacao.
+Este codex contem 10 guias interconectados que cobrem o ciclo completo de desenvolvimento web: desde a stack tecnologica definida ate o deployment. Cada guia segue um formato padrao com frontmatter YAML, secoes de uso, exemplos praticos e referencias.
 
 ## Guias Disponiveis
 

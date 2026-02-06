@@ -253,47 +253,7 @@ Cloudflare Dashboard > Network > HTTP/3 (with QUIC) > On
 - Safari: ✅ Total (macOS 14+, iOS 16+)
 - Edge: ✅ Total
 
-## Passo 8: Checklist de Go-Live
-
-Use este checklist antes de ir ao ar:
-
-```
-Validação de Config:
-- [ ] astro.config.mjs aponta para domínio correto (site:)
-- [ ] base: configurado corretamente (/ ou subpath)
-
-Validação DNS:
-- [ ] Registros DNS para @ resolvendo corretamente
-- [ ] Registros DNS para www resolvendo corretamente
-- [ ] Propagação DNS completa (nslookup/global)
-
-Validação SSL:
-- [ ] HTTPS válido sem avisos de certificado
-- [ ] Certificado não expirado
-- [ ] Cadeia de certificação completa
-
-Validação de Conteúdo:
-- [ ] Home carregando
-- [ ] Páginas principais funcionando
-- [ ] Blog listagem funcionando
-- [ ] Blog detalhe funcionando
-- [ ] Assets carregando sem 404 (/img, /_astro)
-- [ ] Links internos funcionando
-
-Validação de SEO:
-- [ ] Meta tags presentes (title, description)
-- [ ] Open Graph images carregando
-- [ ] sitemap.xml acessível
-- [ ] robots.txt acessível
-- [ ] Redirecionamento canônico funcionando
-
-Validação de Performance:
-- [ ] Build local passa sem erros (npm run build)
-- [ ] Lighthouse score aceitável
-- [ ] Core Web Vitals dentro dos limites
-```
-
-## Passo 9: Comandos de Validação
+## Passo 8: Comandos de Validação
 
 ### 9.1. Resolução DNS
 
@@ -342,7 +302,7 @@ curl -vI https://exemplo.com 2>&1 | grep -i ssl
 - Headers de segurança apropriados
 - Redirecionamentos funcionando (HTTP→HTTPS)
 
-## Passo 10: Page Rules vs Redirect Rules
+## Passo 9: Page Rules vs Redirect Rules
 
 ### 10.1. Page Rules (Legado)
 
@@ -397,7 +357,7 @@ Then:
 Cloudflare Dashboard > DNS > DNSSEC > Enable
 ```
 
-## Passo 11: Guia de Solução de Problemas
+## Passo 10: Guia de Solução de Problemas
 
 | Sintoma | Causa Provável | Ação Imediata |
 |---------|----------------|---------------|
@@ -410,7 +370,7 @@ Cloudflare Dashboard > DNS > DNSSEC > Enable
 | **Cache servindo conteúdo obsoleto** | Cache agressivo sem purge | Purge cache manualmente, ajuste regras |
 | **Certificado expirado** | Renovação falhou | Renove certificado, verifique automação |
 
-## Passo 12: WAF e Segurança Básica
+## Passo 11: WAF e Segurança Básica
 
 ### 12.1. Security Level (Nível de Segurança)
 
@@ -438,7 +398,7 @@ Cloudflare Dashboard > DNS > DNSSEC > Enable
 - **Challenge TTL**: 30 minutos (padrão)
 - **Browser Integrity Check**: On
 
-## Passo 13: Procedimento de Rollback
+## Passo 12: Procedimento de Rollback
 
 ### 13.1. Fluxo de Rollback
 
@@ -474,7 +434,7 @@ Antes de qualquer mudança crítica:
 - Documente estado atual
 - Tenha plano de rollback pronto
 
-## Passo 14: Configuração de Framework
+## Passo 13: Configuração de Framework
 
 ### 14.1. Exemplo Astro
 

@@ -5,6 +5,24 @@ description: Documentação completa da stack tecnologica do projeto: Astro como
 
 # Stack Tecnológica - Astro + Tailwind
 
+## Objetivo
+
+Documentar a stack tecnologica utilizada no projeto (Astro + Tailwind), fornecendo referencia completa sobre configuracoes, padroes e melhores praticas para desenvolvimento web moderno.
+
+## O que é Stack Tecnológica
+
+Stack tecnologica é o conjunto de ferramentas, frameworks e bibliotecas usados para construir um site. Pense como a fundacao e a estrutura de uma casa: define o que voce pode ou nao construir, como sera construido, e quais materiais usar.
+
+Neste projeto, a stack ja esta definida: **Astro** como framework principal e **Tailwind CSS** para estilizacao.
+
+## Quando Usar Este Guia
+
+- Ao iniciar um novo projeto e precisar configurar a stack
+- Ao adicionar novas dependencias ou integracoes
+- Ao solucionar problemas de build ou configuracao
+- Ao explicar para novos desenvolvedores como o projeto funciona
+- Ao tomar decisoes sobre arquitetura ou performance
+
 ## Visão Geral
 
 Documentação completa da stack tecnologica utilizada no projeto: [Astro](https://astro.build) como framework principal, Tailwind para estilizacao, e ecossistema de utilitarios para desenvolvimento web moderno.

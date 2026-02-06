@@ -293,7 +293,7 @@ Ao pegar um ícone de qualquer fonte, siga este processo para padronizar:
 [5. Salvar em public/img/icons/]
 ```
 
-### Checklist de Padronização
+### Padrões de SVG
 
 Sempre ajuste o SVG baixado para ter:
 

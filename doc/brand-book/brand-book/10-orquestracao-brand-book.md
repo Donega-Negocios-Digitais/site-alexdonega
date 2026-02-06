@@ -27,7 +27,7 @@ Ao final, a IA deve entregar:
 ## Guias Especializados e Quando Acionar
 | Contexto | Guia a acionar | Arquivo |
 |---|---|---|
-| Stack tecnológica | stack-tecnologia | `02-stack-tecnologia.md` |
+| Stack tecnológica (já definida) | stack-tecnologia | `02-stack-tecnologia.md` |
 | Escolher modelo de renderizacao | decidir-renderizacao-web | `03-estrategia-renderizacao.md` |
 | Estruturar repositorio | planejar-arquitetura-repo | `04-arquitetura-projeto-astro.md` |
 | Definir tokens e paleta | governar-sistema-cores | `05-guia-cores.md` |
@@ -70,7 +70,8 @@ Cada lote deve ter:
 - criterio de pronto
 
 ## Passo 4: Definir Validacao Obrigatoria
-Checklist minimo por mudanca:
+
+Validacao minima por mudanca:
 - build compila sem erro
 - rotas criticas funcionam
 - SEO base não foi quebrado (quando aplicavel)

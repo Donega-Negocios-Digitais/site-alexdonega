@@ -18,25 +18,6 @@ Criar documentação completa de estratégia de SEO e indexação que defina com
 - Ao configurar sitemap e robots.txt
 - Ao implementar schema markup
 
-## Workflow de Documentação
-
-Copie este checklist e acompanhe o progresso:
-
-```
-Progresso da Documentação:
-- [ ] 1. Identificar fonte da verdade (arquivos de config)
-- [ ] 2. Mapear estrutura de URLs e roteamento
-- [ ] 3. Documentar meta tags implementadas
-- [ ] 4. Configurar sitemap.xml
-- [ ] 5. Configurar robots.txt
-- [ ] 6. Implementar estratégia de canonical tags
-- [ ] 7. Adicionar schema markup (JSON-LD)
-- [ ] 8. Definir estratégia de Open Graph/Twitter Cards
-- [ ] 9. Configurar monitoramento (Google Search Console)
-- [ ] 10. Criar seção de anti-padrões
-- [ ] 11. Revisar com time de marketing/dev
-```
-
 ## Passo 1: Identificação de Fonte da Verdade
 
 Documente onde configurações de SEO vivem:
@@ -604,23 +585,6 @@ curl -s https://alexdonega.com.br | grep -E "(meta title|og:|twitter:)"
 - **Chrome:** SEO Meta in 1 Click
 - **Firefox:** Multi-SEO Tools
 - **Edge:** Detailed SEO Extension
-
-## Passo 10: Checklist de Go-Live SEO
-
-Antes de lançar ou atualizar SEO:
-
-- [ ] Todas páginas têm título único (50-60 caracteres)
-- [ ] Todas páginas têm meta description única (150-160 caracteres)
-- [ ] URLs usam kebab-case e são descritivas
-- [ ] Sitemap.xml inclui todas URLs indexáveis
-- [ ] Robots.txt configura corretamente allow/disallow
-- [ ] Canonical tags implementadas onde necessário
-- [ ] Open Graph images configuradas (1200x630px)
-- [ ] Schema markup adicionado para conteúdo principal
-- [ ] Google Search Console configurado
-- [ ] Analytics configurado para monitoramento
-- [ ] SSL/TLS habilitado (HTTPS)
-- [ ] Site responsivo e mobile-friendly
 
 ## Melhores Práticas
 

@@ -696,21 +696,6 @@ const { Content } = await post.render();
 
 ---
 
-## Workflow de Documentação
-
-Ao estruturar um novo projeto ou reorganizar um existente, siga este passo a passo:
-
-1. Analise a estrutura de pastas do projeto
-2. Defina a responsabilidade de cada diretorio
-3. Documente os contratos (o que deve, pode e nao deve)
-4. Mapeie os fluxos principais (renderizacao, conteudo, features)
-5. Estabeleca as convencoes de nomenclatura
-6. Identifique os pontos de decisao arquitetural
-7. Crie diagramas de estrutura e fluxos
-8. Revise com a equipe e valide
-
----
-
 ## Exemplo Prático
 
 ```
