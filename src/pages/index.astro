@@ -375,7 +375,7 @@ import Badge from '../components/ui/Badge.astro';
           <div class="video-container">
             <video
               id="hero-video"
-              poster="/img/alex-donega.webp"
+              poster="/img/people/alex-donega.webp"
               playsinline
               muted
               loop
@@ -383,7 +383,7 @@ import Badge from '../components/ui/Badge.astro';
             >
               <source src="/videos/alex-intro.mp4" type="video/mp4" />
               <!-- Fallback para imagem se vídeo não carregar -->
-              <img src="/img/alex-donega.webp" alt="Alex Donega" />
+              <img src="/img/people/alex-donega.webp" alt="Alex Donega" />
             </video>
             <!-- Botão de play overlay -->
             <button class="video-play-btn" aria-label="Reproduzir vídeo">
@@ -880,7 +880,7 @@ import Badge from '../components/ui/Badge.astro';
           <div class="bip-photo-glow"></div>
           <div class="bip-photo-container">
             <img
-              src="/img/alex-donega.webp"
+              src="/img/people/alex-donega.webp"
               alt="Alex Donega"
               loading="lazy"
             />
@@ -1004,7 +1004,7 @@ import Badge from '../components/ui/Badge.astro';
 
     <!-- Lado esquerdo - Imagem -->
     <div class="modal-image">
-      <img src="/img/alex-donega.webp" alt="Alex Donega" />
+      <img src="/img/people/alex-donega.webp" alt="Alex Donega" />
       <div class="modal-image-overlay">
         <div class="modal-social-proof">
           <span class="proof-number">+2.500</span>
@@ -2676,46 +2676,59 @@ import Badge from '../components/ui/Badge.astro';
     const playBtn = document.querySelector('.video-play-btn') as HTMLButtonElement;
 
     if (video && playBtn) {
+      const showPlayButton = () => {
+        playBtn.classList.remove('hidden');
+      };
+
+      const hidePlayButton = () => {
+        playBtn.classList.add('hidden');
+      };
+
+      const safePlay = (unmute = false) => {
+        if (unmute) {
+          video.muted = false;
+        }
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise.then(() => {
+            hidePlayButton();
+          }).catch(() => {
+            video.pause();
+            showPlayButton();
+          });
+          return;
+        }
+        hidePlayButton();
+      };
+
       // Ao clicar no botão de play
       playBtn.addEventListener('click', () => {
         if (video.paused) {
-          video.muted = false; // Ativa o som ao clicar
-          video.play();
-          playBtn.classList.add('hidden');
+          safePlay(true);
         }
       });
 
       // Ao clicar no vídeo para pausar/play
       video.addEventListener('click', () => {
         if (video.paused) {
-          video.play();
-          playBtn.classList.add('hidden');
+          safePlay(false);
         } else {
           video.pause();
-          playBtn.classList.remove('hidden');
+          showPlayButton();
         }
       });
 
       // Quando o vídeo terminar
       video.addEventListener('ended', () => {
-        playBtn.classList.remove('hidden');
+        showPlayButton();
       });
 
-      // Autoplay muted ao entrar na viewport (opcional)
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {
-              // Autoplay blocked, show play button
-              playBtn.classList.remove('hidden');
-            });
-          } else {
-            video.pause();
-          }
-        });
-      }, { threshold: 0.5 });
+      // Mantém comportamento manual: só reproduz ao clicar no botão/vídeo.
+      video.pause();
+      showPlayButton();
 
-      observer.observe(video);
+      // Se o arquivo não existir/carregar, mantém somente imagem + botão visível.
+      video.addEventListener('error', showPlayButton);
     }
 
     // Filtros da Curadoria (Pinterest Grid)

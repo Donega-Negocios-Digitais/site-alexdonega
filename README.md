@@ -17,7 +17,7 @@ Bem-vindo ao repositório do site oficial Alex Donega. Este projeto foi desenvol
    npm run dev
    ```
 
-3. **Visitar**: Abra `http://localhost:3000/` no seu navegador.
+3. **Visitar**: Abra `http://localhost:4000/` no seu navegador.
 
 ## 📂 Estrutura do Projeto
 
@@ -27,6 +27,7 @@ O projeto segue uma estrutura organizada para facilitar a manutenção e escalab
 - `src/layouts/`: Layouts globais (Layout Principal, BlogLayout).
 - `src/pages/`: Rotas do site (Home, Portfólio, Cursos).
 - `public/`: Assets estáticos (imagens, ícones).
+- `doc/`: Documentação operacional e brand-book técnico.
 
 ## ✨ Principais Funcionalidades
 
@@ -39,9 +40,10 @@ O projeto segue uma estrutura organizada para facilitar a manutenção e escalab
 
 Para mais detalhes sobre o desenvolvimento e padrões do projeto, consulte:
 
-- [COMECE-AQUI.md](./COMECE-AQUI.md): Guia de imersão rápida.
-- [RESUMO-CRIADO.md](./RESUMO-CRIADO.md): Resumo do estado atual do projeto.
-- [ARQUITETURA-COMPONENTES.md](./ARQUITETURA-COMPONENTES.md): Detalhes técnicos da arquitetura.
+- [doc/COMECE-AQUI.md](./doc/COMECE-AQUI.md): Guia rápido de entrada no projeto.
+- [doc/brand-book/BRAND-BOOK.md](./doc/brand-book/BRAND-BOOK.md): Documento mestre técnico/visual.
+- [doc/brand-book/brand-book/04-arquitetura-projeto-astro.md](./doc/brand-book/brand-book/04-arquitetura-projeto-astro.md): Guia de arquitetura Astro.
+- [plano.md](./plano.md): Plano de migração arquitetural do repositório.
 
 ---
 

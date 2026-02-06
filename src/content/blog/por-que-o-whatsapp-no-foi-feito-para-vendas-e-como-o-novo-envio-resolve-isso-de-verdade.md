@@ -11,7 +11,7 @@ tags:
   - "marketing-digital"
 draft: false
 author: "Alex Donega"
-image: "/images/whatsapp_9876541.webp"
+image: "/img/campaigns/whatsapp-vendas.png"
 tipo_nota: "artigo"
 area: "Marketing Digital"
 projeto: "Novo Envio"
@@ -69,7 +69,7 @@ Permite delegar conversas entre membros da equipe com total contexto — sem per
 Agende tarefas, compromissos e automatize lembretes diretamente no WhatsApp.
 
 
-![WhatsApp Vendas - Novo Envio](/images/whatsapp-vendas.png)
+![WhatsApp Vendas - Novo Envio](/img/campaigns/whatsapp-vendas.png)
 
 
 ---

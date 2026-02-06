@@ -1,6 +1,32 @@
 ---
 // engenharia-de-contexto.astro - Página do curso de Engenharia de Contexto (Design v2)
 import Layout from '../../layouts/Layout.astro';
+import HeroAnimatedBackground from '../../components/course/HeroAnimatedBackground.astro';
+import CourseFinalCta from '../../components/course/CourseFinalCta.astro';
+import CourseFaqSection from '../../components/course/CourseFaqSection.astro';
+
+const courseFaqItems = [
+  {
+    question: 'Preciso saber programar?',
+    answer: 'Nao! O curso foi feito para nao-programadores. Se voce sabe usar o ChatGPT, consegue aplicar tudo.',
+  },
+  {
+    question: 'Funciona para qualquer nicho?',
+    answer: 'Sim. Os frameworks sao universais e podem ser adaptados para qualquer mercado ou tipo de negocio.',
+  },
+  {
+    question: 'Quanto tempo tenho acesso?',
+    answer: 'Acesso vitalicio. Comprou uma vez, seu para sempre.',
+  },
+  {
+    question: 'E se eu nao gostar?',
+    answer: 'Garantia de 7 dias. Devolvo 100% do seu dinheiro sem perguntas.',
+  },
+  {
+    question: 'Quando comeca?',
+    answer: 'Acesso imediato apos a confirmacao do pagamento.',
+  },
+];
 ---
 
 <Layout
@@ -10,70 +36,7 @@ import Layout from '../../layouts/Layout.astro';
 
 <!-- Hero Section com Animação -->
 <section class="hero-section">
-  <!-- Background animado com linhas SVG -->
-  <div class="hero-background">
-    <svg
-      class="animated-lines"
-      viewBox="0 0 1200 800"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
-    >
-      <defs>
-        <radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="rgba(255,255,255,1)" />
-          <stop offset="30%" stop-color="rgba(251,146,60,1)" />
-          <stop offset="70%" stop-color="rgba(249,115,22,0.8)" />
-          <stop offset="100%" stop-color="rgba(249,115,22,0)" />
-        </radialGradient>
-        <radialGradient id="neonPulse2" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
-          <stop offset="25%" stop-color="rgba(251,146,60,0.9)" />
-          <stop offset="60%" stop-color="rgba(234,88,12,0.7)" />
-          <stop offset="100%" stop-color="rgba(234,88,12,0)" />
-        </radialGradient>
-        <radialGradient id="heroTextBg" cx="30%" cy="50%" r="70%">
-          <stop offset="0%" stop-color="rgba(249,115,22,0.15)" />
-          <stop offset="40%" stop-color="rgba(251,146,60,0.08)" />
-          <stop offset="80%" stop-color="rgba(234,88,12,0.05)" />
-          <stop offset="100%" stop-color="rgba(0,0,0,0)" />
-        </radialGradient>
-        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-          <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-        <linearGradient id="threadFade1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="rgba(0,0,0,1)" />
-          <stop offset="15%" stop-color="rgba(249,115,22,0.8)" />
-          <stop offset="85%" stop-color="rgba(249,115,22,0.8)" />
-          <stop offset="100%" stop-color="rgba(0,0,0,1)" />
-        </linearGradient>
-      </defs>
-
-      <g>
-        <ellipse cx="300" cy="350" rx="400" ry="200" fill="url(#heroTextBg)" opacity="0.6" />
-
-        <!-- Threads animados -->
-        <path id="thread1" d="M50 720 Q200 590 350 540 Q500 490 650 520 Q800 550 950 460 Q1100 370 1200 340" stroke="url(#threadFade1)" stroke-width="0.8" fill="none" opacity="0.8" />
-        <circle r="2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
-          <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#thread1" /></animateMotion>
-        </circle>
-
-        <path id="thread2" d="M80 730 Q250 620 400 570 Q550 520 700 550 Q850 580 1000 490 Q1150 400 1300 370" stroke="url(#threadFade1)" stroke-width="1.5" fill="none" opacity="0.7" />
-        <circle r="3" fill="url(#neonPulse2)" opacity="1" filter="url(#neonGlow)">
-          <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#thread2" /></animateMotion>
-        </circle>
-
-        <path id="thread3" d="M20 710 Q180 580 320 530 Q460 480 600 510 Q740 540 880 450 Q1020 360 1200 330" stroke="url(#threadFade1)" stroke-width="1.2" fill="none" opacity="0.8" />
-        <circle r="2.5" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
-          <animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#thread3" /></animateMotion>
-        </circle>
-      </g>
-    </svg>
-  </div>
+  <HeroAnimatedBackground variant="orange" />
 
   <!-- Conteudo Principal -->
   <div class="hero-content">
@@ -424,7 +387,7 @@ import Layout from '../../layouts/Layout.astro';
 
     <div class="about-grid">
       <div class="about-image">
-        <img src="/img/alex-donega.webp" alt="Alex Donega" loading="lazy" />
+        <img src="/img/people/alex-donega.webp" alt="Alex Donega" loading="lazy" />
       </div>
       <div class="about-content">
         <h3>Alex Donega</h3>
@@ -600,65 +563,19 @@ import Layout from '../../layouts/Layout.astro';
 </section>
 
 <!-- Secao 09: FAQ -->
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Duvidas</span>
-      <h2 class="section-title">Perguntas Frequentes</h2>
-    </div>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <h4>Preciso saber programar?</h4>
-        <p>Nao! O curso foi feito para nao-programadores. Se voce sabe usar o ChatGPT, consegue aplicar tudo.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Funciona para qualquer nicho?</h4>
-        <p>Sim. Os frameworks sao universais e podem ser adaptados para qualquer mercado ou tipo de negocio.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Quanto tempo tenho acesso?</h4>
-        <p>Acesso vitalicio. Comprou uma vez, seu para sempre.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>E se eu nao gostar?</h4>
-        <p>Garantia de 7 dias. Devolvo 100% do seu dinheiro sem perguntas.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Quando comeca?</h4>
-        <p>Acesso imediato apos a confirmacao do pagamento.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<CourseFaqSection
+  eyebrow="Duvidas"
+  title="Perguntas Frequentes"
+  items={courseFaqItems}
+/>
 
 <!-- CTA Final -->
-<section class="cta-section">
-  <div class="container">
-    <h2 class="cta-title">Bora dominar IA de verdade?</h2>
-    <p class="cta-subtitle">
-      A diferenca entre usar IA de forma mediocre e extraordinaria e o contexto. Venha aprender como estruturar isso.
-    </p>
-    <div class="cta-buttons">
-      <a href="#investimento" class="btn-primary">
-        Quero Minha Vaga
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-      <a href="https://wa.me/5545999506444" target="_blank" rel="noopener" class="btn-secondary">
-        <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Falar Comigo
-      </a>
-    </div>
-  </div>
-</section>
+<CourseFinalCta
+  title="Bora dominar IA de verdade?"
+  subtitle="A diferenca entre usar IA de forma mediocre e extraordinaria e o contexto. Venha aprender como estruturar isso."
+  primaryHref="#investimento"
+  primaryLabel="Quero Minha Vaga"
+/>
 
 </Layout>
 
@@ -1536,34 +1453,6 @@ import Layout from '../../layouts/Layout.astro';
     line-height: 1.5;
   }
 
-  /* ==================== FAQ ==================== */
-  .faq-list {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 2rem 0;
-  }
-
-  .faq-item:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .faq-item h4 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 0.75rem;
-  }
-
-  .faq-item p {
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.7;
-  }
-
   /* ==================== CTA SECTION ==================== */
   .cta-section {
     text-align: center;
@@ -1595,3 +1484,5 @@ import Layout from '../../layouts/Layout.astro';
     flex-wrap: wrap;
   }
 </style>
+
+

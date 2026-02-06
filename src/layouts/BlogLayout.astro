@@ -1,5 +1,5 @@
 ---
-import PostCard from '../components/PostCard.astro';
+import PostCard from '../components/blog/PostCard.astro';
 
 interface RelatedPost {
   slug: string;
@@ -89,7 +89,7 @@ const calculateReadingTime = (content: string) => {
           <h1 class="post-title">{title}</h1>
           <div class="post-meta">
             <img
-              src="/images/alex-donega-autor-blog.webp"
+              src="/img/people/alex-donega-autor-blog.webp"
               alt={author}
               class="author-avatar-img"
             />
@@ -133,7 +133,7 @@ const calculateReadingTime = (content: string) => {
         <div class="sidebar-section author-card">
           <div class="author-info-compact">
             <img
-              src="/images/alex-donega-autor-blog.webp"
+              src="/img/people/alex-donega-autor-blog.webp"
               alt={author}
               class="author-avatar-compact"
             />

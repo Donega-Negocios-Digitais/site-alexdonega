@@ -1,0 +1,131 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+  secondaryHtml?: string;
+}
+
+interface Props {
+  items: FaqItem[];
+  title?: string;
+  eyebrow?: string;
+  eyebrowVariant?: 'default' | 'obsidian';
+  sectionVariant?: 'light' | 'dark';
+}
+
+const {
+  items,
+  title = 'Perguntas Frequentes',
+  eyebrow,
+  eyebrowVariant = 'default',
+  sectionVariant = 'light',
+} = Astro.props;
+---
+
+<section class={sectionVariant === 'dark' ? 'section-dark' : 'section'} id="faq">
+  <div class="container">
+    <div class="section-header">
+      {eyebrow && (
+        <span class:list={['section-eyebrow', eyebrowVariant === 'obsidian' && 'obsidian']}>
+          {eyebrow}
+        </span>
+      )}
+      <h2 class="section-title">{title}</h2>
+    </div>
+
+    <div class="faq-list">
+      {items.map((item) => (
+        <div class="faq-item">
+          <h4>{item.question}</h4>
+          <p>{item.answer}</p>
+          {item.secondaryHtml && <p class="faq-secondary" set:html={item.secondaryHtml} />}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+    background: #0a0a0a;
+  }
+
+  .section-dark {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(251, 146, 60);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .section-eyebrow.obsidian {
+    color: var(--obsidian, #9b51e0);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem 0;
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .faq-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  .faq-secondary {
+    margin-top: 1rem;
+  }
+
+  .faq-item a {
+    color: rgb(249, 115, 22);
+    text-decoration: none;
+  }
+
+  .faq-item a:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -2,7 +2,7 @@
 ## Guia Completo de Identidade Visual
 
 **Versão:** 2.0
-**Data:** 28/01/2026
+**Data:** 06/02/2026
 **Status:** Validado
 
 ---
@@ -43,7 +43,7 @@ npm run preview  # Preview do build
 ## 2. ESTRUTURA DO PROJETO
 
 ```
-C:\dev\sites\site-alexdonega2\
+G:\Downloads\site-alexdonega\
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 ├── package.json
@@ -63,11 +63,15 @@ C:\dev\sites\site-alexdonega2\
 │   │   └── BlogLayout.astro
 │   ├── pages/
 │   │   ├── index.astro
-│   │   ├── portfolio.astro
-│   │   ├── politicas.astro
-│   │   ├── politica-de-privacidade.astro
-│   │   ├── politica-de-cookies.astro
-│   │   ├── termos-de-uso.astro
+│   │   ├── portfolio/index.astro
+│   │   ├── politicas/index.astro
+│   │   ├── politica-de-privacidade/index.astro
+│   │   ├── politica-de-cookies/index.astro
+│   │   ├── termos-de-uso/index.astro
+│   │   ├── brand/index.astro
+│   │   ├── claude-code-em-1-dia/index.astro
+│   │   ├── engenharia-de-contexto-aplicado-ao-marketing-digital/index.astro
+│   │   ├── segundo-cerebro-com-obsidian/index.astro
 │   │   ├── cursos/
 │   │   │   ├── claude-code-em-1-dia.astro
 │   │   │   ├── engenharia-de-contexto.astro
@@ -83,14 +87,15 @@ C:\dev\sites\site-alexdonega2\
 │       └── utils.ts
 ├── public/
 │   ├── favicons/
-│   ├── fonts/
 │   ├── img/
 │   │   ├── avatars/
+│   │   ├── campaigns/
 │   │   ├── icons/
 │   │   ├── logos/
+│   │   ├── people/
 │   │   └── projects/
 │   └── videos/
-└── [documentação .md na raiz]
+└── doc/
 ```
 
 ---
@@ -102,18 +107,22 @@ C:\dev\sites\site-alexdonega2\
 | Rota | Arquivo | Descrição |
 |------|---------|-----------|
 | `/` | index.astro | Homepage |
-| `/portfolio` | portfolio.astro | Portfólio |
+| `/portfolio` | portfolio/index.astro | Portfólio |
 | `/blog` | blog/index.astro | Lista de posts |
 | `/blog/[slug]` | blog/[slug].astro | Posts dinâmicos |
+| `/brand` | brand/index.astro | Brand Book público |
+| `/claude-code-em-1-dia` | claude-code-em-1-dia/index.astro | Landing |
+| `/engenharia-de-contexto-aplicado-ao-marketing-digital` | engenharia-de-contexto-aplicado-ao-marketing-digital/index.astro | Landing |
+| `/segundo-cerebro-com-obsidian` | segundo-cerebro-com-obsidian/index.astro | Landing |
 | `/cursos/claude-code-em-1-dia` | cursos/claude-code-em-1-dia.astro | Curso |
 | `/cursos/engenharia-de-contexto` | cursos/engenharia-de-contexto.astro | Curso |
 | `/cursos/segundo-cerebro-obsidian` | cursos/segundo-cerebro-obsidian.astro | Curso |
-| `/politicas` | politicas.astro | Hub políticas |
-| `/politica-de-privacidade` | politica-de-privacidade.astro | Privacidade |
-| `/politica-de-cookies` | politica-de-cookies.astro | Cookies |
-| `/termos-de-uso` | termos-de-uso.astro | Termos |
+| `/politicas` | politicas/index.astro | Hub políticas |
+| `/politica-de-privacidade` | politica-de-privacidade/index.astro | Privacidade |
+| `/politica-de-cookies` | politica-de-cookies/index.astro | Cookies |
+| `/termos-de-uso` | termos-de-uso/index.astro | Termos |
 
-**Nota:** Existem também 3 páginas HTML legadas em subdiretórios específicos.
+**Nota:** Existem 3 landing pages standalone em `.astro` na raiz de `src/pages/` (sem arquivo `.html` legado).
 
 ---
 
@@ -270,12 +279,14 @@ Todos os icones sao **SVGs inline** customizados.
 ### Imagens Principais
 
 ```
-/public/img/
-├── alex-donega.webp              # Foto principal
-├── alex-donega-autor-blog.webp   # Avatar blog
-├── alex-donega-palestrante.webp  # Foto palestrante
-├── diegocarmona.webp             # Outro avatar
-└── whatsapp-vendas.png           # Icone WhatsApp
+/public/img/people/
+├── alex-donega.webp
+├── alex-donega-autor-blog.webp
+├── alex-donega-palestrante.webp
+└── diegocarmona.webp
+
+/public/img/campaigns/
+└── whatsapp-vendas.png
 ```
 
 ### Logos de Projetos
@@ -420,8 +431,8 @@ schema: z.object({
 
 | Categoria | Quantidade |
 |-----------|-----------|
-| Paginas Astro | 11 |
-| Paginas HTML legadas | 3 |
+| Paginas Astro | 15 |
+| Paginas HTML legadas em `src/pages` | 0 |
 | Componentes principais | 4 |
 | Componentes UI | 3 |
 | Layouts | 2 |

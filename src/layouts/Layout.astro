@@ -11,8 +11,8 @@
 //     <h1>Conteúdo da página aqui</h1>
 // </Layout>
 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
 import '../styles/globals.css';
 
 interface Props {
@@ -36,15 +36,15 @@ const { title, description, ogImage } = Astro.props;
     <!-- Open Graph -->
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
-    <meta property="og:image" content={ogImage || "https://alexdonega.com.br/assets/img/og-image.jpg"}>
+    <meta property="og:image" content={ogImage || "https://alexdonega.com.br/img/people/alex-donega.webp"}>
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
 
     <!-- Fonte Geist -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

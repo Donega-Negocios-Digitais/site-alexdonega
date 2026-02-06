@@ -13,7 +13,10 @@
       "Bash(powershell.exe -Command \"cd C:\\\\dev\\\\sites\\\\site-alexdonega2; npm run dev 2>&1\")",
       "Bash(powershell.exe -Command \"Get-Process -Name ''node'' -ErrorAction SilentlyContinue | Stop-Process -Force\")",
       "Bash(xxd:*)",
-      "Bash(start cmd /c \"npm run dev\")"
+      "Bash(start cmd /c \"npm run dev\")",
+      "Bash(dir:*)",
+      "Bash(npm run build)",
+      "Bash(npm run preview:*)"
     ]
   }
 }
