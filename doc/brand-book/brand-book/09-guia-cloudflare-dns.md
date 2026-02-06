@@ -481,7 +481,7 @@ IA: [Usa guia-dns-deployment]
 - Define domínio canônico: exemplo.com (apex)
 - Configura redirecionamento www→exemplo.com
 - Estabelece estratégia de cache: HTML 5min, assets 1 mês
-- Executa checklist de go-live
+- Executa validações de go-live
 - Fornece comandos de validação
 ```
 
@@ -534,7 +534,7 @@ IA: [Usa guia-dns-deployment]
 - [Cache de assets]
 - [Regras específicas]
 
-## Checklist Go-Live
+## Validações Go-Live
 - [Etapas de validação completas]
 
 ## Comandos de Validação

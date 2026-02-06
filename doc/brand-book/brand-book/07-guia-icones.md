@@ -288,7 +288,7 @@ Ao pegar um ícone de qualquer fonte, siga este processo para padronizar:
       ↓
 [3. Abrir em editor (VS Code)]
       ↓
-[4. Aplicar checklist de padronização]
+[4. Aplicar padrões de SVG]
       ↓
 [5. Salvar em public/img/icons/]
 ```

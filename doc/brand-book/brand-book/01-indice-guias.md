@@ -45,9 +45,9 @@ Este codex contem 10 guias interconectados que cobrem o ciclo completo de desenv
 
 1. **Identifique o contexto** da sua tarefa
 2. **Consulte a tabela** abaixo para encontrar o guia adequado
-3. **Copie o workflow/checklist** do guia selecionado
+3. **Siga as orientações** do guia selecionado
 4. **Preencha os templates** com dados reais do projeto
-5. **Execute o checklist final** para garantir qualidade
+5. **Valide a qualidade** das alterações
 
 ### Exemplo de Uso
 

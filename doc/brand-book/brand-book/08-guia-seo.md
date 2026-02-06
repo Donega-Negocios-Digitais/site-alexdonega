@@ -608,7 +608,7 @@ IA: [Usa guia-estratégia-índices]
 - Configura robots.txt permitindo blog
 - Define estratégia de canonical tags
 - Configura Google Search Console
-- Fornece checklist de go-live SEO
+- Fornece validações de go-live SEO
 ```
 
 ## Anti-Padrões a Evitar
@@ -695,7 +695,7 @@ IA: [Usa guia-estratégia-índices]
 ## Monitoramento
 [Ferramentas e métricas]
 
-## Checklist Go-Live
+## Validações Go-Live
 [Validações pré-lançamento]
 
 ## Anti-Padrões
