@@ -1,0 +1,2647 @@
+---
+// framework-gsd.astro - Página do curso Framework Get Shit Done (Design v2)
+import Layout from '../../layouts/Layout.astro';
+import HeroAnimatedBackground from '../../components/course/HeroAnimatedBackground.astro';
+import CourseFinalCta from '../../components/course/CourseFinalCta.astro';
+import CourseFaqSection from '../../components/course/CourseFaqSection.astro';
+
+const courseFaqItems = [
+  {
+    question: 'Preciso saber programar?',
+    answer: 'Não! O GSD foi criado para qualquer pessoa que queira usar IA para criar projetos. Você não precisa ser programador - o framework te guia passo a passo, mesmo que você nunca tenha escrito uma linha de código.',
+  },
+  {
+    question: 'Funciona se eu nunca usei Claude Code?',
+    answer: 'Sim! O curso começa do zero. Te ensino a instalar, configurar e usar o Claude Code da forma correta. Em poucas horas você já está criando seus primeiros projetos.',
+  },
+  {
+    question: 'Quanto tempo tenho acesso?',
+    answer: 'Acesso vitalício. Comprou uma vez, seu para sempre. Inclui todas as atualizações futuras do framework.',
+  },
+  {
+    question: 'E se eu não gostar?',
+    answer: 'Garantia de 7 dias. Devolvo 100% do seu dinheiro sem perguntas.',
+  },
+  {
+    question: 'O que consigo criar com o GSD?',
+    answer: 'Sites, aplicativos, automações, sistemas web, landing pages, lojas virtuais... Se você consegue descrever, o GSD consegue construir. Um aluno fez um MVP que normalmente cobraria R$ 10.000 em UMA NOITE.',
+  },
+  {
+    question: 'Quanto tempo leva para aprender?',
+    answer: 'Você pode começar a criar projetos no primeiro dia. O curso é prático - cada módulo te leva direto à aplicação. Em uma semana você já domina o workflow completo.',
+  },
+];
+---
+
+<Layout
+  title="Framework Get Shit Done - IA Que Trabalha Enquanto Você Dorme"
+  description="Aprenda o framework GSD para criar projetos completos com IA enquanto você dorme. Mesmo sem saber programar, construa MVPs profissionais em horas, não semanas."
+>
+
+<!-- Hero Section com Vídeo -->
+<section class="hero-section">
+  <HeroAnimatedBackground variant="emerald" />
+
+  <!-- Conteudo Principal -->
+  <div class="hero-content">
+    <div class="hero-grid">
+      <!-- Coluna de Texto -->
+      <div class="hero-text">
+        <!-- Badge -->
+        <div class="hero-badge">
+          <span class="badge">
+            <span class="badge-dot gsd"></span>
+            Método Revolucionário
+          </span>
+        </div>
+
+        <!-- Titulo Principal -->
+        <h1 class="hero-title">
+          Enquanto Você <span class="text-gsd">Dorme</span>,<br>
+          A IA <span class="text-gsd">Trabalha</span>.
+        </h1>
+
+        <!-- Subtitulo -->
+        <p class="hero-subtitle">
+          <strong>Não sou programador.</strong> Mas usando o <strong class="text-white">Framework GSD</strong>, vendi meu primeiro projeto SaaS por <strong>R$ 10.000</strong> — e levei apenas <strong>8 horas</strong> para criar. Enquanto a IA trabalhava, eu dormia.
+        </p>
+
+        <!-- CTA -->
+        <div class="hero-cta">
+          <a href="#investimento" class="btn-primary gsd">
+            Quero IA Trabalhando Por Mim
+            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna do Vídeo -->
+      <div class="hero-video-container">
+        <div class="video-wrapper">
+          <div class="video-glow gsd-glow"></div>
+          <div class="video-container">
+            <video
+              id="hero-video"
+              poster="/img/people/alex-donega.webp"
+              playsinline
+              muted
+              loop
+              preload="metadata"
+            >
+              <source src="/videos/alex-intro.mp4" type="video/mp4" />
+              <img src="/img/people/alex-donega.webp" alt="Alex Donega" />
+            </video>
+            <button class="video-play-btn gsd-btn" aria-label="Reproduzir vídeo">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="video-decoration video-decoration-1 gsd-border"></div>
+          <div class="video-decoration video-decoration-2 gsd-bg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 01: O Problema -->
+<section class="section" id="problema">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow gsd">01 - O Problema Real</span>
+      <h2 class="section-title">Por que você ainda não criou seu projeto?</h2>
+      <p class="section-subtitle">
+        Você já tentou usar ChatGPT ou Claude para criar algo, mas ficou perdido? A IA começa bem, mas depois se perde, repete erros, e você desiste no meio do caminho.
+      </p>
+    </div>
+
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <h3>"A IA começa bem, mas depois se perde"</h3>
+        <p>Você pede para criar um site, a IA faz metade, e depois começa a errar. Cada vez que você corrige, ela quebra outra coisa. Você fica preso num loop infinito.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+            <path d="M16 16h5v5"/>
+          </svg>
+        </div>
+        <h3>"Não sei o que pedir para a IA"</h3>
+        <p>Você sabe o que quer (um site, um app, uma automação), mas não sabe como descrever para a IA. Os resultados nunca saem como você imaginou.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3>"Demora dias para fazer algo simples"</h3>
+        <p>O que deveria levar horas, leva dias. Você fica preso em detalhes técnicos, erros que não entende, e acaba desistindo antes de terminar.</p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-10.14l2.83 2.83m4.48 4.48l2.83 2.83"/>
+          </svg>
+        </div>
+        <h3>"Preciso dormir, mas o projeto não anda"</h3>
+        <p>Imagine se a IA continuasse trabalhando enquanto você dorme. Acordar com um projeto pronto. Isso parece impossível? Com o GSD, não é.</p>
+      </div>
+    </div>
+
+    <div class="problem-conclusion">
+      <p class="conclusion-text">Se você se identificou com algum desses problemas...</p>
+      <p class="conclusion-highlight">A solução é ter um <span class="text-gsd">framework</span> que faz a IA trabalhar por você.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 02: A Solucao -->
+<section class="section-dark" id="solucao">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow gsd">02 - A Solucao</span>
+      <h2 class="section-title">Como Fazer a IA Trabalhar Enquanto Você Dorme</h2>
+      <p class="section-subtitle">
+        O <strong>Framework GSD (Get Shit Done)</strong> é o único método que organiza a IA em <strong>5 agentes especializados</strong>. Cada um faz sua parte e passa o bastão. Resultado: projetos completos criados enquanto você descansa.
+      </p>
+    </div>
+
+    <!-- Comparacao Antes/Depois -->
+    <div class="comparison-grid">
+      <div class="comparison-box before">
+        <span class="comparison-badge">Sem GSD</span>
+        <ul class="comparison-list">
+          <li><span class="icon">✕</span> IA se perde no meio do caminho</li>
+          <li><span class="icon">✕</span> Você precisa ficar olhando o tempo todo</li>
+          <li><span class="icon">✕</span> Projetos demoram dias ou semanas</li>
+          <li><span class="icon">✕</span> Erros que você não sabe corrigir</li>
+          <li><span class="icon">✕</span> Desiste antes de terminar</li>
+          <li><span class="icon">✕</span> Frustração e tempo perdido</li>
+        </ul>
+      </div>
+
+      <div class="comparison-box after">
+        <span class="comparison-badge">Com GSD</span>
+        <ul class="comparison-list">
+          <li><span class="icon">✓</span> 5 agentes trabalhando em sequência</li>
+          <li><span class="icon">✓</span> Você dorme, a IA trabalha sozinha</li>
+          <li><span class="icon">✓</span> Projetos prontos em horas, não dias</li>
+          <li><span class="icon">✓</span> Cada agente verifica o trabalho do outro</li>
+          <li><span class="icon">✓</span> Acorda com o projeto completo</li>
+          <li><span class="icon">✓</span> Mesmo sem saber programar</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Case dos 10k -->
+    <div class="big-case">
+      <div class="case-header">
+        <span class="case-tag">CASE REAL</span>
+        <h3>R$ 10.000 em Uma Noite</h3>
+      </div>
+      <p class="case-description">
+        Usei o GSD para criar um sistema completo de agendamento com pagamentos integrados. Configurei os agentes à noite antes de dormir. Quando acordei, o sistema estava pronto, testado e funcionando. Entreguei ao cliente na manhã seguinte. Ele pagou R$ 10.000.
+      </p>
+      <div class="case-stats">
+        <div class="stat">
+          <span class="stat-number">8h</span>
+          <span class="stat-label">Dormindo</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Agentes Trabalhando</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">R$10k</span>
+          <span class="stat-label">Faturados</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub-Agentes -->
+    <div class="agents-section">
+      <h3 class="agents-title">Os 5 Agentes Que Trabalham Por Você</h3>
+      <p class="agents-subtitle">Cada um tem uma função específica. Juntos, criam projetos completos enquanto você descansa.</p>
+
+      <div class="agents-grid">
+        <div class="agent-card">
+          <span class="agent-number">01</span>
+          <h4>Mapeador</h4>
+          <p>Analisa o que precisa ser feito. Mapeia tecnologias, estrutura e define o caminho.</p>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-number">02</span>
+          <h4>Pesquisador</h4>
+          <p>Busca as melhores formas de fazer. Estuda exemplos e evita erros comuns.</p>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-number">03</span>
+          <h4>Planejador</h4>
+          <p>Cria um plano passo a passo. Define exatamente o que cada parte do projeto precisa.</p>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-number">04</span>
+          <h4>Construtor</h4>
+          <p>Escreve o código, cria as páginas, configura tudo. Faz o trabalho pesado.</p>
+        </div>
+
+        <div class="agent-card">
+          <span class="agent-number">05</span>
+          <h4>Verificador</h4>
+          <p>Testa tudo. Garante que está funcionando antes de te entregar o projeto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 03: As 5 Fases -->
+<section class="section" id="fases">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow gsd">03 - O Metodo</span>
+      <h2 class="section-title">As 5 Fases do GSD</h2>
+      <p class="section-subtitle">
+        Um workflow estruturado que leva você da ideia ao código funcionando - sem perder qualidade no caminho.
+      </p>
+    </div>
+
+    <div class="phases-timeline">
+      <div class="phase-item">
+        <div class="phase-marker">
+          <span class="phase-num">1</span>
+        </div>
+        <div class="phase-content">
+          <h3>Inicialização</h3>
+          <p class="phase-command">/gsd:map-codebase ou /gsd:new-project</p>
+          <p>Mapeia seu código existente (se houver) e inicializa a estrutura GSD. Cria pasta .planning/ com PROJECT.md, REQUIREMENTS.md e ROADMAP.md.</p>
+          <span class="phase-time">⏱️ 15-60 minutos</span>
+        </div>
+      </div>
+
+      <div class="phase-item">
+        <div class="phase-marker">
+          <span class="phase-num">2</span>
+        </div>
+        <div class="phase-content">
+          <h3>Discussão</h3>
+          <p class="phase-command">/gsd:discuss-phase &lt;number&gt;</p>
+          <p>O GSD faz perguntas adaptativas para entender sua visão. Articula o problema antes de planejar a solução. Output: CONTEXT.md.</p>
+          <span class="phase-time">⏱️ 15-30 minutos</span>
+        </div>
+      </div>
+
+      <div class="phase-item">
+        <div class="phase-marker">
+          <span class="phase-num">3</span>
+        </div>
+        <div class="phase-content">
+          <h3>Planejamento</h3>
+          <p class="phase-command">/gsd:plan-phase &lt;number&gt;</p>
+          <p>Cria PLAN.md com tarefas atômicas usando Goal-Backward. Define critérios de sucesso antes de codar.</p>
+          <span class="phase-time">⏱️ 20-40 minutos</span>
+        </div>
+      </div>
+
+      <div class="phase-item">
+        <div class="phase-marker">
+          <span class="phase-num">4</span>
+        </div>
+        <div class="phase-content">
+          <h3>Execução</h3>
+          <p class="phase-command">/gsd:execute-phase &lt;number&gt;</p>
+          <p>Executor agents implementam cada tarefa com commits atômicos. Modo Parallel (rápido) ou Sequential (seguro).</p>
+          <span class="phase-time">⏱️ Variável (conforme complexidade)</span>
+        </div>
+      </div>
+
+      <div class="phase-item">
+        <div class="phase-marker">
+          <span class="phase-num">5</span>
+        </div>
+        <div class="phase-content">
+          <h3>Verificação</h3>
+          <p class="phase-command">/gsd:verify-work &lt;phase&gt;</p>
+          <p>Verifier agent valida que tudo funciona conforme os objetivos. Gera VERIFICATION.md com evidências.</p>
+          <span class="phase-time">⏱️ 15-30 minutos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="workflow-note">
+      <p><strong>💡 Ciclo contínuo:</strong> Após a verificação, você pode iniciar uma nova fase ou completar o milestone. O workflow se repete mantendo a qualidade em cada iteração.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 04: Para Quem E -->
+<section class="section-dark" id="publico">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow gsd">04 - Para Quem E</span>
+      <h2 class="section-title">Este curso é para você se...</h2>
+      <p class="section-subtitle">Não precisa saber programar. Não precisa ser técnico. Se você consegue usar o WhatsApp, consegue usar o GSD.</p>
+    </div>
+
+    <div class="audience-grid">
+      <div class="audience-card gsd">
+        <div class="audience-icon gsd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h3>Quer Criar Renda Extra</h3>
+        <p>Sabe que poderia vender sites, apps ou automações, mas não sabe por onde começar</p>
+      </div>
+
+      <div class="audience-card gsd">
+        <div class="audience-icon gsd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+          </svg>
+        </div>
+        <h3>Empreendedor Curioso</h3>
+        <p>Tem ideias de negócio, mas acha que criar o produto digital custa caro ou demora muito</p>
+      </div>
+
+      <div class="audience-card gsd">
+        <div class="audience-icon gsd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>Quer Trabalhar Menos</h3>
+        <p>Está cansado de trocar tempo por dinheiro. Quer que a tecnologia trabalhe por você</p>
+      </div>
+
+      <div class="audience-card gsd">
+        <div class="audience-icon gsd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          </svg>
+        </div>
+        <h3>Profissional Liberal</h3>
+        <p>É consultor, coach, advogado, médico. Quer automatizar partes do seu trabalho</p>
+      </div>
+
+      <div class="audience-card gsd">
+        <div class="audience-icon gsd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+        </div>
+        <h3>Nunca Programou</h3>
+        <p>Sempre achou que criar sites ou apps era só para nerds. Quer provar que está errado</p>
+      </div>
+
+      <div class="audience-card gsd">
+        <div class="audience-icon gsd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Quer Escala</h3>
+        <p>Já tem um negócio, mas quer criar produtos digitais para vender enquanto dorme</p>
+      </div>
+    </div>
+
+    <div class="audience-cta">
+      <a href="#investimento" class="btn-primary gsd">Quero IA Trabalhando Por Mim</a>
+    </div>
+  </div>
+</section>
+
+<!-- Secao 05: Sobre o Professor -->
+<section class="section" id="professor">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow gsd">05 - Quem Vai Te Ensinar</span>
+      <h2 class="section-title">Uma nota do Alex</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/img/people/alex-donega.webp" alt="Alex Donega" loading="lazy" />
+      </div>
+      <div class="about-content">
+        <h3>Alex Donega</h3>
+        <p>Quando descobri o GSD, minha produtividade com IA mudou completamente. Antes, eu passava horas em Ralph Loops - pedindo, corrigindo, pedindo de novo. O Claude "esquecia" o contexto e eu tinha que repetir tudo.</p>
+        <p>O GSD resolve isso com uma ideia simples: em vez de forçar uma única conversa a fazer tudo, use múltiplos agentes especializados. Cada um com contexto fresco de 200k tokens. Resultado? Código melhor, menos bugs, mais velocidade.</p>
+        <p>Uso o GSD diariamente nos meus 3 MicroSaaS (Novo Envio, FalaZapp, MyMess) e nos projetos da Autobots Ventures. Não é teoria - é o que funciona na prática.</p>
+
+        <blockquote class="about-quote gsd">
+          "O GSD não é sobre usar IA de forma diferente. É sobre usar IA de forma inteligente."
+        </blockquote>
+
+        <ul class="credentials-list">
+          <li><span class="check gsd">✓</span> Gestor de Projetos na Autobots Ventures</li>
+          <li><span class="check gsd">✓</span> Membro do time Autobots Ventures (+25 software)</li>
+          <li><span class="check gsd">✓</span> Fundador de 3 MicroSaaS em operação</li>
+          <li><span class="check gsd">✓</span> Especialista em Context Engineering</li>
+          <li><span class="check gsd">✓</span> Criador do framework Conteúdo Mestre</li>
+        </ul>
+
+        <a href="#investimento" class="btn-primary gsd">Quero aprender com o Alex</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Bonus -->
+<section class="section bonus-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow gsd">Bônus Exclusivos</span>
+      <h2 class="section-title">Mais valor para você</h2>
+    </div>
+
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-ribbon gsd">BÔNUS</div>
+        <h3>Templates GSD Prontos</h3>
+        <p>Todos os templates de PLAN.md, CONTEXT.md, e arquivos de planejamento prontos para usar.</p>
+        <span class="bonus-value">Valor: <strong>R$ 297</strong></span>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-ribbon gsd">BÔNUS</div>
+        <h3>Cheatsheet de Comandos</h3>
+        <p>Guia rápido de todos os comandos GSD com exemplos práticos de uso.</p>
+        <span class="bonus-value">Valor: <strong>R$ 97</strong></span>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-ribbon gsd">BÔNUS</div>
+        <h3>Comunidade Exclusiva</h3>
+        <p>Acesso ao grupo de alunos para tirar dúvidas, trocar experiências e ver casos reais.</p>
+        <span class="bonus-value">Valor: <strong>R$ 297</strong></span>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-ribbon gsd">BÔNUS</div>
+        <h3>Atualizações Vitalícias</h3>
+        <p>O GSD evolui constantemente. Todas as atualizações futuras incluídas sem custo adicional.</p>
+        <span class="bonus-value">Valor: <strong>Inestimável</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Investimento -->
+<section class="section-dark" id="investimento">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow gsd">Investimento</span>
+      <h2 class="section-title">Garanta sua vaga agora</h2>
+    </div>
+
+    <!-- Social Proof -->
+    <div class="social-proof">
+      <div class="stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p><strong>Desenvolvedores</strong> já multiplicaram sua produtividade com GSD</p>
+    </div>
+
+    <div class="pricing-card gsd">
+      <span class="pricing-badge gsd">Oferta de Lançamento</span>
+      <p class="pricing-original">De R$ 1.997</p>
+      <div class="pricing-main">
+        <p class="pricing-installment">12x de <span class="currency gsd">R$</span><strong>97</strong>,42</p>
+        <p class="pricing-cash">ou <span class="gsd">R$ 997</span> à vista</p>
+      </div>
+
+      <ul class="pricing-features">
+        <li><span class="check gsd">✓</span> Acesso imediato ao curso completo</li>
+        <li><span class="check gsd">✓</span> 8 módulos + aulas bônus</li>
+        <li><span class="check gsd">✓</span> Templates GSD prontos</li>
+        <li><span class="check gsd">✓</span> Cheatsheet de comandos</li>
+        <li><span class="check gsd">✓</span> Comunidade exclusiva</li>
+        <li><span class="check gsd">✓</span> Atualizações vitalícias</li>
+        <li><span class="check gsd">✓</span> Garantia de 7 dias</li>
+      </ul>
+
+      <a href="#" class="btn-buy gsd">
+
+        Quero Minha Vaga Agora
+      </a>
+
+      <!-- Garantia -->
+      <div class="guarantee-box gsd">
+        <div class="guarantee-icon gsd">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="guarantee-content">
+          <h4>Garantia de 7 dias</h4>
+          <p>Se não gostar do curso, devolvo 100% do seu dinheiro. Sem perguntas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secao: Modulos e Aulas -->
+<section class="section" id="conteudo">
+  <div class="container">
+    <!-- Banner Gratuito -->
+    <div class="free-access-banner">
+      <div class="free-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        ACESSO GRATUITO POR TEMPO LIMITADO
+      </div>
+      <h2 class="free-title">APROVEITE PQ AINDA ESTOU LIBERANDO GRÁTIS</h2>
+      <p class="free-subtitle">O curso completo que vai custar <strong>R$ 997</strong> está disponível gratuitamente enquanto finalizo a plataforma. Aproveite agora!</p>
+    </div>
+
+    <div class="section-header modules-header">
+      <span class="section-eyebrow gsd">
+        <svg class="eyebrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+        Conteúdo do Curso
+      </span>
+      <h2 class="section-title">Módulos e Aulas</h2>
+      <p class="section-subtitle">Explore o framework GSD através de módulos organizados que cobrem desde os conceitos fundamentais até aplicações práticas</p>
+    </div>
+
+    <!-- Accordion de Módulos -->
+    <div class="modules-accordion">
+      
+      <!-- Módulo 1: Notas de Entrada -->
+      <div class="module-accordion-item" data-module="entrada">
+        <div class="module-accordion-header" onclick="toggleModule('entrada')">
+          <div class="module-icon amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </div>
+          <div class="module-info">
+            <h3>Notas de Entrada</h3>
+            <span class="lesson-count">1 aula</span>
+          </div>
+          <button class="accordion-toggle" aria-label="Expandir módulo">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="module-accordion-content">
+          <div class="lessons-list">
+            <a href="https://share.note.sx/bz2dskvh#6iiaAoZNoxxaqRW9umRei6N2jiCVmt0M4/gthLLz2aQ" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number amber">00</div>
+              <div class="lesson-info">
+                <h4>Resumo Rápido</h4>
+                <p>Folha de consulta rápida com os principais conceitos e comandos do framework GSD</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  5 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 2: Fundação -->
+      <div class="module-accordion-item active" data-module="fundacao">
+        <div class="module-accordion-header" onclick="toggleModule('fundacao')">
+          <div class="module-icon purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <div class="module-info">
+            <h3>Fundação do Framework</h3>
+            <span class="lesson-count">3 aulas</span>
+          </div>
+          <button class="accordion-toggle" aria-label="Expandir módulo">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="module-accordion-content">
+          <div class="lessons-list">
+            <a href="https://share.note.sx/6fv5i29u#8bn4pDDSHRhtP0YmKM8c5yniIvrgJlyTsFxDADxDiX0" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number purple">01</div>
+              <div class="lesson-info">
+                <h4>Framework GSD</h4>
+                <p>Conceitos core e filosofia do framework Get Shit Done</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  25 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/eubdf74b#STEtBEi3CaAfZpEjTEG/E8uCdb1JN5cwq6A39/mm5E4" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number purple">02</div>
+              <div class="lesson-info">
+                <h4>Arquitetura GSD</h4>
+                <p>Componentes, sub-agentes e orquestração do sistema</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  30 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/x7rlurwz#gsqKoMgUCgqogtxMpxhgIprQpYKK7tscgjh1nFWGP2U" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number purple">02</div>
+              <div class="lesson-info">
+                <h4>Prime the Primer</h4>
+                <p>Preparar contexto antes de iniciar qualquer projeto</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  15 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 3: Fases -->
+      <div class="module-accordion-item" data-module="fases">
+        <div class="module-accordion-header" onclick="toggleModule('fases')">
+          <div class="module-icon cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10"/>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+            </svg>
+          </div>
+          <div class="module-info">
+            <h3>Fases do Processo GSD</h3>
+            <span class="lesson-count">5 aulas</span>
+          </div>
+          <button class="accordion-toggle" aria-label="Expandir módulo">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="module-accordion-content">
+          <div class="lessons-list">
+            <a href="https://share.note.sx/s201bvd8#t1nq4hN/l/OH+ELUhSF0z2/MI75AFe7XoZSsgXhBjiY" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number cyan">03</div>
+              <div class="lesson-info">
+                <h4>Fase 1: Inicialização</h4>
+                <p>Setup e mapeamento de projeto - preparando o terreno</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  20 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/b8wrbrot#Vg18xY9P1t96IbgQ2lRnUtroCrPW6z0Dc/Ja1GAltqg" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number cyan">04</div>
+              <div class="lesson-info">
+                <h4>Fase 2: Discussão</h4>
+                <p>Articular visão antes do planejamento - entendendo o problema</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  25 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/wrbm5mrs#fPyPw3oYkCKclM4PtxqL6kOM0BqcsE0s+O/HJP1MJCQ" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number cyan">05</div>
+              <div class="lesson-info">
+                <h4>Fase 3: Planejamento</h4>
+                <p>Criar planos com tarefas atômicas - Goal-Backward methodology</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  35 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/vewbjclf#3kRP07p5AMebVvgKfGviSjz2cHQgJS24y0UIEg8I5ik" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number cyan">06</div>
+              <div class="lesson-info">
+                <h4>Fase 4: Execução</h4>
+                <p>Implementar com atomic commits - Parallel vs Sequential</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  40 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/upadlvvm#pYXdx6GoGKZ2Z71ITSvUJPdzyYGICs5tBrTF1HTD8ws" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number cyan">07</div>
+              <div class="lesson-info">
+                <h4>Fase 5: Verificação</h4>
+                <p>Validar deliverables e garantir qualidade</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  20 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 4: Recursos -->
+      <div class="module-accordion-item" data-module="recursos">
+        <div class="module-accordion-header" onclick="toggleModule('recursos')">
+          <div class="module-icon emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <div class="module-info">
+            <h3>Recursos e Ferramentas</h3>
+            <span class="lesson-count">3 aulas</span>
+          </div>
+          <button class="accordion-toggle" aria-label="Expandir módulo">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="module-accordion-content">
+          <div class="lessons-list">
+            <a href="https://share.note.sx/ihtqson9#ga1haU6MxcvG657OgZu0miYKn4FwMTXh0PEX4gLZJ5w" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number emerald">08</div>
+              <div class="lesson-info">
+                <h4>Comandos GSD</h4>
+                <p>Biblioteca completa de comandos do framework</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  30 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/ewu8n7w1#WE90oIusfrRJ/H9DQgym+FAumXq1eLd3HbMGXhULeTQ" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number emerald">09</div>
+              <div class="lesson-info">
+                <h4>Checklists Master</h4>
+                <p>Listas de verificação por fase do processo</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  15 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/893kz8dj#C3B2RMkIC6rOBCCvboNXMdbbF/2BaJ6MG0wDFE+s17E" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number emerald">10</div>
+              <div class="lesson-info">
+                <h4>Troubleshooting</h4>
+                <p>Problemas comuns e soluções do framework</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  25 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 5: Bônus -->
+      <div class="module-accordion-item" data-module="bonus">
+        <div class="module-accordion-header" onclick="toggleModule('bonus')">
+          <div class="module-icon pink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <div class="module-info">
+            <h3>Bônus</h3>
+            <span class="lesson-count">2 aulas</span>
+          </div>
+          <button class="accordion-toggle" aria-label="Expandir módulo">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+        <div class="module-accordion-content">
+          <div class="lessons-list">
+            <a href="https://share.note.sx/crzd6nty#x2DClYZZ2/Xe8wzUMd0TGkWSWtC75cRCKfANJ4oDatAdo" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number pink">11</div>
+              <div class="lesson-info">
+                <h4>Lições Práticas</h4>
+                <p>Dicas do dia a dia, metaprompting e workflows reais</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  35 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+            <a href="https://share.note.sx/3mps62nb#VQphU9paaAthD/xBjbLLiclbuxihIZoGK/cznf0ljMI" target="_blank" rel="noopener" class="lesson-card">
+              <div class="lesson-number pink">13</div>
+              <div class="lesson-info">
+                <h4>Carrossel Creator</h4>
+                <p>Projeto Tutorial GSD - Mãos na obra</p>
+                <span class="lesson-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  45 min
+                </span>
+                <span class="lesson-btn">Ver aula →</span>
+              </div>
+              <svg class="lesson-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  function toggleModule(moduleId) {
+    const items = document.querySelectorAll('.module-accordion-item');
+    const targetItem = document.querySelector(`[data-module="${moduleId}"]`);
+    
+    // Fecha todos os módulos
+    items.forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Abre o módulo clicado (se não estava ativo)
+    if (!targetItem.classList.contains('active')) {
+      targetItem.classList.add('active');
+    }
+  }
+  
+  // Inicializa com o módulo de fundação aberto
+  document.addEventListener('DOMContentLoaded', () => {
+    toggleModule('fundacao');
+  });
+</script>
+
+<!-- Secao: FAQ -->
+<CourseFaqSection
+  eyebrow="Dúvidas"
+  eyebrowVariant="gsd"
+  title="Perguntas Frequentes"
+  items={courseFaqItems}
+/>
+
+<!-- CTA Final -->
+<CourseFinalCta
+  title="Pronto para dominar o GSD?"
+  subtitle="Pare de lutar com a IA. Comece a construir projetos complexos com sub-agentes especializados e contexto fresco sempre."
+  primaryHref="#investimento"
+  primaryLabel="Quero Minha Vaga"
+  primaryVariant="gsd"
+  sectionVariant="gsd"
+/>
+
+</Layout>
+
+<style>
+  /* ==================== VARIAVEIS GSD ==================== */
+  :root {
+    --gsd: #10b981;
+    --gsd-light: rgba(16, 185, 129, 0.1);
+    --gsd-hover: #059669;
+  }
+
+  /* ==================== HERO SECTION ==================== */
+  .hero-section {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .animated-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .hero-text-center {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    margin-bottom: 2rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--gsd);
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+
+  .badge-dot.gsd {
+    background: var(--gsd);
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-gsd {
+    color: var(--gsd);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  .hero-cta {
+    margin-bottom: 2rem;
+  }
+
+  .hero-quote {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    color: white;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  /* ==================== BUTTONS ==================== */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    100% { left: 100%; }
+  }
+
+  .btn-primary.gsd {
+    background: linear-gradient(to right, var(--gsd), var(--gsd-hover));
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+  }
+
+  .btn-primary.gsd:hover {
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .btn-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #22c55e;
+    color: white;
+    padding: 1.25rem 2rem;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    width: 100%;
+  }
+
+  .btn-buy.gsd {
+    background: var(--gsd);
+  }
+
+  .btn-buy:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+  }
+
+  .btn-buy.gsd:hover {
+    background: var(--gsd-hover);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+  }
+
+  /* ==================== SECTIONS ==================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+    background: #0a0a0a;
+  }
+
+  .section-dark {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(251, 146, 60);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .section-eyebrow.gsd {
+    color: var(--gsd);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  /* ==================== PROBLEMS GRID ==================== */
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .problem-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .problem-card:hover {
+    border-color: rgba(220, 38, 38, 0.5);
+    transform: translateY(-4px);
+  }
+
+  .problem-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(220, 38, 38, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #dc2626;
+  }
+
+  .problem-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .problem-card p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+  }
+
+  .problem-conclusion {
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .conclusion-text {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.75rem;
+  }
+
+  .conclusion-highlight {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  /* ==================== COMPARISON GRID ==================== */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+  }
+
+  .comparison-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .comparison-box.before {
+    border-color: rgba(220, 38, 38, 0.3);
+  }
+
+  .comparison-box.after {
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+
+  .comparison-badge {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .comparison-box.before .comparison-badge {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+  }
+
+  .comparison-box.after .comparison-badge {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+  }
+
+  .comparison-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comparison-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .comparison-box.before .icon {
+    color: #dc2626;
+  }
+
+  .comparison-box.after .icon {
+    color: #22c55e;
+  }
+
+  /* ==================== AGENTS SECTION ==================== */
+  .agents-section {
+    margin-top: 4rem;
+  }
+
+  .agents-title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .agents-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2.5rem;
+  }
+
+  .agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .agent-card {
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .agent-card:hover {
+    border-color: var(--gsd);
+    transform: translateY(-4px);
+  }
+
+  .agent-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: var(--gsd);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 1rem;
+  }
+
+  .agent-card h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .agent-card p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  /* ==================== PHASES TIMELINE ==================== */
+  .phases-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .phase-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .phase-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .phase-marker {
+    flex-shrink: 0;
+  }
+
+  .phase-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--gsd);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .phase-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .phase-command {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: var(--gsd);
+    margin-bottom: 0.75rem;
+  }
+
+  .phase-content p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .phase-time {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .workflow-note {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: rgba(16, 185, 129, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+  }
+
+  .workflow-note p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  /* ==================== AUDIENCE GRID ==================== */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .audience-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .audience-card.gsd:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .audience-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+
+  .audience-icon.gsd {
+    background: var(--gsd-light);
+  }
+
+  .audience-icon svg {
+    width: 28px;
+    height: 28px;
+    color: rgb(249, 115, 22);
+  }
+
+  .audience-icon.gsd svg {
+    color: var(--gsd);
+  }
+
+  .audience-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .audience-card p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  .audience-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  /* ==================== ABOUT GRID ==================== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .about-image {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .about-quote {
+    border-left: 3px solid rgb(249, 115, 22);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 1.125rem;
+    color: white;
+    font-style: italic;
+  }
+
+  .about-quote.gsd {
+    border-left-color: var(--gsd);
+  }
+
+  .credentials-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .credentials-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .check {
+    color: rgb(249, 115, 22);
+    font-weight: 700;
+  }
+
+  .check.gsd {
+    color: var(--gsd);
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  /* ==================== MODULES GRID ==================== */
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .module-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .module-card:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .module-badge {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    background: rgba(249, 115, 22, 0.1);
+    color: rgb(249, 115, 22);
+  }
+
+  .module-badge.gsd {
+    background: var(--gsd-light);
+    color: var(--gsd);
+  }
+
+  .module-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .module-card > p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .module-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ==================== BONUS SECTION ==================== */
+  .bonus-section {
+    background: linear-gradient(180deg, #0a0a0a 0%, rgba(16, 185, 129, 0.03) 50%, #0a0a0a 100%);
+  }
+
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .bonus-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .bonus-card:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .bonus-ribbon {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0 16px 0 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .bonus-ribbon.gsd {
+    background: linear-gradient(135deg, var(--gsd), var(--gsd-hover));
+  }
+
+  .bonus-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .bonus-card p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .bonus-value {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .bonus-value strong {
+    color: var(--gsd);
+    font-size: 1.125rem;
+  }
+
+  /* ==================== PRICING ==================== */
+  .social-proof {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .stars svg {
+    width: 24px;
+    height: 24px;
+    color: #fbbf24;
+  }
+
+  .social-proof p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .social-proof strong {
+    color: white;
+  }
+
+  .pricing-card {
+    max-width: 480px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .pricing-card.gsd {
+    border-color: rgba(16, 185, 129, 0.2);
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  }
+
+  .pricing-badge {
+    display: inline-block;
+    background: rgba(249, 115, 22, 0.1);
+    color: rgb(251, 146, 60);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-badge.gsd {
+    background: var(--gsd-light);
+    color: var(--gsd);
+  }
+
+  .pricing-original {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: line-through;
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-main {
+    margin-bottom: 2rem;
+  }
+
+  .pricing-installment {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.25rem;
+  }
+
+  .pricing-installment strong {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+
+  .currency {
+    font-size: 1.5rem;
+    color: rgb(249, 115, 22);
+    font-weight: 600;
+  }
+
+  .currency.gsd {
+    color: var(--gsd);
+  }
+
+  .pricing-cash {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .pricing-cash span {
+    color: rgb(249, 115, 22);
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  .pricing-cash span.gsd {
+    color: var(--gsd);
+  }
+
+  .pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    text-align: left;
+  }
+
+  .pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* ==================== SOCIAL PROOF ==================== */
+  .social-proof {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stars svg {
+    width: 24px;
+    height: 24px;
+    fill: #fbbf24;
+  }
+
+  .social-proof p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .social-proof strong {
+    color: white;
+  }
+
+  .guarantee-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background: rgba(34, 197, 94, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(34, 197, 94, 0.1);
+  }
+
+  .guarantee-box.gsd {
+    background: var(--gsd-light);
+    border-color: rgba(16, 185, 129, 0.2);
+  }
+
+  .guarantee-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .guarantee-icon.gsd {
+    background: rgba(16, 185, 129, 0.2);
+  }
+
+  .guarantee-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #22c55e;
+  }
+
+  .guarantee-icon.gsd svg {
+    color: var(--gsd);
+  }
+
+  .guarantee-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .guarantee-content p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  /* ==================== HERO GRID (Video + Content) ==================== */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  /* Vídeo - Mesmo tamanho da home */
+  .hero-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .video-glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: -1;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+  }
+
+  .video-container {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    aspect-ratio: 9 / 16;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(16, 185, 129, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
+  }
+
+  .video-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(16, 185, 129, 1);
+  }
+
+  .video-play-btn svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+    margin-left: 4px;
+  }
+
+  .video-play-btn.paused svg {
+    margin-left: 0;
+  }
+
+  .video-decoration {
+    position: absolute;
+    border-radius: 24px;
+    z-index: -1;
+  }
+
+  .video-decoration-1 {
+    inset: -8px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  .video-decoration-2 {
+    inset: -16px;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+  }
+
+  .mvp-proof {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.08) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+
+  .mvp-badge {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 0.8rem;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+  }
+
+  .mvp-proof p {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+  }
+
+  .hero-headline-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  /* ==================== RESPONSIVE ==================== */
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 4rem 1rem 3rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .video-wrapper {
+      max-width: 280px;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .agents-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .phase-item {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .comparison-grid,
+    .problems-grid,
+    .audience-grid,
+    .modules-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mvp-proof p {
+      font-size: 1rem;
+    }
+  }
+
+  /* ==================== MODULES ACCORDION ==================== */
+  .modules-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .module-accordion-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .module-accordion-item:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .module-accordion-item.active {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.03);
+  }
+
+  .module-accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .module-accordion-header:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .module-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .module-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+
+  .module-icon.amber {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+  }
+
+  .module-icon.purple {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  }
+
+  .module-icon.cyan {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  }
+
+  .module-icon.emerald {
+    background: linear-gradient(135deg, #10b981, #14b8a6);
+  }
+
+  .module-icon.pink {
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+  }
+
+  .module-info {
+    flex: 1;
+  }
+
+  .module-info h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 0.25rem;
+  }
+
+  .lesson-count {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .accordion-toggle {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .accordion-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .accordion-toggle .chevron {
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease;
+  }
+
+  .module-accordion-item.active .chevron {
+    transform: rotate(180deg);
+  }
+
+  .module-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .module-accordion-item.active .module-accordion-content {
+    max-height: 2000px;
+    opacity: 1;
+  }
+
+  .lessons-list {
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .lesson-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .lesson-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(16, 185, 129, 0.3);
+    transform: translateX(4px);
+  }
+
+  .lesson-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .lesson-number.amber {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+  }
+
+  .lesson-number.purple {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  }
+
+  .lesson-number.cyan {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  }
+
+  .lesson-number.emerald {
+    background: linear-gradient(135deg, #10b981, #14b8a6);
+  }
+
+  .lesson-number.pink {
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+  }
+
+  .lesson-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .lesson-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 0.25rem;
+    transition: color 0.2s ease;
+  }
+
+  .lesson-card:hover .lesson-info h4 {
+    color: #34d399;
+  }
+
+  .lesson-info p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .lesson-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .lesson-duration svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .lesson-link {
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .lesson-card:hover .lesson-link {
+    color: #34d399;
+    transform: translate(2px, -2px);
+  }
+
+  .lesson-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+    width: fit-content;
+  }
+
+  .lesson-card:hover .lesson-btn {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.5);
+    color: #34d399;
+  }
+
+  .eyebrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ==================== FREE ACCESS BANNER ==================== */
+  .free-access-banner {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(245, 158, 11, 0.08) 100%);
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .free-access-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gsd), #f59e0b, var(--gsd));
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .free-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: white;
+    padding: 0.625rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+  }
+
+  .free-badge svg {
+    width: 18px;
+    height: 18px;
+    animation: star-pulse 2s ease infinite;
+  }
+
+  @keyframes star-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  .free-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .free-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .free-subtitle strong {
+    color: #fbbf24;
+    font-weight: 600;
+  }
+
+  .modules-header {
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .free-access-banner {
+      padding: 2rem 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .free-badge {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .free-subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>
