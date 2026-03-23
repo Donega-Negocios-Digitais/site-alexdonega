@@ -64,10 +64,11 @@ G:\Downloads\site-alexdonega\
 │   ├── pages/
 │   │   ├── index.astro
 │   │   ├── portfolio/index.astro
-│   │   ├── politicas/index.astro
-│   │   ├── politica-de-privacidade/index.astro
-│   │   ├── politica-de-cookies/index.astro
-│   │   ├── termos-de-uso/index.astro
+│   │   ├── politicas/
+│   │   │   ├── index.astro
+│   │   │   ├── politica-de-privacidade/index.astro
+│   │   │   ├── politica-de-cookies/index.astro
+│   │   │   └── termos-de-uso/index.astro
 │   │   ├── brand/index.astro
 │   │   ├── claude-code-em-1-dia/index.astro
 │   │   ├── engenharia-de-contexto-aplicado-ao-marketing-digital/index.astro
@@ -118,9 +119,9 @@ G:\Downloads\site-alexdonega\
 | `/cursos/engenharia-de-contexto` | cursos/engenharia-de-contexto.astro | Curso |
 | `/cursos/segundo-cerebro-obsidian` | cursos/segundo-cerebro-obsidian.astro | Curso |
 | `/politicas` | politicas/index.astro | Hub políticas |
-| `/politica-de-privacidade` | politica-de-privacidade/index.astro | Privacidade |
-| `/politica-de-cookies` | politica-de-cookies/index.astro | Cookies |
-| `/termos-de-uso` | termos-de-uso/index.astro | Termos |
+| `/politicas/politica-de-privacidade` | politicas/politica-de-privacidade/index.astro | Privacidade |
+| `/politicas/politica-de-cookies` | politicas/politica-de-cookies/index.astro | Cookies |
+| `/politicas/termos-de-uso` | politicas/termos-de-uso/index.astro | Termos |
 
 **Nota:** Existem 3 landing pages standalone em `.astro` na raiz de `src/pages/` (sem arquivo `.html` legado).
 
@@ -446,3 +447,178 @@ schema: z.object({
 ---
 
 **Status:** VALIDADO E COMPLETO
+
+---
+
+## 10. ESTILIZAÇÃO E EFEITOS DA HOME
+
+### Background Animado (36 Linhas Neon)
+
+O background principal utilizado na Home (Hero Section) tem fundo `background: #000;` e consiste em um vetor SVG complexo de 36 linhas orgânicas e pontos simulando fluxo de dados pulsante em neon, rodando com a biblioteca nativa `<animateMotion>` sobre paths do SVG.
+
+<details>
+<summary><b>Clique para ver a estrutura principal do SVGs e Threads (exemplo)</b></summary>
+
+```html
+<div class="hero-background" style="position: absolute; inset: 0; z-index: 1;">
+  <svg class="animated-lines" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width: 100%; height: 100%;">
+    <defs>
+      <!-- Gradientes base do neon -->
+      <radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="rgba(255,255,255,1)" />
+        <stop offset="30%" stop-color="rgba(251,146,60,1)" />
+        <stop offset="70%" stop-color="rgba(249,115,22,0.8)" />
+        <stop offset="100%" stop-color="rgba(249,115,22,0)" />
+      </radialGradient>
+      
+      <!-- Fundo ambiente / brilho atrás das linhas -->
+      <radialGradient id="heroTextBg" cx="30%" cy="50%" r="70%">
+        <stop offset="0%" stop-color="rgba(249,115,22,0.15)" />
+        <stop offset="40%" stop-color="rgba(251,146,60,0.08)" />
+        <stop offset="80%" stop-color="rgba(234,88,12,0.05)" />
+        <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+      </radialGradient>
+
+      <!-- Fades dinâmicos nas pontas das linhas -->
+      <linearGradient id="threadFade1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="rgba(0,0,0,1)" />
+        <stop offset="15%" stop-color="rgba(249,115,22,0.8)" />
+        <stop offset="85%" stop-color="rgba(249,115,22,0.8)" />
+        <stop offset="100%" stop-color="rgba(0,0,0,1)" />
+      </linearGradient>
+
+      <!-- Efeito de blur para brilho intenso do neon -->
+      <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+        <feMerge>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    <g>
+      <!-- Background ellipses criando os flares espaciais laranjas do fundo -->
+      <ellipse cx="300" cy="350" rx="400" ry="200" fill="url(#heroTextBg)" filter="url(#heroTextBlur)" opacity="0.6" />
+      
+      <!-- 36 threads com caminhos aleatórios via cubic beziers. Exemplo thread 1: -->
+      <path id="thread1" d="M50 720 Q200 590 350 540 Q500 490 650 520 Q800 550 950 460 Q1100 370 1200 340" stroke="url(#threadFade1)" stroke-width="0.8" fill="none" opacity="0.8" />
+      <circle r="2" fill="url(#neonPulse1)" opacity="1" filter="url(#neonGlow)">
+        <!-- A bolinha que corre ao longo do path -->
+        <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#thread1" /></animateMotion>
+      </circle>
+      <!-- ... -->
+    </g>
+  </svg>
+</div>
+```
+</details>
+
+### Estilização dos Elementos Principais Exclusivos
+
+Códigos chave do visual de componentes dinâmicos da home.
+
+```css
+/* Container de Fundo (Black base e Dark Fade) */
+.hero-section {
+  background: #000;
+}
+.section-dark {
+  /* Transição em background dark nas listagens da home */
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+/* Typography Gradient Exclusivo no Heading 1 (Span `IA.`) */
+.text-gradient {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Efeito Animado no texto ('Contexto.') de hachuras movendo */
+.text-styled {
+  position: relative;
+  font-style: italic;
+  font-weight: 300;
+  display: inline-flex;
+}
+.text-styled::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0.04em;
+  top: 0.04em;
+  background: linear-gradient(45deg, transparent 45%, white 45%, white 55%, transparent 0);
+  z-index: -1;
+  background-size: 0.06em 0.06em;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: line-shadow 15s linear infinite;
+}
+
+@keyframes line-shadow {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% -100%; }
+}
+
+/* Glow e Blur Base de Cards e Vídeo (Luz pulsante orgânica) */
+.video-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Glassmorphism Badge estilo Cyber com Dot vermelho pulsando */
+.badge {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  color: rgb(251, 146, 60);
+  border-radius: 9999px;
+}
+.badge-dot {
+  width: 8px; height: 8px;
+  background: #f97316;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+/* Efeito Shimmer metálico que corre pelo botão Gradient */
+.btn-primary {
+  background: linear-gradient(to right, rgb(249, 115, 22), rgb(234, 88, 12));
+  border: 1px solid rgba(251, 146, 60, 0.3);
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+  overflow: hidden; /* Cortar bordas do brilho */
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  100% { left: 100%; }
+}
+
+/* Cards de Cursos Modernos na Home com gradiente sutil branco e sombra laranja on hover */
+.course-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+.course-card:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
+}
+```

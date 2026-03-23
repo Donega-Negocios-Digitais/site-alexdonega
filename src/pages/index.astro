@@ -485,6 +485,19 @@ import Badge from '../components/ui/Badge.astro';
         <h3>MicroSaaS</h3>
         <p>Validei essa metodologia criando o Novo Envio e FalaZapp — produtos enxutos com UX simples que retêm usuários.</p>
       </div>
+
+      <div class="service-card">
+        <a href="/servicos/desenvolvimento-de-software/" class="service-card-link">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3>Desenvolvimento de Software</h3>
+          <p>Transformamos suas ideias em sistemas e aplicativos com metodologia ágil. Do MVP ao produto escalável.</p>
+          <span class="service-link">Saiba mais →</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -580,7 +593,10 @@ import Badge from '../components/ui/Badge.astro';
           <li>✓ Automação de conteúdo para redes sociais</li>
           <li>✓ Templates e frameworks prontos</li>
         </ul>
-        <a href="/engenharia-de-contexto-aplicado-ao-marketing-digital/" class="btn-primary">Ver Detalhes →</a>
+        <div class="course-buttons">
+          <a href="/cursos/engenharia-de-contexto/" class="btn-primary">Ver Detalhes →</a>
+          <a href="/engenharia-de-contexto-aplicado-ao-marketing-digital/" class="btn-small">página antiga</a>
+        </div>
       </div>
 
       <div class="course-card">
@@ -593,7 +609,10 @@ import Badge from '../components/ui/Badge.astro';
           <li>✓ Skills, agents e automações práticas</li>
           <li>✓ Templates prontos para copiar</li>
         </ul>
-        <a href="/claude-code-em-1-dia/" class="btn-primary">Ver Detalhes →</a>
+        <div class="course-buttons">
+          <a href="/cursos/claude-code-em-1-dia/" class="btn-primary">Ver Detalhes →</a>
+          <a href="/claude-code-em-1-dia/" class="btn-small">página antiga</a>
+        </div>
       </div>
 
       <div class="course-card">
@@ -606,7 +625,23 @@ import Badge from '../components/ui/Badge.astro';
           <li>✓ Links bidirecionais e grafos</li>
           <li>✓ Vault Starter Kit + comunidade</li>
         </ul>
-        <a href="/segundo-cerebro-com-obsidian/" class="btn-primary">Ver Detalhes →</a>
+        <div class="course-buttons">
+          <a href="/cursos/segundo-cerebro-obsidian/" class="btn-primary">Ver Detalhes →</a>
+          <a href="/segundo-cerebro-com-obsidian/" class="btn-small">página antiga</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-badge">Método Revolucionário</div>
+        <h3>Framework Get Shit Done</h3>
+        <p>O único método que te permite criar projetos completos com IA enquanto você dorme. MVPs profissionais em horas, não semanas.</p>
+        <ul class="course-features">
+          <li>✓ Crie projetos enquanto dorme</li>
+          <li>✓ Sem saber programar</li>
+          <li>✓ MVPs profissionais em horas</li>
+          <li>✓ Framework passo a passo</li>
+        </ul>
+        <a href="/cursos/framework-gsd/" class="btn-primary">Ver Detalhes →</a>
       </div>
     </div>
   </div>
@@ -1764,6 +1799,34 @@ import Badge from '../components/ui/Badge.astro';
     line-height: 1.6;
   }
 
+  .service-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .service-card-link:hover .service-icon {
+    background: rgba(249, 115, 22, 0.2);
+    transform: scale(1.05);
+  }
+
+  .service-card-link:hover h3 {
+    color: rgb(249, 115, 22);
+  }
+
+  .service-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: rgb(249, 115, 22);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .service-card:hover .service-link {
+    transform: translateX(4px);
+  }
+
   /* ==================== PORTFÓLIO ==================== */
   .portfolio-grid {
     display: grid;
@@ -1905,6 +1968,42 @@ import Badge from '../components/ui/Badge.astro';
 
   .course-features li:last-child {
     border-bottom: none;
+  }
+
+  .course-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .course-buttons .btn-primary,
+  .course-buttons .btn-secondary {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .btn-small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn-small:hover {
+    color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   /* ==================== CURADORIA (PINTEREST STYLE) ==================== */

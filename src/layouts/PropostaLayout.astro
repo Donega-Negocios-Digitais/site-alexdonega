@@ -1,0 +1,694 @@
+---
+// PropostaLayout.astro - Layout dedicado para propostas comerciais
+// Não indexável, sem Header/Footer, CSS isolado do Tailwind
+
+interface Props {
+    title: string;
+    clientName: string;
+    date: string;
+    value?: string;
+    description?: string;
+    logo?: string;
+    logoAlt?: string;
+}
+
+const { title, clientName, date, value, description, logo, logoAlt } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | Proposta Comercial</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content={description || `Proposta comercial para ${clientName}`}>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+
+    <!-- Fonte Geist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <style is:global>
+        /* ==================== RESET ==================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ==================== VARIÁVEIS DE DESIGN ==================== */
+        :root {
+            --p-bg: #f8fafc;
+            --p-bg-card: #ffffff;
+            --p-bg-elevated: #f1f5f9;
+            --p-text: #1e293b;
+            --p-text-white: #0f172a;
+            --p-text-muted: #64748b;
+            --p-accent: #d87757;
+            --p-accent-hover: #c96a4d;
+            --p-accent-glow: rgba(216, 119, 87, 0.1);
+            --p-border: #e2e8f0;
+            --p-radius: 12px;
+            --p-radius-lg: 16px;
+            --p-shadow: 0 4px 16px rgba(0,0,0,.06);
+        }
+
+        [data-theme="dark"] {
+            --p-bg: #0a0a0a;
+            --p-bg-card: #111111;
+            --p-bg-elevated: #1a1a1a;
+            --p-text: #e5e5e5;
+            --p-text-white: #ffffff;
+            --p-text-muted: #9ca3af;
+            --p-accent: #d87757;
+            --p-accent-hover: #e8866a;
+            --p-accent-glow: rgba(216, 119, 87, 0.15);
+            --p-border: #2a2a2a;
+            --p-shadow: 0 4px 16px rgba(0,0,0,.3);
+        }
+
+        /* ==================== BASE ==================== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--p-bg);
+            color: var(--p-text);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color .3s, color .3s;
+        }
+
+        /* ==================== THEME TOGGLE ==================== */
+        .theme-toggle {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: var(--p-bg-card);
+            box-shadow: var(--p-shadow);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            border: 1px solid var(--p-border);
+            color: var(--p-accent);
+        }
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            color: var(--p-accent-hover);
+        }
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: block; }
+        [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+        [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+        /* ==================== LAYOUT ==================== */
+        .proposta-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* ==================== HEADER DA PROPOSTA ==================== */
+        .proposta-header {
+            text-align: center;
+            padding-bottom: 48px;
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--p-border);
+            transition: border-color .3s;
+        }
+
+        .proposta-logo {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto 28px;
+            display: block;
+        }
+
+        .proposta-brand {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--p-accent);
+            margin-bottom: 24px;
+        }
+
+        .proposta-title {
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 700;
+            color: var(--p-text-white);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .proposta-meta {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: var(--p-text-muted);
+        }
+
+        .proposta-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .proposta-meta strong {
+            color: var(--p-text);
+            font-weight: 500;
+        }
+
+        /* ==================== SEÇÕES ==================== */
+        .proposta-section {
+            margin-bottom: 48px;
+        }
+
+        .proposta-section-title {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--p-accent);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--p-border);
+            transition: border-color .3s;
+        }
+
+        .proposta-section p {
+            margin-bottom: 12px;
+            color: var(--p-text);
+        }
+
+        /* ==================== CARDS ==================== */
+        .proposta-card {
+            background: var(--p-bg-card);
+            border: 1px solid var(--p-border);
+            border-radius: var(--p-radius);
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: background-color .3s, border-color .3s;
+        }
+
+        .proposta-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--p-text-white);
+            margin-bottom: 8px;
+        }
+
+        .proposta-card p {
+            font-size: 14px;
+            color: var(--p-text-muted);
+            margin-bottom: 0;
+        }
+
+        /* ==================== TABELA DE INVESTIMENTO ==================== */
+        .proposta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+        }
+
+        .proposta-table th,
+        .proposta-table td {
+            text-align: left;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--p-border);
+            font-size: 14px;
+        }
+
+        .proposta-table th {
+            color: var(--p-text-muted);
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .proposta-table td {
+            color: var(--p-text);
+        }
+
+        .proposta-table .valor {
+            font-weight: 700;
+            color: var(--p-text-white);
+            font-size: 16px;
+        }
+
+        .proposta-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .proposta-total {
+            background: var(--p-bg-card);
+            border: 1px solid var(--p-border);
+            border-radius: var(--p-radius);
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .proposta-total-label {
+            font-size: 14px;
+            color: var(--p-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .proposta-total-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--p-accent);
+        }
+
+        /* ==================== LISTA ==================== */
+        .proposta-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .proposta-list li {
+            position: relative;
+            padding: 8px 0 8px 24px;
+            color: var(--p-text);
+            font-size: 15px;
+        }
+
+        .proposta-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--p-accent);
+            opacity: 0.7;
+        }
+
+        /* ==================== DESTAQUE / CALLOUT ==================== */
+        .proposta-callout {
+            background: var(--p-accent-glow);
+            border: 1px solid rgba(216, 119, 87, 0.25);
+            border-radius: var(--p-radius);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+
+        .proposta-callout p {
+            color: var(--p-text);
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        /* ==================== CTA ==================== */
+        .proposta-cta {
+            text-align: center;
+            padding: 48px 0;
+            margin-top: 48px;
+            border-top: 1px solid var(--p-border);
+        }
+
+        .proposta-cta p {
+            color: var(--p-text-muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .proposta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: var(--p-accent);
+            color: #fff;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--p-radius);
+            transition: all 0.2s ease;
+        }
+
+        .proposta-btn:hover {
+            background: var(--p-accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(216, 119, 87, 0.25);
+        }
+
+        .proposta-btn-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--p-accent);
+            color: #fff;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--p-radius);
+            transition: all 0.2s ease;
+            margin-top: 12px;
+        }
+
+        .proposta-btn-small:hover {
+            background: var(--p-accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* ==================== FOOTER DA PROPOSTA ==================== */
+        .proposta-footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--p-border);
+            font-size: 13px;
+            color: var(--p-text-muted);
+            transition: border-color .3s;
+        }
+
+        .proposta-footer a {
+            color: var(--p-accent);
+            text-decoration: none;
+        }
+
+        /* ==================== KPIs ==================== */
+        .proposta-kpis {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+
+        .proposta-kpi {
+            background: var(--p-bg-card);
+            border: 1px solid var(--p-border);
+            border-radius: var(--p-radius);
+            padding: 20px;
+            text-align: center;
+            transition: background-color .3s, border-color .3s;
+        }
+
+        .proposta-kpi-value {
+            font-size: clamp(22px, 5vw, 28px);
+            font-weight: 700;
+            color: var(--p-accent);
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .proposta-kpi-label {
+            font-size: 13px;
+            color: var(--p-text-muted);
+        }
+
+        @media (min-width: 640px) {
+            .proposta-kpis {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ==================== TIMELINE ==================== */
+        .proposta-timeline {
+            border-left: 3px solid var(--p-accent);
+            padding-left: 20px;
+            margin: 0;
+            display: grid;
+            gap: 20px;
+        }
+
+        .proposta-timeline-step {
+            position: relative;
+        }
+
+        .proposta-timeline-step::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--p-accent);
+            border-radius: 50%;
+            border: 2px solid var(--p-bg);
+        }
+
+        .proposta-step-title {
+            font-weight: 600;
+            color: var(--p-text-white);
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .proposta-step-date {
+            font-size: 13px;
+            color: var(--p-accent);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .proposta-step-desc {
+            font-size: 14px;
+            color: var(--p-text-muted);
+            line-height: 1.5;
+        }
+
+        /* ==================== KEY-VALUE (INVESTIMENTO) ==================== */
+        .proposta-kv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--p-border);
+        }
+
+        .proposta-kv:last-child {
+            border-bottom: none;
+        }
+
+        .proposta-kv-label {
+            font-weight: 500;
+            color: var(--p-text);
+            font-size: 14px;
+        }
+
+        .proposta-kv-value {
+            font-weight: 700;
+            color: var(--p-accent);
+            font-size: 15px;
+            white-space: nowrap;
+        }
+
+        /* ==================== BADGE / TAG ==================== */
+        .proposta-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--p-accent);
+            background: var(--p-accent-glow);
+            border: 1px solid rgba(216, 119, 87, 0.2);
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        /* ==================== SOBRE / BIO ==================== */
+        .proposta-bio {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .proposta-bio-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 2px solid var(--p-border);
+        }
+
+        .proposta-bio-content {
+            flex: 1;
+        }
+
+        .proposta-bio-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--p-text-white);
+            margin-bottom: 4px;
+        }
+
+        .proposta-bio-role {
+            font-size: 13px;
+            color: var(--p-accent);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .proposta-bio-content p {
+            font-size: 14px;
+            color: var(--p-text-muted);
+            line-height: 1.65;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 640px) {
+            .proposta-bio {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        /* ==================== PORTFOLIO GRID ==================== */
+        .proposta-portfolio {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .proposta-portfolio-item {
+            background: var(--p-bg-card);
+            border: 1px solid var(--p-border);
+            border-radius: var(--p-radius);
+            padding: 16px;
+            transition: background-color .3s, border-color .3s;
+        }
+
+        .proposta-portfolio-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--p-text-white);
+            margin-bottom: 4px;
+        }
+
+        .proposta-portfolio-item p {
+            font-size: 12px;
+            color: var(--p-text-muted);
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 640px) {
+            .proposta-portfolio {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== SEPARATOR ==================== */
+        .proposta-hr {
+            height: 1px;
+            background: var(--p-border);
+            border: none;
+            margin: 48px 0;
+            transition: background-color .3s;
+        }
+
+        /* ==================== RESPONSIVO ==================== */
+        @media (max-width: 640px) {
+            .proposta-wrapper {
+                padding: 32px 16px 64px;
+            }
+
+            .proposta-header {
+                padding-bottom: 32px;
+                margin-bottom: 32px;
+            }
+
+            .proposta-meta {
+                flex-direction: column;
+                gap: 8px;
+                align-items: center;
+            }
+
+            .proposta-section {
+                margin-bottom: 36px;
+            }
+
+            .proposta-total {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+    <div class="proposta-wrapper">
+        <header class="proposta-header">
+            {logo && <img src={logo} alt={logoAlt || clientName} class="proposta-logo" />}
+            <div class="proposta-brand">Alex Donega</div>
+            <h1 class="proposta-title">{title}</h1>
+            <div class="proposta-meta">
+                <span>Para: <strong>{clientName}</strong></span>
+                <span>Data: <strong>{date}</strong></span>
+                {value && <span>Investimento: <strong>{value}</strong></span>}
+            </div>
+        </header>
+
+        <slot />
+
+        <footer class="proposta-footer">
+            <p>Alex Donega &mdash; <a href="alexdonega.com.br">alexdonega.com.br</a></p>
+        </footer>
+    </div>
+    <script is:inline>
+        (function(){
+            var toggle=document.getElementById('themeToggle');
+            var stored=localStorage.getItem('proposta-theme');
+            if(!stored){stored='light';localStorage.setItem('proposta-theme','light');}
+            document.documentElement.setAttribute('data-theme',stored);
+            toggle.addEventListener('click',function(){
+                var current=document.documentElement.getAttribute('data-theme');
+                var next=current==='dark'?'light':'dark';
+                document.documentElement.setAttribute('data-theme',next);
+                localStorage.setItem('proposta-theme',next);
+            });
+        })();
+    </script>
+</body>
+</html>

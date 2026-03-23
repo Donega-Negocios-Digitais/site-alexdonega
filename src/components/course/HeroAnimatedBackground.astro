@@ -1,6 +1,6 @@
 ---
 interface Props {
-  variant?: 'orange' | 'purple';
+  variant?: 'orange' | 'purple' | 'emerald';
 }
 
 const { variant = 'orange' } = Astro.props;
@@ -31,6 +31,19 @@ const palettes = {
     bg_80: 'rgba(128,60,200,0.05)',
     thread_15: 'rgba(155,81,224,0.8)',
     thread_85: 'rgba(155,81,224,0.8)',
+  },
+  emerald: {
+    pulse1_30: 'rgba(16,185,129,1)',
+    pulse1_70: 'rgba(16,185,129,0.8)',
+    pulse1_100: 'rgba(16,185,129,0)',
+    pulse2_25: 'rgba(16,185,129,0.9)',
+    pulse2_60: 'rgba(5,150,105,0.7)',
+    pulse2_100: 'rgba(5,150,105,0)',
+    bg_0: 'rgba(16,185,129,0.15)',
+    bg_40: 'rgba(16,185,129,0.08)',
+    bg_80: 'rgba(5,150,105,0.05)',
+    thread_15: 'rgba(16,185,129,0.8)',
+    thread_85: 'rgba(16,185,129,0.8)',
   },
 } as const;
 

@@ -4,8 +4,8 @@ interface Props {
   subtitle: string;
   primaryHref: string;
   primaryLabel: string;
-  primaryVariant?: 'default' | 'obsidian';
-  sectionVariant?: 'default' | 'obsidian';
+  primaryVariant?: 'default' | 'obsidian' | 'gsd';
+  sectionVariant?: 'default' | 'obsidian' | 'gsd';
   secondaryHref?: string;
   secondaryLabel?: string;
 }
@@ -22,12 +22,12 @@ const {
 } = Astro.props;
 ---
 
-<section class:list={['cta-section', sectionVariant === 'obsidian' && 'obsidian-bg']}>
+<section class:list={['cta-section', sectionVariant === 'obsidian' && 'obsidian-bg', sectionVariant === 'gsd' && 'gsd-bg']}>
   <div class="container">
     <h2 class="cta-title">{title}</h2>
     <p class="cta-subtitle">{subtitle}</p>
     <div class="cta-buttons">
-      <a href={primaryHref} class:list={['btn-primary', primaryVariant === 'obsidian' && 'obsidian']}>
+      <a href={primaryHref} class:list={['btn-primary', primaryVariant === 'obsidian' && 'obsidian', primaryVariant === 'gsd' && 'gsd']}>
         {primaryLabel}
         <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -58,6 +58,10 @@ const {
 
   .obsidian-bg {
     background: linear-gradient(180deg, #0a0a0a 0%, rgba(155, 81, 224, 0.03) 50%, #000 100%);
+  }
+
+  .gsd-bg {
+    background: linear-gradient(180deg, #0a0a0a 0%, rgba(16, 185, 129, 0.03) 50%, #000 100%);
   }
 
   .cta-title {
@@ -115,6 +119,17 @@ const {
   .btn-primary.obsidian:hover {
     background: linear-gradient(to right, var(--obsidian-hover, #8040c8), var(--obsidian, #9b51e0));
     box-shadow: 0 8px 25px rgba(155, 81, 224, 0.4);
+  }
+
+  .btn-primary.gsd {
+    background: linear-gradient(to right, var(--gsd, #10b981), var(--gsd-hover, #059669));
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+  }
+
+  .btn-primary.gsd:hover {
+    background: linear-gradient(to right, var(--gsd-hover, #059669), var(--gsd, #10b981));
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
   }
 
   .btn-secondary {

@@ -19,9 +19,10 @@ interface Props {
     title: string;
     description?: string;
     ogImage?: string;
+    hideFooter?: boolean;
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, hideFooter = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -141,6 +142,6 @@ const { title, description, ogImage } = Astro.props;
         <slot />
     </main>
 
-    <Footer />
+    {!hideFooter && <Footer />}
 </body>
 </html>

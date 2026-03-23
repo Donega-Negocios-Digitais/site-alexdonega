@@ -1,0 +1,116 @@
+---
+import PropostaLayout from '../../layouts/PropostaLayout.astro';
+---
+
+<PropostaLayout
+    title="Consultoria em IA e Automação"
+    clientName="Empresa Exemplo"
+    date="23 de março de 2026"
+    value="R$ 4.500,00"
+    description="Proposta de consultoria em inteligência artificial e automação de processos"
+>
+
+    <!-- ESCOPO -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Escopo do Projeto</h2>
+        <p>
+            Esta proposta contempla o diagnóstico, planejamento e implementação de soluções
+            de inteligência artificial aplicadas aos processos operacionais da empresa,
+            com foco em ganho de produtividade e redução de custos.
+        </p>
+    </section>
+
+    <!-- ENTREGÁVEIS -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Entregáveis</h2>
+
+        <div class="proposta-card">
+            <h4>1. Diagnóstico e Mapeamento</h4>
+            <p>Análise dos processos atuais e identificação de oportunidades de automação com IA.</p>
+        </div>
+
+        <div class="proposta-card">
+            <h4>2. Plano de Implementação</h4>
+            <p>Roadmap detalhado com priorização de ações, ferramentas recomendadas e cronograma.</p>
+        </div>
+
+        <div class="proposta-card">
+            <h4>3. Setup e Configuração</h4>
+            <p>Implementação das ferramentas de IA selecionadas, incluindo integrações e testes.</p>
+        </div>
+
+        <div class="proposta-card">
+            <h4>4. Treinamento da Equipe</h4>
+            <p>Capacitação prática para a equipe utilizar as novas ferramentas no dia a dia.</p>
+        </div>
+    </section>
+
+    <!-- INVESTIMENTO -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Investimento</h2>
+
+        <div class="proposta-card" style="padding: 0; overflow: hidden;">
+            <table class="proposta-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th style="text-align: right;">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Diagnóstico e Mapeamento</td>
+                        <td class="valor" style="text-align: right;">R$ 1.200,00</td>
+                    </tr>
+                    <tr>
+                        <td>Plano de Implementação</td>
+                        <td class="valor" style="text-align: right;">R$ 800,00</td>
+                    </tr>
+                    <tr>
+                        <td>Setup e Configuração</td>
+                        <td class="valor" style="text-align: right;">R$ 1.500,00</td>
+                    </tr>
+                    <tr>
+                        <td>Treinamento da Equipe</td>
+                        <td class="valor" style="text-align: right;">R$ 1.000,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="proposta-total">
+            <span class="proposta-total-label">Total</span>
+            <span class="proposta-total-value">R$ 4.500,00</span>
+        </div>
+
+        <div class="proposta-callout">
+            <p><strong>Condição especial:</strong> pagamento à vista com 10% de desconto &mdash; R$ 4.050,00.</p>
+        </div>
+    </section>
+
+    <!-- CONDIÇÕES -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Condições</h2>
+        <ul class="proposta-list">
+            <li>Proposta válida por 15 dias a partir da data de emissão</li>
+            <li>Prazo de execução: 4 semanas após aprovação</li>
+            <li>Pagamento: 50% na aprovação + 50% na entrega final</li>
+            <li>Inclui 1 rodada de revisão por entregável</li>
+            <li>Suporte por 30 dias após a entrega</li>
+        </ul>
+    </section>
+
+    <!-- CTA -->
+    <div class="proposta-cta">
+        <p>Pronto para transformar seus processos com IA?</p>
+        <a
+            href="https://wa.me/5500000000000?text=Ol%C3%A1%20Alex!%20Quero%20aceitar%20a%20proposta%20de%20Consultoria%20em%20IA."
+            class="proposta-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Aceitar Proposta via WhatsApp
+        </a>
+    </div>
+
+</PropostaLayout>

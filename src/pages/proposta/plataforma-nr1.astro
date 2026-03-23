@@ -1,0 +1,214 @@
+---
+import PropostaLayout from '../../layouts/PropostaLayout.astro';
+---
+
+<PropostaLayout
+    title="Plataforma de Saúde NR-1"
+    clientName="Dra. Huang Wei Ling"
+    date="23/03/2026"
+    value="R$ 67.000,00"
+    description="Plataforma digital de acompanhamento de saúde para compliance NR-1"
+    logo="/img/proposals/logo-wu-wei-saude.webp"
+    logoAlt="Wu Wei Saúde"
+>
+
+    <!-- KPIs -->
+    <div class="proposta-kpis">
+        <div class="proposta-kpi">
+            <div class="proposta-kpi-value">90 dias</div>
+            <div class="proposta-kpi-label">Prazo de entrega</div>
+        </div>
+        <div class="proposta-kpi">
+            <div class="proposta-kpi-value">R$ 67.000</div>
+            <div class="proposta-kpi-label">Valor total do projeto</div>
+        </div>
+    </div>
+
+    <!-- SOBRE ALEX DONEGA -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Quem vai desenvolver</h2>
+        <div class="proposta-bio">
+            <img src="/img/people/alex-donega.webp" alt="Alex Donega" class="proposta-bio-photo" />
+            <div class="proposta-bio-content">
+                <div class="proposta-bio-name">Alex Donega</div>
+                <div class="proposta-bio-role">Desenvolvedor de Software &bull; Context Engineer</div>
+                <p>15 anos construindo produtos digitais — de SaaS a plataformas completas. Servidor público que largou a zona de conforto após uma bolsa ERASMUS na Romênia, onde descobriu o mundo das startups e tecnologia.</p>
+                <p>Criador de múltiplos produtos SaaS com foco em simplicidade, escalabilidade e resultado real. Especialista em Context Engineering e integração de IA em processos de negócio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS DESENVOLVIDOS -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Projetos de Software Desenvolvidos</h2>
+        <div class="proposta-portfolio">
+            <div class="proposta-portfolio-item">
+                <h4>Novo Envio</h4>
+                <p>Sistema de gestão WhatsApp com 52 funcionalidades para empreendedores. Automações, CRM, múltiplos atendentes e chatbots.</p>
+            </div>
+            <div class="proposta-portfolio-item">
+                <h4>Doface</h4>
+                <p>Plataforma de agendamento e gestão para clínicas de estética. Sistema completo com controle de procedimentos, fichas de clientes e relatórios.</p>
+            </div>
+            <div class="proposta-portfolio-item">
+                <h4>WinfraBR</h4>
+                <p>Sistema de monitoramento de licitações de infraestrutura rodoviária. Coleta automática do DOU, Jornal MG e GOINFRA com classificação por IA e alertas por e-mail.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="proposta-hr">
+
+    <!-- ESCOPO -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Escopo do Projeto</h2>
+        <ul class="proposta-list">
+            <li>Autenticação e controle de acesso com perfis diferenciados (paciente por ID alfanumérico, médico e admin por e-mail/senha) e aceite LGPD obrigatório.</li>
+            <li>Gestão de empresas e pacientes com cadastro, geração automática de IDs sequenciais e importação de funcionários em lote.</li>
+            <li>Onboarding do paciente com Ficha de Avaliação Inicial completa (7 blocos), upload de exames e dashboard pessoal.</li>
+            <li>Acompanhamento clínico contínuo com log de sintomas (escala visual 1-10), alertas de intercorrência em tempo real, controle de medicamentos e avaliação periódica com 12 escalas condicionais normalizadas.</li>
+            <li>Protocolos de saúde com níveis de prevenção/tratamento e feedback do paciente.</li>
+            <li>Módulo Academy com envio de conteúdos educativos (vídeos e e-books) para pacientes individuais ou grupos.</li>
+            <li>Painel administrativo da médica com prontuário traduzido em texto narrativo, alertas de intercorrências e gestão de protocolos.</li>
+            <li>Painel empresarial (RH/SST) com dashboard agregado, relatório NR-1 em PDF e cálculo de ROI.</li>
+            <li>Segurança e LGPD com criptografia, isolamento multi-tenant, log de auditoria e anonimização para relatórios.</li>
+            <li>Sistema de notificações via push e e-mail com preferências configuráveis.</li>
+        </ul>
+    </section>
+
+    <!-- PLANEJAMENTO FUTURO -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Planejamento Futuro</h2>
+        <div class="proposta-callout">
+            <p>Funcionalidades previstas para fases posteriores, fora do escopo desta proposta.</p>
+        </div>
+        <ul class="proposta-list">
+            <li>App mobile nativo para iOS e Android.</li>
+            <li>Inteligência artificial para transcrição automática de exames, classificação de sintomas e correlação entre medicações.</li>
+            <li>Integração com WhatsApp Business API e notificações por SMS.</li>
+            <li>Chat em tempo real entre paciente e médica.</li>
+            <li>Benchmarking entre empresas e alertas de tendências com comparação setorial.</li>
+            <li>Gamificação no Academy com pontos, metas e certificados de conclusão.</li>
+            <li>API para integração com sistemas de RH e suporte multi-idioma.</li>
+            <li>Login por magic link, OAuth (Google/Microsoft) e autenticação em dois fatores.</li>
+        </ul>
+    </section>
+
+    <hr class="proposta-hr">
+
+    <!-- CRONOGRAMA -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Cronograma de Execução</h2>
+        <div class="proposta-timeline">
+            <div class="proposta-timeline-step">
+                <div class="proposta-step-title">Fundação</div>
+                <div class="proposta-step-date">24/03 – 11/04 (3 semanas)</div>
+                <div class="proposta-step-desc">Infraestrutura base com autenticação dual, modelo de dados, isolamento multi-tenant, gestão de empresas e geração de IDs.</div>
+            </div>
+            <div class="proposta-timeline-step">
+                <div class="proposta-step-title">Onboarding do Paciente</div>
+                <div class="proposta-step-date">14/04 – 02/05 (3 semanas)</div>
+                <div class="proposta-step-desc">Ficha de Avaliação Inicial com 7 blocos, upload de exames, dashboard pessoal com dia do tratamento e lembretes.</div>
+            </div>
+            <div class="proposta-timeline-step">
+                <div class="proposta-step-title">Acompanhamento Clínico</div>
+                <div class="proposta-step-date">05/05 – 30/05 (4 semanas)</div>
+                <div class="proposta-step-desc">Log de sintomas, alertas de intercorrência em tempo real, controle de medicamentos, avaliação periódica com 12 escalas e protocolos de saúde.</div>
+            </div>
+            <div class="proposta-timeline-step">
+                <div class="proposta-step-title">Backoffice (Painel Médico)</div>
+                <div class="proposta-step-date">02/06 – 13/06 (2 semanas)</div>
+                <div class="proposta-step-desc">Painel administrativo com listagem de pacientes, prontuário traduzido, alertas de intercorrências e módulo Academy.</div>
+            </div>
+            <div class="proposta-timeline-step">
+                <div class="proposta-step-title">Enterprise + Testes e Entrega</div>
+                <div class="proposta-step-date">16/06 – 21/06 (1 semana)</div>
+                <div class="proposta-step-desc">Painel empresarial com dashboard agregado, relatório NR-1 em PDF, cálculo de ROI, testes finais e implantação.</div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="proposta-hr">
+
+    <!-- INVESTIMENTO -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Investimento</h2>
+        <div class="proposta-card">
+            <div class="proposta-kv">
+                <span class="proposta-kv-label">Desenvolvimento completo da plataforma</span>
+                <span class="proposta-kv-value">R$ 67.000,00</span>
+            </div>
+            <div class="proposta-kv">
+                <span class="proposta-kv-label">Suporte inicial (30 dias)</span>
+                <span class="proposta-kv-value">Incluso</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONDIÇÕES DE PAGAMENTO -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Condições de Pagamento</h2>
+        <div class="proposta-card">
+            <h4>Opção 1 — À Vista</h4>
+            <p>R$ 67.000,00 em pagamento único.</p>
+            <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%201%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="proposta-btn-small" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+        </div>
+        <div class="proposta-card">
+            <h4>Opção 2 — Entrada + 3x</h4>
+            <p>Entrada de R$ 27.000,00 + 3x de R$ 14.338,45 (total R$ 70.015,35).</p>
+            <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%202%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="proposta-btn-small" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+        </div>
+        <div class="proposta-card">
+            <h4>Opção 3 — Entrada + 6x</h4>
+            <p>Entrada de R$ 27.000,00 + 6x de R$ 7.380,35 (total R$ 71.282,10).</p>
+            <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%203%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="proposta-btn-small" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+        </div>
+        <div class="proposta-card">
+            <h4>Opção 4 — Sem Entrada 6x</h4>
+            <p>6x de R$ 12.362,08 (total R$ 74.172,48).</p>
+            <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%204%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="proposta-btn-small" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+        </div>
+        <div class="proposta-card">
+            <h4>Opção 5 — Sem Entrada 12x</h4>
+            <p>12x de R$ 6.699,46 (total R$ 80.393,52).</p>
+            <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%205%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="proposta-btn-small" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+        </div>
+        <div class="proposta-callout">
+            <p>Formas de pagamento: PIX, transferência bancária ou boleto.</p>
+        </div>
+    </section>
+
+    <hr class="proposta-hr">
+
+    <!-- DIFERENCIAIS -->
+    <section class="proposta-section">
+        <h2 class="proposta-section-title">Diferenciais da Entrega</h2>
+        <ul class="proposta-list">
+            <li>Sistema 100% online, responsivo e acessível por qualquer dispositivo.</li>
+            <li>Conformidade total com LGPD: criptografia de dados sensíveis, consentimento registrado e isolamento multi-tenant.</li>
+            <li>Alertas de intercorrência em tempo real com latência inferior a 1 minuto.</li>
+            <li>Escalas clínicas normalizadas para gráficos consistentes de evolução.</li>
+            <li>Prontuário traduzido automaticamente em texto narrativo.</li>
+            <li>Relatórios NR-1 prontos para compliance com cálculo de ROI integrado.</li>
+            <li>Arquitetura preparada para inteligência artificial.</li>
+            <li>Perfis de acesso personalizados: paciente, médico, admin empresa e super admin.</li>
+            <li>Backup automático e segurança de dados com padrão hospitalar.</li>
+            <li>Escalável de 300 usuários iniciais para 80.000+ no futuro.</li>
+        </ul>
+    </section>
+
+    <!-- CTA -->
+    <div class="proposta-cta">
+        <p>Confirmo ciência dos valores, prazos e condições descritas neste documento.</p>
+        <a
+            href="https://wa.me/message/LEJTZBCRSSBRN1"
+            class="proposta-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Aprovar Proposta
+        </a>
+        <p style="margin-top: 16px; font-size: 12px;">Proposta válida por 15 dias &bull; Alex Donega — Desenvolvimento de Software</p>
+    </div>
+
+</PropostaLayout>

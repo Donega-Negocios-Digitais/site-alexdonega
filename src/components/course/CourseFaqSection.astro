@@ -3,13 +3,18 @@ interface FaqItem {
   question: string;
   answer: string;
   secondaryHtml?: string;
+  button?: {
+    text: string;
+    href: string;
+    variant?: 'primary' | 'secondary';
+  };
 }
 
 interface Props {
   items: FaqItem[];
   title?: string;
   eyebrow?: string;
-  eyebrowVariant?: 'default' | 'obsidian';
+  eyebrowVariant?: 'default' | 'obsidian' | 'gsd';
   sectionVariant?: 'light' | 'dark';
 }
 
@@ -26,7 +31,7 @@ const {
   <div class="container">
     <div class="section-header">
       {eyebrow && (
-        <span class:list={['section-eyebrow', eyebrowVariant === 'obsidian' && 'obsidian']}>
+        <span class:list={['section-eyebrow', eyebrowVariant === 'obsidian' && 'obsidian', eyebrowVariant === 'gsd' && 'gsd']}>
           {eyebrow}
         </span>
       )}
@@ -38,6 +43,11 @@ const {
         <div class="faq-item">
           <h4>{item.question}</h4>
           <p>{item.answer}</p>
+          {item.button && (
+            <a href={item.button.href} class:list={['faq-btn', item.button.variant === 'secondary' ? 'faq-btn-secondary' : 'faq-btn-primary']}>
+              {item.button.text}
+            </a>
+          )}
           {item.secondaryHtml && <p class="faq-secondary" set:html={item.secondaryHtml} />}
         </div>
       ))}
@@ -79,6 +89,10 @@ const {
 
   .section-eyebrow.obsidian {
     color: var(--obsidian, #9b51e0);
+  }
+
+  .section-eyebrow.gsd {
+    color: var(--gsd, #10b981);
   }
 
   .section-title {
@@ -127,5 +141,43 @@ const {
 
   .faq-item a:hover {
     text-decoration: underline;
+  }
+
+  .faq-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .faq-btn-primary {
+    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+    color: white;
+    border: none;
+  }
+
+  .faq-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+    text-decoration: none;
+  }
+
+  .faq-btn-secondary {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .faq-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    text-decoration: none;
   }
 </style>

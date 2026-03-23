@@ -1,0 +1,1597 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeroAnimatedBackground from "../../components/course/HeroAnimatedBackground.astro";
+import CourseFinalCta from "../../components/course/CourseFinalCta.astro";
+import CourseFaqSection from "../../components/course/CourseFaqSection.astro";
+
+const courseFaqItems = [
+    {
+        question: "Preciso saber programar?",
+        answer: "Sim, e recomendado ter conhecimento basico de HTML, CSS e JavaScript. Voce nao precisa ser expert, mas o curso assume familiaridade com desenvolvimento web.",
+        button: { text: "Ver modulo de fundamentos →", href: "#conteudo" },
+    },
+    {
+        question: "O curso esta atualizado com Astro 5?",
+        answer: "Sim! O curso cobre Astro 5 e sera atualizado conforme novas versoes forem lancadas. Voce recebe todas as atualizacoes.",
+        button: { text: "Ver conteudo completo →", href: "#conteudo" },
+    },
+    {
+        question: "Quanto tempo tenho acesso?",
+        answer: "Acesso vitalicio. Comprou uma vez, seu para sempre. Incluindo todas as atualizacoes futuras.",
+        button: { text: "Ver detalhes do acesso →", href: "#investimento" },
+    },
+    {
+        question: "Posso usar Astro com React/Vue/Svelte?",
+        answer: "Com certeza! O Astro foi feito para integrar com qualquer framework UI. O curso cobre como usar React, Vue, Svelte e outros dentro do Astro.",
+        button: { text: "Ver modulo de integracao →", href: "#conteudo" },
+    },
+    {
+        question: "E se eu nao gostar?",
+        answer: "Garantia de 7 dias. Devolvo 100% do seu dinheiro sem perguntas.",
+        button: {
+            text: "Falar sobre garantia →",
+            href: "https://wa.me/5545999506444",
+            variant: "secondary" as const,
+        },
+    },
+];
+---
+
+<Layout
+    title="Astro na Pratica - Construa Sites Modernos com Performance Extrema"
+    description="Curso completo e pratico para construir sites modernos usando o Astro Framework. 175 aulas, 17 modulos, projetos reais."
+>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <HeroAnimatedBackground variant="purple" />
+        <div class="hero-content">
+            <div class="hero-text-center">
+                <div class="hero-badge">
+                    <span class="badge">
+                        <span class="badge-dot"></span>
+                        Curso de Desenvolvimento Web
+                    </span>
+                </div>
+                <h1 class="hero-title">
+                    Domine o Framework que<br />
+                    <span class="text-gradient">Redefine a Web Moderna</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Um curso premium e pratico para construir sites modernos com <strong
+                        class="text-white">performance extrema</strong
+                    > usando o Astro Framework. Do basico ao avancado, com projetos
+                    reais.
+                </p>
+                <div class="hero-cta">
+                    <a href="#investimento" class="btn-primary">
+                        Quero Dominar o Astro
+                        <svg
+                            class="btn-icon"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <p class="hero-quote">
+                    "Em um mundo de frameworks over-engineered, Astro promete
+                    simplicidade com performance extraordinaria."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 01: O Desafio -->
+    <section class="section" id="desafio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">01 - O Desafio</span>
+                <h2 class="section-title">Astro e enganosamente complexo</h2>
+                <p class="section-subtitle">
+                    Astro promete simplicidade com excelente DX e performance.
+                    Mas por tras dessa simplicidade existe um universo de
+                    ferramentas poderosas esperando voce dominar.
+                </p>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><circle cx="12" cy="12" r="10"></circle><line
+                                x1="12"
+                                y1="8"
+                                x2="12"
+                                y2="12"></line><line
+                                x1="12"
+                                y1="16"
+                                x2="12.01"
+                                y2="16"></line></svg
+                        >
+                    </div>
+                    <h3>Otimizar imagens automaticamente</h3>
+                    <p>
+                        Image Service, Picture component, responsive images —
+                        sabe usar tudo isso de forma otimizada?
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path
+                                d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+                            ></path><path d="M3 3v5h5"></path><path
+                                d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"
+                            ></path><path d="M16 16h5v5"></path></svg
+                        >
+                    </div>
+                    <h3>Rotas dinamicas e SSR</h3>
+                    <p>
+                        Dynamic routes, SSG pagination, rewrites, redirects —
+                        voce domina rendering no Astro?
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3>APIs e endpoints dinamicos</h3>
+                    <p>
+                        CRUD endpoints, RSS feeds, JSON APIs — sabe construir
+                        backends completos com Astro?
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path
+                                d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m0-10.14l2.83 2.83m4.48 4.48l2.83 2.83"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3>Middleware e autenticacao</h3>
+                    <p>
+                        Auth protegido, middleware, Astro locals —
+                        funcionalidades avancadas que fazem toda diferenca.
+                    </p>
+                </div>
+            </div>
+            <div class="problem-conclusion">
+                <p class="conclusion-text">
+                    Astro se move rapido... tipo MUITO rapido!
+                </p>
+                <p class="conclusion-highlight">
+                    3 versoes major em pouco mais de 1 ano. Voce esta <span
+                        class="text-accent">acompanhando</span
+                    >?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02: O que Astro pode fazer -->
+    <section class="section-dark" id="ferramentas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow"
+                    >02 - Conheca Suas Ferramentas</span
+                >
+                <h2 class="section-title">
+                    Voce sabe tudo que o Astro pode fazer?
+                </h2>
+                <p class="section-subtitle">
+                    Astro comecou focado em conteudo. Hoje suporta desde landing
+                    pages simples ate apps full-stack com auth, databases e
+                    muito mais.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path
+                                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3>Content Collections</h3>
+                    <p>
+                        Defina e consulte dados type-safe com as content
+                        collections do Astro. Glob, File e Custom Loaders.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><rect
+                                x="2"
+                                y="3"
+                                width="20"
+                                height="14"
+                                rx="2"
+                                ry="2"></rect><line
+                                x1="8"
+                                y1="21"
+                                x2="16"
+                                y2="21"></line><line
+                                x1="12"
+                                y1="17"
+                                x2="12"
+                                y2="21"></line></svg
+                        >
+                    </div>
+                    <h3>View Transitions</h3>
+                    <p>
+                        Transicoes entre paginas usando a View Transitions API
+                        com os helpers nativos do Astro.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><circle cx="12" cy="12" r="3"></circle><path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.26.6.4 1.02.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3>Middleware & Auth</h3>
+                    <p>
+                        Configure middleware para injetar comportamentos
+                        dinamicos. Proteja rotas com autenticacao completa.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                            ></path><polyline points="14 2 14 8 20 8"
+                            ></polyline><line x1="16" y1="13" x2="8" y2="13"
+                            ></line><line x1="16" y1="17" x2="8" y2="17"
+                            ></line></svg
+                        >
+                    </div>
+                    <h3>Markdown & MDX</h3>
+                    <p>
+                        Renderize markdown e componentes MDX com roteamento
+                        baseado em paginas. Importe componentes no MDX.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path
+                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"
+                            ></path><path
+                                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3>SSR + SSG Hibrido</h3>
+                    <p>
+                        Renderize paginas estaticas ou no servidor. Rotas
+                        dinamicas, paginacao SSG e endpoints CRUD.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><polyline points="16 18 22 12 16 6"
+                            ></polyline><polyline points="8 6 2 12 8 18"
+                            ></polyline></svg
+                        >
+                    </div>
+                    <h3>Integracoes & i18n</h3>
+                    <p>
+                        Integre qualquer framework UI, prefetching de links,
+                        internacionalizacao nativa e dev toolbar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03: Conteudo do Curso -->
+    <section class="section" id="conteudo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">03 - Conteudo Completo</span>
+                <h2 class="section-title">O que esta no curso</h2>
+                <p class="section-subtitle">
+                    175 aulas focadas nas ferramentas nativas do Astro. Ao
+                    terminar, voce sabera construir qualquer tipo de site
+                    moderno.
+                </p>
+            </div>
+
+            <h3 class="section-divider">Secao 1: Core Astro</h3>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <span class="module-badge">Modulo 1</span><h3>
+                        Astro Basics
+                    </h3><p>Conceitos basicos de sites Astro.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Instalacao e Setup
+                        </li><li>
+                            <span class="check">✓</span> Estrutura de Arquivos e Rotas
+                        </li><li>
+                            <span class="check">✓</span> Layouts, Slots e Componentes
+                        </li><li>
+                            <span class="check">✓</span> CSS, Styling e JavaScript
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 2</span><h3>
+                        Astro Components
+                    </h3><p>Componentes com sintaxe customizada do Astro.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Button e Heading Components
+                        </li><li>
+                            <span class="check">✓</span> TypeScript em componentes
+                        </li><li>
+                            <span class="check">✓</span> Usando UI Frameworks (React,
+                            Vue...)
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 3</span><h3>
+                        Markdown e MDX
+                    </h3><p>Renderize markdown e MDX no Astro.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Componentes Markdown
+                        </li><li>
+                            <span class="check">✓</span> Importando arquivos MD
+                        </li><li>
+                            <span class="check">✓</span> MDX e importacao de componentes
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 4</span><h3>
+                        Content Collections
+                    </h3><p>Dados type-safe com content collections.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Glob(), File() e Custom Loaders
+                        </li><li>
+                            <span class="check">✓</span> Schemas com Zod
+                        </li><li>
+                            <span class="check">✓</span> Querying e rendering collections
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 5</span><h3>
+                        Rendering e Routing
+                    </h3><p>Opcoes de renderizacao e roteamento.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Dynamic Routes (SSR + SSG)
+                        </li><li>
+                            <span class="check">✓</span> SSG Pagination
+                        </li><li>
+                            <span class="check">✓</span> Rewrites e Redirects
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 6</span><h3>
+                        Projeto: Portfolio
+                    </h3><p>Construa um portfolio pessoal completo.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> 22 aulas, 2h de conteudo
+                        </li><li>
+                            <span class="check">✓</span> Revisao de todos os conceitos
+                        </li><li>
+                            <span class="check">✓</span> Deploy com Netlify
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="section-divider">Secao 2: Astro Tools</h3>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <span class="module-badge">Modulo 7</span><h3>
+                        Image Optimization
+                    </h3><p>Otimize imagens locais e remotas.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Image e Picture components
+                        </li><li>
+                            <span class="check">✓</span> Responsive images
+                        </li><li>
+                            <span class="check">✓</span> getImage function
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 8</span><h3>
+                        Dynamic Endpoints
+                    </h3><p>Endpoints dinamicos em SSG e SSR.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> JSON endpoints e RSS feed
+                        </li><li>
+                            <span class="check">✓</span> CRUD endpoints com SSR
+                        </li><li>
+                            <span class="check">✓</span> POST, GET, DELETE, PATCH
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 9</span><h3>
+                        Astro DB
+                    </h3><p>Solucao de banco de dados do Astro.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Setup e seeding local
+                        </li><li>
+                            <span class="check">✓</span> Astro Studio e dados live
+                        </li><li>
+                            <span class="check">✓</span> Deploy com Vercel
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 10</span><h3>
+                        Middleware
+                    </h3><p>Middleware para comportamentos dinamicos.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Context Object e Redirects
+                        </li><li>
+                            <span class="check">✓</span> Astro Locals
+                        </li><li>
+                            <span class="check">✓</span> Alterando response e logging
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 11</span><h3>
+                        Projeto: Auth
+                    </h3><p>Autenticacao completa com middleware.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Firebase Auth (6 aulas)
+                        </li><li>
+                            <span class="check">✓</span> Lucia Auth (7 aulas)
+                        </li><li>
+                            <span class="check">✓</span> Middleware de protecao
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 12</span><h3>
+                        View Transitions
+                    </h3><p>Transicoes entre paginas com a API nativa.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Transition Animations
+                        </li><li>
+                            <span class="check">✓</span> State management
+                        </li><li>
+                            <span class="check">✓</span> Lifecycle Events
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 13</span><h3>
+                        Internationalization
+                    </h3><p>i18n nativo do Astro.</p><ul class="module-list">
+                        <li><span class="check">✓</span> Language picker</li><li
+                        >
+                            <span class="check">✓</span> Dynamic Routes i18n
+                        </li><li>
+                            <span class="check">✓</span> Customizando middleware
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 14</span><h3>
+                        Integracoes & Config
+                    </h3><p>Integracoes, config e dev toolbar.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Templates e themes
+                        </li><li>
+                            <span class="check">✓</span> Prefetching Links
+                        </li><li><span class="check">✓</span> Dev toolbar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="section-divider">Secao 3: Astro Projects</h3>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <span class="module-badge">Modulo 15</span><h3>
+                        Astro + CMS
+                    </h3><p>3 opcoes de CMS com Astro.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> JSON / Google Sheets
+                        </li><li>
+                            <span class="check">✓</span> Keystatic CMS (5 aulas)
+                        </li><li>
+                            <span class="check">✓</span> Strapi CMS (5 aulas)
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 16</span><h3>
+                        Projeto: CRUD App
+                    </h3><p>App completo de tracking de livros.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Astro DB + CRUD API
+                        </li><li>
+                            <span class="check">✓</span> Busca com OpenLibrary API
+                        </li><li>
+                            <span class="check">✓</span> Update status e delete
+                        </li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <span class="module-badge">Modulo 17</span><h3>
+                        E-commerce Basico
+                    </h3><p>E-commerce SSR com Stripe.</p><ul
+                        class="module-list"
+                    >
+                        <li>
+                            <span class="check">✓</span> Stripe Community Loader
+                        </li><li>
+                            <span class="check">✓</span> Carrinho com cookies
+                        </li><li>
+                            <span class="check">✓</span> Checkout e confirmacao
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04: Para Quem E -->
+    <section class="section-dark" id="publico">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">04 - Para Quem E</span>
+                <h2 class="section-title">Este curso e para voce se...</h2>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><polyline points="16 18 22 12 16 6"
+                            ></polyline><polyline points="8 6 2 12 8 18"
+                            ></polyline></svg
+                        >
+                    </div><h3>Desenvolvedores Front-end</h3><p>
+                        Quer dominar o framework mais performatico da web
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path
+                                d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"
+                            ></path><circle cx="11" cy="11" r="2"></circle></svg
+                        >
+                    </div><h3>Freelancers</h3><p>
+                        Quer entregar sites rapidos e modernos para clientes
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path
+                                d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+                            ></path><path d="M3 3v5h5"></path></svg
+                        >
+                    </div><h3>Devs React/Next</h3><p>
+                        Quer migrar para algo mais leve e performatico
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path
+                                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                            ></path><polyline points="14 2 14 8 20 8"
+                            ></polyline></svg
+                        >
+                    </div><h3>Criadores de Conteudo Tech</h3><p>
+                        Quer construir blogs e sites de conteudo otimizados
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><path d="M3 3v18h18"></path><path
+                                d="m19 9-5 5-4-4-3 3"></path></svg
+                        >
+                    </div><h3>Empreendedores Digitais</h3><p>
+                        Quer criar landing pages e sites sem depender de
+                        terceiros
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            ><rect
+                                x="2"
+                                y="7"
+                                width="20"
+                                height="14"
+                                rx="2"
+                                ry="2"></rect><path
+                                d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+                            ></path></svg
+                        >
+                    </div><h3>Agencias Digitais</h3><p>
+                        Quer oferecer sites com Lighthouse 100 para clientes
+                    </p>
+                </div>
+            </div>
+            <div class="audience-cta">
+                <a href="#investimento" class="btn-primary"
+                    >Esse curso e para mim</a
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- 05: Professor -->
+    <section class="section" id="professor">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">05 - Quem Vai Te Ensinar</span>
+                <h2 class="section-title">Uma nota do Alex</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img
+                        src="/img/people/alex-donega.webp"
+                        alt="Alex Donega"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="about-content">
+                    <h3>Alex Donega</h3>
+                    <p>
+                        Uso Astro diariamente em projetos reais - desde landing
+                        pages simples ate apps full-stack com middleware, auth,
+                        databases e mais. Compilei tudo que sei neste curso
+                        pratico e direto ao ponto.
+                    </p>
+                    <p>
+                        Acompanho cada RFC, cada Community Call, cada nova
+                        feature. E agora quero te passar esse atalho para voce
+                        nao precisar fazer o mesmo.
+                    </p>
+                    <blockquote class="about-quote">
+                        "A melhor forma de aprender e construindo. Por isso cada
+                        modulo tem projetos praticos."
+                    </blockquote>
+                    <ul class="credentials-list">
+                        <li>
+                            <span class="check">✓</span> Projetos em producao com
+                            Astro
+                        </li>
+                        <li>
+                            <span class="check">✓</span> Membro do time Autobots Ventures
+                            (+25 software)
+                        </li>
+                        <li>
+                            <span class="check">✓</span> Fundador de 3 MicroSaaS em
+                            operacao
+                        </li>
+                        <li>
+                            <span class="check">✓</span> Curso atualizado com Astro
+                            5
+                        </li>
+                    </ul>
+                    <a href="#investimento" class="btn-primary"
+                        >Quero aprender com o Alex</a
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06: Bonus -->
+    <section class="section bonus-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Bonus Exclusivos</span>
+                <h2 class="section-title">Mais valor para voce</h2>
+            </div>
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-ribbon">BONUS</div><h3>
+                        Servidor Discord Privado
+                    </h3><p>
+                        Acesso a comunidade exclusiva de alunos para tirar
+                        duvidas e networking.
+                    </p><span class="bonus-value"
+                        >Valor: <strong>R$ 297</strong></span
+                    >
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-ribbon">BONUS</div><h3>
+                        Starter Templates
+                    </h3><p>
+                        Templates prontos de projetos Astro para usar como base
+                        nos seus clientes.
+                    </p><span class="bonus-value"
+                        >Valor: <strong>R$ 197</strong></span
+                    >
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-ribbon">BONUS</div><h3>
+                        Atualizacoes Vitaliciamente
+                    </h3><p>
+                        Atualizado com Astro 5 e todas as versoes futuras, sem
+                        custo adicional.
+                    </p><span class="bonus-value"
+                        >Valor: <strong>Inestimavel</strong></span
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07: Investimento -->
+    <section class="section-dark" id="investimento">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Investimento</span>
+                <h2 class="section-title">Garanta sua vaga agora</h2>
+            </div>
+            <div class="social-proof">
+                <div class="stars">
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                        ><polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        ></polygon></svg
+                    >
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                        ><polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        ></polygon></svg
+                    >
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                        ><polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        ></polygon></svg
+                    >
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                        ><polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        ></polygon></svg
+                    >
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                        ><polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        ></polygon></svg
+                    >
+                </div>
+                <p>
+                    <strong>175 aulas</strong> · 17 modulos · 17 horas de conteudo
+                </p>
+            </div>
+            <div class="pricing-card">
+                <span class="pricing-badge">Oferta de Lancamento</span>
+                <p class="pricing-original">De R$ 997</p>
+                <div class="pricing-main">
+                    <p class="pricing-installment">
+                        12x de <span class="currency">R$</span><strong
+                            >49</strong
+                        >,70
+                    </p>
+                    <p class="pricing-cash">ou <span>R$ 497</span> a vista</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>
+                        <span class="check">✓</span> Acesso imediato ao curso completo
+                    </li>
+                    <li>
+                        <span class="check">✓</span> 175 aulas em 17 modulos
+                    </li>
+                    <li>
+                        <span class="check">✓</span> 17 horas de conteudo pratico
+                    </li>
+                    <li>
+                        <span class="check">✓</span> Servidor Discord privado
+                    </li>
+                    <li>
+                        <span class="check">✓</span> Starter templates prontos
+                    </li>
+                    <li>
+                        <span class="check">✓</span> Atualizacoes vitaliciamente
+                    </li>
+                    <li><span class="check">✓</span> Garantia de 7 dias</li>
+                </ul>
+                <a
+                    href="https://pay.hotmart.com/exemplo"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn-buy"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        width="20"
+                        height="20"
+                        ><path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                        ></path></svg
+                    >
+                    Quero Minha Vaga Agora
+                </a>
+                <div class="guarantee-box">
+                    <div class="guarantee-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"
+                            ><path
+                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                            ></path></svg
+                        >
+                    </div>
+                    <div class="guarantee-content">
+                        <h4>Garantia de 7 dias</h4><p>
+                            Se nao gostar do curso, devolvo 100% do seu
+                            dinheiro. Sem perguntas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 08: FAQ -->
+    <CourseFaqSection
+        eyebrow="Duvidas"
+        title="Perguntas Frequentes"
+        items={courseFaqItems}
+    />
+
+    <!-- 09: CTA Final -->
+    <CourseFinalCta
+        title="Bora construir sites incriveis com Astro?"
+        subtitle="Domine o framework que esta redefinindo a web moderna. Performance, simplicidade e poder — tudo em um so lugar."
+        primaryHref="#investimento"
+        primaryLabel="Quero Minha Vaga"
+    />
+</Layout>
+
+<style>
+    .hero-section {
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: #000;
+    }
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 6rem 1.5rem 4rem;
+    }
+    .hero-text-center {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .hero-badge {
+        margin-bottom: 2rem;
+    }
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(155, 81, 224, 0.3);
+        border-radius: 9999px;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        color: rgb(178, 120, 230);
+    }
+    .badge-dot {
+        width: 8px;
+        height: 8px;
+        background: #9b51e0;
+        border-radius: 50%;
+        animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.2);
+        }
+    }
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+    .text-gradient {
+        background: linear-gradient(135deg, #9b51e0, #b878e6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+        margin-bottom: 2rem;
+    }
+    .text-white {
+        color: white;
+    }
+    .hero-cta {
+        margin-bottom: 2rem;
+    }
+    .hero-quote {
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        color: white;
+        font-style: italic;
+        opacity: 0.9;
+    }
+
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(to right, #9b51e0, #8040c8);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 100px;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        border: 1px solid rgba(155, 81, 224, 0.3);
+        box-shadow: 0 4px 15px rgba(155, 81, 224, 0.25);
+        transition: all 0.3s;
+    }
+    .btn-primary:hover {
+        background: linear-gradient(to right, #8040c8, #6a30a8);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(155, 81, 224, 0.4);
+    }
+    .btn-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    .btn-buy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        background: #22c55e;
+        color: white;
+        padding: 1.25rem 2rem;
+        border-radius: 12px;
+        font-size: 1.125rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.3s;
+        width: 100%;
+    }
+    .btn-buy:hover {
+        background: #16a34a;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+    .section {
+        padding: 6rem 0;
+        background: #0a0a0a;
+    }
+    .section-dark {
+        padding: 6rem 0;
+        background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+    }
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .section-eyebrow {
+        display: inline-block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: rgb(178, 120, 230);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+    }
+    .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    .section-subtitle {
+        font-size: 1.125rem;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+    .section-divider {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #9b51e0;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 3rem 0 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid rgba(155, 81, 224, 0.3);
+    }
+
+    .problems-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    .problem-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(155, 81, 224, 0.2);
+        border-radius: 16px;
+        padding: 2rem;
+        transition: all 0.3s;
+    }
+    .problem-card:hover {
+        border-color: rgba(155, 81, 224, 0.5);
+        transform: translateY(-4px);
+    }
+    .problem-icon {
+        width: 56px;
+        height: 56px;
+        background: rgba(155, 81, 224, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    .problem-icon svg {
+        width: 28px;
+        height: 28px;
+        color: #9b51e0;
+    }
+    .problem-card h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.75rem;
+    }
+    .problem-card p {
+        font-size: 0.9375rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.7;
+    }
+    .problem-conclusion {
+        text-align: center;
+        padding-top: 2rem;
+    }
+    .conclusion-text {
+        font-size: 1.125rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 0.75rem;
+    }
+    .conclusion-highlight {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 600;
+    }
+    .text-accent {
+        color: #9b51e0;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    .benefit-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 2rem;
+        transition: all 0.3s;
+    }
+    .benefit-card:hover {
+        border-color: rgba(155, 81, 224, 0.3);
+        transform: translateY(-4px);
+    }
+    .benefit-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(155, 81, 224, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    .benefit-icon svg {
+        width: 24px;
+        height: 24px;
+        color: #9b51e0;
+    }
+    .benefit-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.75rem;
+    }
+    .benefit-card p {
+        font-size: 0.9375rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.6;
+    }
+
+    .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    .module-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 2rem;
+    }
+    .module-badge {
+        display: inline-block;
+        background: #9b51e0;
+        color: #0a0a0a;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.375rem 0.75rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+    .module-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.75rem;
+    }
+    .module-card > p {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 1rem;
+    }
+    .module-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .module-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0.625rem;
+    }
+    .module-list .check {
+        color: #9b51e0;
+        font-weight: bold;
+    }
+
+    .audience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    .audience-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s;
+    }
+    .audience-card:hover {
+        border-color: rgba(155, 81, 224, 0.3);
+    }
+    .audience-icon {
+        width: 56px;
+        height: 56px;
+        background: rgba(155, 81, 224, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+    }
+    .audience-icon svg {
+        width: 28px;
+        height: 28px;
+        color: #9b51e0;
+    }
+    .audience-card h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+    .audience-card p {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .audience-cta {
+        text-align: center;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+    @media (min-width: 768px) {
+        .about-grid {
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+    }
+    .about-image {
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 4/5;
+    }
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .about-content h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1.5rem;
+    }
+    .about-content p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+    }
+    .about-quote {
+        font-size: 1.25rem;
+        font-style: italic;
+        color: #9b51e0;
+        padding-left: 1.5rem;
+        border-left: 3px solid #9b51e0;
+        margin: 2rem 0;
+    }
+    .credentials-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0 2rem;
+    }
+    .credentials-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.9375rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0.75rem;
+    }
+    .credentials-list .check {
+        color: #9b51e0;
+        font-weight: bold;
+    }
+
+    .bonus-section {
+        background: linear-gradient(
+            135deg,
+            rgba(155, 81, 224, 0.05) 0%,
+            transparent 50%
+        );
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .bonus-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    .bonus-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .bonus-ribbon {
+        position: absolute;
+        top: 16px;
+        right: -24px;
+        background: #9b51e0;
+        color: #0a0a0a;
+        font-size: 0.625rem;
+        font-weight: 700;
+        padding: 0.25rem 2rem;
+        transform: rotate(45deg);
+    }
+    .bonus-card h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.75rem;
+    }
+    .bonus-card p {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.7;
+    }
+    .bonus-value {
+        display: block;
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .bonus-value strong {
+        color: #9b51e0;
+    }
+
+    .social-proof {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .stars {
+        display: flex;
+        justify-content: center;
+        gap: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+    .stars svg {
+        width: 24px;
+        height: 24px;
+        fill: #fbbf24;
+    }
+    .social-proof p {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .social-proof strong {
+        color: white;
+    }
+    .pricing-card {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.02) 100%
+        );
+        border: 2px solid #9b51e0;
+        border-radius: 24px;
+        padding: 3rem;
+        max-width: 550px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .pricing-badge {
+        display: inline-block;
+        color: #9b51e0;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #9b51e0;
+        padding-bottom: 0.5rem;
+    }
+    .pricing-original {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: line-through;
+        margin-bottom: 0.5rem;
+    }
+    .pricing-main {
+        margin-bottom: 1.5rem;
+    }
+    .pricing-installment {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0.5rem;
+    }
+    .pricing-installment strong {
+        font-size: 4rem;
+        font-weight: 700;
+        color: white;
+    }
+    .pricing-installment .currency {
+        font-size: 1.5rem;
+        color: #9b51e0;
+        vertical-align: super;
+    }
+    .pricing-cash {
+        font-size: 1.125rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 1.5rem;
+    }
+    .pricing-cash span {
+        color: #9b51e0;
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+    .pricing-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem;
+        text-align: left;
+    }
+    .pricing-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.9375rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0.75rem;
+    }
+    .pricing-features .check {
+        color: #9b51e0;
+        font-weight: bold;
+    }
+
+    .guarantee-box {
+        background: rgba(155, 81, 224, 0.1);
+        border: 1px solid rgba(155, 81, 224, 0.3);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        text-align: left;
+    }
+    .guarantee-icon {
+        width: 48px;
+        height: 48px;
+        background: #9b51e0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .guarantee-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: #0a0a0a;
+    }
+    .guarantee-content h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.25rem;
+    }
+    .guarantee-content p {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.5;
+    }
+</style>
