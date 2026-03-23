@@ -114,107 +114,79 @@ const projectTitle = "Plataforma de Saúde NR-1";
                 <div class="section-header">
                     <span class="section-eyebrow">03 - Escopo</span>
                     <h2 class="section-title">Escopo do Projeto</h2>
-                    <p class="section-subtitle">Tudo que será entregue no desenvolvimento completo da plataforma.</p>
+                    <p class="section-subtitle">Detalhamento completo das funcionalidades, telas e lógicas do sistema.</p>
                 </div>
                 
-                <div class="scope-grid">
-                    <div class="scope-item">
-                        <div class="scope-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </div>
-                        <div class="scope-content">
-                            <h4>Autenticação e Controle de Acesso</h4>
-                            <p>Perfis diferenciados (paciente por ID alfanumérico, médico e admin por e-mail/senha) e aceite LGPD obrigatório.</p>
-                        </div>
-                    </div>
-                    <div class="scope-item">
-                        <div class="scope-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                        <div class="scope-content">
-                            <h4>Gestão de Empresas e Pacientes</h4>
-                            <p>Cadastro, geração automática de IDs sequenciais e importação de funcionários em lote.</p>
-                        </div>
-                    </div>
-                    <div class="scope-item">
-                        <div class="scope-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-                            </svg>
-                        </div>
-                        <div class="scope-content">
-                            <h4>Onboarding do Paciente</h4>
-                            <p>Ficha de Avaliação Inicial completa (7 blocos), upload de exames e dashboard pessoal.</p>
+                <div class="scope-detailed">
+                    <div class="scope-group">
+                        <h3 class="group-title">1. Recursos Principais</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <strong>Acesso Simplificado:</strong> Login via ID alfanumérico único, sem e-mail/senha.
+                            </div>
+                            <div class="feature-card">
+                                <strong>Onboarding Clínico:</strong> Avaliação inicial com 7 blocos detalhados de saúde.
+                            </div>
+                            <div class="feature-card">
+                                <strong>Monitoramento Diário:</strong> Registro de sintomas e controle de estoque de medicamentos.
+                            </div>
+                            <div class="feature-card">
+                                <strong>Alerta Crítico:</strong> Modal de interrupção imediata em caso de reações adversas graves.
+                            </div>
+                            <div class="feature-card">
+                                <strong>Avaliação de ROI:</strong> Dados de evolução para compliance e prova de melhora (NR-1).
+                            </div>
+                            <div class="feature-card">
+                                <strong>Módulo Academy:</strong> Área de cursos e e-books para fundamentação tributária.
+                            </div>
+                            <div class="feature-card">
+                                <strong>Backoffice Dra. Wey:</strong> Prontuário traduzido em texto narrativo e gestão de intercorrências.
+                            </div>
                         </div>
                     </div>
-                    <div class="scope-item">
-                        <div class="scope-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                            </svg>
-                        </div>
-                        <div class="scope-content">
-                            <h4>Acompanhamento Clínico Contínuo</h4>
-                            <p>Log de sintomas (escala visual 1-10), alertas de intercorrência em tempo real, controle de medicamentos e avaliação periódica com 12 escalas condicionais normalizadas.</p>
-                        </div>
-                    </div>
-                    <div class="scope-item">
-                        <div class="scope-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
-                        </div>
-                        <div class="scope-content">
-                            <h4>Protocolos de Saúde</h4>
-                            <p>Níveis de prevenção/tratamento e feedback do paciente.</p>
-                        </div>
-                    </div>
-                    <div class="scope-item">
-                        <div class="scope-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21"/>
-                                <line x1="12" y1="17" x2="12" y2="21"/>
-                            </svg>
-                        </div>
-                        <div class="scope-content">
-                            <h4>Painel Administrativo da Médica</h4>
-                            <p>Prontuário traduzido em texto narrativo, alertas de intercorrências e gestão de protocolos.</p>
+
+                    <div class="scope-group">
+                        <h3 class="group-title">2. Mapeamento de Telas</h3>
+                        <div class="screens-grid">
+                            <div class="screens-column">
+                                <h4 class="column-title">Para o Paciente</h4>
+                                <ul class="screens-list">
+                                    <li><strong>Tela de Login:</strong> Apenas código ID.</li>
+                                    <li><strong>Termo LGPD:</strong> Aceite obrigatório.</li>
+                                    <li><strong>Ficha Inicial:</strong> Sequência de 7 passos.</li>
+                                    <li><strong>Dashboard Home:</strong> Atalhos, lembretes e contador de dias.</li>
+                                    <li><strong>Registrar Sintoma:</strong> Escala visual de 1 a 10.</li>
+                                    <li><strong>Meus Medicamentos:</strong> Checklist e contador de frascos.</li>
+                                    <li><strong>Academy:</strong> Grid de conteúdos (Vídeos/PDFs).</li>
+                                    <li><strong>Meu Progresso:</strong> Gráfico de melhora mensal.</li>
+                                </ul>
+                            </div>
+                            <div class="screens-column">
+                                <h4 class="column-title">Para a Dra. Wey / Admin</h4>
+                                <ul class="screens-list">
+                                    <li><strong>Dashboard Geral:</strong> Listagem com filtros por empresa e alertas.</li>
+                                    <li><strong>Prontuário 360º:</strong> Histórico e evolução visual completa.</li>
+                                    <li><strong>Central de Intercorrências:</strong> Fila de urgência (Modal Vermelho).</li>
+                                    <li><strong>Dashboard ROI:</strong> Gráficos agregados para empresas (RH).</li>
+                                    <li><strong>Gerador NR-1:</strong> Exportação de PDFs de conformidade.</li>
+                                    <li><strong>Gestão Dinâmica:</strong> Cadastro de remédios e diagnósticos sem código.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="scope-item">
-                        <div class="scope-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 3v18h18"/>
-                                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
-                            </svg>
-                        </div>
-                        <div class="scope-content">
-                            <h4>Painel Empresarial (RH/SST)</h4>
-                            <p>Dashboard agregado e relatório NR-1 em PDF.</p>
-                        </div>
-                    </div>
-                    <div class="scope-item">
-                        <div class="scope-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-                            </svg>
-                        </div>
-                        <div class="scope-content">
-                            <h4>Sistema de Notificações</h4>
-                            <p>Push e e-mail com preferências configuráveis.</p>
+
+                    <div class="scope-group">
+                        <h3 class="group-title">3. Modais Críticos</h3>
+                        <div class="modals-list">
+                            <div class="modal-item">
+                                <strong>Suspensão de Medicamento:</strong> Pop-up vermelho de tela cheia para urgências.
+                            </div>
+                            <div class="modal-item">
+                                <strong>Importação em Lote:</strong> Geração automática de IDs via planilhas.
+                            </div>
+                            <div class="modal-item">
+                                <strong>Atribuição de Protocolo:</strong> Vínculo de orientações específicas ao paciente.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -812,55 +784,112 @@ const projectTitle = "Plataforma de Saúde NR-1";
         line-height: 1.6;
     }
 
-    /* Scope */
-    .scope-grid {
-        display: grid;
-        gap: 1rem;
+    /* Scope Detailed */
+    .scope-detailed {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 3rem;
     }
 
-    .scope-item {
-        display: flex;
+    .scope-group {
+        width: 100%;
+    }
+
+    .group-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--text-white);
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--accent-light);
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1.5rem;
+    }
+
+    .feature-card {
         background: var(--card-bg);
         border: 1px solid var(--card-border);
-        border-radius: 16px;
         padding: 1.5rem;
-        transition: all 0.3s;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    }
-
-    .scope-item:hover {
-        border-color: rgba(216, 119, 87, 0.3);
-    }
-
-    .scope-icon {
-        width: 48px;
-        height: 48px;
-        background: var(--accent-light);
         border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
     }
 
-    .scope-icon svg {
-        width: 24px;
-        height: 24px;
+    .feature-card strong {
+        display: block;
         color: var(--accent);
+        margin-bottom: 0.25rem;
     }
 
-    .scope-content h4 {
+    .screens-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .screens-column {
+        background: var(--bg-secondary);
+        padding: 2rem;
+        border-radius: 16px;
+    }
+
+    .column-title {
         font-size: 1.125rem;
         font-weight: 600;
+        margin-bottom: 1.5rem;
         color: var(--text-white);
-        margin-bottom: 0.5rem;
     }
 
-    .scope-content p {
+    .screens-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .screens-list li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
         font-size: 0.9375rem;
         color: var(--text-muted);
-        line-height: 1.6;
+    }
+
+    .screens-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: bold;
+    }
+
+    .modals-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .modal-item {
+        background: var(--accent-light);
+        padding: 1.25rem;
+        border-radius: 10px;
+        border-left: 4px solid var(--accent);
+        font-size: 0.9375rem;
+        color: var(--text-muted);
+    }
+
+    .modal-item strong {
+        color: var(--text-white);
+    }
+
+    @media (max-width: 768px) {
+        .screens-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Future */
