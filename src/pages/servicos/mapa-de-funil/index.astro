@@ -9,12 +9,12 @@ import Layout from '../../../layouts/Layout.astro';
       const btnSpan = btnElement.querySelector('span');
       const icon = btnElement.querySelector('.copy-icon');
       const check = btnElement.querySelector('.check-icon-pix');
-      
+
       const originalText = btnSpan.innerText;
       btnSpan.innerText = "Copiado!";
       icon.classList.add('hidden');
       check.classList.remove('hidden');
-      
+
       setTimeout(() => {
         btnSpan.innerText = originalText;
         icon.classList.remove('hidden');
@@ -24,7 +24,7 @@ import Layout from '../../../layouts/Layout.astro';
   }
 </script>
 
-<Layout title="Mapa de Funil" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real.">
+<Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real.">
 
 <section class="funnel-hero">
   <div class="hero-bg">
@@ -33,7 +33,7 @@ import Layout from '../../../layouts/Layout.astro';
       <path id="path1" d="M100 200 Q300 150 500 250 T900 200" stroke="rgba(249, 115, 22, 0.2)" stroke-width="2" stroke-dasharray="10 10" />
       <path id="path2" d="M150 400 Q400 350 600 450 T1000 400" stroke="rgba(249, 115, 22, 0.15)" stroke-width="2" stroke-dasharray="8 8" />
       <path id="path3" d="M200 600 Q450 550 700 650 T1100 600" stroke="rgba(249, 115, 22, 0.1)" stroke-width="2" stroke-dasharray="12 12" />
-      
+
       <!-- Pulsing Nodes -->
       <circle r="4" fill="rgb(249, 115, 22)">
         <animateMotion dur="6s" repeatCount="indefinite">
@@ -55,12 +55,12 @@ import Layout from '../../../layouts/Layout.astro';
   </div>
   <div class="container">
     <div class="hero-content">
-      <span class="hero-eyebrow">Mapa de Funil</span>
+      <span class="hero-eyebrow">Simulação de Lucratividade</span>
       <h1 class="hero-title">
         Descubra o Potencial de Lucro do Seu Funil <span class="text-gradient">Antes de Investir</span>
       </h1>
       <p class="hero-subtitle">
-        Mapeamento e simulação de funil que prevê resultados e identifica vazamentos financeiros antes de você gastar com anúncios
+        Simulação matemática da lucratividade do seu negócio — cenários pessimista, provável e otimista — para você decidir com dados, não com achismo
       </p>
       <div class="hero-cta">
         <a href="#pricing" class="btn-primary">
@@ -80,7 +80,7 @@ import Layout from '../../../layouts/Layout.astro';
       <h2 class="problem-title">O Marketing Digital Mudou Para Sempre...</h2>
       <div class="problem-text">
         <p>Os dias em que um empreendedor podia lançar um funil e ter retorno da noite para o dia acabaram.</p>
-        <p>Com custos de anúncios e concorrência em constante aumento, você não tem tempo nem dinheiro para arriscar no acaso.</p>
+        <p>CPM subindo. CPC subindo. Margem caindo. Lançar um funil sem simular antes é queimar dinheiro no escuro — e você sabe disso.</p>
         <p class="highlight">O que você precisa são <strong>LUCROS PREVISÍVEIS</strong> do seu funil.</p>
         <p>E é aqui que o <span class="text-gradient">Mapeamento de Funil</span> entra.</p>
       </div>
@@ -165,7 +165,7 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
         <div class="panel-info">
           <h3>SIMULATE</h3>
-          <p>Simulação real</p>
+          <p>Simule 3 cenários com os números reais do seu negócio</p>
         </div>
       </div>
       <div class="benefit-panel p-leaks">
@@ -176,7 +176,7 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
         <div class="panel-info">
           <h3>STOP LEAKS</h3>
-          <p>Sem perda de dinheiro</p>
+          <p>Descubra onde seu funil está sangrando antes de escalar</p>
         </div>
       </div>
       <div class="benefit-panel p-predict">
@@ -206,7 +206,7 @@ import Layout from '../../../layouts/Layout.astro';
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Para Quem É</span>
-      <h2 class="section-title">Ideal para diferentes tipos de negócio</h2>
+      <h2 class="section-title">Se você vende online, isso é para você</h2>
     </div>
     <div class="audience-tags">
       <div class="audience-tag">
@@ -317,7 +317,7 @@ import Layout from '../../../layouts/Layout.astro';
           </li>
           <li>
             <span class="check-icon">✓</span>
-            <span>2 horas de mentoria (vídeos + análises + encontros)</span>
+            <span>2 horas de mentoria</span>
           </li>
           <li>
             <span class="check-icon">✓</span>
@@ -489,7 +489,7 @@ import Layout from '../../../layouts/Layout.astro';
               2 horas de mentoria
             </li>
           </ul>
-          <p class="include-note">*Tempo contabilizado: vídeos de estratégia + análise dos seus vídeos + encontros de alinhamento</p>
+          <p class="include-note">*As 2 horas incluem: vídeos de estratégia, análise dos seus vídeos e encontros de alinhamento</p>
         </div>
 
         <div class="pix-payment">
@@ -509,7 +509,7 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
 
         <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da entrada do Mapa de Funil segue comprovante" target="_blank" rel="noopener" class="btn-green btn-large">
-          Garantir Minha Vaga & Enviar Comprovante
+          Pagar e Garantir Minha Vaga
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
@@ -557,7 +557,7 @@ import Layout from '../../../layouts/Layout.astro';
       <div class="optional-pricing">
         <div class="optional-price">
           <span class="price-value">6x R$ 960</span>
-          <span class="price-label">cartão de crédito</span>
+          <span class="price-label">cartão de crédito · total R$ 5.760</span>
         </div>
         <div class="optional-bonus">
           <span class="bonus-badge">Bônus</span>
@@ -581,7 +581,7 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
 
         <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da Implementação Completa do Mapa de Funil segue comprovante" target="_blank" rel="noopener" class="btn-blue">
-          Enviar Comprovante de Implementação
+          Contratar Implementação Completa
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
@@ -613,7 +613,7 @@ import Layout from '../../../layouts/Layout.astro';
       </div>
       <div class="faq-item">
         <h3>O suporte e a mentoria são individuais?</h3>
-        <p>Sim. O Alex Donega analisa pessoalmente o seu projeto e os encontros de alinhamento são focados 100% na sua estratégia de escala ou validação.</p>
+        <p>Sim. Analiso pessoalmente o seu projeto e os encontros de alinhamento são focados 100% na sua estratégia de escala ou validação.</p>
       </div>
     </div>
   </div>
@@ -621,7 +621,7 @@ import Layout from '../../../layouts/Layout.astro';
 
 <section class="funnel-cta">
   <div class="container">
-    <h2 class="cta-title">Ainda tem alguma dúvida se o Mapa é para você?</h2>
+    <h2 class="cta-title">Pronto para mapear seu funil e parar de adivinhar?</h2>
     <p class="cta-subtitle">Se você quer entender como o mapeamento se aplica ao seu modelo de negócio específico, vamos conversar agora.</p>
     <div class="cta-buttons">
       <a href="#pricing" class="btn-primary">
@@ -856,7 +856,7 @@ import Layout from '../../../layouts/Layout.astro';
   .grid-pattern {
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
       linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
