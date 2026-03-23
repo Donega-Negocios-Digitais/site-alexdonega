@@ -21,7 +21,7 @@ const projectTitle = "Plataforma de Saúde NR-1";
 </head>
 <body>
     <div class="proposta-wrapper">
-        
+
         <header class="proposta-header">
             <div class="client-logo">
                 <img src="/img/proposals/logo-wu-wei-saude.webp" alt="Wu Wei Saúde" />
@@ -41,7 +41,7 @@ const projectTitle = "Plataforma de Saúde NR-1";
                     <span class="section-eyebrow">01 - Quem vai desenvolver</span>
                     <h2 class="section-title">Alex Donega e Equipe</h2>
                 </div>
-                
+
                 <div class="about-grid">
                     <div class="about-image">
                         <img src="/img/people/alex-donega.webp" alt="Alex Donega" loading="lazy" />
@@ -63,7 +63,7 @@ const projectTitle = "Plataforma de Saúde NR-1";
                     <span class="section-eyebrow">02 - Experiência</span>
                     <h2 class="section-title">Projetos de Software Desenvolvidos</h2>
                 </div>
-                
+
                 <div class="portfolio-grid">
                     <div class="portfolio-card">
                         <span class="portfolio-badge">Fui Diretor de Relacionamentos</span>
@@ -116,7 +116,7 @@ const projectTitle = "Plataforma de Saúde NR-1";
                     <h2 class="section-title">Escopo do Projeto</h2>
                     <p class="section-subtitle">Detalhamento completo das funcionalidades, telas e lógicas do sistema.</p>
                 </div>
-                
+
                 <div class="scope-detailed">
                     <div class="scope-group">
                         <h3 class="group-title">1. Recursos Principais</h3>
@@ -146,33 +146,59 @@ const projectTitle = "Plataforma de Saúde NR-1";
                     </div>
 
                     <div class="scope-group">
-                        <h3 class="group-title">2. Mapeamento de Telas</h3>
+                        <h3 class="group-title">2. Estrutura de Usuários e Acessos</h3>
+                        <p class="group-description">Para garantir a escalabilidade, o compliance legal e a segurança da informação, a plataforma é estruturada em 4 níveis de acesso. Essa arquitetura permite que cada perfil atue com foco total em sua responsabilidade estratégica.</p>
+
+                        <h3 class="group-title" style="font-size: 1.25rem; border-bottom: none; margin-top: 1rem;">2.1 Mapeamento de Telas</h3>
                         <div class="screens-grid">
+                            <!-- Admin Master -->
                             <div class="screens-column">
-                                <h4 class="column-title">Para o Paciente</h4>
+                                <h4 class="column-title">1. Admin Master</h4>
                                 <ul class="screens-list">
-                                    <li><strong>Tela de Login:</strong> Apenas código ID.</li>
-                                    <li><strong>Termo LGPD:</strong> Aceite obrigatório.</li>
-                                    <li><strong>Ficha Inicial:</strong> Sequência de 7 passos.</li>
-                                    <li><strong>Dashboard Home:</strong> Atalhos, lembretes e contador de dias.</li>
-                                    <li><strong>Registrar Sintoma:</strong> Escala visual de 1 a 10.</li>
-                                    <li><strong>Meus Medicamentos:</strong> Checklist e contador de frascos.</li>
-                                    <li><strong>Academy:</strong> Grid de conteúdos (Vídeos/PDFs).</li>
-                                    <li><strong>Meu Progresso:</strong> Gráfico de melhora mensal.</li>
-                                    <li><strong>Perfil:</strong> Visualização e edição de dados cadastrais.</li>
-                                    <li><strong>Exames Médicos:</strong> Upload e gestão de documentos e exames.</li>
-                                    <li><strong>Consulta Online:</strong> Integração para teleconsultas via plataforma.</li>
+                                    <li><strong>Dashboard Global:</strong> Visão consolidada de todas as franquias.</li>
+                                    <li><strong>Cadastro de Franquias:</strong> Tela para adicionar e configurar novos parceiros.</li>
+                                    <li><strong>Gestão de Médicos/Franquias:</strong> Controle total de parceiros ativos.</li>
+                                    <li><strong>Cadastro de Protocolo:</strong> Definição de regras e condutas do sistema.</li>
+                                    <li><strong>Auditoria e Segurança:</strong> Logs de acesso e conformidade.</li>
+                                    <li><strong>Configurações Globais:</strong> Gestão do Módulo Academy e tabelas.</li>
                                 </ul>
                             </div>
+
+                            <!-- Franquia / Médico -->
                             <div class="screens-column">
-                                <h4 class="column-title">Para a Dra. Wei / Admin</h4>
+                                <h4 class="column-title">2. Franquia (Médico)</h4>
                                 <ul class="screens-list">
-                                    <li><strong>Dashboard Geral:</strong> Listagem com filtros por empresa e alertas.</li>
-                                    <li><strong>Prontuário 360º:</strong> Histórico e evolução visual completa.</li>
-                                    <li><strong>Central de Intercorrências:</strong> Fila de urgência (Modal Vermelho).</li>
-                                    <li><strong>Dashboard ROI:</strong> Gráficos agregados para empresas (RH).</li>
-                                    <li><strong>Gerador NR-1:</strong> Exportação de PDFs de conformidade.</li>
-                                    <li><strong>Gestão Dinâmica:</strong> Cadastro de remédios e diagnósticos sem código.</li>
+                                    <li><strong>Dashboard Clínico:</strong> Gestão de pacientes e alertas.</li>
+                                    <li><strong>Cadastro de Empresas e Pacientes:</strong> Adição rápida de novos contratos e clientes.</li>
+                                    <li><strong>Gestão de Empresas:</strong> Vendas e controle de pacotes corporativos.</li>
+                                    <li><strong>Prontuário 360º:</strong> Visão narrativa e histórico detalhado.</li>
+                                    <li><strong>Gestão de Calendário:</strong> Agendamentos e teleconsultas com integração ao <strong>Google Calendário</strong>.</li>
+                                    <li><strong>Alertas de Risco:</strong> Notificação de intercorrências graves instantaneamente.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Empresa -->
+                            <div class="screens-column">
+                                <h4 class="column-title">3. Empresa (RH/SST)</h4>
+                                <ul class="screens-list">
+                                    <li><strong>Dashboard ROI:</strong> Gráficos agregados de evolução de saúde.</li>
+                                    <li><strong>Cadastro de Colaboradores:</strong> Adição de funcionários e seus dependentes.</li>
+                                    <li><strong>Monitoramento Populacional:</strong> Filtros por setores e grupos.</li>
+                                    <li><strong>Gerador NR-1:</strong> Exportação de PDFs de conformidade legal.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Paciente -->
+                            <div class="screens-column">
+                                <h4 class="column-title">4. Paciente (Colaborador / Clínica)</h4>
+                                <ul class="screens-list">
+                                    <li><strong>Dashboard Minimalista:</strong> Foco no tratamento e dia-a-dia.</li>
+                                    <li><strong>Onboarding Clínico (Anamnese):</strong> Avaliação inicial com 7 blocos detalhados de saúde.</li>
+                                    <li><strong>Diário de Saúde:</strong> Registro de sintomas e medicamentos.</li>
+                                    <li><strong>Academy:</strong> Acesso a cursos e materiais educativos.</li>
+                                    <li><strong>Exames e Teleconsulta:</strong> Upload de arquivos e acesso a vídeochamadas.</li>
+                                    <li><strong>Agendamento de Consultas:</strong> Seleção de datas e horários com o médico.</li>
+                                    <li><strong>Perfil e Evolução:</strong> Edição de dados e gráficos de melhora.</li>
                                 </ul>
                             </div>
                         </div>
@@ -201,9 +227,9 @@ const projectTitle = "Plataforma de Saúde NR-1";
                 <div class="section-header">
                     <span class="section-eyebrow">04 - Futuro</span>
                     <h2 class="section-title">Planejamento Futuro</h2>
-                    <p class="section-subtitle">Funcionalidades previstas para fases posteriores, fora do escopo desta proposta.</p>
+                    <p class="section-subtitle">Já estou pensando no que vem depois. Estes recursos estão mapeados e prontos para a próxima fase — porque construir bem significa construir para crescer.</p>
                 </div>
-                
+
                 <div class="future-grid">
                     <div class="future-item">
                         <span class="future-icon">
@@ -304,145 +330,290 @@ const projectTitle = "Plataforma de Saúde NR-1";
                     <h2 class="section-title">Cronograma de Execução</h2>
                     <p class="section-subtitle">90 dias de desenvolvimento estruturado em 5 fases.</p>
                 </div>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">01</span>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 class="timeline-title">Fundação</h3>
-                                <span class="timeline-date">24/03 – 11/04 (3 semanas)</span>
+
+                <!-- Barra Gantt proporcional -->
+                <div class="gantt-bar">
+                    <div class="gantt-seg" style="flex: 3" title="Fase 01 · 3 semanas">
+                        <span class="gantt-seg-num">01</span>
+                        <span class="gantt-seg-label">3 sem</span>
+                    </div>
+                    <div class="gantt-seg" style="flex: 3" title="Fase 02 · 3 semanas">
+                        <span class="gantt-seg-num">02</span>
+                        <span class="gantt-seg-label">3 sem</span>
+                    </div>
+                    <div class="gantt-seg gantt-seg--longest" style="flex: 4" title="Fase 03 · 4 semanas">
+                        <span class="gantt-seg-num">03</span>
+                        <span class="gantt-seg-label">4 sem</span>
+                    </div>
+                    <div class="gantt-seg" style="flex: 2" title="Fase 04 · 2 semanas">
+                        <span class="gantt-seg-num">04</span>
+                        <span class="gantt-seg-label">2 sem</span>
+                    </div>
+                    <div class="gantt-seg gantt-seg--last" style="flex: 1" title="Fase 05 · 1 semana">
+                        <span class="gantt-seg-num">05</span>
+                        <span class="gantt-seg-label">1 sem</span>
+                    </div>
+                </div>
+
+                <!-- Cards das fases -->
+                <div class="phases-list">
+
+                    <div class="phase-card">
+                        <div class="phase-accent-strip"></div>
+                        <div class="phase-inner">
+                            <div class="phase-num-col">
+                                <span class="phase-num">01</span>
                             </div>
-                            <p>Infraestrutura base com autenticação dual, modelo de dados, isolamento multi-tenant, gestão de empresas e geração de IDs.</p>
+                            <div class="phase-body">
+                                <div class="phase-top-row">
+                                    <h3 class="phase-title">Fundação</h3>
+                                    <span class="phase-dur-badge">3 semanas</span>
+                                </div>
+                                <span class="phase-dates">24/03 → 11/04</span>
+                                <div class="phase-progress"><div class="phase-progress-fill" style="width: 23%"></div></div>
+                                <p class="phase-desc">Infraestrutura base com autenticação dual, modelo de dados, isolamento multi-tenant, gestão de empresas e geração de IDs.</p>
+                                <div class="phase-tags">
+                                    <span>Autenticação dual</span><span>Multi-tenant</span><span>Modelo de dados</span><span>Gestão de empresas</span><span>Geração de IDs</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">02</span>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 class="timeline-title">Onboarding do Paciente</h3>
-                                <span class="timeline-date">14/04 – 02/05 (3 semanas)</span>
+
+                    <div class="phase-card">
+                        <div class="phase-accent-strip"></div>
+                        <div class="phase-inner">
+                            <div class="phase-num-col">
+                                <span class="phase-num">02</span>
                             </div>
-                            <p>Ficha de Avaliação Inicial com 7 blocos, upload de exames, dashboard pessoal com dia do tratamento e lembretes.</p>
+                            <div class="phase-body">
+                                <div class="phase-top-row">
+                                    <h3 class="phase-title">Onboarding do Paciente</h3>
+                                    <span class="phase-dur-badge">3 semanas</span>
+                                </div>
+                                <span class="phase-dates">14/04 → 02/05</span>
+                                <div class="phase-progress"><div class="phase-progress-fill" style="width: 23%"></div></div>
+                                <p class="phase-desc">Ficha de Avaliação Inicial com 7 blocos, upload de exames, dashboard pessoal com dia do tratamento e lembretes.</p>
+                                <div class="phase-tags">
+                                    <span>Ficha de Avaliação</span><span>Upload de exames</span><span>Dashboard pessoal</span><span>Dia do tratamento</span><span>Lembretes</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">03</span>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 class="timeline-title">Acompanhamento Clínico</h3>
-                                <span class="timeline-date">05/05 – 30/05 (4 semanas)</span>
+
+                    <div class="phase-card phase-card--highlight">
+                        <div class="phase-accent-strip"></div>
+                        <div class="phase-inner">
+                            <div class="phase-num-col">
+                                <span class="phase-num">03</span>
                             </div>
-                            <p>Log de sintomas, alertas de intercorrência em tempo real, controle de medicamentos, avaliação periódica com 12 escalas e protocolos de saúde.</p>
+                            <div class="phase-body">
+                                <div class="phase-top-row">
+                                    <h3 class="phase-title">Acompanhamento Clínico</h3>
+                                    <span class="phase-dur-badge phase-dur-badge--longest">4 semanas · maior fase</span>
+                                </div>
+                                <span class="phase-dates">05/05 → 30/05</span>
+                                <div class="phase-progress"><div class="phase-progress-fill" style="width: 100%"></div></div>
+                                <p class="phase-desc">Log de sintomas, alertas de intercorrência em tempo real, controle de medicamentos, avaliação periódica com 12 escalas e protocolos de saúde.</p>
+                                <div class="phase-tags">
+                                    <span>Log de sintomas</span><span>Alertas em tempo real</span><span>Controle de medicamentos</span><span>12 escalas clínicas</span><span>Protocolos de saúde</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">04</span>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 class="timeline-title">Backoffice (Painel Médico)</h3>
-                                <span class="timeline-date">02/06 – 13/06 (2 semanas)</span>
+
+                    <div class="phase-card">
+                        <div class="phase-accent-strip"></div>
+                        <div class="phase-inner">
+                            <div class="phase-num-col">
+                                <span class="phase-num">04</span>
                             </div>
-                            <p>Painel administrativo com listagem de pacientes, prontuário traduzido, alertas de intercorrências e módulo Academy.</p>
+                            <div class="phase-body">
+                                <div class="phase-top-row">
+                                    <h3 class="phase-title">Backoffice — Painel Médico</h3>
+                                    <span class="phase-dur-badge">2 semanas</span>
+                                </div>
+                                <span class="phase-dates">02/06 → 13/06</span>
+                                <div class="phase-progress"><div class="phase-progress-fill" style="width: 50%"></div></div>
+                                <p class="phase-desc">Painel administrativo com listagem de pacientes, prontuário traduzido, alertas de intercorrências e módulo Academy.</p>
+                                <div class="phase-tags">
+                                    <span>Listagem de pacientes</span><span>Prontuário traduzido</span><span>Alertas de intercorrências</span><span>Módulo Academy</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="timeline-number">05</span>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 class="timeline-title">Enterprise + Testes e Entrega</h3>
-                                <span class="timeline-date">16/06 – 21/06 (1 semana)</span>
+
+                    <div class="phase-card phase-card--final">
+                        <div class="phase-accent-strip phase-accent-strip--green"></div>
+                        <div class="phase-inner">
+                            <div class="phase-num-col">
+                                <span class="phase-num phase-num--green">05</span>
                             </div>
-                            <p>Painel empresarial com dashboard agregado, relatório NR-1 em PDF, testes finais e implantação.</p>
+                            <div class="phase-body">
+                                <div class="phase-top-row">
+                                    <h3 class="phase-title">Enterprise + Testes e Entrega</h3>
+                                    <span class="phase-dur-badge phase-dur-badge--green">Entrega final</span>
+                                </div>
+                                <span class="phase-dates">16/06 → 21/06</span>
+                                <div class="phase-progress"><div class="phase-progress-fill phase-progress-fill--green" style="width: 100%"></div></div>
+                                <p class="phase-desc">Painel empresarial com dashboard agregado, relatório NR-1 em PDF, testes finais e implantação em produção.</p>
+                                <div class="phase-tags">
+                                    <span>Dashboard agregado</span><span>Relatório NR-1 PDF</span><span>Testes finais</span><span>Implantação</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="justificativa">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-eyebrow">06 - Visão Estratégica</span>
+                    <h2 class="section-title">O melhor investimento para o seu negócio começa aqui</h2>
+                    <p class="section-subtitle">Transforme tecnologia em um ativo proprietário, escalável e de alto valor.</p>
+                </div>
+
+                <div class="justificativa-grid">
+                    <div class="justificativa-content">
+                        <p>Investir em um software sob medida não é uma despesa operacional, é a construção de um <strong>ativo digital estratégico</strong>. Ao contrário de plataformas prontas com mensalidades crescentes, você está criando uma propriedade intelectual que pertence inteiramente a você.</p>
+                        <p>A arquitetura que desenhamos permite que o custo do desenvolvimento seja <strong>diluído rapidamente</strong>: à medida que novas franquias e empresas entram na plataforma, o custo por usuário atendido cai drasticamente, enquanto o valor do seu negócio (valuation) cresce exponencialmente devido à escalabilidade tecnológica.</p>
+                        <p>Além disso, o controle total sobre os dados e a personalização absoluta dos protocolos garantem uma vantagem competitiva que nenhuma solução de prateleira pode oferecer.</p>
+                    </div>
+                    <div class="justificativa-stats">
+                        <div class="stat-card">
+                            <span class="stat-value">Construa seu Ativo</span>
+                            <span class="stat-label">A plataforma potencializa o produto atual da Dra. Wei, tornando seu protocolo uma referência científica e tecnológica global.</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">Escalabilidade Real</span>
+                            <span class="stat-label">Cresça em número de usuários atendidos sem aumentar seus custos fixos e sem que seu tempo de trabalho cresça na mesma proporção.</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">Geração de Equity</span>
+                            <span class="stat-label">Construa um ativo digital que aumenta o valuation para um futuro <strong>EXIT milionário</strong>.</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="investimento">
+        <section class="section-dark" id="investimento">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow">06 - Investimento</span>
+                    <span class="section-eyebrow">07 - Investimento</span>
                     <h2 class="section-title">Investimento</h2>
                 </div>
-                
+
                 <div class="investment-card">
                     <div class="investment-main">
                         <span class="investment-label">Desenvolvimento completo da plataforma</span>
                         <span class="investment-value">R$ 67.000</span>
-                    </div>
-                    <div class="investment-included">
-                        <span class="check">✓</span>
-                        <span>Suporte inicial de 30 dias incluso</span>
+                        <p class="investment-objection">Um investimento estratégico menor que a reforma de um único consultório físico, mas capaz de sustentar um ecossistema digital global, escalável e de alto valor (Equity).</p>
                     </div>
                 </div>
-                
+
                 <div class="section-header" style="margin-top: 4rem;">
                     <h3 class="section-title" style="font-size: 1.5rem;">Condições de Pagamento</h3>
+                    <p class="section-subtitle">Preparamos 5 opções flexíveis para viabilizar o seu projeto e permitir que você escolha a melhor forma de investir no seu ativo digital.</p>
                 </div>
-                
-                <div class="payment-options">
-                    <div class="payment-card">
-                        <span class="payment-badge">Opção 1</span>
-                        <h4>À Vista</h4>
-                        <p class="payment-value">R$ 67.000</p>
-                        <p class="payment-desc">Pagamento único</p>
-                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%201%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+
+                <!-- Redesign das Opções de Pagamento estilo Premium Dark -->
+                <div class="payment-options-premium">
+                    <!-- Opção 1 (Anterior Opção 4) -->
+                    <div class="payment-card-premium highlighted">
+                        <div class="popular-badge">RECOMENDADO</div>
+                        <div class="card-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7"/><path d="M16 19h6"/><path d="M19 16v6"/><circle cx="16" cy="12" r="2"/></svg>
+                        </div>
+                        <div class="card-header-info">
+                            <h4>Opção 1</h4>
+                            <span class="card-subtitle">Entrada + 6x</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="premium-price">R$ 27.000 <span class="price-plus">+</span> 6x R$ 7.380</p>
+                            <p class="total-label" style="margin-bottom: 3.5rem;">Total: R$ 71.282,10</p>
+                        </div>
+                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%201%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-premium-payment btn-green" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
                     </div>
-                    <div class="payment-card">
-                        <span class="payment-badge">Opção 2</span>
-                        <h4>Entrada + 3x</h4>
-                        <p class="payment-value">R$ 27.000 + 3x R$ 14.338</p>
-                        <p class="payment-desc">Total: R$ 70.015,35</p>
-                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%202%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+
+                    <!-- Opção 2 (Antiga Opção 5) -->
+                    <div class="payment-card-premium investor-highlight">
+                        <div class="investor-label-badge">ESTRATÉGIA DE CAPITAL</div>
+                        <div class="card-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8 a3 3 0 1 1 -5.8 -1.2"/><path d="M15.8 15.2 a3 3 0 1 1 5.8 1.2"/></svg>
+                        </div>
+                        <div class="card-header-info">
+                            <h4>Opção 2</h4>
+                            <span class="card-subtitle">Sem Entrada 12x</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="premium-price">12x R$ 6.699</p>
+                            <p class="total-label">Total: R$ 80.393,52</p>
+                            <p class="investor-note">A melhor opção para o investidor: <strong>preserve seu capital de giro</strong> enquanto constrói o ativo.</p>
+                        </div>
+                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%202%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-premium-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
                     </div>
-                    <div class="payment-card">
-                        <span class="payment-badge">Opção 3</span>
-                        <h4>Entrada + 6x</h4>
-                        <p class="payment-value">R$ 27.000 + 6x R$ 7.380</p>
-                        <p class="payment-desc">Total: R$ 71.282,10</p>
-                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%203%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+
+                    <!-- Opção 3 (Antiga Opção 2) -->
+                    <div class="payment-card-premium">
+                        <div class="card-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                        </div>
+                        <div class="card-header-info">
+                            <h4>Opção 3</h4>
+                            <span class="card-subtitle">Entrada + 3x</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="premium-price">R$ 27.000 <span class="price-plus">+</span> 3x R$ 14.338</p>
+                            <p class="total-label" style="margin-bottom: 3.5rem;">Total: R$ 70.015,35</p>
+                        </div>
+                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%203%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-premium-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
                     </div>
-                    <div class="payment-card">
-                        <span class="payment-badge">Opção 4</span>
-                        <h4>Sem Entrada 6x</h4>
-                        <p class="payment-value">6x R$ 12.362</p>
-                        <p class="payment-desc">Total: R$ 74.172,48</p>
-                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%204%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+
+                    <!-- Opção 4 (Anterior Opção 1) -->
+                    <div class="payment-card-premium">
+                        <div class="card-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div class="card-header-info">
+                            <h4>Opção 4</h4>
+                            <span class="card-subtitle">Pagamento À Vista</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="premium-price">R$ 67.000</p>
+                            <p class="total-label" style="margin-bottom: 3.5rem;">Pagamento Único</p>
+                        </div>
+                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%204%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-premium-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
                     </div>
-                    <div class="payment-card">
-                        <span class="payment-badge">Opção 5</span>
-                        <h4>Sem Entrada 12x</h4>
-                        <p class="payment-value">12x R$ 6.699</p>
-                        <p class="payment-desc">Total: R$ 80.393,52</p>
-                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%205%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
+
+                    <!-- Opção 5 -->
+                    <div class="payment-card-premium">
+                        <div class="card-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div class="card-header-info">
+                            <h4>Opção 5</h4>
+                            <span class="card-subtitle">Sem Entrada 6x</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="premium-price">6x R$ 12.362</p>
+                            <p class="total-label" style="margin-bottom: 3.5rem;">Total: R$ 74.172,48</p>
+                        </div>
+                        <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20a%20Op%C3%A7%C3%A3o%205%20de%20pagamento%2C%20da%20proposta%20Plataforma%20NR-1" class="btn-premium-payment" target="_blank" rel="noopener noreferrer">Escolher esta opção</a>
                     </div>
-                </div>
-                
-                <div class="payment-info">
-                    <p>Formas de pagamento: PIX, transferencia bancaria ou boleto.</p>
                 </div>
             </div>
         </section>
 
-        <section class="section-dark" id="diferenciais">
+        <section class="section" id="diferenciais">
             <div class="container">
                 <div class="section-header">
                     <span class="section-eyebrow">07 - Diferenciais</span>
                     <h2 class="section-title">Diferenciais da Entrega</h2>
                 </div>
-                
+
                 <div class="diferenciais-grid">
                     <div class="diferencial-item">
                         <span class="diferencial-icon">✓</span>
@@ -492,20 +663,20 @@ const projectTitle = "Plataforma de Saúde NR-1";
             <div class="container">
                 <h2 class="cta-title">Confirmo ciência dos valores, prazos e condições descritas neste documento.</h2>
                 <p class="cta-subtitle">Proposta válida por 15 dias</p>
-                
-                <a href="https://wa.me/message/LEJTZBCRSSBRN1" class="btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+
+                <a href="https://wa.me/5545999506444?text=Ol%C3%A1%20Alex%2C%20gostaria%20de%20aprovar%20a%20proposta%20da%20Plataforma%20NR-1" class="btn-primary btn-large" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                     Aprovar Proposta
                 </a>
-                
+
                 <p class="cta-footer">Alex Donega — Desenvolvimento de Software</p>
             </div>
         </section>
 
     </div>
-    
+
 </body>
 </html>
 
@@ -527,10 +698,10 @@ const projectTitle = "Plataforma de Saúde NR-1";
         --accent: #d87757;
         --accent-hover: #c96a4d;
         --accent-light: rgba(216, 119, 87, 0.08);
-        --border: #f1f5f9;
+        --border: #e4e8ef;
         --card-bg: #ffffff;
-        --card-border: #f1f5f9;
-        --section-alt-bg: #ffffff;
+        --card-border: #e4e8ef;
+        --section-alt-bg: #f4f6f9;
     }
 
     html {
@@ -541,7 +712,7 @@ const projectTitle = "Plataforma de Saúde NR-1";
         font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         background-color: var(--bg-main);
         color: var(--text-light);
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
     }
@@ -621,11 +792,13 @@ const projectTitle = "Plataforma de Saúde NR-1";
     .section {
         padding: 6rem 0;
         background: var(--bg-main);
+        border-top: 1px solid var(--border);
     }
 
     .section-dark {
         padding: 6rem 0;
         background: var(--section-alt-bg);
+        border-top: 1px solid var(--border);
     }
 
     .section-header {
@@ -761,12 +934,55 @@ const projectTitle = "Plataforma de Saúde NR-1";
         font-size: 0.6875rem;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.1em;
         background: var(--accent-light);
         color: var(--accent);
         padding: 0.25rem 0.625rem;
         border-radius: 6px;
         margin-bottom: 1rem;
+    }
+
+    .payment-badge {
+        display: inline-block;
+        background: var(--accent-light);
+        color: var(--accent);
+        padding: 0.25rem 0.75rem;
+        border-radius: 99px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .payment-badges {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .payment-badges .payment-badge {
+        margin-bottom: 0;
+    }
+
+    .payment-tag-highlight {
+        background: #10b981;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 99px;
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+
+    .payment-tag-investor {
+        background: #3b82f6;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 99px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: left;
     }
 
     .portfolio-card:hover {
@@ -808,6 +1024,14 @@ const projectTitle = "Plataforma de Saúde NR-1";
         border-bottom: 2px solid var(--accent-light);
     }
 
+    .group-description {
+        font-size: 1.125rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 900px;
+    }
+
     .feature-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -832,14 +1056,15 @@ const projectTitle = "Plataforma de Saúde NR-1";
 
     .screens-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
     }
 
     .screens-column {
         background: var(--bg-secondary);
-        padding: 2rem;
+        padding: 1.5rem;
         border-radius: 16px;
+        border: 1px solid var(--border);
     }
 
     .column-title {
@@ -927,90 +1152,282 @@ const projectTitle = "Plataforma de Saúde NR-1";
         height: 24px;
     }
 
-    /* Timeline */
-    .timeline {
-        position: relative;
-        max-width: 800px;
+    /* Justificativa */
+    .justificativa-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 1000px;
         margin: 0 auto;
     }
 
-    .timeline::before {
-        content: '';
-        position: absolute;
-        left: 24px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom, var(--accent), rgba(216, 119, 87, 0.2));
+    @media (min-width: 768px) {
+        .justificativa-grid {
+            grid-template-columns: 1.5fr 1fr;
+            align-items: center;
+        }
     }
 
-    .timeline-item {
+    .justificativa-content p {
+        font-size: 1.125rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+    .justificativa-stats {
         display: flex;
-        gap: 2rem;
-        margin-bottom: 2rem;
-        position: relative;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
-    .timeline-item:last-child {
-        margin-bottom: 0;
+    .stat-card {
+        background: var(--accent-light);
+        padding: 1.5rem;
+        border-radius: 16px;
+        border-left: 4px solid var(--accent);
     }
 
-    .timeline-marker {
-        width: 50px;
-        height: 50px;
-        background: var(--accent);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        position: relative;
-        z-index: 1;
-    }
-
-    .timeline-number {
-        font-size: 0.875rem;
+    .stat-value {
+        display: block;
+        font-size: 1.25rem;
         font-weight: 700;
-        color: #0a0a0a;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
     }
 
-    .timeline-content {
-        flex: 1;
+    .stat-label {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        line-height: 1.4;
+    }
+
+    /* Cronograma — Gantt Bar */
+    .gantt-bar {
+        display: flex;
+        gap: 3px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 2.5rem;
+        height: 60px;
+    }
+
+    .gantt-seg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem;
+        background: var(--accent-light);
+        border: 1px solid rgba(216, 119, 87, 0.2);
+        min-width: 0;
+        transition: background 0.2s;
+    }
+
+    .gantt-seg--longest {
+        background: rgba(216, 119, 87, 0.14);
+    }
+
+    .gantt-seg--last {
+        border-radius: 0 10px 10px 0;
+    }
+
+    .gantt-bar .gantt-seg:first-child {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .gantt-seg-num {
+        font-size: 0.6875rem;
+        font-weight: 800;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+
+    .gantt-seg-label {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Cronograma — Phase Cards */
+    .phases-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .phase-card {
+        display: flex;
         background: var(--card-bg);
         border: 1px solid var(--card-border);
         border-radius: 16px;
-        padding: 1.5rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        transition: box-shadow 0.2s, transform 0.2s;
     }
 
-    .timeline-header {
+    .phase-card:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+        transform: translateY(-2px);
+    }
+
+    .phase-card--highlight {
+        border-color: rgba(216, 119, 87, 0.3);
+    }
+
+    .phase-card--final {
+        border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .phase-accent-strip {
+        width: 4px;
+        background: var(--accent);
+        flex-shrink: 0;
+    }
+
+    .phase-accent-strip--green {
+        background: #22c55e;
+    }
+
+    .phase-inner {
         display: flex;
-        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 1.75rem 2rem;
+        flex: 1;
         align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 0.75rem;
     }
 
-    .timeline-title {
-        font-size: 1.125rem;
-        font-weight: 600;
+    .phase-num-col {
+        flex-shrink: 0;
+        padding-top: 0.125rem;
+    }
+
+    .phase-num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 800;
+        border-radius: 10px;
+        letter-spacing: 0.03em;
+    }
+
+    .phase-num--green {
+        background: #22c55e;
+    }
+
+    .phase-body {
+        flex: 1;
+    }
+
+    .phase-top-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.3rem;
+    }
+
+    .phase-title {
+        font-size: 1.1rem;
+        font-weight: 700;
         color: var(--text-white);
     }
 
-    .timeline-date {
+    .phase-dur-badge {
         font-size: 0.75rem;
+        font-weight: 600;
+        background: var(--accent-light);
+        color: var(--accent);
+        padding: 0.2rem 0.75rem;
+        border-radius: 100px;
+        white-space: nowrap;
+    }
+
+    .phase-dur-badge--longest {
+        background: rgba(216, 119, 87, 0.12);
+    }
+
+    .phase-dur-badge--green {
+        background: rgba(34, 197, 94, 0.1);
+        color: #16a34a;
+    }
+
+    .phase-dates {
+        display: block;
+        font-size: 0.8125rem;
         font-weight: 500;
         color: var(--accent);
+        margin-bottom: 0.875rem;
+        letter-spacing: 0.01em;
+    }
+
+    .phase-card--final .phase-dates {
+        color: #16a34a;
+    }
+
+    .phase-progress {
+        height: 3px;
         background: var(--accent-light);
-        padding: 0.25rem 0.75rem;
+        border-radius: 100px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    .phase-progress-fill {
+        height: 100%;
+        background: var(--accent);
         border-radius: 100px;
     }
 
-    .timeline-content p {
+    .phase-progress-fill--green {
+        background: #22c55e;
+    }
+
+    .phase-desc {
         font-size: 0.9375rem;
         color: var(--text-muted);
         line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .phase-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+    }
+
+    .phase-tags span {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        background: var(--section-alt-bg);
+        border: 1px solid var(--card-border);
+        padding: 0.2rem 0.625rem;
+        border-radius: 6px;
+    }
+
+    @media (max-width: 640px) {
+        .phase-inner {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1.25rem 1.25rem;
+        }
+
+        .gantt-seg-label {
+            display: none;
+        }
+
+        .gantt-bar {
+            height: 44px;
+        }
     }
 
     /* Investment */
@@ -1043,6 +1460,14 @@ const projectTitle = "Plataforma de Saúde NR-1";
         color: var(--accent);
     }
 
+    .investment-objection {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        max-width: 400px;
+        margin: 1rem auto 0;
+    }
+
     .investment-included {
         display: flex;
         align-items: center;
@@ -1057,121 +1482,215 @@ const projectTitle = "Plataforma de Saúde NR-1";
         font-weight: bold;
     }
 
-    /* Payment Options */
-    .payment-options {
+    /* Payment Options Premium Design */
+    .payment-options-premium {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1300px;
+        margin: 2rem auto 0;
+        padding-top: 2rem;
     }
 
-    .payment-options {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        max-width: 900px;
-        margin: 0 auto;
+    .payment-card-premium {
+        background: #111111;
+        border: 1px solid #222222;
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        text-align: left;
     }
 
-    .payment-card:first-child {
-        grid-column: span 2;
-        max-width: 440px;
-        margin: 0 auto;
-        width: 100%;
+    .payment-card-premium:hover {
+        border-color: #333333;
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
-    @media (max-width: 640px) {
-        .payment-options {
-            grid-template-columns: 1fr;
-        }
-        .payment-card:first-child {
-            grid-column: span 1;
-        }
+    .payment-card-premium.highlighted {
+        border: 1px solid var(--accent);
+        box-shadow: 0 0 30px rgba(216, 119, 87, 0.15);
     }
 
-    .payment-card {
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 16px;
-        padding: 1.5rem;
-        text-align: center;
-        transition: all 0.3s;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    .payment-card-premium.investor-highlight {
+        border: 1px dashed rgba(59, 130, 246, 0.5);
+        background: linear-gradient(180deg, #111111 0%, #0d1117 100%);
     }
 
-    .payment-card:hover {
-        border-color: rgba(216, 119, 87, 0.3);
-        transform: translateY(-4px);
+    .card-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        background: rgba(216, 119, 87, 0.1);
+        border: 1px solid rgba(216, 119, 87, 0.2);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
     }
 
-    .payment-badge {
-        display: inline-block;
-        font-size: 0.6875rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+    .card-icon {
         color: var(--accent);
-        background: var(--accent-light);
-        padding: 0.25rem 0.75rem;
-        border-radius: 4px;
-        margin-bottom: 1rem;
     }
 
-    .payment-card h4 {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--text-white);
-        margin-bottom: 0.75rem;
-    }
-
-    .payment-value {
-        font-size: 1.125rem;
+    .card-header-info h4 {
+        font-size: 1.25rem;
         font-weight: 700;
-        color: var(--text-white);
+        color: #ffffff;
         margin-bottom: 0.25rem;
     }
 
-    .payment-desc {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        margin-bottom: 1rem;
+    .card-subtitle {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: #bbbbbb;
+        display: block;
+        margin-bottom: 2rem;
     }
 
-    .btn-payment {
-        display: inline-flex;
+    .premium-price {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+
+    .price-plus {
+        font-size: 1rem;
+        color: var(--accent);
+        margin: 0 0.25rem;
+    }
+
+    .total-label {
+        font-size: 0.9375rem;
+        color: #aaaaaa;
+        margin-bottom: 2.5rem;
+    }
+
+    .premium-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2.5rem 0;
+        flex-grow: 1;
+    }
+
+    .premium-features li {
+        font-size: 0.875rem;
+        color: #cccccc;
+        margin-bottom: 1rem;
+        display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 0.625rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .check-icon {
+        color: var(--accent);
+        font-weight: bold;
+    }
+
+    .popular-badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
         background: var(--accent);
-        color: white;
-        font-size: 0.75rem;
+        color: #ffffff;
+        font-size: 0.6875rem;
+        font-weight: 800;
+        padding: 0.4rem 1.2rem;
+        border-radius: 100px;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+    }
+
+    .investor-label-badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #3b82f6;
+        color: #ffffff;
+        font-size: 0.6875rem;
+        font-weight: 800;
+        padding: 0.4rem 1.2rem;
+        border-radius: 100px;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+    }
+
+    .investor-note {
+        font-size: 0.875rem;
+        color: #999999;
+        line-height: 1.5;
+        margin-bottom: 2.5rem;
+    }
+
+    .btn-premium-payment {
+        width: 100%;
+        background: transparent;
+        color: #ffffff;
+        border: 1px solid #333333;
+        padding: 1rem;
+        border-radius: 12px;
+        font-size: 0.875rem;
         font-weight: 600;
+        text-align: center;
         text-decoration: none;
-        border-radius: 8px;
         transition: all 0.3s;
     }
 
-    .btn-payment:hover {
-        background: #c96a4d;
-        transform: translateY(-2px);
+    .btn-premium-payment:hover {
+        background: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
+        transform: scale(1.02);
     }
 
-    .payment-info {
-        text-align: center;
-        margin-top: 2rem;
-        padding: 1rem;
-        background: var(--accent-light);
-        border: 1px solid rgba(216, 119, 87, 0.2);
-        border-radius: 12px;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
+    .payment-card-premium.highlighted .btn-premium-payment {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #ffffff;
     }
 
-    .payment-info p {
-        font-size: 0.875rem;
-        color: var(--text-muted);
+    .payment-card-premium.highlighted .btn-premium-payment:hover {
+        background: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
+    }
+
+    .btn-premium-payment.btn-green {
+        background: #22c55e;
+        border-color: #22c55e;
+        color: #ffffff;
+    }
+
+    .btn-premium-payment.btn-green:hover {
+        background: #16a34a;
+        border-color: #16a34a;
+        color: #ffffff;
+        transform: scale(1.02);
+    }
+
+    .payment-card-premium.investor-highlight .btn-premium-payment {
+        background: #3b82f6;
+        border-color: #3b82f6;
+        color: #ffffff;
+    }
+
+    .payment-card-premium.investor-highlight .btn-premium-payment:hover {
+        background: #ffffff;
+        color: #3b82f6;
+        border-color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        .payment-options-premium {
+            grid-template-columns: 1fr;
+            padding: 0 1rem;
+        }
     }
 
     /* Diferenciais */
@@ -1264,29 +1783,29 @@ const projectTitle = "Plataforma de Saúde NR-1";
         .timeline::before {
             left: 16px;
         }
-        
+
         .timeline-item {
             gap: 1rem;
         }
-        
+
         .timeline-marker {
             width: 34px;
             height: 34px;
         }
-        
+
         .timeline-number {
             font-size: 0.75rem;
         }
-        
+
         .timeline-header {
             flex-direction: column;
         }
-        
+
         .scope-item {
             flex-direction: column;
             gap: 1rem;
         }
-        
+
         .proposta-meta {
             flex-direction: column;
             gap: 0.5rem;
