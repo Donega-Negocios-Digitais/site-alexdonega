@@ -2,9 +2,57 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
+<script is:inline>
+  function copyPixKey(btnElement) {
+    const key = "alexdonega@gmail.com";
+    navigator.clipboard.writeText(key).then(() => {
+      const btnSpan = btnElement.querySelector('span');
+      const icon = btnElement.querySelector('.copy-icon');
+      const check = btnElement.querySelector('.check-icon-pix');
+      
+      const originalText = btnSpan.innerText;
+      btnSpan.innerText = "Copiado!";
+      icon.classList.add('hidden');
+      check.classList.remove('hidden');
+      
+      setTimeout(() => {
+        btnSpan.innerText = originalText;
+        icon.classList.remove('hidden');
+        check.classList.add('hidden');
+      }, 2000);
+    });
+  }
+</script>
+
 <Layout title="Mapa de Funil" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real.">
 
 <section class="funnel-hero">
+  <div class="hero-bg">
+    <div class="grid-pattern"></div>
+    <svg class="funnel-viz" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path id="path1" d="M100 200 Q300 150 500 250 T900 200" stroke="rgba(249, 115, 22, 0.2)" stroke-width="2" stroke-dasharray="10 10" />
+      <path id="path2" d="M150 400 Q400 350 600 450 T1000 400" stroke="rgba(249, 115, 22, 0.15)" stroke-width="2" stroke-dasharray="8 8" />
+      <path id="path3" d="M200 600 Q450 550 700 650 T1100 600" stroke="rgba(249, 115, 22, 0.1)" stroke-width="2" stroke-dasharray="12 12" />
+      
+      <!-- Pulsing Nodes -->
+      <circle r="4" fill="rgb(249, 115, 22)">
+        <animateMotion dur="6s" repeatCount="indefinite">
+          <mpath href="#path1" />
+        </animateMotion>
+      </circle>
+      <circle r="3" fill="rgb(251, 146, 60)">
+        <animateMotion dur="8s" repeatCount="indefinite">
+          <mpath href="#path2" />
+        </animateMotion>
+      </circle>
+      <circle r="5" fill="rgb(234, 88, 12)">
+        <animateMotion dur="5s" repeatCount="indefinite">
+          <mpath href="#path3" />
+        </animateMotion>
+      </circle>
+    </svg>
+    <div class="bg-glow"></div>
+  </div>
   <div class="container">
     <div class="hero-content">
       <span class="hero-eyebrow">Mapa de Funil</span>
@@ -15,8 +63,8 @@ import Layout from '../../../layouts/Layout.astro';
         Mapeamento e simulação de funil que prevê resultados e identifica vazamentos financeiros antes de você gastar com anúncios
       </p>
       <div class="hero-cta">
-        <a href="https://wa.me/5545999506444?text=Olá! Vim pelo site e gostaria de saber mais sobre o serviço de Mapa de Funil." target="_blank" rel="noopener" class="btn-primary">
-          Quero meu mapa
+        <a href="#pricing" class="btn-primary">
+          Simular meu lucro agora
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
@@ -50,143 +98,106 @@ import Layout from '../../../layouts/Layout.astro';
       <p class="what-intro">
         A proposta não é só criar um mapa visual do seu funil, mas <strong>simular a lucratividade</strong> do seu projeto antes de você gastar 1 centavo com anúncios.
       </p>
-      <div class="what-grid">
-        <div class="what-item">
-          <div class="what-icon">
+      <div class="what-list">
+        <div class="what-step">
+          <div class="step-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
             </svg>
           </div>
-          <h3>Prever o potencial de lucro</h3>
-          <p>Simule cenários e entenda quanto seu funil pode gerar</p>
+          <div class="step-text">
+            <h3>Prever o potencial de lucro</h3>
+            <p>Simule cenários e entenda quanto seu funil pode gerar</p>
+          </div>
+          <div class="step-number">01</div>
         </div>
-        <div class="what-item">
-          <div class="what-icon">
+        <div class="what-step">
+          <div class="step-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
             </svg>
           </div>
-          <h3>Identificar vazamentos</h3>
-          <p>Encontre pontos onde você está perdendo dinheiro</p>
+          <div class="step-text">
+            <h3>Identificar vazamentos</h3>
+            <p>Encontre pontos onde você está perdendo dinheiro</p>
+          </div>
+          <div class="step-number">02</div>
         </div>
-        <div class="what-item">
-          <div class="what-icon">
+        <div class="what-step">
+          <div class="step-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h3>Garantir lucro desde o início</h3>
-          <p>Só lance quando tiver certeza que vai dar certo</p>
+          <div class="step-text">
+            <h3>Garantir lucro desde o início</h3>
+            <p>Só lance quando tiver certeza que vai dar certo</p>
+          </div>
+          <div class="step-number">03</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="funnel-steps">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Como Funciona</span>
-      <h2 class="section-title">Na Prática é é assim funciona</h2>
-    </div>
-    <div class="steps-timeline">
-      <div class="step-row">
-        <div class="step-number">01</div>
-        <div class="step-media">
-          <img src="/videos/services/funnel-mapping/add-product.gif" alt="Adicionando produtos" loading="lazy" />
-        </div>
-        <div class="step-content">
-          <h3>Add your product</h3>
-          <p>Adicione preços, custos e conversões dos seus seu class delista</p>
-        </div>
-      </div>
-      <div class="step-row reverse">
-        <div class="step-number">02</div>
-        <div class="step-content">
-          <h3>Map Your Funnel</h3>
-          <p>Drag-N-Drop para criar o fluxo do funil de Arraste visualmente as etapas</p>
-        </div>
-        <div class="step-media">
-          <img src="/videos/services/funnel-mapping/map-funnel.gif" alt="Mapeando o funil" loading="lazy" />
-        </div>
-      </div>
-      <div class="step-row">
-        <div class="step-number">03</div>
-        <div class="step-media">
-          <img src="/videos/services/funnel-mapping/add-traffic.gif" alt="Adicionando tráfego" loading="lazy" />
-        </div>
-        <div class="step-content">
-          <h3>Add Traffic Sources</h3>
-          <p>Sample Ad campaigns & costs</p>
-        </div>
-      </div>
-      <div class="step-row reverse">
-        <div class="step-number">04</div>
-        <div class="step-content">
-          <h3>Add Expenses</h3>
-          <p>Any one-time or recurring expense</p>
-        </div>
-        <div class="step-media">
-          <img src="/videos/services/funnel-mapping/add-expensives.webp" alt="Adicionando despesas" loading="lazy" />
-        </div>
-      </div>
-      <div class="step-row">
-        <div class="step-number">05</div>
-        <div class="step-media">
-          <img src="/videos/services/funnel-mapping/simulate.webp" alt="Simulação de resultados" loading="lazy" />
-        </div>
-        <div class="step-content">
-          <h3>Simulate Everything!</h3>
-          <p>Instant metrics, reports & forecasts</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="funnel-benefits">
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Benefícios</span>
       <h2 class="section-title">O que você vai conseguir</h2>
     </div>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">
+    <div class="benefits-panels">
+      <div class="benefit-panel p-map">
+        <div class="panel-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
           </svg>
         </div>
-        <h3>MAP</h3>
-        <p>Mapeie suas ideias de funil de forma visual e estruturada</p>
+        <div class="panel-info">
+          <h3>MAP</h3>
+          <p>Mapeie suas ideias de funil de forma visual e estruturada</p>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
+      <div class="benefit-panel p-simulate">
+        <div class="panel-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
           </svg>
         </div>
-        <h3>SIMULATE</h3>
-        <p>Simule tráfego e conversões antes de investir dinheiro real</p>
+        <div class="panel-info">
+          <h3>SIMULATE</h3>
+          <p>Simulação real</p>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
+      <div class="benefit-panel p-leaks">
+        <div class="panel-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
           </svg>
         </div>
-        <h3>STOP LEAKS</h3>
-        <p>Pare vazamentos financeiros e otimize cada etapa do funil</p>
+        <div class="panel-info">
+          <h3>STOP LEAKS</h3>
+          <p>Sem perda de dinheiro</p>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
+      <div class="benefit-panel p-predict">
+        <div class="panel-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
           </svg>
         </div>
-        <h3>PREDICT</h3>
-        <p>Preveja lucros antes de lançar e tome decisões baseadas em dados</p>
+        <div class="panel-info">
+          <h3>PREDICT</h3>
+          <p>Preveja lucros antes de lançar e tome decisões baseadas em dados</p>
+        </div>
       </div>
+    </div>
+    <div class="section-cta">
+      <a href="#pricing" class="btn-primary">
+        Mapear meu funil agora
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
@@ -197,34 +208,25 @@ import Layout from '../../../layouts/Layout.astro';
       <span class="section-eyebrow">Para Quem É</span>
       <h2 class="section-title">Ideal para diferentes tipos de negócio</h2>
     </div>
-    <div class="audience-grid">
-      <div class="audience-card">
-        <div class="audience-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-            <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-          </svg>
-        </div>
-        <h3>E-commerce</h3>
-      </div>
-      <div class="audience-card">
-        <div class="audience-icon">
+    <div class="audience-tags">
+      <div class="audience-tag">
+        <div class="tag-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
           </svg>
         </div>
         <h3>Coaches & Consultores</h3>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">
+      <div class="audience-tag">
+        <div class="tag-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
           </svg>
         </div>
         <h3>Criadores & Afiliados</h3>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">
+      <div class="audience-tag">
+        <div class="tag-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 21h18"/><path d="M9 8h1"/><path d="M9 12h1"/><path d="M9 16h1"/><path d="M14 8h1"/><path d="M14 12h1"/><path d="M14 16h1"/>
             <path d="M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
@@ -232,46 +234,54 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
         <h3>Empresas B2B</h3>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">
+      <div class="audience-tag">
+        <div class="tag-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
           </svg>
         </div>
         <h3>Negócios Locais</h3>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">
+      <div class="audience-tag">
+        <div class="tag-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
           </svg>
         </div>
         <h3>Criadores de Cursos</h3>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">
+      <div class="audience-tag">
+        <div class="tag-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/>
           </svg>
         </div>
         <h3>Agências de Marketing</h3>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">
+      <div class="audience-tag">
+        <div class="tag-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
           </svg>
         </div>
         <h3>Freelancers</h3>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">
+      <div class="audience-tag">
+        <div class="tag-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
           </svg>
         </div>
         <h3>SaaS & Software</h3>
       </div>
+    </div>
+    <div class="section-cta">
+      <a href="#pricing" class="btn-secondary">
+        Sim, meu negócio precisa disso
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
@@ -304,10 +314,6 @@ import Layout from '../../../layouts/Layout.astro';
           <li>
             <span class="check-icon">✓</span>
             <span>Vídeo explicando a estratégia completa</span>
-          </li>
-          <li>
-            <span class="check-icon">✓</span>
-            <span>Sugestões de páginas, e-mails e criativos</span>
           </li>
           <li>
             <span class="check-icon">✓</span>
@@ -359,6 +365,20 @@ import Layout from '../../../layouts/Layout.astro';
             </svg>
             <span>Projeção de Receita Recorrente</span>
           </div>
+          <div class="metric-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>
+            </svg>
+            <span>CAC e ROAS Ideais</span>
+          </div>
+        </div>
+        <div class="deliverables-cta">
+          <a href="#pricing" class="btn-primary">
+            Quero receber este pacote
+            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -394,16 +414,56 @@ import Layout from '../../../layouts/Layout.astro';
       <div class="demo-card">
         <img src="/videos/services/funnel-mapping/simulate.webp" alt="Simulação de resultados" loading="lazy" />
         <p>Simulação de resultados</p>
+    </div>
+    <div class="section-cta">
+      <a href="#pricing" class="btn-secondary">
+        Quero um mapa como este
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="funnel-about">
+  <div class="container">
+    <div class="about-wrapper">
+      <div class="about-image">
+        <div class="image-container">
+          <img src="/img/people/alex-donega.webp" alt="Alex Donega" loading="lazy" />
+          <div class="image-glow"></div>
+        </div>
       </div>
-      <div class="demo-card featured">
-        <img src="/videos/services/funnel-mapping/funil-exemplo.webp" alt="Exemplo de funil completo" loading="lazy" />
-        <p>Exemplo de funil completo</p>
+      <div class="about-content">
+        <span class="section-eyebrow">Quem Constrói com Você</span>
+        <h2 class="section-title">Alex Donega</h2>
+        <p class="about-bio">
+          Empresário, Desenvolvedor e Arquiteto de Contextos com mais de 15 anos de experiência no mercado digital.
+        </p>
+        <div class="about-phases">
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>15+ anos</strong> construindo softwares e validando funis de venda de alta escala.</p>
+          </div>
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>7 empresas criadas</strong> do zero, focadas em simplicidade e escalabilidade.</p>
+          </div>
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>Mentor de centenas de alunos</strong> ensinando a arte de dominar IA e tecnologia.</p>
+          </div>
+        </div>
+        <p class="about-mission">
+          <em>"Não acredito em lançar funis baseados no acaso. Criei este serviço de mapeamento para que cada real investido por você seja precedido por uma simulação matemática de lucro."</em>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="funnel-pricing">
+<section class="funnel-pricing" id="pricing">
   <div class="container">
     <div class="pricing-wrapper">
       <div class="pricing-card main">
@@ -414,16 +474,16 @@ import Layout from '../../../layouts/Layout.astro';
         <div class="pricing-amount">
           <span class="currency">R$</span>
           <span class="value">1.000</span>
-          <span class="period">,00 total</span>
+          <span class="period"> total</span>
         </div>
         <div class="pricing-split">
           <div class="split-item">
-            <span class="split-value">R$ 500,00</span>
+            <span class="split-value">R$ 500</span>
             <span class="split-label">na entrada (início do briefing)</span>
           </div>
           <div class="split-divider"></div>
           <div class="split-item">
-            <span class="split-value">R$ 500,00</span>
+            <span class="split-value">R$ 500</span>
             <span class="split-label">na entrega (apresentação do mapa)</span>
           </div>
         </div>
@@ -439,8 +499,25 @@ import Layout from '../../../layouts/Layout.astro';
           </ul>
           <p class="include-note">*Tempo contabilizado: vídeos de estratégia + análise dos seus vídeos + encontros de alinhamento</p>
         </div>
-        <a href="https://wa.me/5545999506444?text=Olá! Vim pelo site e quero contratar o serviço de Mapa de Funil." target="_blank" rel="noopener" class="btn-primary btn-large">
-          QUERO MEU MAPA
+
+        <div class="pix-payment">
+          <span class="pix-label">Chave PIX (E-mail):</span>
+          <div class="pix-copy-box">
+            <span id="pix-key">alexdonega@gmail.com</span>
+            <button class="btn-copy" onclick="copyPixKey(this)">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+              </svg>
+              <svg class="check-icon-pix hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Copiar</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da entrada do Mapa de Funil segue comprovante" target="_blank" rel="noopener" class="btn-green btn-large">
+          Garantir Minha Vaga & Enviar Comprovante
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
@@ -483,19 +560,36 @@ import Layout from '../../../layouts/Layout.astro';
             E-mails e automações
           </li>
         </ul>
-        <p class="optional-note">*Gestão de tráfego não inclusa</p>
+        <p class="optional-note">*Gestão de tráfego não inclusa e é obrigatório o pagamento prévio do serviço de Mapa de Funil com Simulação.</p>
       </div>
       <div class="optional-pricing">
         <div class="optional-price">
-          <span class="price-value">6x R$ 960,00</span>
+          <span class="price-value">6x R$ 960</span>
           <span class="price-label">cartão de crédito</span>
         </div>
         <div class="optional-bonus">
           <span class="bonus-badge">Bônus</span>
           <span class="bonus-text">+ 4 horas de mentoria</span>
         </div>
-        <a href="https://wa.me/5545999506444?text=Olá! Vim pelo site e gostaria de saber mais sobre a implementação completa do Mapa de Funil." target="_blank" rel="noopener" class="btn-secondary">
-          Tenho interesse
+
+        <div class="pix-payment">
+          <span class="pix-label">Chave PIX (E-mail):</span>
+          <div class="pix-copy-box">
+            <span id="pix-key">alexdonega@gmail.com</span>
+            <button class="btn-copy" onclick="copyPixKey(this)">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+              </svg>
+              <svg class="check-icon-pix hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Copiar</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da Implementação Completa do Mapa de Funil segue comprovante" target="_blank" rel="noopener" class="btn-blue">
+          Enviar Comprovante de Implementação
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
@@ -505,12 +599,13 @@ import Layout from '../../../layouts/Layout.astro';
   </div>
 </section>
 
+
 <section class="funnel-cta">
   <div class="container">
     <h2 class="cta-title">Pronto para Descobrir o Destino do Seu Funil?</h2>
     <p class="cta-subtitle">Não deixe a performance do seu funil ao acaso. Preveja resultados e garanta lucro antes de lançar.</p>
-    <a href="https://wa.me/5545999506444?text=Olá! Vim pelo site e quero descobrir o potencial do meu funil." target="_blank" rel="noopener" class="btn-primary btn-large">
-      QUERO MEU MAPA
+    <a href="#pricing" class="btn-primary btn-large">
+      GARANTIR MEU MAPA DE FUNIL
       <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
       </svg>
@@ -533,6 +628,62 @@ import Layout from '../../../layouts/Layout.astro';
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Pricing Enhanced */
+  .pix-payment {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .pix-label {
+    display: block;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.75rem;
+  }
+
+  .pix-copy-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border-radius: 10px;
+  }
+
+  #pix-key {
+    font-family: monospace;
+    color: rgb(34, 197, 94);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .btn-copy {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+  }
+
+  .btn-copy:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .btn-copy svg { width: 14px; height: 14px; }
+  .hidden { display: none; }
 
   .section-header {
     text-align: center;
@@ -607,18 +758,113 @@ import Layout from '../../../layouts/Layout.astro';
     border-color: rgba(249, 115, 22, 0.5);
   }
 
+  .btn-green {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: rgb(34, 197, 94);
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-green:hover {
+    background: rgb(22, 163, 74);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+  }
+
+  .btn-blue {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: rgb(59, 130, 246);
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-blue:hover {
+    background: rgb(37, 99, 235);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+  }
+
   .btn-icon {
     width: 18px;
     height: 18px;
+    margin-left: 0.5rem;
   }
 
-  /* Hero */
+  /* Utility Common CTA */
+  .section-cta {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .deliverables-cta {
+    margin-top: 2.5rem;
+  }
+
+  /* Hero Section Enhanced */
   .funnel-hero {
-    padding: 8rem 0 4rem;
-    background: linear-gradient(180deg, rgba(249, 115, 22, 0.05) 0%, transparent 100%);
+    position: relative;
+    padding: 10rem 0 6rem;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black, transparent 85%);
+  }
+
+  .funnel-viz {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+  }
+
+  .bg-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+    filter: blur(80px);
   }
 
   .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
     text-align: center;
     margin: 0 auto;
@@ -692,7 +938,7 @@ import Layout from '../../../layouts/Layout.astro';
     color: rgb(249, 115, 22);
   }
 
-  /* What */
+  /* What - Process List Design */
   .funnel-what {
     padding: 5rem 0;
   }
@@ -706,526 +952,205 @@ import Layout from '../../../layouts/Layout.astro';
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     line-height: 1.6;
   }
 
-  .what-intro strong {
-    color: white;
-  }
-
-  .what-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .what-list {
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
-  }
-
-  .what-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s;
-  }
-
-  .what-item:hover {
-    border-color: rgba(249, 115, 22, 0.3);
-    transform: translateY(-4px);
-  }
-
-  .what-icon {
-    width: 56px;
-    height: 56px;
-    background: rgba(249, 115, 22, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-  }
-
-  .what-icon svg {
-    width: 28px;
-    height: 28px;
-    color: rgb(249, 115, 22);
-  }
-
-  .what-item h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 0.75rem;
-  }
-
-  .what-item p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.5;
-  }
-
-  /* Steps */
-  .funnel-steps {
-    padding: 5rem 0;
-    background: rgba(255, 255, 255, 0.02);
-  }
-
-  .steps-timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
   }
 
-  .step-row {
-    display: grid;
-    grid-template-columns: 60px 1fr 1fr;
-    gap: 2.5rem;
-    align-items: center;
-  }
-
-  .step-row.reverse {
-    grid-template-columns: 60px 1fr 1fr;
-  }
-
-  .step-number {
-    grid-row: 1;
-    align-self: flex-start;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.15);
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(251, 146, 60) 100%);
-    border-radius: 50px;
+  .what-step {
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: transform 0.3s;
-    position: relative;
-  }
-
-  .step-number::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 50px;
-    height: 2px;
-    background: rgb(249, 115, 22);
-    transform: translateX(-50%);
-  }
-
-  .step-row:nth-child(2) .step-number::after {
-    transform: translateX(1);
-  }
-
-  .step-row:nth-child(3) .step-number::after {
-    transform: translateX(50%);
-  }
-
-  .step-row:nth-child(4) .step-number::after {
-    transform: translateX(1);
-  }
-
-  .step-row:nth-child(5) .step-number::after {
-    transform: translateX(50%);
-  }
-
-  .step-media {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
-
-  .step-media:hover {
-    border-color: rgba(249, 115, 22, 0.3);
-    transform: translateY(-4px);
-  }
-
-  .step-media img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .step-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .step-content h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 1rem;
-  }
-
-  .step-content p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-  }
-
-  /* Steps */
-  .funnel-steps {
-    padding: 5rem 0;
-    background: rgba(255, 255, 255, 0.02);
-  }
-
-  .steps-timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .step-row {
-    display: grid;
-    grid-template-columns: 60px 1fr 1fr;
-    gap: 2.5rem;
-    align-items: center;
-  }
-
-  .step-row.reverse {
-    grid-template-columns: 60px 1fr 1fr;
-  }
-
-  .step-number {
-    grid-row: 1;
-    align-self: flex-start;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.15);
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(251, 146, 60) 100%);
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s;
-  }
-
-  .step-number::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 50px;
-    height: 2px;
-    background: rgb(249, 115, 22);
-    transform: translateX(-50%);
-  }
-
-  .step-row:nth-child(2) .step-number::after {
-    transform: translateX(0);
-  }
-
-  .step-row:nth-child(3) .step-number::after {
-    transform: translateX(50%);
-  }
-
-  .step-row:nth-child(4) .step-number::after {
-    transform: translateX(0);
-  }
-
-  .step-row:nth-child(5) .step-number::after {
-    transform: translateX(-50%);
-  }
-
-  .step-row:nth-child(1) .step-number::before {
-    left: -55px;
-    opacity: 0.3;
-  }
-
-  .step-row:nth-child(2) .step-number::before {
-    left: auto;
-  }
-
-  .step-row:nth-child(4) .step-number::before {
-    left: auto;
-  }
-
-  .step-row:nth-child(5) .step-number::before {
-    left: -55px;
-    opacity: 0.3;
-  }
-
-  .step-media {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.03);
-    transition: all 0.3s;
-    box-shadow: 0 20px 40px rgba(0, 1, 0.1, 0.2);
-  }
-
-  .step-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .step-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .step-content h3 {
-    font-size: .5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.75rem;
-  }
-
-  .step-content p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
-    .steps-timeline {
-      gap: 2.5rem;
-    }
-
-    .step-row {
-      grid-template-columns: 1fr;
-      text-align: center;
-      gap: 1rem;
-    }
-
-    .step-row.reverse {
-      grid-template-columns: 1fr;
-    }
-
-    .step-media {
-      order: 2;
-    }
-
-    .step-number {
-      justify-self: center;
-    }
-
-    .step-content {
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .steps-timeline {
-      gap: 2rem;
-    }
-
-    .step-row {
-      grid-template-columns: 1fr;
-    }
-
-    .step-media {
-      order: 2;
-    }
-
-    .step-row.reverse .step-media {
-      order: 1;
-    }
-
-    .step-content {
-      order: 2;
-    }
-
-    .step-number {
-      order: 2;
-      margin-bottom: 1rem;
-    }
-  }
-
-  .steps-timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .step-row {
-    display: grid;
-    grid-template-columns: 60px 1fr 1fr;
     gap: 2rem;
-    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
   }
 
-  .step-row.reverse {
-    grid-template-columns: 1fr 1fr 60px;
+  .what-step:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(249, 115, 22, 0.2);
+    transform: translateX(10px);
   }
 
-  .step-row.reverse .step-number {
-    order: 3;
-  }
-
-  .step-row.reverse .step-content {
-    order: 1;
-  }
-
-  .step-row.reverse .step-media {
-    order: 2;
-  }
-
-  .step-number {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
-    border-radius: 50%;
+  .step-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: white;
     flex-shrink: 0;
   }
 
-  .step-media {
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-
-  .step-media img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .step-content {
-    padding: 1rem 0;
-  }
-
-  .step-content h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.75rem;
-  }
-
-  .step-content p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-  }
-
-  /* Benefits */
-  .funnel-benefits {
-    padding: 5rem 0;
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-
-  .benefit-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s;
-  }
-
-  .benefit-card:hover {
-    border-color: rgba(249, 115, 22, 0.3);
-    transform: translateY(-4px);
-  }
-
-  .benefit-icon {
-    width: 56px;
-    height: 56px;
-    background: rgba(249, 115, 22, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-  }
-
-  .benefit-icon svg {
-    width: 28px;
-    height: 28px;
+  .step-icon svg {
+    width: 32px;
+    height: 32px;
     color: rgb(249, 115, 22);
   }
 
-  .benefit-card h3 {
+  .step-text h3 {
     font-size: 1.25rem;
     font-weight: 700;
     color: white;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
-  .benefit-card p {
-    font-size: 0.875rem;
+  .step-text p {
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.5;
+    margin: 0;
   }
 
-  /* Audience */
-  .funnel-audience {
-    padding: 5rem 0;
-    background: rgba(255, 255, 255, 0.02);
+  .step-number {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(249, 115, 22, 0.03);
+    pointer-events: none;
+    line-height: 1;
   }
 
-  .audience-grid {
+
+
+  /* Benefits - Panel Design */
+  .funnel-benefits {
+    padding: 6rem 0 10rem; /* Espaçamento extra para a próxima seção */
+  }
+
+  .benefits-panels {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 4rem auto 0;
   }
 
-  .audience-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    transition: all 0.3s;
+  .benefit-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
   }
 
-  .audience-card:hover {
-    border-color: rgba(249, 115, 22, 0.3);
-    transform: translateY(-2px);
+  .benefit-panel:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(255, 255, 255, 0.04);
   }
 
-  .audience-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(249, 115, 22, 0.1);
-    border-radius: 10px;
+  /* Colors per pillar */
+  .p-map:hover { border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 20px 40px rgba(249, 115, 22, 0.1); }
+  .p-simulate:hover { border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 20px 40px rgba(52, 211, 153, 0.1); }
+  .p-leaks:hover { border-color: rgba(239, 68, 68, 0.4); box-shadow: 0 20px 40px rgba(239, 68, 68, 0.1); }
+  .p-predict:hover { border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1); }
+
+  .panel-icon {
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 0.75rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
   }
 
-  .audience-icon svg {
+  .panel-icon svg { width: 30px; height: 30px; }
+
+  .p-map .panel-icon svg { color: rgb(249, 115, 22); }
+  .p-simulate .panel-icon svg { color: rgb(52, 211, 153); }
+  .p-leaks .panel-icon svg { color: rgb(239, 68, 68); }
+  .p-predict .panel-icon svg { color: rgb(59, 130, 246); }
+
+  .panel-info h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .panel-info p {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Audience - Badge Cloud Design */
+  /* Audience - Badge Cloud Design */
+  .funnel-audience {
+    padding: 6rem 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .audience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 4rem auto 0;
+  }
+
+  .audience-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .audience-tag:hover {
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .tag-icon {
     width: 20px;
     height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: rgb(249, 115, 22);
+    flex-shrink: 0;
   }
 
-  .audience-card h3 {
-    font-size: 0.875rem;
+  .tag-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .audience-tag h3 {
+    font-size: 1rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
+    color: white;
+    margin: 0;
   }
 
   /* Deliverables */
@@ -1605,6 +1530,112 @@ import Layout from '../../../layouts/Layout.astro';
     color: white;
   }
 
+  /* About Alex Section */
+  .funnel-about {
+    padding: 8rem 0;
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  .about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-image {
+    position: relative;
+  }
+
+  .image-container {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(0.2) contrast(1.1);
+    transition: all 0.5s ease;
+  }
+
+  .image-container:hover img {
+    filter: grayscale(0) contrast(1);
+    transform: scale(1.05);
+  }
+
+  .image-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .image-container:hover .image-glow {
+    opacity: 1;
+  }
+
+  .about-content {
+    max-width: 600px;
+  }
+
+  .about-bio {
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .about-phases {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-phase {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .phase-dot {
+    width: 8px;
+    height: 8px;
+    background: rgb(249, 115, 22);
+    border-radius: 50%;
+    margin-top: 0.6rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+  }
+
+  .about-phase p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .about-phase strong {
+    color: white;
+  }
+
+  .about-mission {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    border-left: 3px solid rgb(249, 115, 22);
+    padding-left: 1.5rem;
+    font-style: italic;
+  }
+
   /* CTA */
   .funnel-cta {
     padding: 6rem 0;
@@ -1630,7 +1661,7 @@ import Layout from '../../../layouts/Layout.astro';
 
   /* Responsive */
   @media (max-width: 1024px) {
-    .benefits-grid {
+    .benefits-panels {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1652,51 +1683,42 @@ import Layout from '../../../layouts/Layout.astro';
   }
 
   @media (max-width: 768px) {
-    .what-grid {
-      grid-template-columns: 1fr;
+    .steps-timeline::before {
+      left: 30px;
     }
 
     .step-row {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .step-row.reverse {
-      grid-template-columns: 1fr;
-    }
-
-    .step-row.reverse .step-content {
-      order: 2;
-    }
-
-    .step-row.reverse .step-media {
-      order: 3;
+      grid-template-columns: 60px 1fr !important;
+      gap: 1.5rem;
     }
 
     .step-number {
-      width: 50px;
-      height: 50px;
-      font-size: 1rem;
-    }
-
-    .step-number::before,
-    .step-row:nth-child(2) .step-number::after,
-    .step-row:nth-child(3) .step-number::after,
-    .step-row:nth-child(4) .step-number::after,
-    .step-row:nth-child(5) .step-number::after {
-      display: none;
-    }
-
-    .step-media {
-      order: 2;
+      grid-column: 1 !important;
+      width: 45px;
+      height: 45px;
+      font-size: 1.25rem;
     }
 
     .step-content {
-      order: 3;
-      text-align: center;
+      grid-column: 2 !important;
+      text-align: left !important;
+      padding: 1.5rem;
     }
 
-    .benefits-grid {
+    .step-media {
+      grid-column: 2 !important;
+      order: 3;
+    }
+
+    .step-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .step-content p {
+      font-size: 1rem;
+    }
+
+    .benefits-panels {
       grid-template-columns: 1fr;
     }
 
@@ -1719,6 +1741,28 @@ import Layout from '../../../layouts/Layout.astro';
 
     .pricing-amount .value {
       font-size: 3rem;
+    }
+
+    .audience-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-wrapper {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .about-content {
+      margin: 0 auto;
+    }
+
+    .about-phase {
+      text-align: left;
+    }
+
+    .about-mission {
+      text-align: left;
     }
   }
 </style>
