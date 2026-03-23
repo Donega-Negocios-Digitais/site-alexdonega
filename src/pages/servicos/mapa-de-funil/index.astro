@@ -592,16 +592,45 @@ import Layout from '../../../layouts/Layout.astro';
 </section>
 
 
+<section class="funnel-faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Dúvidas</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>Já preciso ter um funil rodando?</h3>
+        <p>Não. O mapeamento é ideal tanto para quem já fatura e quer escalar sem perder margem, quanto para quem está começando um novo projeto e quer evitar "queimar" dinheiro testando no escuro.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quanto tempo leva para receber o mapa?</h3>
+        <p>Após o preenchimento do seu briefing detalhado, o mapa visual e a simulação matemática são entregues em até 7 dias úteis.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Terei acesso à simulação para analisar os números?</h3>
+        <p>Sim. Durante a nossa entrega, eu apresento todos os cenários (pessimista, provável e otimista) e você entende exatamente como métricas como CPA, LTV e Taxa de Conversão impactam seu lucro final.</p>
+      </div>
+      <div class="faq-item">
+        <h3>O suporte e a mentoria são individuais?</h3>
+        <p>Sim. O Alex Donega analisa pessoalmente o seu projeto e os encontros de alinhamento são focados 100% na sua estratégia de escala ou validação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="funnel-cta">
   <div class="container">
-    <h2 class="cta-title">Pronto para Descobrir o Destino do Seu Funil?</h2>
-    <p class="cta-subtitle">Não deixe a performance do seu funil ao acaso. Preveja resultados e garanta lucro antes de lançar.</p>
-    <a href="#pricing" class="btn-primary btn-large">
-      GARANTIR MEU MAPA DE FUNIL
-      <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-      </svg>
-    </a>
+    <h2 class="cta-title">Ainda tem alguma dúvida se o Mapa é para você?</h2>
+    <p class="cta-subtitle">Se você quer entender como o mapeamento se aplica ao seu modelo de negócio específico, vamos conversar agora.</p>
+    <div class="cta-buttons">
+      <a href="#pricing" class="btn-primary">
+        CONTRATAR AGORA
+      </a>
+      <a href="https://wa.me/5545999506444?text=Alex, tenho uma dúvida sobre o Mapa de Funil..." target="_blank" rel="noopener" class="btn-secondary">
+        FALAR COM ALEX NO WHATSAPP
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1672,6 +1701,65 @@ import Layout from '../../../layouts/Layout.astro';
     .optional-wrapper {
       grid-template-columns: 1fr;
     }
+  }
+
+  .funnel-faq {
+    padding: 6rem 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .faq-item h3 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .faq-item p {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .funnel-cta {
+    padding: 8rem 0;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
   @media (max-width: 768px) {
