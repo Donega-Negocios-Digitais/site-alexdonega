@@ -523,7 +523,15 @@ import Layout from '../../../layouts/Layout.astro';
   <div class="container">
     <div class="optional-wrapper">
       <div class="optional-content">
-        <span class="optional-badge">Serviço Opcional</span>
+        <div class="optional-badges">
+          <span class="optional-badge">Serviço Opcional</span>
+          <span class="optional-scarcity">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Apenas 2 vagas por mês
+          </span>
+        </div>
         <h2>Quer que eu cuide de toda a implementação?</h2>
         <p>Se você quer focar exclusivamente no negócio e na continuidade, eu crio todo o material:</p>
         <ul class="optional-features">
@@ -552,6 +560,17 @@ import Layout from '../../../layouts/Layout.astro';
             E-mails e automações
           </li>
         </ul>
+        <div class="bonus-alert">
+          <div class="bonus-alert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>
+            </svg>
+          </div>
+          <div class="bonus-alert-text">
+            <strong>Bônus exclusivo para quem contratar agora</strong>
+            <span>+ 4 horas de mentoria individual — válido apenas para quem adquirir a Implementação junto com o Mapa de Funil</span>
+          </div>
+        </div>
         <p class="optional-note">*Gestão de tráfego não inclusa e é obrigatório o pagamento prévio do serviço de Mapa de Funil com Simulação.</p>
       </div>
       <div class="optional-pricing">
@@ -559,11 +578,6 @@ import Layout from '../../../layouts/Layout.astro';
           <span class="price-value">6x R$ 960</span>
           <span class="price-label">cartão de crédito · total R$ 5.760</span>
         </div>
-        <div class="optional-bonus">
-          <span class="bonus-badge">Bônus</span>
-          <span class="bonus-text">+ 4 horas de mentoria</span>
-        </div>
-
         <div class="pix-payment">
           <span class="pix-label">Chave PIX (E-mail):</span>
           <div class="pix-copy-box">
@@ -1450,6 +1464,14 @@ import Layout from '../../../layouts/Layout.astro';
     margin: 0 auto;
   }
 
+  .optional-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
   .optional-badge {
     display: inline-block;
     background: rgba(251, 191, 36, 0.2);
@@ -1459,7 +1481,19 @@ import Layout from '../../../layouts/Layout.astro';
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+  }
+
+  .optional-scarcity {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: rgba(239, 68, 68, 0.12);
+    color: rgb(248, 113, 113);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    border: 1px solid rgba(239, 68, 68, 0.25);
   }
 
   .optional-content h2 {
@@ -1495,6 +1529,45 @@ import Layout from '../../../layouts/Layout.astro';
     width: 18px;
     height: 18px;
     color: rgb(52, 211, 153);
+  }
+
+  .bonus-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .bonus-alert-icon {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .bonus-alert-icon svg {
+    width: 20px;
+    height: 20px;
+    color: rgb(250, 204, 21);
+  }
+
+  .bonus-alert-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .bonus-alert-text strong {
+    color: rgb(250, 204, 21);
+    font-size: 0.9rem;
+  }
+
+  .bonus-alert-text span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.825rem;
+    line-height: 1.4;
   }
 
   .optional-note {
