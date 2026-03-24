@@ -1,0 +1,46 @@
+---
+/**
+ * FooterSimples.astro
+ * Um rodapé minimalista para páginas de vendas/conversão.
+ */
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer-simples">
+  <div class="container">
+    <div class="footer-content">
+      <p class="copyright">© {currentYear} Alex Donega. Todos os direitos reservados.</p>
+      <p class="location">Toledo-PR, Brasil</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-simples {
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #000;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.875rem;
+  }
+  
+  @media (max-width: 640px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+</style>

@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+import AnimatedBackground from '../components/ui/AnimatedBackground.astro';
+---
+
+<Layout title="404 — Página não encontrada" description="Esta página não existe ou foi movida.">
+  <section class="page-404">
+    <AnimatedBackground />
+
+    <div class="content">
+      <p class="error-code">404</p>
+
+      <h1 class="title">Contexto perdido.</h1>
+
+      <p class="description">
+        A página que você está procurando não existe ou foi movida.<br />
+        Mas o caminho de volta está bem mapeado.
+      </p>
+
+      <div class="actions">
+        <Button href="/" shimmer>Voltar ao início</Button>
+        <Button href="/blog" variant="outline">Ver conteúdo</Button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-404 {
+    position: relative;
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg-main);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 16px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .error-code {
+    font-size: clamp(96px, 20vw, 180px);
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, #f97316, #d87757, #ea580c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -4px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 40px rgba(249, 115, 22, 0.3));
+  }
+
+  .title {
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .description {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
