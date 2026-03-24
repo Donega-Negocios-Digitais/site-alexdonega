@@ -522,9 +522,12 @@ import Layout from '../../../layouts/Layout.astro';
           <h2>Mapa de Funil com Simulação</h2>
         </div>
         <div class="pricing-amount">
+          <span class="installments">6x de</span>
           <span class="currency">R$</span>
-          <span class="value">2.436</span>
-          <span class="period"> total</span>
+          <span class="value">406</span>
+        </div>
+        <div class="pricing-cash">
+          <span class="cash-price">ou R$ 2.436 à vista</span>
         </div>
         <div class="pricing-split">
           <div class="split-item">
@@ -1518,6 +1521,25 @@ import Layout from '../../../layouts/Layout.astro';
   .pricing-amount .period {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  .pricing-amount .installments {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.25rem;
+    text-transform: lowercase;
+  }
+
+  .pricing-cash {
+    margin-bottom: 1rem;
+  }
+
+  .cash-price {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: line-through;
   }
 
   .pricing-split {
