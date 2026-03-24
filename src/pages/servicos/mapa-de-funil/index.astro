@@ -62,6 +62,20 @@ import Layout from '../../../layouts/Layout.astro';
       <p class="hero-subtitle">
         Simulação matemática da lucratividade do seu negócio — cenários pessimista, provável e otimista — para você decidir com dados, não com achismo
       </p>
+      <div class="hero-social-proof">
+        <div class="proof-badge">
+          <span class="proof-icon">🎓</span>
+          <span class="proof-text">Economista com Mestrado</span>
+        </div>
+        <div class="proof-badge">
+          <span class="proof-icon">💼</span>
+          <span class="proof-text">7 empresas criadas</span>
+        </div>
+        <div class="proof-badge">
+          <span class="proof-icon">⏱️</span>
+          <span class="proof-text">15+ anos de experiência</span>
+        </div>
+      </div>
       <div class="hero-cta">
         <a href="#pricing" class="btn-primary">
           Simular meu lucro agora
@@ -83,6 +97,10 @@ import Layout from '../../../layouts/Layout.astro';
         <p>CPM subindo. CPC subindo. Margem caindo. Lançar um funil sem simular antes é queimar dinheiro no escuro — e você sabe disso.</p>
         <p class="highlight">O que você precisa são <strong>LUCROS PREVISÍVEIS</strong> do seu funil.</p>
         <p>E é aqui que o <span class="text-gradient">Mapeamento de Funil</span> entra.</p>
+        <div class="problem-highlight">
+          <span class="highlight-icon">💡</span>
+          <span>Clientes descobriram que estavam <strong>queimando dinheiro em anúncios, copy e sites</strong> — sem nem saber onde estava o vazamento.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -339,6 +357,32 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
         <h3>Simular</h3>
         <p>Apresento tudo em uma reunião: o mapa visual, os cenários simulados, os vazamentos identificados e as recomendações estratégicas para garantir lucro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="funnel-results">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Resultados Reais</span>
+      <h2 class="section-title">O que o mapeamento revelou</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card result-leak">
+        <div class="result-icon">🛑</div>
+        <h3>Vazamentos Identificados</h3>
+        <p>Clientes descobriram que estavam <strong>perdendo dinheiro sem saber</strong> — e reformularam todo o trabalho de marketing após o mapeamento.</p>
+      </div>
+      <div class="result-card result-scale">
+        <div class="result-icon">⚡</div>
+        <h3>Escalabilidade Acelerada</h3>
+        <p>Outros identificaram gargalos que impediam o crescimento e <strong>aumentaram a velocidade de escala em até 3x</strong>.</p>
+      </div>
+      <div class="result-card result-profit">
+        <div class="result-icon">💰</div>
+        <h3>Lucro Previsível</h3>
+        <p>Com a simulação de cenários, clientes passaram a <strong>investir com confiança</strong>, sabendo exatamente o retorno esperado.</p>
       </div>
     </div>
   </div>
@@ -633,6 +677,10 @@ import Layout from '../../../layouts/Layout.astro';
           <span class="pricing-badge">Serviço Principal</span>
           <h2>Mapa de Funil com Simulação</h2>
         </div>
+        <div class="pricing-scarcity">
+          <span class="scarcity-pulse"></span>
+          <span class="scarcity-text">2 vagas disponíveis este mês</span>
+        </div>
         <div class="pricing-amount">
           <span class="installments">6x de</span>
           <span class="currency">R$</span>
@@ -736,6 +784,10 @@ import Layout from '../../../layouts/Layout.astro';
         <p class="optional-note">*Gestão de tráfego não inclusa e é obrigatório o pagamento prévio do serviço de Mapa de Funil com Simulação.</p>
       </div>
       <div class="optional-pricing">
+        <div class="optional-scarcity-banner">
+          <span class="scarcity-pulse"></span>
+          <span>Últimas 2 vagas para Implementação Completa</span>
+        </div>
         <div class="optional-price">
           <span class="price-value">6x R$ 1.724</span>
           <span class="price-label">cartão de crédito · total R$ 10.344</span>
@@ -1151,6 +1203,190 @@ import Layout from '../../../layouts/Layout.astro';
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  .hero-social-proof {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .proof-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    animation: pulse-glow 2s infinite;
+  }
+
+  .proof-badge .proof-icon {
+    font-size: 1rem;
+  }
+
+  .proof-badge .proof-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+    50% { box-shadow: 0 0 20px 5px rgba(249, 115, 22, 0.2); }
+  }
+
+  .problem-highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+
+  .problem-highlight .highlight-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .problem-highlight strong {
+    color: rgb(250, 204, 21);
+  }
+
+  /* Results Section */
+  .funnel-results {
+    padding: 5rem 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+  }
+
+  .result-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .result-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(249, 115, 22, 0.3);
+  }
+
+  .result-card:hover::before {
+    opacity: 1;
+  }
+
+  .result-card .result-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .result-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .result-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .result-card p strong {
+    color: rgb(249, 115, 22);
+  }
+
+  .result-leak:hover { border-color: rgba(239, 68, 68, 0.4); }
+  .result-scale:hover { border-color: rgba(52, 211, 153, 0.4); }
+  .result-profit:hover { border-color: rgba(249, 115, 22, 0.4); }
+
+  /* Pricing Scarcity */
+  .pricing-scarcity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .scarcity-pulse {
+    width: 8px;
+    height: 8px;
+    background: rgb(239, 68, 68);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+  }
+
+  .scarcity-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(248, 113, 113);
+  }
+
+  .optional-scarcity-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(249, 115, 22, 0.15));
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgb(248, 113, 113);
   }
 
   /* Problem */
