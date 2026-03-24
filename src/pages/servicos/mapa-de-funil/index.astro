@@ -803,6 +803,67 @@ import Layout from '../../../layouts/Layout.astro';
   </div>
 </section>
 
+<section class="funnel-destiny">
+  <div class="container">
+    <div class="destiny-content">
+      <h2 class="destiny-title">
+        Você está pronto para<br>
+        <span class="text-gradient">descobrir o destino do seu funil?</span>
+      </h2>
+      
+      <div class="destiny-text">
+        <p class="destiny-lead">Vamos encarar os fatos…</p>
+        
+        <p>O marketing digital está extremamente competitivo em praticamente todos os nichos de mercado e setores… e com o aumento dos custos de anúncios, a situação só vai piorar.</p>
+        
+        <p class="destiny-warning">Infelizmente, muitos empreendedores fracassarão completamente.</p>
+        
+        <p class="destiny-highlight">Mas isso não precisa acontecer com você.</p>
+        
+        <p>Você não precisa mais deixar o desempenho do seu funil ao acaso.</p>
+        
+        <p>E não precisa arriscar seu tempo, energia ou dinheiro em um funil sobre o qual você não tem certeza.</p>
+        
+        <p class="destiny-empower">Com a GERU, o destino do seu funil está em <strong>SUAS</strong> mãos.</p>
+      </div>
+      
+      <div class="destiny-first">
+        <span class="first-badge">Pela primeira vez na história:</span>
+        <ul class="first-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>Você tem mais controle sobre o resultado do seu funil.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>Você pode decidir o desempenho do seu funil e quanto dinheiro ele gera.</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="destiny-reason">
+        <p>Porque com o GERU você pode prever o desempenho do seu funil…</p>
+        <p class="reason-highlight">E planeje seus lucros e seu sucesso com antecedência!</p>
+      </div>
+      
+      <div class="destiny-cta">
+        <p class="cta-question">Então, o que você está esperando?</p>
+        <p class="cta-action">Comece a usar o GERU hoje mesmo!</p>
+        <a href="#pricing" class="btn-primary btn-large destiny-btn">
+          ADQUIRA O GERU AGORA!
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="funnel-cta">
   <div class="container">
     <h2 class="cta-title">Pronto para mapear seu funil e parar de adivinhar?</h2>
@@ -2410,9 +2471,206 @@ import Layout from '../../../layouts/Layout.astro';
       overflow: hidden;
     }
   }
+
+  /* Destiny Section */
+  .funnel-destiny {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(249, 115, 22, 0.03) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .funnel-destiny::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .destiny-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .destiny-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+  }
+
+  .destiny-text {
+    margin-bottom: 3rem;
+  }
+
+  .destiny-text p {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .destiny-lead {
+    font-size: 1.25rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+  }
+
+  .destiny-warning {
+    color: rgba(239, 68, 68, 0.9) !important;
+    font-weight: 500;
+  }
+
+  .destiny-highlight {
+    color: white !important;
+    font-size: 1.25rem !important;
+    font-weight: 600;
+  }
+
+  .destiny-empower {
+    font-size: 1.375rem !important;
+    color: white !important;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 2rem !important;
+  }
+
+  .destiny-empower strong {
+    color: rgb(249, 115, 22);
+  }
+
+  .destiny-first {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .first-badge {
+    display: inline-block;
+    background: rgba(249, 115, 22, 0.15);
+    color: rgb(249, 115, 22);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .first-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .first-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+  }
+
+  .first-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .first-list svg {
+    width: 24px;
+    height: 24px;
+    color: rgb(52, 211, 153);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .destiny-reason {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .destiny-reason p {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.75rem;
+  }
+
+  .reason-highlight {
+    font-size: 1.375rem !important;
+    color: white !important;
+    font-weight: 700;
+  }
+
+  .destiny-cta {
+    text-align: center;
+  }
+
+  .cta-question {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-action {
+    font-size: 1.375rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .destiny-btn {
+    font-size: 1.125rem;
+    padding: 1.25rem 3rem;
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4);
+  }
+
+  .destiny-btn:hover {
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .funnel-destiny {
+      padding: 5rem 0;
+    }
+
+    .destiny-title {
+      font-size: 1.75rem;
+    }
+
+    .destiny-text p {
+      font-size: 1rem;
+    }
+
+    .destiny-first {
+      padding: 1.5rem;
+    }
+
+    .first-list li {
+      font-size: 1rem;
+    }
+
+    .destiny-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 </style>
 
-<script>
+<script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const reportItems = document.querySelectorAll('.report-item');
     const reportImage = document.getElementById('report-image');
@@ -2427,8 +2685,11 @@ import Layout from '../../../layouts/Layout.astro';
         if (reportImage && imageName) {
           reportImage.style.opacity = '0';
           setTimeout(() => {
-            reportImage.src = `${imageBasePath}${imageName}.webp`;
-            reportImage.alt = item.querySelector('h3').textContent;
+            reportImage.src = imageBasePath + imageName + '.webp';
+            const h3 = item.querySelector('h3');
+            if (h3) {
+              reportImage.alt = h3.textContent || '';
+            }
             reportImage.style.opacity = '1';
           }, 150);
         }
