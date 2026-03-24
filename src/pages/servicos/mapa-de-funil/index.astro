@@ -697,6 +697,398 @@ import Layout from '../../../layouts/Layout.astro';
   </div>
 </section>
 
+<section class="funnel-pricing-tiers" id="pricing-tiers">
+  <div class="container">
+    <div class="pricing-tiers-header">
+      <span class="section-eyebrow">Escolha seu pacote</span>
+      <h2 class="section-title">3 opções para validar seu funil</h2>
+      <p class="section-subtitle">Do diagnóstico inicial à implementação completa — escolha o nível de suporte que você precisa</p>
+    </div>
+
+    <div class="pricing-toggle-wrapper">
+      <span class="toggle-label active" data-label="parcelado">Parcelado</span>
+      <button class="pricing-toggle" id="pricingToggle" aria-label="Alternar forma de pagamento">
+        <span class="toggle-slider"></span>
+      </button>
+      <span class="toggle-label" data-label="avista">À vista <span class="toggle-discount">-15%</span></span>
+    </div>
+
+    <div class="pricing-grid-3">
+      <div class="tier-card" data-tier="diagnostico">
+        <div class="tier-header">
+          <span class="tier-badge badge-starter">Para Começar</span>
+          <h3 class="tier-name">Diagnóstico</h3>
+          <p class="tier-tagline">Visão geral do seu funil</p>
+        </div>
+        <div class="tier-pricing">
+          <div class="tier-price parcelado">
+            <span class="price-installments">6x de</span>
+            <span class="price-currency">R$</span>
+            <span class="price-value">166</span>
+          </div>
+          <div class="tier-price avista hidden">
+            <span class="price-currency">R$</span>
+            <span class="price-value">847</span>
+            <span class="price-full">R$ 997</span>
+          </div>
+          <p class="tier-price-note parcelado">ou R$ 847 à vista (-15%)</p>
+          <p class="tier-price-note avista hidden">economia de R$ 150</p>
+        </div>
+        <ul class="tier-features">
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span>Questionário de briefing estruturado</span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span>Mapa visual simplificado do funil</span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span>Simulação com <strong>1 cenário</strong> (provável)</span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span>Relatório PDF com vazamentos identificados</span>
+          </li>
+          <li class="feature-not-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            <span>Vídeo de estratégia personalizado</span>
+          </li>
+          <li class="feature-not-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            <span>Mentoria individual</span>
+          </li>
+          <li class="feature-not-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            <span>Implementação de copy e design</span>
+          </li>
+        </ul>
+        <div class="tier-support">
+          <span class="support-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Suporte 7 dias
+          </span>
+          <span class="guarantee-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Garantia 7 dias
+          </span>
+        </div>
+        <a href="https://wa.me/5545999506444?text=Alex, tenho interesse no pacote Diagnóstico do Mapa de Funil" target="_blank" rel="noopener" class="tier-cta btn-outline">
+          Começar Diagnóstico
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="tier-card featured" data-tier="estrategia">
+        <div class="tier-featured-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Mais Popular
+        </div>
+        <div class="tier-header">
+          <span class="tier-badge badge-popular">Recomendado</span>
+          <h3 class="tier-name">Estratégia Completa</h3>
+          <p class="tier-tagline">Análise profunda + mentoria</p>
+        </div>
+        <div class="tier-pricing">
+          <div class="tier-price parcelado">
+            <span class="price-installments">6x de</span>
+            <span class="price-currency">R$</span>
+            <span class="price-value">406</span>
+          </div>
+          <div class="tier-price avista hidden">
+            <span class="price-currency">R$</span>
+            <span class="price-value">2.070</span>
+            <span class="price-full">R$ 2.436</span>
+          </div>
+          <p class="tier-price-note parcelado">ou R$ 2.070 à vista (-15%)</p>
+          <p class="tier-price-note avista hidden">economia de R$ 366</p>
+        </div>
+        <div class="tier-scarcity">
+          <span class="scarcity-pulse"></span>
+          <span>2 vagas disponíveis este mês</span>
+        </div>
+        <ul class="tier-features">
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Tudo do Diagnóstico</strong> +</span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span>Mapa visual <strong>completo e detalhado</strong></span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span>Simulação com <strong>3 cenários</strong></span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Vídeo</strong> explicando a estratégia</span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>2 horas</strong> de mentoria individual</span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>1 reunião</strong> de revisão e ajustes</span>
+          </li>
+          <li class="feature-not-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            <span>Implementação de copy e design</span>
+          </li>
+        </ul>
+        <div class="tier-support">
+          <span class="support-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Suporte 14 dias
+          </span>
+          <span class="guarantee-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Garantia 14 dias
+          </span>
+        </div>
+        <div class="tier-pix-payment">
+          <span class="pix-label">Chave PIX:</span>
+          <div class="pix-copy-box">
+            <span class="pix-key">alexdonega@gmail.com</span>
+            <button class="btn-copy-pix" onclick="copyPixKey(this)">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <svg class="check-icon-pix hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Copiar</span>
+            </button>
+          </div>
+        </div>
+        <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da Estratégia Completa do Mapa de Funil, segue comprovante" target="_blank" rel="noopener" class="tier-cta btn-primary">
+          Garantir Minha Vaga
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="tier-card" data-tier="implementacao">
+        <div class="tier-header">
+          <span class="tier-badge badge-premium">Máximo Valor</span>
+          <h3 class="tier-name">Implementação Total</h3>
+          <p class="tier-tagline">Tudo pronto para lançar</p>
+        </div>
+        <div class="tier-pricing">
+          <div class="tier-price parcelado">
+            <span class="price-installments">12x de</span>
+            <span class="price-currency">R$</span>
+            <span class="price-value">990</span>
+          </div>
+          <div class="tier-price avista hidden">
+            <span class="price-currency">R$</span>
+            <span class="price-value">10.098</span>
+            <span class="price-full">R$ 11.880</span>
+          </div>
+          <p class="tier-price-note parcelado">ou R$ 10.098 à vista (-15%)</p>
+          <p class="tier-price-note avista hidden">economia de R$ 1.782</p>
+        </div>
+        <div class="tier-scarcity">
+          <span class="scarcity-pulse"></span>
+          <span>Últimas 2 vagas para Implementação</span>
+        </div>
+        <ul class="tier-features">
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Tudo da Estratégia</strong> +</span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span>Mapa com <strong>múltiplas versões</strong></span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span>Simulação com <strong>5+ cenários</strong></span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>6 horas</strong> de mentoria individual</span>
+          </li>
+          <li class="feature-included">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>3 reuniões</strong> de revisão e ajustes</span>
+          </li>
+          <li class="feature-included highlight">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Copywriting completo</strong> do funil</span>
+          </li>
+          <li class="feature-included highlight">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Design das páginas</strong></span>
+          </li>
+          <li class="feature-included highlight">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Mensagens de WhatsApp</strong></span>
+          </li>
+          <li class="feature-included highlight">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>E-mails e automações</strong></span>
+          </li>
+        </ul>
+        <div class="tier-support">
+          <span class="support-badge premium">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Suporte 60 dias
+          </span>
+          <span class="guarantee-badge premium">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Garantia 30 dias
+          </span>
+        </div>
+        <div class="tier-bonus">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>+4h mentoria bônus exclusivo</span>
+        </div>
+        <div class="tier-pix-payment">
+          <span class="pix-label">Chave PIX:</span>
+          <div class="pix-copy-box">
+            <span class="pix-key">alexdonega@gmail.com</span>
+            <button class="btn-copy-pix" onclick="copyPixKey(this)">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <svg class="check-icon-pix hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Copiar</span>
+            </button>
+          </div>
+        </div>
+        <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da Implementação Total do Mapa de Funil, segue comprovante" target="_blank" rel="noopener" class="tier-cta btn-premium">
+          Quero Implementação Total
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="comparison-toggle">
+      <button class="comparison-btn" id="comparisonToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        Ver comparação completa de todos os recursos
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="comparison-table-wrapper hidden" id="comparisonTable">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Recurso</th>
+            <th>Diagnóstico</th>
+            <th class="featured-col">Estratégia Completa</th>
+            <th>Implementação Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Questionário de briefing</td>
+            <td><span class="check">✓</span></td>
+            <td class="featured-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Mapa visual do funil</td>
+            <td>Simplificado</td>
+            <td class="featured-col">Completo</td>
+            <td>Completo + versões</td>
+          </tr>
+          <tr>
+            <td>Simulação de cenários</td>
+            <td>1 cenário</td>
+            <td class="featured-col">3 cenários</td>
+            <td>5+ cenários</td>
+          </tr>
+          <tr>
+            <td>Identificação de vazamentos</td>
+            <td><span class="check">✓</span></td>
+            <td class="featured-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Relatório PDF</td>
+            <td><span class="check">✓</span></td>
+            <td class="featured-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Vídeo de estratégia</td>
+            <td><span class="dash">—</span></td>
+            <td class="featured-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Mentoria individual</td>
+            <td><span class="dash">—</span></td>
+            <td class="featured-col">2 horas</td>
+            <td>6 horas</td>
+          </tr>
+          <tr>
+            <td>Reuniões de revisão</td>
+            <td><span class="dash">—</span></td>
+            <td class="featured-col">1 reunião</td>
+            <td>3 reuniões</td>
+          </tr>
+          <tr>
+            <td>Copywriting do funil</td>
+            <td><span class="dash">—</span></td>
+            <td class="featured-col"><span class="dash">—</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Design das páginas</td>
+            <td><span class="dash">—</span></td>
+            <td class="featured-col"><span class="dash">—</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Mensagens de WhatsApp</td>
+            <td><span class="dash">—</span></td>
+            <td class="featured-col"><span class="dash">—</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>E-mails e automações</td>
+            <td><span class="dash">—</span></td>
+            <td class="featured-col"><span class="dash">—</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Período de suporte</td>
+            <td>7 dias</td>
+            <td class="featured-col">14 dias</td>
+            <td>60 dias</td>
+          </tr>
+          <tr>
+            <td>Garantia</td>
+            <td>7 dias</td>
+            <td class="featured-col">14 dias</td>
+            <td>30 dias</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="trust-signals">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span>Pagamento 100% Seguro</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Garantia de Satisfação</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        <span>+200 Funis Mapeados</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="funnel-pricing" id="pricing">
   <div class="container">
     <div class="pricing-wrapper">
@@ -1359,9 +1751,9 @@ import Layout from '../../../layouts/Layout.astro';
   }
 
   .result-card .result-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 1rem;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1371,8 +1763,8 @@ import Layout from '../../../layouts/Layout.astro';
   }
 
   .result-card .result-icon svg {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     color: rgb(249, 115, 22);
   }
 
@@ -2954,6 +3346,715 @@ import Layout from '../../../layouts/Layout.astro';
       justify-content: center;
     }
   }
+
+  /* ===========================================
+     PRICING TIERS - 3 Column Layout
+     =========================================== */
+  .funnel-pricing-tiers {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(249, 115, 22, 0.03) 100%);
+  }
+
+  .pricing-tiers-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Toggle Parcelado/À Vista */
+  .pricing-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .toggle-label {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .toggle-label.active {
+    color: white;
+    font-weight: 600;
+  }
+
+  .toggle-discount {
+    background: rgba(52, 211, 153, 0.2);
+    color: rgb(52, 211, 153);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  .pricing-toggle {
+    width: 56px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .pricing-toggle:hover {
+    border-color: rgba(249, 115, 22, 0.5);
+  }
+
+  .pricing-toggle.active {
+    background: rgba(249, 115, 22, 0.2);
+    border-color: rgb(249, 115, 22);
+  }
+
+  .toggle-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .pricing-toggle.active .toggle-slider {
+    transform: translateX(28px);
+    background: rgb(249, 115, 22);
+  }
+
+  /* Grid 3 Colunas */
+  .pricing-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1fr;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  /* Tier Card Base */
+  .tier-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tier-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Featured Card (Middle) */
+  .tier-card.featured {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(249, 115, 22, 0.04) 100%);
+    border: 2px solid rgb(249, 115, 22);
+    z-index: 2;
+    padding: 2.5rem 2rem;
+  }
+
+  .tier-card.featured:hover {
+    box-shadow: 0 25px 50px rgba(249, 115, 22, 0.25);
+    border-color: rgb(251, 146, 60);
+  }
+
+  .tier-featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+    white-space: nowrap;
+  }
+
+  .tier-featured-badge svg {
+    color: rgb(251, 191, 36);
+  }
+
+  /* Tier Header */
+  .tier-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .tier-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+  }
+
+  .badge-starter {
+    background: rgba(148, 163, 184, 0.15);
+    color: rgb(148, 163, 184);
+  }
+
+  .badge-popular {
+    background: rgba(249, 115, 22, 0.2);
+    color: rgb(251, 146, 60);
+  }
+
+  .badge-premium {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+    color: rgb(196, 181, 253);
+  }
+
+  .tier-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .tier-tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  /* Tier Pricing */
+  .tier-pricing {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .tier-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tier-price.hidden {
+    display: none;
+  }
+
+  .price-installments {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+  }
+
+  .price-currency {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .price-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+  }
+
+  .featured .price-value {
+    font-size: 3.25rem;
+    color: rgb(249, 115, 22);
+  }
+
+  .price-full {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: line-through;
+    margin-left: 0.5rem;
+  }
+
+  .tier-price-note {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  .tier-price-note.hidden {
+    display: none;
+  }
+
+  /* Scarcity Badge */
+  .tier-scarcity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgb(248, 113, 113);
+  }
+
+  /* Tier Features */
+  .tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+  }
+
+  .tier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .feature-included {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .feature-included svg {
+    width: 18px;
+    height: 18px;
+    color: rgb(52, 211, 153);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .feature-included.highlight {
+    color: white;
+  }
+
+  .feature-included.highlight svg {
+    color: rgb(249, 115, 22);
+  }
+
+  .feature-not-included {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .feature-not-included svg {
+    width: 16px;
+    height: 16px;
+    color: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .feature-not-included span {
+    text-decoration: line-through;
+  }
+
+  /* Tier Support Badges */
+  .tier-support {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .support-badge,
+  .guarantee-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+  }
+
+  .support-badge svg,
+  .guarantee-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .support-badge.premium,
+  .guarantee-badge.premium {
+    background: rgba(168, 85, 247, 0.1);
+    color: rgb(196, 181, 253);
+  }
+
+  /* Tier Bonus */
+  .tier-bonus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgb(196, 181, 253);
+  }
+
+  .tier-bonus svg {
+    width: 16px;
+    height: 16px;
+    color: rgb(251, 191, 36);
+  }
+
+  /* PIX Payment in Card */
+  .tier-pix-payment {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .tier-pix-payment .pix-label {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem;
+  }
+
+  .tier-pix-payment .pix-copy-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.4rem 0.5rem 0.4rem 0.75rem;
+    border-radius: 8px;
+  }
+
+  .tier-pix-payment .pix-key {
+    font-family: monospace;
+    color: rgb(52, 211, 153);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .btn-copy-pix {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.2s;
+  }
+
+  .btn-copy-pix:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .btn-copy-pix svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Tier CTAs */
+  .tier-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: auto;
+  }
+
+  .tier-cta .btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+  }
+
+  .btn-premium {
+    background: linear-gradient(135deg, rgb(168, 85, 247) 0%, rgb(59, 130, 246) 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+  }
+
+  /* Comparison Toggle */
+  .comparison-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .comparison-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.875rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .comparison-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(249, 115, 22, 0.3);
+    color: white;
+  }
+
+  .comparison-btn.active {
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgb(249, 115, 22);
+    color: white;
+  }
+
+  .comparison-btn .chevron-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .comparison-btn.active .chevron-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Comparison Table */
+  .comparison-table-wrapper {
+    margin-top: 2rem;
+    overflow-x: auto;
+    transition: all 0.3s ease;
+  }
+
+  .comparison-table-wrapper.hidden {
+    display: none;
+  }
+
+  .comparison-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .comparison-table th {
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .comparison-table th:first-child,
+  .comparison-table td:first-child {
+    text-align: left;
+  }
+
+  .comparison-table td {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .comparison-table .featured-col {
+    background: rgba(249, 115, 22, 0.05);
+    color: white;
+    font-weight: 500;
+  }
+
+  .comparison-table .check {
+    color: rgb(52, 211, 153);
+    font-weight: 700;
+  }
+
+  .comparison-table .dash {
+    color: rgba(255, 255, 255, 0.25);
+  }
+
+  .comparison-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  /* Trust Signals */
+  .trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .trust-item svg {
+    width: 18px;
+    height: 18px;
+    color: rgb(52, 211, 153);
+  }
+
+  /* Responsive Pricing Tiers */
+  @media (max-width: 1024px) {
+    .pricing-grid-3 {
+      grid-template-columns: 1fr;
+      max-width: 450px;
+    }
+
+    .tier-card.featured {
+      order: -1;
+    }
+
+    .tier-featured-badge {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      display: inline-flex;
+      margin-bottom: 1rem;
+    }
+
+    .tier-card.featured .tier-header {
+      margin-top: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .funnel-pricing-tiers {
+      padding: 4rem 0;
+    }
+
+    .pricing-toggle-wrapper {
+      gap: 0.75rem;
+    }
+
+    .toggle-label {
+      font-size: 0.85rem;
+    }
+
+    .pricing-toggle {
+      width: 48px;
+      height: 24px;
+    }
+
+    .toggle-slider {
+      width: 18px;
+      height: 18px;
+    }
+
+    .pricing-toggle.active .toggle-slider {
+      transform: translateX(24px);
+    }
+
+    .tier-card {
+      padding: 1.5rem;
+    }
+
+    .tier-card.featured {
+      padding: 1.5rem;
+    }
+
+    .tier-name {
+      font-size: 1.25rem;
+    }
+
+    .price-value {
+      font-size: 2.5rem;
+    }
+
+    .featured .price-value {
+      font-size: 2.75rem;
+    }
+
+    .tier-support {
+      flex-direction: column;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .trust-signals {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
 </style>
 
 <script is:inline>
@@ -2981,5 +4082,40 @@ import Layout from '../../../layouts/Layout.astro';
         }
       });
     });
+
+    // Pricing Toggle (Parcelado / À Vista)
+    const pricingToggle = document.getElementById('pricingToggle');
+    const toggleLabels = document.querySelectorAll('.toggle-label');
+    const parceladoElements = document.querySelectorAll('.parcelado');
+    const avistaElements = document.querySelectorAll('.avista');
+
+    if (pricingToggle) {
+      pricingToggle.addEventListener('click', () => {
+        const isActive = pricingToggle.classList.toggle('active');
+        
+        toggleLabels.forEach(label => {
+          if ((label.dataset.label === 'avista' && isActive) || 
+              (label.dataset.label === 'parcelado' && !isActive)) {
+            label.classList.add('active');
+          } else {
+            label.classList.remove('active');
+          }
+        });
+
+        parceladoElements.forEach(el => el.classList.toggle('hidden', isActive));
+        avistaElements.forEach(el => el.classList.toggle('hidden', !isActive));
+      });
+    }
+
+    // Comparison Table Toggle
+    const comparisonToggle = document.getElementById('comparisonToggle');
+    const comparisonTable = document.getElementById('comparisonTable');
+
+    if (comparisonToggle && comparisonTable) {
+      comparisonToggle.addEventListener('click', () => {
+        comparisonToggle.classList.toggle('active');
+        comparisonTable.classList.toggle('hidden');
+      });
+    }
   });
 </script>
