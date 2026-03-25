@@ -2,28 +2,6 @@
 import Layout from '../../../layouts/Layout.astro';
 ---
 
-<script is:inline>
-  function copyPixKey(btnElement) {
-    const key = "alexdonega@gmail.com";
-    navigator.clipboard.writeText(key).then(() => {
-      const btnSpan = btnElement.querySelector('span');
-      const icon = btnElement.querySelector('.copy-icon');
-      const check = btnElement.querySelector('.check-icon-pix');
-
-      const originalText = btnSpan.innerText;
-      btnSpan.innerText = "Copiado!";
-      icon.classList.add('hidden');
-      check.classList.remove('hidden');
-
-      setTimeout(() => {
-        btnSpan.innerText = originalText;
-        icon.classList.remove('hidden');
-        check.classList.add('hidden');
-      }, 2000);
-    });
-  }
-</script>
-
 <Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real.">
 
 <section class="funnel-hero">
@@ -398,172 +376,249 @@ import Layout from '../../../layouts/Layout.astro';
   </div>
 </section>
 
-<section class="funnel-reports">
+<section class="funnel-deliverables-visual">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">Relatórios</span>
-      <h2 class="section-title">Planejamento e Relatórios</h2>
+      <span class="section-eyebrow">O que você recebe</span>
+      <h2 class="section-title">Seus Relatórios de Simulação</h2>
       <p class="section-subtitle">
-        Analise a simulação do seu funil com relatórios detalhados de previsão e otimização.
+        Veja exatamente o que vou entregar para você visualizar seu lucro antes de investir
       </p>
     </div>
-    <p class="reports-intro">
-      Obtenha relatórios de otimização detalhados e previsões para praticamente garantir o sucesso do funil de vendas.
+    <p class="visual-intro">
+      Você vai segurar na mão um <strong>mapa completo do seu funil</strong>, com todos os números simulados e cenários projetados — pronto para você tomar decisões com confiança, não com achismo.
     </p>
-    <div class="reports-wrapper">
-      <div class="reports-list">
-        <button class="report-item active" data-image="diagrama-mapa-funil">
-          <div class="report-icon">
+    <div class="visual-wrapper">
+      <div class="visual-list">
+        <button class="visual-item active" data-image="diagrama-mapa-funil">
+          <div class="visual-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
             </svg>
           </div>
-          <div class="report-info">
+          <div class="visual-info">
             <h3>Diagrama de Mapa de Funil</h3>
-            <p>Mapeamento profissional do seu funil de vendas.</p>
+            <p>Mapeamento visual profissional de todas as etapas</p>
           </div>
         </button>
-        <button class="report-item" data-image="resumo-projeto">
-          <div class="report-icon">
+        <button class="visual-item" data-image="resumo-projeto">
+          <div class="visual-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
             </svg>
           </div>
-          <div class="report-info">
-            <h3>Resumo do projeto</h3>
-            <p>Visão geral de todas as suas previsões e métricas.</p>
+          <div class="visual-info">
+            <h3>Resumo do Projeto</h3>
+            <p>Visão consolidada de todas as suas previsões</p>
           </div>
         </button>
-        <button class="report-item" data-image="meta-lucro-sonhos">
-          <div class="report-icon">
+        <button class="visual-item" data-image="meta-lucro-sonhos">
+          <div class="visual-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
             </svg>
           </div>
-          <div class="report-info">
+          <div class="visual-info">
             <h3>Meta de Lucro dos Sonhos</h3>
-            <p>Descrição completa do que é necessário.</p>
+            <p>Descubra exatamente o que é necessário para chegar lá</p>
           </div>
         </button>
-        <button class="report-item" data-image="reinvestimento-trafego">
-          <div class="report-icon">
+        <button class="visual-item" data-image="reinvestimento-trafego">
+          <div class="visual-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
             </svg>
           </div>
-          <div class="report-info">
+          <div class="visual-info">
             <h3>Reinvestimento em Tráfego</h3>
-            <p>Gráfico de crescimento de receita e lucro por tráfego.</p>
+            <p>Gráfico de crescimento de receita e lucro</p>
           </div>
         </button>
-        <button class="report-item" data-image="comparacao-cenarios">
-          <div class="report-icon">
+        <button class="visual-item" data-image="comparacao-cenarios">
+          <div class="visual-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
             </svg>
           </div>
-          <div class="report-info">
-            <h3>Comparação de cenários</h3>
-            <p>Compare os números de qualquer alteração.</p>
+          <div class="visual-info">
+            <h3>Comparação de Cenários</h3>
+            <p>Pessimista, provável e otimista lado a lado</p>
           </div>
         </button>
       </div>
-      <div class="reports-image">
-        <div class="image-wrapper">
-          <img id="report-image" src="/videos/services/funnel-mapping/diagrama-mapa-funil.webp" alt="Diagrama de Mapa de Funil" loading="lazy" />
+      <div class="visual-image">
+        <div class="image-wrapper-visual">
+          <img id="visual-report-image" src="/videos/services/funnel-mapping/diagrama-mapa-funil.webp" alt="Diagrama de Mapa de Funil" loading="lazy" />
         </div>
       </div>
+    </div>
+    <div class="visual-connection">
+      <p>E esses são só os relatórios visuais. <a href="#pacote-completo">Veja abaixo tudo o que vem junto no pacote completo</a> →</p>
     </div>
   </div>
 </section>
 
-<section class="funnel-deliverables">
+<section class="funnel-package-complete" id="pacote-completo">
   <div class="container">
-    <div class="deliverables-wrapper">
-      <div class="deliverables-left">
-        <div class="section-header">
-          <span class="section-eyebrow">Entregáveis</span>
-          <h2 class="section-title">O que você recebe</h2>
-        </div>
-        <ul class="deliverables-list">
+    <div class="section-header">
+      <span class="section-eyebrow">Tudo Incluído</span>
+      <h2 class="section-title">Seu Pacote de Mapeamento</h2>
+      <p class="section-subtitle">
+        Cada elemento desenhado para você validar seu funil com segurança e confiança
+      </p>
+    </div>
+    <div class="package-wrapper">
+      <div class="package-left">
+        <h3 class="package-section-title">Processo & Suporte</h3>
+        <ul class="package-list">
           <li>
-            <span class="check-icon">✓</span>
-            <span>Questionário de briefing estruturado</span>
+            <span class="package-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div class="package-item-content">
+              <strong>Questionário de briefing estruturado</strong>
+              <span>Para eu entender seu negócio a fundo</span>
+            </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
-            <span>Mapa visual completo do funil</span>
+            <span class="package-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div class="package-item-content">
+              <strong>Mapa visual completo do funil</strong>
+              <span>Todas as etapas, ofertas e pontos de contato</span>
+            </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
-            <span>Simulação de lucratividade com métricas reais</span>
+            <span class="package-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div class="package-item-content">
+              <strong>Simulação de lucratividade</strong>
+              <span>Métricas reais baseadas no seu negócio</span>
+            </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
-            <span>Identificação de vazamentos financeiros</span>
+            <span class="package-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div class="package-item-content">
+              <strong>Identificação de vazamentos</strong>
+              <span>Onde você está perdendo dinheiro</span>
+            </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
-            <span>Vídeo explicando a estratégia completa</span>
+            <span class="package-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div class="package-item-content">
+              <strong>Vídeo explicando a estratégia</strong>
+              <span>Gravação pessoal para você assistir quando quiser</span>
+            </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
-            <span>2 horas de mentoria</span>
+            <span class="package-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div class="package-item-content">
+              <strong>2 horas de mentoria individual</strong>
+              <span>Para tirar dúvidas e ajustar a estratégia</span>
+            </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
-            <span>Reunião final de revisão e ajustes</span>
+            <span class="package-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div class="package-item-content">
+              <strong>Reunião final de revisão</strong>
+              <span>Para garantir que tudo está alinhado</span>
+            </div>
           </li>
         </ul>
       </div>
-      <div class="deliverables-right">
-        <h3 class="metrics-title">Métricas Simuladas</h3>
-        <div class="metrics-list">
-          <div class="metric-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-            <span>Previsão de Receita e Lucro</span>
+      <div class="package-right">
+        <h3 class="package-section-title">Métricas Simuladas</h3>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon revenue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <h4>Receita & Lucro</h4>
+              <p>Previsão pessimista, provável e otimista</p>
+            </div>
           </div>
-          <div class="metric-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
-              <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
-            </svg>
-            <span>Custo com Anúncios e Tráfego</span>
+          <div class="metric-card">
+            <div class="metric-icon traffic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+                <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <h4>Custo com Anúncios</h4>
+              <p>CPM, CPC e investimento em tráfego</p>
+            </div>
           </div>
-          <div class="metric-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-            </svg>
-            <span>Ticket Médio (AOV)</span>
+          <div class="metric-card">
+            <div class="metric-icon conversion">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <h4>Ticket Médio (AOV)</h4>
+              <p>Valor médio por transação</p>
+            </div>
           </div>
-          <div class="metric-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
-            <span>Custo por Aquisição (CPA)</span>
+          <div class="metric-card">
+            <div class="metric-icon acquisition">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <h4>Custo por Aquisição (CPA)</h4>
+              <p>Quanto custa cada cliente</p>
+            </div>
           </div>
-          <div class="metric-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-            </svg>
-            <span>Valor de Vida do Cliente (LTV)</span>
+          <div class="metric-card">
+            <div class="metric-icon retention">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <h4>Valor de Vida (LTV)</h4>
+              <p>Quanto cada cliente gera ao longo do tempo</p>
+            </div>
           </div>
-          <div class="metric-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-            </svg>
-            <span>Projeção de Receita Recorrente</span>
+          <div class="metric-card">
+            <div class="metric-icon growth">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <h4>Receita Recorrente</h4>
+              <p>Projeção de crescimento mensal</p>
+            </div>
           </div>
-          <div class="metric-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>
-            </svg>
-            <span>CAC e ROAS Ideais</span>
+          <div class="metric-card metric-card-highlight">
+            <div class="metric-icon roi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20V10M18 20V4M6 20v-4"/>
+              </svg>
+            </div>
+            <div class="metric-content">
+              <h4>CAC & ROAS Ideais</h4>
+              <p>Metas para seu negócio ser lucrativo</p>
+            </div>
           </div>
         </div>
-        <div class="deliverables-cta">
+        <div class="package-cta">
           <a href="#pricing" class="btn-primary">
             Quero receber este pacote
             <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -729,17 +784,6 @@ import Layout from '../../../layouts/Layout.astro';
             Garantia 14 dias
           </span>
         </div>
-        <div class="tier-pix-payment">
-          <span class="pix-label">Chave PIX:</span>
-          <div class="pix-copy-box">
-            <span class="pix-key">alexdonega@gmail.com</span>
-            <button class="btn-copy-pix" onclick="copyPixKey(this)">
-              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-              <svg class="check-icon-pix hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Copiar</span>
-            </button>
-          </div>
-        </div>
         <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da Estratégia Completa do Mapa de Funil, segue comprovante" target="_blank" rel="noopener" class="tier-cta btn-primary">
           Garantir Minha Vaga
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -819,17 +863,6 @@ import Layout from '../../../layouts/Layout.astro';
         <div class="tier-bonus">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <span>+4h mentoria bônus exclusivo</span>
-        </div>
-        <div class="tier-pix-payment">
-          <span class="pix-label">Chave PIX:</span>
-          <div class="pix-copy-box">
-            <span class="pix-key">alexdonega@gmail.com</span>
-            <button class="btn-copy-pix" onclick="copyPixKey(this)">
-              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-              <svg class="check-icon-pix hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Copiar</span>
-            </button>
-          </div>
         </div>
         <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da Implementação Total do Mapa de Funil, segue comprovante" target="_blank" rel="noopener" class="tier-cta btn-premium">
           Quero Implementação Total
@@ -1077,62 +1110,6 @@ import Layout from '../../../layouts/Layout.astro';
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  /* Pricing Enhanced */
-  .pix-payment {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    text-align: center;
-  }
-
-  .pix-label {
-    display: block;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 0.75rem;
-  }
-
-  .pix-copy-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    border-radius: 10px;
-  }
-
-  #pix-key {
-    font-family: monospace;
-    color: rgb(34, 197, 94);
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
-  .btn-copy {
-    background: rgba(255, 255, 255, 0.05);
-    border: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: all 0.2s;
-  }
-
-  .btn-copy:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-  }
-
-  .btn-copy svg { width: 14px; height: 14px; }
-  .hidden { display: none; }
 
   .section-header {
     text-align: center;
@@ -3446,64 +3423,6 @@ import Layout from '../../../layouts/Layout.astro';
     color: rgb(251, 191, 36);
   }
 
-  /* PIX Payment in Card */
-  .tier-pix-payment {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    text-align: center;
-  }
-
-  .tier-pix-payment .pix-label {
-    display: block;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 0.5rem;
-  }
-
-  .tier-pix-payment .pix-copy-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0.4rem 0.5rem 0.4rem 0.75rem;
-    border-radius: 8px;
-  }
-
-  .tier-pix-payment .pix-key {
-    font-family: monospace;
-    color: rgb(52, 211, 153);
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
-
-  .btn-copy-pix {
-    background: rgba(255, 255, 255, 0.05);
-    border: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 0.4rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    transition: all 0.2s;
-  }
-
-  .btn-copy-pix:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-  }
-
-  .btn-copy-pix svg {
-    width: 14px;
-    height: 14px;
-  }
-
   /* Tier CTAs */
   .tier-cta {
     display: flex;
@@ -3792,10 +3711,374 @@ import Layout from '../../../layouts/Layout.astro';
       gap: 1rem;
     }
   }
+
+  /* ===========================================
+     DELIVERABLES VISUAL SECTION
+     =========================================== */
+  .funnel-deliverables-visual {
+    padding: 6rem 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .visual-intro {
+    text-align: center;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+  }
+
+  .visual-intro strong {
+    color: rgb(249, 115, 22);
+  }
+
+  .visual-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .visual-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .visual-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    width: 100%;
+  }
+
+  .visual-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(249, 115, 22, 0.25);
+    transform: translateX(4px);
+  }
+
+  .visual-item.active {
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgb(249, 115, 22);
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.15);
+  }
+
+  .visual-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .visual-item.active .visual-icon {
+    background: rgba(249, 115, 22, 0.2);
+  }
+
+  .visual-icon svg {
+    width: 24px;
+    height: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+  }
+
+  .visual-item.active .visual-icon svg {
+    color: rgb(249, 115, 22);
+  }
+
+  .visual-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.35rem;
+    transition: color 0.3s ease;
+  }
+
+  .visual-item.active .visual-info h3 {
+    color: rgb(251, 146, 60);
+  }
+
+  .visual-info p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .visual-image {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .image-wrapper-visual {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .image-wrapper-visual:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    border-color: rgba(249, 115, 22, 0.2);
+  }
+
+  .image-wrapper-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+  }
+
+  .visual-connection {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .visual-connection p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  .visual-connection a {
+    color: rgb(249, 115, 22);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .visual-connection a:hover {
+    color: rgb(251, 146, 60);
+  }
+
+  @media (max-width: 768px) {
+    .visual-wrapper {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .visual-image {
+      position: static;
+      order: -1;
+    }
+
+    .image-wrapper-visual {
+      max-height: 280px;
+      overflow: hidden;
+    }
+
+    .visual-intro {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* ===========================================
+     PACKAGE COMPLETE SECTION
+     =========================================== */
+  .funnel-package-complete {
+    padding: 6rem 0;
+  }
+
+  .package-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .package-section-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(249, 115, 22, 0.3);
+    display: inline-block;
+  }
+
+  .package-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .package-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .package-list li:hover {
+    padding-left: 0.5rem;
+    border-color: rgba(249, 115, 22, 0.15);
+  }
+
+  .package-list li:last-child {
+    border-bottom: none;
+  }
+
+  .package-check {
+    width: 28px;
+    height: 28px;
+    background: rgba(52, 211, 153, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .package-check svg {
+    width: 14px;
+    height: 14px;
+    color: rgb(52, 211, 153);
+  }
+
+  .package-item-content strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .package-item-content span {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .metric-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+  }
+
+  .metric-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(249, 115, 22, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .metric-card-highlight {
+    grid-column: span 2;
+    background: rgba(249, 115, 22, 0.08);
+    border-color: rgba(249, 115, 22, 0.2);
+  }
+
+  .metric-card-highlight:hover {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: rgb(249, 115, 22);
+  }
+
+  .metric-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .metric-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .metric-icon.revenue svg { color: rgb(52, 211, 153); }
+  .metric-icon.traffic svg { color: rgb(59, 130, 246); }
+  .metric-icon.conversion svg { color: rgb(168, 85, 247); }
+  .metric-icon.acquisition svg { color: rgb(236, 72, 153); }
+  .metric-icon.retention svg { color: rgb(34, 211, 238); }
+  .metric-icon.growth svg { color: rgb(74, 222, 128); }
+  .metric-icon.roi svg { color: rgb(249, 115, 22); }
+
+  .metric-content h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-content p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .package-cta {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    .package-wrapper {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .funnel-package-complete {
+      padding: 4rem 0;
+    }
+
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metric-card-highlight {
+      grid-column: span 1;
+    }
+
+    .package-list li {
+      padding: 1rem 0;
+    }
+  }
 </style>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
+    // Original Reports Section
     const reportItems = document.querySelectorAll('.report-item');
     const reportImage = document.getElementById('report-image');
     const imageBasePath = '/videos/services/funnel-mapping/';
@@ -3815,6 +4098,30 @@ import Layout from '../../../layouts/Layout.astro';
               reportImage.alt = h3.textContent || '';
             }
             reportImage.style.opacity = '1';
+          }, 150);
+        }
+      });
+    });
+
+    // New Visual Reports Section
+    const visualItems = document.querySelectorAll('.visual-item');
+    const visualReportImage = document.getElementById('visual-report-image');
+
+    visualItems.forEach(item => {
+      item.addEventListener('click', () => {
+        visualItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        
+        const imageName = item.dataset.image;
+        if (visualReportImage && imageName) {
+          visualReportImage.style.opacity = '0';
+          setTimeout(() => {
+            visualReportImage.src = imageBasePath + imageName + '.webp';
+            const h3 = item.querySelector('h3');
+            if (h3) {
+              visualReportImage.alt = h3.textContent || '';
+            }
+            visualReportImage.style.opacity = '1';
           }, 150);
         }
       });
