@@ -62,32 +62,6 @@ import Layout from '../../../layouts/Layout.astro';
       <p class="hero-subtitle">
         Simulação matemática da lucratividade do seu negócio — cenários pessimista, provável e otimista — para você decidir com dados, não com achismo
       </p>
-      <div class="hero-social-proof">
-        <div class="proof-badge">
-          <span class="proof-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
-            </svg>
-          </span>
-          <span class="proof-text">Economista com Mestrado</span>
-        </div>
-        <div class="proof-badge">
-          <span class="proof-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-            </svg>
-          </span>
-          <span class="proof-text">7 empresas criadas</span>
-        </div>
-        <div class="proof-badge">
-          <span class="proof-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
-          </span>
-          <span class="proof-text">15+ anos de experiência</span>
-        </div>
-      </div>
       <div class="hero-cta">
         <a href="#pricing" class="btn-primary">
           Simular meu lucro agora
@@ -173,65 +147,41 @@ import Layout from '../../../layouts/Layout.astro';
     </div>
   </div>
 </section>
-<section class="funnel-benefits">
+
+<section class="funnel-results">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">Benefícios</span>
-      <h2 class="section-title">O que você vai conseguir</h2>
+      <span class="section-eyebrow">Resultados Reais</span>
+      <h2 class="section-title">O que o mapeamento revelou</h2>
     </div>
-    <div class="benefits-panels">
-      <div class="benefit-panel p-map">
-        <div class="panel-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-          </svg>
-        </div>
-        <div class="panel-info">
-          <h3>MAP</h3>
-          <p>Mapeie suas ideias de funil de forma visual e estruturada</p>
-        </div>
-      </div>
-      <div class="benefit-panel p-simulate">
-        <div class="panel-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-          </svg>
-        </div>
-        <div class="panel-info">
-          <h3>SIMULATE</h3>
-          <p>Simule 3 cenários com os números reais do seu negócio</p>
-        </div>
-      </div>
-      <div class="benefit-panel p-leaks">
-        <div class="panel-icon">
+    <div class="results-grid">
+      <div class="result-card result-leak">
+        <div class="result-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
           </svg>
         </div>
-        <div class="panel-info">
-          <h3>STOP LEAKS</h3>
-          <p>Descubra onde seu funil está sangrando antes de escalar</p>
-        </div>
+        <h3>Vazamentos Identificados</h3>
+        <p>Clientes descobriram que estavam <strong>perdendo dinheiro sem saber</strong> — e reformularam todo o trabalho de marketing após o mapeamento.</p>
       </div>
-      <div class="benefit-panel p-predict">
-        <div class="panel-icon">
+      <div class="result-card result-scale">
+        <div class="result-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
           </svg>
         </div>
-        <div class="panel-info">
-          <h3>PREDICT</h3>
-          <p>Preveja lucros antes de lançar e tome decisões baseadas em dados</p>
-        </div>
+        <h3>Escalabilidade Acelerada</h3>
+        <p>Outros identificaram gargalos que impediam o crescimento e <strong>aumentaram a velocidade de escala em até 3x</strong>.</p>
       </div>
-    </div>
-    <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Mapear meu funil agora
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
+      <div class="result-card result-profit">
+        <div class="result-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3>Lucro Previsível</h3>
+        <p>Com a simulação de cenários, clientes passaram a <strong>investir com confiança</strong>, sabendo exatamente o retorno esperado.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -378,77 +328,6 @@ import Layout from '../../../layouts/Layout.astro';
   </div>
 </section>
 
-<section class="funnel-results">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Resultados Reais</span>
-      <h2 class="section-title">O que o mapeamento revelou</h2>
-    </div>
-    <div class="results-grid">
-      <div class="result-card result-leak">
-        <div class="result-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-          </svg>
-        </div>
-        <h3>Vazamentos Identificados</h3>
-        <p>Clientes descobriram que estavam <strong>perdendo dinheiro sem saber</strong> — e reformularam todo o trabalho de marketing após o mapeamento.</p>
-      </div>
-      <div class="result-card result-scale">
-        <div class="result-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-        </div>
-        <h3>Escalabilidade Acelerada</h3>
-        <p>Outros identificaram gargalos que impediam o crescimento e <strong>aumentaram a velocidade de escala em até 3x</strong>.</p>
-      </div>
-      <div class="result-card result-profit">
-        <div class="result-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-        </div>
-        <h3>Lucro Previsível</h3>
-        <p>Com a simulação de cenários, clientes passaram a <strong>investir com confiança</strong>, sabendo exatamente o retorno esperado.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="funnel-demo">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Demonstração</span>
-      <h2 class="section-title">Veja como funciona na prática</h2>
-      <p class="section-subtitle">
-        Exemplos reais de mapeamento e simulação de funis
-      </p>
-    </div>
-    <div class="demo-grid">
-      <div class="demo-card">
-        <img src="/videos/services/funnel-mapping/map-funnel.gif" alt="Mapeando o funil" loading="lazy" />
-        <p>Mapeando o funil</p>
-      </div>
-      <div class="demo-card">
-        <img src="/videos/services/funnel-mapping/add-product.gif" alt="Adicionando produtos" loading="lazy" />
-        <p>Adicionando produtos ao mapa</p>
-      </div>
-      <div class="demo-card">
-        <img src="/videos/services/funnel-mapping/add-traffic.gif" alt="Adicionando tráfego" loading="lazy" />
-        <p>Adicionando fontes de tráfego</p>
-      </div>
-      <div class="demo-card">
-        <img src="/videos/services/funnel-mapping/add-expensives.webp" alt="Adicionando despesas" loading="lazy" />
-        <p>Adicionando despesas</p>
-      </div>
-      <div class="demo-card">
-        <img src="/videos/services/funnel-mapping/simulate.webp" alt="Simulação de resultados" loading="lazy" />
-        <p>Simulação de resultados</p>
-    </div>
-  </div>
-</section>
-
 <section class="funnel-scenarios">
   <div class="container">
     <div class="section-header">
@@ -470,14 +349,51 @@ import Layout from '../../../layouts/Layout.astro';
         <li>…e muitas outras.</li>
       </ul>
       <p class="scenarios-highlight">
-        Mas o GERU oferece cobertura completa.
+        Mas o mapeamento oferece cobertura completa.
       </p>
       <p class="scenarios-text">
-        Qualquer mudança hipotética que você imaginar, o GERU fará todos os cálculos instantaneamente.
+        Qualquer mudança hipotética que você imaginar, faremos todos os cálculos instantaneamente.
       </p>
       <p class="scenarios-text">
-        O GERU mostra a comparação entre cenários para todas as suas principais métricas, bem como projeções de receita e lucro.
+        Mostramos a comparação entre cenários para todas as suas principais métricas, bem como projeções de receita e lucro.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="funnel-about">
+  <div class="container">
+    <div class="about-wrapper">
+      <div class="about-image">
+        <div class="image-container">
+          <img src="/img/people/alex-donega.webp" alt="Alex Donega" loading="lazy" />
+          <div class="image-glow"></div>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="section-eyebrow">Quem Constrói com Você</span>
+        <h2 class="section-title">Alex Donega</h2>
+        <p class="about-bio">
+          Economista com Mestrado em Economia, Empresário, Desenvolvedor e Arquiteto de Contextos com mais de 15 anos de experiência no mercado digital.
+        </p>
+        <div class="about-phases">
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>15+ anos</strong> construindo softwares e validando funis de venda de alta escala.</p>
+          </div>
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>7 empresas criadas</strong> do zero, focadas em simplicidade e escalabilidade.</p>
+          </div>
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>Mentor de centenas de alunos</strong> ensinando a arte de dominar IA e tecnologia.</p>
+          </div>
+        </div>
+        <p class="about-mission">
+          <em>"Não acredito em lançar funis baseados no acaso. Criei este serviço de mapeamento para que cada real investido por você seja precedido por uma simulação matemática de lucro."</em>
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -504,7 +420,7 @@ import Layout from '../../../layouts/Layout.astro';
           </div>
           <div class="report-info">
             <h3>Diagrama de Mapa de Funil</h3>
-            <p>Crie PDFs incríveis de qualquer mapa.</p>
+            <p>Mapeamento profissional do seu funil de vendas.</p>
           </div>
         </button>
         <button class="report-item" data-image="resumo-projeto">
@@ -556,43 +472,6 @@ import Layout from '../../../layouts/Layout.astro';
         <div class="image-wrapper">
           <img id="report-image" src="/videos/services/funnel-mapping/diagrama-mapa-funil.webp" alt="Diagrama de Mapa de Funil" loading="lazy" />
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="funnel-about">
-  <div class="container">
-    <div class="about-wrapper">
-      <div class="about-image">
-        <div class="image-container">
-          <img src="/img/people/alex-donega.webp" alt="Alex Donega" loading="lazy" />
-          <div class="image-glow"></div>
-        </div>
-      </div>
-      <div class="about-content">
-        <span class="section-eyebrow">Quem Constrói com Você</span>
-        <h2 class="section-title">Alex Donega</h2>
-        <p class="about-bio">
-          Economista com Mestrado em Economia, Empresário, Desenvolvedor e Arquiteto de Contextos com mais de 15 anos de experiência no mercado digital.
-        </p>
-        <div class="about-phases">
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>15+ anos</strong> construindo softwares e validando funis de venda de alta escala.</p>
-          </div>
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>7 empresas criadas</strong> do zero, focadas em simplicidade e escalabilidade.</p>
-          </div>
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>Mentor de centenas de alunos</strong> ensinando a arte de dominar IA e tecnologia.</p>
-          </div>
-        </div>
-        <p class="about-mission">
-          <em>"Não acredito em lançar funis baseados no acaso. Criei este serviço de mapeamento para que cada real investido por você seja precedido por uma simulação matemática de lucro."</em>
-        </p>
       </div>
     </div>
   </div>
@@ -808,7 +687,7 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
         <div class="tier-scarcity">
           <span class="scarcity-pulse"></span>
-          <span>2 vagas disponíveis este mês</span>
+          <span>6 vagas disponíveis este mês</span>
         </div>
         <ul class="tier-features">
           <li class="feature-included">
@@ -896,7 +775,7 @@ import Layout from '../../../layouts/Layout.astro';
         <ul class="tier-features">
           <li class="feature-included">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>Tudo da Estratégia</strong> +</span>
+            <span><strong>Tudo do Diagnóstico</strong> +</span>
           </li>
           <li class="feature-included">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
@@ -967,8 +846,10 @@ import Layout from '../../../layouts/Layout.astro';
 
     <div class="comparison-toggle">
       <button class="comparison-btn" id="comparisonToggle">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        Ver comparação completa de todos os recursos
+        <span class="btn-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          Ver tabela comparativa
+        </span>
         <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
     </div>
@@ -1024,7 +905,7 @@ import Layout from '../../../layouts/Layout.astro';
             <td>Mentoria individual</td>
             <td><span class="dash">—</span></td>
             <td class="featured-col">2 horas</td>
-            <td>6 horas</td>
+            <td>6 horas + 4h bônus</td>
           </tr>
           <tr>
             <td>Reuniões de revisão</td>
@@ -1089,157 +970,6 @@ import Layout from '../../../layouts/Layout.astro';
   </div>
 </section>
 
-<section class="funnel-pricing" id="pricing">
-  <div class="container">
-    <div class="pricing-wrapper">
-      <div class="pricing-card main">
-        <div class="pricing-header">
-          <span class="pricing-badge">Serviço Principal</span>
-          <h2>Mapa de Funil com Simulação</h2>
-        </div>
-        <div class="pricing-scarcity">
-          <span class="scarcity-pulse"></span>
-          <span class="scarcity-text">2 vagas disponíveis este mês</span>
-        </div>
-        <div class="pricing-amount">
-          <span class="installments">6x de</span>
-          <span class="currency">R$</span>
-          <span class="value">406</span>
-        </div>
-        <div class="pricing-cash">
-          <span class="cash-price">ou R$ 2.436 à vista</span>
-        </div>
-        <div class="pricing-include">
-          <h3>Incluso:</h3>
-          <ul>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 13l4 4L19 7"/>
-              </svg>
-              2 horas de mentoria
-            </li>
-          </ul>
-          <p class="include-note">*As 2 horas incluem: vídeos de estratégia, análise dos seus vídeos e encontros de alinhamento</p>
-        </div>
-
-        <div class="pix-payment">
-          <span class="pix-label">Chave PIX (E-mail):</span>
-          <div class="pix-copy-box">
-            <span id="pix-key">alexdonega@gmail.com</span>
-            <button class="btn-copy" onclick="copyPixKey(this)">
-              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
-              </svg>
-              <svg class="check-icon-pix hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              <span>Copiar</span>
-            </button>
-          </div>
-        </div>
-
-        <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da entrada do Mapa de Funil segue comprovante" target="_blank" rel="noopener" class="btn-green btn-large">
-          Pagar e Garantir Minha Vaga
-          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="funnel-optional">
-  <div class="container">
-    <div class="optional-wrapper">
-      <div class="optional-content">
-        <div class="optional-badges">
-          <span class="optional-badge">Serviço Opcional</span>
-          <span class="optional-scarcity">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
-            Apenas 2 vagas por mês
-          </span>
-        </div>
-        <h2>Quer que eu cuide de toda a implementação?</h2>
-        <p>Se você quer focar exclusivamente no negócio e na continuidade, eu crio todo o material:</p>
-        <ul class="optional-features">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 13l4 4L19 7"/>
-            </svg>
-            Copywriting completo
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 13l4 4L19 7"/>
-            </svg>
-            Design das páginas
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 13l4 4L19 7"/>
-            </svg>
-            Mensagens de WhatsApp
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 13l4 4L19 7"/>
-            </svg>
-            E-mails e automações
-          </li>
-        </ul>
-        <div class="bonus-alert">
-          <div class="bonus-alert-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>
-            </svg>
-          </div>
-          <div class="bonus-alert-text">
-            <strong>Bônus exclusivo para quem contratar agora</strong>
-            <span>+ 4 horas de mentoria individual — válido apenas para quem adquirir a Implementação junto com o Mapa de Funil</span>
-          </div>
-        </div>
-        <p class="optional-note">*Gestão de tráfego não inclusa e é obrigatório o pagamento prévio do serviço de Mapa de Funil com Simulação.</p>
-      </div>
-      <div class="optional-pricing">
-        <div class="optional-scarcity-banner">
-          <span class="scarcity-pulse"></span>
-          <span>Últimas 2 vagas para Implementação Completa</span>
-        </div>
-        <div class="optional-price">
-          <span class="price-value">6x R$ 1.724</span>
-          <span class="price-label">cartão de crédito · total R$ 10.344</span>
-        </div>
-        <div class="pix-payment">
-          <span class="pix-label">Chave PIX (E-mail):</span>
-          <div class="pix-copy-box">
-            <span id="pix-key">alexdonega@gmail.com</span>
-            <button class="btn-copy" onclick="copyPixKey(this)">
-              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
-              </svg>
-              <svg class="check-icon-pix hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              <span>Copiar</span>
-            </button>
-          </div>
-        </div>
-
-        <a href="https://wa.me/5545999506444?text=Alex, fiz o pagamento da Implementação Completa do Mapa de Funil segue comprovante" target="_blank" rel="noopener" class="btn-blue">
-          Contratar Implementação Completa
-          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <section class="funnel-faq">
   <div class="container">
     <div class="section-header">
@@ -1296,7 +1026,7 @@ import Layout from '../../../layouts/Layout.astro';
         
         <p>E não precisa arriscar seu tempo, energia ou dinheiro em um funil sobre o qual você não tem certeza.</p>
         
-        <p class="destiny-empower">Com a GERU, o destino do seu funil está em <strong>SUAS</strong> mãos.</p>
+        <p class="destiny-empower">Com o mapeamento, o destino do seu funil está em <strong>SUAS</strong> mãos.</p>
       </div>
       
       <div class="destiny-first">
@@ -1318,15 +1048,15 @@ import Layout from '../../../layouts/Layout.astro';
       </div>
       
       <div class="destiny-reason">
-        <p>Porque com o GERU você pode prever o desempenho do seu funil…</p>
+        <p>Porque com o mapeamento você pode prever o desempenho do seu funil…</p>
         <p class="reason-highlight">E planeje seus lucros e seu sucesso com antecedência!</p>
       </div>
       
       <div class="destiny-cta">
         <p class="cta-question">Então, o que você está esperando?</p>
-        <p class="cta-action">Comece a usar o GERU hoje mesmo!</p>
+        <p class="cta-action">Comece seu mapeamento hoje mesmo!</p>
         <a href="#pricing" class="btn-primary btn-large destiny-btn">
-          ADQUIRA O GERU AGORA!
+          SIMULAR MEU FUNIL AGORA!
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
@@ -3838,37 +3568,48 @@ import Layout from '../../../layouts/Layout.astro';
   .comparison-toggle {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .comparison-btn {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
-    padding: 0.875rem 1.5rem;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    font-weight: 500;
+    background: rgba(249, 115, 22, 0.08);
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    color: rgb(249, 115, 22);
+    padding: 0.75rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
   }
 
   .comparison-btn:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(249, 115, 22, 0.3);
+    background: rgba(249, 115, 22, 0.15);
+    border-color: rgb(249, 115, 22);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
   }
 
   .comparison-btn.active {
-    background: rgba(249, 115, 22, 0.1);
+    background: rgb(249, 115, 22);
     border-color: rgb(249, 115, 22);
     color: white;
   }
 
+  .comparison-btn .btn-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+  }
+
   .comparison-btn .chevron-icon {
+    width: 18px;
+    height: 18px;
     transition: transform 0.3s ease;
   }
 
