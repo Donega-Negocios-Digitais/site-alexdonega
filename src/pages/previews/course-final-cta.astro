@@ -1,0 +1,279 @@
+---
+/**
+ * /previews/course-final-cta.astro
+ * Preview do componente CourseFinalCta
+ */
+import CourseFinalCta from '../../components/course/CourseFinalCta.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Course Final CTA</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-main: #0a0a0a;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+    
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    .page-header {
+      background: #000;
+      padding: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+    }
+    
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .page-header .description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+    
+    .divider {
+      height: 3rem;
+      background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+    }
+    
+    .section-label {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-top: 1px solid var(--border);
+      background: #0a0a0a;
+    }
+    
+    .code-block {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 2rem;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      overflow-x: auto;
+    }
+    
+    .info-section {
+      padding: 2rem;
+      background: #000;
+      border-top: 1px solid var(--border);
+    }
+    
+    .info-section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .props-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    
+    .props-table th,
+    .props-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .props-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .props-table td {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    
+    .props-table code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-size: 0.8125rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <div class="container">
+      <a href="/previews/" class="back-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Voltar para componentes
+      </a>
+      <h1>Course Final CTA</h1>
+      <p class="description">Seção de call-to-action final para páginas de cursos</p>
+    </div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <!-- CTA Padrão (Laranja) -->
+  <div class="section-label">Variante Default (Laranja)</div>
+  <CourseFinalCta
+    title="Pronto para Começar?"
+    subtitle="Junte-se a mais de 500 alunos que já transformaram suas carreiras com este curso."
+    primaryHref="#inscricao"
+    primaryLabel="Inscrever-se Agora"
+  />
+  
+  <!-- CTA Obsidian (Roxo) -->
+  <div class="section-label">Variante Obsidian (Roxo)</div>
+  <CourseFinalCta
+    title="Organize suas Ideias"
+    subtitle="Domine o Obsidian e crie um sistema de notas que realmente funciona para você."
+    primaryHref="#inscricao"
+    primaryLabel="Começar Agora"
+    primaryVariant="obsidian"
+    sectionVariant="obsidian"
+  />
+  
+  <!-- CTA GSD (Verde) -->
+  <div class="section-label">Variante GSD (Verde)</div>
+  <CourseFinalCta
+    title="Transforme sua Produtividade"
+    subtitle="Aprenda o framework GSD e nunca mais perca uma tarefa importante."
+    primaryHref="#inscricao"
+    primaryLabel="Quero ser Produtivo"
+    primaryVariant="gsd"
+    sectionVariant="gsd"
+  />
+  
+  <div class="info-section">
+    <div class="container">
+      <h2>Props</h2>
+      
+      <table class="props-table">
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Tipo</th>
+            <th>Default</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>title</code></td>
+            <td><code>string</code></td>
+            <td>✓ required</td>
+            <td>Título principal</td>
+          </tr>
+          <tr>
+            <td><code>subtitle</code></td>
+            <td><code>string</code></td>
+            <td>✓ required</td>
+            <td>Subtítulo descritivo</td>
+          </tr>
+          <tr>
+            <td><code>primaryHref</code></td>
+            <td><code>string</code></td>
+            <td>✓ required</td>
+            <td>URL do botão principal</td>
+          </tr>
+          <tr>
+            <td><code>primaryLabel</code></td>
+            <td><code>string</code></td>
+            <td>✓ required</td>
+            <td>Texto do botão principal</td>
+          </tr>
+          <tr>
+            <td><code>primaryVariant</code></td>
+            <td><code>'default' | 'obsidian' | 'gsd'</code></td>
+            <td>'default'</td>
+            <td>Cor do botão principal</td>
+          </tr>
+          <tr>
+            <td><code>sectionVariant</code></td>
+            <td><code>'default' | 'obsidian' | 'gsd'</code></td>
+            <td>'default'</td>
+            <td>Cor de fundo da seção</td>
+          </tr>
+          <tr>
+            <td><code>secondaryHref</code></td>
+            <td><code>string</code></td>
+            <td>'https://wa.me/...'</td>
+            <td>URL do botão secundário</td>
+          </tr>
+          <tr>
+            <td><code>secondaryLabel</code></td>
+            <td><code>string</code></td>
+            <td>'Falar Comigo'</td>
+            <td>Texto do botão secundário</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="code-block" style="margin: 2rem 0 0 0;">
+        <pre>---
+import CourseFinalCta from '../../components/course/CourseFinalCta.astro';
+---
+
+&lt;CourseFinalCta
+  title="Pronto para Começar?"
+  subtitle="Junte-se a centenas de alunos."
+  primaryHref="#inscricao"
+  primaryLabel="Inscrever-se"
+  primaryVariant="obsidian"
+  sectionVariant="obsidian"
+/&gt;</pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

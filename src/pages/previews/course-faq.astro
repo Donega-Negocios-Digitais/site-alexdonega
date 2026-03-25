@@ -1,0 +1,318 @@
+---
+/**
+ * /previews/course-faq.astro
+ * Preview do componente CourseFaqSection
+ */
+import CourseFaqSection from '../../components/course/CourseFaqSection.astro';
+
+const faqItems = [
+  {
+    question: 'O curso é ao vivo ou gravado?',
+    answer: 'O curso é 100% gravado e você pode assistir no seu próprio ritmo. Todas as aulas ficam disponíveis para acesso vitalício.',
+  },
+  {
+    question: 'Tenho acesso por quanto tempo?',
+    answer: 'Você tem acesso vitalício ao conteúdo. Uma vez que você adquire o curso, pode assistir quantas vezes quiser, para sempre.',
+  },
+  {
+    question: 'Posso parcelar no cartão?',
+    answer: 'Sim! Você pode parcelar em até 12x no cartão de crédito. Também aceitamos PIX com desconto especial.',
+    button: {
+      text: 'Ver planos de pagamento',
+      href: '#precos',
+      variant: 'primary' as const,
+    }
+  },
+  {
+    question: 'E se eu não gostar do curso?',
+    answer: 'Oferecemos 7 dias de garantia incondicional. Se você não ficar satisfeito por qualquer motivo, devolvemos 100% do seu investimento.',
+    button: {
+      text: 'Falar com suporte',
+      href: 'https://wa.me/5545999506444',
+      variant: 'secondary' as const,
+    }
+  },
+  {
+    question: 'Preciso de alguma experiência prévia?',
+    answer: 'Não! O curso foi desenvolvido para iniciantes. Começamos do zero e avançamos gradualmente. Se você já tem experiência, pode pular as aulas introdutórias.',
+  },
+];
+
+const faqItemsObsidian = [
+  {
+    question: 'O Obsidian é gratuito?',
+    answer: 'Sim! O Obsidian é gratuito para uso pessoal. Existe uma versão paga com recursos de sincronização, mas para uso local não precisa pagar nada.',
+  },
+  {
+    question: 'Funciona em qual sistema operacional?',
+    answer: 'O Obsidian funciona em Windows, Mac, Linux, iOS e Android. Você pode ter suas notas em todos os seus dispositivos.',
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Course FAQ Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-main: #0a0a0a;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+    
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    .page-header {
+      background: #000;
+      padding: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+    }
+    
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .page-header .description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+    
+    .divider {
+      height: 3rem;
+      background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+    }
+    
+    .code-block {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 2rem;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      overflow-x: auto;
+    }
+    
+    .info-section {
+      padding: 2rem;
+      background: #000;
+      border-top: 1px solid var(--border);
+    }
+    
+    .info-section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .props-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    
+    .props-table th,
+    .props-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .props-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .props-table td {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    
+    .props-table code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-size: 0.8125rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <div class="container">
+      <a href="/previews/" class="back-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Voltar para componentes
+      </a>
+      <h1>Course FAQ Section</h1>
+      <p class="description">Seção de perguntas frequentes para páginas de cursos</p>
+    </div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <!-- FAQ Padrão (Laranja) -->
+  <CourseFaqSection
+    items={faqItems}
+    title="Perguntas Frequentes"
+    eyebrow="FAQ"
+  />
+  
+  <!-- FAQ com variante Obsidian (Roxo) -->
+  <CourseFaqSection
+    items={faqItemsObsidian}
+    title="Dúvidas Comuns"
+    eyebrow="Obsidian"
+    eyebrowVariant="obsidian"
+    sectionVariant="dark"
+  />
+  
+  <div class="info-section">
+    <div class="container">
+      <h2>Props</h2>
+      
+      <table class="props-table">
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Tipo</th>
+            <th>Default</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>items</code></td>
+            <td><code>FaqItem[]</code></td>
+            <td>✓ required</td>
+            <td>Array de perguntas e respostas</td>
+          </tr>
+          <tr>
+            <td><code>title</code></td>
+            <td><code>string</code></td>
+            <td>'Perguntas Frequentes'</td>
+            <td>Título da seção</td>
+          </tr>
+          <tr>
+            <td><code>eyebrow</code></td>
+            <td><code>string</code></td>
+            <td>-</td>
+            <td>Texto acima do título</td>
+          </tr>
+          <tr>
+            <td><code>eyebrowVariant</code></td>
+            <td><code>'default' | 'obsidian' | 'gsd'</code></td>
+            <td>'default'</td>
+            <td>Cor do eyebrow</td>
+          </tr>
+          <tr>
+            <td><code>sectionVariant</code></td>
+            <td><code>'light' | 'dark'</code></td>
+            <td>'light'</td>
+            <td>Variante de fundo</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h2 style="margin-top: 2rem;">FaqItem</h2>
+      
+      <table class="props-table">
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Tipo</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>question</code></td>
+            <td><code>string</code></td>
+            <td>A pergunta</td>
+          </tr>
+          <tr>
+            <td><code>answer</code></td>
+            <td><code>string</code></td>
+            <td>A resposta</td>
+          </tr>
+          <tr>
+            <td><code>button</code></td>
+            <td><code>{ text, href, variant }</code></td>
+            <td>Botão opcional</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="code-block" style="margin: 2rem 0 0 0;">
+        <pre>---
+import CourseFaqSection from '../../components/course/CourseFaqSection.astro';
+
+const faqItems = [
+  {
+    question: 'Pergunta aqui?',
+    answer: 'Resposta aqui.',
+    button: {
+      text: 'Saiba mais',
+      href: '#',
+      variant: 'primary'
+    }
+  }
+];
+---
+
+&lt;CourseFaqSection
+  items={faqItems}
+  title="Perguntas Frequentes"
+  eyebrow="FAQ"
+  eyebrowVariant="obsidian"
+/&gt;</pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

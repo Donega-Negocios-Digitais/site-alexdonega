@@ -1,0 +1,114 @@
+---
+interface Props {
+  companyName?: string;
+  cnpj?: string;
+  year?: number;
+  disclaimerBefore?: string;
+  termsUrl?: string;
+  privacyUrl?: string;
+}
+
+const {
+  companyName = "DONEGA NEGÓCIOS DIGITAIS",
+  cnpj = "52.460.940/0001-67",
+  year = new Date().getFullYear(),
+  disclaimerBefore = `Importante: Novo Envio não é um produto associado Facebook, Instagram, WhatsApp ou Facebook Messenger. Ao tratar de questões financeiras em nossos produtos, incluindo sites, vídeos, palestras, programas ou outros conteúdos, nos esforçamos ao máximo para garantir que representem com precisão nossos cursos e sua capacidade de impactar positivamente o seu negócio e a sua vida. No entanto, é importante frisar que os resultados alcançados dependem inteiramente do empenho, dedicação e aplicação de cada indivíduo. As estratégias e informações que fornecemos não garantem que você obterá resultados financeiros ou ganhos monetários específicos. Nada em nosso site ou em nossos materiais deve ser interpretado como uma promessa ou garantia de ganhos futuros. Seu sucesso depende do seu esforço, dedicação e aplicação das ideias, ferramentas e estratégias que propomos. Estamos aqui para apoiar você com recursos valiosos no seu caminho, mas o seu sucesso é fruto do seu próprio esforço e dedicação. Ao fazer seu cadastro em nosso site, você concorda com os nossos`,
+  termsUrl = "/politicas/termos-de-uso/",
+  privacyUrl = "/politicas/politica-de-privacidade/",
+} = Astro.props;
+---
+
+<footer class="footer-legal" role="contentinfo">
+  <div class="footer-legal__container">
+    <div class="footer-legal__company">
+      <span class="footer-legal__copyright">
+        &copy; {year} {companyName} <span class="footer-legal__separator">|</span> 
+        <span class="footer-legal__cnpj">CNPJ: {cnpj}</span>
+      </span>
+    </div>
+
+    <div class="footer-legal__disclaimer">
+      <p class="footer-legal__disclaimer-text">
+        {disclaimerBefore} <a href={termsUrl} class="footer-legal__link">Termos de Uso</a> e <a href={privacyUrl} class="footer-legal__link">Política de Privacidade</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-legal {
+    width: 100%;
+    padding: 1.25rem 1rem;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+
+  .footer-legal__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-legal__company {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-legal__copyright {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.01em;
+  }
+
+  .footer-legal__separator {
+    margin: 0 0.5rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  .footer-legal__cnpj {
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+  .footer-legal__disclaimer-text {
+    font-size: 0.6875rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    opacity: 0.7;
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .footer-legal__link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .footer-legal__link:hover,
+  .footer-legal__link:focus {
+    color: var(--text-white);
+  }
+
+  .footer-legal__link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (min-width: 768px) {
+    .footer-legal {
+      padding: 1.5rem 1.5rem;
+    }
+
+    .footer-legal__container {
+      text-align: left;
+    }
+
+    .footer-legal__disclaimer-text {
+      text-align: left;
+    }
+  }
+</style>

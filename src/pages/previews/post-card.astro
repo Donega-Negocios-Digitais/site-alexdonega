@@ -1,0 +1,277 @@
+---
+/**
+ * /previews/post-card.astro
+ * Preview do componente PostCard
+ */
+import PostCard from '../../components/blog/PostCard.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Post Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-main: #0a0a0a;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+    
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    body {
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+    }
+    
+    header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+    
+    .section {
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+    
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .code-block {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      overflow-x: auto;
+    }
+    
+    .props-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    
+    .props-table th,
+    .props-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .props-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .props-table td {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    
+    .props-table code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-size: 0.8125rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/previews/" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      Voltar para componentes
+    </a>
+    
+    <header>
+      <h1>Post Card</h1>
+      <p class="description">Componente de card para exibir posts do blog</p>
+    </header>
+    
+    <!-- Cards de Exemplo -->
+    <section class="section">
+      <h2 class="section-title">Exemplos</h2>
+      
+      <div class="post-grid">
+        <PostCard
+          slug="como-criar-componentes-reutilizaveis"
+          title="Como Criar Componentes Reutilizáveis em Astro"
+          description="Aprenda a criar componentes modulares e reutilizáveis usando o framework Astro, com exemplos práticos e dicas de boas práticas."
+          tags={["Astro", "Frontend"]}
+          pubDate={new Date('2024-01-15')}
+          image="/img/blog/componentes-astro.jpg"
+        />
+        
+        <PostCard
+          slug="tailwind-css-dicas-avancadas"
+          title="Tailwind CSS: 10 Dicas Avançadas que Você Precisa Saber"
+          description="Descubra técnicas avançadas do Tailwind CSS para criar interfaces mais eficientes e manter seu código organizado."
+          tags={["CSS", "Tailwind"]}
+          pubDate={new Date('2024-01-10')}
+        />
+        
+        <PostCard
+          slug="astro-vs-nextjs"
+          title="Astro vs Next.js: Qual Escolher em 2024?"
+          description="Uma comparação detalhada entre os dois frameworks mais populares para desenvolvimento web moderno."
+          tags={["Comparação", "Frameworks"]}
+          pubDate={new Date('2024-01-05')}
+          image="/img/blog/astro-nextjs.jpg"
+        />
+      </div>
+    </section>
+    
+    <!-- Props -->
+    <section class="section">
+      <h2 class="section-title">Props</h2>
+      
+      <table class="props-table">
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Tipo</th>
+            <th>Required</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>slug</code></td>
+            <td><code>string</code></td>
+            <td>✓</td>
+            <td>Slug do post para o link</td>
+          </tr>
+          <tr>
+            <td><code>title</code></td>
+            <td><code>string</code></td>
+            <td>✓</td>
+            <td>Título do post</td>
+          </tr>
+          <tr>
+            <td><code>description</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>Descrição resumida do post</td>
+          </tr>
+          <tr>
+            <td><code>image</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>URL da imagem de capa</td>
+          </tr>
+          <tr>
+            <td><code>tags</code></td>
+            <td><code>string[]</code></td>
+            <td></td>
+            <td>Array de tags/categorias</td>
+          </tr>
+          <tr>
+            <td><code>pubDate</code></td>
+            <td><code>Date</code></td>
+            <td>✓</td>
+            <td>Data de publicação</td>
+          </tr>
+          <tr>
+            <td><code>author</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>Nome do autor (default: 'Alex Donega')</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <!-- Código de Exemplo -->
+    <section class="section">
+      <h2 class="section-title">Exemplo de Uso</h2>
+      
+      <div class="code-block">
+        <pre>---
+import PostCard from '../../components/blog/PostCard.astro';
+
+const posts = await getCollection('blog');
+---
+
+&lt;div class="post-grid"&gt;
+  {posts.map((post) => (
+    &lt;PostCard
+      slug={post.slug}
+      title={post.data.title}
+      description={post.data.description}
+      tags={post.data.tags}
+      pubDate={post.data.pubDate}
+      image={post.data.image}
+    /&gt;
+  ))}
+&lt;/div&gt;</pre>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

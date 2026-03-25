@@ -1,0 +1,165 @@
+---
+/**
+ * /previews/animated-background.astro
+ * Preview do componente AnimatedBackground
+ */
+import AnimatedBackground from '../../components/ui/AnimatedBackground.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Animated Background</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-main: #0a0a0a;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+    
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    body {
+      position: relative;
+    }
+    
+    .back-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    
+    .demo-container {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      z-index: 2;
+    }
+    
+    .demo-content {
+      text-align: center;
+      max-width: 600px;
+    }
+    
+    .demo-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent), #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .demo-content p {
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    
+    .info-panel {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      max-width: 500px;
+      z-index: 100;
+    }
+    
+    .info-panel h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .info-panel p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .info-panel code {
+      display: block;
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <a href="/previews/" class="back-link">
+    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+    </svg>
+    Voltar
+  </a>
+  
+  <AnimatedBackground />
+  
+  <div class="demo-container">
+    <div class="demo-content">
+      <h1>Animated Background</h1>
+      <p>36 linhas SVG animadas com gradientes laranja, criando um efeito de "threads" ou conexões neurais.</p>
+    </div>
+  </div>
+  
+  <div class="info-panel">
+    <h3>Exemplo de Uso</h3>
+    <p>Ideal para heros e seções de destaque.</p>
+    <code>
+      &lt;div style="position: relative; min-height: 100vh;"&gt;<br>
+      &nbsp;&nbsp;&lt;AnimatedBackground /&gt;<br>
+      &nbsp;&nbsp;&lt;!-- Conteúdo aqui --&gt;<br>
+      &lt;/div&gt;
+    </code>
+  </div>
+</body>
+</html>

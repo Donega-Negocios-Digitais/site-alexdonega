@@ -1,0 +1,65 @@
+---
+import FooterAds from '../../components/layout/FooterAds.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Footer Ads</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      min-height: 100vh;
+      background: #fff;
+      color: #333;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .preview-info {
+      text-align: center;
+      color: #666;
+    }
+    
+    .preview-info h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    
+    .preview-info p {
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="preview-info">
+      <h1>FooterAds Preview</h1>
+      <p>Role para baixo para ver o footer</p>
+    </div>
+  </main>
+  
+  <FooterAds />
+</body>
+</html>

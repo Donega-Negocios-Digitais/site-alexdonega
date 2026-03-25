@@ -25,3 +25,11 @@ tmpclaude-*
 
 # Logs
 git_log.txt
+.logs/
+
+# Agent configs
+.agent/
+.agents/
+skills/
+skills-lock.json
+.claude/skills/

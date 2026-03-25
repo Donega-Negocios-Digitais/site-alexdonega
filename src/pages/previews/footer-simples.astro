@@ -1,0 +1,162 @@
+---
+/**
+ * /previews/footer-simples.astro
+ * Preview do componente FooterSimples
+ */
+import FooterSimples from '../../components/layout/FooterSimples.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Footer Simples</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-main: #0a0a0a;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+    
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 800px;
+      text-align: center;
+    }
+    
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+    }
+    
+    .demo-content h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent), #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .demo-content p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    
+    .info-card {
+      background: #141414;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: left;
+      margin-top: 2rem;
+    }
+    
+    .info-card h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .info-card p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .code-block {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <a href="/previews/" class="back-link">
+    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+    </svg>
+    Voltar para componentes
+  </a>
+  
+  <main>
+    <div class="container demo-content">
+      <h1>Footer Simples</h1>
+      <p>Role para baixo para ver o footer minimalista. Ideal para páginas de vendas e conversão.</p>
+      
+      <div class="info-card">
+        <h2>Quando usar</h2>
+        <p>Este footer é ideal para:</p>
+        <ul style="color: var(--text-secondary); font-size: 0.875rem; padding-left: 1.25rem; margin-bottom: 1rem;">
+          <li>Páginas de vendas (landing pages)</li>
+          <li>Páginas de proposta</li>
+          <li>Qualquer página onde menos distrações = mais conversão</li>
+        </ul>
+        
+        <h2>Exemplo de Uso</h2>
+        <div class="code-block">
+          <pre>---
+import FooterSimples from '../../components/layout/FooterSimples.astro';
+---
+
+&lt;!-- Conteúdo da página --&gt;
+
+&lt;FooterSimples /&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <FooterSimples />
+</body>
+</html>

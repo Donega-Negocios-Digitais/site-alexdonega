@@ -1,0 +1,183 @@
+---
+/**
+ * /previews/header.astro
+ * Preview do componente Header
+ */
+import Header from '../../components/layout/Header.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Header</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-main: #0a0a0a;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+    
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    main {
+      flex: 1;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+    }
+    
+    .demo-content {
+      background: rgba(249, 115, 22, 0.05);
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 3rem;
+      text-align: center;
+    }
+    
+    .demo-content h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .demo-content p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    
+    .info-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    .info-section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .info-section p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+    
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    .code-block {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <Header />
+  
+  <main>
+    <div class="container">
+      <a href="/previews/" class="back-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Voltar para componentes
+      </a>
+      
+      <div class="demo-content">
+        <h1>Header Preview</h1>
+        <p>O header está fixo no topo desta página. Redimensione a janela para ver o menu mobile.</p>
+      </div>
+      
+      <div class="info-section">
+        <h2>Características</h2>
+        <ul class="feature-list">
+          <li>Posição sticky no topo</li>
+          <li>Background com blur (backdrop-filter)</li>
+          <li>Menu responsivo para mobile</li>
+          <li>Botão CTA com efeito shimmer</li>
+          <li>Links de navegação com hover</li>
+        </ul>
+      </div>
+      
+      <div class="info-section">
+        <h2>Exemplo de Uso</h2>
+        
+        <div class="code-block">
+          <pre>---
+import Header from '../../components/layout/Header.astro';
+---
+
+&lt;Header /&gt;
+
+&lt;!-- Conteúdo da página --&gt;</pre>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
