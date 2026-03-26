@@ -13,6 +13,7 @@
 
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import GoogleTagManager from '../components/GoogleTagManager.astro';
 import '../styles/globals.css';
 
 interface Props {
@@ -24,12 +25,14 @@ interface Props {
 }
 
 const { title, description, ogImage, hideHeader = false, hideFooter = false } = Astro.props;
+const gtmId = import.meta.env.PUBLIC_GTM_ID;
 ---
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <GoogleTagManager />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} | Alex Donega</title>
     <meta name="description" content={description || "Ajudo empreendedores a dominar IA de verdade usando Context Engineering."}>
@@ -135,6 +138,8 @@ const { title, description, ogImage, hideHeader = false, hideFooter = false } = 
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#main" class="skip-to-content">Pular para conteúdo principal</a>
 
     {!hideHeader && <Header />}

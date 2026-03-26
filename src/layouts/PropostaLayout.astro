@@ -2,6 +2,8 @@
 // PropostaLayout.astro - Layout dedicado para propostas comerciais
 // Não indexável, sem Header/Footer, CSS isolado do Tailwind
 
+import GoogleTagManager from '../components/GoogleTagManager.astro';
+
 interface Props {
     title: string;
     clientName: string;
@@ -13,12 +15,14 @@ interface Props {
 }
 
 const { title, clientName, date, value, description, logo, logoAlt } = Astro.props;
+const gtmId = import.meta.env.PUBLIC_GTM_ID;
 ---
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <GoogleTagManager />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} | Proposta Comercial</title>
     <meta name="robots" content="noindex, nofollow">
@@ -642,6 +646,8 @@ const { title, clientName, date, value, description, logo, logoAlt } = Astro.pro
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
         <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>

@@ -1,5 +1,6 @@
 ---
 import PostCard from '../components/blog/PostCard.astro';
+import GoogleTagManager from '../components/GoogleTagManager.astro';
 
 interface RelatedPost {
   slug: string;
@@ -41,12 +42,14 @@ const calculateReadingTime = (content: string) => {
 
 // Tentar obter o conteúdo do slot para calcular tempo de leitura
 // Por enquanto, vamos usar um placeholder e calcular no client-side
+const gtmId = import.meta.env.PUBLIC_GTM_ID;
 ---
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <GoogleTagManager />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} | Alex Donega</title>
   {description && <meta name="description" content={description} />}
@@ -60,6 +63,8 @@ const calculateReadingTime = (content: string) => {
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="header">
     <nav class="nav">
       <a href="/" class="nav-logo">Alex Donega</a>
