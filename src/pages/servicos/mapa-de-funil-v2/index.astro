@@ -510,15 +510,15 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Comparação</span>
-      <h2 class="section-title">O custo de NÃO ter um Mapa de Funil</h2>
+      <h2 class="section-title">O custo de NÃO aplicar a Metodologia MAPS</h2>
     </div>
     <div class="substitution-table-wrapper">
       <table class="substitution-table">
         <thead>
           <tr>
             <th>O que você evita</th>
-            <th class="col-without">Custo sem mapeamento</th>
-            <th class="col-with">Com Mapa de Funil</th>
+            <th class="col-without">Sem a Metodologia MAPS</th>
+            <th class="col-with">Com a Metodologia MAPS</th>
           </tr>
         </thead>
         <tbody>
@@ -978,31 +978,61 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
         </div>
       </div>
       <div class="about-content">
-        <span class="section-eyebrow">Seu Economista</span>
+        <span class="section-eyebrow">Quem Constrói com Você</span>
         <h2 class="section-title">Alex Donega</h2>
         <p class="about-bio">
-          Mestre em Economia, Empresário, Desenvolvedor e Arquiteto de Contextos com mais de 15 anos de experiência no mercado digital.
+          Arquiteto de Funis com Mestrado em Economia e mais de 15 anos projetando sistemas de venda que convertem com previsibilidade. Combino modelagem financeira, tecnologia e copy estratégica para transformar tráfego em receita recorrente.
         </p>
-        <p class="about-players">
-          Participei de projetos de grandes players do mercado, como <strong>Diego Carmona</strong> (IPO na Nasdaq, R$150M+ em valuation), <strong>Sergio Barbosa</strong> (Waseller R$1M MRR), <strong>JP Galvão</strong> (primeira venda de consórcio nos EUA), <strong>Christian Barbosa</strong> (Neotriad, maior especialista em produtividade do Brasil) e muitos outros.
-        </p>
-        <div class="about-stats">
-          <div class="about-stat">
-            <span class="stat-value">+200</span>
-            <span class="stat-desc">funis mapeados</span>
+        <div class="about-phases">
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>15+ anos em funis de alta escala</strong> — de SaaS a infoprodutos, com arquiteturas que já processaram milhões em vendas.</p>
           </div>
-          <div class="about-stat">
-            <span class="stat-value">R$ 15M+</span>
-            <span class="stat-desc">em perdas evitadas</span>
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>7 empresas construídas do zero</strong> — cada uma validada por simulação financeira antes do primeiro real investido.</p>
           </div>
-          <div class="about-stat">
-            <span class="stat-value">97%</span>
-            <span class="stat-desc">taxa de satisfação</span>
+          <div class="about-phase">
+            <div class="phase-dot"></div>
+            <p><strong>Mentor de centenas de profissionais</strong> — ensinando arquitetura de funis, IA aplicada e decisão baseada em dados.</p>
           </div>
         </div>
         <p class="about-mission">
-          <em>"Não acredito em lançar funis baseados no acaso. Criei este serviço de mapeamento para que cada real investido por você seja precedido por uma simulação matemática de lucro."</em>
+          <em>"Cada funil que projeto começa com um modelo matemático. Antes de investir um real em tráfego, você vai saber exatamente quanto precisa converter em cada etapa para ter lucro. Isso não é otimismo — é engenharia de resultado."</em>
         </p>
+        <div class="about-players">
+          <p class="about-players-label">Projetos com líderes de mercado:</p>
+          <div class="about-players-grid">
+            <div class="about-player">
+              <div class="about-player-photo">
+                <img src="/img/testimonials/diego-carmona-nasdaq-ipo.webp" alt="Diego Carmona" loading="lazy" />
+              </div>
+              <span class="about-player-name">Diego Carmona</span>
+              <span class="about-player-role">Leadlovers · IPO Nasdaq</span>
+            </div>
+            <div class="about-player">
+              <div class="about-player-photo">
+                <img src="/img/testimonials/sergio-barbosa-waseller-placa-10milhoes.webp" alt="Sergio Barbosa" loading="lazy" />
+              </div>
+              <span class="about-player-name">Sergio Barbosa</span>
+              <span class="about-player-role">Founder · Waseller</span>
+            </div>
+            <div class="about-player">
+              <div class="about-player-photo">
+                <img src="/img/testimonials/jp-savings-club-evento.webp" alt="JP Galvão" loading="lazy" />
+              </div>
+              <span class="about-player-name">JP Galvão</span>
+              <span class="about-player-role">CEO · Savings Club</span>
+            </div>
+            <div class="about-player">
+              <div class="about-player-photo">
+                <img src="/img/testimonials/christian-barbosa-neotriad-palestra.webp" alt="Christian Barbosa" loading="lazy" />
+              </div>
+              <span class="about-player-name">Christian Barbosa</span>
+              <span class="about-player-role">Neotriad · Produtividade</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1520,38 +1550,75 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   </div>
 </section>
 
-<!-- 20. FAQ (EXISTING - KEEP AS IS) -->
+<!-- 20. FAQ -->
 <section class="funnel-faq">
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Dúvidas</span>
-      <h2 class="section-title">Perguntas Frequentes</h2>
+      <h2 class="section-title">Ficou com alguma dúvida?</h2>
+      <p class="section-subtitle">Confira as respostas para as perguntas frequentes ou entre em contato conosco</p>
     </div>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>Já preciso ter um funil rodando?</h3>
+
+    <div class="faq-contact-channels">
+      <a href="https://wa.me/5545999506444" target="_blank" rel="noopener" class="faq-channel faq-channel-whatsapp">
+        <div class="faq-channel-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="faq-channel-info">
+          <span class="faq-channel-label">Atendimento por WhatsApp</span>
+          <span class="faq-channel-action">Toque aqui para tirar suas dúvidas</span>
+        </div>
+        <span class="faq-channel-arrow">&rarr;</span>
+      </a>
+      <a href="mailto:alexdonega@gmail.com" class="faq-channel faq-channel-email">
+        <div class="faq-channel-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <div class="faq-channel-info">
+          <span class="faq-channel-label">Atendimento por E-mail</span>
+          <span class="faq-channel-action">alexdonega@gmail.com</span>
+        </div>
+        <span class="faq-channel-arrow">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="faq-accordion">
+      <details class="faq-item">
+        <summary><h3>Quais são as formas de pagamento?</h3><span class="faq-toggle"></span></summary>
+        <p>Aceitamos PIX, cartão de crédito (com parcelamento em até 12x) e boleto bancário. Após a confirmação do pagamento, você já recebe acesso ao briefing para iniciarmos o mapeamento.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Já preciso ter um funil rodando?</h3><span class="faq-toggle"></span></summary>
         <p>Não. O mapeamento é ideal tanto para quem já fatura e quer escalar sem perder margem, quanto para quem está começando um novo projeto e quer evitar "queimar" dinheiro testando no escuro.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Quanto tempo leva para receber o mapa?</h3>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Quanto tempo leva para receber o mapa?</h3><span class="faq-toggle"></span></summary>
         <p>Após o preenchimento do seu briefing detalhado, o mapa visual e a simulação matemática são entregues em até 7 dias úteis.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Terei acesso à simulação para analisar os números?</h3>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Terei acesso à simulação para analisar os números?</h3><span class="faq-toggle"></span></summary>
         <p>Sim. Durante a nossa entrega, eu apresento todos os cenários (pessimista, provável e otimista) e você entende exatamente como métricas como CPA, LTV e Taxa de Conversão impactam seu lucro final.</p>
-      </div>
-      <div class="faq-item">
-        <h3>O suporte e a mentoria são individuais?</h3>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Tem algum pré-requisito para participar?</h3><span class="faq-toggle"></span></summary>
+        <p>Nenhum. Você só precisa ter um produto ou serviço (físico, digital ou SaaS) e querer validar ou escalar suas vendas online. O mapeamento se adapta ao seu momento — seja você iniciante ou avançado.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>O suporte e a mentoria são individuais?</h3><span class="faq-toggle"></span></summary>
         <p>Sim. Analiso pessoalmente o seu projeto e os encontros de alinhamento são focados 100% na sua estratégia de escala ou validação.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Funciona para o meu nicho?</h3>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Funciona para o meu nicho?</h3><span class="faq-toggle"></span></summary>
         <p>Sim. O mapeamento de funil se baseia em princípios matemáticos universais — tráfego, conversão, ticket médio e LTV. Já mapeei funis de infoprodutos, e-commerce, SaaS, serviços locais, consultorias, lançamentos e perpétuo. A lógica se adapta a qualquer modelo de negócio digital.</p>
-      </div>
-      <div class="faq-item">
-        <h3>O que é um Funil?</h3>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Não curti, quero cancelar. Como eu faço?</h3><span class="faq-toggle"></span></summary>
+        <p>Sem problema. Você tem garantia incondicional nos primeiros dias (varia conforme o pacote). Basta enviar um e-mail ou mensagem no WhatsApp solicitando o cancelamento e devolvemos 100% do seu investimento, sem perguntas.</p>
+      </details>
+      <details class="faq-item">
+        <summary><h3>O que é um Funil?</h3><span class="faq-toggle"></span></summary>
         <p>Um funil é a jornada completa do cliente, desde o primeiro contato até a compra e além. Ele mapeia todas as etapas: tráfego, captura de leads, ofertas, upsells, downsells e retenção. Um funil bem estruturado transforma visitantes em clientes de forma previsível e lucrativa.</p>
-      </div>
+      </details>
     </div>
   </div>
 </section>
@@ -1911,13 +1978,17 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .phase-dot { width: 8px; height: 8px; background: rgb(249, 115, 22); border-radius: 50%; margin-top: 0.6rem; flex-shrink: 0; box-shadow: 0 0 10px rgba(249, 115, 22, 0.5); }
   .about-phase p { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin: 0; }
   .about-phase strong { color: white; }
-  .about-players { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 2rem; }
-  .about-players strong { color: white; }
-  .about-stats { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
-  .about-stat { text-align: center; flex: 1; min-width: 100px; }
-  .about-stat .stat-value { display: block; font-size: 1.75rem; font-weight: 800; color: rgb(249, 115, 22); line-height: 1; margin-bottom: 0.25rem; }
-  .about-stat .stat-desc { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
-  .about-mission { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; border-left: 3px solid rgb(249, 115, 22); padding-left: 1.5rem; font-style: italic; }
+  .about-mission { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; border-left: 3px solid rgb(249, 115, 22); padding-left: 1.5rem; font-style: italic; margin-bottom: 2.5rem; }
+  .about-players { margin-top: 0; }
+  .about-players-label { font-size: 0.8rem; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 1.25rem; }
+  .about-players-grid { display: flex; gap: 1.5rem; }
+  .about-player { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .about-player-photo { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.1); transition: border-color 0.3s ease; }
+  .about-player-photo:hover { border-color: rgba(249, 115, 22, 0.5); }
+  .about-player-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter 0.3s ease; }
+  .about-player-photo:hover img { filter: grayscale(0.3); }
+  .about-player-name { font-size: 0.8rem; color: white; font-weight: 600; text-align: center; line-height: 1.2; }
+  .about-player-role { font-size: 0.7rem; color: rgba(255, 255, 255, 0.4); text-align: center; line-height: 1.3; }
 
   /* VIP TESTIMONIALS */
   .funnel-vip-testimonials { padding: 6rem 0; position: relative; overflow: hidden; }
@@ -2037,10 +2108,43 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
 
   /* FAQ */
   .funnel-faq { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
-  .faq-grid { max-width: 800px; margin: 0 auto; display: grid; gap: 2rem; }
-  .faq-item { background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); }
-  .faq-item h3 { color: white; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
-  .faq-item p { color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin: 0; }
+
+  /* FAQ Contact Channels */
+  .faq-contact-channels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto 3rem; }
+  .faq-channel { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.03); text-decoration: none; transition: all 0.3s ease; }
+  .faq-channel:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); }
+  .faq-channel-whatsapp:hover { border-color: rgba(37, 211, 102, 0.5); background: rgba(37, 211, 102, 0.08); }
+  .faq-channel-email:hover { border-color: rgba(249, 115, 22, 0.5); background: rgba(249, 115, 22, 0.08); }
+  .faq-channel-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .faq-channel-whatsapp .faq-channel-icon { background: rgba(37, 211, 102, 0.15); color: #25D366; }
+  .faq-channel-email .faq-channel-icon { background: rgba(249, 115, 22, 0.15); color: rgb(249, 115, 22); }
+  .faq-channel-info { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+  .faq-channel-label { font-size: 0.85rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; }
+  .faq-channel-action { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .faq-channel-arrow { color: rgba(255, 255, 255, 0.3); font-size: 1.25rem; margin-left: auto; flex-shrink: 0; transition: transform 0.3s ease; }
+  .faq-channel:hover .faq-channel-arrow { transform: translateX(4px); color: rgba(255, 255, 255, 0.6); }
+
+  /* FAQ Accordion */
+  .faq-accordion { max-width: 800px; margin: 0 auto; display: grid; gap: 0.75rem; }
+  .faq-item { background: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; transition: all 0.3s ease; }
+  .faq-item:hover { border-color: rgba(255, 255, 255, 0.1); }
+  .faq-item[open] { border-color: rgba(249, 115, 22, 0.3); background: rgba(255, 255, 255, 0.04); }
+  .faq-item summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; cursor: pointer; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::marker { display: none; content: ''; }
+  .faq-item summary h3 { color: white; font-size: 1.125rem; font-weight: 600; margin: 0; }
+  .faq-toggle { width: 28px; height: 28px; border-radius: 50%; background: rgba(255, 255, 255, 0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-left: 1rem; position: relative; transition: all 0.3s ease; }
+  .faq-toggle::before, .faq-toggle::after { content: ''; position: absolute; background: rgba(255, 255, 255, 0.5); border-radius: 2px; transition: all 0.3s ease; }
+  .faq-toggle::before { width: 12px; height: 2px; }
+  .faq-toggle::after { width: 2px; height: 12px; }
+  .faq-item[open] .faq-toggle { background: rgba(249, 115, 22, 0.2); }
+  .faq-item[open] .faq-toggle::before { background: rgb(249, 115, 22); }
+  .faq-item[open] .faq-toggle::after { height: 0; opacity: 0; }
+  .faq-item p { color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin: 0; padding: 0 2rem 1.5rem; }
+
+  @media (max-width: 640px) {
+    .faq-contact-channels { grid-template-columns: 1fr; }
+  }
 
   /* GUARANTEE DUAL */
   .funnel-guarantee-dual { padding: 6rem 0; background: rgba(255, 255, 255, 0.01); }
@@ -2187,6 +2291,8 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
     .about-content { margin: 0 auto; }
     .about-phase { text-align: left; }
     .about-mission { text-align: left; }
+    .about-players-grid { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
+    .about-player-photo { width: 56px; height: 56px; }
     .vip-card { grid-template-columns: 1fr; }
     .vip-card.vip-featured { grid-template-columns: 1fr; }
     .vip-photo { min-height: 220px; }
