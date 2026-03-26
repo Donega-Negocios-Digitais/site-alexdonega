@@ -19,10 +19,11 @@ interface Props {
     title: string;
     description?: string;
     ogImage?: string;
+    hideHeader?: boolean;
     hideFooter?: boolean;
 }
 
-const { title, description, ogImage, hideFooter = false } = Astro.props;
+const { title, description, ogImage, hideHeader = false, hideFooter = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -136,7 +137,7 @@ const { title, description, ogImage, hideFooter = false } = Astro.props;
 <body>
     <a href="#main" class="skip-to-content">Pular para conteúdo principal</a>
 
-    <Header />
+    {!hideHeader && <Header />}
 
     <main id="main">
         <slot />
