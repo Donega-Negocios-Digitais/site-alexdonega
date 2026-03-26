@@ -1206,7 +1206,7 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
             Garantia 7 dias
           </span>
         </div>
-        <button type="button" data-pacote="PARA COMEÇAR" class="tier-cta btn-outline">
+        <button type="button" data-pacote="Diagnóstico" class="tier-cta btn-outline">
           Começar Diagnóstico
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -1282,7 +1282,7 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
             Garantia 30 dias
           </span>
         </div>
-        <button type="button" data-pacote="RECOMENDADO" class="tier-cta btn-primary">
+        <button type="button" data-pacote="Estratégia Completa" class="tier-cta btn-primary">
           Garantir Minha Vaga
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -1358,7 +1358,7 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
             Garantia 30 dias
           </span>
         </div>
-        <button type="button" data-pacote="MÁXIMO VALOR" class="tier-cta btn-premium">
+        <button type="button" data-pacote="Implementação Total" class="tier-cta btn-premium">
           Quero Implementação Total
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -2457,6 +2457,8 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
 </div>
 
 <script>
+  import { supabase } from '../../../lib/supabase';
+
   (function () {
     let pacoteAtual = '';
 
@@ -2606,8 +2608,6 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
       spinner.classList.remove('hidden');
       submitText.textContent = 'Enviando...';
 
-      const { supabase } = await import('../../../lib/supabase');
-
       const urlParams = new URLSearchParams(window.location.search);
       const leadData = {
         nome_completo: campoNome.value.trim(),
@@ -2637,16 +2637,15 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
       submitText.textContent = 'Solicitar Acesso';
 
       if (error) {
-        alertEl.textContent = 'Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.';
+        console.error('[Modal] Erro Supabase:', error);
+        alertEl.textContent = `Erro: ${error.message}`;
         alertEl.classList.remove('hidden');
         submitBtn.disabled = false;
         submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
         return;
       }
 
-      fecharModal();
-      toastSucesso.classList.remove('hidden');
-      setTimeout(() => toastSucesso.classList.add('hidden'), 4000);
+      window.location.href = 'https://youtu.be/Mqfwbf3X8SA?si=_Jzi71GbFJ9mYXfL';
     });
   })();
 </script>
