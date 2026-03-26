@@ -1,8 +1,9 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import FooterAds from '../../../components/layout/FooterAds.astro';
 ---
 
-<Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real." hideHeader>
+<Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real." hideHeader hideFooter>
 
 <!-- 1. Banner de Aviso (NEW) -->
 <div class="warning-banner">
@@ -966,7 +967,7 @@ import Layout from '../../../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- 17. Sobre Alex (EXISTING - KEEP AS IS) -->
+<!-- 17. Sobre Alex (IMPROVED COPY) -->
 <section class="funnel-about">
   <div class="container">
     <div class="about-wrapper">
@@ -977,23 +978,26 @@ import Layout from '../../../layouts/Layout.astro';
         </div>
       </div>
       <div class="about-content">
-        <span class="section-eyebrow">Quem Constrói com Você</span>
+        <span class="section-eyebrow">Seu Economista</span>
         <h2 class="section-title">Alex Donega</h2>
         <p class="about-bio">
-          Mestrado em Economia, Empresário, Desenvolvedor e Arquiteto de Contextos com mais de 15 anos de experiência no mercado digital.
+          Mestre em Economia, Empresário, Desenvolvedor e Arquiteto de Contextos com mais de 15 anos de experiência no mercado digital.
         </p>
-        <div class="about-phases">
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>15+ anos</strong> construindo softwares e validando funis de venda de alta escala.</p>
+        <p class="about-players">
+          Participei de projetos de grandes players do mercado, como <strong>Diego Carmona</strong> (IPO na Nasdaq, R$150M+ em valuation), <strong>Sergio Barbosa</strong> (Waseller R$1M MRR), <strong>JP Galvão</strong> (primeira venda de consórcio nos EUA), <strong>Christian Barbosa</strong> (Neotriad, maior especialista em produtividade do Brasil) e muitos outros.
+        </p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="stat-value">+200</span>
+            <span class="stat-desc">funis mapeados</span>
           </div>
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>7 empresas criadas</strong> do zero, focadas em simplicidade e escalabilidade.</p>
+          <div class="about-stat">
+            <span class="stat-value">R$ 15M+</span>
+            <span class="stat-desc">em perdas evitadas</span>
           </div>
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>Mentor de centenas de alunos</strong> ensinando a arte de dominar IA e tecnologia.</p>
+          <div class="about-stat">
+            <span class="stat-value">97%</span>
+            <span class="stat-desc">taxa de satisfação</span>
           </div>
         </div>
         <p class="about-mission">
@@ -1013,90 +1017,82 @@ import Layout from '../../../layouts/Layout.astro';
       <p class="section-subtitle">Empreendedores de alto nível que validaram seus funis e escalaram resultados reais</p>
     </div>
 
-    <div class="vip-grid">
+    <div class="vip-list">
 
-      <!-- FEATURED: Diego Carmona -->
+      <!-- Diego Carmona -->
       <div class="vip-card vip-featured">
-        <div class="vip-card-inner">
-          <div class="vip-image-wrapper">
-            <img src="/img/testimonials/diego-carmona-nasdaq-ipo.webp" alt="Diego Carmona na Nasdaq" loading="lazy" style="object-position: center 20%;" />
-            <div class="vip-image-overlay"></div>
+        <div class="vip-photo">
+          <img src="/img/testimonials/diego-carmona-nasdaq-ipo.webp" alt="Diego Carmona na Nasdaq" loading="lazy" />
+          <div class="vip-photo-glow"></div>
+        </div>
+        <div class="vip-info">
+          <div class="vip-metric">
+            <span class="vip-metric-value">R$150M+</span>
+            <span class="vip-metric-label">Valuation de Portfólio</span>
           </div>
-          <div class="vip-content">
-            <div class="vip-metric">
-              <span class="vip-metric-value">R$150M+</span>
-              <span class="vip-metric-label">Valuation de Portfólio</span>
-            </div>
-            <h3 class="vip-name">Diego Carmona</h3>
-            <p class="vip-role">Co-founder Leadlovers · IPO na Nasdaq</p>
-            <p class="vip-role-secondary">Shark/Investidor · 21+ Startups no Portfólio</p>
-            <p class="vip-description">
-              Alex projetou e executou diversos funis de alta conversão para a Joint Venture de Diego Carmona, o empreendedor que liderou o exit milionário da Leadlovers com IPO na Nasdaq e hoje investe em mais de 21 startups com valuation total superior a R$150 milhões.
-            </p>
-          </div>
+          <h3 class="vip-name">Diego Carmona</h3>
+          <p class="vip-role">Co-founder Leadlovers · IPO na Nasdaq</p>
+          <p class="vip-role-highlight">Shark/Investidor · 21+ Startups no Portfólio</p>
+          <p class="vip-desc">
+            Alex projetou e executou diversos funis de alta conversão para a Joint Venture de Diego Carmona, o empreendedor que liderou o exit milionário da Leadlovers com IPO na Nasdaq e hoje investe em mais de 21 startups com valuation total superior a R$150 milhões.
+          </p>
         </div>
       </div>
 
       <!-- Sergio Barbosa -->
       <div class="vip-card">
-        <div class="vip-card-inner">
-          <div class="vip-image-wrapper">
-            <img src="/img/testimonials/sergio-barbosa-waseller-placa-10milhoes.webp" alt="Sergio Barbosa - Waseller" loading="lazy" style="object-position: center 70%;" />
-            <div class="vip-image-overlay"></div>
+        <div class="vip-photo">
+          <img src="/img/testimonials/sergio-barbosa-waseller-placa-10milhoes.webp" alt="Sergio Barbosa - Waseller" loading="lazy" />
+          <div class="vip-photo-glow"></div>
+        </div>
+        <div class="vip-info">
+          <div class="vip-metric">
+            <span class="vip-metric-value">R$1M</span>
+            <span class="vip-metric-label">MRR Mensal</span>
           </div>
-          <div class="vip-content">
-            <div class="vip-metric">
-              <span class="vip-metric-value">R$1M</span>
-              <span class="vip-metric-label">MRR Mensal</span>
-            </div>
-            <h3 class="vip-name">Sergio Barbosa</h3>
-            <p class="vip-role">Founder · Waseller</p>
-            <p class="vip-description">
-              Com a arquitetura de funil desenvolvida por Alex, Sergio escalou o Waseller, sua plataforma SaaS, até atingir hoje R$1 milhão em receita recorrente mensal.
-            </p>
-          </div>
+          <h3 class="vip-name">Sergio Barbosa</h3>
+          <p class="vip-role">Founder · Waseller</p>
+          <p class="vip-desc">
+            Com a arquitetura de funil desenvolvida por Alex, Sergio escalou o Waseller, sua plataforma SaaS, até atingir hoje R$1 milhão em receita recorrente mensal.
+          </p>
         </div>
       </div>
 
       <!-- JP Galvão -->
       <div class="vip-card">
-        <div class="vip-card-inner">
-          <div class="vip-image-wrapper">
-            <img src="/img/testimonials/jp-savings-club-evento.webp" alt="JP Galvão - Savings Club" loading="lazy" />
-            <div class="vip-image-overlay"></div>
+        <div class="vip-photo">
+          <img src="/img/testimonials/jp-savings-club-evento.webp" alt="JP Galvão - Savings Club" loading="lazy" />
+          <div class="vip-photo-glow"></div>
+        </div>
+        <div class="vip-info">
+          <div class="vip-metric">
+            <span class="vip-metric-value">1ª</span>
+            <span class="vip-metric-label">Venda nos EUA</span>
           </div>
-          <div class="vip-content">
-            <div class="vip-metric">
-              <span class="vip-metric-value">1ª</span>
-              <span class="vip-metric-label">Venda nos EUA</span>
-            </div>
-            <h3 class="vip-name">JP Galvão</h3>
-            <p class="vip-role">CEO · Savings Club</p>
-            <p class="vip-description">
-              Alex validou o funil da primeira empresa de consórcio dos EUA e participou diretamente da histórica primeira venda de consórcio em território americano, abrindo um mercado completamente novo.
-            </p>
-          </div>
+          <h3 class="vip-name">JP Galvão</h3>
+          <p class="vip-role">CEO · Savings Club</p>
+          <p class="vip-desc">
+            Alex validou o funil da primeira empresa de consórcio dos EUA e participou diretamente da histórica primeira venda de consórcio em território americano, abrindo um mercado completamente novo.
+          </p>
         </div>
       </div>
 
       <!-- Christian Barbosa -->
-      <div class="vip-card vip-fullwidth">
-        <div class="vip-card-inner vip-horizontal">
-          <div class="vip-image-wrapper">
-            <img src="/img/testimonials/christian-barbosa-neotriad-palestra.webp" alt="Christian Barbosa - Neotriad" loading="lazy" />
-            <div class="vip-image-overlay"></div>
+      <div class="vip-card">
+        <div class="vip-photo">
+          <img src="/img/testimonials/christian-barbosa-neotriad-palestra.webp" alt="Christian Barbosa - Neotriad" loading="lazy" />
+          <div class="vip-photo-glow"></div>
+        </div>
+        <div class="vip-info">
+          <div class="vip-metric">
+            <span class="vip-metric-value">2026</span>
+            <span class="vip-metric-label">Novo Funil de Aquisição</span>
           </div>
-          <div class="vip-content">
-            <div class="vip-metric">
-              <span class="vip-metric-value">2026</span>
-              <span class="vip-metric-label">Novo Funil de Aquisição</span>
-            </div>
-            <h3 class="vip-name">Christian Barbosa</h3>
-            <p class="vip-role">Maior Especialista em Produtividade do Brasil · Neotriad</p>
-            <p class="vip-description">
-              Alex reestruturou o funil de aquisição de clientes da Neotriad para 2026, realizando diversas simulações de cenários para trazer previsibilidade financeira e otimizar o fluxo de caixa da operação.
-            </p>
-          </div>
+          <h3 class="vip-name">Christian Barbosa</h3>
+          <p class="vip-role">Maior Especialista em Produtividade do Brasil · Neotriad</p>
+          <p class="vip-desc">
+            Alex reestruturou o funil de aquisição de clientes da Neotriad para 2026, realizando diversas simulações de cenários para trazer previsibilidade financeira e otimizar o fluxo de caixa da operação.
+          </p>
         </div>
       </div>
 
@@ -1475,7 +1471,56 @@ import Layout from '../../../layouts/Layout.astro';
 </section>
 </div>
 
-<!-- 19. FAQ (EXISTING - KEEP AS IS) -->
+<!-- 19. Garantia Dupla (NEW) -->
+<section class="funnel-guarantee-dual">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Garantia</span>
+      <h2 class="section-title">Duas garantias. Porque confiamos na metodologia.</h2>
+    </div>
+    <div class="guarantee-dual-grid">
+      <div class="guarantee-dual-card guarantee-incondicional">
+        <div class="guarantee-dual-badge">
+          <span class="badge-days">7 dias</span>
+          <span class="badge-type">Incondicional</span>
+        </div>
+        <div class="guarantee-dual-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <p class="guarantee-dual-text">
+          Entrou, acessou as plataformas, viu os primeiros encontros, e não fez sentido para o seu momento? <strong>Devolução total, sem perguntas, sem burocracia.</strong> 7 dias a partir do acesso.
+        </p>
+      </div>
+      <div class="guarantee-dual-card guarantee-condicional">
+        <div class="guarantee-dual-badge">
+          <span class="badge-days">30 dias</span>
+          <span class="badge-type">Condicional</span>
+        </div>
+        <div class="guarantee-dual-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <p class="guarantee-dual-text">
+          Se em 30 dias você seguiu o programa, participou dos encontros, implementou o que foi orientado, e sua operação não estiver configurada e rodando com ao menos um produto ou serviço no ar: <strong>devolvemos 100%.</strong>
+        </p>
+      </div>
+    </div>
+    <div class="guarantee-dual-footer">
+      <p class="guarantee-disclaimer">
+        <strong>Não é garantia de resultado financeiro.</strong> É garantia de que o sistema funciona quando você aplica.
+      </p>
+      <p class="guarantee-promise">
+        Se não funcionar para você, não ficamos com seu dinheiro. Se funcionar (e funciona quando você implementa), você opera um negócio diferente em 6 meses.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 20. FAQ (EXISTING - KEEP AS IS) -->
 <section class="funnel-faq">
   <div class="container">
     <div class="section-header">
@@ -1500,8 +1545,8 @@ import Layout from '../../../layouts/Layout.astro';
         <p>Sim. Analiso pessoalmente o seu projeto e os encontros de alinhamento são focados 100% na sua estratégia de escala ou validação.</p>
       </div>
       <div class="faq-item">
-        <h3>Posso pagar 50% na entrada e 50% na entrega?</h3>
-        <p>Sim. O serviço de Mapa de Funil pode ser quitado com 50% de sinal para dar início ao projeto e os 50% restantes na apresentação da estratégia final.</p>
+        <h3>Funciona para o meu nicho?</h3>
+        <p>Sim. O mapeamento de funil se baseia em princípios matemáticos universais — tráfego, conversão, ticket médio e LTV. Já mapeei funis de infoprodutos, e-commerce, SaaS, serviços locais, consultorias, lançamentos e perpétuo. A lógica se adapta a qualquer modelo de negócio digital.</p>
       </div>
       <div class="faq-item">
         <h3>O que é um Funil?</h3>
@@ -1618,6 +1663,8 @@ import Layout from '../../../layouts/Layout.astro';
     </div>
   </div>
 </section>
+
+<FooterAds disclaimerBefore="Importante: Mapa de Funil não é um produto associado Facebook, Instagram, WhatsApp ou Facebook Messenger. Ao tratar de questões financeiras em nossos produtos, incluindo sites, vídeos, palestras, programas ou outros conteúdos, nos esforçamos ao máximo para garantir que representem com precisão nossos cursos e sua capacidade de impactar positivamente o seu negócio e a sua vida. No entanto, é importante frisar que os resultados alcançados dependem inteiramente do empenho, dedicação e aplicação de cada indivíduo. As estratégias e informações que fornecemos não garantem que você obterá resultados financeiros ou ganhos monetários específicos. Nada em nosso site ou em nossos materiais deve ser interpretado como uma promessa ou garantia de ganhos futuros. Seu sucesso depende do seu esforço, dedicação e aplicação das ideias, ferramentas e estratégias que propomos. Estamos aqui para apoiar você com recursos valiosos no seu caminho, mas o seu sucesso é fruto do seu próprio esforço e dedicação. Ao fazer seu cadastro em nosso site, você concorda com os nossos" />
 
 </Layout>
 
@@ -1864,48 +1911,47 @@ import Layout from '../../../layouts/Layout.astro';
   .phase-dot { width: 8px; height: 8px; background: rgb(249, 115, 22); border-radius: 50%; margin-top: 0.6rem; flex-shrink: 0; box-shadow: 0 0 10px rgba(249, 115, 22, 0.5); }
   .about-phase p { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin: 0; }
   .about-phase strong { color: white; }
+  .about-players { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 2rem; }
+  .about-players strong { color: white; }
+  .about-stats { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .about-stat { text-align: center; flex: 1; min-width: 100px; }
+  .about-stat .stat-value { display: block; font-size: 1.75rem; font-weight: 800; color: rgb(249, 115, 22); line-height: 1; margin-bottom: 0.25rem; }
+  .about-stat .stat-desc { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
   .about-mission { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; border-left: 3px solid rgb(249, 115, 22); padding-left: 1.5rem; font-style: italic; }
 
   /* VIP TESTIMONIALS */
   .funnel-vip-testimonials { padding: 6rem 0; position: relative; overflow: hidden; }
   .funnel-vip-testimonials::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: 80%; background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.04) 0%, transparent 70%); pointer-events: none; }
 
-  .vip-grid { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: auto auto; gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
-  .vip-card.vip-featured { grid-row: 1 / 3; }
-  .vip-card.vip-fullwidth { grid-column: 1 / -1; }
+  .vip-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
 
-  .vip-card { position: relative; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+  .vip-card { display: grid; grid-template-columns: 280px 1fr; position: relative; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
   .vip-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(249, 115, 22, 0.06); }
 
-  .vip-card::before { content: ''; position: absolute; inset: -1px; border-radius: 17px; padding: 1px; background: linear-gradient(135deg, rgba(249, 115, 22, 0.3), transparent 50%, rgba(249, 115, 22, 0.15)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; z-index: 1; }
-  .vip-card:hover::before { opacity: 1; }
+  .vip-card::after { content: ''; position: absolute; inset: -1px; border-radius: 21px; padding: 1px; background: linear-gradient(135deg, rgba(249, 115, 22, 0.3), transparent 50%, rgba(249, 115, 22, 0.15)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+  .vip-card:hover::after { opacity: 1; }
 
-  .vip-card-inner { display: flex; flex-direction: column; height: 100%; }
-  .vip-featured .vip-card-inner { display: grid; grid-template-columns: 1fr 1fr; height: 100%; }
-  .vip-horizontal { display: grid !important; grid-template-columns: 300px 1fr !important; flex-direction: unset !important; }
+  .vip-card.vip-featured { grid-template-columns: 340px 1fr; border-color: rgba(249, 115, 22, 0.15); background: rgba(249, 115, 22, 0.03); }
 
-  .vip-image-wrapper { position: relative; overflow: hidden; aspect-ratio: 4/3; }
-  .vip-featured .vip-image-wrapper { aspect-ratio: auto; min-height: 100%; }
-  .vip-horizontal .vip-image-wrapper { aspect-ratio: auto; min-height: 100%; }
-  .vip-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-  .vip-card:hover .vip-image-wrapper img { transform: scale(1.05); }
-  .vip-image-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, transparent 50%); pointer-events: none; }
+  .vip-photo { position: relative; overflow: hidden; min-height: 260px; }
+  .vip-featured .vip-photo { min-height: 320px; }
+  .vip-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+  .vip-card:hover .vip-photo img { transform: scale(1.04); }
+  .vip-photo-glow { position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, rgba(10, 10, 10, 0.8) 100%); pointer-events: none; }
 
-  .vip-content { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  .vip-featured .vip-content { padding: 2rem; justify-content: center; }
-  .vip-horizontal .vip-content { padding: 2rem; justify-content: center; }
+  .vip-info { padding: 2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 0.4rem; }
 
-  .vip-metric { display: flex; flex-direction: column; margin-bottom: 0.5rem; }
-  .vip-metric-value { font-size: 1.75rem; font-weight: 800; color: rgb(249, 115, 22); line-height: 1; }
-  .vip-featured .vip-metric-value { font-size: 2.25rem; }
-  .vip-metric-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.5); margin-top: 0.25rem; }
+  .vip-metric { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.75rem; }
+  .vip-metric-value { font-size: 2.5rem; font-weight: 800; color: rgb(249, 115, 22); line-height: 1; }
+  .vip-featured .vip-metric-value { font-size: 3rem; }
+  .vip-metric-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.45); }
 
-  .vip-name { font-size: 1.25rem; font-weight: 700; color: white; margin: 0; }
-  .vip-featured .vip-name { font-size: 1.5rem; }
-  .vip-role { font-size: 0.85rem; font-weight: 500; color: rgba(255, 255, 255, 0.6); margin: 0; }
-  .vip-role-secondary { font-size: 0.8rem; color: rgba(249, 115, 22, 0.8); font-weight: 500; margin: 0; }
-  .vip-description { font-size: 0.9rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6; margin: 0.5rem 0 0; }
-  .vip-featured .vip-description { font-size: 0.95rem; }
+  .vip-name { font-size: 1.5rem; font-weight: 700; color: white; margin: 0; }
+  .vip-featured .vip-name { font-size: 1.75rem; }
+  .vip-role { font-size: 0.875rem; font-weight: 500; color: rgba(255, 255, 255, 0.5); margin: 0; }
+  .vip-role-highlight { font-size: 0.8rem; color: rgba(249, 115, 22, 0.8); font-weight: 600; margin: 0; }
+  .vip-desc { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); line-height: 1.7; margin: 0.5rem 0 0; }
+  .vip-featured .vip-desc { font-size: 0.95rem; }
 
   /* PRICING */
   .funnel-pricing-tiers { padding: 6rem 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(249, 115, 22, 0.03) 100%); }
@@ -1995,6 +2041,31 @@ import Layout from '../../../layouts/Layout.astro';
   .faq-item { background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); }
   .faq-item h3 { color: white; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
   .faq-item p { color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin: 0; }
+
+  /* GUARANTEE DUAL */
+  .funnel-guarantee-dual { padding: 6rem 0; background: rgba(255, 255, 255, 0.01); }
+  .guarantee-dual-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
+  .guarantee-dual-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; transition: all 0.4s ease; }
+  .guarantee-dual-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); }
+  .guarantee-dual-card.guarantee-incondicional:hover { border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 20px 50px rgba(52, 211, 153, 0.1); }
+  .guarantee-dual-card.guarantee-condicional:hover { border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 20px 50px rgba(249, 115, 22, 0.1); }
+  .guarantee-dual-badge { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; margin-bottom: 1.5rem; }
+  .guarantee-dual-badge .badge-days { font-size: 2.5rem; font-weight: 800; color: white; line-height: 1; }
+  .guarantee-dual-badge .badge-type { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.5); }
+  .guarantee-incondicional .guarantee-dual-badge .badge-days { color: rgb(52, 211, 153); }
+  .guarantee-condicional .guarantee-dual-badge .badge-days { color: rgb(249, 115, 22); }
+  .guarantee-dual-icon { width: 64px; height: 64px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; }
+  .guarantee-dual-icon svg { width: 100%; height: 100%; }
+  .guarantee-incondicional .guarantee-dual-icon svg { color: rgb(52, 211, 153); }
+  .guarantee-condicional .guarantee-dual-icon svg { color: rgb(249, 115, 22); }
+  .guarantee-dual-text { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.7; text-align: center; margin: 0; }
+  .guarantee-dual-text strong { color: white; }
+  .guarantee-incondicional .guarantee-dual-text strong { color: rgb(52, 211, 153); }
+  .guarantee-condicional .guarantee-dual-text strong { color: rgb(249, 115, 22); }
+  .guarantee-dual-footer { max-width: 700px; margin: 3rem auto 0; text-align: center; }
+  .guarantee-disclaimer { font-size: 1rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin: 0 0 1rem; }
+  .guarantee-disclaimer strong { color: rgba(255, 255, 255, 0.8); }
+  .guarantee-promise { font-size: 1.125rem; color: white; line-height: 1.7; margin: 0; font-weight: 500; }
 
   /* TL;DR */
   .funnel-tldr { padding: 6rem 0; }
@@ -2110,19 +2181,22 @@ import Layout from '../../../layouts/Layout.astro';
     .reports-wrapper { grid-template-columns: 1fr; gap: 2rem; }
     .reports-image { position: static; order: -1; }
     .guarantee-grid { grid-template-columns: 1fr; }
+    .guarantee-dual-grid { grid-template-columns: 1fr; }
     .proof-cards-grid { grid-template-columns: 1fr; }
     .about-wrapper { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
     .about-content { margin: 0 auto; }
     .about-phase { text-align: left; }
     .about-mission { text-align: left; }
-    .vip-grid { grid-template-columns: 1fr; }
-    .vip-card.vip-featured { grid-row: auto; }
-    .vip-featured .vip-card-inner { grid-template-columns: 1fr; }
-    .vip-featured .vip-image-wrapper { aspect-ratio: 16/9; }
-    .vip-featured .vip-metric-value { font-size: 1.75rem; }
-    .vip-featured .vip-name { font-size: 1.25rem; }
-    .vip-horizontal { grid-template-columns: 1fr !important; }
-    .vip-horizontal .vip-image-wrapper { aspect-ratio: 16/9; }
+    .vip-card { grid-template-columns: 1fr; }
+    .vip-card.vip-featured { grid-template-columns: 1fr; }
+    .vip-photo { min-height: 220px; }
+    .vip-featured .vip-photo { min-height: 260px; }
+    .vip-photo-glow { background: linear-gradient(to top, rgba(10, 10, 10, 0.8) 0%, transparent 60%); }
+    .vip-info { padding: 1.5rem; }
+    .vip-metric-value { font-size: 2rem; }
+    .vip-featured .vip-metric-value { font-size: 2.25rem; }
+    .vip-name { font-size: 1.25rem; }
+    .vip-featured .vip-name { font-size: 1.35rem; }
     .visual-wrapper { grid-template-columns: 1fr; gap: 2rem; }
     .visual-image { position: static; order: -1; }
     .why-grid { grid-template-columns: repeat(2, 1fr); }

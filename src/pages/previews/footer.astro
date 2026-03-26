@@ -1,65 +1,12 @@
 ---
-import Footer from '../../components/layout/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preview - Footer Principal</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      min-height: 100vh;
-      background: #0f0f0f;
-      color: #e0e0e0;
-      font-family: system-ui, -apple-system, sans-serif;
-    }
-    
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-    
-    .preview-info {
-      text-align: center;
-      color: #888;
-    }
-    
-    .preview-info h1 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #e0e0e0;
-    }
-    
-    .preview-info p {
-      font-size: 0.875rem;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <div class="preview-info">
-      <h1>Footer Principal Preview</h1>
-      <p>Role para baixo para ver o footer</p>
+<Layout title="Preview - Footer Principal" hideHeader={true}>
+  <div style="display: flex; align-items: center; justify-content: center; min-height: 60vh; text-align: center;">
+    <div>
+      <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-white);">Footer Principal Preview</h1>
+      <p style="font-size: 0.875rem; color: var(--text-muted);">Role para baixo para ver o footer</p>
     </div>
-  </main>
-  
-  <Footer />
-</body>
-</html>
+  </div>
+</Layout>

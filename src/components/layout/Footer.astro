@@ -44,8 +44,10 @@
 
 <style>
     .footer {
-        padding: 48px 16px;
-        border-top: 1px solid var(--border);
+        padding: 48px 24px;
+        background: #0a0a0a;
+        border-top: 1px solid #2a2a2a;
+        width: 100%;
     }
 
     .footer-content {
@@ -57,69 +59,76 @@
     }
 
     .footer-brand h4 {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 22px;
-        font-weight: 500;
-        color: var(--text-white);
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #FFFFFF;
         margin-bottom: 12px;
     }
 
     .footer-brand p {
-        font-size: 14px;
-        color: var(--text-muted);
-        line-height: 1.7;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 13px;
+        color: #FFFFFF;
+        opacity: 0.85;
+        line-height: 1.5;
     }
 
     .footer-brand .signature {
         font-style: italic;
-        color: var(--accent);
+        opacity: 0.9;
         margin-top: 12px;
         font-size: 13px;
     }
 
     .footer-column h5 {
-        font-size: 11px;
-        font-weight: 700;
-        color: var(--text-gray);
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #FFFFFF;
         text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 16px;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
     }
 
     .footer-column a {
         display: block;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         font-size: 14px;
-        color: var(--text-muted);
+        font-weight: 400;
+        color: #FFFFFF;
+        opacity: 0.85;
         text-decoration: none;
         margin-bottom: 12px;
-        padding: 4px 0;
-        transition: color 0.2s;
+        line-height: 1.5;
+        transition: opacity 0.2s;
     }
 
     .footer-column a:hover {
-        color: var(--text-white);
+        opacity: 1;
     }
 
     .footer-bottom {
         max-width: 1200px;
         margin: 32px auto 0;
         padding-top: 24px;
-        border-top: 1px solid var(--border);
         display: flex;
         flex-direction: column;
         gap: 12px;
         text-align: center;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         font-size: 12px;
-        color: var(--text-muted);
+        color: #FFFFFF;
+        opacity: 0.7;
     }
 
     .footer-bottom a {
-        color: var(--text-muted);
+        color: #FFFFFF;
         text-decoration: none;
     }
 
     .footer-bottom a:hover {
-        color: var(--text-white);
+        opacity: 1;
     }
 
     /* Tablet (min-width: 768px) */
