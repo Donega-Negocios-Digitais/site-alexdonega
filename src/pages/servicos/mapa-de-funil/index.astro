@@ -10,6 +10,7 @@ import FunnelPricing from '../../../components/funnel/FunnelPricing.astro';
 import FunnelGuaranteeDual from '../../../components/funnel/FunnelGuaranteeDual.astro';
 import FunnelFaq from '../../../components/funnel/FunnelFaq.astro';
 import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
+import '../../../styles/funnel.css';
 ---
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -319,7 +320,7 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
       </div>
     </div>
     <div class="section-cta">
-      <a href="#pricing" class="btn-secondary">
+      <a href="#pricing" class="btn-primary">
         Sim, meu negócio precisa disso
         <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -540,7 +541,7 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
       <!-- Diego Carmona -->
       <div class="vip-card vip-featured">
         <div class="vip-photo">
-          <img src="/img/testimonials/diego-carmona-nasdaq-ipo.webp" alt="Diego Carmona na Nasdaq" loading="lazy" />
+          <img src="/img/testimonials/diego-carmona-nasdaq-ipo.webp" alt="Diego Carmona na Nasdaq" width="340" height="320" loading="lazy" />
           <div class="vip-photo-glow"></div>
         </div>
         <div class="vip-info">
@@ -560,7 +561,7 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
       <!-- Sergio Barbosa -->
       <div class="vip-card">
         <div class="vip-photo">
-          <img src="/img/testimonials/sergio-barbosa-waseller-placa-10milhoes.webp" alt="Sergio Barbosa - Waseller" loading="lazy" />
+          <img src="/img/testimonials/sergio-barbosa-waseller-placa-10milhoes.webp" alt="Sergio Barbosa - Waseller" width="280" height="260" loading="lazy" />
           <div class="vip-photo-glow"></div>
         </div>
         <div class="vip-info">
@@ -579,7 +580,7 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
       <!-- JP Galvão -->
       <div class="vip-card">
         <div class="vip-photo">
-          <img src="/img/testimonials/jp-savings-club-evento.webp" alt="JP Galvão - Savings Club" loading="lazy" />
+          <img src="/img/testimonials/jp-savings-club-evento.webp" alt="JP Galvão - Savings Club" width="280" height="260" loading="lazy" />
           <div class="vip-photo-glow"></div>
         </div>
         <div class="vip-info">
@@ -598,7 +599,7 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
       <!-- Christian Barbosa -->
       <div class="vip-card">
         <div class="vip-photo">
-          <img src="/img/testimonials/christian-barbosa-neotriad-palestra.webp" alt="Christian Barbosa - Neotriad" loading="lazy" />
+          <img src="/img/testimonials/christian-barbosa-neotriad-palestra.webp" alt="Christian Barbosa - Neotriad" width="280" height="260" loading="lazy" />
           <div class="vip-photo-glow"></div>
         </div>
         <div class="vip-info">
@@ -638,12 +639,6 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
         <p class="destiny-warning">Infelizmente, muitos empreendedores fracassarão completamente.</p>
 
         <p class="destiny-highlight">Mas isso não precisa acontecer com você.</p>
-
-        <p>Você não precisa mais deixar o desempenho do seu funil ao acaso.</p>
-
-        <p>E não precisa arriscar seu tempo, energia ou dinheiro em um funil sobre o qual você não tem certeza.</p>
-
-        <p class="destiny-empower">Com o mapeamento, o destino do seu funil está em <strong>SUAS</strong> mãos.</p>
       </div>
 
       <div class="destiny-first">
@@ -664,9 +659,15 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
         </ul>
       </div>
 
-      <div class="destiny-reason">
-        <p>Porque com o mapeamento você pode prever o desempenho do seu funil...</p>
-        <p class="reason-highlight">E planeje seus lucros e seu sucesso com antecedência!</p>
+      <p class="destiny-empower">Com o mapeamento, o destino do seu funil está em <strong>SUAS</strong> mãos.</p>
+
+      <div class="section-cta">
+        <a href="#pricing" class="btn-primary">
+          Descobrir o destino do meu funil
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
@@ -689,201 +690,178 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
 </Layout>
 
 <style>
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  .text-gradient { background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(251, 146, 60) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .section-header { text-align: center; margin-bottom: 3rem; }
-  .section-eyebrow { display: inline-block; font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
-  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
-  .section-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; font-weight: 600; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3); }
-  .btn-primary.btn-large { padding: 1rem 2.5rem; font-size: 1rem; }
-  .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: white; font-weight: 600; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(255, 255, 255, 0.2); }
-  .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(249, 115, 22, 0.5); }
-  .btn-icon { width: 18px; height: 18px; margin-left: 0.5rem; }
-  .section-cta { margin-top: 4rem; display: flex; justify-content: center; }
-
-  /* SOCIAL PROOF STATS */
+  /* ── SOCIAL PROOF STATS ── */
   .funnel-social-proof-stats { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-  .stat-card { text-align: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem 1rem; transition: all 0.3s ease; }
+  .stat-card { text-align: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; }
   .stat-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
-  .stat-number { display: block; font-size: 2.5rem; font-weight: 800; color: rgb(249, 115, 22); line-height: 1; margin-bottom: 0.5rem; }
-  .stat-label { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
+  .stat-number { display: block; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: rgb(249, 115, 22); line-height: 1; margin-bottom: 0.5rem; }
+  .stat-label { font-family: var(--font-body); font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
 
-  /* PROBLEM */
+  /* ── PROBLEM ── */
   .funnel-problem { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .problem-content { max-width: 800px; margin: 0 auto; text-align: center; margin-top: -1rem; }
-  .problem-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 2rem; }
-  .problem-text p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 1rem; }
+  .problem-text p { font-family: var(--font-body); font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 1rem; }
   .problem-text .highlight { font-size: 1.25rem; color: white; margin: 1.5rem 0; }
   .problem-text .highlight strong { color: rgb(249, 115, 22); }
-  .problem-highlight { display: flex; align-items: center; gap: 0.75rem; background: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.2); border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; }
+  .problem-highlight { display: flex; align-items: center; gap: 0.75rem; background: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.2); border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; font-family: var(--font-body); font-size: 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; }
   .problem-highlight .highlight-icon { width: 24px; height: 24px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
   .problem-highlight .highlight-icon svg { width: 100%; height: 100%; color: rgb(250, 204, 21); }
   .problem-highlight strong { color: rgb(250, 204, 21); }
 
-  /* FALSE SOLUTION */
+  /* ── FALSE SOLUTION ── */
   .funnel-false-solution { padding: 6rem 0; }
   .false-solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
   .false-solution-card { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; }
   .false-solution-card:hover { transform: translateY(-4px); border-color: rgba(239, 68, 68, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
   .false-icon { width: 48px; height: 48px; background: rgba(239, 68, 68, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
   .false-icon svg { width: 24px; height: 24px; color: rgb(248, 113, 113); }
-  .false-solution-card h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+  .false-solution-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1rem; }
   .false-solution-card ul { list-style: none; padding: 0; margin: 0; }
-  .false-solution-card ul li { font-family: 'DM Sans', system-ui, sans-serif; position: relative; padding-left: 1.25rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin-bottom: 0.5rem; }
+  .false-solution-card ul li { font-family: var(--font-body); position: relative; padding-left: 1.25rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin-bottom: 0.5rem; }
   .false-solution-card ul li::before { content: '\2192'; position: absolute; left: 0; color: rgb(248, 113, 113); }
-  .false-solution-transition { font-family: 'DM Sans', system-ui, sans-serif; text-align: center; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); font-style: italic; margin-top: 3rem; }
+  .false-solution-transition { font-family: var(--font-body); text-align: center; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); font-style: italic; margin-top: 3rem; }
 
-  /* BEFORE & AFTER */
+  /* ── BEFORE & AFTER ── */
   .funnel-before-after { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
-  .before-after-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; align-items: start; }
-  .ba-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid; }
+  .before-after-grid { display: grid; grid-template-columns: 5fr auto 5fr; gap: 2rem; max-width: 900px; margin: 0 auto; align-items: start; }
+  .ba-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid; }
   .ba-title span { display: block; font-size: 0.85rem; font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.25rem; opacity: 0.7; }
   .ba-before-title { color: rgb(248, 113, 113); border-color: rgba(239, 68, 68, 0.3); }
   .ba-after-title { color: rgb(52, 211, 153); border-color: rgba(52, 211, 153, 0.3); }
   .ba-list { list-style: none; padding: 0; margin: 0; }
-  .ba-list li { font-family: 'DM Sans', system-ui, sans-serif; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; font-size: 1rem; color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+  .ba-list li { font-family: var(--font-body); display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; font-size: 1rem; color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
   .ba-list li:last-child { border-bottom: none; }
   .ba-list li svg { width: 20px; height: 20px; flex-shrink: 0; }
   .before-column .ba-list li svg { color: rgb(248, 113, 113); }
   .after-column .ba-list li svg { color: rgb(52, 211, 153); }
   .ba-divider { display: flex; align-items: center; justify-content: center; padding-top: 4rem; color: rgba(249, 115, 22, 0.5); }
 
-  /* WHAT */
+  /* ── WHAT ── */
   .funnel-what { padding: 6rem 0; }
   .what-content { max-width: 900px; margin: 0 auto; }
-  .what-intro { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); text-align: center; margin-bottom: 4rem; line-height: 1.6; }
+  .what-intro { font-family: var(--font-body); font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); text-align: center; margin-bottom: 4rem; line-height: 1.6; }
   .what-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 800px; margin: 0 auto; }
   .what-step { display: flex; align-items: center; gap: 2rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 2rem; position: relative; transition: all 0.3s ease; overflow: hidden; }
   .what-step:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(249, 115, 22, 0.2); transform: translateX(10px); }
   .step-icon { width: 64px; height: 64px; background: rgba(249, 115, 22, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .step-icon svg { width: 32px; height: 32px; color: rgb(249, 115, 22); }
-  .step-text h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
-  .step-text p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1rem; color: rgba(255, 255, 255, 0.6); line-height: 1.5; margin: 0; }
+  .step-text h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+  .step-text p { font-family: var(--font-body); font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.5; margin: 0; }
   .step-number { position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); font-size: 5rem; font-weight: 900; color: rgba(249, 115, 22, 0.03); pointer-events: none; line-height: 1; }
 
-  /* RESULTS */
+  /* ── RESULTS ── */
   .funnel-results { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
-  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 3rem auto 0; }
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 3rem auto 0; }
   .result-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden; }
   .result-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.5), transparent); opacity: 0; transition: opacity 0.3s; }
   .result-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); border-color: rgba(249, 115, 22, 0.3); }
   .result-card:hover::before { opacity: 1; }
-  .result-card .result-icon { width: 72px; height: 72px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(249, 115, 22, 0.1); border-radius: 16px; animation: bounce 2s infinite; }
+  .result-card .result-icon { width: 72px; height: 72px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(249, 115, 22, 0.1); border-radius: 16px; }
   .result-card .result-icon svg { width: 36px; height: 36px; color: rgb(249, 115, 22); }
   .result-leak .result-icon svg { color: rgb(239, 68, 68); }
   .result-scale .result-icon svg { color: rgb(52, 211, 153); }
   .result-profit .result-icon svg { color: rgb(249, 115, 22); }
-  @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-  .result-card h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 1rem; }
-  .result-card p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin: 0; }
+  .result-card h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+  .result-card p { font-family: var(--font-body); font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin: 0; }
   .result-card p strong { color: rgb(249, 115, 22); }
   .result-leak:hover { border-color: rgba(239, 68, 68, 0.4); }
   .result-scale:hover { border-color: rgba(52, 211, 153, 0.4); }
   .result-profit:hover { border-color: rgba(249, 115, 22, 0.4); }
 
-  /* AUDIENCE */
+  /* ── AUDIENCE ── */
   .funnel-audience { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .audience-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 1000px; margin: 4rem auto 0; }
   .audience-tag { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 100px; padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.3s ease; }
   .audience-tag:hover { background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
   .tag-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; color: rgb(249, 115, 22); flex-shrink: 0; }
   .tag-icon svg { width: 100%; height: 100%; }
-  .audience-tag h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1rem; font-weight: 600; color: white; margin: 0; }
+  .audience-tag h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: white; margin: 0; }
 
-
-
-  /* SUBSTITUTION TABLE */
+  /* ── SUBSTITUTION TABLE ── */
   .funnel-substitution { padding: 6rem 0; }
   .substitution-table-wrapper { max-width: 800px; margin: 0 auto; }
   .substitution-table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 12px; overflow: hidden; }
   .substitution-table th, .substitution-table td { padding: 1.25rem 1.5rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-  .substitution-table th { background: rgba(255, 255, 255, 0.05); font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 0.05em; }
-  .substitution-table td { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
+  .substitution-table th { background: rgba(255, 255, 255, 0.05); font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 0.05em; }
+  .substitution-table td { font-family: var(--font-body); font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
   .substitution-table .col-without { color: rgb(248, 113, 113); font-weight: 600; }
   .substitution-table .col-with { color: rgb(52, 211, 153); font-weight: 600; }
   .substitution-table tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
-  .substitution-total { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-align: center; font-size: 1.5rem; font-weight: 800; color: rgb(249, 115, 22); margin-top: 2rem; }
+  .substitution-total { font-family: var(--font-heading); text-align: center; font-size: 1.5rem; font-weight: 800; color: rgb(249, 115, 22); margin-top: 2rem; }
 
-  /* WHY CHOOSE */
+  /* ── WHY CHOOSE ── */
   .funnel-why-choose { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
   .why-card { text-align: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem 1.5rem; transition: all 0.3s ease; }
   .why-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
   .why-icon { width: 56px; height: 56px; margin: 0 auto 1.25rem; background: rgba(249, 115, 22, 0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
   .why-icon svg { width: 28px; height: 28px; color: rgb(249, 115, 22); }
-  .why-card h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
-  .why-card p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.5; }
+  .why-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+  .why-card p { font-family: var(--font-body); font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin: 0; line-height: 1.5; }
 
-  /* SUCCESS GUARANTEE */
+  /* ── SUCCESS GUARANTEE ── */
   .funnel-success-guarantee { padding: 6rem 0; }
   .guarantee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
   .guarantee-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; }
   .guarantee-card:hover { transform: translateY(-4px); border-color: rgba(52, 211, 153, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
   .guarantee-icon { width: 48px; height: 48px; background: rgba(52, 211, 153, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
   .guarantee-icon svg { width: 24px; height: 24px; color: rgb(52, 211, 153); }
-  .guarantee-card h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+  .guarantee-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1rem; }
   .guarantee-card ul { list-style: none; padding: 0; margin: 0; }
-  .guarantee-card ul li { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; padding: 0.35rem 0; padding-left: 1rem; position: relative; }
+  .guarantee-card ul li { font-family: var(--font-body); font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; padding: 0.35rem 0; padding-left: 1rem; position: relative; }
   .guarantee-card ul li::before { content: '\2022'; position: absolute; left: 0; color: rgb(52, 211, 153); }
 
-  /* VIP TESTIMONIALS */
+  /* ── VIP TESTIMONIALS ── */
   .funnel-vip-testimonials { padding: 6rem 0; position: relative; overflow: hidden; }
   .funnel-vip-testimonials::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: 80%; background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.04) 0%, transparent 70%); pointer-events: none; }
-
   .vip-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-
   .vip-card { display: grid; grid-template-columns: 280px 1fr; position: relative; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
   .vip-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(249, 115, 22, 0.06); }
-
   .vip-card::after { content: ''; position: absolute; inset: -1px; border-radius: 21px; padding: 1px; background: linear-gradient(135deg, rgba(249, 115, 22, 0.3), transparent 50%, rgba(249, 115, 22, 0.15)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
   .vip-card:hover::after { opacity: 1; }
-
   .vip-card.vip-featured { grid-template-columns: 340px 1fr; border-color: rgba(249, 115, 22, 0.15); background: rgba(249, 115, 22, 0.03); }
-
   .vip-photo { position: relative; overflow: hidden; min-height: 260px; }
   .vip-featured .vip-photo { min-height: 320px; }
   .vip-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
   .vip-card:hover .vip-photo img { transform: scale(1.04); }
   .vip-photo-glow { position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, rgba(10, 10, 10, 0.8) 100%); pointer-events: none; }
-
   .vip-info { padding: 2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 0.4rem; }
-
   .vip-metric { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.75rem; }
-  .vip-metric-value { font-size: 2.5rem; font-weight: 800; color: rgb(249, 115, 22); line-height: 1; }
+  .vip-metric-value { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: rgb(249, 115, 22); line-height: 1; }
   .vip-featured .vip-metric-value { font-size: 3rem; }
-  .vip-metric-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.45); }
-
-  .vip-name { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.5rem; font-weight: 700; color: white; margin: 0; }
+  .vip-metric-label { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.6); }
+  .vip-name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: white; margin: 0; }
   .vip-featured .vip-name { font-size: 1.75rem; }
-  .vip-role { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(255, 255, 255, 0.5); margin: 0; }
-  .vip-role-highlight { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.8rem; color: rgba(249, 115, 22, 0.8); font-weight: 600; margin: 0; }
-  .vip-desc { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); line-height: 1.7; margin: 0.5rem 0 0; }
+  .vip-role { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: rgba(255, 255, 255, 0.6); margin: 0; }
+  .vip-role-highlight { font-family: var(--font-body); font-size: 0.8rem; color: rgba(249, 115, 22, 0.8); font-weight: 600; margin: 0; }
+  .vip-desc { font-family: var(--font-body); font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); line-height: 1.7; margin: 0.5rem 0 0; }
   .vip-featured .vip-desc { font-size: 0.95rem; }
 
-  /* DESTINY */
-  .funnel-destiny { padding: 8rem 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(249, 115, 22, 0.03) 100%); position: relative; overflow: hidden; }
+  /* ── DESTINY ── */
+  .funnel-destiny { padding: 6rem 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(249, 115, 22, 0.03) 100%); position: relative; overflow: hidden; }
   .funnel-destiny::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: 80vw; background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%); filter: blur(60px); pointer-events: none; }
   .destiny-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
-  .destiny-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: white; text-align: center; line-height: 1.2; margin-bottom: 3rem; }
-  .destiny-text { margin-bottom: 3rem; }
-  .destiny-text p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 1.25rem; }
+  .destiny-title { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: white; text-align: center; line-height: 1.2; margin-bottom: 2.5rem; }
+  .destiny-text { margin-bottom: 2rem; }
+  .destiny-text p { font-family: var(--font-body); font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 1.25rem; }
   .destiny-lead { font-size: 1.25rem !important; color: rgba(255, 255, 255, 0.8) !important; font-weight: 500; }
   .destiny-warning { color: rgba(239, 68, 68, 0.9) !important; font-weight: 500; }
   .destiny-highlight { color: white !important; font-size: 1.25rem !important; font-weight: 600; }
-  .destiny-empower { font-size: 1.375rem !important; color: white !important; font-weight: 600; text-align: center; margin-top: 2rem !important; }
+  .destiny-empower { font-family: var(--font-heading); font-size: 1.375rem !important; color: white !important; font-weight: 600; text-align: center; margin-top: 2rem !important; margin-bottom: 2rem !important; }
   .destiny-empower strong { color: rgb(249, 115, 22); }
   .destiny-first { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
-  .first-badge { display: inline-block; background: rgba(249, 115, 22, 0.15); color: rgb(249, 115, 22); font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .first-badge { display: inline-block; background: rgba(249, 115, 22, 0.15); color: rgb(249, 115, 22); font-family: var(--font-heading); font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .first-list { list-style: none; padding: 0; margin: 0; }
-  .first-list li { font-family: 'DM Sans', system-ui, sans-serif; display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; font-size: 1.125rem; color: rgba(255, 255, 255, 0.8); line-height: 1.5; }
+  .first-list li { font-family: var(--font-body); display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; font-size: 1.125rem; color: rgba(255, 255, 255, 0.8); line-height: 1.5; }
   .first-list li:last-child { margin-bottom: 0; }
   .first-list svg { width: 24px; height: 24px; color: rgb(52, 211, 153); flex-shrink: 0; margin-top: 0.1rem; }
-  .destiny-reason { text-align: center; margin-bottom: 3rem; }
-  .destiny-reason p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 0.75rem; }
-  .reason-highlight { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.375rem !important; color: white !important; font-weight: 700; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .vip-card { grid-template-columns: 1fr; }
+    .vip-card.vip-featured { grid-template-columns: 1fr; }
+  }
 
   @media (max-width: 768px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -892,8 +870,6 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
     .ba-divider { padding-top: 0; transform: rotate(90deg); }
     .results-grid { grid-template-columns: 1fr; }
     .guarantee-grid { grid-template-columns: 1fr; }
-    .vip-card { grid-template-columns: 1fr; }
-    .vip-card.vip-featured { grid-template-columns: 1fr; }
     .vip-photo { min-height: 220px; }
     .vip-featured .vip-photo { min-height: 260px; }
     .vip-photo-glow { background: linear-gradient(to top, rgba(10, 10, 10, 0.8) 0%, transparent 60%); }
@@ -917,9 +893,9 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
 
 <!-- Modal de Captura de Leads -->
 <div id="modal-overlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
-  <div id="modal-container" class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 relative" style="max-height: 90vh; overflow-y: auto;">
+  <div id="modal-container" class="rounded-3xl shadow-2xl max-w-lg w-full p-8 relative" style="max-height: 90vh; overflow-y: auto; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1);">
     <!-- Botão fechar -->
-    <button id="modal-close" type="button" aria-label="Fechar modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+    <button id="modal-close" type="button" aria-label="Fechar modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 transition-colors">
       <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
       </svg>
@@ -927,54 +903,63 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
 
     <!-- Header -->
     <div class="mb-6">
-      <p class="text-sm font-semibold uppercase tracking-widest text-orange-500 mb-1">Pacote selecionado</p>
-      <h2 id="modal-titulo" class="text-2xl font-bold text-gray-900">—</h2>
-      <p class="text-gray-500 text-sm mt-1">Preencha seus dados e entraremos em contato para confirmar sua vaga.</p>
+      <p class="text-sm font-semibold uppercase tracking-widest mb-1" style="color: rgb(249, 115, 22);">Pacote selecionado</p>
+      <h2 id="modal-titulo" class="text-2xl font-bold text-white">—</h2>
+      <p class="text-sm mt-1" style="color: rgba(255,255,255,0.6);">Preencha seus dados e entraremos em contato para confirmar sua vaga.</p>
     </div>
 
     <!-- Alert de erro -->
-    <div id="modal-alert" class="hidden bg-red-50 border border-red-400 text-red-700 rounded-xl p-3 mb-4 text-sm"></div>
+    <div id="modal-alert" class="hidden rounded-xl p-3 mb-4 text-sm" style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: rgb(248,113,113);"></div>
 
     <!-- Formulário -->
     <form id="modal-form" novalidate>
       <!-- Nome -->
       <div class="mb-4">
-        <label for="campo-nome" class="block text-sm font-medium text-gray-700 mb-1">Nome completo</label>
+        <label for="campo-nome" class="block text-sm font-medium mb-1" style="color: rgba(255,255,255,0.8);">Nome completo</label>
         <input
           id="campo-nome"
           type="text"
           autocomplete="name"
           placeholder="Seu nome completo"
-          class="border border-gray-200 rounded-xl px-4 py-3 w-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-colors"
+          class="w-full rounded-xl px-4 py-3 text-white transition-colors"
+          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);"
+          onfocus="this.style.borderColor='rgb(249,115,22)'; this.style.boxShadow='0 0 0 2px rgba(249,115,22,0.2)';"
+          onblur="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.boxShadow='none';"
         />
-        <p id="erro-nome" class="hidden text-red-500 text-xs mt-1"></p>
+        <p id="erro-nome" class="hidden text-xs mt-1" style="color: rgb(248,113,113);"></p>
       </div>
 
       <!-- WhatsApp -->
       <div class="mb-4">
-        <label for="campo-whatsapp" class="block text-sm font-medium text-gray-700 mb-1">WhatsApp</label>
+        <label for="campo-whatsapp" class="block text-sm font-medium mb-1" style="color: rgba(255,255,255,0.8);">WhatsApp</label>
         <input
           id="campo-whatsapp"
           type="tel"
           autocomplete="tel"
           placeholder="(11) 99999-9999"
           maxlength="15"
-          class="border border-gray-200 rounded-xl px-4 py-3 w-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-colors"
+          class="w-full rounded-xl px-4 py-3 text-white transition-colors"
+          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);"
+          onfocus="this.style.borderColor='rgb(249,115,22)'; this.style.boxShadow='0 0 0 2px rgba(249,115,22,0.2)';"
+          onblur="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.boxShadow='none';"
         />
-        <p id="erro-whatsapp" class="hidden text-red-500 text-xs mt-1"></p>
+        <p id="erro-whatsapp" class="hidden text-xs mt-1" style="color: rgb(248,113,113);"></p>
       </div>
 
       <!-- E-mail -->
       <div class="mb-6">
-        <label for="campo-email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+        <label for="campo-email" class="block text-sm font-medium mb-1" style="color: rgba(255,255,255,0.8);">E-mail</label>
         <input
           id="campo-email"
           type="email"
           autocomplete="email"
           placeholder="seu@email.com"
-          class="border border-gray-200 rounded-xl px-4 py-3 w-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-colors"
+          class="w-full rounded-xl px-4 py-3 text-white transition-colors"
+          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);"
+          onfocus="this.style.borderColor='rgb(249,115,22)'; this.style.boxShadow='0 0 0 2px rgba(249,115,22,0.2)';"
+          onblur="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.boxShadow='none';"
         />
-        <p id="erro-email" class="hidden text-red-500 text-xs mt-1"></p>
+        <p id="erro-email" class="hidden text-xs mt-1" style="color: rgb(248,113,113);"></p>
       </div>
 
       <!-- Botão submit -->
@@ -982,7 +967,8 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
         id="modal-submit"
         type="submit"
         disabled
-        class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 px-6 rounded-xl transition-all opacity-50 cursor-not-allowed"
+        class="w-full flex items-center justify-center gap-2 text-white font-semibold py-3 px-6 rounded-xl transition-all cursor-not-allowed"
+        style="background: linear-gradient(135deg, rgb(249,115,22), rgb(234,88,12)); opacity: 0.5;"
       >
         <svg id="modal-spinner" class="hidden animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
@@ -990,7 +976,20 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
         </svg>
         <span id="modal-submit-text">Solicitar Acesso</span>
       </button>
+      <p id="modal-submit-hint" class="text-center text-xs mt-2" style="color: rgba(255,255,255,0.4);">Preencha todos os campos para continuar</p>
     </form>
+
+    <!-- Success State (hidden by default) -->
+    <div id="modal-success" class="hidden text-center py-8">
+      <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: rgba(52,211,153,0.15);">
+        <svg width="32" height="32" fill="none" stroke="rgb(52,211,153)" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-white mb-2">Solicitação enviada!</h3>
+      <p class="text-sm mb-1" style="color: rgba(255,255,255,0.7);">Entraremos em contato em breve.</p>
+      <p id="modal-redirect-countdown" class="text-xs" style="color: rgba(255,255,255,0.4);">Redirecionando em <span id="countdown-number">3</span>s...</p>
+    </div>
   </div>
 </div>
 
@@ -1016,8 +1015,11 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
     const alertEl = document.getElementById('modal-alert') as HTMLElement;
     const submitBtn = document.getElementById('modal-submit') as HTMLButtonElement;
     const submitText = document.getElementById('modal-submit-text') as HTMLElement;
+    const submitHint = document.getElementById('modal-submit-hint') as HTMLElement;
     const spinner = document.getElementById('modal-spinner') as HTMLElement;
     const toastSucesso = document.getElementById('toast-sucesso') as HTMLElement;
+    const modalSuccess = document.getElementById('modal-success') as HTMLElement;
+    const countdownNumber = document.getElementById('countdown-number') as HTMLElement;
 
     const campoNome = document.getElementById('campo-nome') as HTMLInputElement;
     const campoWhatsApp = document.getElementById('campo-whatsapp') as HTMLInputElement;
@@ -1025,6 +1027,11 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
     const erroNome = document.getElementById('erro-nome') as HTMLElement;
     const erroWhatsApp = document.getElementById('erro-whatsapp') as HTMLElement;
     const erroEmail = document.getElementById('erro-email') as HTMLElement;
+
+    const INPUT_ERROR_BORDER = 'rgb(239, 68, 68)';
+    const INPUT_NORMAL_BORDER = 'rgba(255,255,255,0.15)';
+    const INPUT_ERROR_BG = 'rgba(239,68,68,0.08)';
+    const INPUT_NORMAL_BG = 'rgba(255,255,255,0.05)';
 
     // --- Máscara WhatsApp ---
     function mascaraWhatsApp(v: string): string {
@@ -1066,15 +1073,15 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
     }
 
     function setErro(input: HTMLInputElement, erroEl: HTMLElement, msg: string) {
-      input.classList.add('border-red-400', 'bg-red-50');
-      input.classList.remove('border-gray-200');
+      input.style.borderColor = INPUT_ERROR_BORDER;
+      input.style.background = INPUT_ERROR_BG;
       erroEl.textContent = msg;
       erroEl.classList.remove('hidden');
     }
 
     function limparErro(input: HTMLInputElement, erroEl: HTMLElement) {
-      input.classList.remove('border-red-400', 'bg-red-50');
-      input.classList.add('border-gray-200');
+      input.style.borderColor = INPUT_NORMAL_BORDER;
+      input.style.background = INPUT_NORMAL_BG;
       erroEl.classList.add('hidden');
       erroEl.textContent = '';
     }
@@ -1084,9 +1091,9 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
         && campoWhatsApp.value.replace(/\D/g, '').length >= 10
         && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campoEmail.value.trim());
       submitBtn.disabled = !valido;
-      submitBtn.classList.toggle('opacity-50', !valido);
-      submitBtn.classList.toggle('cursor-not-allowed', !valido);
-      submitBtn.classList.toggle('hover:brightness-110', valido);
+      submitBtn.style.opacity = valido ? '1' : '0.5';
+      submitBtn.style.cursor = valido ? 'pointer' : 'not-allowed';
+      if (submitHint) submitHint.style.display = valido ? 'none' : 'block';
     }
 
     // --- Eventos de input ---
@@ -1105,6 +1112,8 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
         titulo.textContent = pacoteAtual;
         alertEl.classList.add('hidden');
         alertEl.textContent = '';
+        modalSuccess.classList.add('hidden');
+        form.style.display = '';
         overlay.classList.remove('hidden');
         overlay.classList.add('flex');
         setTimeout(() => campoNome.focus(), 50);
@@ -1117,8 +1126,8 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
       overlay.classList.remove('flex');
       form.reset();
       [campoNome, campoWhatsApp, campoEmail].forEach(inp => {
-        inp.classList.remove('border-red-400', 'bg-red-50');
-        inp.classList.add('border-gray-200');
+        inp.style.borderColor = INPUT_NORMAL_BORDER;
+        inp.style.background = INPUT_NORMAL_BG;
       });
       [erroNome, erroWhatsApp, erroEmail].forEach(el => {
         el.classList.add('hidden');
@@ -1127,12 +1136,39 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
       alertEl.classList.add('hidden');
       alertEl.textContent = '';
       submitBtn.disabled = true;
-      submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      submitBtn.style.opacity = '0.5';
+      submitBtn.style.cursor = 'not-allowed';
+      if (submitHint) submitHint.style.display = 'block';
     }
 
     closeBtn.addEventListener('click', fecharModal);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) fecharModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharModal(); });
+
+    // --- Friendly error messages ---
+    function getFriendlyError(errorMsg: string): string {
+      const msg = errorMsg.toLowerCase();
+      if (msg.includes('duplicate') || msg.includes('unique')) return 'Você já enviou uma solicitação. Entraremos em contato em breve.';
+      if (msg.includes('network') || msg.includes('fetch')) return 'Erro de conexão. Verifique sua internet e tente novamente.';
+      if (msg.includes('rate limit')) return 'Muitas tentativas. Aguarde um momento e tente novamente.';
+      return 'Ocorreu um erro inesperado. Tente novamente ou entre em contato pelo WhatsApp.';
+    }
+
+    // --- Success with countdown ---
+    function showSuccess() {
+      form.style.display = 'none';
+      modalSuccess.classList.remove('hidden');
+      let countdown = 3;
+      countdownNumber.textContent = String(countdown);
+      const interval = setInterval(() => {
+        countdown--;
+        countdownNumber.textContent = String(countdown);
+        if (countdown <= 0) {
+          clearInterval(interval);
+          window.location.href = 'https://youtu.be/Mqfwbf3X8SA?si=_Jzi71GbFJ9mYXfL';
+        }
+      }, 1000);
+    }
 
     // --- Submit ---
     form.addEventListener('submit', async (e) => {
@@ -1150,7 +1186,8 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
 
       alertEl.classList.add('hidden');
       submitBtn.disabled = true;
-      submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      submitBtn.style.opacity = '0.5';
+      submitBtn.style.cursor = 'not-allowed';
       spinner.classList.remove('hidden');
       submitText.textContent = 'Enviando...';
 
@@ -1184,14 +1221,15 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
 
       if (error) {
         console.error('[Modal] Erro Supabase:', error);
-        alertEl.textContent = `Erro: ${error.message}`;
+        alertEl.textContent = getFriendlyError(error.message);
         alertEl.classList.remove('hidden');
         submitBtn.disabled = false;
-        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
         return;
       }
 
-      window.location.href = 'https://youtu.be/Mqfwbf3X8SA?si=_Jzi71GbFJ9mYXfL';
+      showSuccess();
     });
   })();
 </script>

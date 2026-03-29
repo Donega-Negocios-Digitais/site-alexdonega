@@ -1,0 +1,165 @@
+/*
+ * Funnel Page — Shared Styles
+ * Single source of truth for typography, layout, buttons, and accessibility.
+ * Imported by /servicos/mapa-de-funil/index.astro
+ */
+
+/* ──────────────────────────── Typography Tokens ──────────────────────────── */
+:root {
+  --font-heading: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-accent: 'Syne', system-ui, sans-serif;
+  --color-accent: rgb(249, 115, 22);
+  --color-accent-hover: rgb(251, 146, 60);
+  --color-success: rgb(52, 211, 153);
+  --color-danger: rgb(239, 68, 68);
+  --color-warning: rgb(250, 204, 21);
+}
+
+/* ──────────────────────────── Shared Layout ──────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ──────────────────────────── Section Header ──────────────────────────── */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ──────────────────────────── Text Gradient ──────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(251, 146, 60) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ──────────────────────────── Buttons ──────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%);
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid rgb(249, 115, 22);
+  outline-offset: 2px;
+}
+
+.btn-primary.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(249, 115, 22, 0.5);
+}
+
+.btn-secondary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid rgb(249, 115, 22);
+  outline-offset: 2px;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.section-cta {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* ──────────────────────────── Focus-visible (Accessibility) ──────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ──────────────────────────── Responsive Eyebrow ──────────────────────────── */
+@media (max-width: 640px) {
+  .section-eyebrow {
+    font-size: 0.75rem;
+  }
+}

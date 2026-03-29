@@ -77,12 +77,6 @@ const {
 </section>
 
 <style>
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  .section-header { text-align: center; margin-bottom: 3rem; }
-  .section-eyebrow { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
-  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
-  .section-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
-
   .funnel-faq { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .faq-contact-channels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto 3rem; }
   .faq-channel { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.03); text-decoration: none; transition: all 0.3s ease; }
@@ -93,8 +87,8 @@ const {
   .faq-channel-whatsapp .faq-channel-icon { background: rgba(37, 211, 102, 0.15); color: #25D366; }
   .faq-channel-email .faq-channel-icon { background: rgba(249, 115, 22, 0.15); color: rgb(249, 115, 22); }
   .faq-channel-info { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
-  .faq-channel-label { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.85rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; }
-  .faq-channel-action { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .faq-channel-label { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; }
+  .faq-channel-action { font-family: var(--font-body); font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .faq-channel-arrow { color: rgba(255, 255, 255, 0.3); font-size: 1.25rem; margin-left: auto; flex-shrink: 0; transition: transform 0.3s ease; }
   .faq-channel:hover .faq-channel-arrow { transform: translateX(4px); color: rgba(255, 255, 255, 0.6); }
   .faq-channel-copy { margin-left: auto; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(249, 115, 22, 0.3); background: rgba(249, 115, 22, 0.1); color: rgb(249, 115, 22); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; flex-shrink: 0; }
@@ -106,7 +100,7 @@ const {
   .faq-item summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; cursor: pointer; list-style: none; }
   .faq-item summary::-webkit-details-marker { display: none; }
   .faq-item summary::marker { display: none; content: ''; }
-  .faq-item summary h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: white; font-size: 1.125rem; font-weight: 600; margin: 0; }
+  .faq-item summary h3 { font-family: var(--font-heading); color: white; font-size: 1.125rem; font-weight: 600; margin: 0; }
   .faq-toggle { width: 28px; height: 28px; border-radius: 50%; background: rgba(255, 255, 255, 0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-left: 1rem; position: relative; transition: all 0.3s ease; }
   .faq-toggle::before, .faq-toggle::after { content: ''; position: absolute; background: rgba(255, 255, 255, 0.5); border-radius: 2px; transition: all 0.3s ease; }
   .faq-toggle::before { width: 12px; height: 2px; }
@@ -114,7 +108,7 @@ const {
   .faq-item[open] .faq-toggle { background: rgba(249, 115, 22, 0.2); }
   .faq-item[open] .faq-toggle::before { background: rgb(249, 115, 22); }
   .faq-item[open] .faq-toggle::after { height: 0; opacity: 0; }
-  .faq-item p { font-family: 'DM Sans', system-ui, sans-serif; color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin: 0; padding: 0 2rem 1.5rem; }
+  .faq-item p { font-family: var(--font-body); color: rgba(255, 255, 255, 0.7); line-height: 1.7; margin: 0; padding: 0 2rem 1.5rem; }
 
   @media (max-width: 640px) {
     .faq-contact-channels { grid-template-columns: 1fr; }

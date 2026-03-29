@@ -115,26 +115,17 @@ const arrowSvg = '<svg class="btn-icon" fill="none" stroke="currentColor" viewBo
 </section>
 
 <style>
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  .section-header { text-align: center; margin-bottom: 3rem; }
-  .section-eyebrow { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
-  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
-  .section-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; font-weight: 600; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3); }
-  :global(.btn-icon) { width: 18px; height: 18px; margin-left: 0.5rem; }
-
   .funnel-package-complete { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .package-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
-  .package-section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid rgba(249, 115, 22, 0.3); display: inline-block; }
+  .package-section-title { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid rgba(249, 115, 22, 0.3); display: inline-block; }
   .package-list { list-style: none; padding: 0; margin: 0; }
   .package-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; }
   .package-list li:hover { padding-left: 0.5rem; border-color: rgba(249, 115, 22, 0.15); }
   .package-list li:last-child { border-bottom: none; }
   .package-check { width: 28px; height: 28px; background: rgba(52, 211, 153, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
   .package-check :global(svg) { width: 14px; height: 14px; color: rgb(52, 211, 153); }
-  .package-item-content strong { font-family: 'DM Sans', system-ui, sans-serif; display: block; font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
-  .package-item-content span { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.875rem; color: rgba(255, 255, 255, 0.5); line-height: 1.4; }
+  .package-item-content strong { font-family: var(--font-body); display: block; font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
+  .package-item-content span { font-family: var(--font-body); font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); line-height: 1.5; }
   .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .metric-card { display: flex; align-items: flex-start; gap: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 1.25rem; transition: all 0.3s ease; }
   .metric-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(249, 115, 22, 0.2); transform: translateY(-2px); }
@@ -142,15 +133,15 @@ const arrowSvg = '<svg class="btn-icon" fill="none" stroke="currentColor" viewBo
   .metric-card-highlight:hover { background: rgba(249, 115, 22, 0.12); border-color: rgb(249, 115, 22); }
   .metric-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(255, 255, 255, 0.05); }
   .metric-icon :global(svg) { width: 22px; height: 22px; }
-  .metric-icon.revenue svg { color: rgb(52, 211, 153); }
-  .metric-icon.traffic svg { color: rgb(59, 130, 246); }
-  .metric-icon.conversion svg { color: rgb(168, 85, 247); }
-  .metric-icon.acquisition svg { color: rgb(236, 72, 153); }
-  .metric-icon.retention svg { color: rgb(34, 211, 238); }
-  .metric-icon.growth svg { color: rgb(74, 222, 128); }
-  .metric-icon.roi svg { color: rgb(249, 115, 22); }
-  .metric-content h4 { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
-  .metric-content p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; }
+  .metric-icon.revenue svg { color: var(--color-accent); }
+  .metric-icon.traffic svg { color: var(--color-accent); }
+  .metric-icon.conversion svg { color: rgba(255, 255, 255, 0.7); }
+  .metric-icon.acquisition svg { color: var(--color-accent); }
+  .metric-icon.retention svg { color: rgba(255, 255, 255, 0.7); }
+  .metric-icon.growth svg { color: var(--color-accent); }
+  .metric-icon.roi svg { color: var(--color-accent); }
+  .metric-content h4 { font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
+  .metric-content p { font-family: var(--font-body); font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); margin: 0; line-height: 1.5; }
   .package-cta { margin-top: 2.5rem; text-align: center; }
 
   @media (max-width: 1024px) {
