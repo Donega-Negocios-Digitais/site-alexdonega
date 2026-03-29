@@ -1,0 +1,100 @@
+---
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  guarantees?: {
+    days: string;
+    type: string;
+    variant: string;
+    text: string;
+  }[];
+  disclaimer?: string;
+  promise?: string;
+}
+
+const {
+  eyebrow = 'Garantia',
+  title = 'Duas garantias. Porque confiamos na metodologia.',
+  guarantees = [
+    {
+      days: '7 dias',
+      type: 'Incondicional',
+      variant: 'incondicional',
+      text: 'Entrou, acessou as plataformas, viu os primeiros encontros, e não fez sentido para o seu momento? <strong>Devolução total, sem perguntas, sem burocracia.</strong> 7 dias a partir do acesso.',
+    },
+    {
+      days: '30 dias',
+      type: 'Condicional',
+      variant: 'condicional',
+      text: 'Se em 30 dias você seguiu o programa, participou dos encontros, implementou o que foi orientado, e sua operação não estiver configurada e rodando com ao menos um produto ou serviço no ar: <strong>devolvemos 100%.</strong>',
+    },
+  ],
+  disclaimer = '<strong>Não é garantia de resultado financeiro.</strong> É garantia de que o sistema funciona quando você aplica.',
+  promise = 'Se não funcionar para você, não ficamos com seu dinheiro. Se funcionar (e funciona quando você implementa), você opera um negócio diferente em 6 meses.',
+} = Astro.props;
+
+const shieldIcons: Record<string, string> = {
+  incondicional: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>',
+  condicional: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
+};
+---
+
+<section class="funnel-guarantee-dual">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+    </div>
+    <div class="guarantee-dual-grid">
+      {guarantees.map((g) => (
+        <div class={`guarantee-dual-card guarantee-${g.variant}`}>
+          <div class="guarantee-dual-badge">
+            <span class="badge-days">{g.days}</span>
+            <span class="badge-type">{g.type}</span>
+          </div>
+          <div class="guarantee-dual-icon" set:html={shieldIcons[g.variant] || shieldIcons.incondicional} />
+          <p class="guarantee-dual-text" set:html={g.text} />
+        </div>
+      ))}
+    </div>
+    <div class="guarantee-dual-footer">
+      <p class="guarantee-disclaimer" set:html={disclaimer} />
+      <p class="guarantee-promise">{promise}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-eyebrow { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+
+  .funnel-guarantee-dual { padding: 6rem 0; background: rgba(255, 255, 255, 0.01); }
+  .guarantee-dual-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
+  .guarantee-dual-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; transition: all 0.4s ease; }
+  .guarantee-dual-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); }
+  .guarantee-dual-card.guarantee-incondicional:hover { border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 20px 50px rgba(52, 211, 153, 0.1); }
+  .guarantee-dual-card.guarantee-condicional:hover { border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 20px 50px rgba(249, 115, 22, 0.1); }
+  .guarantee-dual-badge { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; margin-bottom: 1.5rem; }
+  .guarantee-dual-badge .badge-days { font-size: 2.5rem; font-weight: 800; color: white; line-height: 1; }
+  .guarantee-dual-badge .badge-type { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.5); }
+  .guarantee-incondicional .guarantee-dual-badge .badge-days { color: rgb(52, 211, 153); }
+  .guarantee-condicional .guarantee-dual-badge .badge-days { color: rgb(249, 115, 22); }
+  .guarantee-dual-icon { width: 64px; height: 64px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; }
+  .guarantee-dual-icon :global(svg) { width: 100%; height: 100%; }
+  .guarantee-incondicional .guarantee-dual-icon :global(svg) { color: rgb(52, 211, 153); }
+  .guarantee-condicional .guarantee-dual-icon :global(svg) { color: rgb(249, 115, 22); }
+  .guarantee-dual-text { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.7; text-align: center; margin: 0; }
+  .guarantee-dual-text strong { color: white; }
+  .guarantee-incondicional .guarantee-dual-text strong { color: rgb(52, 211, 153); }
+  .guarantee-condicional .guarantee-dual-text strong { color: rgb(249, 115, 22); }
+  .guarantee-dual-footer { max-width: 700px; margin: 3rem auto 0; text-align: center; }
+  .guarantee-disclaimer { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin: 0 0 1rem; }
+  .guarantee-disclaimer strong { color: rgba(255, 255, 255, 0.8); }
+  .guarantee-promise { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.125rem; color: white; line-height: 1.7; margin: 0; font-weight: 500; }
+
+  @media (max-width: 768px) {
+    .guarantee-dual-grid { grid-template-columns: 1fr; }
+  }
+</style>

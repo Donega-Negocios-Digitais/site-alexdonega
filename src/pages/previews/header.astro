@@ -135,6 +135,13 @@ import Header from '../../components/layout/Header.astro';
       overflow-x: auto;
     }
   </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe .info-section { display: none !important; }
+    body.in-iframe .demo-content { padding: 1.5rem !important; }
+    body.in-iframe .demo-content h1 { font-size: 1rem !important; }
+    body.in-iframe .demo-content p { font-size: 0.75rem !important; }
+  </style>
 </head>
 <body>
   <Header />
@@ -179,5 +186,8 @@ import Header from '../../components/layout/Header.astro';
       </div>
     </div>
   </main>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

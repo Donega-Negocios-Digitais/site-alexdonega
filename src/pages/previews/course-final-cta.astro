@@ -146,6 +146,12 @@ import CourseFinalCta from '../../components/course/CourseFinalCta.astro';
       font-size: 0.8125rem;
     }
   </style>
+  <style is:inline>
+    body.in-iframe .page-header,
+    body.in-iframe .divider,
+    body.in-iframe .section-label,
+    body.in-iframe .info-section { display: none !important; }
+  </style>
 </head>
 <body>
   <div class="page-header">
@@ -275,5 +281,8 @@ import CourseFinalCta from '../../components/course/CourseFinalCta.astro';
       </div>
     </div>
   </div>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

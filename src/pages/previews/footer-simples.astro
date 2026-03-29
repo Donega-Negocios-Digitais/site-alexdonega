@@ -120,6 +120,10 @@ import FooterSimples from '../../components/layout/FooterSimples.astro';
       overflow-x: auto;
     }
   </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe main { display: none !important; }
+  </style>
 </head>
 <body>
   <a href="/previews/" class="back-link">
@@ -158,5 +162,8 @@ import FooterSimples from '../../components/layout/FooterSimples.astro';
   </main>
   
   <FooterSimples />
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

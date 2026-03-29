@@ -139,6 +139,16 @@ import PostCard from '../../components/blog/PostCard.astro';
       font-size: 0.8125rem;
     }
   </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe header,
+    body.in-iframe .section:has(.props-table),
+    body.in-iframe .section:has(.code-block) { display: none !important; }
+    body.in-iframe .container { max-width: 100%; }
+    body.in-iframe body { padding: 1rem !important; }
+    body.in-iframe .section { margin-bottom: 1rem !important; }
+    body.in-iframe .post-grid { gap: 0.75rem !important; grid-template-columns: 1fr !important; }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -165,7 +175,7 @@ import PostCard from '../../components/blog/PostCard.astro';
           description="Aprenda a criar componentes modulares e reutilizáveis usando o framework Astro, com exemplos práticos e dicas de boas práticas."
           tags={["Astro", "Frontend"]}
           pubDate={new Date('2024-01-15')}
-          image="/img/blog/componentes-astro.jpg"
+          image="/img/people/alex-donega-autor-blog.webp"
         />
         
         <PostCard
@@ -182,7 +192,7 @@ import PostCard from '../../components/blog/PostCard.astro';
           description="Uma comparação detalhada entre os dois frameworks mais populares para desenvolvimento web moderno."
           tags={["Comparação", "Frameworks"]}
           pubDate={new Date('2024-01-05')}
-          image="/img/blog/astro-nextjs.jpg"
+          image="/img/logos/logo-operacao-de-vendas.webp"
         />
       </div>
     </section>
@@ -252,7 +262,7 @@ import PostCard from '../../components/blog/PostCard.astro';
       <h2 class="section-title">Exemplo de Uso</h2>
       
       <div class="code-block">
-        <pre>---
+        <pre set:html={`---
 import PostCard from '../../components/blog/PostCard.astro';
 
 const posts = await getCollection('blog');
@@ -269,9 +279,12 @@ const posts = await getCollection('blog');
       image={post.data.image}
     /&gt;
   ))}
-&lt;/div&gt;</pre>
+&lt;/div&gt;`} />
       </div>
     </section>
   </div>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

@@ -133,6 +133,12 @@ import AnimatedBackground from '../../components/ui/AnimatedBackground.astro';
       color: var(--text-muted);
     }
   </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe .info-panel { display: none !important; }
+    body.in-iframe .demo-content h1 { font-size: 1.5rem !important; }
+    body.in-iframe .demo-content p { font-size: 0.8rem !important; }
+  </style>
 </head>
 <body>
   <a href="/previews/" class="back-link">
@@ -161,5 +167,8 @@ import AnimatedBackground from '../../components/ui/AnimatedBackground.astro';
       &lt;/div&gt;
     </code>
   </div>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

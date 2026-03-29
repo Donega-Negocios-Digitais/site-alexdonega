@@ -51,6 +51,9 @@ import FooterAds from '../../components/layout/FooterAds.astro';
       font-size: 0.875rem;
     }
   </style>
+  <style is:inline>
+    body.in-iframe main { display: none !important; }
+  </style>
 </head>
 <body>
   <main>
@@ -61,5 +64,8 @@ import FooterAds from '../../components/layout/FooterAds.astro';
   </main>
   
   <FooterAds />
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

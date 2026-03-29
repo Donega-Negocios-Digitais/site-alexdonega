@@ -3,10 +3,18 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Preview - Footer Principal" hideHeader={true}>
-  <div style="display: flex; align-items: center; justify-content: center; min-height: 60vh; text-align: center;">
+  <div class="footer-preview-spacer" style="display: flex; align-items: center; justify-content: center; min-height: 60vh; text-align: center;">
     <div>
       <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-white);">Footer Principal Preview</h1>
       <p style="font-size: 0.875rem; color: var(--text-muted);">Role para baixo para ver o footer</p>
     </div>
   </div>
+  <style is:inline>
+    body.in-iframe .footer-preview-spacer { min-height: 0 !important; padding: 0.5rem !important; }
+    body.in-iframe .footer-preview-spacer h1,
+    body.in-iframe .footer-preview-spacer p { font-size: 0.75rem !important; }
+  </style>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </Layout>

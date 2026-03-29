@@ -1,90 +1,25 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import FooterAds from '../../../components/layout/FooterAds.astro';
+import FunnelHero from '../../../components/funnel/FunnelHero.astro';
+import FunnelMethodology from '../../../components/funnel/FunnelMethodology.astro';
+import FunnelDeliverables from '../../../components/funnel/FunnelDeliverables.astro';
+import FunnelPackageComplete from '../../../components/funnel/FunnelPackageComplete.astro';
+import FunnelAbout from '../../../components/funnel/FunnelAbout.astro';
+import FunnelPricing from '../../../components/funnel/FunnelPricing.astro';
+import FunnelGuaranteeDual from '../../../components/funnel/FunnelGuaranteeDual.astro';
+import FunnelFaq from '../../../components/funnel/FunnelFaq.astro';
+import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
 ---
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 
 <Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real." hideHeader hideFooter>
 
-<!-- 1. Banner de Aviso (NEW) -->
-<div class="warning-banner">
-  <div class="warning-content">
-    <span class="warning-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-    </span>
-    <span class="warning-text">6 vagas disponíveis este mês — <a href="#pricing">Simule seu lucro antes que feche</a></span>
-  </div>
-</div>
-
-<!-- 2. Hero + Prova Social (MODIFIED) -->
-<section class="funnel-hero">
-  <div class="hero-bg">
-    <div class="grid-pattern"></div>
-    <svg class="funnel-viz" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path id="path1" d="M100 200 Q300 150 500 250 T900 200" stroke="rgba(249, 115, 22, 0.2)" stroke-width="2" stroke-dasharray="10 10" />
-      <path id="path2" d="M150 400 Q400 350 600 450 T1000 400" stroke="rgba(249, 115, 22, 0.15)" stroke-width="2" stroke-dasharray="8 8" />
-      <path id="path3" d="M200 600 Q450 550 700 650 T1100 600" stroke="rgba(249, 115, 22, 0.1)" stroke-width="2" stroke-dasharray="12 12" />
-
-      <!-- Pulsing Nodes -->
-      <circle r="4" fill="rgb(249, 115, 22)">
-        <animateMotion dur="6s" repeatCount="indefinite">
-          <mpath href="#path1" />
-        </animateMotion>
-      </circle>
-      <circle r="3" fill="rgb(251, 146, 60)">
-        <animateMotion dur="8s" repeatCount="indefinite">
-          <mpath href="#path2" />
-        </animateMotion>
-      </circle>
-      <circle r="5" fill="rgb(234, 88, 12)">
-        <animateMotion dur="5s" repeatCount="indefinite">
-          <mpath href="#path3" />
-        </animateMotion>
-      </circle>
-    </svg>
-    <div class="bg-glow"></div>
-  </div>
-  <div class="container">
-    <div class="hero-content">
-      <span class="hero-eyebrow">Simulação de Lucratividade</span>
-      <h1 class="hero-title">
-        Descubra o Potencial de Lucro do Seu Funil <span class="text-gradient">Antes de Investir</span>
-      </h1>
-      <p class="hero-subtitle">
-        Simulação matemática da lucratividade do seu negócio — cenários pessimista, provável e otimista — para você decidir com dados, não com achismo
-      </p>
-      <!-- Proof badges (NEW in hero) -->
-      <div class="hero-social-proof">
-        <div class="proof-badge">
-          <span class="proof-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </span>
-          <span class="proof-text">+200 funis mapeados</span>
-        </div>
-        <div class="proof-badge">
-          <span class="proof-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </span>
-          <span class="proof-text">15+ anos validando funis de alta escala</span>
-        </div>
-      </div>
-      <div class="hero-stars">
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      </div>
-      <div class="hero-cta">
-        <a href="#pricing" class="btn-primary">
-          Simular meu lucro agora
-          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- 2. Hero + Prova Social -->
+<FunnelHero />
 
 <!-- 3. Prova Social Inicial (NEW) -->
 <section class="funnel-social-proof-stats">
@@ -111,22 +46,17 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
         <span class="stat-label">mais escalabilidade média</span>
       </div>
     </div>
-    <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Sim, meu negócio precisa disso
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-    </div>
   </div>
 </section>
 
-<!-- 4. Problema (EXISTING - KEEP AS IS) -->
+<!-- 4. Problema -->
 <section class="funnel-problem">
   <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">O Problema</span>
+      <h2 class="section-title">O Marketing Digital Mudou Para Sempre...</h2>
+    </div>
     <div class="problem-content">
-      <h2 class="problem-title">O Marketing Digital Mudou Para Sempre...</h2>
       <div class="problem-text">
         <p>Os dias em que um empreendedor podia lançar um funil e ter retorno da noite para o dia acabaram.</p>
         <p>CPM subindo. CPC subindo. Margem caindo. Lançar um funil sem simular antes é queimar dinheiro no escuro — e você sabe disso.</p>
@@ -446,64 +376,8 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   </div>
 </section>
 
-<!-- 10. Metodologia MAPS (EXISTING - KEEP AS IS) -->
-<section class="funnel-methodology">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Como fazemos</span>
-      <h2 class="section-title">Metodologia MAPS</h2>
-      <p class="section-subtitle">
-        <strong>M</strong>apear, <strong>A</strong>nalisar, <strong>P</strong>rojetar, <strong>S</strong>imular — um processo estruturado em 4 etapas para transformar suas ideias em um funil lucrativo e previsível.
-      </p>
-    </div>
-
-    <div class="methodology-timeline">
-      <div class="methodology-step">
-        <div class="step-number">M</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-          </svg>
-        </div>
-        <h3>Mapear</h3>
-        <p>Desenho seu funil completo de forma visual: etapas, ofertas, upsells, downsells, fontes de tráfego e todos os pontos de contato com o cliente.</p>
-      </div>
-
-      <div class="methodology-step">
-        <div class="step-number">A</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-          </svg>
-        </div>
-        <h3>Analisar</h3>
-        <p>Através do briefing detalhado, mergulho no seu negócio: produtos, preços, objetivos e modelo para entender cada detalhe.</p>
-      </div>
-
-      <div class="methodology-step">
-        <div class="step-number">P</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-          </svg>
-        </div>
-        <h3>Projetar</h3>
-        <p>Calculo os números: CPA, LTV, ROAS, margem de lucro. Simulo 3 cenários (pessimista, provável, otimista) para você saber exatamente o que esperar.</p>
-      </div>
-
-      <div class="methodology-step">
-        <div class="step-number">S</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <h3>Simular</h3>
-        <p>Apresento tudo em uma reunião: o mapa visual, os cenários simulados, os vazamentos identificados e as recomendações estratégicas para garantir lucro.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- 10. Metodologia MAPS -->
+<FunnelMethodology />
 
 <!-- 12. Tabela de Substituição (NEW) -->
 <section class="funnel-substitution">
@@ -594,270 +468,14 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
         <p>Mentoria individual incluída</p>
       </div>
     </div>
-    <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Começar agora
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-    </div>
   </div>
 </section>
 
-<section class="funnel-deliverables-visual">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">O que você recebe</span>
-      <h2 class="section-title">Seus Relatórios de Simulação</h2>
-      <p class="section-subtitle">
-        Veja exatamente o que vou entregar para você visualizar seu lucro antes de investir
-      </p>
-    </div>
-    <p class="visual-intro">
-      Você vai segurar na mão um <strong>mapa completo do seu funil</strong>, com todos os números simulados e cenários projetados — pronto para você tomar decisões com confiança, não com achismo.
-    </p>
-    <div class="visual-wrapper">
-      <div class="visual-list">
-        <button class="visual-item active" data-image="diagrama-mapa-funil">
-          <div class="visual-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-            </svg>
-          </div>
-          <div class="visual-info">
-            <h3>Diagrama de Mapa de Funil</h3>
-            <p>Mapeamento visual profissional de todas as etapas</p>
-          </div>
-        </button>
-        <button class="visual-item" data-image="resumo-projeto">
-          <div class="visual-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-            </svg>
-          </div>
-          <div class="visual-info">
-            <h3>Resumo do Projeto</h3>
-            <p>Visão consolidada de todas as suas previsões</p>
-          </div>
-        </button>
-        <button class="visual-item" data-image="meta-lucro-sonhos">
-          <div class="visual-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-          </div>
-          <div class="visual-info">
-            <h3>Meta de Lucro dos Sonhos</h3>
-            <p>Descubra exatamente o que é necessário para chegar lá</p>
-          </div>
-        </button>
-        <button class="visual-item" data-image="reinvestimento-trafego">
-          <div class="visual-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-            </svg>
-          </div>
-          <div class="visual-info">
-            <h3>Reinvestimento em Tráfego</h3>
-            <p>Gráfico de crescimento de receita e lucro</p>
-          </div>
-        </button>
-        <button class="visual-item" data-image="comparacao-cenarios">
-          <div class="visual-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-            </svg>
-          </div>
-          <div class="visual-info">
-            <h3>Comparação de Cenários</h3>
-            <p>Pessimista, provável e otimista lado a lado</p>
-          </div>
-        </button>
-      </div>
-      <div class="visual-image">
-        <div class="image-wrapper-visual">
-          <img id="visual-report-image" src="/videos/services/funnel-mapping/diagrama-mapa-funil.webp" alt="Diagrama de Mapa de Funil" loading="lazy" />
-        </div>
-      </div>
-    </div>
-    <div class="visual-connection">
-      <p>E esses são só os relatórios visuais. <a href="#pacote-completo">Veja abaixo tudo o que vem junto no pacote completo</a> &rarr;</p>
-    </div>
-  </div>
-</section>
+<!-- Deliverables Visual -->
+<FunnelDeliverables />
 
-<section class="funnel-package-complete" id="pacote-completo">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Tudo Incluído</span>
-      <h2 class="section-title">Seu Pacote de Mapeamento</h2>
-      <p class="section-subtitle">
-        Cada elemento desenhado para você validar seu funil com segurança e confiança
-      </p>
-    </div>
-    <div class="package-wrapper">
-      <div class="package-left">
-        <h3 class="package-section-title">Processo &amp; Suporte</h3>
-        <ul class="package-list">
-          <li>
-            <span class="package-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <div class="package-item-content">
-              <strong>Questionário de briefing estruturado</strong>
-              <span>Para eu entender seu negócio a fundo</span>
-            </div>
-          </li>
-          <li>
-            <span class="package-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <div class="package-item-content">
-              <strong>Mapa visual completo do funil</strong>
-              <span>Todas as etapas, ofertas e pontos de contato</span>
-            </div>
-          </li>
-          <li>
-            <span class="package-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <div class="package-item-content">
-              <strong>Simulação de lucratividade</strong>
-              <span>Métricas reais baseadas no seu negócio</span>
-            </div>
-          </li>
-          <li>
-            <span class="package-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <div class="package-item-content">
-              <strong>Identificação de vazamentos</strong>
-              <span>Onde você está perdendo dinheiro</span>
-            </div>
-          </li>
-          <li>
-            <span class="package-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <div class="package-item-content">
-              <strong>Vídeo explicando a estratégia</strong>
-              <span>Gravação pessoal para você assistir quando quiser</span>
-            </div>
-          </li>
-          <li>
-            <span class="package-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <div class="package-item-content">
-              <strong>2 horas de mentoria individual</strong>
-              <span>Para tirar dúvidas e ajustar a estratégia</span>
-            </div>
-          </li>
-          <li>
-            <span class="package-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <div class="package-item-content">
-              <strong>Reunião final de revisão</strong>
-              <span>Para garantir que tudo está alinhado</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="package-right">
-        <h3 class="package-section-title">Métricas Simuladas</h3>
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-icon revenue">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <h4>Receita &amp; Lucro</h4>
-              <p>Previsão pessimista, provável e otimista</p>
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-icon traffic">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
-                <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <h4>Custo com Anúncios</h4>
-              <p>CPM, CPC e investimento em tráfego</p>
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-icon conversion">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <h4>Ticket Médio (AOV)</h4>
-              <p>Valor médio por transação</p>
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-icon acquisition">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <h4>Custo por Aquisição (CPA)</h4>
-              <p>Quanto custa cada cliente</p>
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-icon retention">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <h4>Valor de Vida (LTV)</h4>
-              <p>Quanto cada cliente gera ao longo do tempo</p>
-            </div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-icon growth">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <h4>Receita Recorrente</h4>
-              <p>Projeção de crescimento mensal</p>
-            </div>
-          </div>
-          <div class="metric-card metric-card-highlight">
-            <div class="metric-icon roi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 20V10M18 20V4M6 20v-4"/>
-              </svg>
-            </div>
-            <div class="metric-content">
-              <h4>CAC &amp; ROAS Ideais</h4>
-              <p>Metas para seu negócio ser lucrativo</p>
-            </div>
-          </div>
-        </div>
-        <div class="package-cta">
-          <a href="#pricing" class="btn-primary">
-            Quero receber este pacote
-            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="pacote-completo">
+<FunnelPackageComplete />
 </section>
 
 <!-- 15. Garantia de Sucesso (NEW) -->
@@ -902,87 +520,11 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
         </ul>
       </div>
     </div>
-    <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Garantir minha vaga
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-    </div>
   </div>
 </section>
 
-<!-- 17. Sobre Alex (IMPROVED COPY) -->
-<section class="funnel-about">
-  <div class="container">
-    <div class="about-wrapper">
-      <div class="about-image">
-        <div class="image-container">
-          <img src="/img/people/alex-donega.webp" alt="Alex Donega" loading="lazy" />
-          <div class="image-glow"></div>
-        </div>
-      </div>
-      <div class="about-content">
-        <span class="section-eyebrow">Quem Constrói com Você</span>
-        <h2 class="section-title">Alex Donega</h2>
-        <p class="about-bio">
-          Arquiteto de Funis com Mestrado em Economia e mais de 15 anos projetando sistemas de venda que convertem com previsibilidade. Combino modelagem financeira, tecnologia e copy estratégica para transformar tráfego em receita recorrente.
-        </p>
-        <div class="about-phases">
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>15+ anos em funis de alta escala</strong> — de SaaS a infoprodutos, com arquiteturas que já processaram milhões em vendas.</p>
-          </div>
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>7 empresas construídas do zero</strong> — cada uma validada por simulação financeira antes do primeiro real investido.</p>
-          </div>
-          <div class="about-phase">
-            <div class="phase-dot"></div>
-            <p><strong>Mentor de centenas de profissionais</strong> — ensinando arquitetura de funis, IA aplicada e decisão baseada em dados.</p>
-          </div>
-        </div>
-        <p class="about-mission">
-          <em>"Cada funil que projeto começa com um modelo matemático. Antes de investir um real em tráfego, você vai saber exatamente quanto precisa converter em cada etapa para ter lucro. Isso não é otimismo — é engenharia de resultado."</em>
-        </p>
-        <div class="about-players">
-          <p class="about-players-label">Projetos com líderes de mercado:</p>
-          <div class="about-players-grid">
-            <div class="about-player">
-              <div class="about-player-photo">
-                <img src="/img/testimonials/diego-carmona-nasdaq-ipo.webp" alt="Diego Carmona" loading="lazy" />
-              </div>
-              <span class="about-player-name">Diego Carmona</span>
-              <span class="about-player-role">Leadlovers · IPO Nasdaq</span>
-            </div>
-            <div class="about-player">
-              <div class="about-player-photo">
-                <img src="/img/testimonials/sergio-barbosa-waseller-placa-10milhoes.webp" alt="Sergio Barbosa" loading="lazy" />
-              </div>
-              <span class="about-player-name">Sergio Barbosa</span>
-              <span class="about-player-role">Founder · Waseller</span>
-            </div>
-            <div class="about-player">
-              <div class="about-player-photo">
-                <img src="/img/testimonials/jp-savings-club-evento.webp" alt="JP Galvão" loading="lazy" />
-              </div>
-              <span class="about-player-name">JP Galvão</span>
-              <span class="about-player-role">CEO · Savings Club</span>
-            </div>
-            <div class="about-player">
-              <div class="about-player-photo">
-                <img src="/img/testimonials/christian-barbosa-neotriad-palestra.webp" alt="Christian Barbosa" loading="lazy" />
-              </div>
-              <span class="about-player-name">Christian Barbosa</span>
-              <span class="about-player-role">Neotriad · Produtividade</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- 17. Sobre Alex -->
+<FunnelAbout />
 
 <!-- 17.5 VIP Testimonials (NEW) -->
 <section class="funnel-vip-testimonials">
@@ -1079,6 +621,9 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
 <!-- 18. Destino do Funil -->
 <section class="funnel-destiny">
   <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Decisão Final</span>
+    </div>
     <div class="destiny-content">
       <h2 class="destiny-title">
         Você está pronto para<br>
@@ -1127,574 +672,17 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   </div>
 </section>
 
-<!-- 19. Pricing 3 Tiers (EXISTING - with id="pricing" anchor) -->
-<div id="pricing">
-<section class="funnel-pricing-tiers" id="pricing-tiers">
-  <div class="container">
-    <div class="pricing-tiers-header">
-      <span class="section-eyebrow">Escolha seu pacote</span>
-      <h2 class="section-title">3 opções para validar seu funil</h2>
-      <p class="section-subtitle">Do diagnóstico inicial à implementação completa — escolha o nível de suporte que você precisa</p>
-    </div>
+<!-- 19. Pricing 3 Tiers -->
+<FunnelPricing />
 
-    <div class="pricing-toggle-wrapper">
-      <span class="toggle-label active" data-label="parcelado">Parcelado</span>
-      <button class="pricing-toggle" id="pricingToggle" aria-label="Alternar forma de pagamento">
-        <span class="toggle-slider"></span>
-      </button>
-      <span class="toggle-label" data-label="avista">À vista <span class="toggle-discount">-15%</span></span>
-    </div>
-
-    <div class="pricing-grid-3">
-      <div class="tier-card" data-tier="diagnostico">
-        <div class="tier-header">
-          <span class="tier-badge badge-starter">Para Começar</span>
-          <h3 class="tier-name">Diagnóstico</h3>
-          <p class="tier-tagline">Visão geral do seu funil</p>
-        </div>
-        <div class="tier-pricing">
-          <div class="tier-price parcelado">
-            <span class="price-installments">6x de</span>
-            <span class="price-currency">R$</span>
-            <span class="price-value">166</span>
-          </div>
-          <div class="tier-price avista hidden">
-            <span class="price-currency">R$</span>
-            <span class="price-value">847</span>
-            <span class="price-full">R$ 997</span>
-          </div>
-          <p class="tier-price-note parcelado">ou R$ 847 à vista (-15%)</p>
-          <p class="tier-price-note avista hidden">economia de R$ 150</p>
-        </div>
-        <ul class="tier-features">
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Questionário de briefing estruturado</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Mapa visual simplificado do funil</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Simulação com <strong>1 cenário</strong> (provável)</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Relatório PDF com vazamentos identificados</span>
-          </li>
-          <li class="feature-not-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
-            <span>Vídeo de estratégia personalizado</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>1 hora</strong> de mentoria individual</span>
-          </li>
-          <li class="feature-not-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
-            <span>Implementação de copy e design</span>
-          </li>
-        </ul>
-        <div class="tier-support">
-          <span class="support-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            Suporte 7 dias
-          </span>
-          <span class="guarantee-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Garantia 7 dias
-          </span>
-        </div>
-        <button type="button" data-pacote="Mapa Funil - Diagnóstico" class="tier-cta btn-outline">
-          Começar Diagnóstico
-          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </button>
-      </div>
-
-      <div class="tier-card featured" data-tier="estrategia">
-        <div class="tier-featured-badge">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Mais Popular
-        </div>
-        <div class="tier-header">
-          <span class="tier-badge badge-popular">Recomendado</span>
-          <h3 class="tier-name">Estratégia Completa</h3>
-          <p class="tier-tagline">Análise profunda + mentoria</p>
-        </div>
-        <div class="tier-pricing">
-          <div class="tier-price parcelado">
-            <span class="price-installments">6x de</span>
-            <span class="price-currency">R$</span>
-            <span class="price-value">406</span>
-          </div>
-          <div class="tier-price avista hidden">
-            <span class="price-currency">R$</span>
-            <span class="price-value">2.070</span>
-            <span class="price-full">R$ 2.436</span>
-          </div>
-          <p class="tier-price-note parcelado">ou R$ 2.070 à vista (-15%)</p>
-          <p class="tier-price-note avista hidden">economia de R$ 366</p>
-        </div>
-        <div class="tier-scarcity">
-          <span class="scarcity-pulse"></span>
-          <span>6 vagas disponíveis este mês</span>
-        </div>
-        <ul class="tier-features">
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>Tudo do Diagnóstico</strong> +</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Mapa visual <strong>completo e detalhado</strong></span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Simulação com <strong>3 cenários</strong></span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>Vídeo</strong> explicando a estratégia</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>2 horas</strong> de mentoria individual</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>1 reunião</strong> de revisão e ajustes</span>
-          </li>
-          <li class="feature-not-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
-            <span>Implementação de copy e design</span>
-          </li>
-        </ul>
-        <div class="tier-support">
-          <span class="support-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            Suporte 30 dias
-          </span>
-          <span class="guarantee-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Garantia 30 dias
-          </span>
-        </div>
-        <button type="button" data-pacote="Mapa Funil - Estratégia Completa" class="tier-cta btn-primary">
-          Garantir Minha Vaga
-          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </button>
-      </div>
-
-      <div class="tier-card" data-tier="implementacao">
-        <div class="tier-header">
-          <span class="tier-badge badge-premium">Máximo Valor</span>
-          <h3 class="tier-name">Implementação Total</h3>
-          <p class="tier-tagline">Tudo pronto para lançar</p>
-        </div>
-        <div class="tier-pricing">
-          <div class="tier-price parcelado">
-            <span class="price-installments">12x de</span>
-            <span class="price-currency">R$</span>
-            <span class="price-value">990</span>
-          </div>
-          <div class="tier-price avista hidden">
-            <span class="price-currency">R$</span>
-            <span class="price-value">10.098</span>
-            <span class="price-full">R$ 11.880</span>
-          </div>
-          <p class="tier-price-note parcelado">ou R$ 10.098 à vista (-15%)</p>
-          <p class="tier-price-note avista hidden">economia de R$ 1.782</p>
-        </div>
-        <div class="tier-scarcity">
-          <span class="scarcity-pulse"></span>
-          <span>Últimas 2 vagas para Implementação</span>
-        </div>
-        <ul class="tier-features">
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>Tudo do Diagnóstico</strong> +</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Mapa com <strong>múltiplas versões</strong></span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>6 horas</strong> de mentoria individual</span>
-          </li>
-          <li class="feature-included">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>3 reuniões</strong> de revisão e ajustes</span>
-          </li>
-          <li class="feature-included highlight">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>Copywriting completo</strong> do funil</span>
-          </li>
-          <li class="feature-included highlight">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>Design das páginas</strong></span>
-          </li>
-          <li class="feature-included highlight">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>Mensagens de WhatsApp</strong></span>
-          </li>
-          <li class="feature-included highlight">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span><strong>E-mails e automações</strong></span>
-          </li>
-        </ul>
-        <div class="tier-support">
-          <span class="support-badge premium">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            Suporte 45 dias
-          </span>
-          <span class="guarantee-badge premium">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Garantia 30 dias
-          </span>
-        </div>
-        <button type="button" data-pacote="Mapa Funil - Implementação Total" class="tier-cta btn-premium">
-          Quero Implementação Total
-          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <div class="comparison-toggle">
-      <button class="comparison-btn" id="comparisonToggle">
-        <span class="btn-label">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-          Ver tabela comparativa
-        </span>
-        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-    </div>
-
-    <div class="comparison-table-wrapper hidden" id="comparisonTable">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Recurso</th>
-            <th>Diagnóstico</th>
-            <th class="featured-col">Estratégia Completa</th>
-            <th>Implementação Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Questionário de briefing</td>
-            <td><span class="check">&#10003;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Diagrama de Mapa de Funil</td>
-            <td><span class="check">&#10003;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Resumo do Projeto</td>
-            <td><span class="check">&#10003;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Reinvestimento em Tráfego</td>
-            <td><span class="dash">&mdash;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Meta de Lucro dos Sonhos</td>
-            <td><span class="dash">&mdash;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Comparação de Cenários</td>
-            <td><span class="check">&#10003;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Mapa visual do funil</td>
-            <td>Simplificado</td>
-            <td class="featured-col">Completo</td>
-            <td>Completo + versões</td>
-          </tr>
-          <tr>
-            <td>Simulação de cenários</td>
-            <td>1 cenário</td>
-            <td class="featured-col">3 cenários</td>
-            <td>3 cenários</td>
-          </tr>
-          <tr>
-            <td>Identificação de vazamentos</td>
-            <td><span class="check">&#10003;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Relatório PDF</td>
-            <td><span class="check">&#10003;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Vídeo de estratégia</td>
-            <td><span class="dash">&mdash;</span></td>
-            <td class="featured-col"><span class="check">&#10003;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Mentoria individual</td>
-            <td>1 hora</td>
-            <td class="featured-col">2 horas</td>
-            <td>6 horas</td>
-          </tr>
-          <tr>
-            <td>Reuniões de revisão</td>
-            <td><span class="dash">&mdash;</span></td>
-            <td class="featured-col">1 reunião</td>
-            <td>3 reuniões</td>
-          </tr>
-          <tr>
-            <td>Copywriting do funil</td>
-            <td><span class="dash">&mdash;</span></td>
-            <td class="featured-col"><span class="dash">&mdash;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Design das páginas</td>
-            <td><span class="dash">&mdash;</span></td>
-            <td class="featured-col"><span class="dash">&mdash;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Mensagens de WhatsApp</td>
-            <td><span class="dash">&mdash;</span></td>
-            <td class="featured-col"><span class="dash">&mdash;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>E-mails e automações</td>
-            <td><span class="dash">&mdash;</span></td>
-            <td class="featured-col"><span class="dash">&mdash;</span></td>
-            <td><span class="check">&#10003;</span></td>
-          </tr>
-          <tr>
-            <td>Período de suporte</td>
-            <td>7 dias</td>
-            <td class="featured-col">30 dias</td>
-            <td>45 dias</td>
-          </tr>
-          <tr>
-            <td>Garantia</td>
-            <td>7 dias</td>
-            <td class="featured-col">30 dias</td>
-            <td>30 dias</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="trust-signals">
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        <span>Pagamento 100% Seguro</span>
-      </div>
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>Garantia de Satisfação</span>
-      </div>
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-        <span>+200 Funis Mapeados</span>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- 19. Garantia Dupla (NEW) -->
-<section class="funnel-guarantee-dual">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Garantia</span>
-      <h2 class="section-title">Duas garantias. Porque confiamos na metodologia.</h2>
-    </div>
-    <div class="guarantee-dual-grid">
-      <div class="guarantee-dual-card guarantee-incondicional">
-        <div class="guarantee-dual-badge">
-          <span class="badge-days">7 dias</span>
-          <span class="badge-type">Incondicional</span>
-        </div>
-        <div class="guarantee-dual-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="M9 12l2 2 4-4"/>
-          </svg>
-        </div>
-        <p class="guarantee-dual-text">
-          Entrou, acessou as plataformas, viu os primeiros encontros, e não fez sentido para o seu momento? <strong>Devolução total, sem perguntas, sem burocracia.</strong> 7 dias a partir do acesso.
-        </p>
-      </div>
-      <div class="guarantee-dual-card guarantee-condicional">
-        <div class="guarantee-dual-badge">
-          <span class="badge-days">30 dias</span>
-          <span class="badge-type">Condicional</span>
-        </div>
-        <div class="guarantee-dual-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-          </svg>
-        </div>
-        <p class="guarantee-dual-text">
-          Se em 30 dias você seguiu o programa, participou dos encontros, implementou o que foi orientado, e sua operação não estiver configurada e rodando com ao menos um produto ou serviço no ar: <strong>devolvemos 100%.</strong>
-        </p>
-      </div>
-    </div>
-    <div class="guarantee-dual-footer">
-      <p class="guarantee-disclaimer">
-        <strong>Não é garantia de resultado financeiro.</strong> É garantia de que o sistema funciona quando você aplica.
-      </p>
-      <p class="guarantee-promise">
-        Se não funcionar para você, não ficamos com seu dinheiro. Se funcionar (e funciona quando você implementa), você opera um negócio diferente em 6 meses.
-      </p>
-    </div>
-  </div>
-</section>
+<!-- 19. Garantia Dupla -->
+<FunnelGuaranteeDual />
 
 <!-- 20. FAQ -->
-<section class="funnel-faq">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Dúvidas</span>
-      <h2 class="section-title">Ficou com alguma dúvida?</h2>
-      <p class="section-subtitle">Confira as respostas para as perguntas frequentes ou entre em contato conosco</p>
-    </div>
+<FunnelFaq />
 
-    <div class="faq-contact-channels">
-      <a href="https://wa.me/5545999506444?text=Alex%2C%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20Mapa%20de%20Funil.%20Minha%20d%C3%BAvida%20%C3%A9%3A%20" target="_blank" rel="noopener" class="faq-channel faq-channel-whatsapp">
-        <div class="faq-channel-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </div>
-        <div class="faq-channel-info">
-          <span class="faq-channel-label">Atendimento por WhatsApp</span>
-          <span class="faq-channel-action">Toque aqui para tirar suas dúvidas</span>
-        </div>
-        <span class="faq-channel-arrow">&rarr;</span>
-      </a>
-      <div class="faq-channel faq-channel-email">
-        <div class="faq-channel-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </div>
-        <div class="faq-channel-info">
-          <span class="faq-channel-label">COPIAR MEU E-MAIL</span>
-          <span class="faq-channel-action">alexdonega@gmail.com</span>
-        </div>
-        <button class="faq-channel-copy" onclick="navigator.clipboard.writeText('alexdonega@gmail.com'); this.innerHTML = 'Copiado!'; setTimeout(() => this.innerHTML = 'Copiar', 2000);" title="Copiar e-mail">Copiar</button>
-      </div>
-    </div>
-
-    <div class="faq-accordion">
-      <details class="faq-item">
-        <summary><h3>Já preciso ter um funil rodando?</h3><span class="faq-toggle"></span></summary>
-        <p>Não. O mapeamento é ideal tanto para quem já fatura e quer escalar sem perder margem, quanto para quem está começando um novo projeto e quer evitar "queimar" dinheiro testando no escuro.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>Eu acabei de criar meu produto e não tenho nada de marketing?</h3><span class="faq-toggle"></span></summary>
-        <p>Perfeito. O mapeamento é justamente o ponto de partida ideal. Você vai sair do zero com uma estratégia clara, sabendo exatamente quais etapas montar, em que ordem e quais números precisa atingir. É muito mais inteligente mapear antes de gastar com tráfego.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>Tenho pouco dinheiro para investir em tráfego. Funciona pra mim?</h3><span class="faq-toggle"></span></summary>
-        <p>Você começa com o que tem. O método VTSD é pensado para funcionar de forma progressiva: você começa com orçamento baixo, valida sua oferta, começa a vender e só então reinveste para escalar.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>Meu produto já vende e tenho uma boa receita. É para mim?</h3><span class="faq-toggle"></span></summary>
-        <p>Sim. Se você já fatura, o mapeamento revela gargalos invisíveis e oportunidades de escala que você não enxerga de dentro do negócio. Muitos clientes descobrem que estavam deixando dinheiro na mesa em etapas que poderiam ser otimizadas com simples ajustes de funil.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>Quanto tempo leva para receber o mapa?</h3><span class="faq-toggle"></span></summary>
-        <p>Após o preenchimento do seu briefing detalhado, o mapa visual e a simulação matemática são entregues em até 7 dias úteis.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>Terei acesso à simulação para analisar os números?</h3><span class="faq-toggle"></span></summary>
-        <p>Sim. Durante a nossa entrega, eu apresento todos os cenários (pessimista, provável e otimista) e você entende exatamente como métricas como CPA, LTV e Taxa de Conversão impactam seu lucro final.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>Tem algum pré-requisito para participar?</h3><span class="faq-toggle"></span></summary>
-        <p>Nenhum. Você só precisa ter um produto ou serviço (físico, digital ou SaaS) e querer validar ou escalar suas vendas online. O mapeamento se adapta ao seu momento — seja você iniciante ou avançado.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>O suporte e a mentoria são individuais?</h3><span class="faq-toggle"></span></summary>
-        <p>Sim. Analiso pessoalmente o seu projeto e os encontros de alinhamento são focados 100% na sua estratégia de escala ou validação.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>Não curti, quero cancelar. Como eu faço?</h3><span class="faq-toggle"></span></summary>
-        <p>Sem problema. Você tem garantia incondicional nos primeiros dias (varia conforme o pacote). Basta enviar um e-mail ou mensagem no WhatsApp solicitando o cancelamento e devolvemos 100% do seu investimento, sem perguntas.</p>
-      </details>
-      <details class="faq-item">
-        <summary><h3>O que é um Funil?</h3><span class="faq-toggle"></span></summary>
-        <p>Um funil é a jornada completa do cliente, desde o primeiro contato até a compra e além. Ele mapeia todas as etapas: tráfego, captura de leads, ofertas, upsells, downsells e retenção. Um funil bem estruturado transforma visitantes em clientes de forma previsível e lucrativa.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- 20. TL;DR Final (NEW) -->
-<section class="funnel-tldr">
-  <div class="container">
-    <div class="tldr-panel">
-      <div class="tldr-stars">
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <span class="tldr-proof">+200 funis mapeados</span>
-      </div>
-      <h2 class="tldr-title">Resumo Rápido</h2>
-      <ul class="tldr-checklist">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-          <span>Mapa visual completo do funil</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-          <span>Simulação de 3 cenários (pessimista, provável, otimista)</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-          <span>2 horas de mentoria individual</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-          <span>Identificação de vazamentos financeiros</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-          <span>Vídeo explicando a estratégia</span>
-        </li>
-      </ul>
-      <a href="#pricing" class="btn-primary btn-large tldr-cta">
-        SIMULAR MEU FUNIL AGORA
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-      <p class="tldr-guarantee">Comece em 7 dias &bull; Garantia de 14 dias &bull; Sem risco</p>
-    </div>
-  </div>
-</section>
+<!-- 20. TL;DR Final -->
+<FunnelFinalCta />
 
 <FooterAds disclaimerBefore="Importante: Mapa de Funil não é um produto associado Facebook, Instagram, WhatsApp ou Facebook Messenger. Ao tratar de questões financeiras em nossos produtos, incluindo sites, vídeos, palestras, programas ou outros conteúdos, nos esforçamos ao máximo para garantir que representem com precisão nossos cursos e sua capacidade de impactar positivamente o seu negócio e a sua vida. No entanto, é importante frisar que os resultados alcançados dependem inteiramente do empenho, dedicação e aplicação de cada indivíduo. As estratégias e informações que fornecemos não garantem que você obterá resultados financeiros ou ganhos monetários específicos. Nada em nosso site ou em nossos materiais deve ser interpretado como uma promessa ou garantia de ganhos futuros. Seu sucesso depende do seu esforço, dedicação e aplicação das ideias, ferramentas e estratégias que propomos. Estamos aqui para apoiar você com recursos valiosos no seu caminho, mas o seu sucesso é fruto do seu próprio esforço e dedicação. Ao fazer seu cadastro em nosso site, você concorda com os nossos" />
 
@@ -1704,8 +692,8 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
   .text-gradient { background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(251, 146, 60) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .section-header { text-align: center; margin-bottom: 3rem; }
-  .section-eyebrow { display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
-  .section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+  .section-eyebrow { display: inline-block; font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
   .section-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
   .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; font-weight: 600; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3); }
@@ -1714,38 +702,9 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(249, 115, 22, 0.5); }
   .btn-icon { width: 18px; height: 18px; margin-left: 0.5rem; }
   .section-cta { margin-top: 4rem; display: flex; justify-content: center; }
-  .deliverables-cta { margin-top: 2.5rem; }
-
-  /* WARNING BANNER */
-  .warning-banner { position: sticky; top: 0; z-index: 100; background: linear-gradient(135deg, rgb(234, 88, 12), rgb(249, 115, 22), rgb(251, 146, 60)); padding: 0.75rem 1rem; text-align: center; }
-  .warning-content { display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
-  .warning-icon { display: flex; align-items: center; }
-  .warning-icon svg { width: 20px; height: 20px; color: white; }
-  .warning-text { font-size: 0.95rem; font-weight: 600; color: white; }
-  .warning-text a { color: white; text-decoration: underline; text-underline-offset: 2px; }
-  .warning-text a:hover { text-decoration-thickness: 2px; }
-
-  /* HERO */
-  .funnel-hero { position: relative; padding: 8rem 0 6rem; overflow: hidden; background: #0a0a0a; }
-  .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-  .grid-pattern { position: absolute; inset: 0; background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black, transparent 85%); }
-  .funnel-viz { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.5; }
-  .bg-glow { position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%); filter: blur(80px); }
-  .hero-content { position: relative; z-index: 1; max-width: 800px; text-align: center; margin: 0 auto; }
-  .hero-eyebrow { display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 1rem; }
-  .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: white; line-height: 1.1; margin-bottom: 1.5rem; }
-  .hero-subtitle { font-size: 1.25rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem; line-height: 1.6; }
-  .hero-cta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-  .hero-social-proof { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
-  .hero-stars { display: flex; justify-content: center; gap: 0.25rem; margin-bottom: 1.5rem; }
-  .proof-badge { display: flex; align-items: center; gap: 0.5rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 100px; padding: 0.5rem 1rem; animation: pulse-glow 2s infinite; }
-  .proof-badge .proof-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .proof-badge .proof-icon svg { width: 100%; height: 100%; color: rgb(249, 115, 22); }
-  .proof-badge .proof-text { font-size: 0.85rem; font-weight: 600; color: white; }
-  @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); } 50% { box-shadow: 0 0 20px 5px rgba(249, 115, 22, 0.2); } }
 
   /* SOCIAL PROOF STATS */
-  .funnel-social-proof-stats { padding: 5rem 0; background: rgba(255, 255, 255, 0.02); }
+  .funnel-social-proof-stats { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
   .stat-card { text-align: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem 1rem; transition: all 0.3s ease; }
   .stat-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
@@ -1753,10 +712,10 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .stat-label { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
 
   /* PROBLEM */
-  .funnel-problem { padding: 5rem 0; background: rgba(255, 255, 255, 0.02); }
-  .problem-content { max-width: 800px; margin: 0 auto; text-align: center; }
+  .funnel-problem { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
+  .problem-content { max-width: 800px; margin: 0 auto; text-align: center; margin-top: -1rem; }
   .problem-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 2rem; }
-  .problem-text p { font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 1rem; }
+  .problem-text p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 1rem; }
   .problem-text .highlight { font-size: 1.25rem; color: white; margin: 1.5rem 0; }
   .problem-text .highlight strong { color: rgb(249, 115, 22); }
   .problem-highlight { display: flex; align-items: center; gap: 0.75rem; background: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.2); border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; }
@@ -1771,21 +730,21 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .false-solution-card:hover { transform: translateY(-4px); border-color: rgba(239, 68, 68, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
   .false-icon { width: 48px; height: 48px; background: rgba(239, 68, 68, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
   .false-icon svg { width: 24px; height: 24px; color: rgb(248, 113, 113); }
-  .false-solution-card h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+  .false-solution-card h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1rem; }
   .false-solution-card ul { list-style: none; padding: 0; margin: 0; }
-  .false-solution-card ul li { position: relative; padding-left: 1.25rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin-bottom: 0.5rem; }
+  .false-solution-card ul li { font-family: 'DM Sans', system-ui, sans-serif; position: relative; padding-left: 1.25rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin-bottom: 0.5rem; }
   .false-solution-card ul li::before { content: '\2192'; position: absolute; left: 0; color: rgb(248, 113, 113); }
-  .false-solution-transition { text-align: center; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); font-style: italic; margin-top: 3rem; }
+  .false-solution-transition { font-family: 'DM Sans', system-ui, sans-serif; text-align: center; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); font-style: italic; margin-top: 3rem; }
 
   /* BEFORE & AFTER */
   .funnel-before-after { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .before-after-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; align-items: start; }
-  .ba-title { font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid; }
+  .ba-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid; }
   .ba-title span { display: block; font-size: 0.85rem; font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.25rem; opacity: 0.7; }
   .ba-before-title { color: rgb(248, 113, 113); border-color: rgba(239, 68, 68, 0.3); }
   .ba-after-title { color: rgb(52, 211, 153); border-color: rgba(52, 211, 153, 0.3); }
   .ba-list { list-style: none; padding: 0; margin: 0; }
-  .ba-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; font-size: 1rem; color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+  .ba-list li { font-family: 'DM Sans', system-ui, sans-serif; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; font-size: 1rem; color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
   .ba-list li:last-child { border-bottom: none; }
   .ba-list li svg { width: 20px; height: 20px; flex-shrink: 0; }
   .before-column .ba-list li svg { color: rgb(248, 113, 113); }
@@ -1793,20 +752,20 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .ba-divider { display: flex; align-items: center; justify-content: center; padding-top: 4rem; color: rgba(249, 115, 22, 0.5); }
 
   /* WHAT */
-  .funnel-what { padding: 5rem 0; }
+  .funnel-what { padding: 6rem 0; }
   .what-content { max-width: 900px; margin: 0 auto; }
-  .what-intro { font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); text-align: center; margin-bottom: 4rem; line-height: 1.6; }
+  .what-intro { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); text-align: center; margin-bottom: 4rem; line-height: 1.6; }
   .what-list { display: flex; flex-direction: column; gap: 1.5rem; max-width: 800px; margin: 0 auto; }
   .what-step { display: flex; align-items: center; gap: 2rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 2rem; position: relative; transition: all 0.3s ease; overflow: hidden; }
   .what-step:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(249, 115, 22, 0.2); transform: translateX(10px); }
   .step-icon { width: 64px; height: 64px; background: rgba(249, 115, 22, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .step-icon svg { width: 32px; height: 32px; color: rgb(249, 115, 22); }
-  .step-text h3 { font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
-  .step-text p { font-size: 1rem; color: rgba(255, 255, 255, 0.6); line-height: 1.5; margin: 0; }
+  .step-text h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+  .step-text p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1rem; color: rgba(255, 255, 255, 0.6); line-height: 1.5; margin: 0; }
   .step-number { position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); font-size: 5rem; font-weight: 900; color: rgba(249, 115, 22, 0.03); pointer-events: none; line-height: 1; }
 
   /* RESULTS */
-  .funnel-results { padding: 5rem 0; background: rgba(255, 255, 255, 0.02); }
+  .funnel-results { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 3rem auto 0; }
   .result-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden; }
   .result-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.5), transparent); opacity: 0; transition: opacity 0.3s; }
@@ -1818,8 +777,8 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .result-scale .result-icon svg { color: rgb(52, 211, 153); }
   .result-profit .result-icon svg { color: rgb(249, 115, 22); }
   @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-  .result-card h3 { font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 1rem; }
-  .result-card p { font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin: 0; }
+  .result-card h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+  .result-card p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin: 0; }
   .result-card p strong { color: rgb(249, 115, 22); }
   .result-leak:hover { border-color: rgba(239, 68, 68, 0.4); }
   .result-scale:hover { border-color: rgba(52, 211, 153, 0.4); }
@@ -1832,33 +791,9 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .audience-tag:hover { background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
   .tag-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; color: rgb(249, 115, 22); flex-shrink: 0; }
   .tag-icon svg { width: 100%; height: 100%; }
-  .audience-tag h3 { font-size: 1rem; font-weight: 600; color: white; margin: 0; }
+  .audience-tag h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1rem; font-weight: 600; color: white; margin: 0; }
 
-  /* METHODOLOGY */
-  .funnel-methodology { padding: 5rem 0; background: rgba(255, 255, 255, 0.02); }
-  .methodology-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
-  .methodology-timeline::before { content: ''; position: absolute; top: 60px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent); }
-  .methodology-step { text-align: center; position: relative; }
-  .methodology-step .step-number { font-size: 0.75rem; font-weight: 800; color: rgba(255, 255, 255, 0.2); margin-bottom: 1rem; position: static; transform: none; }
-  .methodology-step .step-icon { width: 64px; height: 64px; background: rgba(249, 115, 22, 0.1); border: 2px solid rgba(249, 115, 22, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; transition: all 0.3s; }
-  .methodology-step:hover .step-icon { background: rgba(249, 115, 22, 0.2); border-color: rgb(249, 115, 22); transform: scale(1.1); }
-  .methodology-step .step-icon svg { width: 28px; height: 28px; color: rgb(249, 115, 22); }
-  .methodology-step h3 { font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.75rem; }
-  .methodology-step p { font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; max-width: 250px; margin: 0 auto; }
 
-  /* DELIVERABLES */
-  .funnel-deliverables { padding: 5rem 0; }
-  .deliverables-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-  .deliverables-left .section-header { text-align: left; margin-bottom: 2rem; }
-  .deliverables-list { list-style: none; padding: 0; margin: 0; }
-  .deliverables-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); }
-  .deliverables-list li:last-child { border-bottom: none; }
-  .check-icon { color: rgb(52, 211, 153); font-weight: 700; flex-shrink: 0; }
-  .deliverables-right { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem; }
-  .metrics-title { font-size: 1.125rem; font-weight: 600; color: white; margin-bottom: 1.5rem; }
-  .metrics-list { display: flex; flex-direction: column; gap: 1rem; }
-  .metric-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
-  .metric-item svg { width: 20px; height: 20px; color: rgb(249, 115, 22); flex-shrink: 0; }
 
   /* SUBSTITUTION TABLE */
   .funnel-substitution { padding: 6rem 0; }
@@ -1866,11 +801,11 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .substitution-table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 12px; overflow: hidden; }
   .substitution-table th, .substitution-table td { padding: 1.25rem 1.5rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
   .substitution-table th { background: rgba(255, 255, 255, 0.05); font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 0.05em; }
-  .substitution-table td { font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
+  .substitution-table td { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
   .substitution-table .col-without { color: rgb(248, 113, 113); font-weight: 600; }
   .substitution-table .col-with { color: rgb(52, 211, 153); font-weight: 600; }
   .substitution-table tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
-  .substitution-total { text-align: center; font-size: 1.5rem; font-weight: 800; color: rgb(249, 115, 22); margin-top: 2rem; }
+  .substitution-total { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; text-align: center; font-size: 1.5rem; font-weight: 800; color: rgb(249, 115, 22); margin-top: 2rem; }
 
   /* WHY CHOOSE */
   .funnel-why-choose { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
@@ -1879,27 +814,8 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .why-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
   .why-icon { width: 56px; height: 56px; margin: 0 auto 1.25rem; background: rgba(249, 115, 22, 0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
   .why-icon svg { width: 28px; height: 28px; color: rgb(249, 115, 22); }
-  .why-card h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
-  .why-card p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.5; }
-
-  /* REPORTS */
-  .funnel-reports { padding: 6rem 0; }
-  .reports-intro { text-align: center; font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); max-width: 700px; margin: 0 auto 3rem; line-height: 1.6; }
-  .reports-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; }
-  .reports-list { display: flex; flex-direction: column; gap: 0.75rem; }
-  .report-item { display: flex; align-items: flex-start; gap: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: all 0.3s ease; text-align: left; width: 100%; }
-  .report-item:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(249, 115, 22, 0.2); }
-  .report-item.active { background: rgba(249, 115, 22, 0.1); border-color: rgb(249, 115, 22); }
-  .report-icon { width: 44px; height: 44px; background: rgba(255, 255, 255, 0.05); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease; }
-  .report-item.active .report-icon { background: rgba(249, 115, 22, 0.2); }
-  .report-icon svg { width: 22px; height: 22px; color: rgba(255, 255, 255, 0.6); transition: all 0.3s ease; }
-  .report-item.active .report-icon svg { color: rgb(249, 115, 22); }
-  .report-info h3 { font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.25rem; transition: color 0.3s ease; }
-  .report-item.active .report-info h3 { color: rgb(249, 115, 22); }
-  .report-info p { font-size: 0.875rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; }
-  .reports-image { position: sticky; top: 2rem; }
-  .reports-image .image-wrapper { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
-  .reports-image img { width: 100%; height: auto; display: block; transition: opacity 0.3s ease; }
+  .why-card h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+  .why-card p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.5; }
 
   /* SUCCESS GUARANTEE */
   .funnel-success-guarantee { padding: 6rem 0; }
@@ -1908,52 +824,10 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .guarantee-card:hover { transform: translateY(-4px); border-color: rgba(52, 211, 153, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
   .guarantee-icon { width: 48px; height: 48px; background: rgba(52, 211, 153, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
   .guarantee-icon svg { width: 24px; height: 24px; color: rgb(52, 211, 153); }
-  .guarantee-card h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+  .guarantee-card h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1rem; }
   .guarantee-card ul { list-style: none; padding: 0; margin: 0; }
-  .guarantee-card ul li { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; padding: 0.35rem 0; padding-left: 1rem; position: relative; }
+  .guarantee-card ul li { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; padding: 0.35rem 0; padding-left: 1rem; position: relative; }
   .guarantee-card ul li::before { content: '\2022'; position: absolute; left: 0; color: rgb(52, 211, 153); }
-
-  /* ADVANCED PROOF */
-  .funnel-advanced-proof { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
-  .proof-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-  .proof-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; }
-  .proof-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.3); }
-  .proof-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
-  .proof-avatar { width: 48px; height: 48px; background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: white; flex-shrink: 0; }
-  .proof-meta h4 { font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.15rem; }
-  .proof-meta span { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); }
-  .proof-quote { font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; font-style: italic; margin-bottom: 1.25rem; }
-  .proof-result { background: rgba(52, 211, 153, 0.08); border: 1px solid rgba(52, 211, 153, 0.2); border-radius: 8px; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; }
-  .proof-result-label { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); font-weight: 600; }
-  .proof-result-value { font-size: 0.9rem; color: rgb(52, 211, 153); font-weight: 700; }
-
-  /* ABOUT */
-  .funnel-about { padding: 8rem 0; background: rgba(255, 255, 255, 0.01); }
-  .about-wrapper { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center; }
-  .about-image { position: relative; }
-  .image-container { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
-  .image-container img { width: 100%; height: auto; display: block; filter: grayscale(0.2) contrast(1.1); transition: all 0.5s ease; }
-  .image-container:hover img { filter: grayscale(0) contrast(1); transform: scale(1.05); }
-  .image-glow { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(249, 115, 22, 0.2) 0%, transparent 70%); pointer-events: none; opacity: 0; transition: opacity 0.5s ease; }
-  .image-container:hover .image-glow { opacity: 1; }
-  .about-content { max-width: 600px; }
-  .about-bio { font-size: 1.25rem; color: white; font-weight: 500; line-height: 1.5; margin-bottom: 2rem; }
-  .about-phases { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; }
-  .about-phase { display: flex; gap: 1rem; align-items: flex-start; }
-  .phase-dot { width: 8px; height: 8px; background: rgb(249, 115, 22); border-radius: 50%; margin-top: 0.6rem; flex-shrink: 0; box-shadow: 0 0 10px rgba(249, 115, 22, 0.5); }
-  .about-phase p { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin: 0; }
-  .about-phase strong { color: white; }
-  .about-mission { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; border-left: 3px solid rgb(249, 115, 22); padding-left: 1.5rem; font-style: italic; margin-bottom: 2.5rem; }
-  .about-players { margin-top: 0; }
-  .about-players-label { font-size: 0.8rem; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 1.25rem; }
-  .about-players-grid { display: flex; gap: 1.5rem; }
-  .about-player { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-  .about-player-photo { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.1); transition: border-color 0.3s ease; }
-  .about-player-photo:hover { border-color: rgba(249, 115, 22, 0.5); }
-  .about-player-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter 0.3s ease; }
-  .about-player-photo:hover img { filter: grayscale(0.3); }
-  .about-player-name { font-size: 0.8rem; color: white; font-weight: 600; text-align: center; line-height: 1.2; }
-  .about-player-role { font-size: 0.7rem; color: rgba(255, 255, 255, 0.4); text-align: center; line-height: 1.3; }
 
   /* VIP TESTIMONIALS */
   .funnel-vip-testimonials { padding: 6rem 0; position: relative; overflow: hidden; }
@@ -1982,181 +856,20 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .vip-featured .vip-metric-value { font-size: 3rem; }
   .vip-metric-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.45); }
 
-  .vip-name { font-size: 1.5rem; font-weight: 700; color: white; margin: 0; }
+  .vip-name { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.5rem; font-weight: 700; color: white; margin: 0; }
   .vip-featured .vip-name { font-size: 1.75rem; }
-  .vip-role { font-size: 0.875rem; font-weight: 500; color: rgba(255, 255, 255, 0.5); margin: 0; }
-  .vip-role-highlight { font-size: 0.8rem; color: rgba(249, 115, 22, 0.8); font-weight: 600; margin: 0; }
-  .vip-desc { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); line-height: 1.7; margin: 0.5rem 0 0; }
+  .vip-role { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: rgba(255, 255, 255, 0.5); margin: 0; }
+  .vip-role-highlight { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.8rem; color: rgba(249, 115, 22, 0.8); font-weight: 600; margin: 0; }
+  .vip-desc { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); line-height: 1.7; margin: 0.5rem 0 0; }
   .vip-featured .vip-desc { font-size: 0.95rem; }
-
-  /* PRICING */
-  .funnel-pricing-tiers { padding: 6rem 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(249, 115, 22, 0.03) 100%); }
-  .pricing-tiers-header { text-align: center; margin-bottom: 2.5rem; }
-  .pricing-toggle-wrapper { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
-  .toggle-label { font-size: 0.95rem; color: rgba(255, 255, 255, 0.5); transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem; }
-  .toggle-label.active { color: white; font-weight: 600; }
-  .toggle-discount { background: rgba(52, 211, 153, 0.2); color: rgb(52, 211, 153); font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 20px; font-weight: 600; }
-  .pricing-toggle { width: 56px; height: 28px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 100px; cursor: pointer; position: relative; transition: all 0.3s ease; }
-  .pricing-toggle:hover { border-color: rgba(249, 115, 22, 0.5); }
-  .pricing-toggle.active { background: rgba(249, 115, 22, 0.2); border-color: rgb(249, 115, 22); }
-  .toggle-slider { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; background: white; border-radius: 50%; transition: transform 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
-  .pricing-toggle.active .toggle-slider { transform: translateX(28px); background: rgb(249, 115, 22); }
-  .pricing-grid-3 { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 1.5rem; max-width: 1100px; margin: 0 auto; align-items: start; }
-  .tier-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 2rem; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; }
-  .tier-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
-  .tier-card.featured { background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(249, 115, 22, 0.04) 100%); border: 2px solid rgb(249, 115, 22); z-index: 2; padding: 2.5rem 2rem; }
-  .tier-card.featured:hover { box-shadow: 0 25px 50px rgba(249, 115, 22, 0.25); border-color: rgb(251, 146, 60); }
-  .tier-featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 100px; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4); white-space: nowrap; }
-  .tier-featured-badge svg { color: rgb(251, 191, 36); }
-  .tier-header { text-align: center; margin-bottom: 1.5rem; }
-  .tier-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.35rem 0.75rem; border-radius: 20px; margin-bottom: 0.75rem; }
-  .badge-starter { background: rgba(148, 163, 184, 0.15); color: rgb(148, 163, 184); }
-  .badge-popular { background: rgba(249, 115, 22, 0.2); color: rgb(251, 146, 60); }
-  .badge-premium { background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%); color: rgb(196, 181, 253); }
-  .tier-name { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 0.25rem; }
-  .tier-tagline { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); margin: 0; }
-  .tier-pricing { text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-  .tier-price { display: flex; align-items: baseline; justify-content: center; gap: 0.25rem; margin-bottom: 0.5rem; }
-  .tier-price.hidden { display: none; }
-  .price-installments { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); font-weight: 500; }
-  .price-currency { font-size: 1.25rem; font-weight: 600; color: rgba(255, 255, 255, 0.7); }
-  .price-value { font-size: 3rem; font-weight: 800; color: white; line-height: 1; }
-  .featured .price-value { font-size: 3.25rem; color: rgb(249, 115, 22); }
-  .price-full { font-size: 1rem; color: rgba(255, 255, 255, 0.4); text-decoration: line-through; margin-left: 0.5rem; }
-  .tier-price-note { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); margin: 0; }
-  .tier-price-note.hidden { display: none; }
-  .tier-scarcity { display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 1.5rem; font-size: 0.8rem; font-weight: 600; color: rgb(248, 113, 113); }
-  .scarcity-pulse { width: 8px; height: 8px; background: rgb(239, 68, 68); border-radius: 50%; animation: pulse 1.5s infinite; }
-  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
-  .tier-features { list-style: none; padding: 0; margin: 0 0 1.5rem; flex-grow: 1; }
-  .tier-features li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.6rem 0; font-size: 0.9rem; line-height: 1.4; }
-  .feature-included { color: rgba(255, 255, 255, 0.8); }
-  .feature-included svg { width: 18px; height: 18px; color: rgb(52, 211, 153); flex-shrink: 0; margin-top: 0.1rem; }
-  .feature-included.highlight { color: white; }
-  .feature-included.highlight svg { color: rgb(249, 115, 22); }
-  .feature-not-included { color: rgba(255, 255, 255, 0.35); }
-  .feature-not-included svg { width: 16px; height: 16px; color: rgba(255, 255, 255, 0.2); flex-shrink: 0; margin-top: 0.15rem; }
-  .feature-not-included span { text-decoration: line-through; }
-  .tier-support { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-  .support-badge, .guarantee-badge { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.03); padding: 0.4rem 0.6rem; border-radius: 6px; }
-  .support-badge svg, .guarantee-badge svg { width: 14px; height: 14px; }
-  .support-badge.premium, .guarantee-badge.premium { background: rgba(168, 85, 247, 0.1); color: rgb(196, 181, 253); }
-  .tier-bonus { display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.85rem; font-weight: 600; color: rgb(196, 181, 253); }
-  .tier-bonus svg { width: 16px; height: 16px; color: rgb(251, 191, 36); }
-  .tier-cta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.875rem 1.5rem; border-radius: 10px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s ease; margin-top: auto; cursor: pointer; }
-  .tier-cta .btn-icon { width: 16px; height: 16px; }
-  .btn-outline { background: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.3); }
-  .btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.5); transform: translateY(-2px); }
-  .btn-premium { background: linear-gradient(135deg, rgb(168, 85, 247) 0%, rgb(59, 130, 246) 100%); color: white; border: none; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3); }
-  .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4); }
-  .comparison-toggle { display: flex; justify-content: center; margin-top: 2rem; }
-  .comparison-btn { display: flex; align-items: center; gap: 0.75rem; background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.25); color: rgb(249, 115, 22); padding: 0.75rem 1.25rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
-  .comparison-btn:hover { background: rgba(249, 115, 22, 0.15); border-color: rgb(249, 115, 22); color: white; transform: translateY(-2px); }
-  .comparison-btn.active { background: rgb(249, 115, 22); border-color: rgb(249, 115, 22); color: white; }
-  .comparison-btn .btn-label { display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
-  .comparison-btn .chevron-icon { width: 18px; height: 18px; transition: transform 0.3s ease; }
-  .comparison-btn.active .chevron-icon { transform: rotate(180deg); }
-  .comparison-table-wrapper { margin-top: 2rem; overflow-x: auto; }
-  .comparison-table-wrapper.hidden { display: none; }
-  .comparison-table { width: 100%; max-width: 900px; margin: 0 auto; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 12px; overflow: hidden; }
-  .comparison-table th, .comparison-table td { padding: 1rem; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-  .comparison-table th { background: rgba(255, 255, 255, 0.05); font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.05em; }
-  .comparison-table th:first-child, .comparison-table td:first-child { text-align: left; }
-  .comparison-table td { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
-  .comparison-table .featured-col { background: rgba(249, 115, 22, 0.05); color: white; font-weight: 500; }
-  .comparison-table .check { color: rgb(52, 211, 153); font-weight: 700; }
-  .comparison-table .dash { color: rgba(255, 255, 255, 0.25); }
-  .comparison-table tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
-  .trust-signals { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); flex-wrap: wrap; }
-  .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
-  .trust-item svg { width: 18px; height: 18px; color: rgb(52, 211, 153); }
-
-  /* FAQ */
-  .funnel-faq { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
-
-  /* FAQ Contact Channels */
-  .faq-contact-channels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto 3rem; }
-  .faq-channel { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.03); text-decoration: none; transition: all 0.3s ease; }
-  .faq-channel:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); }
-  .faq-channel-whatsapp:hover { border-color: rgba(37, 211, 102, 0.5); background: rgba(37, 211, 102, 0.08); }
-  .faq-channel-email:hover { border-color: rgba(249, 115, 22, 0.5); background: rgba(249, 115, 22, 0.08); }
-  .faq-channel-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .faq-channel-whatsapp .faq-channel-icon { background: rgba(37, 211, 102, 0.15); color: #25D366; }
-  .faq-channel-email .faq-channel-icon { background: rgba(249, 115, 22, 0.15); color: rgb(249, 115, 22); }
-  .faq-channel-info { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
-  .faq-channel-label { font-size: 0.85rem; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.05em; }
-  .faq-channel-action { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .faq-channel-arrow { color: rgba(255, 255, 255, 0.3); font-size: 1.25rem; margin-left: auto; flex-shrink: 0; transition: transform 0.3s ease; }
-  .faq-channel:hover .faq-channel-arrow { transform: translateX(4px); color: rgba(255, 255, 255, 0.6); }
-  .faq-channel-copy { margin-left: auto; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(249, 115, 22, 0.3); background: rgba(249, 115, 22, 0.1); color: rgb(249, 115, 22); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; flex-shrink: 0; }
-  .faq-channel-copy:hover { background: rgba(249, 115, 22, 0.2); border-color: rgba(249, 115, 22, 0.5); }
-
-  /* FAQ Accordion */
-  .faq-accordion { max-width: 800px; margin: 0 auto; display: grid; gap: 0.75rem; }
-  .faq-item { background: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; transition: all 0.3s ease; }
-  .faq-item:hover { border-color: rgba(255, 255, 255, 0.1); }
-  .faq-item[open] { border-color: rgba(249, 115, 22, 0.3); background: rgba(255, 255, 255, 0.04); }
-  .faq-item summary { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; cursor: pointer; list-style: none; }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::marker { display: none; content: ''; }
-  .faq-item summary h3 { color: white; font-size: 1.125rem; font-weight: 600; margin: 0; }
-  .faq-toggle { width: 28px; height: 28px; border-radius: 50%; background: rgba(255, 255, 255, 0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-left: 1rem; position: relative; transition: all 0.3s ease; }
-  .faq-toggle::before, .faq-toggle::after { content: ''; position: absolute; background: rgba(255, 255, 255, 0.5); border-radius: 2px; transition: all 0.3s ease; }
-  .faq-toggle::before { width: 12px; height: 2px; }
-  .faq-toggle::after { width: 2px; height: 12px; }
-  .faq-item[open] .faq-toggle { background: rgba(249, 115, 22, 0.2); }
-  .faq-item[open] .faq-toggle::before { background: rgb(249, 115, 22); }
-  .faq-item[open] .faq-toggle::after { height: 0; opacity: 0; }
-  .faq-item p { color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin: 0; padding: 0 2rem 1.5rem; }
-
-  @media (max-width: 640px) {
-    .faq-contact-channels { grid-template-columns: 1fr; }
-  }
-
-  /* GUARANTEE DUAL */
-  .funnel-guarantee-dual { padding: 6rem 0; background: rgba(255, 255, 255, 0.01); }
-  .guarantee-dual-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
-  .guarantee-dual-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; transition: all 0.4s ease; }
-  .guarantee-dual-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); }
-  .guarantee-dual-card.guarantee-incondicional:hover { border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 20px 50px rgba(52, 211, 153, 0.1); }
-  .guarantee-dual-card.guarantee-condicional:hover { border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 20px 50px rgba(249, 115, 22, 0.1); }
-  .guarantee-dual-badge { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; margin-bottom: 1.5rem; }
-  .guarantee-dual-badge .badge-days { font-size: 2.5rem; font-weight: 800; color: white; line-height: 1; }
-  .guarantee-dual-badge .badge-type { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.5); }
-  .guarantee-incondicional .guarantee-dual-badge .badge-days { color: rgb(52, 211, 153); }
-  .guarantee-condicional .guarantee-dual-badge .badge-days { color: rgb(249, 115, 22); }
-  .guarantee-dual-icon { width: 64px; height: 64px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; }
-  .guarantee-dual-icon svg { width: 100%; height: 100%; }
-  .guarantee-incondicional .guarantee-dual-icon svg { color: rgb(52, 211, 153); }
-  .guarantee-condicional .guarantee-dual-icon svg { color: rgb(249, 115, 22); }
-  .guarantee-dual-text { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.7; text-align: center; margin: 0; }
-  .guarantee-dual-text strong { color: white; }
-  .guarantee-incondicional .guarantee-dual-text strong { color: rgb(52, 211, 153); }
-  .guarantee-condicional .guarantee-dual-text strong { color: rgb(249, 115, 22); }
-  .guarantee-dual-footer { max-width: 700px; margin: 3rem auto 0; text-align: center; }
-  .guarantee-disclaimer { font-size: 1rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin: 0 0 1rem; }
-  .guarantee-disclaimer strong { color: rgba(255, 255, 255, 0.8); }
-  .guarantee-promise { font-size: 1.125rem; color: white; line-height: 1.7; margin: 0; font-weight: 500; }
-
-  /* TL;DR */
-  .funnel-tldr { padding: 6rem 0; }
-  .tldr-panel { max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%); border: 2px solid rgba(249, 115, 22, 0.4); border-radius: 24px; padding: 3rem; text-align: center; }
-  .tldr-stars { display: flex; align-items: center; justify-content: center; gap: 0.25rem; margin-bottom: 0.75rem; }
-  .tldr-proof { font-size: 0.9rem; font-weight: 600; color: rgba(255, 255, 255, 0.7); margin-left: 0.5rem; }
-  .tldr-title { font-size: 1.75rem; font-weight: 800; color: white; margin-bottom: 2rem; }
-  .tldr-checklist { list-style: none; padding: 0; margin: 0 0 2.5rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
-  .tldr-checklist li { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; font-size: 1rem; color: rgba(255, 255, 255, 0.9); }
-  .tldr-checklist li svg { width: 20px; height: 20px; color: rgb(52, 211, 153); flex-shrink: 0; }
-  .tldr-cta { font-size: 1.125rem; padding: 1.25rem 3rem; box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4); margin-bottom: 1rem; }
-  .tldr-guarantee { font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); margin: 0; }
 
   /* DESTINY */
   .funnel-destiny { padding: 8rem 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(249, 115, 22, 0.03) 100%); position: relative; overflow: hidden; }
   .funnel-destiny::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: 80vw; background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%); filter: blur(60px); pointer-events: none; }
   .destiny-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
-  .destiny-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: white; text-align: center; line-height: 1.2; margin-bottom: 3rem; }
+  .destiny-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: white; text-align: center; line-height: 1.2; margin-bottom: 3rem; }
   .destiny-text { margin-bottom: 3rem; }
-  .destiny-text p { font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 1.25rem; }
+  .destiny-text p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 1.25rem; }
   .destiny-lead { font-size: 1.25rem !important; color: rgba(255, 255, 255, 0.8) !important; font-weight: 500; }
   .destiny-warning { color: rgba(239, 68, 68, 0.9) !important; font-weight: 500; }
   .destiny-highlight { color: white !important; font-size: 1.25rem !important; font-weight: 600; }
@@ -2165,101 +878,20 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
   .destiny-first { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(249, 115, 22, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
   .first-badge { display: inline-block; background: rgba(249, 115, 22, 0.15); color: rgb(249, 115, 22); font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .first-list { list-style: none; padding: 0; margin: 0; }
-  .first-list li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; font-size: 1.125rem; color: rgba(255, 255, 255, 0.8); line-height: 1.5; }
+  .first-list li { font-family: 'DM Sans', system-ui, sans-serif; display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; font-size: 1.125rem; color: rgba(255, 255, 255, 0.8); line-height: 1.5; }
   .first-list li:last-child { margin-bottom: 0; }
   .first-list svg { width: 24px; height: 24px; color: rgb(52, 211, 153); flex-shrink: 0; margin-top: 0.1rem; }
   .destiny-reason { text-align: center; margin-bottom: 3rem; }
-  .destiny-reason p { font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 0.75rem; }
-  .reason-highlight { font-size: 1.375rem !important; color: white !important; font-weight: 700; }
-  .destiny-cta { text-align: center; }
-  .cta-question { font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 0.5rem; }
-  .cta-action { font-size: 1.375rem; color: white; font-weight: 600; margin-bottom: 2rem; }
-  .destiny-btn { font-size: 1.125rem; padding: 1.25rem 3rem; box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4); }
-  .destiny-btn:hover { box-shadow: 0 12px 40px rgba(249, 115, 22, 0.5); }
-
-  /* DELIVERABLES VISUAL */
-  .funnel-deliverables-visual { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
-  .visual-intro { text-align: center; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); max-width: 700px; margin: 0 auto 3rem; line-height: 1.7; }
-  .visual-intro strong { color: rgb(249, 115, 22); }
-  .visual-wrapper { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: start; }
-  .visual-list { display: flex; flex-direction: column; gap: 0.75rem; }
-  .visual-item { display: flex; align-items: flex-start; gap: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: all 0.3s ease; text-align: left; width: 100%; }
-  .visual-item:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(249, 115, 22, 0.25); transform: translateX(4px); }
-  .visual-item.active { background: rgba(249, 115, 22, 0.1); border-color: rgb(249, 115, 22); box-shadow: 0 4px 20px rgba(249, 115, 22, 0.15); }
-  .visual-icon { width: 48px; height: 48px; background: rgba(255, 255, 255, 0.05); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease; }
-  .visual-item.active .visual-icon { background: rgba(249, 115, 22, 0.2); }
-  .visual-icon svg { width: 24px; height: 24px; color: rgba(255, 255, 255, 0.5); transition: color 0.3s ease; }
-  .visual-item.active .visual-icon svg { color: rgb(249, 115, 22); }
-  .visual-info h3 { font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.35rem; transition: color 0.3s ease; }
-  .visual-item.active .visual-info h3 { color: rgb(251, 146, 60); }
-  .visual-info p { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; }
-  .visual-image { position: sticky; top: 2rem; }
-  .image-wrapper-visual { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; }
-  .image-wrapper-visual:hover { box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5); border-color: rgba(249, 115, 22, 0.2); }
-  .image-wrapper-visual img { width: 100%; height: auto; display: block; transition: opacity 0.3s ease, transform 0.5s ease; }
-  .visual-connection { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-  .visual-connection p { font-size: 1rem; color: rgba(255, 255, 255, 0.6); margin: 0; }
-  .visual-connection a { color: rgb(249, 115, 22); text-decoration: none; font-weight: 600; transition: color 0.2s; }
-  .visual-connection a:hover { color: rgb(251, 146, 60); }
-
-  /* PACKAGE COMPLETE */
-  .funnel-package-complete { padding: 6rem 0; }
-  .package-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
-  .package-section-title { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid rgba(249, 115, 22, 0.3); display: inline-block; }
-  .package-list { list-style: none; padding: 0; margin: 0; }
-  .package-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; }
-  .package-list li:hover { padding-left: 0.5rem; border-color: rgba(249, 115, 22, 0.15); }
-  .package-list li:last-child { border-bottom: none; }
-  .package-check { width: 28px; height: 28px; background: rgba(52, 211, 153, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
-  .package-check svg { width: 14px; height: 14px; color: rgb(52, 211, 153); }
-  .package-item-content strong { display: block; font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
-  .package-item-content span { font-size: 0.875rem; color: rgba(255, 255, 255, 0.5); line-height: 1.4; }
-  .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .metric-card { display: flex; align-items: flex-start; gap: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 1.25rem; transition: all 0.3s ease; }
-  .metric-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(249, 115, 22, 0.2); transform: translateY(-2px); }
-  .metric-card-highlight { grid-column: span 2; background: rgba(249, 115, 22, 0.08); border-color: rgba(249, 115, 22, 0.2); }
-  .metric-card-highlight:hover { background: rgba(249, 115, 22, 0.12); border-color: rgb(249, 115, 22); }
-  .metric-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(255, 255, 255, 0.05); }
-  .metric-icon svg { width: 22px; height: 22px; }
-  .metric-icon.revenue svg { color: rgb(52, 211, 153); }
-  .metric-icon.traffic svg { color: rgb(59, 130, 246); }
-  .metric-icon.conversion svg { color: rgb(168, 85, 247); }
-  .metric-icon.acquisition svg { color: rgb(236, 72, 153); }
-  .metric-icon.retention svg { color: rgb(34, 211, 238); }
-  .metric-icon.growth svg { color: rgb(74, 222, 128); }
-  .metric-icon.roi svg { color: rgb(249, 115, 22); }
-  .metric-content h4 { font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
-  .metric-content p { font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; }
-  .package-cta { margin-top: 2.5rem; text-align: center; }
-
-  /* RESPONSIVE */
-  @media (max-width: 1024px) {
-    .deliverables-wrapper { grid-template-columns: 1fr; }
-    .pricing-grid-3 { grid-template-columns: 1fr; max-width: 450px; }
-    .tier-card.featured { order: -1; }
-    .tier-featured-badge { position: relative; top: 0; left: 0; transform: none; display: inline-flex; margin-bottom: 1rem; }
-    .package-wrapper { grid-template-columns: 1fr; gap: 3rem; }
-  }
+  .destiny-reason p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 0.75rem; }
+  .reason-highlight { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.375rem !important; color: white !important; font-weight: 700; }
 
   @media (max-width: 768px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .false-solution-grid { grid-template-columns: 1fr; }
     .before-after-grid { grid-template-columns: 1fr; }
     .ba-divider { padding-top: 0; transform: rotate(90deg); }
-    .methodology-timeline { grid-template-columns: 1fr; gap: 2rem; }
-    .methodology-timeline::before { display: none; }
     .results-grid { grid-template-columns: 1fr; }
-    .reports-wrapper { grid-template-columns: 1fr; gap: 2rem; }
-    .reports-image { position: static; order: -1; }
     .guarantee-grid { grid-template-columns: 1fr; }
-    .guarantee-dual-grid { grid-template-columns: 1fr; }
-    .proof-cards-grid { grid-template-columns: 1fr; }
-    .about-wrapper { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-    .about-content { margin: 0 auto; }
-    .about-phase { text-align: left; }
-    .about-mission { text-align: left; }
-    .about-players-grid { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
-    .about-player-photo { width: 56px; height: 56px; }
     .vip-card { grid-template-columns: 1fr; }
     .vip-card.vip-featured { grid-template-columns: 1fr; }
     .vip-photo { min-height: 220px; }
@@ -2270,104 +902,18 @@ import FooterAds from '../../../components/layout/FooterAds.astro';
     .vip-featured .vip-metric-value { font-size: 2.25rem; }
     .vip-name { font-size: 1.25rem; }
     .vip-featured .vip-name { font-size: 1.35rem; }
-    .visual-wrapper { grid-template-columns: 1fr; gap: 2rem; }
-    .visual-image { position: static; order: -1; }
     .why-grid { grid-template-columns: repeat(2, 1fr); }
     .funnel-destiny { padding: 5rem 0; }
     .destiny-title { font-size: 1.75rem; }
-    .destiny-btn { width: 100%; justify-content: center; }
   }
 
   @media (max-width: 640px) {
-    .funnel-pricing-tiers { padding: 4rem 0; }
-    .tier-card { padding: 1.5rem; }
-    .tier-card.featured { padding: 1.5rem; }
-    .price-value { font-size: 2.5rem; }
-    .featured .price-value { font-size: 2.75rem; }
-    .tier-support { flex-direction: column; }
-    .trust-signals { flex-direction: column; align-items: center; gap: 1rem; }
     .substitution-table th, .substitution-table td { padding: 0.75rem; font-size: 0.85rem; }
-    .funnel-package-complete { padding: 4rem 0; }
-    .metrics-grid { grid-template-columns: 1fr; }
-    .metric-card-highlight { grid-column: span 1; }
     .why-grid { grid-template-columns: 1fr; }
   }
 </style>
 
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const reportItems = document.querySelectorAll('.report-item');
-    const reportImage = document.getElementById('report-image');
-    const imageBasePath = '/videos/services/funnel-mapping/';
 
-    reportItems.forEach(item => {
-      item.addEventListener('click', () => {
-        reportItems.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-        const imageName = item.dataset.image;
-        if (reportImage && imageName) {
-          reportImage.style.opacity = '0';
-          setTimeout(() => {
-            reportImage.src = imageBasePath + imageName + '.webp';
-            const h3 = item.querySelector('h3');
-            if (h3) reportImage.alt = h3.textContent || '';
-            reportImage.style.opacity = '1';
-          }, 150);
-        }
-      });
-    });
-
-    const visualItems = document.querySelectorAll('.visual-item');
-    const visualReportImage = document.getElementById('visual-report-image');
-
-    visualItems.forEach(item => {
-      item.addEventListener('click', () => {
-        visualItems.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-        const imageName = item.dataset.image;
-        if (visualReportImage && imageName) {
-          visualReportImage.style.opacity = '0';
-          setTimeout(() => {
-            visualReportImage.src = imageBasePath + imageName + '.webp';
-            const h3 = item.querySelector('h3');
-            if (h3) visualReportImage.alt = h3.textContent || '';
-            visualReportImage.style.opacity = '1';
-          }, 150);
-        }
-      });
-    });
-
-    const pricingToggle = document.getElementById('pricingToggle');
-    const toggleLabels = document.querySelectorAll('.toggle-label');
-    const parceladoElements = document.querySelectorAll('.parcelado');
-    const avistaElements = document.querySelectorAll('.avista');
-
-    if (pricingToggle) {
-      pricingToggle.addEventListener('click', () => {
-        const isActive = pricingToggle.classList.toggle('active');
-        toggleLabels.forEach(label => {
-          if ((label.dataset.label === 'avista' && isActive) || (label.dataset.label === 'parcelado' && !isActive)) {
-            label.classList.add('active');
-          } else {
-            label.classList.remove('active');
-          }
-        });
-        parceladoElements.forEach(el => el.classList.toggle('hidden', isActive));
-        avistaElements.forEach(el => el.classList.toggle('hidden', !isActive));
-      });
-    }
-
-    const comparisonToggle = document.getElementById('comparisonToggle');
-    const comparisonTable = document.getElementById('comparisonTable');
-
-    if (comparisonToggle && comparisonTable) {
-      comparisonToggle.addEventListener('click', () => {
-        comparisonToggle.classList.toggle('active');
-        comparisonTable.classList.toggle('hidden');
-      });
-    }
-  });
-</script>
 
 <!-- Modal de Captura de Leads -->
 <div id="modal-overlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">

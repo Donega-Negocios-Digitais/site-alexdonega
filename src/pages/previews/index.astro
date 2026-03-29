@@ -1,127 +1,172 @@
 ---
 /**
  * /previews/index.astro
- * Página índice com grid de cards para todos os componentes reutilizáveis
+ * Página índice com grid de cards com mini previews (iframe escalado)
  */
 
 interface ComponentItem {
   name: string;
   slug: string;
-  category: 'ui' | 'layout' | 'course' | 'blog';
+  category: 'ui' | 'layout' | 'course' | 'blog' | 'section';
   description: string;
-  icon: string;
+  scrollAnchor?: 'top' | 'bottom';
 }
 
 const components: ComponentItem[] = [
-  // UI Components
   {
     name: 'Button',
     slug: 'button',
     category: 'ui',
     description: 'Botão com 6 variantes, 4 tamanhos e efeito shimmer',
-    icon: 'button'
   },
   {
     name: 'Card',
     slug: 'card',
     category: 'ui',
     description: 'Card container com efeito hover opcional',
-    icon: 'card'
   },
   {
     name: 'Badge',
     slug: 'badge',
     category: 'ui',
     description: 'Badge/tag com 4 variantes de estilo',
-    icon: 'badge'
   },
   {
     name: 'Animated Background',
     slug: 'animated-background',
     category: 'ui',
     description: 'Fundo animado com linhas SVG em movimento',
-    icon: 'animation'
   },
-  // Layout Components
   {
     name: 'Header',
     slug: 'header',
     category: 'layout',
     description: 'Navegação responsiva com menu mobile',
-    icon: 'header'
   },
   {
     name: 'Footer Principal',
     slug: 'footer',
     category: 'layout',
     description: 'Footer completo com links e informações',
-    icon: 'footer'
+    scrollAnchor: 'bottom',
   },
   {
     name: 'Footer Ads',
     slug: 'footer-ads',
     category: 'layout',
     description: 'Footer com área para anúncios',
-    icon: 'ads'
+    scrollAnchor: 'bottom',
   },
   {
     name: 'Footer Simples',
     slug: 'footer-simples',
     category: 'layout',
     description: 'Footer minimalista para páginas de conversão',
-    icon: 'footer'
+    scrollAnchor: 'bottom',
   },
-  // Course Components
   {
     name: 'Course FAQ Section',
     slug: 'course-faq',
     category: 'course',
     description: 'Seção de perguntas frequentes com acordeão',
-    icon: 'faq'
   },
   {
     name: 'Course Final CTA',
     slug: 'course-final-cta',
     category: 'course',
     description: 'CTA final com variantes de cor (default, obsidian, gsd)',
-    icon: 'cta'
   },
-  // Blog Components
   {
     name: 'Post Card',
     slug: 'post-card',
     category: 'blog',
     description: 'Card de post do blog com imagem, título e metadata',
-    icon: 'post'
+  },
+  {
+    name: 'Warning Banner',
+    slug: 'funnel-warning-banner',
+    category: 'section',
+    description: 'Banner sticky com CTA de escassez',
+  },
+  {
+    name: 'Hero',
+    slug: 'funnel-hero',
+    category: 'section',
+    description: 'Hero com visualização de funil animada e prova social',
+  },
+  {
+    name: 'Methodology',
+    slug: 'funnel-methodology',
+    category: 'section',
+    description: 'Timeline da metodologia MAPS com 4 etapas',
+  },
+  {
+    name: 'Deliverables',
+    slug: 'funnel-deliverables',
+    category: 'section',
+    description: 'Galeria visual de relatórios com toggle de imagens',
+  },
+  {
+    name: 'Package Complete',
+    slug: 'funnel-package-complete',
+    category: 'section',
+    description: 'Pacote completo com lista de itens e grid de métricas',
+  },
+  {
+    name: 'About',
+    slug: 'funnel-about',
+    category: 'section',
+    description: 'Seção sobre Alex Donega com foto, bio e players',
+  },
+  {
+    name: 'Pricing',
+    slug: 'funnel-pricing',
+    category: 'section',
+    description: '3 tiers com toggle parcelado/à vista e tabela comparativa',
+  },
+  {
+    name: 'Guarantee Dual',
+    slug: 'funnel-guarantee-dual',
+    category: 'section',
+    description: 'Duas garantias (incondicional e condicional)',
+  },
+  {
+    name: 'FAQ',
+    slug: 'funnel-faq',
+    category: 'section',
+    description: 'FAQ com WhatsApp, email e acordeão de perguntas',
+  },
+  {
+    name: 'Final CTA',
+    slug: 'funnel-final-cta',
+    category: 'section',
+    description: 'Painel TL;DR com checklist, estrelas e CTA final',
   },
 ];
 
-const categoryLabels = {
+const categoryLabels: Record<string, string> = {
   ui: 'UI',
   layout: 'Layout',
   course: 'Course',
-  blog: 'Blog'
+  blog: 'Blog',
+  section: 'Seções',
 };
 
-const categoryColors = {
+const categoryColors: Record<string, string> = {
   ui: '#f97316',
   layout: '#3b82f6',
   course: '#10b981',
-  blog: '#8b5cf6'
+  blog: '#8b5cf6',
+  section: '#ef4444',
 };
 
-const categoryIcons = {
-  ui: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
-  layout: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`,
-  course: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
-  blog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>`
-};
+const categories = ['ui', 'layout', 'course', 'blog', 'section'] as const;
 
 const stats = [
   { value: components.length.toString(), label: 'Componentes' },
-  { value: '4', label: 'Categorias' },
-  { value: '11', label: 'Arquivos' },
-  { value: '100%', label: 'Reutilizável' }
+  { value: categories.length.toString(), label: 'Categorias' },
+  { value: '21', label: 'Arquivos' },
+  { value: '100%', label: 'Reutilizável' },
 ];
 ---
 
@@ -137,320 +182,410 @@ const stats = [
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     :root {
       --bg-main: #0a0a0a;
-      --bg-card: #1a1a1a;
-      --bg-card-hover: #222222;
+      --bg-card: #111111;
+      --bg-card-hover: #161616;
       --text-primary: #ffffff;
-      --text-secondary: rgba(255, 255, 255, 0.7);
-      --text-muted: rgba(255, 255, 255, 0.5);
+      --text-secondary: rgba(255, 255, 255, 0.65);
+      --text-muted: rgba(255, 255, 255, 0.4);
       --accent: #d87757;
       --accent-hover: #e8866a;
-      --border: #2a2a2a;
-      --border-hover: #3a3a3a;
+      --border: #1e1e1e;
+      --border-hover: #2a2a2a;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     body {
       min-height: 100vh;
       background: var(--bg-main);
       color: var(--text-primary);
       font-family: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
-    
+
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 100px 24px 60px;
+      padding: 80px 24px 80px;
     }
-    
-    /* Header */
+
     .page-header {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 48px;
     }
-    
+
     .page-title {
       font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 12px;
-      line-height: 1.2;
+      margin-bottom: 10px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
     }
-    
+
     .page-subtitle {
       color: var(--text-secondary);
-      font-size: 1.1rem;
-      max-width: 500px;
-      margin: 0 auto 24px;
+      font-size: 1.05rem;
+      max-width: 480px;
+      margin: 0 auto 20px;
     }
-    
+
     .version-badge {
       display: inline-block;
-      background: rgba(216, 119, 87, 0.15);
+      background: rgba(216, 119, 87, 0.12);
       color: var(--accent);
-      padding: 6px 16px;
+      padding: 5px 14px;
       border-radius: 20px;
-      font-size: 0.875rem;
-      font-weight: 500;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
-    
-    /* Stats Grid */
+
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 16px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
     }
-    
+
     .stat-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: 10px;
+      padding: 16px;
       text-align: center;
-      transition: all 0.2s;
+      transition: border-color 0.2s;
     }
-    
+
     .stat-card:hover {
       border-color: var(--border-hover);
-      transform: translateY(-2px);
     }
-    
+
     .stat-value {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
-    
+
     .stat-label {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
-    
-    /* Sticky Navigation */
+
     .nav-sticky {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
       justify-content: center;
+      align-items: center;
       margin-bottom: 40px;
-      padding: 16px 20px;
+      padding: 10px 14px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 10px;
       position: sticky;
-      top: 80px;
+      top: 16px;
       z-index: 100;
     }
-    
-    .nav-item {
-      padding: 8px 16px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-secondary);
+
+    .nav-search {
+      position: relative;
+      margin-right: 4px;
+    }
+
+    .nav-search svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .nav-search input {
+      width: 180px;
+      padding: 7px 12px 7px 30px;
+      font-size: 0.8rem;
+      color: var(--text-primary);
       background: var(--bg-main);
       border: 1px solid var(--border);
       border-radius: 6px;
+      outline: none;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .nav-search input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .nav-search input:focus {
+      border-color: var(--accent);
+      background: rgba(216, 119, 87, 0.04);
+    }
+
+    .nav-item {
+      padding: 7px 16px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 6px;
       text-decoration: none;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.15s;
     }
-    
+
     .nav-item:hover,
+    .nav-item.active {
+      color: var(--text-primary);
+      background: var(--bg-main);
+      border-color: var(--border);
+    }
+
     .nav-item.active {
       color: var(--accent);
       border-color: var(--accent);
-      background: rgba(216, 119, 87, 0.1);
+      background: rgba(216, 119, 87, 0.08);
     }
-    
-    /* Section */
+
     .section {
-      margin-bottom: 60px;
+      margin-bottom: 56px;
     }
-    
+
     .section-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--border);
     }
-    
+
     .section-icon {
-      width: 28px;
-      height: 28px;
+      width: 22px;
+      height: 22px;
       color: var(--accent);
+      flex-shrink: 0;
     }
-    
+
     .section-title {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1.15rem;
+      font-weight: 600;
       color: var(--text-primary);
+      letter-spacing: -0.01em;
     }
-    
+
     .section-count {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
       margin-left: auto;
     }
-    
-    /* Components Grid */
+
     .components-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
     }
-    
+
     .component-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px;
+      overflow: hidden;
       text-decoration: none;
       color: inherit;
-      transition: all 0.2s;
       display: flex;
       flex-direction: column;
+      transition: all 0.25s ease;
+      position: relative;
     }
-    
+
     .component-card:hover {
       background: var(--bg-card-hover);
-      border-color: var(--accent);
-      transform: translateY(-2px);
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.5);
     }
-    
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(216, 119, 87, 0.1);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      color: var(--accent);
+
+    .preview-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #080808;
+      border-bottom: 1px solid var(--border);
     }
-    
-    .card-icon svg {
-      width: 24px;
-      height: 24px;
+
+    .preview-frame-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
     }
-    
-    .card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 8px;
+
+    .preview-frame-container iframe {
+      width: 1200px;
+      height: 800px;
+      border: none;
+      transform-origin: top left;
+      transform: scale(calc(1 / 3));
     }
-    
-    .card-title {
-      font-size: 1.1rem;
+
+    .preview-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(8, 8, 8, 0.6) 80%,
+        rgba(8, 8, 8, 0.95) 100%
+      );
+      pointer-events: none;
+      z-index: 2;
+      transition: opacity 0.25s;
+    }
+
+    .component-card:hover .preview-overlay {
+      opacity: 0.4;
+    }
+
+    .preview-label {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      z-index: 3;
+      font-size: 0.65rem;
       font-weight: 600;
-      color: var(--text-primary);
-    }
-    
-    .card-category {
-      font-size: 0.7rem;
-      font-weight: 500;
-      padding: 4px 10px;
-      border-radius: 100px;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 3px 8px;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
     }
-    
-    .card-category.ui { background: rgba(249, 115, 22, 0.15); color: #f97316; }
-    .card-category.layout { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-    .card-category.course { background: rgba(16, 185, 129, 0.15); color: #10b981; }
-    .card-category.blog { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
-    
-    .card-description {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.5;
+
+    .component-card:hover .preview-label {
+      opacity: 1;
+    }
+
+    .card-body {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
       flex: 1;
     }
-    
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .card-category {
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+
+    .card-category.ui { background: rgba(249, 115, 22, 0.12); color: #f97316; }
+    .card-category.layout { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
+    .card-category.course { background: rgba(16, 185, 129, 0.12); color: #10b981; }
+    .card-category.blog { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; }
+    .card-category.section { background: rgba(239, 68, 68, 0.12); color: #ef4444; }
+
+    .card-description {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
     .card-footer {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 12px;
       color: var(--accent);
-      font-size: 0.875rem;
+      font-size: 0.78rem;
       font-weight: 500;
     }
-    
+
     .card-footer svg {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       transition: transform 0.2s;
     }
-    
+
     .component-card:hover .card-footer svg {
-      transform: translateX(4px);
+      transform: translateX(3px);
     }
-    
-    /* Back Link */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.875rem;
-      margin-bottom: 20px;
-      padding: 8px 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      transition: all 0.2s;
-    }
-    
-    .back-link:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-    
-    /* Hidden utility */
+
     .hidden {
       display: none !important;
     }
-    
-    /* Responsive */
+
     @media (min-width: 768px) {
       .page-title {
         font-size: 3rem;
       }
-      
-      .stats-grid {
-        grid-template-columns: repeat(4, 1fr);
+
+      .components-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 20px;
       }
     }
-    
+
     @media (min-width: 1024px) {
-      .page-title {
-        font-size: 3.5rem;
+      .components-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
-    
+
     @media (max-width: 640px) {
       .container {
-        padding: 80px 16px 40px;
+        padding: 60px 14px 40px;
       }
-      
+
       .nav-sticky {
-        top: 60px;
+        top: 8px;
       }
-      
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .components-grid {
         grid-template-columns: 1fr;
       }
@@ -459,7 +594,6 @@ const stats = [
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
     <div class="page-header">
       <h1 class="page-title">Componentes</h1>
       <p class="page-subtitle">
@@ -467,8 +601,7 @@ const stats = [
       </p>
       <span class="version-badge">v2.0</span>
     </div>
-    
-    <!-- Stats Grid -->
+
     <div class="stats-grid">
       {stats.map((stat) => (
         <div class="stat-card">
@@ -477,175 +610,105 @@ const stats = [
         </div>
       ))}
     </div>
-    
-    <!-- Sticky Navigation -->
+
     <nav class="nav-sticky">
-      <a href="#ui" class="nav-item active" data-filter="all">Todos</a>
-      <a href="#ui" class="nav-item" data-filter="ui">UI</a>
-      <a href="#layout" class="nav-item" data-filter="layout">Layout</a>
-      <a href="#course" class="nav-item" data-filter="course">Course</a>
-      <a href="#blog" class="nav-item" data-filter="blog">Blog</a>
+      <div class="nav-search">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" id="search-input" placeholder="Buscar componente..." />
+      </div>
+      <a href="#" class="nav-item active" data-filter="all">Todos</a>
+      {categories.map((cat) => (
+        <a href={`#${cat}`} class="nav-item" data-filter={cat}>
+          {categoryLabels[cat]}
+        </a>
+      ))}
     </nav>
-    
-    <!-- UI Section -->
-    <section class="section" id="ui">
-      <div class="section-header">
-        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="3" y="3" width="7" height="7" rx="1"/>
-          <rect x="14" y="3" width="7" height="7" rx="1"/>
-          <rect x="3" y="14" width="7" height="7" rx="1"/>
-          <rect x="14" y="14" width="7" height="7" rx="1"/>
-        </svg>
-        <h2 class="section-title">UI Components</h2>
-        <span class="section-count">{components.filter(c => c.category === 'ui').length} itens</span>
-      </div>
-      <div class="components-grid">
-        {components.filter(c => c.category === 'ui').map((component) => (
-          <a href={`/previews/${component.slug}`} class="component-card" data-category={component.category} target="_blank" rel="noopener noreferrer">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18"/>
+
+    {categories.map((category) => {
+      const catComponents = components.filter(c => c.category === category);
+      return (
+        <section class="section" id={category}>
+          <div class="section-header">
+            {category === 'ui' && (
+              <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
               </svg>
-            </div>
-            <div class="card-header">
-              <span class="card-title">{component.name}</span>
-              <span class={`card-category ${component.category}`}>{categoryLabels[component.category]}</span>
-            </div>
-            <p class="card-description">{component.description}</p>
-            <div class="card-footer">
-              Ver preview
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            )}
+            {category === 'layout' && (
+              <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
               </svg>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
-    
-    <!-- Layout Section -->
-    <section class="section" id="layout">
-      <div class="section-header">
-        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="2"/>
-          <path d="M3 9h18"/>
-          <path d="M9 21V9"/>
-        </svg>
-        <h2 class="section-title">Layout Components</h2>
-        <span class="section-count">{components.filter(c => c.category === 'layout').length} itens</span>
-      </div>
-      <div class="components-grid">
-        {components.filter(c => c.category === 'layout').map((component) => (
-          <a href={`/previews/${component.slug}`} class="component-card" data-category={component.category} target="_blank" rel="noopener noreferrer">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18"/>
+            )}
+            {category === 'course' && (
+              <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
               </svg>
-            </div>
-            <div class="card-header">
-              <span class="card-title">{component.name}</span>
-              <span class={`card-category ${component.category}`}>{categoryLabels[component.category]}</span>
-            </div>
-            <p class="card-description">{component.description}</p>
-            <div class="card-footer">
-              Ver preview
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            )}
+            {category === 'blog' && (
+              <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
               </svg>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
-    
-    <!-- Course Section -->
-    <section class="section" id="course">
-      <div class="section-header">
-        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-        </svg>
-        <h2 class="section-title">Course Components</h2>
-        <span class="section-count">{components.filter(c => c.category === 'course').length} itens</span>
-      </div>
-      <div class="components-grid">
-        {components.filter(c => c.category === 'course').map((component) => (
-          <a href={`/previews/${component.slug}`} class="component-card" data-category={component.category} target="_blank" rel="noopener noreferrer">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18"/>
+            )}
+            {category === 'section' && (
+              <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/>
               </svg>
-            </div>
-            <div class="card-header">
-              <span class="card-title">{component.name}</span>
-              <span class={`card-category ${component.category}`}>{categoryLabels[component.category]}</span>
-            </div>
-            <p class="card-description">{component.description}</p>
-            <div class="card-footer">
-              Ver preview
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
-    
-    <!-- Blog Section -->
-    <section class="section" id="blog">
-      <div class="section-header">
-        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="16" y1="13" x2="8" y2="13"/>
-          <line x1="16" y1="17" x2="8" y2="17"/>
-        </svg>
-        <h2 class="section-title">Blog Components</h2>
-        <span class="section-count">{components.filter(c => c.category === 'blog').length} itens</span>
-      </div>
-      <div class="components-grid">
-        {components.filter(c => c.category === 'blog').map((component) => (
-          <a href={`/previews/${component.slug}`} class="component-card" data-category={component.category} target="_blank" rel="noopener noreferrer">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18"/>
-              </svg>
-            </div>
-            <div class="card-header">
-              <span class="card-title">{component.name}</span>
-              <span class={`card-category ${component.category}`}>{categoryLabels[component.category]}</span>
-            </div>
-            <p class="card-description">{component.description}</p>
-            <div class="card-footer">
-              Ver preview
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
+            )}
+            <h2 class="section-title">{category === 'ui' ? 'UI Components' : category === 'layout' ? 'Layout Components' : category === 'course' ? 'Course Components' : category === 'blog' ? 'Blog Components' : 'Seções de Página'}</h2>
+            <span class="section-count">{catComponents.length} itens</span>
+          </div>
+          <div class="components-grid">
+            {catComponents.map((component) => (
+              <a href={`/previews/${component.slug}`} class="component-card" data-category={component.category} target="_blank" rel="noopener noreferrer">
+                <div class="preview-wrapper">
+                  <div class="preview-frame-container">
+                    <iframe
+                      src={`/previews/${component.slug}`}
+                      loading="lazy"
+                      title={`Preview de ${component.name}`}
+                      data-scroll-anchor={component.scrollAnchor || 'top'}
+                    ></iframe>
+                  </div>
+                  <div class="preview-overlay"></div>
+                  <span class="preview-label">Preview</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-header">
+                    <span class="card-title">{component.name}</span>
+                    <span class={`card-category ${component.category}`}>{categoryLabels[component.category]}</span>
+                  </div>
+                  <p class="card-description">{component.description}</p>
+                  <div class="card-footer">
+                    Ver preview
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      );
+    })}
   </div>
-  
+
   <script>
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('.section');
-    
+
     navItems.forEach(item => {
-      item.addEventListener('click', () => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
         const filter = item.getAttribute('data-filter');
-        
-        // Update active nav
+
         navItems.forEach(n => n.classList.remove('active'));
         item.classList.add('active');
-        
-        // Show/hide sections
+
         sections.forEach(section => {
           const sectionId = section.getAttribute('id');
           if (filter === 'all' || sectionId === filter) {
@@ -654,6 +717,68 @@ const stats = [
             section.classList.add('hidden');
           }
         });
+
+        if (filter !== 'all') {
+          const target = document.getElementById(filter);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navItems.forEach(n => {
+            n.classList.toggle('active', n.getAttribute('data-filter') === id);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => observer.observe(section));
+
+    const searchInput = document.getElementById('search-input');
+    const allCards = document.querySelectorAll('.component-card');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
+
+      if (!query) {
+        allCards.forEach(card => card.classList.remove('hidden'));
+        sections.forEach(s => s.classList.remove('hidden'));
+        navItems.forEach(n => {
+          n.classList.toggle('active', n.dataset.filter === 'all');
+        });
+        return;
+      }
+
+      navItems.forEach(n => n.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('hidden'));
+
+      allCards.forEach(card => {
+        const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+        const desc = card.querySelector('.card-description')?.textContent.toLowerCase() || '';
+        const match = title.includes(query) || desc.includes(query);
+        card.classList.toggle('hidden', !match);
+      });
+
+      sections.forEach(section => {
+        const visibleCards = section.querySelectorAll('.component-card:not(.hidden)');
+        section.classList.toggle('hidden', visibleCards.length === 0);
+      });
+    });
+
+    document.querySelectorAll('.preview-frame-container iframe').forEach(iframe => {
+      iframe.addEventListener('load', () => {
+        if (iframe.dataset.scrollAnchor === 'bottom') {
+          try {
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            doc.documentElement.scrollTop = doc.documentElement.scrollHeight;
+          } catch(e) {}
+        }
       });
     });
   </script>

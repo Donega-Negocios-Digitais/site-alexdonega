@@ -179,6 +179,11 @@ const faqItemsObsidian = [
       font-size: 0.8125rem;
     }
   </style>
+  <style is:inline>
+    body.in-iframe .page-header,
+    body.in-iframe .divider,
+    body.in-iframe .info-section { display: none !important; }
+  </style>
 </head>
 <body>
   <div class="page-header">
@@ -289,7 +294,7 @@ const faqItemsObsidian = [
       </table>
       
       <div class="code-block" style="margin: 2rem 0 0 0;">
-        <pre>---
+        <pre set:html={`---
 import CourseFaqSection from '../../components/course/CourseFaqSection.astro';
 
 const faqItems = [
@@ -310,9 +315,12 @@ const faqItems = [
   title="Perguntas Frequentes"
   eyebrow="FAQ"
   eyebrowVariant="obsidian"
-/&gt;</pre>
+/&gt;`} />
       </div>
     </div>
   </div>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

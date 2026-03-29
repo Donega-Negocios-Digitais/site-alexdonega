@@ -173,6 +173,18 @@ import Button from '../../components/ui/Button.astro';
       font-size: 0.8125rem;
     }
   </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe header,
+    body.in-iframe .section:has(.props-table),
+    body.in-iframe .section:has(.code-block) { display: none !important; }
+    body.in-iframe .container { max-width: 100%; }
+    body.in-iframe body { padding: 1rem !important; }
+    body.in-iframe .section { margin-bottom: 1rem !important; }
+    body.in-iframe .preview-card { padding: 1rem !important; }
+    body.in-iframe h2.section-title { font-size: 0.85rem !important; margin-bottom: 0.75rem !important; }
+    body.in-iframe .preview-card-title { font-size: 0.7rem !important; margin-bottom: 0.5rem !important; }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -315,5 +327,8 @@ import Button from '../../components/ui/Button.astro';
       </div>
     </section>
   </div>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

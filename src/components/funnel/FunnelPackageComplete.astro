@@ -1,0 +1,164 @@
+---
+interface PackageItem {
+  title: string;
+  description: string;
+}
+
+interface MetricItem {
+  icon?: string;
+  iconVariant?: string;
+  title: string;
+  description: string;
+  highlight?: boolean;
+}
+
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  leftTitle?: string;
+  leftItems?: PackageItem[];
+  rightTitle?: string;
+  metrics?: MetricItem[];
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const {
+  id = 'pacote-completo',
+  eyebrow = 'Tudo Incluído',
+  title = 'Seu Pacote de Mapeamento',
+  subtitle = 'Cada elemento desenhado para você validar seu funil com segurança e confiança',
+  leftTitle = 'Processo & Suporte',
+  leftItems = [
+    { title: 'Questionário de briefing estruturado', description: 'Para eu entender seu negócio a fundo' },
+    { title: 'Mapa visual completo do funil', description: 'Todas as etapas, ofertas e pontos de contato' },
+    { title: 'Simulação de lucratividade', description: 'Métricas reais baseadas no seu negócio' },
+    { title: 'Identificação de vazamentos', description: 'Onde você está perdendo dinheiro' },
+    { title: 'Vídeo explicando a estratégia', description: 'Gravação pessoal para você assistir quando quiser' },
+    { title: '2 horas de mentoria individual', description: 'Para tirar dúvidas e ajustar a estratégia' },
+    { title: 'Reunião final de revisão', description: 'Para garantir que tudo está alinhado' },
+  ],
+  rightTitle = 'Métricas Simuladas',
+  metrics = [
+    { iconVariant: 'revenue', title: 'Receita & Lucro', description: 'Previsão pessimista, provável e otimista' },
+    { iconVariant: 'traffic', title: 'Custo com Anúncios', description: 'CPM, CPC e investimento em tráfego' },
+    { iconVariant: 'conversion', title: 'Ticket Médio (AOV)', description: 'Valor médio por transação' },
+    { iconVariant: 'acquisition', title: 'Custo por Aquisição (CPA)', description: 'Quanto custa cada cliente' },
+    { iconVariant: 'retention', title: 'Valor de Vida (LTV)', description: 'Quanto cada cliente gera ao longo do tempo' },
+    { iconVariant: 'growth', title: 'Receita Recorrente', description: 'Projeção de crescimento mensal' },
+    { iconVariant: 'roi', title: 'CAC & ROAS Ideais', description: 'Metas para seu negócio ser lucrativo', highlight: true },
+  ],
+  ctaText = 'Quero receber este pacote',
+  ctaHref = '#pricing',
+} = Astro.props;
+
+const iconSvgs: Record<string, string> = {
+  revenue: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  traffic: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>',
+  conversion: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>',
+  acquisition: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>',
+  retention: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>',
+  growth: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>',
+  roi: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>',
+};
+
+const checkSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>';
+const arrowSvg = '<svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>';
+---
+
+<section class="funnel-package-complete" id={id}>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-subtitle">{subtitle}</p>
+    </div>
+    <div class="package-wrapper">
+      <div class="package-left">
+        <h3 class="package-section-title">{leftTitle}</h3>
+        <ul class="package-list">
+          {leftItems.map((item) => (
+            <li>
+              <span class="package-check" set:html={checkSvg} />
+              <div class="package-item-content">
+                <strong>{item.title}</strong>
+                <span>{item.description}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="package-right">
+        <h3 class="package-section-title">{rightTitle}</h3>
+        <div class="metrics-grid">
+          {metrics.map((metric) => (
+            <div class={`metric-card${metric.highlight ? ' metric-card-highlight' : ''}`}>
+              <div class={`metric-icon ${metric.iconVariant || ''}`} set:html={iconSvgs[metric.iconVariant || 'revenue'] || iconSvgs.revenue} />
+              <div class="metric-content">
+                <h4>{metric.title}</h4>
+                <p>{metric.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="package-cta">
+          <a href={ctaHref} class="btn-primary">
+            {ctaText}
+            <Fragment set:html={arrowSvg} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-eyebrow { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+  .section-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; font-weight: 600; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3); }
+  :global(.btn-icon) { width: 18px; height: 18px; margin-left: 0.5rem; }
+
+  .funnel-package-complete { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
+  .package-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+  .package-section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid rgba(249, 115, 22, 0.3); display: inline-block; }
+  .package-list { list-style: none; padding: 0; margin: 0; }
+  .package-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; }
+  .package-list li:hover { padding-left: 0.5rem; border-color: rgba(249, 115, 22, 0.15); }
+  .package-list li:last-child { border-bottom: none; }
+  .package-check { width: 28px; height: 28px; background: rgba(52, 211, 153, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+  .package-check :global(svg) { width: 14px; height: 14px; color: rgb(52, 211, 153); }
+  .package-item-content strong { font-family: 'DM Sans', system-ui, sans-serif; display: block; font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
+  .package-item-content span { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.875rem; color: rgba(255, 255, 255, 0.5); line-height: 1.4; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .metric-card { display: flex; align-items: flex-start; gap: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 1.25rem; transition: all 0.3s ease; }
+  .metric-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(249, 115, 22, 0.2); transform: translateY(-2px); }
+  .metric-card-highlight { grid-column: span 2; background: rgba(249, 115, 22, 0.08); border-color: rgba(249, 115, 22, 0.2); }
+  .metric-card-highlight:hover { background: rgba(249, 115, 22, 0.12); border-color: rgb(249, 115, 22); }
+  .metric-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(255, 255, 255, 0.05); }
+  .metric-icon :global(svg) { width: 22px; height: 22px; }
+  .metric-icon.revenue svg { color: rgb(52, 211, 153); }
+  .metric-icon.traffic svg { color: rgb(59, 130, 246); }
+  .metric-icon.conversion svg { color: rgb(168, 85, 247); }
+  .metric-icon.acquisition svg { color: rgb(236, 72, 153); }
+  .metric-icon.retention svg { color: rgb(34, 211, 238); }
+  .metric-icon.growth svg { color: rgb(74, 222, 128); }
+  .metric-icon.roi svg { color: rgb(249, 115, 22); }
+  .metric-content h4 { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
+  .metric-content p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; }
+  .package-cta { margin-top: 2.5rem; text-align: center; }
+
+  @media (max-width: 1024px) {
+    .package-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 640px) {
+    .funnel-package-complete { padding: 4rem 0; }
+    .metrics-grid { grid-template-columns: 1fr; }
+    .metric-card-highlight { grid-column: span 1; }
+  }
+</style>

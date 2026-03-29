@@ -1,0 +1,32 @@
+---
+interface Props {
+  text?: string;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const {
+  text = '6 vagas disponíveis este mês',
+  ctaText = 'Simule seu lucro antes que feche',
+  ctaHref = '#pricing',
+} = Astro.props;
+---
+
+<div class="warning-banner">
+  <div class="warning-content">
+    <span class="warning-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+    </span>
+    <span class="warning-text">{text} — <a href={ctaHref}>{ctaText}</a></span>
+  </div>
+</div>
+
+<style>
+  .warning-banner { position: sticky; top: 0; z-index: 100; background: linear-gradient(135deg, rgb(234, 88, 12), rgb(249, 115, 22), rgb(251, 146, 60)); padding: 0.75rem 1rem; text-align: center; }
+  .warning-content { display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+  .warning-icon { display: flex; align-items: center; }
+  .warning-icon svg { width: 20px; height: 20px; color: white; }
+  .warning-text { font-size: 0.95rem; font-weight: 600; color: white; }
+  .warning-text a { color: white; text-decoration: underline; text-underline-offset: 2px; }
+  .warning-text a:hover { text-decoration-thickness: 2px; }
+</style>

@@ -157,6 +157,19 @@ import Card from '../../components/ui/Card.astro';
       font-size: 0.8125rem;
     }
   </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe header,
+    body.in-iframe .section:has(.props-table),
+    body.in-iframe .section:has(.code-block) { display: none !important; }
+    body.in-iframe .container { max-width: 100%; }
+    body.in-iframe body { padding: 1rem !important; }
+    body.in-iframe .section { margin-bottom: 1rem !important; }
+    body.in-iframe .card-grid { gap: 0.75rem !important; }
+    body.in-iframe .card-content { padding: 0.75rem !important; }
+    body.in-iframe .card-content h3 { font-size: 0.8rem !important; }
+    body.in-iframe .card-content p { font-size: 0.7rem !important; }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -276,5 +289,8 @@ import Card from '../../components/ui/Card.astro';
       </div>
     </section>
   </div>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
 </body>
 </html>

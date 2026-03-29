@@ -1,0 +1,45 @@
+---
+import FunnelHero from '../../components/funnel/FunnelHero.astro';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - FunnelHero</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100vh; background: #0a0a0a; color: #fff; font-family: system-ui, -apple-system, sans-serif; }
+    body { padding: 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: #a3a3a3; text-decoration: none; font-size: 0.875rem; margin-bottom: 1.5rem; transition: color 0.2s; }
+    .back-link:hover { color: #f97316; }
+    header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #262626; }
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .description { color: #a3a3a3; font-size: 1rem; }
+    .section { margin-bottom: 3rem; }
+    .section-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; color: #fff; }
+    .preview-card { background: #141414; border: 1px solid #262626; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; overflow: hidden; }
+    .preview-card-title { font-size: 0.875rem; color: #737373; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/previews/" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+      Voltar para componentes
+    </a>
+    <header>
+      <h1>FunnelHero</h1>
+      <p class="description">Seção hero com visualização de funil animada, prova social e CTA</p>
+    </header>
+    <section class="section">
+      <h2 class="section-title">Padrão</h2>
+      <div class="preview-card">
+        <div class="preview-card-title">Default props</div>
+        <FunnelHero />
+      </div>
+    </section>
+  </div>
+</body>
+</html>

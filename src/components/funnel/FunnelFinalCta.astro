@@ -1,0 +1,81 @@
+---
+interface ChecklistItem {
+  text: string;
+}
+
+interface Props {
+  title?: string;
+  proofText?: string;
+  stars?: number;
+  checklist?: ChecklistItem[];
+  ctaText?: string;
+  ctaHref?: string;
+  guaranteeText?: string;
+}
+
+const {
+  title = 'Resumo Rápido',
+  proofText = '+200 funis mapeados',
+  stars = 5,
+  checklist = [
+    { text: 'Mapa visual completo do funil' },
+    { text: 'Simulação de 3 cenários (pessimista, provável, otimista)' },
+    { text: '2 horas de mentoria individual' },
+    { text: 'Identificação de vazamentos financeiros' },
+    { text: 'Vídeo explicando a estratégia' },
+  ],
+  ctaText = 'SIMULAR MEU FUNIL AGORA',
+  ctaHref = '#pricing',
+  guaranteeText = 'Comece em 7 dias • Garantia de 14 dias • Sem risco',
+} = Astro.props;
+
+const starSvg = `<svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="24" height="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+const checkSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>`;
+const arrowSvg = `<svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>`;
+---
+
+<section class="funnel-tldr">
+  <div class="container">
+    <div class="tldr-panel">
+      <div class="tldr-stars">
+        {Array.from({ length: stars }).map(() => (
+          <Fragment set:html={starSvg} />
+        ))}
+        <span class="tldr-proof">{proofText}</span>
+      </div>
+      <h2 class="tldr-title">{title}</h2>
+      <ul class="tldr-checklist">
+        {checklist.map((item) => (
+          <li>
+            <Fragment set:html={checkSvg} />
+            <span>{item.text}</span>
+          </li>
+        ))}
+      </ul>
+      <a href={ctaHref} class="btn-primary btn-large tldr-cta">
+        {ctaText}
+        <Fragment set:html={arrowSvg} />
+      </a>
+      <p class="tldr-guarantee">{guaranteeText}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; font-weight: 600; padding: 0.875rem 1.75rem; border-radius: 8px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3); }
+  .btn-primary.btn-large { padding: 1rem 2.5rem; font-size: 1rem; }
+  :global(.btn-icon) { width: 18px; height: 18px; margin-left: 0.5rem; }
+
+  .funnel-tldr { padding: 6rem 0; }
+  .tldr-panel { max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.03) 100%); border: 2px solid rgba(249, 115, 22, 0.4); border-radius: 24px; padding: 3rem; text-align: center; }
+  .tldr-stars { display: flex; align-items: center; justify-content: center; gap: 0.25rem; margin-bottom: 0.75rem; }
+  .tldr-proof { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; font-weight: 600; color: rgba(255, 255, 255, 0.7); margin-left: 0.5rem; }
+  .tldr-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.75rem; font-weight: 800; color: white; margin-bottom: 2rem; }
+  .tldr-checklist { list-style: none; padding: 0; margin: 0 0 2.5rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .tldr-checklist li { font-family: 'DM Sans', system-ui, sans-serif; display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0; font-size: 1rem; color: rgba(255, 255, 255, 0.9); }
+  .tldr-checklist li :global(svg) { width: 20px; height: 20px; color: rgb(52, 211, 153); flex-shrink: 0; }
+  .tldr-cta { font-size: 1.125rem; padding: 1.25rem 3rem; box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4); margin-bottom: 1rem; }
+  .tldr-guarantee { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); margin: 0; }
+</style>

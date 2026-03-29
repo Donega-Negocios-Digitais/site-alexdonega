@@ -1,0 +1,427 @@
+---
+interface TierFeature {
+  included: boolean;
+  highlight?: boolean;
+  text: string;
+}
+
+interface Tier {
+  id: string;
+  badge: string;
+  badgeVariant: string;
+  name: string;
+  tagline: string;
+  priceParcelado: { installments: string; value: string };
+  priceAvista: { value: string; full: string };
+  featured?: boolean;
+  featuredBadge?: string;
+  scarcity?: string;
+  features: TierFeature[];
+  supportDays: number;
+  guaranteeDays: number;
+  ctaText: string;
+  ctaVariant: string;
+  dataPacote: string;
+}
+
+interface ComparisonRow {
+  feature: string;
+  diagnostico: string;
+  estrategia: string;
+  implementacao: string;
+}
+
+interface TrustSignal {
+  icon: string;
+  text: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  tiers?: Tier[];
+  comparisonRows?: ComparisonRow[];
+  trustSignals?: TrustSignal[];
+}
+
+const checkSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>';
+const xSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>';
+const arrowSvg = '<svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>';
+const clockSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+const shieldSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
+
+const {
+  eyebrow = 'Escolha seu pacote',
+  title = '3 opções para validar seu funil',
+  subtitle = 'Do diagnóstico inicial à implementação completa — escolha o nível de suporte que você precisa',
+  tiers = [
+    {
+      id: 'diagnostico',
+      badge: 'Para Começar',
+      badgeVariant: 'starter',
+      name: 'Diagnóstico',
+      tagline: 'Visão geral do seu funil',
+      priceParcelado: { installments: '6x de', value: '166' },
+      priceAvista: { value: '847', full: 'R$ 997' },
+      features: [
+        { included: true, text: 'Questionário de briefing estruturado' },
+        { included: true, text: 'Mapa visual simplificado do funil' },
+        { included: true, text: 'Simulação com <strong>1 cenário</strong> (provável)' },
+        { included: true, text: 'Relatório PDF com vazamentos identificados' },
+        { included: false, text: 'Vídeo de estratégia personalizado' },
+        { included: true, text: '<strong>1 hora</strong> de mentoria individual' },
+        { included: false, text: 'Implementação de copy e design' },
+      ],
+      supportDays: 7,
+      guaranteeDays: 7,
+      ctaText: 'Começar Diagnóstico',
+      ctaVariant: 'outline',
+      dataPacote: 'Mapa Funil - Diagnóstico',
+    },
+    {
+      id: 'estrategia',
+      badge: 'Recomendado',
+      badgeVariant: 'popular',
+      name: 'Estratégia Completa',
+      tagline: 'Análise profunda + mentoria',
+      priceParcelado: { installments: '6x de', value: '406' },
+      priceAvista: { value: '2.070', full: 'R$ 2.436' },
+      featured: true,
+      featuredBadge: 'Mais Popular',
+      scarcity: '6 vagas disponíveis este mês',
+      features: [
+        { included: true, text: '<strong>Tudo do Diagnóstico</strong> +' },
+        { included: true, text: 'Mapa visual <strong>completo e detalhado</strong>' },
+        { included: true, text: 'Simulação com <strong>3 cenários</strong>' },
+        { included: true, text: '<strong>Vídeo</strong> explicando a estratégia' },
+        { included: true, text: '<strong>2 horas</strong> de mentoria individual' },
+        { included: true, text: '<strong>1 reunião</strong> de revisão e ajustes' },
+        { included: false, text: 'Implementação de copy e design' },
+      ],
+      supportDays: 30,
+      guaranteeDays: 30,
+      ctaText: 'Garantir Minha Vaga',
+      ctaVariant: 'primary',
+      dataPacote: 'Mapa Funil - Estratégia Completa',
+    },
+    {
+      id: 'implementacao',
+      badge: 'Máximo Valor',
+      badgeVariant: 'premium',
+      name: 'Implementação Total',
+      tagline: 'Tudo pronto para lançar',
+      priceParcelado: { installments: '12x de', value: '990' },
+      priceAvista: { value: '10.098', full: 'R$ 11.880' },
+      scarcity: 'Últimas 2 vagas para Implementação',
+      features: [
+        { included: true, text: '<strong>Tudo do Diagnóstico</strong> +' },
+        { included: true, text: 'Mapa com <strong>múltiplas versões</strong>' },
+        { included: true, text: '<strong>6 horas</strong> de mentoria individual' },
+        { included: true, text: '<strong>3 reuniões</strong> de revisão e ajustes' },
+        { included: true, highlight: true, text: '<strong>Copywriting completo</strong> do funil' },
+        { included: true, highlight: true, text: '<strong>Design das páginas</strong>' },
+        { included: true, highlight: true, text: '<strong>Mensagens de WhatsApp</strong>' },
+        { included: true, highlight: true, text: '<strong>E-mails e automações</strong>' },
+      ],
+      supportDays: 45,
+      guaranteeDays: 30,
+      ctaText: 'Quero Implementação Total',
+      ctaVariant: 'premium',
+      dataPacote: 'Mapa Funil - Implementação Total',
+    },
+  ],
+  comparisonRows = [
+    { feature: 'Questionário de briefing', diagnostico: '✓', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Diagrama de Mapa de Funil', diagnostico: '✓', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Resumo do Projeto', diagnostico: '✓', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Reinvestimento em Tráfego', diagnostico: '—', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Meta de Lucro dos Sonhos', diagnostico: '—', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Comparação de Cenários', diagnostico: '✓', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Mapa visual do funil', diagnostico: 'Simplificado', estrategia: 'Completo', implementacao: 'Completo + versões' },
+    { feature: 'Simulação de cenários', diagnostico: '1 cenário', estrategia: '3 cenários', implementacao: '3 cenários' },
+    { feature: 'Identificação de vazamentos', diagnostico: '✓', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Relatório PDF', diagnostico: '✓', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Vídeo de estratégia', diagnostico: '—', estrategia: '✓', implementacao: '✓' },
+    { feature: 'Mentoria individual', diagnostico: '1 hora', estrategia: '2 horas', implementacao: '6 horas' },
+    { feature: 'Reuniões de revisão', diagnostico: '—', estrategia: '1 reunião', implementacao: '3 reuniões' },
+    { feature: 'Copywriting do funil', diagnostico: '—', estrategia: '—', implementacao: '✓' },
+    { feature: 'Design das páginas', diagnostico: '—', estrategia: '—', implementacao: '✓' },
+    { feature: 'Mensagens de WhatsApp', diagnostico: '—', estrategia: '—', implementacao: '✓' },
+    { feature: 'E-mails e automações', diagnostico: '—', estrategia: '—', implementacao: '✓' },
+    { feature: 'Período de suporte', diagnostico: '7 dias', estrategia: '30 dias', implementacao: '45 dias' },
+    { feature: 'Garantia', diagnostico: '7 dias', estrategia: '30 dias', implementacao: '30 dias' },
+  ],
+  trustSignals = [
+    { text: 'Pagamento 100% Seguro' },
+    { text: 'Garantia de Satisfação' },
+    { text: '+200 Funis Mapeados' },
+  ],
+} = Astro.props;
+
+const trustIcons: Record<string, string> = {
+  lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>',
+};
+const trustIconKeys = ['lock', 'shield', 'check'];
+---
+
+<div id="pricing">
+<section class="funnel-pricing-tiers" id="pricing-tiers">
+  <div class="container">
+    <div class="pricing-tiers-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-subtitle">{subtitle}</p>
+    </div>
+
+    <div class="pricing-toggle-wrapper">
+      <span class="toggle-label active" data-label="parcelado">Parcelado</span>
+      <button class="pricing-toggle" id="pricingToggle" aria-label="Alternar forma de pagamento">
+        <span class="toggle-slider"></span>
+      </button>
+      <span class="toggle-label" data-label="avista">À vista <span class="toggle-discount">-15%</span></span>
+    </div>
+
+    <div class="pricing-grid-3">
+      {tiers.map((tier) => (
+        <div class={`tier-card${tier.featured ? ' featured' : ''}`} data-tier={tier.id}>
+          {tier.featured && tier.featuredBadge && (
+            <div class="tier-featured-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              {tier.featuredBadge}
+            </div>
+          )}
+          <div class="tier-header">
+            <span class={`tier-badge badge-${tier.badgeVariant}`}>{tier.badge}</span>
+            <h3 class="tier-name">{tier.name}</h3>
+            <p class="tier-tagline">{tier.tagline}</p>
+          </div>
+          <div class="tier-pricing">
+            <div class="tier-price parcelado">
+              <span class="price-installments">{tier.priceParcelado.installments}</span>
+              <span class="price-currency">R$</span>
+              <span class="price-value">{tier.priceParcelado.value}</span>
+            </div>
+            <div class="tier-price avista hidden">
+              <span class="price-currency">R$</span>
+              <span class="price-value">{tier.priceAvista.value}</span>
+              <span class="price-full">{tier.priceAvista.full}</span>
+            </div>
+            <p class="tier-price-note parcelado">ou R$ {tier.priceAvista.value} à vista (-15%)</p>
+            <p class="tier-price-note avista hidden">economia de R$ {(parseFloat(tier.priceAvista.full.replace(/[^\d,]/g, '').replace(',', '.')) - parseFloat(tier.priceAvista.value.replace(',', '.'))).toFixed(0).replace('.', ',')}</p>
+          </div>
+          {tier.scarcity && (
+            <div class="tier-scarcity">
+              <span class="scarcity-pulse"></span>
+              <span>{tier.scarcity}</span>
+            </div>
+          )}
+          <ul class="tier-features">
+            {tier.features.map((feature) => (
+              <li class={feature.included ? (feature.highlight ? 'feature-included highlight' : 'feature-included') : 'feature-not-included'}>
+                <Fragment set:html={feature.included ? checkSvg : xSvg} />
+                <span set:html={feature.text} />
+              </li>
+            ))}
+          </ul>
+          <div class="tier-support">
+            <span class={`support-badge${tier.id === 'implementacao' ? ' premium' : ''}`}>
+              <Fragment set:html={clockSvg} />
+              Suporte {tier.supportDays} dias
+            </span>
+            <span class={`guarantee-badge${tier.id === 'implementacao' ? ' premium' : ''}`}>
+              <Fragment set:html={shieldSvg} />
+              Garantia {tier.guaranteeDays} dias
+            </span>
+          </div>
+          <button type="button" data-pacote={tier.dataPacote} class={`tier-cta btn-${tier.ctaVariant}`}>
+            {tier.ctaText}
+            <Fragment set:html={arrowSvg} />
+          </button>
+        </div>
+      ))}
+    </div>
+
+    <div class="comparison-toggle">
+      <button class="comparison-btn" id="comparisonToggle">
+        <span class="btn-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          Ver tabela comparativa
+        </span>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="comparison-table-wrapper hidden" id="comparisonTable">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Recurso</th>
+            <th>Diagnóstico</th>
+            <th class="featured-col">Estratégia Completa</th>
+            <th>Implementação Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {comparisonRows.map((row) => (
+            <tr>
+              <td>{row.feature}</td>
+              <td>{row.diagnostico === '✓' ? <span class="check">✓</span> : row.diagnostico === '—' ? <span class="dash">—</span> : row.diagnostico}</td>
+              <td class="featured-col">{row.estrategia === '✓' ? <span class="check">✓</span> : row.estrategia === '—' ? <span class="dash">—</span> : row.estrategia}</td>
+              <td>{row.implementacao === '✓' ? <span class="check">✓</span> : row.implementacao === '—' ? <span class="dash">—</span> : row.implementacao}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="trust-signals">
+      {trustSignals.map((signal, i) => (
+        <div class="trust-item">
+          <Fragment set:html={trustIcons[trustIconKeys[i] || 'check']} />
+          <span>{signal.text}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+</div>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .section-eyebrow { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+  .section-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
+
+  .funnel-pricing-tiers { padding: 6rem 0; background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(249, 115, 22, 0.03) 100%); }
+  .pricing-tiers-header { text-align: center; margin-bottom: 2.5rem; }
+  .pricing-toggle-wrapper { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+  .toggle-label { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.5); transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem; }
+  .toggle-label.active { color: white; font-weight: 600; }
+  .toggle-discount { background: rgba(52, 211, 153, 0.2); color: rgb(52, 211, 153); font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 20px; font-weight: 600; }
+  .pricing-toggle { width: 56px; height: 28px; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 100px; cursor: pointer; position: relative; transition: all 0.3s ease; }
+  .pricing-toggle:hover { border-color: rgba(249, 115, 22, 0.5); }
+  .pricing-toggle.active { background: rgba(249, 115, 22, 0.2); border-color: rgb(249, 115, 22); }
+  .toggle-slider { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; background: white; border-radius: 50%; transition: transform 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+  .pricing-toggle.active .toggle-slider { transform: translateX(28px); background: rgb(249, 115, 22); }
+  .pricing-grid-3 { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 1.5rem; max-width: 1100px; margin: 0 auto; align-items: start; }
+  .tier-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 2rem; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; }
+  .tier-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+  .tier-card.featured { background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(249, 115, 22, 0.04) 100%); border: 2px solid rgb(249, 115, 22); z-index: 2; padding: 2.5rem 2rem; }
+  .tier-card.featured:hover { box-shadow: 0 25px 50px rgba(249, 115, 22, 0.25); border-color: rgb(251, 146, 60); }
+  .tier-featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 100px; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4); white-space: nowrap; }
+  .tier-featured-badge svg { color: rgb(251, 191, 36); }
+  .tier-header { text-align: center; margin-bottom: 1.5rem; }
+  .tier-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.35rem 0.75rem; border-radius: 20px; margin-bottom: 0.75rem; }
+  .badge-starter { background: rgba(148, 163, 184, 0.15); color: rgb(148, 163, 184); }
+  .badge-popular { background: rgba(249, 115, 22, 0.2); color: rgb(251, 146, 60); }
+  .badge-premium { background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%); color: rgb(196, 181, 253); }
+  .tier-name { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 0.25rem; }
+  .tier-tagline { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); margin: 0; }
+  .tier-pricing { text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+  .tier-price { display: flex; align-items: baseline; justify-content: center; gap: 0.25rem; margin-bottom: 0.5rem; }
+  .tier-price.hidden { display: none; }
+  .price-installments { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); font-weight: 500; }
+  .price-currency { font-size: 1.25rem; font-weight: 600; color: rgba(255, 255, 255, 0.7); }
+  .price-value { font-size: 3rem; font-weight: 800; color: white; line-height: 1; }
+  .featured .price-value { font-size: 3.25rem; color: rgb(249, 115, 22); }
+  .price-full { font-size: 1rem; color: rgba(255, 255, 255, 0.4); text-decoration: line-through; margin-left: 0.5rem; }
+  .tier-price-note { font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); margin: 0; }
+  .tier-price-note.hidden { display: none; }
+  .tier-scarcity { display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.25); border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 1.5rem; font-size: 0.8rem; font-weight: 600; color: rgb(248, 113, 113); }
+  .scarcity-pulse { width: 8px; height: 8px; background: rgb(239, 68, 68); border-radius: 50%; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
+  .tier-features { list-style: none; padding: 0; margin: 0 0 1.5rem; flex-grow: 1; }
+  .tier-features li { font-family: 'DM Sans', system-ui, sans-serif; display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.6rem 0; font-size: 0.9rem; line-height: 1.4; }
+  .feature-included { color: rgba(255, 255, 255, 0.8); }
+  .feature-included :global(svg) { width: 18px; height: 18px; color: rgb(52, 211, 153); flex-shrink: 0; margin-top: 0.1rem; }
+  .feature-included.highlight { color: white; }
+  .feature-included.highlight :global(svg) { color: rgb(249, 115, 22); }
+  .feature-not-included { color: rgba(255, 255, 255, 0.35); }
+  .feature-not-included :global(svg) { width: 16px; height: 16px; color: rgba(255, 255, 255, 0.2); flex-shrink: 0; margin-top: 0.15rem; }
+  .feature-not-included span { text-decoration: line-through; }
+  .tier-support { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .support-badge, .guarantee-badge { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.03); padding: 0.4rem 0.6rem; border-radius: 6px; }
+  .support-badge :global(svg), .guarantee-badge :global(svg) { width: 14px; height: 14px; }
+  .support-badge.premium, .guarantee-badge.premium { background: rgba(168, 85, 247, 0.1); color: rgb(196, 181, 253); }
+  .tier-cta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.875rem 1.5rem; border-radius: 10px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s ease; margin-top: auto; cursor: pointer; }
+  .tier-cta :global(.btn-icon) { width: 16px; height: 16px; }
+  .btn-primary { background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; border: none; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4); }
+  .btn-outline { background: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.3); }
+  .btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.5); transform: translateY(-2px); }
+  .btn-premium { background: linear-gradient(135deg, rgb(168, 85, 247) 0%, rgb(59, 130, 246) 100%); color: white; border: none; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3); }
+  .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4); }
+  .comparison-toggle { display: flex; justify-content: center; margin-top: 2rem; }
+  .comparison-btn { display: flex; align-items: center; gap: 0.75rem; background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.25); color: rgb(249, 115, 22); padding: 0.75rem 1.25rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+  .comparison-btn:hover { background: rgba(249, 115, 22, 0.15); border-color: rgb(249, 115, 22); color: white; transform: translateY(-2px); }
+  .comparison-btn.active { background: rgb(249, 115, 22); border-color: rgb(249, 115, 22); color: white; }
+  .comparison-btn .btn-label { display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
+  .comparison-btn .chevron-icon { width: 18px; height: 18px; transition: transform 0.3s ease; }
+  .comparison-btn.active .chevron-icon { transform: rotate(180deg); }
+  .comparison-table-wrapper { margin-top: 2rem; overflow-x: auto; }
+  .comparison-table-wrapper.hidden { display: none; }
+  .comparison-table { width: 100%; max-width: 900px; margin: 0 auto; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 12px; overflow: hidden; }
+  .comparison-table th, .comparison-table td { padding: 1rem; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+  .comparison-table th { background: rgba(255, 255, 255, 0.05); font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.05em; }
+  .comparison-table th:first-child, .comparison-table td:first-child { text-align: left; }
+  .comparison-table td { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
+  .comparison-table .featured-col { background: rgba(249, 115, 22, 0.05); color: white; font-weight: 500; }
+  .comparison-table .check { color: rgb(52, 211, 153); font-weight: 700; }
+  .comparison-table .dash { color: rgba(255, 255, 255, 0.25); }
+  .comparison-table tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
+  .trust-signals { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); flex-wrap: wrap; }
+  .trust-item { font-family: 'DM Sans', system-ui, sans-serif; display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+  .trust-item :global(svg) { width: 18px; height: 18px; color: rgb(52, 211, 153); }
+
+  @media (max-width: 1024px) {
+    .pricing-grid-3 { grid-template-columns: 1fr; max-width: 450px; }
+    .tier-card.featured { order: -1; }
+    .tier-featured-badge { position: relative; top: 0; left: 0; transform: none; display: inline-flex; margin-bottom: 1rem; }
+  }
+  @media (max-width: 640px) {
+    .funnel-pricing-tiers { padding: 4rem 0; }
+    .tier-card { padding: 1.5rem; }
+    .tier-card.featured { padding: 1.5rem; }
+    .price-value { font-size: 2.5rem; }
+    .featured .price-value { font-size: 2.75rem; }
+    .tier-support { flex-direction: column; }
+    .trust-signals { flex-direction: column; align-items: center; gap: 1rem; }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const pricingToggle = document.getElementById('pricingToggle');
+    const toggleLabels = document.querySelectorAll('.toggle-label');
+    const parceladoElements = document.querySelectorAll('.parcelado');
+    const avistaElements = document.querySelectorAll('.avista');
+
+    if (pricingToggle) {
+      pricingToggle.addEventListener('click', () => {
+        const isActive = pricingToggle.classList.toggle('active');
+        toggleLabels.forEach(label => {
+          if ((label.dataset.label === 'avista' && isActive) || (label.dataset.label === 'parcelado' && !isActive)) {
+            label.classList.add('active');
+          } else {
+            label.classList.remove('active');
+          }
+        });
+        parceladoElements.forEach(el => el.classList.toggle('hidden', isActive));
+        avistaElements.forEach(el => el.classList.toggle('hidden', !isActive));
+      });
+    }
+
+    const comparisonToggle = document.getElementById('comparisonToggle');
+    const comparisonTable = document.getElementById('comparisonTable');
+
+    if (comparisonToggle && comparisonTable) {
+      comparisonToggle.addEventListener('click', () => {
+        comparisonToggle.classList.toggle('active');
+        comparisonTable.classList.toggle('hidden');
+      });
+    }
+  });
+</script>

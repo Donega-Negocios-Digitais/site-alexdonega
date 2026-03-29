@@ -1,0 +1,284 @@
+---
+interface ProofBadge {
+  icon?: string;
+  text: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  proofBadges?: ProofBadge[];
+  stars?: number;
+}
+
+const {
+  eyebrow = 'Simulação de Lucratividade',
+  title = 'Descubra o Potencial de Lucro do Seu Funil',
+  titleHighlight = 'Antes de Investir',
+  subtitle = 'Simulação matemática da lucratividade do seu negócio — cenários pessimista, provável e otimista — para você decidir com dados, não com achismo',
+  ctaText = 'Simular meu lucro agora',
+  ctaHref = '#pricing',
+  proofBadges = [
+    { text: '+200 funis mapeados' },
+    { text: '15+ anos validando funis de alta escala' },
+  ],
+  stars = 5,
+} = Astro.props;
+
+const starSvg = `<svg viewBox="0 0 24 24" fill="rgb(251, 191, 36)" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+
+const badgeIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+---
+
+<section class="funnel-hero">
+  <div class="hero-bg">
+    <div class="grid-pattern"></div>
+    <svg class="funnel-viz" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path id="path1" d="M100 200 Q300 150 500 250 T900 200" stroke="rgba(249, 115, 22, 0.2)" stroke-width="2" stroke-dasharray="10 10" />
+      <path id="path2" d="M150 400 Q400 350 600 450 T1000 400" stroke="rgba(249, 115, 22, 0.15)" stroke-width="2" stroke-dasharray="8 8" />
+      <path id="path3" d="M200 600 Q450 550 700 650 T1100 600" stroke="rgba(249, 115, 22, 0.1)" stroke-width="2" stroke-dasharray="12 12" />
+      <circle r="4" fill="rgb(249, 115, 22)">
+        <animateMotion dur="6s" repeatCount="indefinite"><mpath href="#path1" /></animateMotion>
+      </circle>
+      <circle r="3" fill="rgb(251, 146, 60)">
+        <animateMotion dur="8s" repeatCount="indefinite"><mpath href="#path2" /></animateMotion>
+      </circle>
+      <circle r="5" fill="rgb(234, 88, 12)">
+        <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#path3" /></animateMotion>
+      </circle>
+    </svg>
+    <div class="bg-glow"></div>
+  </div>
+  <div class="fh-container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">{eyebrow}</span>
+      <h1 class="hero-title">
+        {title} <span class="text-gradient">{titleHighlight}</span>
+      </h1>
+      <p class="hero-subtitle">{subtitle}</p>
+      <div class="hero-social-proof">
+        {proofBadges.map((badge) => (
+          <div class="proof-badge">
+            <span class="proof-icon" set:html={badge.icon || badgeIcon} />
+            <span class="proof-text">{badge.text}</span>
+          </div>
+        ))}
+      </div>
+      <div class="hero-stars">
+        {Array.from({ length: stars }).map(() => (
+          <Fragment set:html={starSvg} />
+        ))}
+      </div>
+      <div class="hero-cta">
+        <a href={ctaHref} class="btn-primary">
+          {ctaText}
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .funnel-hero {
+    position: relative;
+    padding: 8rem 0 6rem;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+
+  .fh-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .funnel-hero .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .funnel-hero .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
+    mask-image: radial-gradient(circle at center, black, transparent 85%);
+  }
+
+  .funnel-hero .funnel-viz {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+  }
+
+  .funnel-hero .bg-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+    filter: blur(80px);
+  }
+
+  .funnel-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .funnel-hero .hero-eyebrow {
+    display: inline-block;
+    font-family: 'Syne', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgb(249, 115, 22);
+    margin-bottom: 1rem;
+  }
+
+  .funnel-hero .hero-title {
+    font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .funnel-hero .text-gradient {
+    background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(251, 146, 60) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .funnel-hero .hero-subtitle {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .funnel-hero .hero-social-proof {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .funnel-hero .proof-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    animation: fh-pulse-glow 2s infinite;
+  }
+
+  .funnel-hero .proof-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .funnel-hero .proof-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 20px;
+    max-height: 20px;
+    color: rgb(249, 115, 22);
+  }
+
+  .funnel-hero .proof-text {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .funnel-hero .hero-stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .funnel-hero .hero-stars svg {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px;
+    max-height: 20px;
+  }
+
+  .funnel-hero .hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .funnel-hero .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%) !important;
+    color: white !important;
+    font-family: 'Syne', system-ui, sans-serif;
+    font-weight: 600;
+    padding: 0.875rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none !important;
+    transition: all 0.2s;
+    border: none !important;
+    cursor: pointer;
+  }
+
+  .funnel-hero .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+  }
+
+  .funnel-hero .btn-icon {
+    width: 18px !important;
+    height: 18px !important;
+    margin-left: 0.5rem;
+  }
+
+  @keyframes fh-pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+    50% { box-shadow: 0 0 20px 5px rgba(249, 115, 22, 0.2); }
+  }
+
+  @media (max-width: 768px) {
+    .funnel-hero {
+      padding: 6rem 0 4rem;
+    }
+  }
+</style>

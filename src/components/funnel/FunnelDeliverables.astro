@@ -1,0 +1,155 @@
+---
+interface DeliverableItem {
+  imageKey: string;
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  introText?: string;
+  items?: DeliverableItem[];
+  connectionText?: string;
+  connectionHref?: string;
+}
+
+const {
+  eyebrow = 'O que você recebe',
+  title = 'Seus Relatórios de Simulação',
+  subtitle = 'Veja exatamente o que vou entregar para você visualizar seu lucro antes de investir',
+  introText = 'Você vai segurar na mão um <strong>mapa completo do seu funil</strong>, com todos os números simulados e cenários projetados — pronto para você tomar decisões com confiança, não com achismo.',
+  items = [
+    {
+      imageKey: 'diagrama-mapa-funil',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>',
+      title: 'Diagrama de Mapa de Funil',
+      description: 'Mapeamento visual profissional de todas as etapas',
+    },
+    {
+      imageKey: 'resumo-projeto',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>',
+      title: 'Resumo do Projeto',
+      description: 'Visão consolidada de todas as suas previsões',
+    },
+    {
+      imageKey: 'meta-lucro-sonhos',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+      title: 'Meta de Lucro dos Sonhos',
+      description: 'Descubra exatamente o que é necessário para chegar lá',
+    },
+    {
+      imageKey: 'reinvestimento-trafego',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>',
+      title: 'Reinvestimento em Tráfego',
+      description: 'Gráfico de crescimento de receita e lucro',
+    },
+    {
+      imageKey: 'comparacao-cenarios',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>',
+      title: 'Comparação de Cenários',
+      description: 'Pessimista, provável e otimista lado a lado',
+    },
+  ],
+  connectionText = 'E esses são só os relatórios visuais. <a href="#pacote-completo">Veja abaixo tudo o que vem junto no pacote completo</a> &rarr;',
+  connectionHref = '#pacote-completo',
+} = Astro.props;
+
+const firstImage = items[0]?.imageKey || '';
+---
+
+<section class="funnel-deliverables-visual">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-subtitle">{subtitle}</p>
+    </div>
+    <p class="visual-intro" set:html={introText} />
+    <div class="visual-wrapper">
+      <div class="visual-list">
+        {items.map((item, index) => (
+          <button class={`visual-item${index === 0 ? ' active' : ''}`} data-image={item.imageKey}>
+            <div class="visual-icon" set:html={item.icon} />
+            <div class="visual-info">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </button>
+        ))}
+      </div>
+      <div class="visual-image">
+        <div class="image-wrapper-visual">
+          <img id="visual-report-image" src={`/videos/services/funnel-mapping/${firstImage}.webp`} alt={items[0]?.title || ''} loading="lazy" />
+        </div>
+      </div>
+    </div>
+    <div class="visual-connection">
+      <p set:html={connectionText} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-eyebrow { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+  .section-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
+
+  .funnel-deliverables-visual { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
+  .visual-intro { font-family: 'DM Sans', system-ui, sans-serif; text-align: center; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); max-width: 700px; margin: 0 auto 3rem; line-height: 1.7; }
+  .visual-intro strong { color: rgb(249, 115, 22); }
+  .visual-wrapper { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: start; }
+  .visual-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .visual-item { display: flex; align-items: flex-start; gap: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: all 0.3s ease; text-align: left; width: 100%; }
+  .visual-item:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(249, 115, 22, 0.25); transform: translateX(4px); }
+  .visual-item.active { background: rgba(249, 115, 22, 0.1); border-color: rgb(249, 115, 22); box-shadow: 0 4px 20px rgba(249, 115, 22, 0.15); }
+  .visual-icon { width: 48px; height: 48px; background: rgba(255, 255, 255, 0.05); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease; }
+  .visual-item.active .visual-icon { background: rgba(249, 115, 22, 0.2); }
+  .visual-icon :global(svg) { width: 24px; height: 24px; color: rgba(255, 255, 255, 0.5); transition: color 0.3s ease; }
+  .visual-item.active .visual-icon :global(svg) { color: rgb(249, 115, 22); }
+  .visual-info h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.35rem; transition: color 0.3s ease; }
+  .visual-item.active .visual-info h3 { color: rgb(251, 146, 60); }
+  .visual-info p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.4; }
+  .visual-image { position: sticky; top: 2rem; }
+  .image-wrapper-visual { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; }
+  .image-wrapper-visual:hover { box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5); border-color: rgba(249, 115, 22, 0.2); }
+  .image-wrapper-visual img { width: 100%; height: auto; display: block; transition: opacity 0.3s ease, transform 0.5s ease; }
+  .visual-connection { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+  .visual-connection p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1rem; color: rgba(255, 255, 255, 0.6); margin: 0; }
+  .visual-connection a { color: rgb(249, 115, 22); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+  .visual-connection a:hover { color: rgb(251, 146, 60); }
+
+  @media (max-width: 768px) {
+    .visual-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+    .visual-image { position: static; order: -1; }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const visualItems = document.querySelectorAll('.funnel-deliverables-visual .visual-item');
+    const visualReportImage = document.getElementById('visual-report-image');
+    const imageBasePath = '/videos/services/funnel-mapping/';
+
+    visualItems.forEach(item => {
+      item.addEventListener('click', () => {
+        visualItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const imageName = item.dataset.image;
+        if (visualReportImage && imageName) {
+          visualReportImage.style.opacity = '0';
+          setTimeout(() => {
+            visualReportImage.src = imageBasePath + imageName + '.webp';
+            const h3 = item.querySelector('h3');
+            if (h3) visualReportImage.alt = h3.textContent || '';
+            visualReportImage.style.opacity = '1';
+          }, 150);
+        }
+      });
+    });
+  });
+</script>

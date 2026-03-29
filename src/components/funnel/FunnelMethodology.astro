@@ -1,0 +1,91 @@
+---
+interface MethodologyStep {
+  letter?: string;
+  icon?: string;
+  title?: string;
+  description?: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  steps?: MethodologyStep[];
+}
+
+const {
+  eyebrow = 'Como fazemos',
+  title = 'Metodologia MAPS',
+  subtitle = '<strong>M</strong>apear, <strong>A</strong>nalisar, <strong>P</strong>rojetar, <strong>S</strong>imular — um processo estruturado em 4 etapas para transformar suas ideias em um funil lucrativo e previsível.',
+  steps = [
+    {
+      letter: 'M',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>',
+      title: 'Mapear',
+      description: 'Desenho seu funil completo de forma visual: etapas, ofertas, upsells, downsells, fontes de tráfego e todos os pontos de contato com o cliente.',
+    },
+    {
+      letter: 'A',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>',
+      title: 'Analisar',
+      description: 'Através do briefing detalhado, mergulho no seu negócio: produtos, preços, objetivos e modelo para entender cada detalhe.',
+    },
+    {
+      letter: 'P',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>',
+      title: 'Projetar',
+      description: 'Calculo os números: CPA, LTV, ROAS, margem de lucro. Simulo 3 cenários (pessimista, provável, otimista) para você saber exatamente o que esperar.',
+    },
+    {
+      letter: 'S',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>',
+      title: 'Simular',
+      description: 'Apresento tudo em uma reunião: o mapa visual, os cenários simulados, os vazamentos identificados e as recomendações estratégicas para garantir lucro.',
+    },
+  ],
+} = Astro.props;
+---
+
+<section class="funnel-methodology">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="section-subtitle" set:html={subtitle} />
+    </div>
+    <div class="methodology-timeline">
+      {steps.map((step) => (
+        <div class="methodology-step">
+          <div class="step-number">{step.letter}</div>
+          <div class="step-icon" set:html={step.icon} />
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-eyebrow { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgb(249, 115, 22); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+  .section-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
+
+  .funnel-methodology { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
+  .methodology-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
+  .methodology-timeline::before { content: ''; position: absolute; top: 60px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent); }
+  .methodology-step { text-align: center; position: relative; }
+  .methodology-step .step-number { font-size: 0.75rem; font-weight: 800; color: rgba(255, 255, 255, 0.2); margin-bottom: 1rem; position: static; transform: none; }
+  .methodology-step .step-icon { width: 64px; height: 64px; background: rgba(249, 115, 22, 0.1); border: 2px solid rgba(249, 115, 22, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; transition: all 0.3s; }
+  .methodology-step:hover .step-icon { background: rgba(249, 115, 22, 0.2); border-color: rgb(249, 115, 22); transform: scale(1.1); }
+  .methodology-step .step-icon :global(svg) { width: 28px; height: 28px; color: rgb(249, 115, 22); }
+  .methodology-step h3 { font-family: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.75rem; }
+  .methodology-step p { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); line-height: 1.6; max-width: 250px; margin: 0 auto; }
+
+  @media (max-width: 768px) {
+    .methodology-timeline { grid-template-columns: 1fr; gap: 2rem; }
+    .methodology-timeline::before { display: none; }
+  }
+</style>
