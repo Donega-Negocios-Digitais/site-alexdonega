@@ -13,44 +13,7 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
 import '../../../styles/funnel.css';
 ---
 
-<script>
-  // Lazy load non-critical CSS after LCP
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadNonCriticalCSS);
-  } else {
-    loadNonCriticalCSS();
-  }
-
-  function loadNonCriticalCSS() {
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(() => {
-        const links = [
-          '/_astro/FunnelPricing.CiqMy1XV.css',
-          '/_astro/FunnelFaq.BYasK5TN.css'
-        ];
-        links.forEach(href => {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = href;
-          document.head.appendChild(link);
-        });
-      });
-    } else {
-      setTimeout(() => {
-        const links = [
-          '/_astro/FunnelPricing.CiqMy1XV.css',
-          '/_astro/FunnelFaq.BYasK5TN.css'
-        ];
-        links.forEach(href => {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = href;
-          document.head.appendChild(link);
-        });
-      }, 3000);
-    }
-  }
-</script>
+<script defer src="../../../scripts/lazy-load-css.js"></script>
 
 <Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real." hideHeader hideFooter>
 
