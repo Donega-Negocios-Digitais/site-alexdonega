@@ -1,13 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts
     .filter(post => !post.data.draft)
     .map(post => ({
-      params: { slug: post.slug },
+      params: { slug: post.id.replace(/\.mdx?$/, '') },
       props: { post }
     }));
 }
@@ -17,14 +17,15 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 // Get related posts (same tags)
 const allPosts = await getCollection('blog');
+const currentSlug = post.id.replace(/\.mdx?$/, '');
 const relatedPosts = allPosts
   .filter(p =>
     !p.data.draft &&
-    p.slug !== post.slug &&
+    p.id.replace(/\.mdx?$/, '') !== currentSlug &&
     p.data.tags.some(tag => post.data.tags.includes(tag))
   )
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
