@@ -13,9 +13,9 @@ import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
 import '../../../styles/funnel.css';
 ---
 
-<!-- Lazy-load non-critical CSS with media="print" onload swap (avoids render-blocking) -->
-<link rel="stylesheet" href="/_astro/FunnelPricing.CiqMy1XV.css" media="print" onload="this.media='all'" />
-<link rel="stylesheet" href="/_astro/FunnelFaq.BYasK5TN.css" media="print" onload="this.media='all'" />
+<!-- Preload non-critical CSS (avoids render-blocking, high priority) -->
+<link rel="preload" as="style" href="/_astro/FunnelPricing.CiqMy1XV.css" />
+<link rel="preload" as="style" href="/_astro/FunnelFaq.BYasK5TN.css" />
 
 <Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real." hideHeader hideFooter>
 
