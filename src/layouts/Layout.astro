@@ -15,6 +15,9 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import GoogleTagManager from '../components/GoogleTagManager.astro';
 import '../styles/globals.css';
+import '@fontsource/geist';
+import '@fontsource/dm-sans';
+import '@fontsource/syne';
 
 interface Props {
     title: string;
@@ -51,10 +54,6 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID;
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
 
-    <!-- Fonte Geist -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
     <style>
         /* ==================== RESET E VARIÁVEIS ==================== */

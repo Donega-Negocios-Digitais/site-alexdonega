@@ -26,6 +26,11 @@
   },
   "homepage": "https://github.com/alexdonega/site-alexdonega#readme",
   "devDependencies": {
+    "@fontsource/dm-sans": "^5.2.8",
+    "@fontsource/geist": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/source-serif-4": "^5.2.9",
+    "@fontsource/syne": "^5.2.7",
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^25.1.0",
     "astro": "^6.1.1",
