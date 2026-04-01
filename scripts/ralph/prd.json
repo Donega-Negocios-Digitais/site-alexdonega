@@ -1,0 +1,100 @@
+{
+  "project": "home-page-review-alexdonega",
+  "description": "Revisão estratégica e reescrita de todas as seções da página home",
+  "client": "Alex Donega",
+  "website": "alexdonega.com.br",
+  "targetAudience": "Profissionais de marketing, coaches digitais, empresários",
+  "objective": "Aumentar conversões e clareza de proposta de valor através de copy otimizado",
+  "stories": [
+    {
+      "id": "HERO-02",
+      "title": "Reescrever headline com copywriting persuasivo",
+      "priority": 10,
+      "passes": true
+    },
+    {
+      "id": "ABOUT-03",
+      "title": "Reescrever About Section com foco em benefícios",
+      "priority": 10,
+      "passes": true
+    },
+    {
+      "id": "SERVICES-03",
+      "title": "Reescrever descrições de serviços com copywriting",
+      "priority": 10,
+      "passes": true
+    },
+    {
+      "id": "HERO-01",
+      "title": "Auditar headline atual da Hero Section",
+      "priority": 9,
+      "passes": true
+    },
+    {
+      "id": "HERO-03",
+      "title": "Otimizar subheadline e CTA principal",
+      "priority": 9,
+      "passes": true
+    },
+    {
+      "id": "PORTFOLIO-03",
+      "title": "Reescrever cases com impacto máximo",
+      "priority": 9,
+      "passes": true
+    },
+    {
+      "id": "CTA-01",
+      "title": "Definir CTA primária e estratégia de conversão",
+      "priority": 9,
+      "passes": true
+    },
+    {
+      "id": "FINAL-01",
+      "title": "Documentar aprendizados e recomendações finais",
+      "priority": 9,
+      "passes": true
+    },
+    {
+      "id": "ABOUT-02",
+      "title": "Identificar e articular UVP (Unique Value Proposition)",
+      "priority": 8,
+      "passes": true
+    },
+    {
+      "id": "SERVICES-01",
+      "title": "Mapear todos os serviços e ofertas",
+      "priority": 8,
+      "passes": true
+    },
+    {
+      "id": "PORTFOLIO-02",
+      "title": "Estruturar case studies ideais com storytelling",
+      "priority": 8,
+      "passes": true
+    },
+    {
+      "id": "COURSES-02",
+      "title": "Otimizar copy de promoção de cursos",
+      "priority": 8,
+      "passes": true
+    },
+    {
+      "id": "CONTENT-03",
+      "title": "Estruturar seção de conteúdo na home",
+      "priority": 8,
+      "passes": true
+    },
+    {
+      "id": "CTA-02",
+      "title": "Reescrever copy de conversão final",
+      "priority": 10,
+      "passes": true
+    },
+    {
+      "id": "CTA-03",
+      "title": "Otimizar formulário e fluxo pós-inscrição",
+      "priority": 8,
+      "passes": true
+    }
+  ]
+}
