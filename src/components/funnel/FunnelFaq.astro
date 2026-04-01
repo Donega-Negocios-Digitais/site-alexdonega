@@ -2,6 +2,7 @@
 interface FaqItem {
   question: string;
   answer: string;
+  cta?: string;
 }
 
 interface Props {
@@ -14,22 +15,21 @@ interface Props {
 }
 
 const {
-  eyebrow = 'Dúvidas',
-  title = 'Ficou com alguma dúvida?',
-  subtitle = 'Confira as respostas para as perguntas frequentes ou entre em contato conosco',
+  eyebrow = 'Antes de decidir',
+  title = 'As perguntas que todos fazem antes de contratar',
+  subtitle = 'Se sua dúvida não estiver aqui, fale direto pelo WhatsApp',
   whatsappLink = 'https://wa.me/5545999506444?text=Alex%2C%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20Mapa%20de%20Funil.%20Minha%20d%C3%BAvida%20%C3%A9%3A%20',
   email = 'alexdonega@gmail.com',
   faqs = [
-    { question: 'Já preciso ter um funil rodando?', answer: 'Não. O mapeamento é ideal tanto para quem já fatura e quer escalar sem perder margem, quanto para quem está começando um novo projeto e quer evitar "queimar" dinheiro testando no escuro.' },
-    { question: 'Eu acabei de criar meu produto e não tenho nada de marketing?', answer: 'Perfeito. O mapeamento é justamente o ponto de partida ideal. Você vai sair do zero com uma estratégia clara, sabendo exatamente quais etapas montar, em que ordem e quais números precisa atingir. É muito mais inteligente mapear antes de gastar com tráfego.' },
-    { question: 'Tenho pouco dinheiro para investir em tráfego. Funciona pra mim?', answer: 'Você começa com o que tem. O método VTSD é pensado para funcionar de forma progressiva: você começa com orçamento baixo, valida sua oferta, começa a vender e só então reinveste para escalar.' },
-    { question: 'Meu produto já vende e tenho uma boa receita. É para mim?', answer: 'Sim. Se você já fatura, o mapeamento revela gargalos invisíveis e oportunidades de escala que você não enxerga de dentro do negócio. Muitos clientes descobrem que estavam deixando dinheiro na mesa em etapas que poderiam ser otimizadas com simples ajustes de funil.' },
-    { question: 'Quanto tempo leva para receber o mapa?', answer: 'Após o preenchimento do seu briefing detalhado, o mapa visual e a simulação matemática são entregues em até 7 dias úteis.' },
-    { question: 'Terei acesso à simulação para analisar os números?', answer: 'Sim. Durante a nossa entrega, eu apresento todos os cenários (pessimista, provável e otimista) e você entende exatamente como métricas como CPA, LTV e Taxa de Conversão impactam seu lucro final.' },
-    { question: 'Tem algum pré-requisito para participar?', answer: 'Nenhum. Você só precisa ter um produto ou serviço (físico, digital ou SaaS) e querer validar ou escalar suas vendas online. O mapeamento se adapta ao seu momento — seja você iniciante ou avançado.' },
-    { question: 'O suporte e a mentoria são individuais?', answer: 'Sim. Analiso pessoalmente o seu projeto e os encontros de alinhamento são focados 100% na sua estratégia de escala ou validação.' },
-    { question: 'Não curti, quero cancelar. Como eu faço?', answer: 'Sem problema. Você tem garantia incondicional nos primeiros dias (varia conforme o pacote). Basta enviar um e-mail ou mensagem no WhatsApp solicitando o cancelamento e devolvemos 100% do seu investimento, sem perguntas.' },
-    { question: 'O que é um Funil?', answer: 'Um funil é a jornada completa do cliente, desde o primeiro contato até a compra e além. Ele mapeia todas as etapas: tráfego, captura de leads, ofertas, upsells, downsells e retenção. Um funil bem estruturado transforma visitantes em clientes de forma previsível e lucrativa.' },
+    { question: 'R$ 2.070 é muito dinheiro pra um mapeamento?', answer: 'Depende do que você compara. Um funil montado no escuro, sem diagnóstico, costuma queimar R$ 3k a R$ 5k por mês em tráfego antes de o empreendedor perceber que algo está errado. Em 3 meses, isso é R$ 15k sem retorno garantido. O Mapa de Funil existe exatamente para evitar esse cenário: por R$ 2.070, você sabe onde está o vazamento e o que ajustar antes de gastar o primeiro real com anúncios.', cta: 'Ver pacotes e preços' },
+    { question: 'Não consigo fazer isso sozinho com IA ou templates gratuitos?', answer: 'Você até consegue montar uma estrutura básica. Mas IA e templates não conhecem o seu negócio, a sua margem, o seu ticket médio e o comportamento real do seu cliente. O resultado tende a ser genérico — e funis genéricos convertem mal. Aqui o mapeamento é sob medida: cada etapa é calculada a partir dos seus números reais, não de fórmulas genéricas.' },
+    { question: 'Já contratei agência/consultor e não funcionou. Por que seria diferente?', answer: 'A maioria das agências parte direto pra execução: montam landing page, ligam o tráfego e torcem. Se não converter, mudam a cor do botão. Aqui o caminho é outro: antes de qualquer ação, você recebe um diagnóstico com números. Você vê exatamente onde está o problema, qual o potencial real e o que precisa mudar. Sem achismo, sem tentativa e erro com o seu dinheiro.' },
+    { question: 'Meu produto é novo e eu não sei nada de funil. Funciona pra mim?', answer: 'Na verdade, esse é o melhor momento. Quem já tem um funil rodando muitas vezes precisa desmontar vícios e estratégias que não funcionam. Começando do zero, você monta a estrutura certa desde o início — sem queimar orçamento aprendendo no erro. Você sai do mapeamento sabendo exatamente o que montar, em que ordem e quais números precisa atingir.' },
+    { question: 'Tenho pouco dinheiro pra investir em tráfego pago. Funciona?', answer: 'O método MAPS foi pensado exatamente pra isso: funcionar de forma progressiva. Você começa com o orçamento que tem, valida se a oferta converge, gera as primeiras vendas e só então reinveste para escalar. Não precisa de R$ 10k por mês em anúncios pra começar. Precisa de um funil que converta antes de escalar o tráfego — e é isso que o mapeamento te entrega.' },
+    { question: 'O que eu recebo exatamente? É só um PDF?', answer: 'Nada de PDF genérico. Você recebe: um mapa visual completo do seu funil (todas as etapas, pontos de conversão e vazamentos), uma simulação matemática com 3 cenários (pessimista, provável e otimista), um vídeo gravado com a estratégia detalhada para o seu negócio e 2 horas de mentoria individual ao vivo para alinhar a execução. Tudo entregue em até 7 dias úteis após o briefing.', cta: 'Ver tudo que está incluído' },
+    { question: 'E depois do mapa? Quem vai implementar?', answer: 'Você recebe tudo documentado e pronto para implementar — seja você mesmo, sua equipe ou o profissional que preferir. A mentoria de 2h serve exatamente pra alinhar a execução: você sai sabendo o que fazer, em que ordem e com quais prioridades. Você não fica dependendo de ninguém para colocar o funil no ar.' },
+    { question: 'Meu negócio já fatura bem. Isso é pra iniciantes?', answer: 'Quem já fatura é quem mais se beneficia. De dentro do negócio é difícil enxergar gargalos invisíveis — etapas que poderiam converter o dobro com ajustes simples, upsells que ninguém oferta ou tráfego que entra e não volta. O mapeamento revela esses pontos e mostra quanto você está deixando na mesa. Escalar sem otimizar é jogar dinheiro fora.' },
+    { question: 'E se eu não gostar ou não funcionar?', answer: 'Você não corre risco. Tem garantia incondicional de 7 dias: se não gostar, devolvemos 100% sem perguntas. E se implementar o que foi mapeado e não funcionar, você tem até 30 dias para solicitar reembolso. O ônus é nosso — não o seu.', cta: 'Simular meu cenário com zero risco' },
   ],
 } = Astro.props;
 ---
@@ -70,6 +70,9 @@ const {
         <details class="faq-item">
           <summary><h3>{faq.question}</h3><span class="faq-toggle"></span></summary>
           <p>{faq.answer}</p>
+          {faq.cta && (
+            <a href="#pricing" class="faq-cta">{faq.cta} &rarr;</a>
+          )}
         </details>
       ))}
     </div>
@@ -109,6 +112,8 @@ const {
   .faq-item[open] .faq-toggle::before { background: rgb(249, 115, 22); }
   .faq-item[open] .faq-toggle::after { height: 0; opacity: 0; }
   .faq-item p { font-family: var(--font-body); color: rgba(255, 255, 255, 0.7); line-height: 1.7; margin: 0; padding: 0 2rem 1.5rem; }
+  .faq-cta { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; margin: 0 2rem 1.5rem; border-radius: 12px; background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12)); border: none; cursor: pointer; transition: all 0.3s ease; }
+  .faq-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4); }
 
   @media (max-width: 640px) {
     .faq-contact-channels { grid-template-columns: 1fr; }

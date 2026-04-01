@@ -1,0 +1,713 @@
+---
+/**
+ * /previews/pricing-modal.astro
+ * Preview do Modal de Captura de Leads (Pricing) - versão estática para visualização
+ */
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Modal de Preço</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #0a0a0a;
+      --bg-card: #141414;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .section-title code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      margin-left: 0.5rem;
+    }
+
+    .preview-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-card-title {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .info-item {
+      padding: 1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .info-item-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .info-item-value {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .props-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .props-table th,
+    .props-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .props-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .props-table td {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .props-table code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-size: 0.8125rem;
+    }
+
+    .demo-area {
+      position: relative;
+      width: 100%;
+      min-height: 300px;
+      background: #080808;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .demo-area p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .trigger-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .trigger-btn {
+      padding: 0.5rem 1.25rem;
+      background: linear-gradient(135deg, rgb(249,115,22), rgb(234,88,12));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.875rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .trigger-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(249,115,22,0.3);
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 50;
+    }
+
+    .modal-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      max-height: 90vh;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+
+    .modal-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+      padding: 0.25rem;
+      transition: color 0.15s;
+    }
+
+    .modal-close:hover {
+      color: #e5e7eb;
+    }
+
+    .modal-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgb(249, 115, 22);
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-subtitle {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      font-family: inherit;
+    }
+
+    .modal-input::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    .modal-input:focus {
+      border-color: rgb(249,115,22);
+      box-shadow: 0 0 0 2px rgba(249,115,22,0.2);
+    }
+
+    .modal-input.input-error {
+      border-color: rgb(239, 68, 68);
+      background: rgba(239,68,68,0.08);
+    }
+
+    .modal-error {
+      font-size: 0.75rem;
+      color: rgb(248,113,113);
+      margin-top: 0.25rem;
+    }
+
+    .modal-field {
+      margin-bottom: 1rem;
+    }
+
+    .modal-submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, rgb(249,115,22), rgb(234,88,12));
+      cursor: pointer;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      transition: opacity 0.15s;
+    }
+
+    .modal-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .modal-hint {
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.5rem;
+    }
+
+    .modal-alert {
+      border-radius: 12px;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      color: rgb(248,113,113);
+    }
+
+    /* Success state */
+    .modal-success {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .success-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(52,211,153,0.15);
+    }
+
+    .success-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-text {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.25rem;
+    }
+
+    .success-countdown {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .hidden { display: none !important; }
+  </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe header,
+    body.in-iframe .section:has(.props-table),
+    body.in-iframe .section:has(.info-grid) { display: none !important; }
+    body.in-iframe .container { max-width: 100%; }
+    body.in-iframe body { padding: 0 !important; }
+    body.in-iframe .section { margin-bottom: 0 !important; }
+    body.in-iframe .preview-card { padding: 0 !important; margin-bottom: 0 !important; }
+    body.in-iframe .demo-area { border-radius: 0 !important; min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/previews/" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      Voltar para componentes
+    </a>
+
+    <header>
+      <h1>Modal de Preço (Pricing Capture)</h1>
+      <p class="description">Modal de captura de leads disparado ao clicar em um pacote de pricing, com validação em tempo real e estado de sucesso</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Preview <code>data-pacote</code></h2>
+      <div class="preview-card">
+        <div class="preview-card-title">Simular clique nos botões de pacote</div>
+        <div class="demo-area" id="demo-area">
+          <p>Clique em um pacote abaixo para abrir o modal</p>
+        </div>
+        <div style="text-align:center; margin-top:1rem;">
+          <div class="trigger-btns">
+            <button class="trigger-btn" data-pacote="Mapa Funil - Diagnostico">Diagnóstico</button>
+            <button class="trigger-btn" data-pacote="Mapa Funil - Estrategia Completa">Estratégia Completa</button>
+            <button class="trigger-btn" data-pacote="Mapa Funil - Implementacao Total">Implementação Total</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Pacotes</h2>
+      <div class="preview-card">
+        <div class="preview-card-title">Pacotes disponíveis</div>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-item-label">Diagnóstico</div>
+            <div class="info-item-value">Análise do funil atual com relatório</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Estratégia Completa</div>
+            <div class="info-item-value">Diagnóstico + estratégia personalizada</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Implementação Total</div>
+            <div class="info-item-value">Diagnóstico + estratégia + implementação</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Props / Config</h2>
+      <table class="props-table">
+        <thead>
+          <tr>
+            <th>Propriedade</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Tipo</code></td>
+            <td><code>Vanilla HTML + Script</code></td>
+            <td>Inline no mapa-de-funil/index.astro</td>
+          </tr>
+          <tr>
+            <td><code>Trigger</code></td>
+            <td><code>[data-pacote] click</code></td>
+            <td>Botões CTA dos 3 tiers de pricing</td>
+          </tr>
+          <tr>
+            <td><code>Dinâmico</code></td>
+            <td><code>Título do pacote</code></td>
+            <td>Atualiza h2 com nome do pacote selecionado</td>
+          </tr>
+          <tr>
+            <td><code>Validação</code></td>
+            <td><code>Real-time por campo</code></td>
+            <td>Nome, WhatsApp (máscara), Email</td>
+          </tr>
+          <tr>
+            <td><code>Destino</code></td>
+            <td><code>Supabase leads</code></td>
+            <td>formulario: modal_compra_mapa_funil</td>
+          </tr>
+          <tr>
+            <td><code>Success</code></td>
+            <td><code>Countdown 3s</code></td>
+            <td>Redireciona para YouTube</td>
+          </tr>
+          <tr>
+            <td><code>Toast</code></td>
+            <td><code>bottom-right</code></td>
+            <td>Notificação verde de sucesso</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close-btn" aria-label="Fechar modal">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <p class="modal-badge">Pacote selecionado</p>
+      <h2 id="modal-titulo" class="modal-title">—</h2>
+      <p class="modal-subtitle">Preencha seus dados e entraremos em contato para confirmar sua vaga.</p>
+
+      <div id="modal-alert" class="modal-alert hidden"></div>
+
+      <form id="modal-form" novalidate>
+        <div class="modal-field">
+          <label class="modal-label" for="campo-nome">Nome completo</label>
+          <input id="campo-nome" type="text" autocomplete="name" placeholder="Seu nome completo" class="modal-input" />
+          <p id="erro-nome" class="modal-error hidden"></p>
+        </div>
+
+        <div class="modal-field">
+          <label class="modal-label" for="campo-whatsapp">WhatsApp</label>
+          <input id="campo-whatsapp" type="tel" autocomplete="tel" placeholder="(11) 99999-9999" maxlength="15" class="modal-input" />
+          <p id="erro-whatsapp" class="modal-error hidden"></p>
+        </div>
+
+        <div class="modal-field">
+          <label class="modal-label" for="campo-email">E-mail</label>
+          <input id="campo-email" type="email" autocomplete="email" placeholder="seu@email.com" class="modal-input" />
+          <p id="erro-email" class="modal-error hidden"></p>
+        </div>
+
+        <button id="modal-submit" type="submit" disabled class="modal-submit">Solicitar Acesso</button>
+        <p id="modal-hint" class="modal-hint">Preencha todos os campos para continuar</p>
+      </form>
+
+      <div id="modal-success" class="modal-success hidden">
+        <div class="success-icon">
+          <svg width="32" height="32" fill="none" stroke="rgb(52,211,153)" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h3 class="success-title">Solicitação enviada!</h3>
+        <p class="success-text">Entraremos em contato em breve.</p>
+        <p class="success-countdown">Redirecionando em 3s...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('modal-overlay');
+    const titulo = document.getElementById('modal-titulo');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const form = document.getElementById('modal-form');
+    const alertEl = document.getElementById('modal-alert');
+    const submitBtn = document.getElementById('modal-submit');
+    const hint = document.getElementById('modal-hint');
+    const modalSuccess = document.getElementById('modal-success');
+    const campoNome = document.getElementById('campo-nome');
+    const campoWhatsApp = document.getElementById('campo-whatsapp');
+    const campoEmail = document.getElementById('campo-email');
+    const erroNome = document.getElementById('erro-nome');
+    const erroWhatsApp = document.getElementById('erro-whatsapp');
+    const erroEmail = document.getElementById('erro-email');
+
+    const INPUT_ERROR_BORDER = 'rgb(239, 68, 68)';
+    const INPUT_NORMAL_BORDER = 'rgba(255,255,255,0.15)';
+    const INPUT_ERROR_BG = 'rgba(239,68,68,0.08)';
+    const INPUT_NORMAL_BG = 'rgba(255,255,255,0.05)';
+
+    function mascaraWhatsApp(v) {
+      v = v.replace(/\D/g, '').slice(0, 11);
+      if (v.length <= 10) return v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+      return v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+    }
+
+    function setErro(input, erroEl, msg) {
+      input.style.borderColor = INPUT_ERROR_BORDER;
+      input.style.background = INPUT_ERROR_BG;
+      erroEl.textContent = msg;
+      erroEl.classList.remove('hidden');
+    }
+
+    function limparErro(input, erroEl) {
+      input.style.borderColor = INPUT_NORMAL_BORDER;
+      input.style.background = INPUT_NORMAL_BG;
+      erroEl.classList.add('hidden');
+      erroEl.textContent = '';
+    }
+
+    function validarNome() {
+      const v = campoNome.value.trim();
+      if (!v || v.length < 2) { setErro(campoNome, erroNome, 'Informe seu nome completo (mínimo 2 caracteres).'); return false; }
+      limparErro(campoNome, erroNome);
+      return true;
+    }
+
+    function validarWhatsApp() {
+      const digits = campoWhatsApp.value.replace(/\D/g, '');
+      const ddd = parseInt(digits.slice(0, 2), 10);
+      if (digits.length < 10 || digits.length > 11 || ddd < 11 || ddd > 99) { setErro(campoWhatsApp, erroWhatsApp, 'Informe um WhatsApp válido com DDD (ex: (45) 99999-9999).'); return false; }
+      limparErro(campoWhatsApp, erroWhatsApp);
+      return true;
+    }
+
+    function validarEmail() {
+      const v = campoEmail.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { setErro(campoEmail, erroEmail, 'Informe um e-mail válido.'); return false; }
+      limparErro(campoEmail, erroEmail);
+      return true;
+    }
+
+    function atualizarSubmit() {
+      const valido = campoNome.value.trim().length >= 2
+        && campoWhatsApp.value.replace(/\D/g, '').length >= 10
+        && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campoEmail.value.trim());
+      submitBtn.disabled = !valido;
+      submitBtn.style.opacity = valido ? '1' : '0.5';
+      submitBtn.style.cursor = valido ? 'pointer' : 'not-allowed';
+      hint.style.display = valido ? 'none' : 'block';
+    }
+
+    campoNome.addEventListener('input', () => { validarNome(); atualizarSubmit(); });
+    campoWhatsApp.addEventListener('input', () => { campoWhatsApp.value = mascaraWhatsApp(campoWhatsApp.value); validarWhatsApp(); atualizarSubmit(); });
+    campoEmail.addEventListener('input', () => { validarEmail(); atualizarSubmit(); });
+
+    document.querySelectorAll('.trigger-btn[data-pacote]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        titulo.textContent = btn.dataset.pacote;
+        alertEl.classList.add('hidden');
+        alertEl.textContent = '';
+        modalSuccess.classList.add('hidden');
+        form.style.display = '';
+        form.reset();
+        [campoNome, campoWhatsApp, campoEmail].forEach(inp => {
+          inp.style.borderColor = INPUT_NORMAL_BORDER;
+          inp.style.background = INPUT_NORMAL_BG;
+        });
+        [erroNome, erroWhatsApp, erroEmail].forEach(el => {
+          el.classList.add('hidden');
+          el.textContent = '';
+        });
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.5';
+        submitBtn.style.cursor = 'not-allowed';
+        hint.style.display = 'block';
+        overlay.classList.remove('hidden');
+        setTimeout(() => campoNome.focus(), 50);
+      });
+    });
+
+    function fecharModal() {
+      overlay.classList.add('hidden');
+      form.reset();
+      [campoNome, campoWhatsApp, campoEmail].forEach(inp => {
+        inp.style.borderColor = INPUT_NORMAL_BORDER;
+        inp.style.background = INPUT_NORMAL_BG;
+      });
+      [erroNome, erroWhatsApp, erroEmail].forEach(el => {
+        el.classList.add('hidden');
+        el.textContent = '';
+      });
+      alertEl.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.5';
+      hint.style.display = 'block';
+    }
+
+    closeBtn.addEventListener('click', fecharModal);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) fecharModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharModal(); });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nomeOk = validarNome();
+      const waOk = validarWhatsApp();
+      const emailOk = validarEmail();
+      if (!nomeOk || !waOk || !emailOk) {
+        alertEl.textContent = 'Corrija os campos destacados antes de continuar.';
+        alertEl.classList.remove('hidden');
+        return;
+      }
+      alertEl.classList.add('hidden');
+      form.style.display = 'none';
+      modalSuccess.classList.remove('hidden');
+    });
+  </script>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
+</body>
+</html>

@@ -7,7 +7,7 @@
 interface ComponentItem {
   name: string;
   slug: string;
-  category: 'ui' | 'layout' | 'course' | 'blog' | 'section';
+  category: 'ui' | 'layout' | 'course' | 'blog' | 'section' | 'modal';
   description: string;
   scrollAnchor?: 'top' | 'bottom';
 }
@@ -36,6 +36,18 @@ const components: ComponentItem[] = [
     slug: 'animated-background',
     category: 'ui',
     description: 'Fundo animado com linhas SVG em movimento',
+  },
+  {
+    name: 'Social Proof Toast',
+    slug: 'social-proof-toast',
+    category: 'ui',
+    description: 'Toast de prova social com notificações de atividade recente',
+  },
+  {
+    name: 'WhatsApp Button',
+    slug: 'whatsapp-button',
+    category: 'ui',
+    description: 'Botão flutuante de WhatsApp com pulso e scroll-aware',
   },
   {
     name: 'Header',
@@ -142,6 +154,18 @@ const components: ComponentItem[] = [
     category: 'section',
     description: 'Painel TL;DR com checklist, estrelas e CTA final',
   },
+  {
+    name: 'Modal de Saída',
+    slug: 'exit-intent-modal',
+    category: 'modal',
+    description: 'Modal de exit intent com triggers de mouseleave, scroll-up e inatividade',
+  },
+  {
+    name: 'Modal de Preço',
+    slug: 'pricing-modal',
+    category: 'modal',
+    description: 'Modal de captura de leads ao selecionar pacote de pricing',
+  },
 ];
 
 const categoryLabels: Record<string, string> = {
@@ -150,6 +174,7 @@ const categoryLabels: Record<string, string> = {
   course: 'Course',
   blog: 'Blog',
   section: 'Seções',
+  modal: 'Modais',
 };
 
 const categoryColors: Record<string, string> = {
@@ -158,14 +183,15 @@ const categoryColors: Record<string, string> = {
   course: '#10b981',
   blog: '#8b5cf6',
   section: '#ef4444',
+  modal: '#ec4899',
 };
 
-const categories = ['ui', 'layout', 'course', 'blog', 'section'] as const;
+const categories = ['ui', 'layout', 'course', 'blog', 'section', 'modal'] as const;
 
 const stats = [
   { value: components.length.toString(), label: 'Componentes' },
-  { value: categories.length.toString(), label: 'Categorias' },
-  { value: '21', label: 'Arquivos' },
+  { value: '6', label: 'Categorias' },
+  { value: '24', label: 'Arquivos' },
   { value: '100%', label: 'Reutilizável' },
 ];
 ---
@@ -524,6 +550,7 @@ const stats = [
     .card-category.course { background: rgba(16, 185, 129, 0.12); color: #10b981; }
     .card-category.blog { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; }
     .card-category.section { background: rgba(239, 68, 68, 0.12); color: #ef4444; }
+    .card-category.modal { background: rgba(236, 72, 153, 0.12); color: #ec4899; }
 
     .card-description {
       color: var(--text-secondary);
@@ -658,7 +685,13 @@ const stats = [
                 <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/>
               </svg>
             )}
-            <h2 class="section-title">{category === 'ui' ? 'UI Components' : category === 'layout' ? 'Layout Components' : category === 'course' ? 'Course Components' : category === 'blog' ? 'Blog Components' : 'Seções de Página'}</h2>
+            {category === 'modal' && (
+              <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M3 9h18"/>
+                <circle cx="15" cy="15" r="2"/>
+              </svg>
+            )}
+            <h2 class="section-title">{category === 'ui' ? 'UI Components' : category === 'layout' ? 'Layout Components' : category === 'course' ? 'Course Components' : category === 'blog' ? 'Blog Components' : category === 'modal' ? 'Modais' : 'Seções de Página'}</h2>
             <span class="section-count">{catComponents.length} itens</span>
           </div>
           <div class="components-grid">

@@ -1,0 +1,575 @@
+---
+/**
+ * /previews/exit-intent-modal.astro
+ * Preview do Modal de Saída (Exit Intent) - versão estática para visualização
+ */
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Modal de Saída</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #0a0a0a;
+      --bg-card: #141414;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .section-title code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      margin-left: 0.5rem;
+    }
+
+    .preview-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-card-title {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .info-item {
+      padding: 1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .info-item-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .info-item-value {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .props-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .props-table th,
+    .props-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .props-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .props-table td {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .props-table code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-size: 0.8125rem;
+    }
+
+    .demo-area {
+      position: relative;
+      width: 100%;
+      min-height: 300px;
+      background: #080808;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .demo-area p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 9999;
+    }
+
+    .modal-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      max-height: 90vh;
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+
+    .modal-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+      padding: 0.25rem;
+      transition: color 0.15s;
+    }
+
+    .modal-close:hover {
+      color: #e5e7eb;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-subtitle {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-offer {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px dashed rgba(255,255,255,0.2);
+      border-radius: 12px;
+    }
+
+    .modal-offer-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgb(249, 115, 22);
+    }
+
+    .modal-offer-sub {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.25rem;
+    }
+
+    .modal-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      font-family: inherit;
+    }
+
+    .modal-input::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    .modal-input:focus {
+      border-color: rgb(249,115,22);
+      box-shadow: 0 0 0 2px rgba(249,115,22,0.2);
+    }
+
+    .modal-field {
+      margin-bottom: 1rem;
+    }
+
+    .modal-submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, rgb(249,115,22), rgb(234,88,12));
+      cursor: pointer;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      transition: opacity 0.15s;
+    }
+
+    .modal-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .modal-dismiss {
+      display: block;
+      margin: 1rem auto 0;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.4);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.15s;
+    }
+
+    .modal-dismiss:hover {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .modal-hint {
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.5rem;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe header,
+    body.in-iframe .section:has(.props-table),
+    body.in-iframe .section:has(.info-grid) { display: none !important; }
+    body.in-iframe .container { max-width: 100%; }
+    body.in-iframe body { padding: 0 !important; }
+    body.in-iframe .section { margin-bottom: 0 !important; }
+    body.in-iframe .preview-card { padding: 0 !important; margin-bottom: 0 !important; }
+    body.in-iframe .demo-area { border-radius: 0 !important; min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/previews/" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      Voltar para componentes
+    </a>
+
+    <header>
+      <h1>Modal de Saída (Exit Intent)</h1>
+      <p class="description">Modal disparado ao detectar intenção de saída do usuário, com captura de lead e oferta de valor</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Preview <code>isOpen=true</code></h2>
+      <div class="preview-card">
+        <div class="preview-card-title">Estado aberto</div>
+        <div class="demo-area" id="demo-area">
+          <p>Clique no botão abaixo para abrir o modal</p>
+        </div>
+        <div style="text-align:center; margin-top:1rem;">
+          <button id="open-modal-btn" style="padding:0.5rem 1.5rem; background:linear-gradient(135deg, rgb(249,115,22), rgb(234,88,12)); color:white; border:none; border-radius:8px; font-weight:600; cursor:pointer; font-family:inherit;">Abrir Modal de Saída</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Triggers</h2>
+      <div class="preview-card">
+        <div class="preview-card-title">Eventos de disparo</div>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-item-label">Desktop (primário)</div>
+            <div class="info-item-value">Mouseleave do viewport (top 10%)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Desktop (secundário)</div>
+            <div class="info-item-value">Inatividade do mouse por 30s</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Mobile (primário)</div>
+            <div class="info-item-value">Scroll-up rápido (3px/frame)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Mobile (secundário)</div>
+            <div class="info-item-value">Inatividade por 40s</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Gates / Condições</h2>
+      <div class="preview-card">
+        <div class="preview-card-title">Regras de disparo</div>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-item-label">Frequência</div>
+            <div class="info-item-value">15 dias (localStorage)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Tempo mínimo</div>
+            <div class="info-item-value">20s na página</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Scroll mínimo</div>
+            <div class="info-item-value">60% da página</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Cooldown pós-fechar</div>
+            <div class="info-item-value">10 segundos</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label">Sessão</div>
+            <div class="info-item-value">Dispara apenas 1x por sessão</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Props / Config</h2>
+      <table class="props-table">
+        <thead>
+          <tr>
+            <th>Propriedade</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Componente</code></td>
+            <td><code>React (createPortal)</code></td>
+            <td>Renderiza via portal no body</td>
+          </tr>
+          <tr>
+            <td><code>Animação</code></td>
+            <td><code>framer-motion</code></td>
+            <td>Fade + scale + translate Y</td>
+          </tr>
+          <tr>
+            <td><code>z-index</code></td>
+            <td><code>9999</code></td>
+            <td>Prioridade máxima acima de tudo</td>
+          </tr>
+          <tr>
+            <td><code>Formulário</code></td>
+            <td><code>Nome, WhatsApp, Email</code></td>
+            <td>Validação em tempo real por campo</td>
+          </tr>
+          <tr>
+            <td><code>Destino</code></td>
+            <td><code>Supabase leads</code></td>
+            <td>formulario: modal_exit_mapa_funil</td>
+          </tr>
+          <tr>
+            <td><code>Analytics</code></td>
+            <td><code>GTM dataLayer</code></td>
+            <td>triggered, viewed, submitted, closed</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close-btn" aria-label="Fechar modal">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <h2 class="modal-title">Você sabia que pode estar perdendo dinheiro agora mesmo?</h2>
+      <p class="modal-subtitle">Clientes descobriram vazamentos que nem imaginavam. Sem o mapa, você não vê onde o dinheiro some.</p>
+
+      <div class="modal-offer">
+        <div class="modal-offer-title">Checklist de 7 vazamentos comuns em funis</div>
+        <div class="modal-offer-sub">+ 1 página do seu funil analisada (grátis)</div>
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-label" for="exit-nome">Nome completo</label>
+        <input id="exit-nome" type="text" autocomplete="name" placeholder="Seu nome completo" class="modal-input" />
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-label" for="exit-whatsapp">WhatsApp</label>
+        <input id="exit-whatsapp" type="tel" autocomplete="tel" placeholder="(11) 99999-9999" maxlength="15" class="modal-input" />
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-label" for="exit-email">E-mail</label>
+        <input id="exit-email" type="email" autocomplete="email" placeholder="seu@email.com" class="modal-input" />
+      </div>
+
+      <button class="modal-submit" id="modal-submit-btn" disabled>Quero minha análise gratuita</button>
+      <p class="modal-hint" id="modal-hint">Preencha todos os campos para continuar</p>
+
+      <button class="modal-dismiss">Fechar página – não quero saber onde perco dinheiro</button>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('modal-overlay');
+    const openBtn = document.getElementById('open-modal-btn');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const dismissBtn = overlay?.querySelector('.modal-dismiss');
+    const submitBtn = document.getElementById('modal-submit-btn');
+    const hint = document.getElementById('modal-hint');
+    const nome = document.getElementById('exit-nome');
+    const whatsapp = document.getElementById('exit-whatsapp');
+    const email = document.getElementById('exit-email');
+
+    function mascaraWhatsApp(v) {
+      v = v.replace(/\D/g, '').slice(0, 11);
+      if (v.length <= 10) return v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+      return v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+    }
+
+    function checkValid() {
+      const nomeOk = nome.value.trim().length >= 2;
+      const waOk = whatsapp.value.replace(/\D/g, '').length >= 10;
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      submitBtn.disabled = !(nomeOk && waOk && emailOk);
+      hint.style.display = submitBtn.disabled ? 'block' : 'none';
+    }
+
+    nome.addEventListener('input', checkValid);
+    whatsapp.addEventListener('input', () => { whatsapp.value = mascaraWhatsApp(whatsapp.value); checkValid(); });
+    email.addEventListener('input', checkValid);
+
+    function openModal() { overlay.classList.remove('hidden'); }
+    function closeModal() { overlay.classList.add('hidden'); }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    dismissBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+  </script>
+</body>
+</html>

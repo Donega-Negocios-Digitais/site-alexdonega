@@ -3,12 +3,14 @@ interface Props {
   text?: string;
   ctaText?: string;
   ctaHref?: string;
+  hours?: number;
 }
 
 const {
   text = '6 vagas disponíveis este mês',
-  ctaText = 'Simule seu lucro antes que feche',
+  ctaText = 'Reserve sua vaga',
   ctaHref = '#pricing',
+  hours = 24,
 } = Astro.props;
 ---
 
@@ -17,16 +19,74 @@ const {
     <span class="warning-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
     </span>
-    <span class="warning-text">{text} — <a href={ctaHref}>{ctaText}</a></span>
+    <span class="warning-text">{text}</span>
+    <span class="warning-countdown" id="warning-countdown" data-hours={hours}>
+      <span class="countdown-label">Oferta encerra em</span>
+      <span class="countdown-timer">
+        <span class="countdown-segment" data-unit="h">00</span><span class="countdown-sep">:</span><span class="countdown-segment" data-unit="m">00</span><span class="countdown-sep">:</span><span class="countdown-segment" data-unit="s">00</span>
+      </span>
+    </span>
+    <a href={ctaHref} class="warning-cta">{ctaText}</a>
   </div>
 </div>
 
 <style>
   .warning-banner { position: sticky; top: 0; z-index: 100; background: linear-gradient(135deg, rgb(234, 88, 12), rgb(249, 115, 22), rgb(251, 146, 60)); padding: 0.75rem 1rem; text-align: center; }
-  .warning-content { display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+  .warning-content { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; }
   .warning-icon { display: flex; align-items: center; }
-  .warning-icon svg { width: 20px; height: 20px; color: white; }
-  .warning-text { font-size: 0.95rem; font-weight: 600; color: white; }
-  .warning-text a { color: white; text-decoration: underline; text-underline-offset: 2px; }
-  .warning-text a:hover { text-decoration-thickness: 2px; }
+  .warning-icon svg { width: 18px; height: 18px; color: white; }
+  .warning-text { font-size: 0.875rem; font-weight: 600; color: white; }
+  .warning-countdown { display: flex; align-items: center; gap: 0.4rem; }
+  .countdown-label { font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
+  .countdown-timer { display: flex; align-items: center; gap: 0.1rem; }
+  .countdown-segment { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; color: white; background: rgba(0, 0, 0, 0.2); padding: 0.15rem 0.35rem; border-radius: 4px; min-width: 1.6rem; text-align: center; }
+  .countdown-sep { color: rgba(255, 255, 255, 0.6); font-weight: 700; font-size: 0.9rem; }
+  .warning-cta { color: white; text-decoration: underline; text-underline-offset: 2px; font-size: 0.875rem; font-weight: 700; }
+  .warning-cta:hover { text-decoration-thickness: 2px; }
+
+  @media (max-width: 640px) {
+    .warning-content { gap: 0.35rem; }
+    .countdown-label { display: none; }
+    .countdown-segment { font-size: 0.875rem; padding: 0.1rem 0.25rem; min-width: 1.4rem; }
+  }
 </style>
+
+<script is:inline>
+  (function() {
+    var countdownEl = document.getElementById('warning-countdown');
+    if (!countdownEl) return;
+    var HOURS = parseInt(countdownEl.getAttribute('data-hours') || '24', 10);
+    var STORAGE_KEY = 'funnel_countdown_end';
+
+    function getEndTime() {
+      var stored = sessionStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        var parsed = parseInt(stored, 10);
+        if (!isNaN(parsed) && parsed > Date.now()) return parsed;
+      }
+      var end = Date.now() + HOURS * 60 * 60 * 1000;
+      sessionStorage.setItem(STORAGE_KEY, String(end));
+      return end;
+    }
+
+    var endTime = getEndTime();
+    var hoursEl = countdownEl.querySelector('[data-unit="h"]');
+    var minutesEl = countdownEl.querySelector('[data-unit="m"]');
+    var secondsEl = countdownEl.querySelector('[data-unit="s"]');
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    function update() {
+      var diff = Math.max(0, endTime - Date.now());
+      var h = Math.floor(diff / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      if (hoursEl) hoursEl.textContent = pad(h);
+      if (minutesEl) minutesEl.textContent = pad(m);
+      if (secondsEl) secondsEl.textContent = pad(s);
+    }
+
+    update();
+    setInterval(update, 1000);
+  })();
+</script>

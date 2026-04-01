@@ -1,6 +1,8 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import FooterAds from '../../../components/layout/FooterAds.astro';
+import WhatsAppButton from '../../../components/ui/WhatsAppButton.astro';
+import ExitIntentModal from '../../../components/ui/ExitIntentModal';
 import FunnelHero from '../../../components/funnel/FunnelHero.astro';
 import FunnelMethodology from '../../../components/funnel/FunnelMethodology.astro';
 import FunnelDeliverables from '../../../components/funnel/FunnelDeliverables.astro';
@@ -10,6 +12,7 @@ import FunnelPricing from '../../../components/funnel/FunnelPricing.astro';
 import FunnelGuaranteeDual from '../../../components/funnel/FunnelGuaranteeDual.astro';
 import FunnelFaq from '../../../components/funnel/FunnelFaq.astro';
 import FunnelFinalCta from '../../../components/funnel/FunnelFinalCta.astro';
+import SocialProofToast from '../../../components/ui/SocialProofToast.astro';
 import '../../../styles/funnel.css';
 ---
 
@@ -17,241 +20,19 @@ import '../../../styles/funnel.css';
 <link rel="preload" as="style" href="/_astro/FunnelPricing.CiqMy1XV.css" />
 <link rel="preload" as="style" href="/_astro/FunnelFaq.BYasK5TN.css" />
 
-<Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Mapeie e simule a lucratividade do seu funil antes de gastar 1 centavo com anúncios. Previsão de lucro real." hideHeader hideFooter>
+<Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Descubra por que seu funil não converte — mapeie, simule e pare de queimar R$ 1k+ por mês em anúncios sem retorno." hideHeader hideFooter>
 
-<!-- 2. Hero + Prova Social -->
+<!-- 1. Hero -->
 <FunnelHero />
 
-<!-- 3. Prova Social Inicial (NEW) -->
-<section class="funnel-social-proof-stats">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Comprovado</span>
-      <h2 class="section-title">Resultados que comprovam</h2>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <span class="stat-number">+200</span>
-        <span class="stat-label">funis mapeados</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">R$ 15M+</span>
-        <span class="stat-label">em perdas evitadas</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">97%</span>
-        <span class="stat-label">de taxa de satisfação</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">3x</span>
-        <span class="stat-label">mais escalabilidade média</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. Problema -->
-<section class="funnel-problem">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">O Problema</span>
-      <h2 class="section-title">O Marketing Digital Mudou Para Sempre...</h2>
-    </div>
-    <div class="problem-content">
-      <div class="problem-text">
-        <p>Os dias em que um empreendedor podia lançar um funil e ter retorno da noite para o dia acabaram.</p>
-        <p>CPM subindo. CPC subindo. Margem caindo. Lançar um funil sem simular antes é queimar dinheiro no escuro — e você sabe disso.</p>
-        <p class="highlight">O que você precisa são <strong>LUCROS PREVISÍVEIS</strong> do seu funil.</p>
-        <p>E é aqui que o <span class="text-gradient">Mapeamento de Funil</span> entra.</p>
-        <div class="problem-highlight">
-          <span class="highlight-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-            </svg>
-          </span>
-          <span>Clientes descobriram que estavam <strong>queimando dinheiro em anúncios, copy e sites</strong> — sem nem saber onde estava o vazamento.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. Mecanismo de Falsa Solução (NEW) -->
-<section class="funnel-false-solution">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">O Problema Real</span>
-      <h2 class="section-title">Já perdeu tempo e dinheiro tentando essas soluções?</h2>
-    </div>
-    <div class="false-solution-grid">
-      <div class="false-solution-card">
-        <div class="false-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
-        </div>
-        <h3>Fazer contas no Excel</h3>
-        <ul>
-          <li>Planilhas confusas que ninguém entende</li>
-          <li>Números que não refletem a realidade</li>
-        </ul>
-      </div>
-      <div class="false-solution-card">
-        <div class="false-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/></svg>
-        </div>
-        <h3>Copiar funis de concorrentes</h3>
-        <ul>
-          <li>O que funciona para outros pode não funcionar para você</li>
-          <li>Sem contexto do seu negócio</li>
-        </ul>
-      </div>
-      <div class="false-solution-card">
-        <div class="false-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3>Lançar e corrigir depois</h3>
-        <ul>
-          <li>Dinheiro queimado em testes</li>
-          <li>Frustração com resultados ruins</li>
-        </ul>
-      </div>
-    </div>
-    <p class="false-solution-transition">O problema não é seu esforço, são as ferramentas que você usa...</p>
-    <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Descobrir como ter lucro previsível
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 6. Antes e Depois (NEW) -->
-<section class="funnel-before-after">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Transformação</span>
-      <h2 class="section-title">Dar SUPER PODER ao seu funil é o segredo do sucesso</h2>
-    </div>
-    <div class="before-after-grid">
-      <div class="before-column">
-        <h3 class="ba-title ba-before-title">ANTES <span>As Barreiras</span></h3>
-        <ul class="ba-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
-            <span>Incerteza total sobre resultados</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
-            <span>Dinheiro queimado em anúncios</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
-            <span>Decisões baseadas em achismo</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
-            <span>Frustração com perdas</span>
-          </li>
-        </ul>
-      </div>
-      <div class="ba-divider">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-      </div>
-      <div class="after-column">
-        <h3 class="ba-title ba-after-title">DEPOIS <span>O Superpoder</span></h3>
-        <ul class="ba-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Previsibilidade matemática</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Lucro garantido desde o início</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Decisões baseadas em dados</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-            <span>Confiança para escalar</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Começar simulação hoje
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 7. Introdução do Produto (EXISTING - KEEP AS IS) -->
-<section class="funnel-what">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">O Serviço</span>
-      <h2 class="section-title">Mais do que desenhar, simular a lucratividade</h2>
-    </div>
-    <div class="what-content">
-      <p class="what-intro">
-        A proposta não é só criar um mapa visual do seu funil, mas <strong>simular a lucratividade</strong> do seu projeto antes de você gastar 1 centavo com anúncios, copy, site ou qualquer investimento.
-      </p>
-      <div class="what-list">
-        <div class="what-step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-          </div>
-          <div class="step-text">
-            <h3>Prever o potencial de lucro</h3>
-            <p>Simule cenários e entenda quanto seu funil pode gerar</p>
-          </div>
-          <div class="step-number">01</div>
-        </div>
-        <div class="what-step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-            </svg>
-          </div>
-          <div class="step-text">
-            <h3>Identificar vazamentos</h3>
-            <p>Encontre pontos onde você está perdendo dinheiro</p>
-          </div>
-          <div class="step-number">02</div>
-        </div>
-        <div class="what-step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-          <div class="step-text">
-            <h3>Garantir lucro desde o início</h3>
-            <p>Só lance quando tiver certeza que vai dar certo</p>
-          </div>
-          <div class="step-number">03</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 8. Qualificação (EXISTING - KEEP AS IS) -->
+<!-- 2. Para Quem E (qualificacao imediata) -->
 <section class="funnel-audience">
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Para Quem É</span>
-      <h2 class="section-title">Se você vende online, isso é para você</h2>
+      <h2 class="section-title">Feito para quem investe R$ 1k+ em anúncios todo mês</h2>
     </div>
+    <p class="section-intro" style="text-align: center; margin-bottom: 3rem; color: var(--text-secondary);">Não importa seu nicho. Se você tem funil que precisa gerar lucro previsível, isso é para você:</p>
     <div class="audience-tags">
       <div class="audience-tag">
         <div class="tag-icon">
@@ -320,220 +101,51 @@ import '../../../styles/funnel.css';
       </div>
     </div>
     <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Sim, meu negócio precisa disso
+      <a href="#servico" class="btn-primary" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.4);">
+        Ver como funciona
         <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </a>
     </div>
   </div>
 </section>
 
-<!-- 9. Benefícios (EXISTING + CTA) -->
-<section class="funnel-results">
+<!-- 3. Prova Social Stats -->
+<section class="funnel-social-proof-stats">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">Resultados Reais</span>
-      <h2 class="section-title">O que o mapeamento revelou</h2>
+      <span class="section-eyebrow">Prova Social Real</span>
+      <h2 class="section-title">Validado por +200 funis. R$ 15M evitados.</h2>
     </div>
-    <div class="results-grid">
-      <div class="result-card result-leak">
-        <div class="result-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-          </svg>
-        </div>
-        <h3>Vazamentos Identificados</h3>
-        <p>Clientes descobriram que estavam <strong>perdendo dinheiro sem saber</strong> — e reformularam todo o trabalho de marketing após o mapeamento.</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">+200</span>
+        <span class="stat-label">empreendedores evitaram queimar dinheiro</span>
       </div>
-      <div class="result-card result-scale">
-        <div class="result-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-        </div>
-        <h3>Escalabilidade Acelerada</h3>
-        <p>Outros identificaram gargalos que impediam o crescimento e <strong>aumentaram a velocidade de escala em até 3x</strong>.</p>
+      <div class="stat-card">
+        <span class="stat-number">R$ 15M+</span>
+        <span class="stat-label">em prejuízos evitados em 2024-2025</span>
       </div>
-      <div class="result-card result-profit">
-        <div class="result-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-        </div>
-        <h3>Lucro Previsível</h3>
-        <p>Com a simulação de cenários, clientes passaram a <strong>investir com confiança</strong>, sabendo exatamente o retorno esperado.</p>
+      <div class="stat-card">
+        <span class="stat-number">97%</span>
+        <span class="stat-label">retornam para escalar ou otimizar novamente</span>
       </div>
-    </div>
-    <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Quero receber este pacote
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 10. Metodologia MAPS -->
-<FunnelMethodology />
-
-<!-- 12. Tabela de Substituição (NEW) -->
-<section class="funnel-substitution">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Comparação</span>
-      <h2 class="section-title">O custo de NÃO aplicar a Metodologia MAPS</h2>
-    </div>
-    <div class="substitution-table-wrapper">
-      <table class="substitution-table">
-        <thead>
-          <tr>
-            <th>O que você evita</th>
-            <th class="col-without">Sem a Metodologia MAPS</th>
-            <th class="col-with">Com a Metodologia MAPS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Queimar em anúncios</td>
-            <td class="col-without">R$ 5.000+ perdidos</td>
-            <td class="col-with">R$ 997-2.436</td>
-          </tr>
-          <tr>
-            <td>Tempo em ajustes</td>
-            <td class="col-without">3-6 meses</td>
-            <td class="col-with">7 dias</td>
-          </tr>
-          <tr>
-            <td>Oportunidades perdidas</td>
-            <td class="col-without">Perdas diárias</td>
-            <td class="col-with">Lucro previsível</td>
-          </tr>
-          <tr>
-            <td>Stress e frustração</td>
-            <td class="col-without">Altíssimo</td>
-            <td class="col-with">Zero</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="substitution-total">Mais de R$ 50.000 em prejuízos evitados!</p>
-    </div>
-    <div class="section-cta">
-      <a href="#pricing" class="btn-primary">
-        Começar agora - economizar milhares
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 13. Por que Escolher (NEW) -->
-<section class="funnel-why-choose">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Diferenciais</span>
-      <h2 class="section-title">4 Razões que Fazem do Mapa de Funil a Escolha Certa</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-        </div>
-        <h3>Previsibilidade Real</h3>
-        <p>Simulação matemática de 3 cenários</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3>Comece em 7 Dias</h3>
-        <p>Entrega rápida para você agir agora</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-        </div>
-        <h3>Metodologia MAPS</h3>
-        <p>Processo testado em +200 funis</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        </div>
-        <h3>Suporte que Resolve</h3>
-        <p>Mentoria individual incluída</p>
+      <div class="stat-card">
+        <span class="stat-number">3x</span>
+        <span class="stat-label">mais rápido para escalar (vs. tentativa e erro)</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Deliverables Visual -->
-<FunnelDeliverables />
-
-<section id="pacote-completo">
-<FunnelPackageComplete />
-</section>
-
-<!-- 15. Garantia de Sucesso (NEW) -->
-<section class="funnel-success-guarantee">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">Garantia</span>
-      <h2 class="section-title">Sua Garantia de Sucesso</h2>
-    </div>
-    <div class="guarantee-grid">
-      <div class="guarantee-card">
-        <div class="guarantee-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-        </div>
-        <h3>Treinamento na Prática</h3>
-        <ul>
-          <li>Configure durante a mentoria</li>
-          <li>Resultados imediatos</li>
-          <li>Zero complexidade</li>
-        </ul>
-      </div>
-      <div class="guarantee-card">
-        <div class="guarantee-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-        </div>
-        <h3>Suporte que Resolve</h3>
-        <ul>
-          <li>WhatsApp: Seg-Sex (9h-18h)</li>
-          <li>Reunião de revisão inclusa</li>
-          <li>Acompanhamento até resolver</li>
-        </ul>
-      </div>
-      <div class="guarantee-card">
-        <div class="guarantee-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-        </div>
-        <h3>Comunidade Ativa</h3>
-        <ul>
-          <li>Cases reais de sucesso</li>
-          <li>Troca de experiências</li>
-          <li>Estratégias que funcionam</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 17. Sobre Alex -->
-<FunnelAbout />
-
-<!-- 17.5 VIP Testimonials (NEW) -->
+<!-- 4. VIP Testimonials (autoridade cedo) -->
 <section class="funnel-vip-testimonials">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">Confiado por Líderes de Mercado</span>
-      <h2 class="section-title">Quem Construiu Funis com Alex</h2>
-      <p class="section-subtitle">Empreendedores de alto nível que validaram seus funis e escalaram resultados reais</p>
+      <span class="section-eyebrow">Resultados reais, nomes reais</span>
+      <h2 class="section-title">Empreendedores que pararam de adivinhar e começaram a calcular</h2>
+      <p class="section-subtitle">Cada caso aqui parou de queimar verba e passou a ter clareza total sobre cada etapa do funil.</p>
     </div>
 
     <div class="vip-list">
@@ -619,7 +231,342 @@ import '../../../styles/funnel.css';
   </div>
 </section>
 
-<!-- 18. Destino do Funil -->
+<!-- 5. Problema -->
+<section class="funnel-problem">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">O Problema Real</span>
+      <h2 class="section-title">Seu último funil falhou porque você não simulou.</h2>
+    </div>
+    <div class="problem-content">
+      <div class="problem-text">
+        <p>Vamos ser honestos: você já queimou dinheiro em anúncios e viu sua margem desaparecer.</p>
+        <p>E a pior parte? Você só descobre que o funil não vai dar certo <strong>depois</strong> de gastar 3-5k.</p>
+        <p class="highlight">Você não precisa de mais tráfego. Você já gasta 1k+ por mês. <strong>O problema é não saber onde o dinheiro está vazando.</strong></p>
+        <div class="problem-highlight">
+          <span class="highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </span>
+          <span>Clientes nossos descobriram que estavam <strong>perdendo R$ 500-2k por dia em anúncios inúteis</strong>. E ninguém tinha avisado isso para eles.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Falsa Solução + Antes e Depois (fundido) -->
+<section class="funnel-false-solution">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">O Problema Real</span>
+      <h2 class="section-title">Por que essas "soluções" custam R$ 5k-15k em prejuízos</h2>
+    </div>
+    <div class="false-solution-grid">
+      <div class="false-solution-card">
+        <div class="false-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
+        </div>
+        <h3>Planilhas que ninguém consegue manter</h3>
+        <ul>
+          <li>Você atualiza 1x, depois largará de lado</li>
+          <li>Números de 2 meses atrás guiam decisões de hoje</li>
+        </ul>
+      </div>
+      <div class="false-solution-card">
+        <div class="false-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/></svg>
+        </div>
+        <h3>Funis copiados quebram em 30 dias</h3>
+        <ul>
+          <li>Seu público é diferente</li>
+          <li>Seus preços, mercado e produto são únicos • Resultado: funil que converte 0,5% em vez de 3%</li>
+        </ul>
+      </div>
+      <div class="false-solution-card">
+        <div class="false-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3>Testes custam R$ 10k-20k em prejuízos</h3>
+        <ul>
+          <li>90% dos empreendedores não conseguem fazer testes direito</li>
+          <li>Ficam girando em roda</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Antes e Depois (integrado) -->
+    <div class="before-after-merged">
+      <div class="before-after-grid">
+        <div class="before-column">
+          <h3 class="ba-title ba-before-title">ANTES <span>Sem simulação</span></h3>
+          <ul class="ba-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+              <span>Você espera que funcione (mas não tem certeza)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+              <span>Tenta adivinhar os números</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+              <span>Aprende errando (caro)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+              <span>Medo de investir mais</span>
+            </li>
+          </ul>
+        </div>
+        <div class="ba-divider">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </div>
+        <div class="after-column">
+          <h3 class="ba-title ba-after-title">DEPOIS <span>Com MAPS</span></h3>
+          <ul class="ba-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+              <span>Você sabe exatamente o quanto vai ganhar</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+              <span>Calcula 3 cenários com precisão</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+              <span>Sabe exatamente onde o funil está vazando</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+              <span>Confiança para escalar (com dados)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="false-solution-transition">O que você realmente precisa é de previsibilidade no ciclo que já está rodando...</p>
+    <div class="section-cta">
+      <a href="#servico" class="btn-primary" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.4);">
+        Ver a solução
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. O Serviço -->
+<section id="servico" class="funnel-what">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">O Serviço</span>
+      <h2 class="section-title">De 'não sei se vai dar certo' para 'tenho 3 cenários calculados'</h2>
+    </div>
+    <div class="what-content">
+      <p class="what-intro">
+        A proposta não é só criar um mapa visual do seu funil. É <strong>simular a lucratividade real</strong> e descobrir exatamente qual etapa está consumindo verba sem converter.
+      </p>
+      <div class="what-list">
+        <div class="what-step">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="step-text">
+            <h3>Prever o potencial de lucro</h3>
+            <p>Simule cenários e entenda quanto seu funil pode gerar</p>
+          </div>
+          <div class="step-number">01</div>
+        </div>
+        <div class="what-step">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <div class="step-text">
+            <h3>Identificar vazamentos</h3>
+            <p>Encontre pontos onde você está perdendo dinheiro</p>
+          </div>
+          <div class="step-number">02</div>
+        </div>
+        <div class="what-step">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div class="step-text">
+            <h3>Garantir lucro desde o início</h3>
+            <p>Só lance quando tiver certeza que vai dar certo</p>
+          </div>
+          <div class="step-number">03</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Metodologia MAPS -->
+<FunnelMethodology />
+
+<!-- 10. Resultados Reais -->
+<section class="funnel-results">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Resultados Reais</span>
+      <h2 class="section-title">Os 3 resultados que surpreendem os clientes</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card result-leak">
+        <div class="result-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        </div>
+        <h3>Vazamentos Identificados</h3>
+        <p>Clientes descobriram que estavam <strong>perdendo dinheiro sem saber</strong> e reformularam todo o trabalho de marketing após o mapeamento.</p>
+      </div>
+      <div class="result-card result-scale">
+        <div class="result-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3>Escalabilidade Acelerada</h3>
+        <p>Outros identificaram gargalos que impediam o crescimento e <strong>aumentaram a velocidade de escala em até 3x</strong>.</p>
+      </div>
+      <div class="result-card result-profit">
+        <div class="result-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3>Lucro Previsível</h3>
+        <p>Com a simulação de cenários, clientes passaram a <strong>investir com confiança</strong>, sabendo exatamente o retorno esperado.</p>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#entregaveis" class="btn-primary" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.4);">
+        Ver o que você recebe
+        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Por que Escolher (Diferenciais) -->
+<section class="funnel-why-choose">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Diferenciais</span>
+      <h2 class="section-title">Por que 200+ empreendedores escolhem o Mapa de Funil</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <p class="why-pain">Você lança e torce para funcionar. Cada teste errado custa R$ 2k-5k.</p>
+        <h3>Simule 3 cenários. Escolha o certo. Não queime R$ 5k testando.</h3>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="why-pain">Enquanto você planeja, seu concorrente já está vendendo.</p>
+        <h3>Lance em 7 dias. Seu concorrente ainda está fazendo contas.</h3>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        </div>
+        <p class="why-pain">Você está tentando descobrir sozinho. Cada erro custa caro.</p>
+        <h3>200+ funis mapeados. Seu problema? A gente já viu antes.</h3>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <p class="why-pain">Ticket de suporte volta em 24h. Seu funil está parado até lá.</p>
+        <h3>WhatsApp direto. Resposta em 2h. Sem bots, sem esperas.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Quem vai mapear seu funil (Alex Donega) -->
+<FunnelAbout />
+
+<!-- 13. Entregáveis Visuais -->
+<section id="entregaveis">
+<FunnelDeliverables />
+</section>
+
+<!-- 14. Pacote Completo -->
+<section id="pacote-completo">
+<FunnelPackageComplete />
+</section>
+
+<!-- 15. Pricing 3 Tiers -->
+<FunnelPricing />
+
+<!-- 16. Garantia de Sucesso -->
+<section class="funnel-success-guarantee">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Garantia</span>
+      <h2 class="section-title">Se não conseguir implementar em 7 dias, a gente ajuda até ficar pronto</h2>
+    </div>
+    <div class="guarantee-grid">
+      <div class="guarantee-card">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        </div>
+        <h3>Você configura tudo em uma call, sem ficar com dúvidas</h3>
+        <ul>
+          <li>Mentorias 1:1 até implementar</li>
+          <li>Sem vídeos chatos, apenas ação</li>
+        </ul>
+      </div>
+      <div class="guarantee-card">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </div>
+        <h3>WhatsApp aberto seg-sex, 9h-18h com resposta em 2h</h3>
+        <ul>
+          <li>Não é email automático</li>
+          <li>Não é chat bot • É gente</li>
+        </ul>
+      </div>
+      <div class="guarantee-card">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3>Acesso a 200+ empreendedores que já escalaram seus funis</h3>
+        <ul>
+          <li>Estratégias de quem já fez</li>
+          <li>Não teórico, real</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17. Garantia Dupla -->
+<FunnelGuaranteeDual />
+
+<!-- 18. FAQ -->
+<FunnelFaq />
+
+<!-- 19. Destino / Decisão Final -->
 <section class="funnel-destiny">
   <div class="container">
     <div class="section-header">
@@ -627,43 +574,26 @@ import '../../../styles/funnel.css';
     </div>
     <div class="destiny-content">
       <h2 class="destiny-title">
-        Você está pronto para<br>
-        <span class="text-gradient">descobrir o destino do seu funil?</span>
+        Nos próximos 7 dias,<br>
+        <span class="text-gradient">seu funil pode estar 10x mais claro</span>
       </h2>
 
       <div class="destiny-text">
-        <p class="destiny-lead">Vamos encarar os fatos...</p>
+        <p class="destiny-lead">Você tem 2 caminhos. Qual você escolhe?</p>
 
-        <p>O marketing digital está extremamente competitivo em praticamente todos os nichos de mercado e setores... e com o aumento dos custos de anúncios, a situação só vai piorar.</p>
+        <p><strong>Caminho 1:</strong> Você lança seu funil, espera 30 dias, vê que não deu certo, reformula.</p>
+        <p style="margin-left: 1rem; color: var(--text-secondary);">Custo: R$ 5k-15k em testes frustrados (segundo dados de clientes nossos). Tempo: 3-4 meses.</p>
 
-        <p class="destiny-warning">Infelizmente, muitos empreendedores fracassarão completamente.</p>
+        <p style="margin-top: 1.5rem;"><strong>Caminho 2:</strong> Você testa agora (em 7 dias) com a metodologia MAPS, sabe exatamente o que vai gerar.</p>
+        <p style="margin-left: 1rem; color: var(--text-secondary);">Custo: R$ 1.997. Tempo: 7 dias.</p>
 
-        <p class="destiny-highlight">Mas isso não precisa acontecer com você.</p>
+        <p class="destiny-highlight" style="margin-top: 2rem;">A diferença não é pequena. É R$ 10k de prejuízo evitado em média. E 3 meses de tempo recuperados.</p>
       </div>
 
-      <div class="destiny-first">
-        <span class="first-badge">Pela primeira vez na história:</span>
-        <ul class="first-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <span>Você tem mais controle sobre o resultado do seu funil.</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <span>Você pode decidir o desempenho do seu funil e quanto dinheiro ele gera.</span>
-          </li>
-        </ul>
-      </div>
-
-      <p class="destiny-empower">Com o mapeamento, o destino do seu funil está em <strong>SUAS</strong> mãos.</p>
-
-      <div class="section-cta">
+      <div class="section-cta" style="margin-top: 3rem;">
         <a href="#pricing" class="btn-primary">
-          Descobrir o destino do meu funil
+          Simular meu cenário agora
+          <span style="display: block; font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">Entrega em 7 dias</span>
           <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
@@ -673,19 +603,42 @@ import '../../../styles/funnel.css';
   </div>
 </section>
 
-<!-- 19. Pricing 3 Tiers -->
-<FunnelPricing />
-
-<!-- 19. Garantia Dupla -->
-<FunnelGuaranteeDual />
-
-<!-- 20. FAQ -->
-<FunnelFaq />
-
-<!-- 20. TL;DR Final -->
+<!-- 20. TL;DR (resumo urgência) -->
 <FunnelFinalCta />
 
 <FooterAds disclaimerBefore="Importante: Mapa de Funil não é um produto associado Facebook, Instagram, WhatsApp ou Facebook Messenger. Ao tratar de questões financeiras em nossos produtos, incluindo sites, vídeos, palestras, programas ou outros conteúdos, nos esforçamos ao máximo para garantir que representem com precisão nossos cursos e sua capacidade de impactar positivamente o seu negócio e a sua vida. No entanto, é importante frisar que os resultados alcançados dependem inteiramente do empenho, dedicação e aplicação de cada indivíduo. As estratégias e informações que fornecemos não garantem que você obterá resultados financeiros ou ganhos monetários específicos. Nada em nosso site ou em nossos materiais deve ser interpretado como uma promessa ou garantia de ganhos futuros. Seu sucesso depende do seu esforço, dedicação e aplicação das ideias, ferramentas e estratégias que propomos. Estamos aqui para apoiar você com recursos valiosos no seu caminho, mas o seu sucesso é fruto do seu próprio esforço e dedicação. Ao fazer seu cadastro em nosso site, você concorda com os nossos" />
+
+<WhatsAppButton />
+
+<!-- Sticky CTA Mobile -->
+<div id="sticky-cta-mobile" class="sticky-cta-mobile">
+  <a href="#pricing" class="sticky-cta-btn">
+    Simular meu cenário
+    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+  </a>
+</div>
+
+<script is:inline>
+  (function() {
+    var stickyCta = document.getElementById('sticky-cta-mobile');
+    if (!stickyCta) return;
+    function checkSticky() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (docHeight > 0 && scrollTop > docHeight * 0.5) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    }
+    window.addEventListener('scroll', checkSticky, { passive: true });
+    checkSticky();
+  })();
+</script>
+
+<SocialProofToast />
+
+<ExitIntentModal client:load />
 
 </Layout>
 
@@ -722,8 +675,8 @@ import '../../../styles/funnel.css';
   .false-solution-card ul li::before { content: '\2192'; position: absolute; left: 0; color: rgb(248, 113, 113); }
   .false-solution-transition { font-family: var(--font-body); text-align: center; font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); font-style: italic; margin-top: 3rem; }
 
-  /* ── BEFORE & AFTER ── */
-  .funnel-before-after { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
+  /* ── BEFORE & AFTER (merged inside false-solution) ── */
+  .before-after-merged { margin-top: 3rem; padding-top: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.06); }
   .before-after-grid { display: grid; grid-template-columns: 5fr auto 5fr; gap: 2rem; max-width: 900px; margin: 0 auto; align-items: start; }
   .ba-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid; }
   .ba-title span { display: block; font-size: 0.85rem; font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.25rem; opacity: 0.7; }
@@ -749,6 +702,14 @@ import '../../../styles/funnel.css';
   .step-text h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
   .step-text p { font-family: var(--font-body); font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.5; margin: 0; }
   .step-number { position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); font-size: 5rem; font-weight: 900; color: rgba(249, 115, 22, 0.03); pointer-events: none; line-height: 1; }
+  .step-preview { display: none; width: 160px; height: 107px; border-radius: 10px; overflow: hidden; flex-shrink: 0; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); }
+  .step-preview img { width: 100%; height: 100%; object-fit: cover; }
+
+  @media (min-width: 769px) {
+    .step-preview { display: block; }
+    .what-step { grid-template-columns: 64px 1fr 160px auto; gap: 1.25rem; }
+    .step-number { right: 1rem; }
+  }
 
   /* ── RESULTS ── */
   .funnel-results { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
@@ -778,18 +739,6 @@ import '../../../styles/funnel.css';
   .tag-icon svg { width: 100%; height: 100%; }
   .audience-tag h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: white; margin: 0; }
 
-  /* ── SUBSTITUTION TABLE ── */
-  .funnel-substitution { padding: 6rem 0; }
-  .substitution-table-wrapper { max-width: 800px; margin: 0 auto; }
-  .substitution-table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); border-radius: 12px; overflow: hidden; }
-  .substitution-table th, .substitution-table td { padding: 1.25rem 1.5rem; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-  .substitution-table th { background: rgba(255, 255, 255, 0.05); font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 0.05em; }
-  .substitution-table td { font-family: var(--font-body); font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
-  .substitution-table .col-without { color: rgb(248, 113, 113); font-weight: 600; }
-  .substitution-table .col-with { color: rgb(52, 211, 153); font-weight: 600; }
-  .substitution-table tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
-  .substitution-total { font-family: var(--font-heading); text-align: center; font-size: 1.5rem; font-weight: 800; color: rgb(249, 115, 22); margin-top: 2rem; }
-
   /* ── WHY CHOOSE ── */
   .funnel-why-choose { padding: 6rem 0; background: rgba(255, 255, 255, 0.02); }
   .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
@@ -797,8 +746,8 @@ import '../../../styles/funnel.css';
   .why-card:hover { transform: translateY(-4px); border-color: rgba(249, 115, 22, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
   .why-icon { width: 56px; height: 56px; margin: 0 auto 1.25rem; background: rgba(249, 115, 22, 0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
   .why-icon svg { width: 28px; height: 28px; color: rgb(249, 115, 22); }
-  .why-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
-  .why-card p { font-family: var(--font-body); font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin: 0; line-height: 1.5; }
+  .why-pain { font-family: var(--font-body); font-size: 0.85rem; color: rgb(248, 113, 113); margin-bottom: 0.75rem; line-height: 1.5; font-style: italic; }
+  .why-card h3 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: white; margin: 0; line-height: 1.4; }
 
   /* ── SUCCESS GUARANTEE ── */
   .funnel-success-guarantee { padding: 6rem 0; }
@@ -884,16 +833,62 @@ import '../../../styles/funnel.css';
   }
 
   @media (max-width: 640px) {
-    .substitution-table th, .substitution-table td { padding: 0.75rem; font-size: 0.85rem; }
     .why-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── STICKY CTA MOBILE ── */
+  .sticky-cta-mobile { display: none; }
+
+  @media (max-width: 768px) {
+    .sticky-cta-mobile {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      padding: 0.75rem 1rem;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(249, 115, 22, 0.3);
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+    .sticky-cta-mobile.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .sticky-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.875rem 1.5rem;
+      background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .sticky-cta-btn:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
   }
 </style>
 
 
 
-<!-- Modal de Captura de Leads -->
-<div id="modal-overlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
-  <div id="modal-container" class="rounded-3xl shadow-2xl max-w-lg w-full p-8 relative" style="max-height: 90vh; overflow-y: auto; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1);">
+<!-- Modal de Captura de Leads (Pricing) -->
+<div id="modal-overlay" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4" style="backdrop-filter: blur(4px);">
+  <div id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" class="rounded-3xl shadow-2xl max-w-lg w-full p-6 sm:p-8 relative pricing-modal-scroll" style="max-height: 100vh; overflow-y: auto; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1);">
     <!-- Botão fechar -->
     <button id="modal-close" type="button" aria-label="Fechar modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-200 transition-colors">
       <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -901,11 +896,37 @@ import '../../../styles/funnel.css';
       </svg>
     </button>
 
-    <!-- Header -->
-    <div class="mb-6">
-      <p class="text-sm font-semibold uppercase tracking-widest mb-1" style="color: rgb(249, 115, 22);">Pacote selecionado</p>
+    <!-- Header dinâmico -->
+    <div class="mb-5">
+      <div class="flex items-center gap-2 mb-2">
+        <p class="text-xs font-semibold uppercase tracking-widest" style="color: rgb(249, 115, 22);">Pacote selecionado</p>
+        <span id="modal-badge" class="hidden text-xs font-semibold px-2 py-0.5 rounded-full" style="background: rgba(249,115,22,0.15); color: rgb(249,115,22);"></span>
+      </div>
       <h2 id="modal-titulo" class="text-2xl font-bold text-white">—</h2>
-      <p class="text-sm mt-1" style="color: rgba(255,255,255,0.6);">Preencha seus dados e entraremos em contato para confirmar sua vaga.</p>
+      <p id="modal-preco" class="text-lg font-semibold mt-1" style="color: rgb(249, 115, 22);"></p>
+      <p id="modal-preco-avista" class="text-xs" style="color: rgba(255,255,255,0.5);"></p>
+    </div>
+
+    <!-- Divider -->
+    <div style="height: 1px; background: rgba(255,255,255,0.1);" class="mb-4"></div>
+
+    <!-- Entregas do pacote -->
+    <div id="modal-entregas" class="mb-4 space-y-2"></div>
+
+    <!-- Social proof micro -->
+    <div class="flex items-center gap-3 mb-5 text-xs" style="color: rgba(255,255,255,0.5);">
+      <span class="flex items-center gap-1">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        200+ funis
+      </span>
+      <span class="flex items-center gap-1">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        97% satisfação
+      </span>
+      <span class="flex items-center gap-1">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        7 dias
+      </span>
     </div>
 
     <!-- Alert de erro -->
@@ -913,7 +934,6 @@ import '../../../styles/funnel.css';
 
     <!-- Formulário -->
     <form id="modal-form" novalidate>
-      <!-- Nome -->
       <div class="mb-4">
         <label for="campo-nome" class="block text-sm font-medium mb-1" style="color: rgba(255,255,255,0.8);">Nome completo</label>
         <input
@@ -921,15 +941,14 @@ import '../../../styles/funnel.css';
           type="text"
           autocomplete="name"
           placeholder="Seu nome completo"
-          class="w-full rounded-xl px-4 py-3 text-white transition-colors"
-          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);"
+          class="w-full rounded-xl px-4 py-3 text-white transition-colors outline-none"
+          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); font-size: 16px;"
           onfocus="this.style.borderColor='rgb(249,115,22)'; this.style.boxShadow='0 0 0 2px rgba(249,115,22,0.2)';"
           onblur="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.boxShadow='none';"
         />
         <p id="erro-nome" class="hidden text-xs mt-1" style="color: rgb(248,113,113);"></p>
       </div>
 
-      <!-- WhatsApp -->
       <div class="mb-4">
         <label for="campo-whatsapp" class="block text-sm font-medium mb-1" style="color: rgba(255,255,255,0.8);">WhatsApp</label>
         <input
@@ -938,87 +957,153 @@ import '../../../styles/funnel.css';
           autocomplete="tel"
           placeholder="(11) 99999-9999"
           maxlength="15"
-          class="w-full rounded-xl px-4 py-3 text-white transition-colors"
-          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);"
+          class="w-full rounded-xl px-4 py-3 text-white transition-colors outline-none"
+          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); font-size: 16px;"
           onfocus="this.style.borderColor='rgb(249,115,22)'; this.style.boxShadow='0 0 0 2px rgba(249,115,22,0.2)';"
           onblur="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.boxShadow='none';"
         />
         <p id="erro-whatsapp" class="hidden text-xs mt-1" style="color: rgb(248,113,113);"></p>
       </div>
 
-      <!-- E-mail -->
-      <div class="mb-6">
+      <div class="mb-5">
         <label for="campo-email" class="block text-sm font-medium mb-1" style="color: rgba(255,255,255,0.8);">E-mail</label>
         <input
           id="campo-email"
           type="email"
           autocomplete="email"
           placeholder="seu@email.com"
-          class="w-full rounded-xl px-4 py-3 text-white transition-colors"
-          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);"
+          class="w-full rounded-xl px-4 py-3 text-white transition-colors outline-none"
+          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); font-size: 16px;"
           onfocus="this.style.borderColor='rgb(249,115,22)'; this.style.boxShadow='0 0 0 2px rgba(249,115,22,0.2)';"
           onblur="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.boxShadow='none';"
         />
         <p id="erro-email" class="hidden text-xs mt-1" style="color: rgb(248,113,113);"></p>
       </div>
 
-      <!-- Botão submit -->
       <button
         id="modal-submit"
         type="submit"
         disabled
-        class="w-full flex items-center justify-center gap-2 text-white font-semibold py-3 px-6 rounded-xl transition-all cursor-not-allowed"
-        style="background: linear-gradient(135deg, rgb(249,115,22), rgb(234,88,12)); opacity: 0.5;"
+        class="w-full flex items-center justify-center gap-2 text-white font-semibold py-4 px-6 rounded-xl transition-all cursor-not-allowed"
+        style="background: linear-gradient(135deg, rgb(249,115,22), rgb(234,88,12)); opacity: 0.5; min-height: 52px;"
       >
         <svg id="modal-spinner" class="hidden animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
         </svg>
-        <span id="modal-submit-text">Solicitar Acesso</span>
+        <span id="modal-submit-text">Garantir minha vaga</span>
       </button>
+
+      <!-- Micro-copy + Trust -->
       <p id="modal-submit-hint" class="text-center text-xs mt-2" style="color: rgba(255,255,255,0.4);">Preencha todos os campos para continuar</p>
+      <p id="modal-trust-line" class="hidden text-center text-xs mt-2" style="color: rgba(255,255,255,0.4);">Entro em contato em até 24h para confirmar</p>
+      <div class="flex items-center justify-center gap-4 mt-3 text-xs" style="color: rgba(255,255,255,0.35);">
+        <span class="flex items-center gap-1">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Dados seguros
+        </span>
+        <span class="flex items-center gap-1">
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          Suporte pelo WhatsApp
+        </span>
+      </div>
     </form>
 
-    <!-- Success State (hidden by default) -->
+    <!-- Success State -->
     <div id="modal-success" class="hidden text-center py-8">
       <div class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: rgba(52,211,153,0.15);">
         <svg width="32" height="32" fill="none" stroke="rgb(52,211,153)" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
         </svg>
       </div>
-      <h3 class="text-xl font-bold text-white mb-2">Solicitação enviada!</h3>
-      <p class="text-sm mb-1" style="color: rgba(255,255,255,0.7);">Entraremos em contato em breve.</p>
+      <h3 id="modal-success-title" class="text-xl font-bold text-white mb-2">Excelente escolha!</h3>
+      <p class="text-sm mb-3" style="color: rgba(255,255,255,0.7);">Vou analisar seu funil e entrar em contato pelo WhatsApp em até 24h para alinharmos os próximos passos.</p>
+      <p class="text-sm mb-1" style="color: rgba(255,255,255,0.5);">Enquanto isso, veja como funciona o processo:</p>
       <p id="modal-redirect-countdown" class="text-xs" style="color: rgba(255,255,255,0.4);">Redirecionando em <span id="countdown-number">3</span>s...</p>
     </div>
   </div>
 </div>
 
-<!-- Toast de sucesso -->
-<div id="toast-sucesso" class="hidden fixed bottom-6 right-6 bg-green-600 text-white rounded-xl px-5 py-3 z-50 shadow-lg flex items-center gap-2 text-sm font-medium">
-  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-  </svg>
-  Lead enviado com sucesso! Entraremos em contato em breve.
-</div>
+<style>
+  .pricing-modal-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .pricing-modal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  @media (max-width: 640px) {
+    .pricing-modal-scroll {
+      max-height: 100vh !important;
+      border-radius: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+  @keyframes pricingCtaPulse {
+    0% { box-shadow: 0 0 0 0 rgba(249,115,22,0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(249,115,22,0); }
+    100% { box-shadow: 0 0 0 0 rgba(249,115,22,0); }
+  }
+</style>
 
 <script>
   import { supabase } from '../../../lib/supabase';
 
   (function () {
+    // ── Dados dinâmicos por pacote ──
+    const PACOTES: Record<string, {
+      titulo: string;
+      preco: string;
+      precoAvista: string;
+      entregas: string[];
+      cta: string;
+      badge: string | null;
+    }> = {
+      'Mapa Funil - Diagnóstico': {
+        titulo: 'Diagnóstico',
+        preco: '6x R$ 166',
+        precoAvista: 'R$ 997 à vista',
+        entregas: ['Mapa simplificado do funil', '1 cenário de simulação', '1h de mentoria ao vivo'],
+        cta: 'Quero meu diagnóstico',
+        badge: null,
+      },
+      'Mapa Funil - Estrategia Completa': {
+        titulo: 'Estratégia Completa',
+        preco: '6x R$ 406',
+        precoAvista: 'R$ 2.436 à vista',
+        entregas: ['Mapa detalhado + 3 cenários', '2h de mentoria ao vivo', '1 reunião de revisão'],
+        cta: 'Garantir minha vaga',
+        badge: 'Mais escolhido',
+      },
+      'Mapa Funil - Implementacao Total': {
+        titulo: 'Implementação Total',
+        preco: 'Consultar condições',
+        precoAvista: '',
+        entregas: ['Implementação completa do funil', 'Copy + Design inclusos', '6h de mentoria + 3 reuniões'],
+        cta: 'Falar com Alex',
+        badge: null,
+      },
+    };
+
     let pacoteAtual = '';
+    let formStarted = false;
 
     const overlay = document.getElementById('modal-overlay') as HTMLElement;
-    const container = document.getElementById('modal-container') as HTMLElement;
     const titulo = document.getElementById('modal-titulo') as HTMLElement;
+    const modalPreco = document.getElementById('modal-preco') as HTMLElement;
+    const modalPrecoAvista = document.getElementById('modal-preco-avista') as HTMLElement;
+    const modalBadge = document.getElementById('modal-badge') as HTMLElement;
+    const modalEntregas = document.getElementById('modal-entregas') as HTMLElement;
     const closeBtn = document.getElementById('modal-close') as HTMLButtonElement;
     const form = document.getElementById('modal-form') as HTMLFormElement;
     const alertEl = document.getElementById('modal-alert') as HTMLElement;
     const submitBtn = document.getElementById('modal-submit') as HTMLButtonElement;
     const submitText = document.getElementById('modal-submit-text') as HTMLElement;
     const submitHint = document.getElementById('modal-submit-hint') as HTMLElement;
+    const trustLine = document.getElementById('modal-trust-line') as HTMLElement;
     const spinner = document.getElementById('modal-spinner') as HTMLElement;
-    const toastSucesso = document.getElementById('toast-sucesso') as HTMLElement;
     const modalSuccess = document.getElementById('modal-success') as HTMLElement;
+    const modalSuccessTitle = document.getElementById('modal-success-title') as HTMLElement;
     const countdownNumber = document.getElementById('countdown-number') as HTMLElement;
 
     const campoNome = document.getElementById('campo-nome') as HTMLInputElement;
@@ -1033,14 +1118,12 @@ import '../../../styles/funnel.css';
     const INPUT_ERROR_BG = 'rgba(239,68,68,0.08)';
     const INPUT_NORMAL_BG = 'rgba(255,255,255,0.05)';
 
-    // --- Máscara WhatsApp ---
     function mascaraWhatsApp(v: string): string {
       v = v.replace(/\D/g, '').slice(0, 11);
       if (v.length <= 10) return v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
       return v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
     }
 
-    // --- Validações ---
     function validarNome(): boolean {
       const v = campoNome.value.trim();
       if (!v || v.length < 2) {
@@ -1094,28 +1177,83 @@ import '../../../styles/funnel.css';
       submitBtn.style.opacity = valido ? '1' : '0.5';
       submitBtn.style.cursor = valido ? 'pointer' : 'not-allowed';
       if (submitHint) submitHint.style.display = valido ? 'none' : 'block';
+      if (trustLine) trustLine.classList.toggle('hidden', !valido);
+      if (valido && !submitBtn.dataset.pulsed) {
+        submitBtn.style.animation = 'pricingCtaPulse 1s ease-out 1';
+        submitBtn.dataset.pulsed = 'true';
+      }
     }
 
-    // --- Eventos de input ---
-    campoNome.addEventListener('input', () => { validarNome(); atualizarSubmit(); });
+    function trackFormStarted(field: string) {
+      if (!formStarted) {
+        formStarted = true;
+        (window as any).dataLayer?.push({ event: 'pricing_form_started', pacote: pacoteAtual, first_field: field });
+      }
+    }
+
+    campoNome.addEventListener('input', () => { trackFormStarted('nome'); validarNome(); atualizarSubmit(); });
     campoWhatsApp.addEventListener('input', () => {
+      trackFormStarted('whatsapp');
       campoWhatsApp.value = mascaraWhatsApp(campoWhatsApp.value);
       validarWhatsApp();
       atualizarSubmit();
     });
-    campoEmail.addEventListener('input', () => { validarEmail(); atualizarSubmit(); });
+    campoEmail.addEventListener('input', () => { trackFormStarted('email'); validarEmail(); atualizarSubmit(); });
+
+    function renderEntregas(entregas: string[]) {
+      modalEntregas.innerHTML = '';
+      entregas.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'flex items-start gap-2';
+        div.innerHTML = `
+          <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="rgb(52,211,153)" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-sm" style="color: rgba(255,255,255,0.7);">${item}</span>
+        `;
+        modalEntregas.appendChild(div);
+      });
+    }
 
     // --- Abrir modal ---
     document.querySelectorAll<HTMLButtonElement>('[data-pacote]').forEach(btn => {
       btn.addEventListener('click', () => {
         pacoteAtual = btn.dataset.pacote || '';
-        titulo.textContent = pacoteAtual;
+        formStarted = false;
+        const pacote = PACOTES[pacoteAtual];
+
+        if (pacote) {
+          titulo.textContent = pacote.titulo;
+          modalPreco.textContent = pacote.preco;
+          modalPrecoAvista.textContent = pacote.precoAvista;
+          if (pacote.badge) {
+            modalBadge.textContent = pacote.badge;
+            modalBadge.classList.remove('hidden');
+          } else {
+            modalBadge.classList.add('hidden');
+          }
+          renderEntregas(pacote.entregas);
+          submitText.textContent = pacote.cta;
+        } else {
+          titulo.textContent = pacoteAtual;
+          modalPreco.textContent = '';
+          modalPrecoAvista.textContent = '';
+          modalBadge.classList.add('hidden');
+          modalEntregas.innerHTML = '';
+          submitText.textContent = 'Garantir minha vaga';
+        }
+
         alertEl.classList.add('hidden');
         alertEl.textContent = '';
         modalSuccess.classList.add('hidden');
         form.style.display = '';
+        submitBtn.dataset.pulsed = '';
         overlay.classList.remove('hidden');
         overlay.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+
+        (window as any).dataLayer?.push({ event: 'pricing_modal_opened', pacote: pacoteAtual });
+
         setTimeout(() => campoNome.focus(), 50);
       });
     });
@@ -1124,6 +1262,7 @@ import '../../../styles/funnel.css';
     function fecharModal() {
       overlay.classList.add('hidden');
       overlay.classList.remove('flex');
+      document.body.style.overflow = '';
       form.reset();
       [campoNome, campoWhatsApp, campoEmail].forEach(inp => {
         inp.style.borderColor = INPUT_NORMAL_BORDER;
@@ -1138,14 +1277,32 @@ import '../../../styles/funnel.css';
       submitBtn.disabled = true;
       submitBtn.style.opacity = '0.5';
       submitBtn.style.cursor = 'not-allowed';
+      submitBtn.style.animation = '';
       if (submitHint) submitHint.style.display = 'block';
+      if (trustLine) trustLine.classList.add('hidden');
     }
 
     closeBtn.addEventListener('click', fecharModal);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) fecharModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharModal(); });
 
-    // --- Friendly error messages ---
+    // --- Focus trap ---
+    const container = document.getElementById('modal-container') as HTMLElement;
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab' || overlay.classList.contains('hidden')) return;
+      const focusable = container.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+
     function getFriendlyError(errorMsg: string): string {
       const msg = errorMsg.toLowerCase();
       if (msg.includes('duplicate') || msg.includes('unique')) return 'Você já enviou uma solicitação. Entraremos em contato em breve.';
@@ -1154,10 +1311,15 @@ import '../../../styles/funnel.css';
       return 'Ocorreu um erro inesperado. Tente novamente ou entre em contato pelo WhatsApp.';
     }
 
-    // --- Success with countdown ---
-    function showSuccess() {
+    function showSuccess(nome: string) {
       form.style.display = 'none';
+      if (submitHint) submitHint.style.display = 'none';
+      if (trustLine) trustLine.classList.add('hidden');
       modalSuccess.classList.remove('hidden');
+
+      const firstName = nome.split(' ')[0];
+      modalSuccessTitle.textContent = `Excelente escolha, ${firstName}!`;
+
       let countdown = 3;
       countdownNumber.textContent = String(countdown);
       const interval = setInterval(() => {
@@ -1170,7 +1332,6 @@ import '../../../styles/funnel.css';
       }, 1000);
     }
 
-    // --- Submit ---
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -1189,6 +1350,7 @@ import '../../../styles/funnel.css';
       submitBtn.style.opacity = '0.5';
       submitBtn.style.cursor = 'not-allowed';
       spinner.classList.remove('hidden');
+      const originalCta = submitText.textContent;
       submitText.textContent = 'Enviando...';
 
       const urlParams = new URLSearchParams(window.location.search);
@@ -1197,6 +1359,7 @@ import '../../../styles/funnel.css';
         email: campoEmail.value.trim(),
         whatsapp: campoWhatsApp.value.trim(),
         produto: pacoteAtual,
+        formulario: 'modal_compra_mapa_funil',
         page_url: window.location.href,
         page_path: window.location.pathname,
         page_title: document.title,
@@ -1217,7 +1380,7 @@ import '../../../styles/funnel.css';
       const { error } = await supabase.from('leads').insert(leadData);
 
       spinner.classList.add('hidden');
-      submitText.textContent = 'Solicitar Acesso';
+      submitText.textContent = originalCta || 'Garantir minha vaga';
 
       if (error) {
         console.error('[Modal] Erro Supabase:', error);
@@ -1229,7 +1392,7 @@ import '../../../styles/funnel.css';
         return;
       }
 
-      showSuccess();
+      showSuccess(campoNome.value.trim());
     });
   })();
 </script>

@@ -1,0 +1,530 @@
+---
+/**
+ * /previews/social-proof-toast.astro
+ * Preview do componente SocialProofToast
+ */
+import SocialProofToast from '../../components/ui/SocialProofToast.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview - Social Proof Toast</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #0a0a0a;
+      --bg-card: #141414;
+      --text-primary: #ffffff;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --accent: #f97316;
+      --border: #262626;
+    }
+
+    html, body {
+      min-height: 100vh;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .preview-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .preview-card-title {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .demo-area {
+      min-height: 300px;
+      background: #080808;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demo-spacer {
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .demo-spacer .arrow {
+      font-size: 1.2rem;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .props-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .props-table th,
+    .props-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .props-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .props-table td {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .props-table code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-size: 0.8125rem;
+    }
+
+    .config-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .config-table th,
+    .config-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .config-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .config-table td {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .config-table code {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-size: 0.8125rem;
+    }
+
+    .code-block {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      overflow-x: auto;
+    }
+
+    .notifications-list {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .notification-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(26, 26, 26, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.625rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .notification-name {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .notification-action {
+      color: var(--text-secondary);
+    }
+
+    .notification-time {
+      margin-left: auto;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .notes {
+      background: rgba(249, 115, 22, 0.06);
+      border: 1px solid rgba(249, 115, 22, 0.15);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .notes-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .notes ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .notes li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding: 0.25rem 0;
+    }
+
+    .notes li::before {
+      content: "→ ";
+      color: var(--accent);
+    }
+
+    .explanation-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+    }
+
+    .explanation-intro {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .explanation-text {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .explanation-text:last-child {
+      margin-bottom: 0;
+    }
+
+    .explanation-text strong {
+      color: var(--text-primary);
+    }
+
+    .file-path {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-top: 0.75rem;
+    }
+
+    .quote-block {
+      background: rgba(249, 115, 22, 0.06);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-top: 0.75rem;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .summary-card {
+      background: rgba(249, 115, 22, 0.04);
+      border: 1px solid rgba(249, 115, 22, 0.15);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+    }
+  </style>
+  <style is:inline>
+    body.in-iframe .back-link,
+    body.in-iframe header,
+    body.in-iframe .section:has(.config-table),
+    body.in-iframe .section:has(.code-block),
+    body.in-iframe .section:has(.explanation-card),
+    body.in-iframe .section:has(.summary-card),
+    body.in-iframe .section:has(.explanation-intro),
+    body.in-iframe .section:has(.notes) { display: none !important; }
+    body.in-iframe .container { max-width: 100%; }
+    body.in-iframe body { padding: 1rem !important; }
+    body.in-iframe .section { margin-bottom: 1rem !important; }
+    body.in-iframe .preview-card { padding: 1rem !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/previews/" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      Voltar para componentes
+    </a>
+
+    <header>
+      <h1>Social Proof Toast</h1>
+      <p class="description">O que é esse "modal" do Rafael de SP</p>
+    </header>
+
+    <!-- Preview ao vivo -->
+    <section class="section">
+      <h2 class="section-title">Preview ao Vivo</h2>
+
+      <div class="preview-card">
+        <div class="preview-card-title">Role a página para ativar o toast — aparece no canto inferior esquerdo</div>
+        <div class="demo-area">
+          <div class="demo-spacer">
+            <span>Role a página para ativar o toast</span>
+            <span class="arrow">↓</span>
+            <span style="color: var(--text-muted); font-size: 0.75rem;">O toast aparece no canto inferior esquerdo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que é -->
+    <section class="section">
+      <h2 class="section-title">O que é</h2>
+      <div class="explanation-card">
+        <p class="explanation-text">
+          Isso <strong>não é um modal</strong> — é um <strong>toast de prova social</strong> (Social Proof Toast), componente localizado em:
+        </p>
+        <div class="file-path">src/components/ui/SocialProofToast.astro</div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="section">
+      <h2 class="section-title">Como funciona</h2>
+      <div class="explanation-card">
+        <p class="explanation-text">
+          É uma notificação discreta que aparece no <strong>canto inferior esquerdo</strong> da tela com o objetivo de criar <strong>urgência e prova social</strong>. Ele mostra mensagens do tipo:
+        </p>
+        <div class="quote-block">
+          "Rafael de SP solicitou o Mapa de Funil — há 2 minutos"
+        </div>
+      </div>
+    </section>
+
+    <!-- Dados hardcoded -->
+    <section class="section">
+      <h2 class="section-title">Os dados são fixos (hardcoded)</h2>
+      <p class="explanation-intro">As notificações são um <strong>array estático</strong> com 8 pessoas fictícias que alternam ciclicamente:</p>
+      <table class="config-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Cidade</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Rafael</td><td>SP</td><td>solicitou o Mapa de Funil</td></tr>
+          <tr><td>Juliana</td><td>RJ</td><td>reservou a vaga Estratégia</td></tr>
+          <tr><td>Marcos</td><td>MG</td><td>solicitou o Mapa de Funil</td></tr>
+          <tr><td>Camila</td><td>PR</td><td>reservou a vaga Implementação</td></tr>
+          <tr><td>Lucas</td><td>SC</td><td>solicitou o Mapa de Funil</td></tr>
+          <tr><td>Fernanda</td><td>BA</td><td>reservou a vaga Estratégia</td></tr>
+          <tr><td>Thiago</td><td>RS</td><td>solicitou o Mapa de Funil</td></tr>
+          <tr><td>Amanda</td><td>PE</td><td>reservou a vaga Implementação</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Regras de exibição -->
+    <section class="section">
+      <h2 class="section-title">Regras de exibição</h2>
+      <div class="notes">
+        <div class="notes-title">Timing e triggers</div>
+        <ul>
+          <li>Só aparece após <strong>30 segundos</strong> na página</li>
+          <li>Exige que o usuário tenha rolado pelo menos <strong>30%</strong> da página</li>
+          <li>Mostra uma notificação a cada <strong>20 segundos</strong></li>
+          <li>Cada notificação fica visível por <strong>6 segundos</strong></li>
+          <li>Tem um cooldown de <strong>10 segundos</strong> entre uma e outra</li>
+          <li>Se o usuário estiver no mobile e o <strong>sticky CTA</strong> estiver visível, o toast se esconde automaticamente</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Resumo -->
+    <section class="section">
+      <h2 class="section-title">Resumo</h2>
+      <div class="summary-card">
+        <p class="explanation-text">
+          É uma técnica clássica de <strong>conversão/CRO</strong>: simular atividade recente de outros clientes para incentivar o visitante a também tomar ação (solicitar o Mapa de Funil ou reservar uma vaga). O "Rafael de SP" é simplesmente o <strong>primeiro item da lista</strong> — não é uma pessoa real, é um dado mock para gerar prova social.
+        </p>
+      </div>
+    </section>
+
+    <!-- Exemplo de Uso -->
+    <section class="section">
+      <h2 class="section-title">Exemplo de Uso</h2>
+
+      <div class="code-block">
+        <pre>---
+import SocialProofToast from '../../components/ui/SocialProofToast.astro';
+---
+
+&lt;SocialProofToast /&gt;</pre>
+      </div>
+    </section>
+  </div>
+
+  <SocialProofToast />
+  <script>
+    if (window.self !== window.top) document.body.classList.add('in-iframe');
+
+    (function() {
+      var notifications = [
+        { name: 'Rafael', city: 'SP', action: 'solicitou o Mapa de Funil', time: '2' },
+        { name: 'Juliana', city: 'RJ', action: 'reservou a vaga Estratégia', time: '5' },
+        { name: 'Marcos', city: 'MG', action: 'solicitou o Mapa de Funil', time: '8' },
+        { name: 'Camila', city: 'PR', action: 'reservou a vaga Implementação', time: '12' },
+        { name: 'Lucas', city: 'SC', action: 'solicitou o Mapa de Funil', time: '15' },
+        { name: 'Fernanda', city: 'BA', action: 'reservou a vaga Estratégia', time: '18' },
+        { name: 'Thiago', city: 'RS', action: 'solicitou o Mapa de Funil', time: '22' },
+        { name: 'Amanda', city: 'PE', action: 'reservou a vaga Implementação', time: '25' }
+      ];
+
+      var toast = document.getElementById('social-proof-toast');
+      var nameEl = document.getElementById('toast-name');
+      var timeEl = document.getElementById('toast-time');
+      var closeBtn = document.getElementById('toast-close');
+
+      if (!toast || !nameEl || !timeEl) return;
+
+      var currentIndex = 0;
+      var isVisible = false;
+      var timeout = null;
+
+      function showNext() {
+        if (isVisible) return;
+        var n = notifications[currentIndex];
+        nameEl.textContent = n.name + ' de ' + n.city + ' ' + n.action;
+        timeEl.textContent = 'há ' + n.time + ' minutos';
+        toast.classList.add('visible');
+        isVisible = true;
+        currentIndex = (currentIndex + 1) % notifications.length;
+        timeout = setTimeout(function() {
+          toast.classList.remove('visible');
+          isVisible = false;
+          setTimeout(showNext, 3000);
+        }, 5000);
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          if (timeout) clearTimeout(timeout);
+          toast.classList.remove('visible');
+          isVisible = false;
+          setTimeout(showNext, 5000);
+        });
+      }
+
+      setTimeout(showNext, 800);
+    })();
+  </script>
+</body>
+</html>

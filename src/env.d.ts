@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly PUBLIC_GTM_ID: string;
+  readonly PUBLIC_WHATSAPP_NUMBER: string;
 }
 
 interface ImportMeta {

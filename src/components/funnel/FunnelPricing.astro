@@ -53,15 +53,15 @@ const shieldSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 
 const {
   eyebrow = 'Escolha seu pacote',
-  title = '3 opções para validar seu funil',
-  subtitle = 'Do diagnóstico inicial à implementação completa — escolha o nível de suporte que você precisa',
+  title = 'Escolha o nível de certeza que você precisa',
+  subtitle = 'Todos os pacotes ficam prontos em 7 dias. A diferença é o nível de profundidade e suporte.',
   tiers = [
     {
       id: 'diagnostico',
       badge: 'Para Começar',
       badgeVariant: 'starter',
       name: 'Diagnóstico',
-      tagline: 'Visão geral do seu funil',
+      tagline: 'Descubra onde estão os vazamentos',
       priceParcelado: { installments: '6x de', value: '166' },
       priceAvista: { value: '847', full: 'R$ 997' },
       features: [
@@ -75,7 +75,7 @@ const {
       ],
       supportDays: 7,
       guaranteeDays: 7,
-      ctaText: 'Começar Diagnóstico',
+      ctaText: 'Quero Meu Diagnóstico',
       ctaVariant: 'outline',
       dataPacote: 'Mapa Funil - Diagnóstico',
     },
@@ -84,7 +84,7 @@ const {
       badge: 'Recomendado',
       badgeVariant: 'popular',
       name: 'Estratégia Completa',
-      tagline: 'Análise profunda + mentoria',
+      tagline: 'Estratégia validada + mentoria ao vivo',
       priceParcelado: { installments: '6x de', value: '406' },
       priceAvista: { value: '2.070', full: 'R$ 2.436' },
       featured: true,
@@ -154,7 +154,7 @@ const {
   ],
   trustSignals = [
     { text: 'Pagamento 100% Seguro' },
-    { text: 'Garantia de Satisfação' },
+    { text: 'Garantia de 30 dias' },
     { text: '+200 Funis Mapeados' },
   ],
 } = Astro.props;
@@ -248,7 +248,7 @@ const trustIconKeys = ['lock', 'shield', 'check'];
       <button class="comparison-btn" id="comparisonToggle">
         <span class="btn-label">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-          Ver tabela comparativa
+          Comparar os 3 pacotes
         </span>
         <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>

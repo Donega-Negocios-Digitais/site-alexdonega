@@ -27,18 +27,18 @@ interface Props {
 
 const {
   id = 'pacote-completo',
-  eyebrow = 'Tudo Incluído',
-  title = 'Seu Pacote de Mapeamento',
-  subtitle = 'Cada elemento desenhado para você validar seu funil com segurança e confiança',
-  leftTitle = 'Processo & Suporte',
+  eyebrow = 'Nada fica de fora',
+  title = 'Tudo que você precisa para lançar sem medo',
+  subtitle = 'Não é uma planilha bonita. É um sistema completo de decisão para o seu funil.',
+  leftTitle = 'O que você recebe',
   leftItems = [
     { title: 'Questionário de briefing estruturado', description: 'Para eu entender seu negócio a fundo' },
-    { title: 'Mapa visual completo do funil', description: 'Todas as etapas, ofertas e pontos de contato' },
+    { title: 'Mapa visual completo do funil', description: 'Visão completa do fluxo: onde entra dinheiro e onde sai' },
     { title: 'Simulação de lucratividade', description: 'Métricas reais baseadas no seu negócio' },
     { title: 'Identificação de vazamentos', description: 'Onde você está perdendo dinheiro' },
     { title: 'Vídeo explicando a estratégia', description: 'Gravação pessoal para você assistir quando quiser' },
-    { title: '2 horas de mentoria individual', description: 'Para tirar dúvidas e ajustar a estratégia' },
-    { title: 'Reunião final de revisão', description: 'Para garantir que tudo está alinhado' },
+    { title: '2 horas de mentoria individual', description: 'Revisão ao vivo com quem criou para sair com plano de ação' },
+    { title: 'Reunião final de revisão', description: 'Para sair com próximos passos claros e executáveis' },
   ],
   rightTitle = 'Métricas Simuladas',
   metrics = [
@@ -50,7 +50,7 @@ const {
     { iconVariant: 'growth', title: 'Receita Recorrente', description: 'Projeção de crescimento mensal' },
     { iconVariant: 'roi', title: 'CAC & ROAS Ideais', description: 'Metas para seu negócio ser lucrativo', highlight: true },
   ],
-  ctaText = 'Quero receber este pacote',
+  ctaText = 'Quero meu mapa de funil agora',
   ctaHref = '#pricing',
 } = Astro.props;
 
@@ -111,6 +111,43 @@ const arrowSvg = '<svg class="btn-icon" fill="none" stroke="currentColor" viewBo
         </div>
       </div>
     </div>
+    <!-- Collapsible summary for mobile -->
+    <details class="package-details">
+      <summary class="package-details-toggle">
+        <span>Ver tudo que está incluso ({leftItems.length} itens + {metrics.length} métricas)</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="package-details-content">
+        <div class="package-left">
+          <h3 class="package-section-title">{leftTitle}</h3>
+          <ul class="package-list">
+            {leftItems.map((item) => (
+              <li>
+                <span class="package-check" set:html={checkSvg} />
+                <div class="package-item-content">
+                  <strong>{item.title}</strong>
+                  <span>{item.description}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="package-right">
+          <h3 class="package-section-title">{rightTitle}</h3>
+          <div class="metrics-grid">
+            {metrics.map((metric) => (
+              <div class={`metric-card${metric.highlight ? ' metric-card-highlight' : ''}`}>
+                <div class={`metric-icon ${metric.iconVariant || ''}`} set:html={iconSvgs[metric.iconVariant || 'revenue'] || iconSvgs.revenue} />
+                <div class="metric-content">
+                  <h4>{metric.title}</h4>
+                  <p>{metric.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -149,7 +186,20 @@ const arrowSvg = '<svg class="btn-icon" fill="none" stroke="currentColor" viewBo
   }
   @media (max-width: 640px) {
     .funnel-package-complete { padding: 4rem 0; }
+    .package-wrapper { display: none; }
+    .package-details { display: block; }
     .metrics-grid { grid-template-columns: 1fr; }
     .metric-card-highlight { grid-column: span 1; }
   }
+
+  /* Mobile collapsible */
+  .package-details { display: none; }
+  .package-details-toggle { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 12px; cursor: pointer; font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; color: rgb(249, 115, 22); list-style: none; transition: all 0.3s; text-align: center; }
+  .package-details-toggle::-webkit-details-marker { display: none; }
+  .package-details-toggle svg { width: 20px; height: 20px; transition: transform 0.3s; flex-shrink: 0; }
+  .package-details[open] .package-details-toggle svg { transform: rotate(180deg); }
+  .package-details[open] .package-details-toggle { margin-bottom: 1.5rem; }
+  .package-details-content { display: none; }
+  .package-details[open] .package-details-content { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+  .package-details-content .package-cta { display: block; margin-top: 2rem; }
 </style>
