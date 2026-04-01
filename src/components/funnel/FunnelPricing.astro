@@ -54,7 +54,7 @@ const shieldSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 const {
   eyebrow = 'Escolha seu pacote',
   title = 'Obtenha mais de 15% de receita<br>com o seu marketing existente –<br>sem aumentar os gastos.',
-  subtitle = 'Todos os pacotes ficam prontos em 7 dias. A diferença é o nível de profundidade e suporte.',
+  subtitle = 'Todos os pacotes ficam prontos em 7 dias.<br>A diferença é o nível de profundidade e suporte.',
   tiers = [
     {
       id: 'diagnostico',
@@ -173,7 +173,7 @@ const trustIconKeys = ['lock', 'shield', 'check'];
     <div class="pricing-tiers-header">
       <span class="section-eyebrow">{eyebrow}</span>
       <h2 class="section-title" set:html={title}></h2>
-      <p class="section-subtitle">{subtitle}</p>
+      <p class="section-subtitle" set:html={subtitle}></p>
     </div>
 
     <div class="pricing-toggle-wrapper">
