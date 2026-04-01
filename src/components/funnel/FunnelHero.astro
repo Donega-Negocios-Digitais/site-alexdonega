@@ -59,11 +59,6 @@ const badgeIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3
           </div>
         ))}
       </div>
-      <div class="hero-stars">
-        {Array.from({ length: stars }).map(() => (
-          <Fragment set:html={starSvg} />
-        ))}
-      </div>
       <div class="hero-cta">
         <a href={ctaHref} class="btn-primary">
           {ctaText}
@@ -172,7 +167,7 @@ const badgeIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3
     justify-content: center;
     gap: 0.75rem;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
   }
 
   .funnel-hero .proof-badge {
@@ -183,7 +178,7 @@ const badgeIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3
     border: 1px solid rgba(249, 115, 22, 0.3);
     border-radius: 100px;
     padding: 0.5rem 1rem;
-    animation: fh-pulse-glow 2s infinite;
+    animation: none;
   }
 
   .funnel-hero .proof-icon {
