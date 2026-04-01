@@ -643,7 +643,10 @@ export default function ExitIntentModal() {
     </AnimatePresence>
   );
 
-  if (typeof document === 'undefined') return null;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
+  if (!mounted) return null;
   return (
     <>
       <style>{`

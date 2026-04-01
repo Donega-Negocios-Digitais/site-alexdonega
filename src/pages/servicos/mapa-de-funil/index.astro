@@ -16,10 +16,6 @@ import SocialProofToast from '../../../components/ui/SocialProofToast.astro';
 import '../../../styles/funnel.css';
 ---
 
-<!-- Preload non-critical CSS (avoids render-blocking, high priority) -->
-<link rel="preload" as="style" href="/_astro/FunnelPricing.CiqMy1XV.css" />
-<link rel="preload" as="style" href="/_astro/FunnelFaq.BYasK5TN.css" />
-
 <Layout title="Mapa de Funil com Simulação de Lucro — Alex Donega" description="Descubra por que seu funil não converte — mapeie, simule e pare de queimar R$ 1k+ por mês em anúncios sem retorno." hideHeader hideFooter>
 
 <!-- 1. Hero -->
@@ -100,14 +96,6 @@ import '../../../styles/funnel.css';
         <h3>SaaS & MicroSaaS</h3>
       </div>
     </div>
-    <div class="section-cta">
-      <a href="#servico" class="btn-primary" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.4);">
-        Ver como funciona
-        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -144,7 +132,7 @@ import '../../../styles/funnel.css';
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Resultados reais, nomes reais</span>
-      <h2 class="section-title">Empreendedores que pararam de adivinhar e começaram a calcular</h2>
+      <h2 class="section-title">Empreendedores que pararam de adivinhar<br>e começaram a calcular</h2>
       <p class="section-subtitle">Cada caso aqui parou de queimar verba e passou a ter clareza total sobre cada etapa do funil.</p>
     </div>
 
@@ -348,11 +336,12 @@ import '../../../styles/funnel.css';
     </div>
 
     <p class="false-solution-transition">O que você realmente precisa é de previsibilidade no ciclo que já está rodando...</p>
-    <div class="section-cta">
-      <a href="#servico" class="btn-primary" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.4);">
-        Ver a solução
+
+    <div class="section-cta section-cta-mid">
+      <a href="#pricing" class="btn-primary">
+        Quero simular meu funil
         <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
         </svg>
       </a>
     </div>
@@ -364,7 +353,7 @@ import '../../../styles/funnel.css';
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">O Serviço</span>
-      <h2 class="section-title">De 'não sei se vai dar certo' para 'tenho 3 cenários calculados'</h2>
+      <h2 class="section-title">De 'não sei se vai dar certo' para<br>'tenho 3 cenários calculados'</h2>
     </div>
     <div class="what-content">
       <p class="what-intro">
@@ -451,11 +440,12 @@ import '../../../styles/funnel.css';
         <p>Com a simulação de cenários, clientes passaram a <strong>investir com confiança</strong>, sabendo exatamente o retorno esperado.</p>
       </div>
     </div>
-    <div class="section-cta">
-      <a href="#entregaveis" class="btn-primary" style="background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.4);">
-        Ver o que você recebe
+
+    <div class="section-cta section-cta-mid">
+      <a href="#pricing" class="btn-primary">
+        Quero esses resultados
         <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
         </svg>
       </a>
     </div>
@@ -508,6 +498,14 @@ import '../../../styles/funnel.css';
 <!-- 13. Entregáveis Visuais -->
 <section id="entregaveis">
 <FunnelDeliverables />
+  <div class="section-cta section-cta-mid">
+    <a href="#pricing" class="btn-primary">
+      Quero simular meu funil
+      <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
+    </a>
+  </div>
 </section>
 
 <!-- 14. Pacote Completo -->
@@ -523,7 +521,7 @@ import '../../../styles/funnel.css';
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Garantia</span>
-      <h2 class="section-title">Se não conseguir implementar em 7 dias, a gente ajuda até ficar pronto</h2>
+      <h2 class="section-title">Se não conseguir implementar em 7 dias,<br>a gente ajuda até ficar pronto</h2>
     </div>
     <div class="guarantee-grid">
       <div class="guarantee-card">
@@ -638,7 +636,7 @@ import '../../../styles/funnel.css';
 
 <SocialProofToast />
 
-<ExitIntentModal client:load />
+<ExitIntentModal client:idle />
 
 </Layout>
 
