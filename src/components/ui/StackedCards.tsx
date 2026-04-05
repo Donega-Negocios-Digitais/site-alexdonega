@@ -19,7 +19,7 @@ const deliverables: Deliverable[] = [
     subtitle: "Mapeamento visual profissional",
     description:
       "Veja exatamente o que vou entregar para você visualizar seu lucro antes de investir. Você vai segurar na mão um mapa completo do seu funil, com todos os números simulados e cenários projetados — pronto para você tomar decisões com confiança, não com achismo.",
-    image: "/videos/services/funnel-mapping/diagrama-mapa-funil.webp",
+    image: "/img/services/diagrama-mapa-funil.webp",
     features: [
       "Etapas do funil mapeadas",
       "Ofertas e pontos de contato",
@@ -35,7 +35,7 @@ const deliverables: Deliverable[] = [
     subtitle: "Visão consolidada das previsões",
     description:
       "Um painel com todas as suas previsões em um único lugar. Receita, lucro, custo de aquisição, ticket médio e todas as métricas que importam para seu negócio — organizadas e prontas para análise.",
-    image: "/videos/services/funnel-mapping/resumo-projeto.webp",
+    image: "/img/services/resumo-projeto.webp",
     features: [
       "Métricas-chave consolidadas",
       "Visão 360° do negócio",
@@ -50,7 +50,7 @@ const deliverables: Deliverable[] = [
     subtitle: "Descubra o que é necessário para chegar lá",
     description:
       "Quer faturar R$ 100 mil por mês? R$ 1 milhão? Este relatório mostra exatamente o que precisa acontecer em cada etapa do funil para atingir sua meta — com números reais e alcançáveis.",
-    image: "/videos/services/funnel-mapping/meta-lucro-sonhos.webp",
+    image: "/img/services/meta-lucro-sonhos.webp",
     features: [
       "Cenário personalizado",
       "Metas por etapa do funil",
@@ -66,7 +66,7 @@ const deliverables: Deliverable[] = [
     subtitle: "Gráfico de crescimento de receita e lucro",
     description:
       "Veja como seu negócio cresce mês a mês com o reinvestimento inteligente em tráfego. Gráficos de receita, lucro e ponto de equilibrio para você planejar com precisão cada real investido.",
-    image: "/videos/services/funnel-mapping/reinvestimento-trafego.webp",
+    image: "/img/services/reinvestimento-trafego.webp",
     features: [
       "Projeção mensal de receita",
       "Curva de crescimento",
@@ -81,7 +81,7 @@ const deliverables: Deliverable[] = [
     subtitle: "Pessimista, provável e otimista lado a lado",
     description:
       "Não dependa de um único palpite. Compare 3 cenários simulados e entenda o intervalo de resultados possíveis — do conservador ao ambicioso — para tomar decisões com segurança.",
-    image: "/videos/services/funnel-mapping/comparacao-cenarios.webp",
+    image: "/img/services/comparacao-cenarios.webp",
     features: [
       "Cenário pessimista",
       "Cenário provável",

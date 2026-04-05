@@ -100,7 +100,7 @@ const firstImage = items[0]?.imageKey || '';
       </div>
       <div class="visual-image">
         <div class="image-wrapper-visual">
-          <img id="visual-report-image" src={`/videos/services/funnel-mapping/${firstImage}.webp`} alt={items[0]?.title || ''} width="720" height="480" loading="lazy" />
+          <img id="visual-report-image" src={`/img/services/${firstImage}.webp`} alt={items[0]?.title || ''} width="720" height="480" loading="lazy" />
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@ const firstImage = items[0]?.imageKey || '';
   document.addEventListener('DOMContentLoaded', () => {
     const visualItems = document.querySelectorAll('.funnel-deliverables-visual .visual-item');
     const visualReportImage = document.getElementById('visual-report-image');
-    const imageBasePath = '/videos/services/funnel-mapping/';
+    const imageBasePath = '/img/services/';
 
     visualItems.forEach(item => {
       item.addEventListener('click', () => {

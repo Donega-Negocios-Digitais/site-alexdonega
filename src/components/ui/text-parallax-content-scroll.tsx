@@ -5,31 +5,31 @@ const IMG_PADDING = 12;
 
 const blocks = [
   {
-    imgUrl: "/videos/services/funnel-mapping/diagrama-mapa-funil.webp",
+    imgUrl: "/img/services/diagrama-mapa-funil.webp",
     title: "Diagrama de Mapa de Funil",
     description: "Mapeamento visual profissional de todas as etapas do seu funil — da atração à conversão.",
     descriptionExtra: "Veja exatamente por onde seu cliente passa, quais ofertas aparecem em cada etapa e onde estão as oportunidades que você está deixando escapar.",
   },
   {
-    imgUrl: "/videos/services/funnel-mapping/resumo-projeto.webp",
+    imgUrl: "/img/services/resumo-projeto.webp",
     title: "Resumo do Projeto",
     description: "Visão consolidada de todas as suas previsões em um único painel.",
     descriptionExtra: "Receita, custo, lucro e métricas-chave organizadas para você entender o cenário completo do seu negócio em minutos.",
   },
   {
-    imgUrl: "/videos/services/funnel-mapping/meta-lucro-sonhos.webp",
+    imgUrl: "/img/services/meta-lucro-sonhos.webp",
     title: "Meta de Lucro dos Sonhos",
     description: "Descubra exatamente o que é necessário para chegar lá.",
     descriptionExtra: "Defina um valor-alvo e veja quantos clientes, tickets médios e taxa de conversão você precisa para atingir essa meta.",
   },
   {
-    imgUrl: "/videos/services/funnel-mapping/reinvestimento-trafego.webp",
+    imgUrl: "/img/services/reinvestimento-trafego.webp",
     title: "Reinvestimento em Tráfego",
     description: "Gráfico de crescimento de receita e lucro ao longo dos meses.",
     descriptionExtra: "Entenda como reinvestir parte do lucro em anúncios pode criar um ciclo virtuoso de crescimento previsível e escalável.",
   },
   {
-    imgUrl: "/videos/services/funnel-mapping/comparacao-cenarios.webp",
+    imgUrl: "/img/services/comparacao-cenarios.webp",
     title: "Comparação de Cenários",
     description: "Pessimista, provável e otimista lado a lado.",
     descriptionExtra: "Prepare-se para o pior, confie no provável e sonhe com o otimista — sempre com números reais simulados para o seu negócio.",

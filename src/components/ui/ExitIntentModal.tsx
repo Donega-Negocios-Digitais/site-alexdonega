@@ -462,7 +462,7 @@ export default function ExitIntentModal() {
                       className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full"
                       style={{ background: 'rgba(249,115,22,0.1)', color: 'rgb(249,115,22)' }}
                     >
-                      <span>📊</span> +200 funis analisados
+                      <span>📊</span> 176 funis analisados
                     </span>
                   </div>
 
@@ -471,7 +471,7 @@ export default function ExitIntentModal() {
                       Antes de sair: seu funil tem pelo menos 3 desses 7 vazamentos
                     </h2>
                     <p className="text-sm mt-3 text-center" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                      Mapeamos +200 funis e esses 7 erros aparecem em 89% deles. Descubra quais estão no seu — em 2 minutos.
+                      Mapeamos 176 funis e esses 7 erros aparecem em 89% deles. Descubra quais estão no seu — em 2 minutos.
                     </p>
                   </div>
 

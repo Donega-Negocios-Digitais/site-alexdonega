@@ -222,3 +222,152 @@ Comece em 7 dias • Garantia de 14 dias • Sem risco
 - [x] Página V2 criada
 - [x] Teste e validação
 - [x] Comparação com versão original
+
+---
+
+# V3: Upgrade Visual (GERU + Funnelytics)
+
+## Referências Visuais
+- **geru.com** — Software de simulação de funis. Usa screenshots em device mockups (iPad), GIFs animados mostrando o passo-a-passo, diagramas visuais de funis com nodes e conexões, comparações de cenários com barras visuais.
+- **funnelytics.io** — Plataforma de funnel analytics. Usa mapeamento visual de customer journey com fluxos, GIFs de sinais em tempo-real, carrossel de screenshots com hover transitions, dashboard analytics estilizado, jornada visual do cliente.
+
+## Problema Atual
+As imagens em `public/videos/services/funnel-mapping/` são screenshots crus do software GERU que parecem planilhas Excel — tabelas de dados, grids de numeros, sem contexto visual. A secao de entregaveis (FunnelDeliverables) mostra essas imagens em um card simples, sem device frame ou tratamento visual.
+
+## Diretriz Visual
+Tirar a cara de "relatorio Excel" e dar cara de "produto premium de engenharia de funis". As imagens devem parecer outputs de uma ferramenta profissional, nao planilhas.
+
+---
+
+## Novos Assets Visuais Necessarios
+
+### 1. Hero — Funnel Flow Illustration (SVG/CSS animado)
+**Referencia:** Funnelytics hero com visual funnel mapping + GERU main-shot com diagrama de funil.
+
+**O que criar:** Ilustracao SVG inline no hero mostrando um fluxo de funil estilizado:
+- Nodes circulares com icones (Trafego → Landing Page → WhatsApp → Fechamento)
+- Linhas conectando os nodes com setas animadas
+- Metricas flutuantes perto de cada node (ex: "1.000 leads", "3.2% conv.", "R$ 497 AOV")
+- Cores: orange (#f97316) para nodes ativos, cinza escuro para nodes inativos
+- Subtle glow/pulse animation nos nodes
+- Gradiente de fundo escuro com grid pattern (ja existe, manter)
+
+**Tipo:** Codigo SVG/CSS inline no FunnelHero.astro
+**Esforco:** Medio
+
+### 2. Entregaveis — Device Mockup Frames
+**Referencia:** GERU usa iPad mockups com screenshots dentro. Funnelytics usa cards com sombra e hover zoom.
+
+**O que fazer:**
+- Criar CSS device frame (estilo laptop/iPad) para envolver cada screenshot de entregavel
+- O frame deve ter: borda arredondada, notch/barra superior estilizada, sombra profunda
+- Hover: leve zoom + glow laranja na borda
+- Background do card: gradiente escuro com blur
+- Manter o sistema de clique interativo atual (active state ao clicar)
+
+**Tipo:** CSS puro no FunnelDeliverables.astro
+**Esforco:** Baixo
+
+### 3. Metodologia MAPS — Step Visual com GIFs
+**Referencia:** GERU "How It Works" com GIFs animados mostrando cada passo (add product → map funnel → add traffic → simulate).
+
+**O que fazer:**
+- Cada passo (M-A-P-S) deve ter um mini GIF ou animacao CSS mostrando a acao
+- **M (Mapear):** Animacao de nodes aparecendo e se conectando
+- **A (Analisar):** Animacao de barras/metricas subindo
+- **P (Projetar):** Animacao de grafico de crescimento
+- **S (Simular):** Animacao de 3 cenarios (barras piscando entre pessimista/otimista)
+
+**Alternativa se GIFs forem pesados:** Usar Lottie animations ou CSS keyframe animations inline.
+
+**Tipo:** GIFs em `public/videos/services/funnel-mapping/` OU CSS animations
+**Esforco:** Medio-Alto (se GIFs) / Medio (se CSS animations)
+
+### 4. Entregaveis — Carousel com Hover Transitions
+**Referencia:** Funnelytics usa multiplos screenshots com hover que revela versoes diferentes do produto (9 imagens por secao).
+
+**O que fazer no FunnelDeliverables:**
+- Transformar a area de imagem em um showcase com multiple angles
+- Ao passar o mouse na imagem, fazer crossfade para uma segunda perspective/zoom
+- Adicionar labels flutuantes tipo tooltip apontando para partes da imagem (ex: "Simulacao de Cenario Otimista", "Taxa de Conversao Real")
+- Usar as imagens existentes mas com overlay annotations em CSS
+
+**Tipo:** CSS + pequeno JS no FunnelDeliverables.astro
+**Esforco:** Medio
+
+### 5. Secao "O Servico" (funnel-what) — Visual Steps com Preview
+**Referencia:** GERU step1-step4 com icones numerados e preview ao lado.
+
+**O que fazer:**
+- Cada step (01, 02, 03) ja tem `.step-preview` com `display: none` no CSS
+- Ativar esses previews com imagens dos entregaveis relevantes
+- Step 01 (Prever lucro): mostrar `simulate.webp`
+- Step 02 (Identificar vazamentos): mostrar `diagrama-mapa-funil.webp` com highlight vermelho
+- Step 03 (Garantir lucro): mostrar `meta-lucro-sonhos.webp`
+
+**Tipo:** Ativar CSS ja existente + adicionar imagens
+**Esforco:** Baixo
+
+### 6. Pacote Completo — Metric Cards Visuais
+**Referencia:** Funnelytics dashboard com KPI cards coloridos e icones.
+
+**O que fazer no FunnelPackageComplete:**
+- Adicionar mini chart SVG (sparkline) em cada metric card
+- Receita & Lucro: linha ascendente verde
+- Custo com Anuncios: linha com pontos laranja
+- Ticket Medio: barra horizontal com fill
+- CPA: grafico de dispersao mini
+- LTV: area chart verde
+- Receita Recorrente: barras ascendentes
+- CAC & ROAS (highlight): gauge/meter visual
+
+**Tipo:** SVG inline + CSS nos metric cards
+**Esforco:** Medio
+
+### 7. Novas Imagens para Gerar (AI)
+Se as screenshots atuais do GERU nao forem suficientes, gerar com AI:
+
+| Imagem | Descricao | Prompt base | Uso |
+|--------|-----------|-------------|-----|
+| `funnel-flow-hero.webp` | Diagrama de funil completo estilizado, dark theme, nodes conectados com setas, metricas flutuantes, estilo Funnelytics | "dark funnel diagram with connected nodes, orange accent, professional marketing visualization, no text" | Hero background ou deliverables |
+| `dashboard-preview.webp` | Dashboard de analytics com graficos e KPIs, dark mode, estilo premium SaaS | "dark SaaS analytics dashboard with charts and KPIs, orange accents, professional, no text" | Deliverables ou Package |
+| `customer-journey.webp` | Jornada do cliente visual, do primeiro clique a venda, estilo mapa mental | "customer journey map dark theme, nodes connected, orange highlights, marketing funnel visualization, no text" | About ou Methodology |
+
+**Nota:** Imagens com "no text" para evitar texto AI generado. Textos serao adicionados via HTML/CSS overlays.
+
+---
+
+## Componentes a Atualizar
+
+| Componente | Arquivo | Mudanca Visual |
+|-----------|---------|----------------|
+| FunnelHero | `src/components/funnel/FunnelHero.astro` | Adicionar SVG funnel flow animado no background (alem do grid pattern) |
+| FunnelMethodology | `src/components/funnel/FunnelMethodology.astro` | Adicionar mini animations/GIFs em cada step M-A-P-S |
+| FunnelDeliverables | `src/components/funnel/FunnelDeliverables.astro` | Device mockup frame + hover transitions + floating labels |
+| FunnelPackageComplete | `src/components/funnel/FunnelPackageComplete.astro` | Sparkline SVGs nos metric cards |
+| funnel-what (index.astro) | `src/pages/servicos/mapa-de-funil/index.astro` | Ativar `.step-preview` com imagens |
+
+---
+
+## Prioridade de Execucao V3
+
+| Prioridade | Tarefa | Impacto Visual | Esforco |
+|------------|--------|---------------|---------|
+| **P0** | Device mockup frames nos entregaveis | Alto | Baixo |
+| **P0** | Ativar step-preview na secao "O Servico" | Medio | Baixo |
+| **P1** | Hero SVG funnel flow animado | Alto | Medio |
+| **P1** | Hover transitions + floating labels nos entregaveis | Medio | Medio |
+| **P2** | Sparkline SVGs nos metric cards do pacote | Medio | Medio |
+| **P2** | Metodologia MAPS com mini animations | Medio | Medio-Alto |
+| **P3** | Gerar imagens AI para hero/deliverables | Alto | Medio |
+
+---
+
+## Status V3
+- [ ] P0: Device mockup frames
+- [ ] P0: Step previews ativados
+- [ ] P1: Hero SVG funnel flow
+- [ ] P1: Hover transitions nos entregaveis
+- [ ] P2: Sparkline SVGs nos metric cards
+- [ ] P2: Metodologia MAPS animations
+- [ ] P3: Imagens AI geradas

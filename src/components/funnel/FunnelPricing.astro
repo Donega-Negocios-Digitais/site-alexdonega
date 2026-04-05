@@ -69,9 +69,7 @@ const {
         { included: true, text: 'Mapa visual simplificado do funil' },
         { included: true, text: 'Simulação com <strong>1 cenário</strong> (provável)' },
         { included: true, text: 'Relatório PDF com vazamentos identificados' },
-        { included: false, text: 'Vídeo de estratégia personalizado' },
         { included: true, text: '<strong>1 hora</strong> de mentoria individual' },
-        { included: false, text: 'Implementação de copy e design' },
       ],
       supportDays: 7,
       guaranteeDays: 7,
@@ -97,7 +95,6 @@ const {
         { included: true, text: '<strong>Vídeo</strong> explicando a estratégia' },
         { included: true, text: '<strong>2 horas</strong> de mentoria individual' },
         { included: true, text: '<strong>1 reunião</strong> de revisão e ajustes' },
-        { included: false, text: 'Implementação de copy e design' },
       ],
       supportDays: 30,
       guaranteeDays: 30,
@@ -115,7 +112,7 @@ const {
       priceAvista: { value: '10.098', full: 'R$ 11.880' },
       scarcity: 'Últimas 2 vagas para Implementação',
       features: [
-        { included: true, text: '<strong>Tudo do Diagnóstico</strong> +' },
+        { included: true, text: '<strong>Tudo de Estratégia Completa</strong> +' },
         { included: true, text: 'Mapa com <strong>múltiplas versões</strong>' },
         { included: true, text: '<strong>6 horas</strong> de mentoria individual' },
         { included: true, text: '<strong>3 reuniões</strong> de revisão e ajustes' },
@@ -155,7 +152,7 @@ const {
   trustSignals = [
     { text: 'Pagamento 100% Seguro' },
     { text: 'Garantia de 30 dias' },
-    { text: '+200 Funis Mapeados' },
+    { text: '176 Funis Mapeados' },
   ],
 } = Astro.props;
 
@@ -301,11 +298,20 @@ const trustIconKeys = ['lock', 'shield', 'check'];
   .pricing-toggle.active { background: rgba(249, 115, 22, 0.2); border-color: rgb(249, 115, 22); }
   .toggle-slider { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; background: white; border-radius: 50%; transition: transform 0.3s ease; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
   .pricing-toggle.active .toggle-slider { transform: translateX(28px); background: rgb(249, 115, 22); }
-  .pricing-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; align-items: start; }
-  .tier-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 2rem; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; }
+  .pricing-grid-3 { display: flex; align-items: flex-end; gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .tier-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 2rem; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; flex: 1; }
   .tier-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
   .tier-card.featured { background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(249, 115, 22, 0.04) 100%); border: 2px solid rgb(249, 115, 22); z-index: 2; padding: 2.5rem 2rem; }
   .tier-card.featured:hover { box-shadow: 0 25px 50px rgba(249, 115, 22, 0.25); border-color: rgb(251, 146, 60); }
+  .tier-card[data-tier="implementacao"] {
+    padding: calc(2rem + 24px) 2rem 2rem 2rem;
+    box-shadow: 0 20px 60px rgba(249, 115, 22, 0.2), 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 3;
+  }
+  .tier-card[data-tier="implementacao"]:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 70px rgba(249, 115, 22, 0.3), 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
   .tier-featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, rgb(249, 115, 22) 0%, rgb(234, 88, 12) 100%); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 100px; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4); white-space: nowrap; }
   .tier-featured-badge svg { color: rgb(251, 191, 36); }
   .tier-header { text-align: center; margin-bottom: 1.5rem; }
@@ -372,14 +378,16 @@ const trustIconKeys = ['lock', 'shield', 'check'];
   .trust-item :global(svg) { width: 18px; height: 18px; color: rgb(52, 211, 153); }
 
   @media (max-width: 1024px) {
-    .pricing-grid-3 { grid-template-columns: 1fr; max-width: 450px; }
+    .pricing-grid-3 { flex-direction: column; align-items: stretch; max-width: 450px; }
     .tier-card.featured { order: -1; }
+    .tier-card[data-tier="implementacao"] { transform: none; box-shadow: none; }
     .tier-featured-badge { position: relative; top: 0; left: 0; transform: none; display: inline-flex; margin-bottom: 1rem; }
   }
   @media (max-width: 640px) {
     .funnel-pricing-tiers { padding: 4rem 0; }
     .tier-card { padding: 1.5rem; }
     .tier-card.featured { padding: 1.5rem; }
+    .tier-card[data-tier="implementacao"] { padding: 1.5rem; }
     .price-value { font-size: 2.5rem; }
     .featured .price-value { font-size: 2.75rem; }
     .tier-support { flex-direction: column; }

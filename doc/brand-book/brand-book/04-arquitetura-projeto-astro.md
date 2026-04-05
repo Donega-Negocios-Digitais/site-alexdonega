@@ -472,21 +472,32 @@ export function formatDate(date: Date): string {
 - ✅ Caminhos começam com `/`
 - ✅ Organizar em subpastas por tipo
 - ✅ Nomes em kebab-case
+- ✅ GIFs ficam em `img/` (são tratados como imagens, usam `<img>`)
+- ✅ Vídeos (mp4, webm) ficam em `videos/` (usam `<video>`)
 
 **O que colocar:**
-- Imagens (logos, fotos, ícones)
-- Fontes
+- Imagens (logos, fotos, ícones) → `public/img/`
+- GIFs animados → `public/img/` (mesmo que sejam animados, Astro renderiza como imagem)
+- Vídeos (mp4, webm) → `public/videos/`
+- Fontes → `public/fonts/`
 - Favicons
 - Robots.txt, sitemap.xml
 
 **O que NÃO colocar:**
 - Código executável
 - Arquivos que precisam de processamento
+- GIFs em `videos/` (não são vídeos, são imagens animadas)
 
 **Mapeamento de caminho:**
 ```
 Arquivo: public/img/logo.png
 URL:    /img/logo.png
+
+Arquivo: public/img/animacao.gif
+URL:    /img/animacao.gif
+
+Arquivo: public/videos/demo.mp4
+URL:    /videos/demo.mp4
 ```
 
 ---
